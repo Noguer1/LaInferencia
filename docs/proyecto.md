@@ -11,13 +11,25 @@ Web de divulgación de psicología basada en evidencia. Convierte investigación
 - **Fundador:** Miguel Noguer Escudero
 - **Tagline:** "Convertimos investigación en conocimiento útil, claro y accesible"
 - **Idioma:** Español (es_ES)
-- **Estado:** En desarrollo — URL pendiente (placeholder: TU-DOMINIO.com)
+- **Estado:** MVP publicado — https://la-inferencia.vercel.app
 - **Audiencia:** Público general con curiosidad por la psicología. Entretenimiento e interés personal, no académico. Accesible también para estudiantes de psicología.
 - **Redes:** Solo LinkedIn (cuenta de empresa La Inferencia)
   - Automatizar posts en la página de empresa via LinkedIn API
   - Generar mensajes personalizados con Claude para perfiles seleccionados (~30-50 contactos filtrados por sector/cargo), enviados manualmente
   - Objetivo: reclutar participantes para "Fuera de Bata" y crecimiento orgánico vía red de contactos
-- **Stack previsto:** Hosting propio + GitHub (deploy vía git push) + Supabase (backend futuro)
+- **Stack:** GitHub (github.com/Noguer1/LaInferencia) + Vercel (deploy automático en cada git push) + Supabase (propuestas y votos activos)
+
+---
+
+## Infraestructura de deploy
+
+| Servicio | Detalle |
+|----------|---------|
+| **GitHub** | github.com/Noguer1/LaInferencia — rama `main` |
+| **Vercel** | la-inferencia.vercel.app — conectado a GitHub, despliega automáticamente en cada push |
+| **Supabase** | dbyoxssdbboxnbecgpbf.supabase.co — base de datos PostgreSQL |
+
+**Flujo de trabajo:** editar archivos → `git add` → `git commit` → `git push` → Vercel despliega en ~30s.
 
 ---
 
@@ -30,7 +42,8 @@ Web de divulgación de psicología basada en evidencia. Convierte investigación
 | Lógica | JavaScript vanilla (ES6+) |
 | Tipografía | Google Fonts — Plus Jakarta Sans (300–800) |
 | SEO | JSON-LD schema, Open Graph, robots.txt, sitemap.xml |
-| Persistencia | localStorage ahora → Supabase en el futuro |
+| Persistencia local | localStorage (tema, progreso, voter_uuid) |
+| Backend | Supabase REST API (propuestas y votos) |
 | Web APIs | Web Share API (con fallback a clipboard) |
 
 Sin frameworks JS. Sin bundler. Sin dependencias npm.
@@ -60,9 +73,9 @@ CarpetaClaude/
 ```
 
 **`archive/` contiene** (no desplegar, no editar):
-- `main.js.bak` — versión anterior de main.js (592 líneas menos que la actual)
+- `main.js.bak` — versión anterior de main.js
 - `contenido_nuevo.js` — contenido ya integrado en main.js (redundante)
-- `og-image-generator.html` — herramienta para generar `img/og-image.png` cuando sea necesario
+- `og-image-generator.html` — herramienta para regenerar `img/OG.png` si hace falta
 - `og-image.svg` — diseño fuente de la imagen OG (1200×630)
 - `install.ps1` — instalador del skill caveman, ajeno al proyecto web
 - `skills-lock.json` — registro de versiones de skills caveman
@@ -121,6 +134,20 @@ Botón "Test cognitivo" en sección hero. Oculto en móvil (`display: none !impo
 ### Compartir contenido
 `shareContenido(url, title)` — usa Web Share API nativa si disponible, copia al clipboard si no. Toast: "¡Enlace copiado!" (bottom-right, 2s).
 
+### Propón un Tema — Supabase
+Sección al final de la página (`#propuestas`, `.propuestas-section`). Conectada a Supabase REST API.
+
+- **Enviar propuesta:** nombre (opcional) + texto → INSERT en tabla `propuestas`
+- **Ver propuestas:** fetch al cargar la página, ordenadas por votos DESC
+- **Votar:** genera `voter_uuid` anónimo en localStorage (`li_voter_uuid`), registra en tabla `votos` con constraint unique(propuesta_id, voter_uuid) — evita doble voto por dispositivo
+- **Moderar:** borrar filas directamente desde Supabase → Table Editor → tabla `propuestas`
+
+Tablas Supabase:
+```sql
+propuestas (id uuid PK, nombre text, propuesta text, votos integer, created_at timestamptz)
+votos (id uuid PK, propuesta_id uuid FK, voter_uuid text, created_at timestamptz, UNIQUE(propuesta_id, voter_uuid))
+```
+
 ### Accesibilidad
 `trapFocus(modal)` / `releaseFocus()` — focus trap WCAG para modales. Intercepta Tab / Shift+Tab.
 
@@ -166,20 +193,20 @@ Breakpoint principal: **≤680px**. Orden grid móvil: `"center" "right" "left"`
 | Decisión | Motivo |
 |----------|--------|
 | Sin frameworks JS | Proyecto ligero, sin build step, máximo control |
-| localStorage sin backend | MVP — sin servidor ni autenticación |
+| localStorage para progreso y tema | Sin autenticación — datos del usuario en su propio dispositivo |
 | `lsGet`/`lsSet` con try/catch | Modo incógnito lanza excepciones en algunos browsers |
+| Propuestas en Supabase sin auth | Feed compartido sin pedirles cuenta — más confianza |
+| Votos por voter_uuid anónimo | Evita doble voto sin registro; aceptable en MVP |
 | Acordeón de Efectos solo en móvil | En desktop el espacio lo permite sin colapsar |
 | Orden grid `"right"` antes que `"left"` en móvil | Tu Progreso es más relevante que el Test en primer scroll |
 | `display: none !important` en hero buttons móvil | Prioridad de espacio — los botones hero no son esenciales en móvil |
 
 ---
 
-## Problema conocido — OG image rota
+## Problema conocido — Favoritos desactivados
 
-`og:image` en `index.html` apunta a `img/og-image.png` que **no existe**. Al compartir la web en WhatsApp, X, Facebook o LinkedIn no se muestra ninguna imagen previa.
-
-Para arreglarlo: abrir `archive/og-image-generator.html` en el navegador → capturar el canvas como PNG → guardar como `img/og-image.png`.
+`renderFavSection()` en JS busca `#favoritos-section` que no existe en HTML. No lanza error visible pero la feature no funciona. JS preparado, HTML no tiene el nodo — desactivado intencionalmente.
 
 ---
 
-*Última actualización: 2026-06-08 — limpieza de archivos, carpeta archive/ creada*
+*Última actualización: 2026-06-08 — web publicada en Vercel, Supabase conectado para propuestas*
