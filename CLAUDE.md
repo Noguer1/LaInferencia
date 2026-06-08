@@ -25,7 +25,7 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.club
 - **Supabase:** dbyoxssdbboxnbecgpbf.supabase.co — tablas `propuestas` y `votos` activas
 - **Dominio:** `lainferencia.club` activo en Vercel y Spaceship. SSL automático.
 - **Email:** `contacto@lainferencia.club` reenvía a `noguermiguel@gmail.com` (Spaceship Email Forwarding). Solo recepción — enviar desde ese email requiere Google Workspace (de pago).
-- **Analytics:** Bloque GA4 comentado en `index.html` — activar cuando se quiera.
+- **Analytics:** Umami activo — sin cookies, sin banner, GDPR compliant. Dashboard en umami.is. Script en `index.html` con ID `79211994-3fb4-4d6a-84d4-8860aeadcd92`. El bloque GA4 sigue comentado (no usar).
 - **OG image:** `img/OG.png` existe. Si se regenera, usar `archive/og-image-generator.html`.
 - **Glosario:** Modal funcional. Array `GLOSARIO` en `main.js`. Completamente funcional.
 - **Propuestas:** Conectadas a Supabase. Feed compartido. Votos anónimos por dispositivo (`li_voter_uuid` en localStorage). Moderación desde Supabase Table Editor.
@@ -57,8 +57,7 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.club
 
 ## Próximas prioridades
 
-1. Activar Google Analytics 4 — desbloquear bloque comentado en `index.html` y sustituir `G-XXXXXXXXXX`
-2. LinkedIn — automatizar posts en página de empresa y mensajes personalizados a contactos
+1. LinkedIn — automatizar posts en página de empresa y mensajes personalizados a contactos
 
 ---
 
