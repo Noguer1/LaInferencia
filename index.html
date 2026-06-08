@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Inferencia — Divulgación de Psicología</title>
+  <meta name="description" content="La psicología más allá del aula y la consulta. Convertimos investigación en conocimiento útil, claro y accesible." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="La Inferencia" />
+  <meta property="og:title"       content="La Inferencia — Divulgación de Psicología" />
+  <meta property="og:description" content="La psicología más allá del aula y la consulta. Convertimos investigación en conocimiento útil, claro y accesible." />
+  <!--
+    OG IMAGE: Abre og-image-generator.html en el navegador, sigue las instrucciones
+    para crear img/OG.png, luego cambia las dos líneas marcadas con (ACTUALIZAR).
+    Las redes sociales (WhatsApp, Twitter, LinkedIn) no muestran archivos .svg.
+  -->
+  <meta property="og:image"       content="img/OG.png" />  <!-- (ACTUALIZAR) usa URL absoluta cuando tengas dominio: https://TU-DOMINIO.com/img/OG.png -->
+  <meta property="og:image:type"  content="image/png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"      content="es_ES" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="La Inferencia — Divulgación de Psicología" />
+  <meta name="twitter:description" content="La psicología más allá del aula y la consulta. Convertimos investigación en conocimiento útil, claro y accesible." />
+  <meta name="twitter:image"       content="img/OG.png" />  <!-- (ACTUALIZAR) igual que og:image -->
+  <!-- canonical: sustituye TU-DOMINIO.com cuando tengas dominio -->
+  <link rel="canonical" href="https://TU-DOMINIO.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=35" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <meta name="theme-color" content="#030C1A" />
+  <!--
+    ANALYTICS — Google Analytics 4
+    1. Crea una propiedad en analytics.google.com
+    2. Sustituye G-XXXXXXXXXX por tu Measurement ID
+    3. Descomenta los dos bloques de script de abajo
+  -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
+  <script>(function(){var t=localStorage.getItem('theme');if(t&&t!=='light'){document.documentElement.setAttribute('data-theme',t);if(['dark','naranja','tormenta','cosmos','carmesi'].indexOf(t)>-1)document.documentElement.classList.add('dark-base');}})();</script>
+  <!-- Datos estructurados para Google (sustituye TU-DOMINIO.com cuando lo tengas) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "La Inferencia",
+        "description": "Divulgación de psicología basada en investigación real. Convertimos estudios académicos en conocimiento útil, claro y accesible.",
+        "url": "https://TU-DOMINIO.com",
+        "logo": "https://TU-DOMINIO.com/img/logo2.png",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "name": "La Inferencia",
+        "url": "https://TU-DOMINIO.com",
+        "description": "La psicología más allá del aula y la consulta.",
+        "inLanguage": "es",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://TU-DOMINIO.com/?buscar={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#dashboard-main">Saltar al contenido principal</a>
+
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+  <!-- Gradiente de referencia para iconos — usa variables del tema activo -->
+  <svg style="width:0;height:0;position:absolute;overflow:hidden" aria-hidden="true">
+    <defs>
+      <linearGradient id="clock-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="var(--blue-accent)"/>
+        <stop offset="100%" stop-color="var(--blue)"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Barra de progreso de lectura (fija, bajo navbar) -->
+  <div class="reading-progress-bar" id="reading-progress-bar" aria-hidden="true">
+    <div class="reading-progress-fill" id="reading-progress-fill"></div>
+  </div>
+
+  <div id="app">
+
+    <!-- ── NAVBAR ── -->
+    <header class="navbar">
+      <div class="navbar-inner">
+        <div class="navbar-brand">
+          <img src="img/logo2.png" alt="La Inferencia" class="logo" />
+          <span class="navbar-brand-name">La Inferencia</span>
+        </div>
+        <nav class="navbar-nav" aria-label="Menú principal">
+          <a href="#" class="nav-link" data-panel="quienes">¿Quiénes somos?</a>
+          <a href="#" class="nav-link" data-panel="participar">Colabora con nosotros</a>
+          <a href="#" class="nav-link" data-panel="contacto">Contacto</a>
+          <button class="nav-link nav-link-btn" id="nav-glosario-btn">Glosario</button>
+        </nav>
+        <div class="navbar-right">
+          <button class="fav-nav-btn" id="fav-nav-btn" aria-label="Mis favoritos" title="Mis favoritos">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="fav-nav-badge" id="fav-nav-badge" hidden>0</span>
+          </button>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-expanded="false" title="Cambiar tema">
+            <span id="theme-icon" class="theme-icon" aria-hidden="true"></span>
+            <svg class="theme-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nivel-widget" id="nivel-widget" title="Tu nivel en La Inferencia">
+            <img class="nivel-badge-img" id="nivel-badge-img" src="img/Nivel00.png" alt="Estado Latente" loading="lazy" />
+            <div class="nivel-info">
+              <span class="nivel-nombre" id="nivel-nombre">Estado Latente</span>
+              <div class="nivel-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="nivel-bar-track">
+                <div class="nivel-bar-fill" id="nivel-bar-fill"></div>
+              </div>
+            </div>
+          </div>
+          <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <line x1="0" y1="1" x2="18" y2="1"/><line x1="0" y1="7" x2="18" y2="7"/><line x1="0" y1="13" x2="18" y2="13"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── MOBILE SECTION HEADER ── -->
+    <div id="mobile-section-header" class="mobile-section-header">
+      <div class="msh-brand">
+        <img src="img/logo2.png" alt="" class="msh-logo" aria-hidden="true" />
+        <span class="msh-brand-name">La Inferencia</span>
+      </div>
+      <span class="msh-section-name" id="msh-section-name">Inicio</span>
+    </div>
+
+    <!-- ── CONTENEDOR DE PÁGINAS MÓVILES (envuelve todo el contenido animable) ── -->
+    <div id="mob-slide-wrap">
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="hero-content">
+
+        <img src="img/logo2.png" alt="" class="hero-logo" aria-hidden="true" />
+        <!-- SVG brain kept for canvas reference only — hidden -->
+        <div style="display:none" aria-hidden="true">
+          <svg viewBox="0 0 220 182" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="hbg-core" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#2563EB"/>
+              </radialGradient>
+              <radialGradient id="hbg-outer" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#7DD3FC"/><stop offset="100%" stop-color="#3B82F6"/>
+              </radialGradient>
+            </defs>
+            <!-- Conexiones perimetrales -->
+            <g fill="none" stroke="#2563EB" stroke-linecap="round">
+              <line class="hbl" x1="110" y1="16" x2="143" y2="23" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="143" y1="23" x2="167" y2="44" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="167" y1="44" x2="175" y2="73" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="175" y1="73" x2="167" y2="101" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="167" y1="101" x2="150" y2="125" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="150" y1="125" x2="130" y2="143" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="130" y1="143" x2="110" y2="151" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="110" y1="151" x2="90"  y2="143" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="90"  y1="143" x2="70"  y2="125" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="70"  y1="125" x2="53"  y2="101" stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="53"  y1="101" x2="45"  y2="73"  stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="45"  y1="73"  x2="53"  y2="44"  stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="53"  y1="44"  x2="77"  y2="23"  stroke-width="0.9" stroke-opacity="0.32"/>
+              <line class="hbl" x1="77"  y1="23"  x2="110" y2="16"  stroke-width="0.9" stroke-opacity="0.32"/>
+              <!-- Conexiones externas → internas -->
+              <line class="hbl" x1="110" y1="16"  x2="93"  y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="110" y1="16"  x2="127" y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="143" y1="23"  x2="127" y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="167" y1="44"  x2="127" y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="175" y1="73"  x2="141" y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="167" y1="101" x2="141" y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="167" y1="101" x2="127" y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="150" y1="125" x2="127" y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="130" y1="143" x2="127" y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="110" y1="151" x2="93"  y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="110" y1="151" x2="127" y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="90"  y1="143" x2="93"  y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="70"  y1="125" x2="79"  y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="53"  y1="101" x2="79"  y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="45"  y1="73"  x2="79"  y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="53"  y1="44"  x2="93"  y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <line class="hbl" x1="77"  y1="23"  x2="93"  y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
+              <!-- Red interna -->
+              <line class="hbl" x1="93"  y1="48"  x2="110" y2="71"  stroke-width="1.0" stroke-opacity="0.42"/>
+              <line class="hbl" x1="127" y1="48"  x2="110" y2="71"  stroke-width="1.0" stroke-opacity="0.42"/>
+              <line class="hbl" x1="79"  y1="84"  x2="110" y2="71"  stroke-width="1.0" stroke-opacity="0.42"/>
+              <line class="hbl" x1="141" y1="84"  x2="110" y2="71"  stroke-width="1.0" stroke-opacity="0.42"/>
+              <line class="hbl" x1="110" y1="71"  x2="93"  y2="113" stroke-width="1.0" stroke-opacity="0.42"/>
+              <line class="hbl" x1="110" y1="71"  x2="127" y2="113" stroke-width="1.0" stroke-opacity="0.42"/>
+              <line class="hbl" x1="93"  y1="48"  x2="127" y2="48"  stroke-width="0.8" stroke-opacity="0.30"/>
+              <line class="hbl" x1="79"  y1="84"  x2="93"  y2="113" stroke-width="0.8" stroke-opacity="0.30"/>
+              <line class="hbl" x1="141" y1="84"  x2="127" y2="113" stroke-width="0.8" stroke-opacity="0.30"/>
+              <line class="hbl" x1="93"  y1="48"  x2="79"  y2="84"  stroke-width="0.8" stroke-opacity="0.30"/>
+              <line class="hbl" x1="127" y1="48"  x2="141" y2="84"  stroke-width="0.8" stroke-opacity="0.30"/>
+              <line class="hbl" x1="93"  y1="113" x2="127" y2="113" stroke-width="0.8" stroke-opacity="0.30"/>
+            </g>
+            <!-- Nodos externos -->
+            <circle class="hb-n hbn-o d0"  cx="110" cy="16"  r="2.5" fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d1"  cx="143" cy="23"  r="2"   fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d2"  cx="167" cy="44"  r="2"   fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d3"  cx="175" cy="73"  r="2.5" fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d4"  cx="167" cy="101" r="2"   fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d5"  cx="150" cy="125" r="2"   fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d6"  cx="130" cy="143" r="2"   fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d7"  cx="110" cy="151" r="2.5" fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d8"  cx="90"  cy="143" r="2"   fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d9"  cx="70"  cy="125" r="2"   fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d10" cx="53"  cy="101" r="2.5" fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d11" cx="45"  cy="73"  r="2"   fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d12" cx="53"  cy="44"  r="2"   fill="url(#hbg-outer)"/>
+            <circle class="hb-n hbn-o d13" cx="77"  cy="23"  r="2"   fill="url(#hbg-outer)"/>
+            <!-- Nodos internos -->
+            <circle class="hb-n hbn-i d14" cx="93"  cy="48"  r="3.2" fill="url(#hbg-core)"/>
+            <circle class="hb-n hbn-i d15" cx="127" cy="48"  r="3.2" fill="url(#hbg-core)"/>
+            <circle class="hb-n hbn-i d16" cx="79"  cy="84"  r="3.2" fill="url(#hbg-core)"/>
+            <circle class="hb-n hbn-c"     cx="110" cy="71"  r="5"   fill="url(#hbg-core)"/>
+            <circle class="hb-n hbn-i d17" cx="141" cy="84"  r="3.2" fill="url(#hbg-core)"/>
+            <circle class="hb-n hbn-i d18" cx="93"  cy="113" r="3.2" fill="url(#hbg-core)"/>
+            <circle class="hb-n hbn-i d19" cx="127" cy="113" r="3.2" fill="url(#hbg-core)"/>
+            <!-- Anillos de pulso sináptico -->
+            <circle class="hb-pulse hbp0" cx="110" cy="71"  r="5"   fill="none" stroke="#00E5FF" stroke-width="1.5"/>
+            <circle class="hb-pulse hbp1" cx="93"  cy="48"  r="3.2" fill="none" stroke="#3B82F6" stroke-width="1"/>
+            <circle class="hb-pulse hbp2" cx="141" cy="84"  r="3.2" fill="none" stroke="#00E5FF" stroke-width="1"/>
+            <circle class="hb-pulse hbp3" cx="127" cy="113" r="3.2" fill="none" stroke="#3B82F6" stroke-width="1"/>
+          </svg>
+        </div>
+
+        <h1>La Inferencia</h1>
+
+        <p>La psicología más allá del aula y la consulta. Convertimos investigación en conocimiento útil, claro y accesible.</p>
+
+        <!-- Acceso rápido — solo visible en móvil -->
+        <div class="hero-quick-access">
+          <button class="hqa-btn hqa-exp" id="hqa-exp-btn">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" class="hqa-icon"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            Test cognitivo
+          </button>
+          <button class="hqa-btn hqa-mitos" id="hqa-mitos-btn">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" class="hqa-icon"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Lista de Efectos
+          </button>
+        </div>
+      </div>
+
+      <!-- Burbuja flotante — posicionada en el espacio a la derecha del bloque central -->
+      <a href="#botiquin" class="hero-bubble" id="hero-bubble" aria-label="Tu problema, tu libro">
+        <span class="hero-bubble-disk">
+          <svg class="hero-bubble-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          <span class="hero-bubble-label">Tu problema,<br>tu libro</span>
+        </span>
+      </a>
+    </section>
+
+    <!-- ── DASHBOARD LAYOUT ── -->
+    <div class="dashboard-layout">
+
+      <!-- SIDEBAR IZQUIERDO: Test cognitivo + Radar de Mitos -->
+      <aside class="sidebar-widget sidebar-left">
+        <button class="sidebar-close-btn" aria-label="Cerrar panel">✕</button>
+
+        <!-- Concepto de la Semana -->
+        <div class="concepto-semana-widget" id="concepto-widget-block">
+          <div class="concepto-eyebrow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Concepto de la Semana
+          </div>
+          <p class="concepto-termino" id="concepto-termino">—</p>
+          <p class="concepto-origen" id="concepto-origen">—</p>
+          <p class="concepto-def" id="concepto-def">—</p>
+          <button class="concepto-abrir-btn" id="concepto-abrir-btn" aria-haspopup="dialog">
+            Explorar concepto
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <!-- Radar de Mitos -->
+        <div class="mitos-section">
+          <div class="mitos-widget-header">
+            <div class="mitos-eyebrow-row">
+              <span class="mitos-eyebrow">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+                Radar de Mitos
+              </span>
+              <span class="mitos-nav-row">
+                <button class="mitos-nav-btn" id="mitos-prev" aria-label="Mito anterior"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <span id="mitos-counter" class="mitos-counter">1 / 20</span>
+                <button class="mitos-nav-btn" id="mitos-next" aria-label="Mito siguiente"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+              </span>
+            </div>
+            <p class="mitos-headline">¿Verdadero o Falso?</p>
+            <p class="mitos-sub">Pon a prueba lo que crees saber sobre psicología.</p>
+          </div>
+          <div id="mitos-cards">
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-01">
+              <p class="mito-statement">«Solo usamos el 10% de nuestro cerebro»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Las técnicas de neuroimagen (fMRI, PET) muestran actividad en prácticamente todas las regiones cerebrales. El cerebro consume ~20% de la energía corporal incluso en reposo. Ningún estudio respalda este mito.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-01" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="verdadero" data-mito="mito-02">
+              <p class="mito-statement">«Perder 100 € nos duele más de lo que nos alegra ganarlos»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Verdadero. Kahneman y Tversky demostraron que el dolor de una pérdida es entre 1,5 y 2,5 veces mayor que la satisfacción de una ganancia equivalente. Lo llamaron aversión a las pérdidas y es uno de los hallazgos más replicados de la psicología conductual.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-02" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-03">
+              <p class="mito-statement">«Los estilos de aprendizaje visual, auditivo y kinestésico tienen respaldo científico»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. Múltiples metaanálisis (Pashler et al., 2008; Rogowsky et al., 2020) no hallaron evidencia de que adaptar la instrucción al «estilo» preferido mejore el rendimiento. La teoría VAK es un neuromito con refutación empírica sólida.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-03" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="verdadero" data-mito="mito-04">
+              <p class="mito-statement">«Dormir menos de 7 horas deteriora el rendimiento cognitivo de forma objetivamente medible»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Verdadero. Walker (2017) y numerosos estudios documentan deterioro significativo en atención sostenida, consolidación de memoria y toma de decisiones con menos de 7 horas. El problema: quienes duermen poco se adaptan subjetivamente y dejan de notar el déficit, aunque las pruebas objetivas lo detectan con claridad.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-04" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-05">
+              <p class="mito-statement">«Escuchar música de Mozart aumenta la inteligencia (el "Efecto Mozart")»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. El estudio original (Rausher et al., 1993) encontró una mejora de 15 minutos en tareas espaciales en adultos universitarios, nunca en bebés. El metaanálisis de Chabris (1999) descartó el efecto generalizado. La industria "Baby Einstein" se construyó sobre una distorsión mediática de ese hallazgo puntual.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-05" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <!-- Mitos 6–20 -->
+            <div id="mitos-extra">
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-06">
+              <p class="mito-statement">«"Soltar vapor" —gritar o golpear un cojín— reduce la agresividad»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. Bushman (2002) demostró que practicar conductas agresivas activa y refuerza los circuitos del enfado en lugar de aliviarlos. El grupo que "descargó" golpeando un saco mostró mayor agresividad posterior que el grupo que no hizo nada.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-06" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-07">
+              <p class="mito-statement">«Los recuerdos son fijos: una vez formados, no cambian»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. Loftus y Palmer (1974) demostraron que cambiar una sola palabra en una pregunta alteraba los recuerdos de testigos oculares. Loftus plantó recuerdos completamente falsos —perderse de niño en un centro comercial— en adultos sanos. Cada vez que recuerdas algo, lo reconstruyes.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-07" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-08">
+              <p class="mito-statement">«Las personas más inteligentes son menos susceptibles a los sesgos cognitivos»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. West, Meserve &amp; Stanovich (2012) encontraron que mayor CI no reduce los sesgos estándar. De hecho, personas con mayor capacidad cognitiva muestran más sesgo de punto ciego: creen con más convicción que son ellas las que no tienen sesgos, mientras los demás sí.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-08" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-09">
+              <p class="mito-statement">«El estrés siempre es perjudicial para la salud»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. La curva de Yerkes-Dodson (1908) documenta que el rendimiento alcanza su pico con activación moderada. McGonigal (2013) mostró en 30.000 adultos que el estrés solo aumentaba la mortalidad en quienes creían que era perjudicial. Quienes lo percibían como energizante tenían el riesgo más bajo de toda la muestra.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-09" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-10">
+              <p class="mito-statement">«Los hombres y las mujeres tienen cerebros radicalmente diferentes»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. Joel et al. (2015) analizaron 1.400 cerebros con neuroimagen: solo entre el 0% y el 8% mostraba el patrón consistentemente masculino o femenino en todas las medidas. La mayoría presenta un «mosaico» de características que se solapan enormemente entre sexos.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-10" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-11">
+              <p class="mito-statement">«La multitarea es una habilidad que algunos dominan bien»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso en el 97,5% de los casos. Strayer &amp; Watson (2012) encontraron que solo el 2,5% de la población son «supertaskers» sin coste cognitivo real. El hallazgo más paradójico: quienes se consideran buenos en multitarea son sistemáticamente los peores en pruebas objetivas.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-11" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-12">
+              <p class="mito-statement">«Las personas que mienten evitan el contacto visual»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. DePaulo et al. (2003) revisaron 116 estudios: el contacto visual no predice el engaño. Bond &amp; DePaulo (2006) calcularon que la tasa media de detección de mentiras es del 54%, apenas por encima del azar. Los mentirosos a menudo mantienen más contacto visual para compensar.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-12" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-13">
+              <p class="mito-statement">«Los test MBTI (Myers-Briggs) predicen con fiabilidad el éxito profesional»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. La fiabilidad test-retest del MBTI es débil: el 50% de personas obtiene un tipo diferente al repetirlo 5 semanas después. Pittenger (1993) y múltiples revisiones confirman que su validez predictiva del rendimiento laboral es prácticamente nula. El Big Five sí muestra validez incremental real.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-13" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-14">
+              <p class="mito-statement">«El azúcar causa hiperactividad en los niños»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. Wolraich et al. (1995) en JAMA revisaron 23 ensayos controlados aleatorios: el azúcar no afecta el comportamiento ni la cognición. Hoover &amp; Milich (1994) demostraron que el efecto es completamente real… pero en los padres: quienes creían que su hijo había tomado azúcar (aunque tomó placebo) lo calificaban como más hiperactivo.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-14" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-15">
+              <p class="mito-statement">«Los sueños revelan deseos inconscientes ocultos»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">No tiene respaldo empírico. Hobson &amp; McCarley (1977) propusieron que los sueños son el resultado de la activación aleatoria del tronco encefálico y la interpretación que el córtex hace de esas señales. La neurociencia actual los vincula a consolidación de memoria y regulación emocional, no a mensajes simbólicos del inconsciente.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-15" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-16">
+              <p class="mito-statement">«La regla de las 10.000 horas garantiza la maestría en cualquier disciplina»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso en su versión popular. Ericsson señaló que Gladwell simplificó su investigación: lo que importa es la práctica deliberada (diseñada para corregir debilidades con feedback). Macnamara et al. (2014) encontraron que la práctica explica solo el 18-26% de la varianza en el rendimiento; factores genéticos y la calidad del entrenamiento explican el resto.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-16" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-17">
+              <p class="mito-statement">«Los introvertidos son simplemente tímidos»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. Cheek &amp; Buss (1981) establecieron que introversión y timidez son constructos distintos. La introversión es preferencia por baja estimulación social; la timidez es miedo a la evaluación negativa. Un introvertido puede hablar ante miles de personas sin ansiedad; un extrovertido puede ser profundamente tímido.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-17" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-18">
+              <p class="mito-statement">«Las personas funcionan principalmente con el hemisferio izquierdo o el derecho del cerebro»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. Nielsen et al. (2013) analizaron la conectividad de 1.000 cerebros con fMRI y no encontraron evidencia de dominancia hemisférica como rasgo individual. Prácticamente todas las funciones cognitivas complejas implican ambos hemisferios. La lateralización existe a nivel de proceso específico, no de personalidad.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-18" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-19">
+              <p class="mito-statement">«Los humanos detectamos las mentiras mejor que el azar»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. Bond &amp; DePaulo (2006) analizaron 206 estudios con 24.000 participantes: la tasa media de detección es del 54%, casi idéntica al azar. Policías, jueces y agentes de inteligencia no mejoran significativamente ese resultado, aunque confían mucho más en su capacidad.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-19" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            <div class="mito-tf-card" data-answer="falso" data-mito="mito-20">
+              <p class="mito-statement">«Releer y subrayar son técnicas de estudio tan efectivas como el repaso activo»</p>
+              <div class="mito-tf-btns">
+                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
+                <button class="tf-btn tf-false" data-val="falso">Falso</button>
+              </div>
+              <div class="mito-reveal">
+                <span class="mito-reveal-badge"></span>
+                <p class="mito-evidence">Falso. Roediger &amp; Karpicke (2006) demostraron que intentar recordar sin mirar el material es entre 1,5 y 3 veces más efectivo para la retención a largo plazo. Dunlosky et al. (2013) revisaron 10 técnicas: solo la práctica de recuperación y el espaciado obtuvieron rating de alta utilidad. Releer produce una ilusión de fluidez que confundimos con aprendizaje real.</p>
+              </div>
+              <button class="mito-detalle-btn" data-mito="mito-20" aria-label="Ver explicación completa">Ver explicación completa ></button>
+            </div>
+
+            </div><!-- /#mitos-extra -->
+
+          </div>
+        </div>
+
+        <!-- Test cognitivo colapsable -->
+        <button class="exp-sidebar-btn" id="exp-toggle-btn" aria-expanded="false" aria-controls="exp-section">
+          <span class="exp-sidebar-btn-left">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>
+            ¿Cuánto te manipula tu cerebro?
+          </span>
+          <svg class="exp-toggle-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="exp-section" id="exp-section">
+          <div class="exp-card" id="exp-card"></div>
+        </div>
+      </aside>
+
+      <!-- CENTRO: Pestañas y contenido principal -->
+      <div class="dashboard-center" id="dashboard-main">
+
+        <!-- ── BUSCADOR ── -->
+        <div class="search-section">
+          <div class="search-inner">
+            <div class="search-bar">
+              <span class="search-bar-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </span>
+              <label for="search-input" class="visually-hidden">Buscar artículos, conceptos y autores</label>
+              <input type="text" id="search-input" placeholder="Buscar artículos, conceptos, autores..." autocomplete="off" />
+            </div>
+            <!-- ── PESTAÑAS ── -->
+            <div class="tab-bar" role="tablist" aria-label="Secciones de contenido">
+              <span class="tab-pill" aria-hidden="true"></span>
+              <button class="tab-btn active" role="tab" aria-selected="true" data-tab="biblioteca" id="tab-biblioteca">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+                Por Intereses
+              </button>
+              <button class="tab-btn" role="tab" aria-selected="false" data-tab="repositorio" id="tab-repositorio">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                Fuera de Bata
+              </button>
+              <button class="tab-btn" role="tab" aria-selected="false" data-tab="semana" id="tab-semana">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                El Artículo de la Semana
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panels">
+
+          <!-- PANEL 1: POR INTERESES (defecto) -->
+          <div class="tab-panel active" id="panel-biblioteca" role="tabpanel" aria-labelledby="tab-biblioteca">
+        <div class="main-content">
+          <div class="seccion-header">
+            <h2>Psicología aplicada a tus intereses</h2>
+            <div class="seccion-linea"></div>
+          </div>
+          <div class="cat-selector-header">
+            <span class="cat-selector-label">Elige tu temática</span>
+            <button class="sorprendeme-btn" id="sorprendeme-btn" title="Artículo aleatorio de cualquier categoría">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              Sorpréndeme
+            </button>
+          </div>
+          <div class="cat-selector" role="group" aria-label="Seleccionar temática">
+
+            <button class="cat-btn" data-cat="economia">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+              </svg>
+              <span>Economía</span>
+            </button>
+
+            <button class="cat-btn" data-cat="moda">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/>
+              </svg>
+              <span>Moda</span>
+            </button>
+
+            <button class="cat-btn" data-cat="derecho">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                <line x1="12" y1="3" x2="12" y2="21"/><path d="M7 21h10"/>
+                <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+              </svg>
+              <span>Derecho</span>
+            </button>
+
+            <button class="cat-btn" data-cat="deporte">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 2h4"/><circle cx="12" cy="14" r="8"/><path d="M12 10v4l2.5 2.5"/>
+              </svg>
+              <span>Deporte</span>
+            </button>
+
+            <button class="cat-btn" data-cat="arte">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/>
+              </svg>
+              <span>Arte</span>
+            </button>
+
+            <button class="cat-btn" data-cat="tecnologia">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+              <span>Tecnología</span>
+            </button>
+
+            <button class="cat-btn" data-cat="relaciones">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+              <span>Relaciones</span>
+            </button>
+
+            <button class="cat-btn" data-cat="saludMental">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+              </svg>
+              <span>Salud Mental</span>
+            </button>
+
+            <button class="cat-btn" data-cat="educacion">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              <span>Educación</span>
+            </button>
+
+            <button class="cat-btn" data-cat="trabajo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+              </svg>
+              <span>Trabajo</span>
+            </button>
+
+            <button class="cat-btn" data-cat="politica">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/>
+              </svg>
+              <span>Política</span>
+            </button>
+
+            <button class="cat-btn" data-cat="alimentacion">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 4 L3 12 L18 20"/>
+                <rect x="18" y="4" width="4" height="16" rx="1"/>
+              </svg>
+              <span>Alimentación</span>
+            </button>
+
+          </div>
+          <div id="biblioteca-container"></div>
+        </div>
+      </div>
+
+          <!-- PANEL 2: FUERA DE BATA -->
+          <div class="tab-panel" id="panel-repositorio" role="tabpanel" aria-labelledby="tab-repositorio">
+            <main class="main-content">
+          <div class="fuera-bata-intro">
+            <p class="fuera-bata-titulo">Fuera de Bata</p>
+            <p class="fuera-bata-desc">Fuera de Bata es el espacio de La Inferencia dedicado a la investigación y divulgación desarrollado por jóvenes psicólogos. Adaptamos nuestros propios trabajos académicos para que cualquier persona pueda leerlos, comprenderlos y aprovechar sus conclusiones. Porque el conocimiento científico no debería quedarse entre las paredes de la universidad.</p>
+          </div>
+          <div class="seccion-header">
+            <h2>Documentos</h2>
+            <div class="seccion-linea"></div>
+          </div>
+
+          <div class="docs-layout sk-init" id="documentos-list">
+
+            <!-- DESTACADO: Doc 3 -->
+            <div class="doc-card doc-featured" data-category="neuropsicologia" data-text="extraer información persona habla procesamiento cognitivo riqueza léxica verbos cognitivos inteligencia psicología forense comunicación política">
+              <div class="doc-main">
+                <div class="doc-meta"><button class="author-trigger" aria-label="Ver perfil del autor">Miguel Noguer Escudero</button> <span class="sep">—</span> <span class="meta-time"><svg class="clock-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4 min de lectura</span></div>
+                <div class="doc-labels">
+                  <span class="featured-label">✦ Artículo destacado</span>
+                  <span class="doc-badge">Análisis del lenguaje</span>
+                </div>
+                <h3>Cómo extraer información de una persona a través de cómo habla</h3>
+                <p class="doc-desc">Lo que alguien dice importa. Pero cómo lo dice revela mucho más. Este artículo explica qué información puede extraerse del lenguaje que una persona produce: riqueza léxica, verbos cognitivos y estructura del discurso como radiografía de su pensamiento.</p>
+              </div>
+              <div class="doc-aside">
+                <a href="https://doi.org/10.5281/zenodo.20477086" class="btn-descarga" target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="btn-descarga-icon"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  Ir al artículo
+                </a>
+                <button class="cite-btn" data-apa="Noguer Escudero, M. (2026). Cómo extraer información de una persona a través de cómo habla. https://doi.org/10.5281/zenodo.20477086">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copiar Cita APA
+                </button>
+              </div>
+            </div>
+
+            <!-- GRID: Docs 1 y 2 -->
+            <div class="docs-grid-2" id="docs-grid-2">
+
+              <div class="doc-card" data-category="comportamiento" data-text="análisis manipulación lenguaje influencia toma decisiones framing mecanismo procesamiento cognitivo dual">
+                <div class="doc-meta"><button class="author-trigger" aria-label="Ver perfil del autor">Miguel Noguer Escudero</button> <span class="sep">—</span> <span class="meta-time"><svg class="clock-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4 min de lectura</span></div>
+                <span class="doc-badge">Framing cognitivo</span>
+                <h3>Análisis de la manipulación del lenguaje y su influencia en la toma de decisiones</h3>
+                <p class="doc-desc">La forma en que te preguntan algo determina tu respuesta, aunque el contenido sea idéntico. Así funciona el framing, así te afecta cada día, y así lo usan la publicidad, la política y los medios sin que lo notes.</p>
+                <div class="doc-card-actions">
+                  <a href="https://doi.org/10.5281/zenodo.19116809" class="btn-descarga" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="btn-descarga-icon"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    Ir al artículo
+                  </a>
+                  <button class="cite-btn" data-apa="Noguer Escudero, M. (2026). Análisis de la manipulación del lenguaje y su influencia en la toma de decisiones. https://doi.org/10.5281/zenodo.19116809">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    Copiar Cita APA
+                  </button>
+                </div>
+              </div>
+
+              <div class="doc-card" data-category="comportamiento" data-text="lenguaje metafórico manipula razonamiento humano metáforas conceptuales pensamiento crítico psicolingüístico persuasión">
+                <div class="doc-meta"><button class="author-trigger" aria-label="Ver perfil del autor">Miguel Noguer Escudero</button> <span class="sep">—</span> <span class="meta-time"><svg class="clock-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>7 min de lectura</span></div>
+                <span class="doc-badge">Metáfora conceptual</span>
+                <h3>Cómo el lenguaje metafórico manipula el razonamiento humano</h3>
+                <p class="doc-desc">Describir la criminalidad como una «bestia» o como un «virus» cambia lo que la gente quiere hacer al respecto. Las metáforas no adornan el pensamiento: lo dirigen. Y funcionan incluso cuando sabes que las están usando.</p>
+                <div class="doc-card-actions">
+                  <a href="https://doi.org/10.5281/zenodo.19223379" class="btn-descarga" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="btn-descarga-icon"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    Ir al artículo
+                  </a>
+                  <button class="cite-btn" data-apa="Noguer Escudero, M. (2026). Cómo el lenguaje metafórico manipula el razonamiento humano. https://doi.org/10.5281/zenodo.19223379">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    Copiar Cita APA
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <p class="empty-state" id="empty-state">No se encontraron documentos para esta búsqueda.</p>
+        </main>
+
+        <!-- Líneas de investigación (colapso/expande) -->
+        <div class="research-toggle-wrap">
+          <button class="research-toggle-btn" id="research-toggle-btn" aria-expanded="false" aria-controls="research-section">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            Ver investigaciones en curso
+            <svg class="research-toggle-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <section class="research-section" id="research-section">
+          <div class="research-inner">
+            <div class="research-grid">
+              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Enmarcamiento metafórico y percepción social de los trastornos mentales</h3></div>
+              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Lenguaje, estigma y búsqueda de ayuda psicológica</h3></div>
+              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Neuropsicología clínica y cognición social</h3></div>
+              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Comunicación científica y divulgación en salud mental</h3></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- PANEL 3: ARTÍCULO DE LA SEMANA -->
+      <div class="tab-panel" id="panel-semana" role="tabpanel" aria-labelledby="tab-semana">
+        <div class="main-content">
+          <div id="weekly-container">
+            <!-- Renderizado por JS -->
+          </div>
+        </div>
+      </div>
+
+        </div><!-- /.tab-panels -->
+
+      </div><!-- /.dashboard-center -->
+
+      <!-- SIDEBAR DERECHO: Lista de Efectos -->
+      <aside class="sidebar-widget sidebar-right">
+        <button class="sidebar-close-btn" aria-label="Cerrar panel">✕</button>
+
+        <!-- Progress tracker -->
+        <div class="progress-tracker" id="progress-tracker" aria-label="Tu progreso">
+          <div class="pt-header">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Tu progreso
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Artículos leídos</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-articulos-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-articulos-count">0 / —</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Semanales leídos</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-semanales-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-semanales-count">0 / —</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Efectos explorados</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-efectos-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-efectos-count">0 / 18</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Mitos desmentidos</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-mitos-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-mitos-count">0 / 5</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Quizzes completados</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-quizzes-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-quizzes-count">0 / —</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Desafíos aceptados</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-desafios-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-desafios-count">0 / —</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Pruebas cognitivas</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-pruebas-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-pruebas-count">0 / 8</span>
+            </div>
+          </div>
+
+          <div class="pt-streak" id="pt-streak-row">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            <span class="pt-streak-label">Racha</span>
+            <span class="pt-streak-value" id="pt-streak-value">0 días</span>
+          </div>
+        </div>
+
+        <!-- Widget Glosario: acceso directo desde Explorar (solo en móvil) -->
+        <div class="mob-glosario-widget" id="mob-glosario-widget">
+          <div class="mob-glosario-widget-inner">
+            <div class="mob-glosario-widget-text">
+              <span class="mob-glosario-widget-label">Glosario</span>
+              <span class="mob-glosario-widget-desc">40 términos psicológicos con definición y ejemplo</span>
+            </div>
+            <button class="mob-glosario-widget-btn" id="mob-glosario-widget-btn" aria-label="Abrir glosario de psicología">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Consultar
+            </button>
+          </div>
+        </div>
+
+        <!-- Encabezado desktop (visible solo en escritorio, oculto en móvil) -->
+        <div class="widget-header efectos-widget-header-desktop">
+          <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Lista de Efectos</h3>
+          <p>Sesgos y fenómenos que gobiernan tu conducta sin que lo sepas. Haz clic para explorar.</p>
+        </div>
+        <!-- Toggle accordion (visible solo en móvil) -->
+        <button class="accordion-toggle-btn efectos-accordion-btn" id="efectos-toggle-btn" aria-expanded="false" aria-controls="efectos-content-wrap">
+          <span class="accordion-btn-left">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            <span class="accordion-btn-title">Lista de Efectos</span>
+          </span>
+          <span class="accordion-btn-meta">18 sesgos cognitivos</span>
+          <svg class="accordion-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="efectos-content-wrap" id="efectos-content-wrap">
+          <p class="accordion-inner-desc efectos-inner-desc-mobile">Sesgos y fenómenos que gobiernan tu conducta sin que lo sepas. Haz clic para explorar.</p>
+        <div class="efectos-list sk-init" id="efectos-list">
+
+          <div class="efecto-card" data-efecto="dunning-kruger">
+            <strong>Efecto Dunning-Kruger</strong>
+            <span>Los que menos saben creen saber más.</span>
+            <span class="efecto-hook">La incompetencia genera una ceguera que impide reconocer la propia incompetencia.</span>
+          </div>
+
+          <div class="efecto-card" data-efecto="halo">
+            <strong>Efecto Halo</strong>
+            <span>Una cualidad visible contamina tu percepción de todo lo demás.</span>
+            <span class="efecto-hook">Una primera impresión positiva colorea todos los juicios posteriores, incluso sin relación lógica entre ellos.</span>
+          </div>
+
+          <div class="efecto-card" data-efecto="confirmacion">
+            <strong>Sesgo de Confirmación</strong>
+            <span>Tu cerebro filtra la realidad para tener siempre razón.</span>
+            <span class="efecto-hook">Buscas activamente evidencias que validen lo que ya crees e ignoras inconscientemente las que lo refutan.</span>
+          </div>
+
+          <div class="efecto-card" data-efecto="placebo">
+            <strong>Efecto Placebo</strong>
+            <span>Creer que funciona lo hace funcionar de verdad.</span>
+            <span class="efecto-hook">La expectativa de mejorar activa mecanismos fisiológicos reales sin ningún principio activo de por medio.</span>
+          </div>
+
+          <div class="efecto-card" data-efecto="bystander">
+            <strong>Efecto Espectador</strong>
+            <span>Cuantos más testigos, menos probabilidad de que alguien ayude.</span>
+            <span class="efecto-hook">La responsabilidad se diluye en el grupo: todos asumen que será otro quien actúe.</span>
+          </div>
+
+          <div class="efecto-card" data-efecto="retrospectiva">
+            <strong>Sesgo de Retrospectiva</strong>
+            <span>Tras conocer el resultado, siempre "lo sabías".</span>
+            <span class="efecto-hook">Una vez conocido el desenlace, la memoria reescribe el pasado para que siempre lo hubieras predicho.</span>
+          </div>
+
+          <!-- Efectos adicionales (ocultos hasta "Ver más") -->
+          <div id="efectos-extra" hidden>
+            <div class="efecto-card" data-efecto="mera-exposicion">
+              <strong>Efecto de Mera Exposición</strong>
+              <span>Cuanto más ves algo, más te atrae sin razón aparente.</span>
+              <span class="efecto-hook">La mera familiaridad genera preferencia: la repetición aumenta el atractivo sin que haya interacción consciente.</span>
+            </div>
+            <div class="efecto-card" data-efecto="anclaje">
+              <strong>Anclaje Cognitivo</strong>
+              <span>El primer número que oyes decide todos los demás.</span>
+              <span class="efecto-hook">El primer dato recibido fija un punto de referencia que sesga todas las estimaciones posteriores.</span>
+            </div>
+            <div class="efecto-card" data-efecto="barnum">
+              <strong>Efecto Barnum</strong>
+              <span>Crees que una descripción genérica te define a ti en concreto.</span>
+              <span class="efecto-hook">Las afirmaciones vagas y universales nos parecen asombrosamente precisas cuando creemos que nos van dirigidas.</span>
+            </div>
+            <div class="efecto-card" data-efecto="disponibilidad">
+              <strong>Sesgo de Disponibilidad</strong>
+              <span>Lo que recuerdas fácilmente parece más probable que lo que no.</span>
+              <span class="efecto-hook">Juzgamos la frecuencia de un evento por la facilidad con que nos vienen ejemplos a la mente, no por estadísticas.</span>
+            </div>
+            <div class="efecto-card" data-efecto="pigmalion">
+              <strong>Efecto Pigmalión</strong>
+              <span>Las expectativas de los demás sobre ti acaban cumpliéndose.</span>
+              <span class="efecto-hook">Lo que otros esperan de nosotros moldea silenciosamente nuestro propio rendimiento y conducta.</span>
+            </div>
+            <div class="efecto-card" data-efecto="superviviente">
+              <strong>Sesgo del Superviviente</strong>
+              <span>Solo ves los éxitos porque los fracasos no cuentan su historia.</span>
+              <span class="efecto-hook">Construimos conclusiones sobre datos incompletos: los casos que fallaron desaparecieron del mapa.</span>
+            </div>
+            <div class="efecto-card" data-efecto="autoservicio">
+              <strong>Sesgo de Autoservicio</strong>
+              <span>Tus éxitos son tuyos; tus fracasos, culpa de las circunstancias.</span>
+              <span class="efecto-hook">El cerebro protege la autoestima atribuyendo los logros a capacidad propia y los fracasos a factores externos.</span>
+            </div>
+            <div class="efecto-card" data-efecto="primacia">
+              <strong>Efecto de Primacía</strong>
+              <span>Lo primero que aprendes de alguien domina todo lo que viene después.</span>
+              <span class="efecto-hook">La información inicial sobre una persona actúa como filtro que colorea toda la información posterior.</span>
+            </div>
+            <div class="efecto-card" data-efecto="optimismo">
+              <strong>Sesgo de Optimismo</strong>
+              <span>Tu cerebro cree que los malos eventos le ocurren a los demás, no a ti.</span>
+              <span class="efecto-hook">Sobreestimamos nuestra probabilidad de experimentar buenos eventos y subestimamos la de los malos.</span>
+            </div>
+            <div class="efecto-card" data-efecto="bandwagon">
+              <strong>Efecto Bandwagon</strong>
+              <span>Cuanta más gente cree algo, más probable te parece que sea verdad.</span>
+              <span class="efecto-hook">La popularidad de una idea se toma inconscientemente como evidencia de su veracidad.</span>
+            </div>
+            <div class="efecto-card" data-efecto="status-quo">
+              <strong>Sesgo del Statu Quo</strong>
+              <span>Cambiar duele más que seguir igual, aunque seguir igual sea peor.</span>
+              <span class="efecto-hook">Las pérdidas asociadas al cambio se perciben como más graves que las ganancias equivalentes que ofrece.</span>
+            </div>
+            <div class="efecto-card" data-efecto="efecto-espejo">
+              <strong>Efecto Espejo</strong>
+              <span>Imitar inconscientemente al otro genera confianza y empatía inmediata.</span>
+              <span class="efecto-hook">El mimetismo postural y gestual crea rapport y sensación de conexión emocional de forma completamente automática.</span>
+            </div>
+          </div>
+          <button class="efectos-ver-mas" id="efectos-ver-mas-btn" aria-expanded="false">
+            Ver los 12 efectos restantes
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+
+        </div>
+        </div><!-- /.efectos-content-wrap -->
+      </aside>
+
+    </div><!-- /.dashboard-layout -->
+
+    <!-- ── TU PROBLEMA, TU LIBRO ── -->
+    <section class="botiquin-section" id="botiquin">
+      <div class="botiquin-inner">
+        <div class="botiquin-heading">
+          <span class="botiquin-eyebrow">Psicología aplicada · Lecturas</span>
+          <h2>Tu problema, tu libro</h2>
+          <p class="botiquin-sub">Cada situación esconde un patrón psicológico. Haz clic en la tarjeta para descubrir qué dice la evidencia — y qué leer.</p>
+        </div>
+        <div class="bq-search-wrap">
+          <svg class="bq-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="bq-search" class="bq-search-input" placeholder="Describe tu situación: «no duermo bien», «discuto siempre»…" autocomplete="off" aria-label="Buscar por síntoma o situación" />
+          <button class="bq-search-clear" id="bq-search-clear" aria-label="Borrar búsqueda" hidden>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="bq-tabs" role="tablist" aria-label="Temáticas" id="bq-tabs-wrap">
+          <button class="bq-tab active" data-sector="productividad" role="tab" aria-selected="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Productividad
+          </button>
+          <button class="bq-tab" data-sector="relaciones" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Relaciones
+          </button>
+          <button class="bq-tab" data-sector="finanzas" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Finanzas
+          </button>
+          <button class="bq-tab" data-sector="saludMental" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>
+            Salud Mental
+          </button>
+          <button class="bq-tab" data-sector="trabajo" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            Trabajo
+          </button>
+          <button class="bq-tab" data-sector="autoconocimiento" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+            Autoconocimiento
+          </button>
+          <button class="bq-tab" data-sector="crianza" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Crianza
+          </button>
+          <button class="bq-tab" data-sector="sueno" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            Sueño
+          </button>
+          <button class="bq-tab" data-sector="ansiedad" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Ansiedad
+          </button>
+          <button class="bq-tab" data-sector="autoestima" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Autoestima
+          </button>
+          <button class="bq-tab" data-sector="duelo" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="22" x2="12" y2="11"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><path d="M12 2a4 4 0 0 0-4 4c0 1.5.8 2.8 2 3.5"/><path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5"/></svg>
+            Duelo
+          </button>
+          <button class="bq-tab" data-sector="habitos" role="tab" aria-selected="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            Hábitos
+          </button>
+        </div>
+        <p class="bq-results-label" id="bq-results-label" hidden></p>
+        <div class="bq-grid" id="bq-grid" role="list" aria-live="polite" aria-label="Tarjetas de libros recomendados"></div>
+      </div>
+    </section>
+
+    <!-- ── TIMELINE ── -->
+    <section class="timeline-section" id="timeline">
+      <div class="timeline-inner">
+        <div class="botiquin-heading">
+          <span class="botiquin-eyebrow">Historia · 29 hitos</span>
+          <h2>La Psicología en el Tiempo</h2>
+          <p class="botiquin-sub">Los experimentos que cambiaron cómo nos entendemos a nosotros mismos. Arrastra para explorar — haz clic en cualquier hito para ver por qué importa hoy.</p>
+        </div>
+        <div class="timeline-track" id="timeline-track" role="list" aria-label="Línea de tiempo de la psicología">
+          <!-- Renderizado por JS -->
+        </div>
+        <div class="tl-detail" id="tl-detail" hidden>
+          <button class="tl-detail-close" id="tl-detail-close" aria-label="Cerrar detalle">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+          <div class="tl-detail-inner">
+            <div class="tl-detail-meta">
+              <span class="tl-detail-year" id="tl-d-year"></span>
+              <span class="tl-detail-tag" id="tl-d-tag"></span>
+            </div>
+            <h3 class="tl-detail-titulo" id="tl-d-titulo"></h3>
+            <p class="tl-detail-desc" id="tl-d-desc"></p>
+            <div class="tl-detail-importa">
+              <div class="tl-importa-header">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                Por qué importa hoy
+              </div>
+              <p id="tl-d-importa"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROPÓN UN TEMA ── -->
+    <section class="propuestas-section" id="propuestas">
+      <div class="propuestas-inner">
+        <div class="botiquin-heading">
+          <span class="botiquin-eyebrow">Comunidad · Investigación</span>
+          <h2>Propón un Tema</h2>
+          <p class="botiquin-sub">¿Sobre qué fenómeno psicológico quieres que investiguemos? Cuéntanos. Las propuestas más repetidas orientan nuestros próximos artículos.</p>
+        </div>
+        <div class="propuestas-layout">
+          <div class="propuestas-form-wrap">
+            <form id="propuestas-form" novalidate>
+              <div class="prop-field">
+                <label class="prop-label" for="prop-texto">Tu propuesta</label>
+                <textarea id="prop-texto" class="prop-textarea" placeholder="Ejemplo: cómo la privación de sueño afecta la toma de decisiones morales…" rows="4" maxlength="280" required></textarea>
+                <span class="prop-chars"><span id="prop-char-count">0</span>/280</span>
+              </div>
+              <div class="prop-field prop-field-row">
+                <div class="prop-field-half">
+                  <label class="prop-label" for="prop-nombre">Tu nombre <span class="prop-optional">(opcional)</span></label>
+                  <input type="text" id="prop-nombre" class="prop-input" placeholder="Anónimo" maxlength="50" />
+                </div>
+                <button type="submit" class="prop-btn">Enviar</button>
+              </div>
+            </form>
+          </div>
+          <div class="propuestas-feed-wrap">
+            <div class="propuestas-feed-header">
+              <span class="propuestas-feed-title">Propuestas de la comunidad</span>
+              <span class="prop-counter" id="prop-counter">0 propuestas</span>
+            </div>
+            <div id="propuestas-feed" class="propuestas-feed">
+              <!-- Renderizado por JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer-main">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-title">La Inferencia</span>
+          <span class="footer-desc">Investigación y divulgación en psicología basada en la evidencia</span>
+        </div>
+        <div class="footer-right">
+          <nav class="footer-links">
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Aviso Legal</a>
+          </nav>
+          <p class="footer-copy">© 2026 La Inferencia. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ── SECCIÓN YO (Perfil Premium Móvil) ── -->
+    <section class="mob-yo-section" id="mob-yo-section" aria-label="Mi perfil">
+
+      <!-- Cabecera del perfil -->
+      <div class="mob-yo-header">
+        <div class="mob-yo-avatar-wrap">
+          <div class="mob-yo-avatar-ring" aria-hidden="true"></div>
+          <img class="mob-yo-badge-img" id="mob-yo-badge-img" src="img/Nivel00.png" alt="Insignia de nivel" loading="lazy" />
+        </div>
+        <div class="mob-yo-identity">
+          <h2 class="mob-yo-nombre">Mi Perfil</h2>
+          <span class="mob-yo-rank" id="mob-yo-rank">Estado Latente</span>
+          <span class="mob-yo-tag">La Inferencia · Explorador</span>
+        </div>
+      </div>
+
+      <!-- Panel XP / Nivel -->
+      <div class="mob-yo-xp-panel">
+        <div class="mob-yo-xp-top">
+          <span class="mob-yo-xp-title">Progreso de nivel</span>
+          <span class="mob-yo-xp-chip" id="mob-yo-xp-chip">Nivel 0</span>
+        </div>
+        <div class="mob-yo-xp-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="mob-yo-xp-track">
+          <div class="mob-yo-xp-fill" id="mob-yo-xp-fill"></div>
+          <div class="mob-yo-xp-glow" aria-hidden="true"></div>
+        </div>
+        <p class="mob-yo-xp-legend" id="mob-yo-xp-legend">Inicio del camino</p>
+      </div>
+
+      <!-- Grid de estadísticas gamificadas -->
+      <div class="mob-yo-stats-grid">
+
+        <div class="mob-yo-stat-card">
+          <div class="mob-yo-stat-top">
+            <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span class="mob-yo-stat-label">Artículos leídos</span>
+            <span class="mob-yo-stat-num" id="mob-yo-s-art">0</span>
+          </div>
+          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-art" style="width:0%"></div></div>
+        </div>
+
+        <div class="mob-yo-stat-card">
+          <div class="mob-yo-stat-top">
+            <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            <span class="mob-yo-stat-label">Efectos explorados</span>
+            <span class="mob-yo-stat-num" id="mob-yo-s-efe">0 / 18</span>
+          </div>
+          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-efe" style="width:0%"></div></div>
+        </div>
+
+        <div class="mob-yo-stat-card">
+          <div class="mob-yo-stat-top">
+            <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+            <span class="mob-yo-stat-label">Mitos desmentidos</span>
+            <span class="mob-yo-stat-num" id="mob-yo-s-mit">0 / 20</span>
+          </div>
+          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-mit" style="width:0%"></div></div>
+        </div>
+
+        <div class="mob-yo-stat-card">
+          <div class="mob-yo-stat-top">
+            <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            <span class="mob-yo-stat-label">Racha de días</span>
+            <span class="mob-yo-stat-num" id="mob-yo-s-rac">0</span>
+          </div>
+          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-rac" style="width:0%"></div></div>
+        </div>
+
+        <div class="mob-yo-stat-card">
+          <div class="mob-yo-stat-top">
+            <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>
+            <span class="mob-yo-stat-label">Pruebas cognitivas</span>
+            <span class="mob-yo-stat-num" id="mob-yo-s-pru">0 / 8</span>
+          </div>
+          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-pru" style="width:0%"></div></div>
+        </div>
+
+        <div class="mob-yo-stat-card">
+          <div class="mob-yo-stat-top">
+            <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span class="mob-yo-stat-label">Semanales leídos</span>
+            <span class="mob-yo-stat-num" id="mob-yo-s-sem">0</span>
+          </div>
+          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-sem" style="width:0%"></div></div>
+        </div>
+
+      </div><!-- /.mob-yo-stats-grid -->
+
+      <!-- Favoritos guardados -->
+      <div class="mob-yo-favs">
+        <div class="mob-yo-favs-hdr">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Favoritos</span>
+          <span class="mob-yo-favs-count" id="mob-yo-favs-count">0</span>
+        </div>
+        <div class="mob-yo-favs-grid" id="mob-yo-favs-grid" aria-live="polite">
+          <!-- Renderizado por JS -->
+        </div>
+      </div>
+
+    </section><!-- /#mob-yo-section -->
+
+    </div><!-- /#mob-slide-wrap -->
+
+  </div><!-- /#app -->
+
+  <!-- ── OVERLAY DE TRANSICIÓN ENTRE PÁGINAS MÓVIL ── -->
+  <!-- Fuera de #app para evitar que position:fixed sea afectado por containing-blocks de #app -->
+  <div id="mbn-overlay" aria-hidden="true"></div>
+
+  <!-- ── MOBILE BOTTOM NAV ── -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav" role="navigation" aria-label="Navegación principal">
+      <!-- Arco circular verdadero: centro botón SVG y=55 r=29, offset 8px → R_arc=37, tangentes en cx±33.83 -->
+      <!-- Bezier suave: dos cúbicas simétricas (G1 en entrada/salida, G2 en pico) -->
+      <svg class="mbn-curve" id="mbn-curve-fill" aria-hidden="true" focusable="false" viewBox="0 0 375 40" preserveAspectRatio="none">
+        <path id="mbn-fill-path" d="M0,40 L135.1,40 C165.0,40 156.1,18 187.5,18 C218.9,18 210.0,40 239.9,40 L375,40 Z"/>
+      </svg>
+      <!-- Borde plasma barrido de extremo a extremo -->
+      <svg class="mbn-curve-plasma" id="mbn-curve-plasma" aria-hidden="true" focusable="false" viewBox="0 0 375 40" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="plasma-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="375" y2="0">
+            <stop offset="0%"   stop-color="#1D4ED8" stop-opacity="0.5"/>
+            <stop offset="30%"  stop-color="#38BDF8" stop-opacity="0.85"/>
+            <stop offset="50%"  stop-color="#00E5FF" stop-opacity="1"/>
+            <stop offset="70%"  stop-color="#38BDF8" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0.5"/>
+            <!-- Barrido: punto brillante cruza la barra de izquierda a derecha -->
+            <animate attributeName="x1" values="-375;375;-375" dur="3.5s" repeatCount="indefinite"/>
+            <animate attributeName="x2" values="0;750;0"       dur="3.5s" repeatCount="indefinite"/>
+          </linearGradient>
+        </defs>
+        <path id="mbn-plasma-path" d="M0,40 L135.1,40 C165.0,40 156.1,18 187.5,18 C218.9,18 210.0,40 239.9,40 L375,40" fill="none" stroke="url(#plasma-grad)" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <!-- Indicador magnético deslizante — único elemento que viaja entre pestañas -->
+      <div class="mbn-indicator mbn-indicator--hidden" id="mbn-indicator" aria-hidden="true"></div>
+      <button class="mbn-tab" data-mbn="descubrir" aria-label="Descubrir">
+        <span class="mbn-icon-wrap">
+          <img src="img/descubrir.png" class="mbn-icon" alt="" aria-hidden="true" />
+        </span>
+        <span class="mbn-label">Descubrir</span>
+      </button>
+      <button class="mbn-tab" data-mbn="fuerabata" aria-label="Fuera de Bata">
+        <span class="mbn-icon-wrap">
+          <img src="img/lab.png" class="mbn-icon" alt="" aria-hidden="true" />
+        </span>
+        <span class="mbn-label">Fuera de Bata</span>
+      </button>
+      <button class="mbn-tab mbn-tab--home" data-mbn="casa" aria-label="Inicio">
+        <span class="mbn-home-wrap">
+          <img src="img/casa.png" class="mbn-icon" alt="" aria-hidden="true" />
+        </span>
+        <span class="mbn-label">Inicio</span>
+      </button>
+      <button class="mbn-tab" data-mbn="botiquin" aria-label="Botiquín">
+        <span class="mbn-icon-wrap">
+          <img src="img/botiquin.png" class="mbn-icon" alt="" aria-hidden="true" />
+        </span>
+        <span class="mbn-label">Botiquín</span>
+      </button>
+      <button class="mbn-tab" data-mbn="yo" aria-label="Yo">
+        <span class="mbn-icon-wrap">
+          <img src="img/perfil.png" class="mbn-icon" alt="" aria-hidden="true" />
+        </span>
+        <span class="mbn-label">Yo</span>
+      </button>
+    </nav>
+
+  <!-- ── MODAL AUTOR ── -->
+  <div class="author-modal-overlay" id="author-modal" role="dialog" aria-modal="true" aria-label="Perfil del autor">
+    <div class="author-modal-card">
+      <button class="author-modal-close" id="author-modal-close" aria-label="Cerrar">✕</button>
+      <div class="author-modal-avatar author-modal-avatar--photo">
+        <img src="img/caramiguel.png" alt="Miguel Noguer Escudero" class="author-modal-avatar-img" />
+      </div>
+      <h3>Miguel Noguer Escudero</h3>
+      <div class="role-badges-row">
+        <div class="vip-badge"><div class="vip-badge-shimmer"></div><div class="vip-badge-inner">Fundador de La Inferencia</div></div>
+        <div class="vip-badge"><div class="vip-badge-shimmer"></div><div class="vip-badge-inner">Director de Fuera de Bata</div></div>
+      </div>
+      <p class="author-modal-degree">Graduado en Psicología · Universidad de Sevilla</p>
+      <p class="author-modal-detail">Estudiante del Doble Máster en Psicología General Sanitaria + Neuropsicología · Universidad Loyola Andalucía</p>
+      <div class="author-modal-areas">
+        <span>Psicología Clínica</span>
+        <span>Neuropsicología</span>
+        <span>Procesos del Lenguaje</span>
+      </div>
+      <a href="https://www.linkedin.com/in/miguelnoguer" class="author-modal-linkedin" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        Ver perfil en LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <!-- ── MODAL INFO ── -->
+  <div class="info-modal-overlay" id="info-modal" role="dialog" aria-modal="true" aria-label="Información">
+    <div class="info-modal-card">
+      <button class="info-modal-close" id="info-modal-close" aria-label="Cerrar">✕</button>
+
+      <!-- ── ¿Quiénes somos? ── -->
+      <div id="info-sec-quienes" class="info-section active">
+        <div class="info-eyebrow">Proyecto · Divulgación de psicología</div>
+        <h2>La Inferencia</h2>
+        <p class="info-lead">La psicología tiene mucho que aportar sobre quiénes somos, cómo pensamos y por qué actuamos. Con demasiada frecuencia ese conocimiento no llega a quien podría aprovecharla.</p>
+
+        <div class="info-mission">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <span>Nuestra misión es convertir investigación real en conocimiento útil, claro y sin condescendencia.</span>
+        </div>
+
+        <div class="info-values">
+          <div class="info-value">
+            <span class="info-value-icon">◆</span>
+            <div>
+              <strong>Rigor antes que alcance</strong>
+              <span>Cada artículo está respaldado por investigación publicada en revistas revisadas por pares. Citamos siempre la fuente original.</span>
+            </div>
+          </div>
+          <div class="info-value">
+            <span class="info-value-icon">◆</span>
+            <div>
+              <strong>Claridad sin simplificación</strong>
+              <span>Hacemos la ciencia accesible sin sacrificar su precisión ni su complejidad real.</span>
+            </div>
+          </div>
+          <div class="info-value">
+            <span class="info-value-icon">◆</span>
+            <div>
+              <strong>Independencia editorial</strong>
+              <span>No tenemos afiliaciones comerciales ni financiación de laboratorios o farmacéuticas. El contenido responde solo a la evidencia.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section-divider"></div>
+
+        <div class="info-team-label">Fundador</div>
+        <div class="info-team">
+          <div class="info-member">
+            <div class="info-member-avatar">
+              <img src="img/caramiguel.png" alt="Miguel Noguer Escudero" class="info-member-photo" loading="lazy" />
+            </div>
+            <div class="info-member-info">
+              <strong>Miguel Noguer Escudero</strong>
+              <span>Fundador de La Inferencia · Director de Fuera de Bata</span>
+              <span class="info-member-bio">Graduado en Psicología (Univ. de Sevilla). Máster en Psicología Clínica + Neuropsicología (Loyola). Investigación en psicología del lenguaje y cognición.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-fuera-bata">
+          <div class="info-fb-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Fuera de Bata
+          </div>
+          <p>Dentro de La Inferencia vive Fuera de Bata, donde psicólogos jóvenes transforman sus trabajos académicos originales en contenidos comprensibles para cualquier lector. Porque generar conocimiento importa, pero compartirlo importa más.</p>
+        </div>
+      </div>
+
+      <!-- ── Colabora ── -->
+      <div id="info-sec-participar" class="info-section">
+        <div class="info-eyebrow">Colaboración · Investigación abierta</div>
+        <h2>Publica con nosotros</h2>
+        <p class="info-lead">Si investigas en psicología y quieres que tu trabajo tenga impacto más allá de la academia, este es tu espacio.</p>
+
+        <div class="info-collab-steps">
+          <div class="info-collab-step">
+            <span class="info-step-num">01</span>
+            <div>
+              <strong>Envíanos tu trabajo</strong>
+              <span>Aceptamos TFG, TFM, tesis y artículos de investigación originales en psicología y neurociencias.</span>
+            </div>
+          </div>
+          <div class="info-collab-step">
+            <span class="info-step-num">02</span>
+            <div>
+              <strong>Trabajamos juntos</strong>
+              <span>Adaptamos el contenido contigo, manteniendo el rigor y tu autoría. Tú decides el nivel de divulgación.</span>
+            </div>
+          </div>
+          <div class="info-collab-step">
+            <span class="info-step-num">03</span>
+            <div>
+              <strong>Tu investigación llega a miles</strong>
+              <span>Publicamos en La Inferencia con cita completa APA y enlace al documento original.</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="mailto:contacto@lainferencia.com?subject=Propuesta de artículo" class="info-cta-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Enviar propuesta de artículo
+        </a>
+      </div>
+
+      <!-- ── Contacto ── -->
+      <div id="info-sec-contacto" class="info-section">
+        <div class="info-eyebrow">Contacto directo</div>
+        <h2>Escríbenos</h2>
+        <p class="info-lead">¿Tienes preguntas, sugerencias, correcciones o quieres colaborar? Respondemos siempre.</p>
+        <a href="mailto:contacto@lainferencia.com" class="info-cta-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contacto@lainferencia.com
+        </a>
+        <p class="info-contact-note">También puedes usar el formulario de <strong>Propón un Tema</strong> en la página principal para sugerirnos contenido.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MODAL QUIZ ── -->
+  <div class="quiz-modal-overlay" id="quiz-modal" role="dialog" aria-modal="true" aria-label="Quiz del artículo" hidden>
+    <div class="quiz-modal-card">
+      <button class="quiz-modal-close" id="quiz-modal-close" aria-label="Cerrar quiz">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="quiz-modal-eyebrow">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Comprueba lo que aprendiste
+      </div>
+      <div id="quiz-modal-body">
+        <!-- renderizado por JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MODAL EFECTOS ── -->
+  <div class="efecto-modal-overlay" id="efecto-modal" role="dialog" aria-modal="true" aria-label="Descripción del efecto">
+    <div class="efecto-modal-card">
+      <button class="efecto-share-btn" id="efecto-share-btn" aria-label="Copiar enlace directo" title="Copiar enlace">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="share-tooltip" id="share-tooltip">¡Copiado!</span>
+      </button>
+      <button class="efecto-modal-close" id="efecto-modal-close" aria-label="Cerrar">✕</button>
+      <div id="efecto-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- ── MODAL CONCEPTO DE LA SEMANA ── -->
+  <div class="concepto-modal-overlay" id="concepto-modal" role="dialog" aria-modal="true" aria-label="Concepto de la semana" hidden>
+    <div class="concepto-modal-card">
+      <button class="concepto-modal-close" id="concepto-modal-close" aria-label="Cerrar concepto">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="concepto-modal-eyebrow">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Concepto de la Semana
+      </div>
+      <h2 class="concepto-modal-termino" id="cm-termino"></h2>
+      <p class="concepto-modal-origen" id="cm-origen"></p>
+
+      <div class="concepto-modal-divider"></div>
+
+      <!-- 1. Definición extendida -->
+      <div class="concepto-modal-section">
+        <span class="concepto-modal-lbl">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          Qué es exactamente
+        </span>
+        <p class="concepto-modal-def" id="cm-def"></p>
+      </div>
+
+      <!-- 2. El experimento fundacional -->
+      <div class="concepto-modal-section concepto-modal-section--exp">
+        <span class="concepto-modal-lbl">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 3H5a2 2 0 0 0-2 2v4"/><path d="M15 3h4a2 2 0 0 1 2 2v4"/><path d="M9 21H5a2 2 0 0 1-2-2v-4"/><path d="M15 21h4a2 2 0 0 0 2-2v-4"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+          El experimento fundacional
+        </span>
+        <p class="concepto-modal-exp" id="cm-experimento"></p>
+      </div>
+
+      <!-- 3. Por qué ocurre -->
+      <div class="concepto-modal-section concepto-modal-section--mec">
+        <span class="concepto-modal-lbl">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>
+          Por qué ocurre
+        </span>
+        <p class="concepto-modal-mec" id="cm-mecanismo"></p>
+      </div>
+
+      <!-- 4. Lo reconocerás en -->
+      <div class="concepto-modal-section concepto-modal-section--reco">
+        <span class="concepto-modal-lbl">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Lo reconocerás en
+        </span>
+        <ul class="concepto-modal-reco" id="cm-reconoceras"></ul>
+      </div>
+
+      <!-- 5. Aplicación -->
+      <div class="concepto-modal-section concepto-modal-section--aplicacion">
+        <span class="concepto-modal-lbl concepto-modal-lbl--aplicacion">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          Cómo usarlo hoy
+        </span>
+        <p class="concepto-modal-aplicacion" id="cm-aplicacion"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── LEVEL-UP OVERLAY ── -->
+  <div class="levelup-overlay" id="levelup-overlay" hidden role="dialog" aria-modal="true" aria-label="Has subido de nivel">
+    <canvas class="levelup-canvas" id="levelup-canvas" aria-hidden="true"></canvas>
+    <div class="levelup-card" id="levelup-card">
+      <img class="levelup-badge-anim" id="levelup-badge-anim" src="" alt="" loading="lazy" />
+      <p class="levelup-label">NIVEL ALCANZADO</p>
+      <h2 class="levelup-nombre-card" id="levelup-nombre-card"></h2>
+      <p class="levelup-perfil"    id="levelup-perfil"></p>
+      <p class="levelup-percentil" id="levelup-percentil"></p>
+      <p class="levelup-mensaje"   id="levelup-mensaje"></p>
+      <div class="levelup-tema-wrap" id="levelup-tema-wrap" hidden>
+        <span class="levelup-tema-dot" id="levelup-tema-dot"></span>
+        <span class="levelup-tema-text">Tema <strong id="levelup-tema-nombre"></strong> desbloqueado</span>
+      </div>
+      <button class="levelup-close" id="levelup-close">Continuar</button>
+    </div>
+  </div>
+
+  <!-- ── MENÚ MÓVIL (fuera de #app para evitar contaminación por backdrop-filter del navbar) ── -->
+  <div class="mobile-menu" id="mobile-menu" hidden aria-hidden="true" inert>
+    <div class="mobile-menu-header">
+      <img src="img/logo2.png" alt="La Inferencia" class="mobile-menu-logo" />
+      <span class="mobile-menu-brand">La Inferencia</span>
+    </div>
+    <nav class="mobile-nav" aria-label="Menú móvil">
+
+      <!-- ¿Quiénes somos? -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-toggle" data-mob-panel="quienes" aria-expanded="false" aria-controls="mob-panel-quienes">
+          <span>¿Quiénes somos?</span>
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="mobile-nav-panel" id="mob-panel-quienes" hidden>
+          <div class="mob-panel-inner">
+            <p class="mob-panel-eyebrow">Proyecto · Divulgación de psicología</p>
+            <p class="mob-panel-lead">La psicología tiene mucho que aportar sobre quiénes somos, cómo pensamos y por qué actuamos. Con demasiada frecuencia ese conocimiento no llega a quien podría aprovecharla.</p>
+            <div class="info-mission">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <span>Nuestra misión es convertir investigación real en conocimiento útil, claro y sin condescendencia.</span>
+            </div>
+            <div class="info-values">
+              <div class="info-value">
+                <span class="info-value-icon">◆</span>
+                <div><strong>Rigor antes que alcance</strong><span>Cada artículo está respaldado por investigación publicada en revistas revisadas por pares. Citamos siempre la fuente original.</span></div>
+              </div>
+              <div class="info-value">
+                <span class="info-value-icon">◆</span>
+                <div><strong>Claridad sin simplificación</strong><span>Hacemos la ciencia accesible sin sacrificar su precisión ni su complejidad real.</span></div>
+              </div>
+              <div class="info-value">
+                <span class="info-value-icon">◆</span>
+                <div><strong>Independencia editorial</strong><span>No tenemos afiliaciones comerciales ni financiación de laboratorios o farmacéuticas. El contenido responde solo a la evidencia.</span></div>
+              </div>
+            </div>
+            <div class="info-section-divider"></div>
+            <div class="info-team-label">Fundador</div>
+            <div class="info-team">
+              <div class="info-member">
+                <div class="info-member-avatar">
+                  <img src="img/caramiguel.png" alt="Miguel Noguer Escudero" class="info-member-photo" loading="lazy" />
+                </div>
+                <div class="info-member-info">
+                  <strong>Miguel Noguer Escudero</strong>
+                  <span>Fundador · Director de Fuera de Bata</span>
+                  <span class="info-member-bio">Graduado en Psicología (Univ. de Sevilla). Máster en Psicología Clínica + Neuropsicología (Loyola). Investigación en psicología del lenguaje y cognición.</span>
+                </div>
+              </div>
+            </div>
+            <div class="info-fuera-bata">
+              <div class="info-fb-label">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Fuera de Bata
+              </div>
+              <p>Dentro de La Inferencia vive Fuera de Bata, donde psicólogos jóvenes transforman sus trabajos académicos originales en contenidos comprensibles para cualquier lector.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colabora con nosotros -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-toggle" data-mob-panel="participar" aria-expanded="false" aria-controls="mob-panel-participar">
+          <span>Colabora con nosotros</span>
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="mobile-nav-panel" id="mob-panel-participar" hidden>
+          <div class="mob-panel-inner">
+            <p class="mob-panel-eyebrow">Colaboración · Investigación abierta</p>
+            <p class="mob-panel-lead">Si investigas en psicología y quieres que tu trabajo tenga impacto más allá de la academia, este es tu espacio.</p>
+            <div class="info-collab-steps">
+              <div class="info-collab-step">
+                <span class="info-step-num">01</span>
+                <div><strong>Envíanos tu trabajo</strong><span>Aceptamos TFG, TFM, tesis y artículos de investigación originales en psicología y neurociencias.</span></div>
+              </div>
+              <div class="info-collab-step">
+                <span class="info-step-num">02</span>
+                <div><strong>Trabajamos juntos</strong><span>Adaptamos el contenido contigo, manteniendo el rigor y tu autoría. Tú decides el nivel de divulgación.</span></div>
+              </div>
+              <div class="info-collab-step">
+                <span class="info-step-num">03</span>
+                <div><strong>Tu investigación llega a miles</strong><span>Publicamos en La Inferencia con cita completa APA y enlace al documento original.</span></div>
+              </div>
+            </div>
+            <a href="mailto:contacto@lainferencia.com?subject=Propuesta de artículo" class="info-cta-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Enviar propuesta de artículo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacto -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-toggle" data-mob-panel="contacto" aria-expanded="false" aria-controls="mob-panel-contacto">
+          <span>Contacto</span>
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="mobile-nav-panel" id="mob-panel-contacto" hidden>
+          <div class="mob-panel-inner">
+            <p class="mob-panel-eyebrow">Contacto directo</p>
+            <p class="mob-panel-lead">¿Tienes preguntas, sugerencias, correcciones o quieres colaborar? Respondemos siempre.</p>
+            <a href="mailto:contacto@lainferencia.com" class="info-cta-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              contacto@lainferencia.com
+            </a>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.7rem;line-height:1.5;">También puedes usar el formulario de <strong>Propón un Tema</strong> en la página principal para sugerirnos contenido.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glosario -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link mobile-nav-link--action" id="mob-glosario-btn" aria-label="Abrir glosario de psicología">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Glosario</span>
+          <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+    </nav>
+  </div>
+
+  <!-- ── BOTÓN VOLVER ARRIBA ── -->
+  <button id="btn-volver-arriba" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ── MODAL GLOSARIO ── -->
+  <div class="glosario-overlay" id="glosario-modal" role="dialog" aria-modal="true" aria-label="Glosario de psicología" hidden>
+    <div class="glosario-card">
+      <button class="glosario-close" id="glosario-modal-close" aria-label="Cerrar glosario">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="glosario-header">
+        <div class="glosario-eyebrow">Referencia · Psicología</div>
+        <h2 class="glosario-title">Glosario</h2>
+        <p class="glosario-subtitle">40 términos fundamentales explicados con rigor y ejemplos cotidianos.</p>
+      </div>
+      <div class="glosario-search-wrap">
+        <div class="glosario-search-bar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="glosario-search" placeholder="Buscar término..." autocomplete="off" aria-label="Buscar en el glosario" />
+        </div>
+      </div>
+      <div class="glosario-body">
+        <div id="glosario-list"></div>
+        <div id="glosario-detail" hidden></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ONBOARDING — primera visita ── -->
+  <div id="onboarding-overlay" class="onboarding-overlay" role="dialog" aria-modal="true" aria-label="Bienvenido a La Inferencia" hidden>
+    <div class="onboarding-card">
+      <div class="onboarding-progress">
+        <span class="onboarding-dot active" data-step="0"></span>
+        <span class="onboarding-dot" data-step="1"></span>
+        <span class="onboarding-dot" data-step="2"></span>
+      </div>
+
+      <!-- Paso 0 -->
+      <div class="onboarding-step active" data-step="0">
+        <div class="onboarding-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>
+        </div>
+        <h2 class="onboarding-title">Bienvenido a La Inferencia</h2>
+        <p class="onboarding-text">La psicología más allá del aula. Convertimos investigación real en conocimiento útil, claro y sin condescendencia.</p>
+      </div>
+
+      <!-- Paso 1 -->
+      <div class="onboarding-step" data-step="1">
+        <div class="onboarding-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h2 class="onboarding-title">Explora por intereses</h2>
+        <p class="onboarding-text">Artículos de psicología organizados por lo que te importa: economía, relaciones, trabajo, deporte... Cada uno basado en un estudio real.</p>
+        <div class="onboarding-features">
+          <span><span class="ob-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> Artículos semanales</span>
+          <span><span class="ob-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> Lista de 18 efectos cognitivos</span>
+          <span><span class="ob-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> Investigaciones de Fuera de Bata</span>
+        </div>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="onboarding-step" data-step="2">
+        <div class="onboarding-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h2 class="onboarding-title">Aprende y progresa</h2>
+        <p class="onboarding-text">Cada artículo que lees, cada efecto que exploras y cada pregunta que respondes suma experiencia. Desbloquea nuevos niveles de comprensión.</p>
+      </div>
+
+      <div class="onboarding-actions">
+        <button class="onboarding-skip" id="onboarding-skip">Saltar</button>
+        <button class="onboarding-next" id="onboarding-next">Siguiente <svg class="ob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MODAL DETALLE MITO ── -->
+  <div class="mito-info-overlay" id="mito-info-modal" role="dialog" aria-modal="true" aria-label="Detalle del mito" hidden>
+    <div class="mito-info-card">
+      <button class="mito-info-close" id="mito-info-close" aria-label="Cerrar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mito-info-eyebrow" id="mi-eyebrow"></div>
+      <h2 class="mito-info-statement" id="mi-statement"></h2>
+      <div class="mito-info-veredicto" id="mi-veredicto"></div>
+      <div class="mito-info-body">
+        <div class="mito-info-section">
+          <span class="mito-info-lbl">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            Por qué se cree
+          </span>
+          <p id="mi-porque"></p>
+        </div>
+        <div class="mito-info-section mito-info-section--realidad">
+          <span class="mito-info-lbl mito-info-lbl--realidad">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            La realidad
+          </span>
+          <p id="mi-realidad"></p>
+        </div>
+        <div class="mito-info-section mito-info-section--ciencia">
+          <span class="mito-info-lbl mito-info-lbl--ciencia">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 3H5a2 2 0 0 0-2 2v4"/><path d="M15 3h4a2 2 0 0 1 2 2v4"/><path d="M9 21H5a2 2 0 0 1-2-2v-4"/><path d="M15 21h4a2 2 0 0 0 2-2v-4"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+            Respaldo científico
+          </span>
+          <p id="mi-ciencia"></p>
+          <cite class="mito-info-ref" id="mi-ref"></cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=24"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  INSTRUCCIONES:
+  1. Reemplaza "TU-DOMINIO.com" por tu dominio real en todas las etiquetas <loc>
+  2. Actualiza <lastmod> cada vez que publiques contenido nuevo
+  3. Sube este archivo a la raíz de tu web (junto a index.html)
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://TU-DOMINIO.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-06-03</lastmod>
+  </url>
+</urlset>
