@@ -236,34 +236,32 @@
       overlay.style.display='flex';
       document.body.style.overflow='hidden';
 
-      /* ── Neural canvas 3D galaxy dentro del overlay ── */
+      /* ── Neural canvas con profundidad z (estilo original + 3D sutil) ── */
       (function(){
         var c=document.getElementById('acceso-canvas');
         if(!c)return;
         var ctx=c.getContext('2d');
         var W,H,pts=[],rafId,running=false;
-        var N=160;
+        var N=110, MAX_D=155;
 
-        /* color por profundidad z (0=lejos, 1=cerca)
-           lejos  → azul frío / violeta oscuro
-           cerca  → teal / cyan brillante */
+        /* mismos colores que el canvas principal: teal→azul, modulados por z */
         function col(x,z,a){
           var t=Math.min(1,Math.max(0,x/W));
-          var rF=Math.round(20+(55-20)*t),  gF=Math.round(25+(15-25)*t),  bF=Math.round(90+(130-90)*t);
-          var rN=Math.round(0+(0-0)*t),     gN=Math.round(200+(229-200)*t),bN=Math.round(180+(255-180)*t);
-          var r=Math.round(rF+(rN-rF)*z), g=Math.round(gF+(gN-gF)*z), b=Math.round(bF+(bN-bF)*z);
+          var r=Math.round(16+(37-16)*t), g=Math.round(185+(99-185)*t), b=Math.round(129+(235-129)*t);
+          /* lejos: más apagado y azulado; cerca: más brillante */
+          r=Math.round(r*(0.55+z*0.45)); g=Math.round(g*(0.55+z*0.45)); b=Math.round(b*(0.75+z*0.25));
           return 'rgba('+r+','+g+','+b+','+a+')';
         }
 
         function mkPt(){
-          var z=Math.pow(Math.random(),0.55); /* más nodos lejanos que cercanos */
-          var spd=0.03+z*0.55;
+          var z=Math.pow(Math.random(),0.5); /* distribución sesgada: más nodos lejanos */
           return{
             x:Math.random()*W, y:Math.random()*H,
             z:z,
-            vx:(Math.random()-.5)*spd, vy:(Math.random()-.5)*spd,
-            r:0.35+z*4.8,
-            a:0.04+z*0.88
+            vx:(Math.random()-.5)*(0.12+z*0.22),
+            vy:(Math.random()-.5)*(0.12+z*0.22),
+            r:0.8+z*2.0,          /* lejos: ~0.8px  cerca: ~2.8px */
+            a:0.08+z*0.32         /* lejos: ~0.08   cerca: ~0.40  */
           };
         }
 
@@ -273,35 +271,27 @@
           ctx.clearRect(0,0,W,H);
           for(var p of pts){
             p.x+=p.vx; p.y+=p.vy;
-            if(p.x<-60)p.x=W+60; else if(p.x>W+60)p.x=-60;
-            if(p.y<-60)p.y=H+60; else if(p.y>H+60)p.y=-60;
+            if(p.x<0||p.x>W)p.vx*=-1;
+            if(p.y<0||p.y>H)p.vy*=-1;
           }
-          /* ordenar lejos→cerca para que los cercanos se dibujen encima */
-          pts.sort(function(a,b){return a.z-b.z;});
-          /* líneas — solo entre nodos de profundidad similar */
+          pts.sort(function(a,b){return a.z-b.z;}); /* lejos→cerca */
+          var MD2=MAX_D*MAX_D;
           for(var i=0;i<pts.length;i++){
             var pi=pts[i];
             for(var j=i+1;j<pts.length;j++){
               var pj=pts[j];
-              if(Math.abs(pi.z-pj.z)>0.32)continue;
+              if(Math.abs(pi.z-pj.z)>0.4)continue;
               var dx=pi.x-pj.x, dy=pi.y-pj.y, d2=dx*dx+dy*dy;
-              var md=90+pi.z*140;
-              if(d2<md*md){
+              if(d2<MD2){
                 var avgZ=(pi.z+pj.z)*.5;
-                var op=(1-Math.sqrt(d2)/md)*(0.03+avgZ*0.28);
-                ctx.lineWidth=0.4+avgZ*0.9;
+                var op=(1-Math.sqrt(d2)/MAX_D)*(0.08+avgZ*0.22);
+                ctx.lineWidth=0.5+avgZ*0.5;
                 ctx.beginPath();ctx.moveTo(pi.x,pi.y);ctx.lineTo(pj.x,pj.y);
                 ctx.strokeStyle=col((pi.x+pj.x)*.5,avgZ,op);ctx.stroke();
               }
             }
           }
-          /* nodos */
           for(var p of pts){
-            /* halo para nodos cercanos */
-            if(p.z>0.6){
-              ctx.beginPath();ctx.arc(p.x,p.y,p.r*3.5,0,Math.PI*2);
-              ctx.fillStyle=col(p.x,p.z,p.a*0.10);ctx.fill();
-            }
             ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
             ctx.fillStyle=col(p.x,p.z,p.a);ctx.fill();
           }
