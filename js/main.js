@@ -7792,24 +7792,9 @@ const EFECTOS_EXTRA = {
 
 /* ── PROPÓN UN TEMA ──────────────────────────────────────────── */
 (function () {
-  const LS_KEY      = 'li_propuestas';
-  const LS_VOTED    = 'li_prop_voted';
-  const MAX         = 20;
-
-  function getPropuestas() { try { return JSON.parse(localStorage.getItem(LS_KEY) || '[]'); } catch { return []; } }
-  function setPropuestas(arr) { lsSet(LS_KEY, JSON.stringify(arr)); }
-  function getVoted() { try { return JSON.parse(localStorage.getItem(LS_VOTED) || '[]'); } catch { return []; } }
-  function setVoted(arr) { lsSet(LS_VOTED, JSON.stringify(arr)); }
-
-  /*
-   * PROPUESTAS — INSTRUCCIONES para recibir propuestas por email:
-   * 1. Ve a formspree.io y crea una cuenta gratuita
-   * 2. Crea un nuevo formulario (New Form)
-   * 3. Copia la URL que te dan (ej: https://formspree.io/f/xabcdefg)
-   * 4. Pégala en FORMSPREE_PROPUESTAS_URL abajo
-   * Las propuestas llegarán a tu correo automáticamente.
-   */
-  const FORMSPREE_PROPUESTAS_URL = ''; /* ← pega aquí tu URL de Formspree */
+  const SUPABASE_URL  = 'https://dbyoxssdbboxnbecgpbf.supabase.co';
+  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRieW94c3NkYmJveG5iZWNncGJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA5NDk2ODIsImV4cCI6MjA5NjUyNTY4Mn0.KsXnHzoMfgRzm8EHFaqOTo3GjSFBGrLx9BOEdJ0WVNs';
+  const HEADERS       = { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON };
 
   const form     = document.getElementById('propuestas-form');
   const textoIn  = document.getElementById('prop-texto');
@@ -7819,17 +7804,27 @@ const EFECTOS_EXTRA = {
   const charCnt  = document.getElementById('prop-char-count');
   if (!form || !feed) return;
 
+  function getVoterUUID() {
+    let id = lsGet('li_voter_uuid', '');
+    if (!id) {
+      id = (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Date.now());
+      lsSet('li_voter_uuid', id);
+    }
+    return id;
+  }
+  function getVotedIds() { try { return JSON.parse(localStorage.getItem('li_voted_ids') || '[]'); } catch { return []; } }
+  function saveVotedId(id) { const v = getVotedIds(); if (!v.includes(id)) { v.push(id); lsSet('li_voted_ids', JSON.stringify(v)); } }
+
   if (textoIn && charCnt) {
     textoIn.addEventListener('input', () => { charCnt.textContent = textoIn.value.length; });
   }
 
-  function formatDate(ts) {
-    return new Date(ts).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
+  function formatDate(iso) {
+    return new Date(iso).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
   }
 
-  function renderFeed() {
-    const props = getPropuestas();
-    const voted = getVoted();
+  function renderFeed(props) {
+    const voted = getVotedIds();
     if (counter) {
       const n = props.length;
       counter.textContent = n === 0 ? '0 propuestas' : n === 1 ? '1 propuesta' : n + ' propuestas';
@@ -7841,20 +7836,19 @@ const EFECTOS_EXTRA = {
       </div>`;
       return;
     }
-    const sorted = [...props].sort((a, b) => (b.votos || 0) - (a.votos || 0));
-    feed.innerHTML = sorted.map(p => {
-      const hasVoted = voted.includes(p.ts);
+    feed.innerHTML = props.map(p => {
+      const hasVoted = voted.includes(p.id);
       const votos    = p.votos || 0;
       return `
-      <div class="prop-card" data-ts="${p.ts}">
-        <p class="prop-card-texto">«${p.texto}»</p>
+      <div class="prop-card" data-id="${p.id}">
+        <p class="prop-card-texto">«${p.propuesta}»</p>
         <div class="prop-card-footer">
           <div class="prop-card-meta">
             <span>${p.nombre || 'Anónimo'}</span>
             <span>·</span>
-            <span>${formatDate(p.ts)}</span>
+            <span>${formatDate(p.created_at)}</span>
           </div>
-          <button class="prop-vote-btn${hasVoted ? ' voted' : ''}" data-ts="${p.ts}" aria-label="Votar esta propuesta" aria-pressed="${hasVoted}" title="${hasVoted ? 'Ya has votado esta propuesta' : 'Votar esta propuesta'}">
+          <button class="prop-vote-btn${hasVoted ? ' voted' : ''}" data-id="${p.id}" aria-label="Votar esta propuesta" aria-pressed="${hasVoted}" title="${hasVoted ? 'Ya has votado esta propuesta' : 'Votar esta propuesta'}">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="${hasVoted ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
             <span class="prop-vote-count">${votos > 0 ? votos : ''}</span>
           </button>
@@ -7863,61 +7857,67 @@ const EFECTOS_EXTRA = {
     }).join('');
 
     feed.querySelectorAll('.prop-vote-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const ts     = parseInt(btn.dataset.ts, 10);
-        const voted2 = getVoted();
-        if (voted2.includes(ts)) return;
-
-        const props2 = getPropuestas();
-        const idx    = props2.findIndex(p => p.ts === ts);
-        if (idx === -1) return;
-
-        props2[idx].votos = (props2[idx].votos || 0) + 1;
-        setPropuestas(props2);
-
-        voted2.push(ts);
-        setVoted(voted2);
-
-        if (window._LI_addXP) window._LI_addXP(5);
-        renderFeed();
+      btn.addEventListener('click', async () => {
+        const id = btn.dataset.id;
+        if (getVotedIds().includes(id)) return;
+        const voterUUID = getVoterUUID();
+        try {
+          await fetch(SUPABASE_URL + '/rest/v1/votos', {
+            method: 'POST',
+            headers: { ...HEADERS, 'Prefer': 'return=minimal' },
+            body: JSON.stringify({ propuesta_id: id, voter_uuid: voterUUID })
+          });
+          const card    = feed.querySelector(`.prop-card[data-id="${id}"]`);
+          const countEl = card ? card.querySelector('.prop-vote-count') : null;
+          const current = parseInt(countEl ? countEl.textContent || '0' : '0', 10);
+          await fetch(SUPABASE_URL + '/rest/v1/propuestas?id=eq.' + id, {
+            method: 'PATCH',
+            headers: { ...HEADERS, 'Prefer': 'return=minimal' },
+            body: JSON.stringify({ votos: current + 1 })
+          });
+          saveVotedId(id);
+          if (window._LI_addXP) window._LI_addXP(5);
+          loadAndRender();
+        } catch (_) {}
       });
     });
   }
 
-  form.addEventListener('submit', e => {
+  async function loadAndRender() {
+    try {
+      const res   = await fetch(SUPABASE_URL + '/rest/v1/propuestas?select=*&order=votos.desc,created_at.desc', { headers: HEADERS });
+      const props = await res.json();
+      renderFeed(Array.isArray(props) ? props : []);
+    } catch (_) {
+      feed.innerHTML = '<div class="li-empty prop-empty"><span>No se pudieron cargar las propuestas.</span></div>';
+    }
+  }
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const texto  = (textoIn  ? textoIn.value  : '').trim();
     const nombre = (nombreIn ? nombreIn.value : '').trim();
     if (texto.length < 10) {
-      if (textoIn) {
-        textoIn.style.borderColor = '#EF4444';
-        setTimeout(() => { textoIn.style.borderColor = ''; }, 1500);
-      }
+      if (textoIn) { textoIn.style.borderColor = '#EF4444'; setTimeout(() => { textoIn.style.borderColor = ''; }, 1500); }
       return;
     }
-    const props = getPropuestas();
-    props.push({ texto, nombre, ts: Date.now(), votos: 0 });
-    if (props.length > MAX) props.shift();
-    setPropuestas(props);
-
-    /* Envío silencioso a Formspree si está configurado */
-    if (FORMSPREE_PROPUESTAS_URL) {
-      fetch(FORMSPREE_PROPUESTAS_URL, {
+    const submitBtn = form.querySelector('.prop-btn');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando…'; }
+    try {
+      await fetch(SUPABASE_URL + '/rest/v1/propuestas', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ propuesta: texto, nombre: nombre || 'Anónimo' })
-      }).catch(() => {});
-    }
-
-    if (textoIn)  { textoIn.value  = ''; if (charCnt) charCnt.textContent = '0'; }
-    if (nombreIn)   nombreIn.value = '';
-
-    renderFeed();
-    if (feed.firstElementChild) feed.scrollTop = 0;
-    if (window._LI_addXP) window._LI_addXP(15);
+        headers: { ...HEADERS, 'Prefer': 'return=minimal' },
+        body: JSON.stringify({ propuesta: texto, nombre: nombre || 'Anónimo', votos: 0 })
+      });
+      if (textoIn)  { textoIn.value  = ''; if (charCnt) charCnt.textContent = '0'; }
+      if (nombreIn)   nombreIn.value = '';
+      if (window._LI_addXP) window._LI_addXP(15);
+      loadAndRender();
+    } catch (_) {}
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Enviar'; }
   });
 
-  renderFeed();
+  loadAndRender();
 }());
 
 
