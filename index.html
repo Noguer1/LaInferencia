@@ -80,6 +80,47 @@
 </head>
 <body>
 
+  <!-- Pantalla de acceso anticipado -->
+  <div id="acceso-overlay" style="display:none;position:fixed;inset:0;z-index:99999;background:var(--bg,#F7F9FF);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:24px;">
+    <img src="img/logo2.png" alt="La Inferencia" style="width:56px;height:56px;border-radius:12px;" />
+    <div style="text-align:center;max-width:360px;">
+      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:700;color:#0B132B;margin:0 0 8px;">Acceso anticipado</h1>
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;color:#64748b;margin:0;">Introduce el código que has recibido para acceder a La Inferencia antes de su lanzamiento público.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:320px;">
+      <input id="acceso-input" type="text" placeholder="Código de acceso" autocomplete="off" style="width:100%;padding:14px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;border:2px solid #e2e8f0;border-radius:12px;outline:none;text-align:center;letter-spacing:2px;text-transform:uppercase;box-sizing:border-box;transition:border-color 0.2s;" />
+      <p id="acceso-error" style="display:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;color:#ef4444;margin:0;">Código incorrecto. Inténtalo de nuevo.</p>
+      <button id="acceso-btn" style="width:100%;padding:14px;background:#2563EB;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:600;border:none;border-radius:12px;cursor:pointer;transition:background 0.2s;">Entrar</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var KEY='li_acceso_ok', CODE='ANTICIPADO26';
+      var overlay=document.getElementById('acceso-overlay');
+      if(localStorage.getItem(KEY)===CODE){overlay.style.display='none';return;}
+      overlay.style.display='flex';
+      document.body.style.overflow='hidden';
+      function tryAcceso(){
+        var val=document.getElementById('acceso-input').value.trim().toUpperCase();
+        var err=document.getElementById('acceso-error');
+        if(val===CODE){
+          localStorage.setItem(KEY,CODE);
+          overlay.style.display='none';
+          document.body.style.overflow='';
+        } else {
+          err.style.display='block';
+          document.getElementById('acceso-input').style.borderColor='#ef4444';
+        }
+      }
+      document.getElementById('acceso-btn').addEventListener('click',tryAcceso);
+      document.getElementById('acceso-input').addEventListener('keydown',function(e){if(e.key==='Enter')tryAcceso();});
+      document.getElementById('acceso-input').addEventListener('input',function(){
+        document.getElementById('acceso-error').style.display='none';
+        this.style.borderColor='#e2e8f0';
+      });
+    })();
+  </script>
+
   <a class="skip-link" href="#dashboard-main">Saltar al contenido principal</a>
 
   <canvas id="neural-canvas" aria-hidden="true"></canvas>
