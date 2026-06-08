@@ -87,20 +87,14 @@
       position: fixed;
       inset: 0;
       z-index: 99999;
-      background: transparent;
+      background: #030C1A;
       align-items: center;
       justify-content: center;
       padding: 24px;
       overflow: hidden;
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-    #acceso-overlay-bg {
-      position: absolute;
-      inset: 0;
-      background: #030C1A;
-      z-index: 0;
-    }
-    #acceso-overlay-bg::before {
+    #acceso-overlay::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -110,14 +104,21 @@
         radial-gradient(ellipse 40% 40% at 60% 20%, rgba(37,99,235,0.06) 0%, transparent 60%);
       animation: accesoGlow 8s ease-in-out infinite alternate;
       pointer-events: none;
+      z-index: 0;
     }
     @keyframes accesoGlow {
       0%   { opacity: 0.6; transform: scale(1); }
       100% { opacity: 1;   transform: scale(1.08); }
     }
+    #acceso-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
     #acceso-card {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -138,16 +139,14 @@
       to   { opacity: 1; transform: translateY(0) scale(1); }
     }
     #acceso-logo {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      filter: brightness(0) invert(1);
-      box-shadow: 0 0 32px rgba(0,229,255,0.2);
+      width: 80px;
+      height: auto;
+      filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(0,229,255,0.3));
       animation: accesoLogoPulse 3s ease-in-out infinite;
     }
     @keyframes accesoLogoPulse {
-      0%, 100% { box-shadow: 0 0 24px rgba(0,229,255,0.15); }
-      50%       { box-shadow: 0 0 48px rgba(0,229,255,0.35); }
+      0%, 100% { filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(0,229,255,0.2)); }
+      50%       { filter: brightness(0) invert(1) drop-shadow(0 0 28px rgba(0,229,255,0.55)); }
     }
     #acceso-badge {
       font-size: 0.72rem;
@@ -218,7 +217,7 @@
   </style>
 
   <div id="acceso-overlay">
-    <div id="acceso-overlay-bg"></div>
+    <canvas id="acceso-canvas" aria-hidden="true"></canvas>
     <div id="acceso-card">
       <img id="acceso-logo" src="img/logo2.png" alt="La Inferencia" />
       <span id="acceso-badge">Acceso anticipado</span>
@@ -236,8 +235,34 @@
       if(localStorage.getItem(KEY)===CODE){overlay.style.display='none';return;}
       overlay.style.display='flex';
       document.body.style.overflow='hidden';
-      var nc=document.getElementById('neural-canvas');
-      if(nc) nc.style.zIndex='99998';
+
+      /* ── Neural canvas dentro del overlay ── */
+      (function(){
+        var c=document.getElementById('acceso-canvas');
+        if(!c)return;
+        var ctx=c.getContext('2d');
+        var W,H,pts=[],rafId,running=false;
+        var N=80,MAX_D=150,nodeAlpha=0.22,lineAlpha=0.32,lw=0.8;
+        var cl=[16,185,129],cr=[37,99,235];
+        function color(x,a){
+          var t=Math.min(1,Math.max(0,x/W));
+          return 'rgba('+Math.round(cl[0]+(cr[0]-cl[0])*t)+','+Math.round(cl[1]+(cr[1]-cl[1])*t)+','+Math.round(cl[2]+(cr[2]-cl[2])*t)+','+a+')';
+        }
+        function mkPt(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*2+1.2,a:Math.random()*.3+nodeAlpha};}
+        function resize(){W=c.width=overlay.offsetWidth;H=c.height=overlay.offsetHeight;}
+        function frame(){
+          ctx.clearRect(0,0,W,H);
+          var MD2=MAX_D*MAX_D;
+          for(var p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=color(p.x,p.a);ctx.fill();}
+          ctx.lineWidth=lw;
+          for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d2=dx*dx+dy*dy;if(d2<MD2){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=color((pts[i].x+pts[j].x)*.5,(1-Math.sqrt(d2)/MAX_D)*lineAlpha);ctx.stroke();}}}
+          if(running)rafId=requestAnimationFrame(frame);
+        }
+        function start(){if(running)return;resize();pts=Array.from({length:N},mkPt);running=true;rafId=requestAnimationFrame(frame);}
+        window._accesoStop=function(){running=false;if(rafId){cancelAnimationFrame(rafId);rafId=null;}};
+        start();
+      })();
+
       function tryAcceso(){
         var val=document.getElementById('acceso-input').value.trim().toUpperCase();
         var err=document.getElementById('acceso-error');
@@ -245,7 +270,7 @@
           localStorage.setItem(KEY,CODE);
           overlay.style.opacity='0';
           overlay.style.transition='opacity 0.5s';
-          if(nc) nc.style.zIndex='';
+          if(window._accesoStop)window._accesoStop();
           setTimeout(function(){overlay.style.display='none';document.body.style.overflow='';},500);
         } else {
           err.style.display='block';
