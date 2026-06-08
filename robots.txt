@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://la-inferencia.vercel.app/sitemap.xml
+Sitemap: https://lainferencia.club/sitemap.xml
