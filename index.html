@@ -242,22 +242,29 @@
         if(!c)return;
         var ctx=c.getContext('2d');
         var W,H,pts=[],rafId,running=false;
-        var N=78, MAX_D=260;
+        /* más nodos: fondo denso de estrellas + pocos brillantes en primer plano */
+        var N=115, MAX_D=270;
 
-        /* lejos: azul oscuro apagado  |  cerca: cyan brillante */
-        function col(z,a){
-          var r=Math.round(10+(0-10)*z),  g=Math.round(60+(210-60)*z),  b=Math.round(130+(255-130)*z);
+        /* lejos: azul marino apagado | cerca: cyan puro brillante */
+        function nodeCol(z,a){
+          var r=Math.round(8+(0-8)*z), g=Math.round(55+(215-55)*z), b=Math.round(120+(255-120)*z);
+          return 'rgba('+r+','+g+','+b+','+a+')';
+        }
+        /* líneas: azul más puro, no teal */
+        function lineCol(z,a){
+          var r=Math.round(20+(30-20)*z), g=Math.round(80+(160-80)*z), b=Math.round(180+(255-180)*z);
           return 'rgba('+r+','+g+','+b+','+a+')';
         }
 
         function mkPt(){
-          var z=Math.pow(Math.random(),0.65);
+          /* distribución muy sesgada: ~70% de nodos son lejanos (z<0.4) */
+          var z=Math.pow(Math.random(),0.42);
           return{
             x:Math.random()*W, y:Math.random()*H, z:z,
-            vx:(Math.random()-.5)*(0.07+z*0.38),
-            vy:(Math.random()-.5)*(0.07+z*0.38),
-            r:0.5+z*3.8,
-            a:0.05+z*0.90
+            vx:(Math.random()-.5)*(0.06+z*0.40),
+            vy:(Math.random()-.5)*(0.06+z*0.40),
+            r:0.4+z*3.6,
+            a:0.04+z*0.92
           };
         }
 
@@ -272,7 +279,7 @@
           }
           pts.sort(function(a,b){return a.z-b.z;});
 
-          /* líneas */
+          /* líneas — color azul puro, visibles */
           var MD2=MAX_D*MAX_D;
           for(var i=0;i<pts.length;i++){
             var pi=pts[i];
@@ -281,29 +288,37 @@
               var dx=pi.x-pj.x, dy=pi.y-pj.y, d2=dx*dx+dy*dy;
               if(d2<MD2){
                 var avgZ=(pi.z+pj.z)*.5;
-                var op=(1-Math.sqrt(d2)/MAX_D)*(0.06+avgZ*0.38);
-                ctx.lineWidth=0.4+avgZ*0.7;
+                var fade=1-Math.sqrt(d2)/MAX_D;
+                var op=fade*(0.07+avgZ*0.42);
+                ctx.lineWidth=0.4+avgZ*0.65;
                 ctx.beginPath();ctx.moveTo(pi.x,pi.y);ctx.lineTo(pj.x,pj.y);
-                ctx.strokeStyle=col(avgZ,op);ctx.stroke();
+                ctx.strokeStyle=lineCol(avgZ,op);ctx.stroke();
               }
             }
           }
 
-          /* nodos con glow degradado natural */
+          /* nodos: glow bokeh degradado + núcleo + brillo blanco central */
           for(var p of pts){
-            if(p.z>0.38){
-              var gr=p.r*(6+p.z*5);
+            /* glow suave solo para nodos visibles (z>0.35) */
+            if(p.z>0.35){
+              var gr=p.r*(5+p.z*9);   /* nodos cercanos: glow muy grande */
               var grd=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,gr);
-              var rgb=p.z>0.72?'200,230,255':'10,'+(Math.round(60+(210-60)*p.z))+','+Math.round(130+(255-130)*p.z);
-              grd.addColorStop(0,  'rgba('+rgb+','+(p.a*0.55)+')');
-              grd.addColorStop(0.25,'rgba('+rgb+','+(p.a*0.18)+')');
-              grd.addColorStop(1,  'rgba('+rgb+',0)');
+              var gc=p.z>0.70 ? '180,225,255' : '0,'+(Math.round(55+(215-55)*p.z))+','+Math.round(120+(255-120)*p.z);
+              grd.addColorStop(0,   'rgba('+gc+','+(p.a*0.50)+')');
+              grd.addColorStop(0.15,'rgba('+gc+','+(p.a*0.28)+')');
+              grd.addColorStop(0.45,'rgba('+gc+','+(p.a*0.07)+')');
+              grd.addColorStop(1,   'rgba('+gc+',0)');
               ctx.beginPath();ctx.arc(p.x,p.y,gr,0,Math.PI*2);
               ctx.fillStyle=grd;ctx.fill();
             }
-            /* núcleo */
+            /* núcleo sólido */
             ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-            ctx.fillStyle=col(p.z,p.a);ctx.fill();
+            ctx.fillStyle=nodeCol(p.z,p.a);ctx.fill();
+            /* destello blanco en los más cercanos */
+            if(p.z>0.68){
+              ctx.beginPath();ctx.arc(p.x,p.y,p.r*0.45,0,Math.PI*2);
+              ctx.fillStyle='rgba(230,248,255,'+(p.z*0.85)+')';ctx.fill();
+            }
           }
           if(running)rafId=requestAnimationFrame(frame);
         }
