@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lainferencia.club/sitemap.xml
+Sitemap: https://lainferencia.com/sitemap.xml

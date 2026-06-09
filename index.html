@@ -15,7 +15,7 @@
     para crear img/OG.png, luego cambia las dos líneas marcadas con (ACTUALIZAR).
     Las redes sociales (WhatsApp, Twitter, LinkedIn) no muestran archivos .svg.
   -->
-  <meta property="og:image"       content="https://lainferencia.club/img/OG.png" />
+  <meta property="og:image"       content="https://lainferencia.com/img/OG.png" />
   <meta property="og:image:type"  content="image/png" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
@@ -23,8 +23,8 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="La Inferencia — Divulgación de Psicología" />
   <meta name="twitter:description" content="La psicología más allá del aula y la consulta. Convertimos investigación en conocimiento útil, claro y accesible." />
-  <meta name="twitter:image"       content="https://lainferencia.club/img/OG.png" />
-  <link rel="canonical" href="https://lainferencia.club/" />
+  <meta name="twitter:image"       content="https://lainferencia.com/img/OG.png" />
+  <link rel="canonical" href="https://lainferencia.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
@@ -58,19 +58,19 @@
         "@type": "Organization",
         "name": "La Inferencia",
         "description": "Divulgación de psicología basada en investigación real. Convertimos estudios académicos en conocimiento útil, claro y accesible.",
-        "url": "https://lainferencia.club",
-        "logo": "https://lainferencia.club/img/logo2.png",
+        "url": "https://lainferencia.com",
+        "logo": "https://lainferencia.com/img/logo2.png",
         "sameAs": []
       },
       {
         "@type": "WebSite",
         "name": "La Inferencia",
-        "url": "https://lainferencia.club",
+        "url": "https://lainferencia.com",
         "description": "La psicología más allá del aula y la consulta.",
         "inLanguage": "es",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://lainferencia.club/?buscar={search_term_string}",
+          "target": "https://lainferencia.com/?buscar={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       }
@@ -238,6 +238,13 @@
     }
     #acceso-input::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 0.05em; font-weight: 400; }
     #acceso-input:focus { border-color: rgba(0,229,255,0.5); box-shadow: 0 0 0 3px rgba(0,229,255,0.08); }
+    #acceso-hint {
+      margin: 0 0 8px;
+      font-size: 0.78rem;
+      color: rgba(0,229,255,0.7);
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
     #acceso-error {
       display: none;
       font-size: 0.82rem;
@@ -272,7 +279,8 @@
       <p id="acceso-status">Acceso abierto · 12 investigadores activos</p>
       <p id="acceso-sub">Has sido seleccionado entre los primeros<br>en explorar La Inferencia.</p>
       <p id="acceso-fecha">⏳ Acceso anticipado disponible hasta el 30 de junio</p>
-      <input id="acceso-input" type="text" placeholder="Tu código" autocomplete="off" />
+      <p id="acceso-hint">Introduce un número entre 30 y 50</p>
+      <input id="acceso-input" type="text" placeholder="Número entre 30 y 50" autocomplete="off" />
       <p id="acceso-error">Código incorrecto. Inténtalo de nuevo.</p>
       <button id="acceso-btn">Entrar</button>
     </div>
@@ -382,7 +390,7 @@
       var numEl=document.getElementById('acceso-numero');
       var invNum=localStorage.getItem('li_inv_num');
       if(!invNum){
-        invNum=('00'+(Math.floor(Math.random()*49)+1)).slice(-3);
+        invNum=('00'+(Math.floor(Math.random()*21)+30)).slice(-3);
         localStorage.setItem('li_inv_num',invNum);
       }
       numEl.textContent='INVITADO #'+invNum;
@@ -1879,7 +1887,7 @@
           </div>
         </div>
 
-        <a href="mailto:contacto@lainferencia.club?subject=Propuesta de artículo" class="info-cta-btn">
+        <a href="mailto:contacto@lainferencia.com?subject=Propuesta de artículo" class="info-cta-btn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Enviar propuesta de artículo
         </a>
@@ -1890,9 +1898,9 @@
         <div class="info-eyebrow">Contacto directo</div>
         <h2>Escríbenos</h2>
         <p class="info-lead">¿Tienes preguntas, sugerencias, correcciones o quieres colaborar? Respondemos siempre.</p>
-        <a href="mailto:contacto@lainferencia.club" class="info-cta-btn">
+        <a href="mailto:contacto@lainferencia.com" class="info-cta-btn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          contacto@lainferencia.club
+          contacto@lainferencia.com
         </a>
         <p class="info-contact-note">También puedes usar el formulario de <strong>Propón un Tema</strong> en la página principal para sugerirnos contenido.</p>
       </div>
@@ -2092,7 +2100,7 @@
                 <div><strong>Tu investigación llega a miles</strong><span>Publicamos en La Inferencia con cita completa APA y enlace al documento original.</span></div>
               </div>
             </div>
-            <a href="mailto:contacto@lainferencia.club?subject=Propuesta de artículo" class="info-cta-btn">
+            <a href="mailto:contacto@lainferencia.com?subject=Propuesta de artículo" class="info-cta-btn">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Enviar propuesta de artículo
             </a>
@@ -2110,9 +2118,9 @@
           <div class="mob-panel-inner">
             <p class="mob-panel-eyebrow">Contacto directo</p>
             <p class="mob-panel-lead">¿Tienes preguntas, sugerencias, correcciones o quieres colaborar? Respondemos siempre.</p>
-            <a href="mailto:contacto@lainferencia.club" class="info-cta-btn">
+            <a href="mailto:contacto@lainferencia.com" class="info-cta-btn">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              contacto@lainferencia.club
+              contacto@lainferencia.com
             </a>
             <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.7rem;line-height:1.5;">También puedes usar el formulario de <strong>Propón un Tema</strong> en la página principal para sugerirnos contenido.</p>
           </div>
