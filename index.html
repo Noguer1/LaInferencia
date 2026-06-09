@@ -238,13 +238,6 @@
     }
     #acceso-input::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 0.05em; font-weight: 400; }
     #acceso-input:focus { border-color: rgba(0,229,255,0.5); box-shadow: 0 0 0 3px rgba(0,229,255,0.08); }
-    #acceso-hint {
-      margin: 0 0 8px;
-      font-size: 0.78rem;
-      color: rgba(0,229,255,0.7);
-      letter-spacing: 0.04em;
-      text-align: center;
-    }
     #acceso-error {
       display: none;
       font-size: 0.82rem;
@@ -279,8 +272,7 @@
       <p id="acceso-status">Acceso abierto · 12 investigadores activos</p>
       <p id="acceso-sub">Has sido seleccionado entre los primeros<br>en explorar La Inferencia.</p>
       <p id="acceso-fecha">⏳ Acceso anticipado disponible hasta el 30 de junio</p>
-      <p id="acceso-hint">Introduce un número entre 30 y 50</p>
-      <input id="acceso-input" type="text" placeholder="Número entre 30 y 50" autocomplete="off" />
+      <input id="acceso-input" type="text" placeholder="Tu código" autocomplete="off" />
       <p id="acceso-error">Código incorrecto. Inténtalo de nuevo.</p>
       <button id="acceso-btn">Entrar</button>
     </div>
@@ -390,7 +382,7 @@
       var numEl=document.getElementById('acceso-numero');
       var invNum=localStorage.getItem('li_inv_num');
       if(!invNum){
-        invNum=('00'+(Math.floor(Math.random()*21)+30)).slice(-3);
+        invNum=('00'+(Math.floor(Math.random()*26)+25)).slice(-3);
         localStorage.setItem('li_inv_num',invNum);
       }
       numEl.textContent='INVITADO #'+invNum;
