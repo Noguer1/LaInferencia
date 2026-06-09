@@ -46,12 +46,17 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.club
 | Favoritos desactivados en HTML | Funcionalidad no lista — JS preparado pero HTML no tiene el nodo |
 | Propuestas en Supabase sin auth | Feed compartido entre usuarios sin pedirles cuenta — más confianza |
 | Votos por `voter_uuid` anónimo | Evita doble voto sin registro; si borran cookies pueden votar de nuevo (aceptable en MVP) |
+| Sin `backdrop-filter` en la mayoría de elementos | Cada blur crea capa GPU extra — eliminado de `.nivel-widget`, `.hero-bubble-disk` y otros |
+| Animaciones CSS solo `transform`/`opacity` | `filter` animado fuerza rasterización CPU cada frame — eliminado de `logo-breathe`, `brain-pulse` |
+| `#bg-layer` div separado para los gradientes | `position:fixed` propio para los radial-gradient — no interfiere con el scroll del body |
+| Barra de progreso usa `transform: scaleX()` | Más eficiente que `width` — no dispara layout recalculation |
 
 ---
 
 ## Problemas conocidos
 
 - `renderFavSection()` busca `#favoritos-section` que no existe — no lanza error visible pero la feature no funciona
+- **Scroll lento en desktop (Chrome):** si ocurre, comprobar `chrome://gpu` → `Compositing`. Si dice "Software only", activar `chrome://flags/#ignore-gpu-blocklist` → Enable → Relaunch. Es un problema de la lista negra de GPUs de Chrome, no del código.
 
 ---
 
@@ -84,9 +89,9 @@ CarpetaClaude/
 ## Estilo visual
 
 - **Paleta:** Navy (#0B132B), Azul acción (#2563EB / hover #1D4ED8), Cyan acento (#00E5FF)
-- **Fondo:** #F7F9FF con 3 radial-gradients sutiles (cyan, violeta, azul)
+- **Fondo:** #F7F9FF con 3 radial-gradients sutiles (cyan, violeta, azul) — definidos en `#bg-layer` (div fixed)
 - **Tipografía:** Plus Jakarta Sans (300–800), fallback -apple-system
-- **Efectos:** Glassmorphism (backdrop-filter blur), transiciones 0.2–0.7s, sombras con azul semitransparente
+- **Efectos:** transiciones 0.2–0.7s, sombras con azul semitransparente — `backdrop-filter` eliminado de la mayoría de elementos por coste GPU
 - **Temas:** claro (default), dark-base, naranja, tormenta, cosmos, carmesi — vía `data-theme` + localStorage
 - **Responsive:** mobile-first, breakpoint principal ≤680px
 - **Estética:** científica, moderna, minimalista — nunca recargada ni agresiva

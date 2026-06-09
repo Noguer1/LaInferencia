@@ -11,23 +11,31 @@
   --text-muted:   #94A3B8;
   --white:        #FFFFFF;
   --card-border:  rgba(37,99,235,0.11);
-  --card-shadow:  0 1px 3px rgba(11,19,43,0.06), 0 6px 20px rgba(11,19,43,0.09), 0 16px 48px rgba(11,19,43,0.06);
+  --card-shadow:  0 2px 12px rgba(11,19,43,0.10);
   --badge-bg:     color-mix(in srgb, var(--blue) 8%, transparent);
   --badge-border: color-mix(in srgb, var(--blue) 18%, transparent);
   --pill-bg:      linear-gradient(130deg, var(--blue-accent) 0%, var(--blue) 100%);
-  --pill-shadow:  0 2px 10px color-mix(in srgb, var(--blue) 30%, transparent), 0 4px 18px color-mix(in srgb, var(--blue-accent) 18%, transparent);
+  --pill-shadow:  0 2px 10px color-mix(in srgb, var(--blue) 30%, transparent);
 }
 
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
   background-color: #F7F9FF;
+  color: var(--navy);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── FONDO GRADIENTE (fijo = viewport-sized, no document-sized) ── */
+#bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background-image:
     radial-gradient(ellipse 80% 55% at 15% 25%, color-mix(in srgb, var(--blue-accent) 7%, transparent) 0%, transparent 65%),
     radial-gradient(ellipse 65% 50% at 85% 60%, rgba(157,0,255,0.045) 0%, transparent 60%),
     radial-gradient(ellipse 50% 40% at 55% 92%, color-mix(in srgb, var(--blue) 6%, transparent) 0%, transparent 55%);
-  color: var(--navy);
-  line-height: 1.6;
-  min-height: 100vh;
 }
 
 /* ── CANVAS ── */
@@ -44,9 +52,7 @@ body {
   padding: 0.28rem 0.65rem 0.28rem 0.38rem;
   border-radius: 20px;
   border: 1px solid color-mix(in srgb, var(--blue) 18%, transparent);
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.95);
   cursor: pointer;
   transition: border-color 0.2s, box-shadow 0.2s;
   flex-shrink: 0;
@@ -526,9 +532,7 @@ textarea:focus:not(:focus-visible) { outline: none; }
 
 /* ── NAVBAR ── */
 .navbar {
-  background: rgba(235,242,255,0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(235,242,255,0.97);
   border-bottom: 1px solid rgba(37,99,235,0.11);
   position: sticky;
   top: 0;
@@ -748,10 +752,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   padding: 1rem;
   text-align: center;
 
-  /* Centro blanquecino semitransparente — sin ningún relleno azul */
-  background: rgba(255, 255, 255, 0.60);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.88);
 
   /* Color solo en el contorno: anillo cian + anillo azul via box-shadow */
   box-shadow:
@@ -823,14 +824,8 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 
 /* ── HERO ── */
 @keyframes logo-breathe {
-  0%, 100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 6px color-mix(in srgb, var(--blue) 15%, transparent)) drop-shadow(0 0 14px color-mix(in srgb, var(--blue-accent) 9%, transparent));
-  }
-  50% {
-    transform: scale(1.024);
-    filter: drop-shadow(0 0 16px color-mix(in srgb, var(--blue) 32%, transparent)) drop-shadow(0 0 32px color-mix(in srgb, var(--blue-accent) 22%, transparent));
-  }
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.024); }
 }
 
 .hero          { padding: 1.4rem 2rem 1rem; text-align: center; }
@@ -844,6 +839,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   margin: 0 auto 0.9rem;
   object-fit: contain;
   animation: logo-breathe 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--blue) 20%, transparent)) drop-shadow(0 0 18px color-mix(in srgb, var(--blue-accent) 12%, transparent));
   transition: filter 0.35s ease, transform 0.35s ease;
   cursor: default;
 }
@@ -1062,9 +1058,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 
 /* ── TARJETA BASE ── */
 .doc-card {
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.97);
   border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 1.8rem;
@@ -1402,12 +1396,11 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 /* ── TAB BAR ── */
 .tab-bar {
   display: flex; gap: 0;
-  background: rgba(255,255,255,0.90);
+  background: rgba(255,255,255,0.97);
   border: 1.5px solid color-mix(in srgb, var(--blue) 18%, transparent);
   border-radius: 12px; padding: 4px;
   width: 100%;
   position: relative;
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 12px color-mix(in srgb, var(--blue) 7%, transparent), 0 1px 4px rgba(11,19,43,0.05);
 }
 
@@ -1449,6 +1442,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 .tab-panel.active {
   display: block;
   animation: panel-fade-in 0.22s ease forwards;
+  contain: layout style;
 }
 
 @keyframes panel-fade-in {
@@ -2395,11 +2389,10 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 
 /* ── EXPERIMENTO INTERACTIVO ── */
 .exp-card {
-  background: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.97);
   border: 1px solid var(--card-border); border-radius: 20px;
   padding: 2rem; box-shadow: var(--card-shadow);
   min-height: 240px;
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
 
 /* Start screen */
@@ -2411,19 +2404,13 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   width: 88px; height: 88px;
   display: block; margin: 0 auto 1.4rem;
   overflow: visible;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--blue-accent) 40%, transparent)) drop-shadow(0 0 14px color-mix(in srgb, var(--blue) 22%, transparent));
   animation: brain-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Pulsación de brillo — simula actividad eléctrica continua */
 @keyframes brain-pulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 3px color-mix(in srgb, var(--blue-accent) 30%, transparent)) drop-shadow(0 0 8px color-mix(in srgb, var(--blue) 18%, transparent));
-    opacity: 0.95;
-  }
-  50% {
-    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--blue-accent) 70%, transparent)) drop-shadow(0 0 22px color-mix(in srgb, var(--blue) 40%, transparent));
-    opacity: 1;
-  }
+  0%, 100% { opacity: 0.88; }
+  50%       { opacity: 1;    }
 }
 
 /* Cada path del cerebro con animación de color alternada */
@@ -2560,6 +2547,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   scrollbar-width: none;
   gap: 0;
   touch-action: pan-x;
+  contain: paint;
 }
 #mitos-cards::-webkit-scrollbar { display: none; }
 #mitos-extra { display: contents; }
@@ -2578,10 +2566,9 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   scroll-snap-stop: always;
   flex: 0 0 100%;
   box-sizing: border-box;
-  background: rgba(255,255,255,0.90);
+  background: rgba(255,255,255,0.96);
   border: 1px solid var(--card-border);
   border-radius: 14px; padding: 1.1rem 1.2rem;
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   transition: box-shadow 0.2s;
 }
 .mito-tf-card.answered { border-color: rgba(148,163,184,0.15); }
@@ -3299,8 +3286,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   padding: 1.1rem 0.6rem 0.9rem;
   border-radius: 16px;
   border: 1.5px solid color-mix(in srgb, var(--blue) 16%, transparent);
-  background: rgba(255,255,255,0.90);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.96);
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: 700;
@@ -3334,7 +3320,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 .lib-card {
-  background: rgba(255,255,255,0.93);
+  background: rgba(255,255,255,0.97);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 1.4rem;
@@ -3344,7 +3330,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   cursor: pointer;
   box-shadow: var(--card-shadow), inset 0 1px 0 rgba(255,255,255,0.80);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  backdrop-filter: blur(8px);
 }
 
 .lib-card:hover {
@@ -3702,8 +3687,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   --badge-border: color-mix(in srgb, var(--blue) 22%, transparent);
 }
 
-.dark-base body {
-  background-color: #07101E;
+.dark-base body { background-color: #07101E; }
+.dark-base #bg-layer {
   background-image:
     radial-gradient(ellipse 80% 55% at 15% 25%, color-mix(in srgb, var(--blue-accent) 3%, transparent) 0%, transparent 65%),
     radial-gradient(ellipse 65% 50% at 85% 60%, color-mix(in srgb, var(--blue) 2%, transparent) 0%, transparent 60%);
@@ -3868,14 +3853,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 @keyframes logo-breathe-dark {
-  0%, 100% {
-    filter: invert(0.9) brightness(1.4) drop-shadow(0 0 8px color-mix(in srgb, var(--blue-accent) 30%, transparent));
-    transform: scale(1);
-  }
-  50% {
-    filter: invert(0.9) brightness(1.6) drop-shadow(0 0 20px color-mix(in srgb, var(--blue-accent) 65%, transparent));
-    transform: scale(1.024);
-  }
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.024); }
 }
 
 /* 2 · Logo navbar: invertido en modo oscuro para contraste premium */
@@ -4232,9 +4211,11 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 
 .reading-progress-fill {
   height: 100%;
-  width: 0%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
   background: linear-gradient(90deg, var(--blue-accent) 0%, var(--blue) 100%);
-  transition: width 0.08s linear;
+  transition: transform 0.08s linear;
   border-radius: 0 2px 2px 0;
   box-shadow: 0 0 8px color-mix(in srgb, var(--blue-accent) 55%, transparent);
 }
@@ -5785,7 +5766,7 @@ button.fav-item-cta:hover {
 
 /* ── Radar de Mitos — widget prominente ── */
 .mitos-section {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.98);
   border: 1px solid color-mix(in srgb, #4F46E5 18%, transparent);
   border-left: 3px solid #4F46E5;
   border-radius: 16px;
@@ -5793,8 +5774,6 @@ button.fav-item-cta:hover {
   margin-bottom: 1rem;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 2px 22px color-mix(in srgb, #4F46E5 10%, transparent), 0 8px 36px rgba(11,19,43,0.07), inset 0 1px 0 rgba(255,255,255,0.85);
   transition: box-shadow 0.22s;
 }
@@ -6169,14 +6148,12 @@ button.fav-item-cta:hover {
 .progress-tracker {
   margin-bottom: 1.2rem;
   padding: 0.9rem 1rem;
-  background: rgba(248,251,255,0.95);
+  background: rgba(248,251,255,0.99);
   border: 1px solid color-mix(in srgb, var(--blue) 15%, transparent);
   border-radius: 14px;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 2px 14px rgba(11,19,43,0.07), inset 0 1px 0 rgba(255,255,255,0.85);
 }
 
@@ -6533,7 +6510,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 /* ── Widget (sidebar) — modo claro por defecto ── */
 .concepto-semana-widget {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.98);
   border: 1px solid color-mix(in srgb, var(--blue) 18%, transparent);
   border-left: 3px solid var(--blue);
   border-radius: 16px;
@@ -6541,8 +6518,6 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   margin-bottom: 1rem;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 2px 18px color-mix(in srgb, var(--blue) 10%, transparent), 0 8px 32px rgba(11,19,43,0.07), inset 0 1px 0 rgba(255,255,255,0.85);
   transition: box-shadow 0.22s;
 }
@@ -7989,37 +7964,33 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 /* ── Fondos de página ── */
-[data-theme="naranja"] body {
-  background-color: #1A1208;
+[data-theme="naranja"] body { background-color: #1A1208; color: #F5EFE6; }
+[data-theme="naranja"] #bg-layer {
   background-image:
     radial-gradient(ellipse 80% 55% at 15% 25%, rgba(249,115,22,0.07) 0%, transparent 65%),
     radial-gradient(ellipse 65% 50% at 85% 60%, rgba(251,146,60,0.05) 0%, transparent 60%);
-  color: #F5EFE6;
 }
 
-[data-theme="verde"] body {
-  background-color: #F0FBF4;
+[data-theme="verde"] body { background-color: #F0FBF4; color: #14291A; }
+[data-theme="verde"] #bg-layer {
   background-image:
     radial-gradient(ellipse 80% 55% at 15% 25%, rgba(22,163,74,0.055) 0%, transparent 65%),
     radial-gradient(ellipse 65% 50% at 85% 60%, rgba(134,239,172,0.045) 0%, transparent 60%),
     radial-gradient(ellipse 50% 40% at 55% 92%, rgba(16,185,129,0.04) 0%, transparent 55%);
-  color: #14291A;
 }
 
-[data-theme="tormenta"] body {
-  background-color: #07030F;
+[data-theme="tormenta"] body { background-color: #07030F; color: #EDE8F8; }
+[data-theme="tormenta"] #bg-layer {
   background-image:
     radial-gradient(ellipse 80% 55% at 15% 25%, rgba(168,85,247,0.08) 0%, transparent 65%),
     radial-gradient(ellipse 65% 50% at 85% 60%, rgba(192,132,252,0.05) 0%, transparent 60%);
-  color: #EDE8F8;
 }
 
-[data-theme="cosmos"] body {
-  background-color: #08060A;
+[data-theme="cosmos"] body { background-color: #08060A; color: #F0E8D3; }
+[data-theme="cosmos"] #bg-layer {
   background-image:
     radial-gradient(ellipse 80% 55% at 15% 25%, rgba(245,158,11,0.08) 0%, transparent 65%),
     radial-gradient(ellipse 65% 50% at 85% 60%, rgba(251,191,36,0.05) 0%, transparent 60%);
-  color: #F0E8D3;
 }
 
 /* ── Carmesí (Nivel 4) ── */
@@ -8037,12 +8008,11 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   --badge-border: rgba(200,16,46,0.25);
 }
 
-[data-theme="carmesi"] body {
-  background-color: #0A0204;
+[data-theme="carmesi"] body { background-color: #0A0204; color: #F5E8E8; }
+[data-theme="carmesi"] #bg-layer {
   background-image:
     radial-gradient(ellipse 80% 55% at 15% 25%, rgba(200,16,46,0.09) 0%, transparent 65%),
     radial-gradient(ellipse 65% 50% at 85% 60%, rgba(160,0,30,0.06) 0%, transparent 60%);
-  color: #F5E8E8;
 }
 
 /* ── Obsidiana (Nivel 5 — Córtex Supremo) — tema claro premium ── */
@@ -8060,14 +8030,13 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   --badge-border: rgba(184,146,12,0.22);
 }
 
-[data-theme="obsidiana"] body {
-  background-color: #f4f5f6;
+[data-theme="obsidiana"] body { background-color: #f4f5f6; color: #1C1814; }
+[data-theme="obsidiana"] #bg-layer {
   background-image:
     radial-gradient(#4a5568 0.5px, transparent 0.5px),
     radial-gradient(#a0aec0 0.5px, #f4f5f6 0.5px);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
-  color: #1C1814;
 }
 
 /* ── Navbar ── */

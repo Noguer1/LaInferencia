@@ -1680,7 +1680,7 @@ const LIBRARY_ARTICLES = {
     /* Oro sobre fondo claro: más nodos, más brillo, destellos visibles */
     obsidiana: { N: 152, MAX_D: 170, nodeAlpha: 0.45, lineAlpha: 0.55, lw: 1.1,
                  l: [212, 175, 55], r: [232, 200, 80] },
-    default:   { N: 92,  MAX_D: 155, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
+    default:   { N: 55,  MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
                  l: [16, 185, 129], r: [37, 99, 235] }
   };
 
@@ -1713,7 +1713,16 @@ const LIBRARY_ARTICLES = {
 
   function init() { resize(); activeCfg = getCfg(); pts = Array.from({ length: activeCfg.N }, () => mkPt(activeCfg)); }
 
-  function frame() {
+  const TARGET_FPS = window.innerWidth > 768 ? 30 : 60;
+  const FRAME_MS   = 1000 / TARGET_FPS;
+  let lastFrameTime = 0;
+
+  function frame(now) {
+    if (now - lastFrameTime < FRAME_MS) {
+      if (running) rafId = requestAnimationFrame(frame);
+      return;
+    }
+    lastFrameTime = now;
     const cfg = getCfg();
     syncParticles(cfg);
     const N = pts.length, MAX_D2 = cfg.MAX_D * cfg.MAX_D;
@@ -1730,21 +1739,19 @@ const LIBRARY_ARTICLES = {
     }
 
     ctx.lineWidth = cfg.lw;
+    ctx.beginPath();
     for (let i = 0; i < N; i++) {
       for (let j = i + 1; j < N; j++) {
         const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
         const d2 = dx * dx + dy * dy;
         if (d2 < MAX_D2) {
-          const mx = (pts[i].x + pts[j].x) * 0.5;
-          const op = (1 - Math.sqrt(d2) / cfg.MAX_D) * cfg.lineAlpha;
-          ctx.beginPath();
           ctx.moveTo(pts[i].x, pts[i].y);
           ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.strokeStyle = nodeColor(mx, op, cfg);
-          ctx.stroke();
         }
       }
     }
+    ctx.strokeStyle = nodeColor(W * 0.5, cfg.lineAlpha * 0.7, cfg);
+    ctx.stroke();
     if (running) rafId = requestAnimationFrame(frame);
   }
 
@@ -1756,6 +1763,16 @@ const LIBRARY_ARTICLES = {
     resize();
     pts.forEach(p => { if (p.x > W) p.x = Math.random() * W; if (p.y > H) p.y = Math.random() * H; });
   }, { passive: true });
+
+  let scrollPauseTimer = null;
+  function onScrollPause() {
+    stopCanvas();
+    clearTimeout(scrollPauseTimer);
+    scrollPauseTimer = setTimeout(startCanvas, 250);
+  }
+  window.addEventListener('scroll', onScrollPause, { passive: true });
+  const _appScroll = document.getElementById('app');
+  if (_appScroll) _appScroll.addEventListener('scroll', onScrollPause, { passive: true });
 
   init(); startCanvas();
 }());
@@ -4445,25 +4462,17 @@ function initWeeklySection() {
 
 /* ── BOTÓN VOLVER ARRIBA ─────────────────────────────────────── */
 (function () {
-  const btn = document.getElementById('btn-volver-arriba');
+  const btn   = document.getElementById('btn-volver-arriba');
   if (!btn) return;
-  function getScrollTop() {
-    const appEl = document.getElementById('app');
-    return (appEl && document.body.scrollHeight === document.body.clientHeight)
-      ? appEl.scrollTop
-      : window.scrollY;
-  }
+  const appEl    = document.getElementById('app');
+  const isAppScroll = !!(appEl && document.body.scrollHeight === document.body.clientHeight);
+  function getScrollTop() { return isAppScroll ? appEl.scrollTop : window.scrollY; }
   function scrollToTop() {
-    const appEl = document.getElementById('app');
-    if (appEl && document.body.scrollHeight === document.body.clientHeight) {
-      appEl.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    if (isAppScroll) appEl.scrollTo({ top: 0, behavior: 'smooth' });
+    else             window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   function onScroll() { btn.classList.toggle('visible', getScrollTop() > 400); }
   window.addEventListener('scroll', onScroll, { passive: true });
-  const appEl = document.getElementById('app');
   if (appEl) appEl.addEventListener('scroll', onScroll, { passive: true });
   btn.addEventListener('click', scrollToTop);
 }());
@@ -4559,28 +4568,34 @@ function initWeeklySection() {
   const fill = document.getElementById('reading-progress-fill');
   if (!bar || !fill) return;
 
+  const appEl       = document.getElementById('app');
+  const isAppScroll = !!(appEl && document.body.scrollHeight === document.body.clientHeight);
+  const scrollEl    = isAppScroll ? appEl : document.documentElement;
+
   function updateProgress() {
-    const appEl = document.getElementById('app');
-    const scrollEl   = (appEl && document.body.scrollHeight === document.body.clientHeight) ? appEl : document.documentElement;
-    const scrollTop  = (appEl && document.body.scrollHeight === document.body.clientHeight) ? appEl.scrollTop : window.scrollY;
+    const scrollTop   = isAppScroll ? appEl.scrollTop : window.scrollY;
     const totalHeight = scrollEl.scrollHeight - scrollEl.clientHeight;
     if (totalHeight <= 0) return;
-
     const pct = Math.min(100, Math.max(0, (scrollTop / totalHeight) * 100));
-
     if (pct <= 0) {
       bar.classList.remove('visible');
-      fill.style.width = '0%';
+      fill.style.transform = 'scaleX(0)';
     } else {
       bar.classList.add('visible');
-      fill.style.width = pct + '%';
+      fill.style.transform = `scaleX(${pct / 100})`;
       bar.setAttribute('aria-valuenow', Math.round(pct));
     }
   }
 
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  const _appEl = document.getElementById('app');
-  if (_appEl) _appEl.addEventListener('scroll', updateProgress, { passive: true });
+  let rafPending = false;
+  function scheduleProgress() {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(() => { rafPending = false; updateProgress(); });
+  }
+
+  window.addEventListener('scroll', scheduleProgress, { passive: true });
+  if (appEl) appEl.addEventListener('scroll', scheduleProgress, { passive: true });
   updateProgress();
 }());
 
@@ -8471,3 +8486,4 @@ const EFECTOS_EXTRA = {
 
   window._LI_updateYoPerfil = updateYoPerfil;
 }());
+

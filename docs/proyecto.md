@@ -173,15 +173,13 @@ Widget en navbar (`.nivel-widget`) con barra de progreso animada. Imágenes Nive
 ```
 
 ### Fondo
-Tres `radial-gradient` superpuestos sobre #F7F9FF:
-- Cyan (5% opacidad) — esquina top-left
-- Violeta (3%) — esquina bottom-right
-- Azul (4%) — centro-bottom
+Tres `radial-gradient` superpuestos sobre #F7F9FF. Definidos en `#bg-layer` (div `position: fixed; inset: 0; z-index: 0`), no en el body. Esto permite cachear el gradiente como capa GPU fija.
 
 ### Efectos
-- Glassmorphism: `backdrop-filter: blur(8px)`
+- Glassmorphism eliminado de la mayoría de elementos — `backdrop-filter` solo donde sea imprescindible
 - Transiciones: 0.2s (hover rápido), 0.7s (acordeones)
 - Sombras: `rgba(37, 99, 235, 0.1–0.15)`
+- Animaciones CSS solo con `transform` u `opacity` — nunca con `filter` animado (fuerza rasterización CPU por frame)
 
 ### Responsive
 Breakpoint principal: **≤680px**. Orden grid móvil: `"center" "right" "left"` (Tu Progreso + Lista Efectos antes que Test + Mitos).
@@ -200,6 +198,11 @@ Breakpoint principal: **≤680px**. Orden grid móvil: `"center" "right" "left"`
 | Acordeón de Efectos solo en móvil | En desktop el espacio lo permite sin colapsar |
 | Orden grid `"right"` antes que `"left"` en móvil | Tu Progreso es más relevante que el Test en primer scroll |
 | `display: none !important` en hero buttons móvil | Prioridad de espacio — los botones hero no son esenciales en móvil |
+| `#bg-layer` separado del `body` | Div `position:fixed` dedicado para los radial-gradient — cacheado como capa GPU independiente |
+| Animaciones CSS solo con `transform`/`opacity` | `filter` animado fuerza rasterización software cada frame — eliminado de `logo-breathe`, `brain-pulse` |
+| Barra de progreso usa `transform: scaleX()` | Más eficiente que animar `width` — no dispara layout, solo composite |
+| `scheduleProgress` con rAF throttle | `updateProgress` solo corre una vez por frame aunque lleguen múltiples eventos scroll |
+| Sin `backdrop-filter` en la mayoría de elementos | Cada `backdrop-filter` crea una capa GPU extra que el compositor debe mezclar — eliminado donde no era esencial |
 
 ---
 
@@ -209,4 +212,20 @@ Breakpoint principal: **≤680px**. Orden grid móvil: `"center" "right" "left"`
 
 ---
 
-*Última actualización: 2026-06-08 — web publicada en Vercel, Supabase conectado para propuestas*
+## Rendimiento — diagnóstico y fixes (2026-06-09)
+
+**Síntoma:** scroll lagueado en desktop (primera sección) — ~20fps. Móvil fluido. Fondo de página fluido.
+
+**Causa raíz:** Chrome tenía el compositor en modo software (`Compositing: Software only`) para la GPU del equipo de desarrollo. Comprobable en `chrome://gpu`. **Fix del usuario:** activar `chrome://flags/#ignore-gpu-blocklist` → "Override software rendering list" → Enabled → Relaunch.
+
+**Optimizaciones CSS aplicadas** (benefician a todos los usuarios independientemente del compositor):
+- `backdrop-filter` eliminado de `.nivel-widget`, `.hero-bubble-disk` y la mayoría de elementos
+- Animaciones CSS solo con `transform`/`opacity` — quitado `filter` animado de `logo-breathe`, `logo-breathe-dark`, `brain-pulse`
+- `#bg-layer` como div `position:fixed` dedicado para los gradientes de fondo
+- Barra de progreso usa `transform: scaleX()` en vez de `width`
+- `scheduleProgress` throttlea `updateProgress` via rAF
+- Sombras de cards simplificadas (menos capas, menos blur)
+
+---
+
+*Última actualización: 2026-06-09 — optimizaciones de rendimiento GPU compositor*
