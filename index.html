@@ -260,6 +260,44 @@
     }
     #acceso-btn:hover  { opacity: 0.9; transform: translateY(-1px); }
     #acceso-btn:active { transform: translateY(0); }
+    #acceso-granted {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      animation: accesoGrantedIn 0.55s cubic-bezier(.22,.68,0,1.2) both;
+    }
+    @keyframes accesoGrantedIn {
+      from { opacity: 0; transform: scale(0.82); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    #acceso-check {
+      font-size: 2.8rem;
+      line-height: 1;
+      color: #00E5FF;
+      filter: drop-shadow(0 0 18px rgba(0,229,255,0.9));
+    }
+    #acceso-granted-titulo {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #00E5FF;
+      text-shadow: 0 0 24px rgba(0,229,255,0.55);
+      margin: 0;
+    }
+    #acceso-granted-inv {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: rgba(255,255,255,0.6);
+      margin: 0;
+    }
+    #acceso-granted-nombre {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.92);
+      margin: 4px 0 0;
+    }
   </style>
 
   <div id="acceso-overlay">
@@ -275,6 +313,12 @@
       <input id="acceso-input" type="text" placeholder="Tu código" autocomplete="off" />
       <p id="acceso-error">Código incorrecto. Inténtalo de nuevo.</p>
       <button id="acceso-btn">Entrar</button>
+      <div id="acceso-granted">
+        <div id="acceso-check">✓</div>
+        <p id="acceso-granted-titulo">ACCESO CONCEDIDO</p>
+        <p id="acceso-granted-inv"></p>
+        <p id="acceso-granted-nombre"></p>
+      </div>
     </div>
   </div>
   <script>
@@ -378,7 +422,7 @@
         start();
       })();
 
-      /* ── A: número de invitado único persistente (1-100, formato 3 dígitos) ── */
+      /* ── A: número de invitado único persistente, rango 025-050 ── */
       var numEl=document.getElementById('acceso-numero');
       var invNum=localStorage.getItem('li_inv_num');
       if(!invNum){
@@ -386,6 +430,16 @@
         localStorage.setItem('li_inv_num',invNum);
       }
       numEl.textContent='INVITADO #'+invNum;
+
+      /* ── B: nombre personalizado desde ?n=Nombre o localStorage ── */
+      function escHtml(s){return s.replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];});}
+      var nombre=(new URLSearchParams(location.search).get('n')||'').trim().slice(0,40);
+      if(nombre) localStorage.setItem('li_nombre',nombre);
+      else nombre=(localStorage.getItem('li_nombre')||'').trim();
+      if(nombre){
+        document.getElementById('acceso-sub').innerHTML=
+          'Has sido seleccionado, <strong>'+escHtml(nombre)+'</strong>,<br>entre los primeros en explorar La Inferencia.';
+      }
 
       /* ── D: efecto portal al entrar (CSS, sin canvas) ── */
       function portalEnter(){
@@ -406,12 +460,25 @@
         }, 520);
       }
 
+      function showGranted(){
+        ['acceso-badge','acceso-title','acceso-status','acceso-sub','acceso-fecha',
+         'acceso-input','acceso-error','acceso-btn','acceso-numero'].forEach(function(id){
+          var el=document.getElementById(id); if(el) el.style.display='none';
+        });
+        document.getElementById('acceso-granted-inv').textContent='INVITADO #'+invNum;
+        if(nombre) document.getElementById('acceso-granted-nombre').textContent='Bienvenido, '+escHtml(nombre);
+        document.getElementById('acceso-granted').style.display='flex';
+        document.getElementById('acceso-card').style.borderColor='rgba(0,229,255,0.35)';
+        document.getElementById('acceso-card').style.boxShadow='0 0 60px rgba(0,229,255,0.15)';
+        setTimeout(portalEnter, 1600);
+      }
+
       function tryAcceso(){
         var val=document.getElementById('acceso-input').value.trim().toUpperCase();
         var err=document.getElementById('acceso-error');
         if(val===CODE){
           localStorage.setItem(KEY,CODE);
-          portalEnter();
+          showGranted();
         } else {
           err.style.display='block';
           var inp=document.getElementById('acceso-input');
