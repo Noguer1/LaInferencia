@@ -378,49 +378,33 @@
         start();
       })();
 
-      /* ── A: número de invitado único persistente ── */
+      /* ── A: número de invitado único persistente (1-100, formato 3 dígitos) ── */
       var numEl=document.getElementById('acceso-numero');
       var invNum=localStorage.getItem('li_inv_num');
-      if(!invNum){ invNum=String(Math.floor(Math.random()*900)+100); localStorage.setItem('li_inv_num',invNum); }
+      if(!invNum){
+        invNum=('00'+(Math.floor(Math.random()*100)+1)).slice(-3);
+        localStorage.setItem('li_inv_num',invNum);
+      }
       numEl.textContent='INVITADO #'+invNum;
 
-      /* ── D: efecto portal al entrar ── */
+      /* ── D: efecto portal al entrar (CSS, sin canvas) ── */
       function portalEnter(){
-        var ac=document.getElementById('acceso-canvas');
-        var cc=ac?ac.getContext('2d'):null;
-        if(!cc){closeOverlay();return;}
-        var bursts=[],done=false;
-        var cx=W||ac.width/2, cy=H||ac.height/2;
-        for(var i=0;i<80;i++){
-          var ang=Math.random()*Math.PI*2;
-          var spd=3+Math.random()*9;
-          bursts.push({x:cx,y:cy,vx:Math.cos(ang)*spd,vy:Math.sin(ang)*spd,
-            r:1.2+Math.random()*2.8, a:0.9+Math.random()*0.1,
-            col:'rgba('+(Math.random()>0.4?'0,210,255':'140,200,255')+','});
-        }
-        var card=document.getElementById('acceso-card');
-        card.style.transition='transform 0.45s cubic-bezier(.4,0,.2,1),opacity 0.45s';
-        card.style.transform='scale(1.06)';card.style.opacity='0';
-        var t0=null;
-        function burst(ts){
-          if(!t0)t0=ts;
-          var p=(ts-t0)/700; if(p>1)p=1;
-          if(cc&&ac.width){
-            cc.clearRect(0,0,ac.width,ac.height);
-            for(var b of bursts){
-              b.x+=b.vx;b.y+=b.vy;b.a*=0.955;
-              cc.beginPath();cc.arc(b.x,b.y,b.r,0,Math.PI*2);
-              cc.fillStyle=b.col+b.a+')';cc.fill();
-            }
-          }
-          overlay.style.opacity=String(1-p);
-          if(p<1&&!done)requestAnimationFrame(burst);
-          else{done=true;closeOverlay();}
-        }
         if(window._accesoStop)window._accesoStop();
-        requestAnimationFrame(burst);
+        var card=document.getElementById('acceso-card');
+        card.style.transition='transform 0.5s cubic-bezier(.4,0,.2,1), opacity 0.4s ease';
+        card.style.transform='scale(1.12)';
+        card.style.opacity='0';
+        setTimeout(function(){
+          overlay.style.transition='opacity 0.38s ease';
+          overlay.style.opacity='0';
+        }, 90);
+        setTimeout(function(){
+          overlay.style.display='none';
+          overlay.style.opacity='';
+          overlay.style.transition='';
+          document.body.style.overflow='';
+        }, 520);
       }
-      function closeOverlay(){overlay.style.display='none';document.body.style.overflow='';}
 
       function tryAcceso(){
         var val=document.getElementById('acceso-input').value.trim().toUpperCase();
