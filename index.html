@@ -382,7 +382,7 @@
       var numEl=document.getElementById('acceso-numero');
       var invNum=localStorage.getItem('li_inv_num');
       if(!invNum){
-        invNum=('00'+(Math.floor(Math.random()*100)+1)).slice(-3);
+        invNum=('00'+(Math.floor(Math.random()*49)+1)).slice(-3);
         localStorage.setItem('li_inv_num',invNum);
       }
       numEl.textContent='INVITADO #'+invNum;
