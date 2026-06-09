@@ -1,15 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  INSTRUCCIONES:
-  1. Reemplaza "TU-DOMINIO.com" por tu dominio real en todas las etiquetas <loc>
-  2. Actualiza <lastmod> cada vez que publiques contenido nuevo
-  3. Sube este archivo a la raíz de tu web (junto a index.html)
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lainferencia.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-09</lastmod>
   </url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=eco-01&amp;cat=economia</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=eco-02&amp;cat=economia</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=eco-03&amp;cat=economia</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=eco-04&amp;cat=economia</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=eco-05&amp;cat=economia</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=mod-01&amp;cat=moda</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=mod-02&amp;cat=moda</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=mod-03&amp;cat=moda</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=mod-04&amp;cat=moda</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=mod-05&amp;cat=moda</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=der-01&amp;cat=derecho</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=der-02&amp;cat=derecho</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=der-03&amp;cat=derecho</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=der-04&amp;cat=derecho</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=dep-01&amp;cat=deporte</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=dep-02&amp;cat=deporte</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=dep-03&amp;cat=deporte</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=dep-04&amp;cat=deporte</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=art-01&amp;cat=arte</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=art-02&amp;cat=arte</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=art-03&amp;cat=arte</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=art-04&amp;cat=arte</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=tec-01&amp;cat=tecnologia</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=tec-02&amp;cat=tecnologia</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=tec-03&amp;cat=tecnologia</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=tec-04&amp;cat=tecnologia</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=rel-01&amp;cat=relaciones</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=rel-02&amp;cat=relaciones</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=rel-03&amp;cat=relaciones</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=rel-04&amp;cat=relaciones</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=rel-05&amp;cat=relaciones</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=sm-01&amp;cat=saludMental</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=sm-02&amp;cat=saludMental</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=sm-03&amp;cat=saludMental</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=sm-04&amp;cat=saludMental</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=sm-05&amp;cat=saludMental</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=edu-01&amp;cat=educacion</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=edu-02&amp;cat=educacion</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=edu-03&amp;cat=educacion</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=edu-04&amp;cat=educacion</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=edu-05&amp;cat=educacion</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=tra-01&amp;cat=trabajo</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=tra-02&amp;cat=trabajo</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=tra-03&amp;cat=trabajo</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=tra-04&amp;cat=trabajo</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=tra-05&amp;cat=trabajo</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=pol-01&amp;cat=politica</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=pol-02&amp;cat=politica</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=pol-03&amp;cat=politica</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=pol-04&amp;cat=politica</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=ali-01&amp;cat=alimentacion</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=ali-02&amp;cat=alimentacion</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=ali-03&amp;cat=alimentacion</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
+  <url><loc>https://lainferencia.com/?v=art&amp;id=ali-04&amp;cat=alimentacion</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-09</lastmod></url>
 </urlset>

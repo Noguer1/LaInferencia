@@ -11,7 +11,7 @@ Web de divulgación de psicología basada en evidencia. Convierte investigación
 - **Fundador:** Miguel Noguer Escudero
 - **Tagline:** "Convertimos investigación en conocimiento útil, claro y accesible"
 - **Idioma:** Español (es_ES)
-- **Estado:** MVP publicado — https://la-inferencia.vercel.app
+- **Estado:** MVP publicado — https://lainferencia.com
 - **Audiencia:** Público general con curiosidad por la psicología. Entretenimiento e interés personal, no académico. Accesible también para estudiantes de psicología.
 - **Redes:** Solo LinkedIn (cuenta de empresa La Inferencia)
   - Automatizar posts en la página de empresa via LinkedIn API
@@ -26,7 +26,7 @@ Web de divulgación de psicología basada en evidencia. Convierte investigación
 | Servicio | Detalle |
 |----------|---------|
 | **GitHub** | github.com/Noguer1/LaInferencia — rama `main` |
-| **Vercel** | la-inferencia.vercel.app — conectado a GitHub, despliega automáticamente en cada push |
+| **Vercel** | lainferencia.com — conectado a GitHub, despliega automáticamente en cada push |
 | **Supabase** | dbyoxssdbboxnbecgpbf.supabase.co — base de datos PostgreSQL |
 
 **Flujo de trabajo:** editar archivos → `git add` → `git commit` → `git push` → Vercel despliega en ~30s.
@@ -228,4 +228,16 @@ Breakpoint principal: **≤680px**. Orden grid móvil: `"center" "right" "left"`
 
 ---
 
-*Última actualización: 2026-06-09 — optimizaciones de rendimiento GPU compositor*
+## Pantalla de acceso anticipado
+
+Overlay `#acceso-overlay` sobre la web. Código en `<script>` inline al final del `<style>` de acceso en `index.html`.
+
+- **Código de acceso:** `ANTICIPADO26` (validación en JS, no en servidor)
+- **Número de invitado:** generado aleatoriamente entre 30–50, persistido en localStorage (`li_inv_num`), mostrado como "INVITADO #XXX"
+- **Hint visible:** texto cyan "Introduce un número entre 30 y 50" encima del input
+- **Efecto portal:** animación CSS al entrar — la card sale por el centro y aparece la web
+- **Canvas:** partículas animadas de fondo mientras el overlay está activo
+
+---
+
+*Última actualización: 2026-06-09 — dominio .com, pantalla acceso con hint número 30–50*

@@ -2770,10 +2770,21 @@ function renderAuthorCard(author) {
 
 
 function renderFeaturedWeekly(article) {
-  const { week, author, badge, title, readingTime, intro, sections, blockquote, aplicacion } = article;
+  const { week, author, badge, title, readingTime, date, intro, sections, blockquote, aplicacion } = article;
   const sectionsHTML = sections.map((s, i) =>
     `<h3 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h3>${s.paragraphs.map(p => `<p>${p}</p>`).join('')}`
   ).join('');
+  /* Actualizar título y meta para SEO y compartir */
+  const _artUrl = `https://lainferencia.com/?v=semana&n=${week}`;
+  const _artDesc = intro.substring(0, 155) + '…';
+  document.title = `${title} — La Inferencia`;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', _artDesc);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content', _artDesc);
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content', _artUrl);
+  document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
+  document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', _artDesc);
+  document.querySelector('link[rel="canonical"]')?.setAttribute('href', _artUrl);
   /* Marcar artículo semanal como leído */
   if (window._LI_markWeeklyRead) window._LI_markWeeklyRead(week);
   const speechAvailable = !!window.speechSynthesis;
@@ -2782,10 +2793,11 @@ function renderFeaturedWeekly(article) {
     <div class="weekly-featured-card">
       <div class="week-label">
         <span class="week-tag">✦ Artículo de la Semana ${week}</span>
+        ${date ? `<span class="week-date">${date}</span>` : ''}
         <span class="reading-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${readingTime} de lectura</span>
         <button class="btn-modo-enfoque" id="btn-modo-enfoque" aria-pressed="${enfocado}">${enfocado ? '✕ Salir de enfoque' : '📖 Modo Enfoque'}</button>
         ${_favBtnHTML('weekly-' + week, 'fav-btn--article')}
-        <button class="article-share-btn" data-share-title="${title.replace(/"/g,'&quot;')}" data-share-text="Artículo de La Inferencia: ${title.replace(/"/g,'&quot;')}" aria-label="Compartir artículo" title="Compartir">
+        <button class="article-share-btn" data-share-title="${title.replace(/"/g,'&quot;')}" data-share-text="Artículo de La Inferencia: ${title.replace(/"/g,'&quot;')}" data-share-url="${_artUrl}" aria-label="Compartir artículo" title="Compartir">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           Compartir
         </button>
@@ -2828,7 +2840,7 @@ function renderPreviousCard(article) {
     </div>`;
 }
 
-function renderWeeklyView(available, featured) {
+function renderWeeklyView(available, featured, _skipUrlUpdate) {
   const container = document.getElementById('weekly-container');
   if (!container || !featured) return;
   const previous = available.filter(a => a.week !== featured.week);
@@ -2879,6 +2891,9 @@ function renderWeeklyView(available, featured) {
   }
 
   container.innerHTML = html;
+  if (!_skipUrlUpdate) {
+    history.replaceState({ v: 'semana', n: featured.week }, '', `?v=semana&n=${featured.week}`);
+  }
 
   /* Clicks en grid desktop */
   container.querySelectorAll('.weekly-prev-card').forEach(card => {
@@ -2949,14 +2964,15 @@ function initWeeklySection() {
     container.innerHTML = '<p class="empty-state" style="display:block">No hay artículos disponibles aún.</p>';
     return;
   }
+  window._LI_weeklyAvailable = available;
   renderWeeklyView(available, available[0]);
 
   window._LI_renderWeekly = function(week) {
     const art = available.find(a => a.week === week);
     if (art) {
-      renderWeeklyView(available, art);
-      document.getElementById('weekly-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       history.pushState({ v: 'semana', n: week }, '', `?v=semana&n=${week}`);
+      renderWeeklyView(available, art, true);
+      document.getElementById('weekly-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 }
@@ -5506,7 +5522,10 @@ document.addEventListener('click', e => {
   if (!btn) return;
   const title = btn.dataset.shareTitle || document.title;
   const text  = btn.dataset.shareText  || '';
-  shareContenido(title, text, window.location.href);
+  const url   = btn.dataset.shareUrl
+    ? new URL(btn.dataset.shareUrl, window.location.origin).toString()
+    : window.location.href;
+  shareContenido(title, text, url);
 });
 
 /* ── COMPARTIR + DEEP LINK POR URL ───────────────────────────── */
@@ -5600,7 +5619,21 @@ document.addEventListener('click', e => {
   window.addEventListener('popstate', e => {
     const st = e.state;
     if (!st) return;
-    if (st.v === 'efecto' && st.id && window._LI_openEfecto) window._LI_openEfecto(st.id);
+    if (st.v === 'efecto' && st.id && window._LI_openEfecto) {
+      window._LI_openEfecto(st.id);
+    } else if (st.v === 'semana' && st.n) {
+      document.querySelector('.tab-btn[data-tab="semana"]')?.click();
+      setTimeout(() => {
+        if (window._LI_renderWeekly) {
+          history.replaceState(st, '', window.location.href);
+          const avail = window._LI_weeklyAvailable;
+          if (avail) {
+            const art = avail.find(a => a.week === st.n);
+            if (art) renderWeeklyView(avail, art, true);
+          }
+        }
+      }, 120);
+    }
   });
 }());
 
@@ -6157,6 +6190,17 @@ const CONCEPTOS_SEMANA = [
 
   function openArticle(art, cat) {
     currentCat = cat || currentCat;
+    const _artUrl = `https://lainferencia.com/?v=art&id=${art.id}&cat=${currentCat}`;
+    history.pushState({ v: 'art', id: art.id, cat: currentCat }, '', `?v=art&id=${art.id}&cat=${currentCat}`);
+    document.title = `${art.title} — La Inferencia`;
+    const _artDesc = art.summary;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', _artDesc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', art.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', _artDesc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', _artUrl);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', art.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', _artDesc);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', _artUrl);
     container.innerHTML = renderFull(art);
     markRead(art.id);
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -6174,6 +6218,15 @@ const CONCEPTOS_SEMANA = [
 
   function showCards(cat) {
     currentCat = cat;
+    document.title = 'La Inferencia — Divulgación de Psicología';
+    const _homeDesc = 'La psicología más allá del aula y la consulta. Convertimos investigación en conocimiento útil, claro y accesible.';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', _homeDesc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'La Inferencia — Divulgación de Psicología');
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', _homeDesc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', 'https://lainferencia.com/');
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', 'La Inferencia — Divulgación de Psicología');
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', _homeDesc);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://lainferencia.com/');
     const arts = LIBRARY_ARTICLES[cat] || [];
     container.innerHTML = `<div class="lib-cards-grid">${arts.map(a => renderCard(a, cat)).join('')}</div>`;
     container.querySelectorAll('.lib-card').forEach(card => {
@@ -6216,7 +6269,6 @@ const CONCEPTOS_SEMANA = [
     const art = (LIBRARY_ARTICLES[cat] || []).find(a => a.id === id);
     if (!art) return;
     openArticle(art, cat);
-    history.pushState({ v: 'art', id, cat }, '', `?v=art&id=${id}&cat=${cat}`);
   };
 }());
 

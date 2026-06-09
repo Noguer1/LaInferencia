@@ -4,7 +4,7 @@
 
 **La Inferencia** — web de divulgación de psicología basada en evidencia. Convierte investigación académica (artículos peer-reviewed) en contenido accesible, claro y en español. Fundador: Miguel Noguer Escudero.
 
-Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.club
+Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.com
 
 **Audiencia:** Público general con curiosidad por la psicología — entretenimiento e interés personal, no académico. También accesible para estudiantes. Tono ligero y enganchante.
 
@@ -20,16 +20,17 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.club
 ## Estado actual *(2026-06-09)*
 
 - **Fase:** MVP publicado y en producción.
-- **URL:** https://lainferencia.club
+- **URL:** https://lainferencia.com (dominio principal desde junio 2026; lainferencia.club redirige con 301)
 - **GitHub:** github.com/Noguer1/LaInferencia — rama `main`, deploy automático vía Vercel
 - **Supabase:** dbyoxssdbboxnbecgpbf.supabase.co — tablas `propuestas` y `votos` activas
-- **Dominio:** `lainferencia.club` activo en Vercel y Spaceship. SSL automático.
-- **Email:** `contacto@lainferencia.club` reenvía a `noguermiguel@gmail.com` (Spaceship Email Forwarding). Solo recepción — enviar desde ese email requiere Google Workspace (de pago).
+- **Dominio:** `lainferencia.com` activo en Vercel y Spaceship. SSL automático. `lainferencia.club` configurado como redirect 301.
+- **Email:** `contacto@lainferencia.com` reenvía a `noguermiguel@gmail.com` (Spaceship Email Forwarding). Solo recepción — enviar desde ese email requiere Google Workspace (de pago).
 - **Analytics:** Umami activo — sin cookies, sin banner, GDPR compliant. Dashboard en umami.is. Script en `index.html` con ID `79211994-3fb4-4d6a-84d4-8860aeadcd92`. El bloque GA4 sigue comentado (no usar).
 - **OG image:** `img/OG.png` existe. Si se regenera, usar `archive/og-image-generator.html`.
 - **Glosario:** Modal funcional. Array `GLOSARIO` en `main.js`. Completamente funcional.
 - **Propuestas:** Conectadas a Supabase. Feed compartido. Votos anónimos por dispositivo (`li_voter_uuid` en localStorage). Moderación desde Supabase Table Editor.
 - **Sección Favoritos:** `renderFavSection()` busca `#favoritos-section` que no existe — desactivada intencionalmente.
+- **Pantalla de acceso:** overlay `#acceso-overlay` — código `BATA27`. Número de invitado generado en rango 25–50, persistido en localStorage. Links personalizados con `?n=Nombre`.
 
 ---
 

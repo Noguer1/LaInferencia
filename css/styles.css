@@ -2186,6 +2186,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   text-transform: uppercase; letter-spacing: 0.5px;
 }
 
+.week-date { font-size: 0.78rem; color: var(--text-muted); }
 .reading-time { font-size: 0.78rem; color: var(--text-muted); }
 
 .author-card {
