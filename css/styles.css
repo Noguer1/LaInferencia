@@ -1056,6 +1056,12 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   gap: 1.5rem;
 }
 
+.docs-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.25rem;
+}
+
 /* ── TARJETA BASE ── */
 .doc-card {
   background: rgba(255,255,255,0.97);
@@ -3136,6 +3142,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .doc-card.doc-featured { flex-direction: column; }
   .doc-aside { width: 100%; }
   .docs-grid-2 { grid-template-columns: 1fr; }
+  .docs-grid-3 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {
