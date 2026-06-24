@@ -2423,6 +2423,100 @@ const AUTHORS = {
   }
 };
 
+/* ── FUERA DE BATA · ARTÍCULOS EXTERNOS ─────────────────────── */
+const BATA_ARTICLES = [
+  {
+    id: 'bata-gaslighting',
+    title: 'Cuando alguien hace que dudes de ti mismo: el gaslighting también ocurre en el aula',
+    summary: '89 estudiantes universitarios, dos dimensiones del gaslighting, y un hallazgo claro: la cohesión del grupo protege más que cualquier recurso individual.',
+    badge: 'Psicología Social',
+    readingTime: '5 min',
+    author: { name: 'Daria Korneyko', university: 'Universidad Miguel Hernández de Elche', specialty: 'Psicología del comportamiento grupal y abuso psicológico' },
+    intro: 'El gaslighting tiene una definición precisa: es el uso sistemático de la trivialización y la aflicción para hacer que otra persona dude de su propia percepción de la realidad. No es un insulto ni un golpe. Es el comentario que dice «exageras», la reunión de grupo en la que nadie recuerda lo que tú recuerdas, la sensación persistente de que el problema eres tú. Un estudio de 2026 lo ha medido por primera vez en grupos de trabajo universitarios españoles, y el hallazgo más importante no tiene que ver con el agresor, sino con el entorno.',
+    sections: [
+      {
+        subtitle: 'El experimento: 89 estudiantes y un abuso sin marcas',
+        paragraphs: [
+          'Daria Korneyko, graduada en Psicología por la Universidad Miguel Hernández, reclutó a 89 estudiantes universitarios —el 52,8% mujeres— y les preguntó por sus experiencias dentro de grupos de trabajo académicos. No les preguntó si habían sufrido acoso o abuso: les preguntó por situaciones concretas. Si sus contribuciones habían sido ignoradas o minimizadas. Si habían sentido que su malestar era tratado como algo exagerado. Si habían llegado a dudar de su propio criterio después de interacciones con compañeros.',
+          'Con esos datos, midió el gaslighting en sus dos dimensiones operativas —trivialización y aflicción— y lo cruzó con cuatro variables del contexto grupal: cohesión del equipo, autoestima individual, actitudes hacia el trabajo colaborativo y autopercepción de las propias capacidades.'
+        ]
+      },
+      {
+        subtitle: 'El mecanismo: el grupo protege más que la persona',
+        paragraphs: [
+          'El resultado más destacable fue este: la cohesión grupal fue el predictor más potente de la ausencia de gaslighting. Grupos con mayor unidad interna mostraron niveles significativamente más bajos de trivialización (β = −.532) y de aflicción (β = −.567). La relación era fuerte, no marginal.',
+          'Y la cadena que construye esa cohesión empieza en un lugar inesperado: la amistad. Los equipos con vínculos personales reales mostraban mayor cohesión (β = .436), lo que a su vez reducía el gaslighting. A nivel individual, la autoestima actuó como escudo directo contra la duda personal: quienes tenían una autoestima más alta dudaban mucho menos de sí mismos cuando experimentaban comportamientos de trivialización o aflicción (β = −.792).',
+          'La conclusión incómoda es esta: el gaslighting en entornos académicos no es solo un asunto entre dos personas. Es un síntoma del tipo de cultura que ha construido el grupo. Un equipo fragmentado, sin vínculos reales, es un entorno donde el abuso psicológico silencioso tiene mucho más espacio para instalarse.'
+        ]
+      }
+    ],
+    blockquote: { text: '«El gaslighting se asienta en entornos donde la cohesión grupal es débil y la autoestima individual, frágil. La intervención más eficaz no es individual: es estructural.»', attribution: 'Daria Korneyko, Universidad Miguel Hernández (2026)' },
+    aplicacion: 'Si en un grupo de trabajo sientes que tus ideas se ignoran sistemáticamente, que tu memoria es cuestionada o que tus reacciones siempre parecen desproporcionadas, la pregunta relevante no es «¿estoy exagerando?». Es «¿qué nivel de cohesión real tiene este grupo?». Si la respuesta es poca, eso no explica todo, pero sí explica más de lo que parece.',
+    sourceUrl: 'https://dspace.umh.es/handle/11000/37013',
+    sourceLabel: 'Korneyko (2026) — TFG, Universidad Miguel Hernández'
+  },
+  {
+    id: 'bata-perfeccionismo',
+    title: 'El precio de querer hacerlo todo bien: perfeccionismo y agotamiento en jóvenes deportistas',
+    summary: '121 deportistas jóvenes, dos tipos de perfeccionismo, y el camino de dos pasos por el que el miedo al fracaso lleva al agotamiento antes de llegar siquiera a competir.',
+    badge: 'Psicología del Rendimiento',
+    readingTime: '5 min',
+    author: { name: 'Naiara Millán Isusi', university: 'Universidad de Oviedo', specialty: 'Psicología del rendimiento y bienestar deportivo' },
+    intro: 'Hay un tipo de perfeccionismo que no viene de tus valores sino del miedo a lo que pensarán si fallas. Los psicólogos lo llaman perfeccionismo socialmente prescrito, y un estudio de 2025 con 121 deportistas jóvenes trazó el camino exacto por el que ese tipo de exigencia lleva al agotamiento: no directamente, sino a través de dos pasos que lo hacen especialmente difícil de detectar en uno mismo.',
+    sections: [
+      {
+        subtitle: 'El estudio: 121 deportistas y la distinción que lo cambia todo',
+        paragraphs: [
+          'Naiara Millán Isusi, graduada en Psicología por la Universidad de Oviedo, trabajó con 121 deportistas jóvenes —57 mujeres y 64 hombres, con edades entre 16 y 30 años, de modalidades variadas— para estudiar cómo el perfeccionismo se relaciona con el burnout deportivo y con el rendimiento percibido.',
+          'La distinción de partida es crítica. El perfeccionismo adaptativo se orienta hacia el dominio: tienes estándares altos porque te importa mejorar, y el error te da información. El perfeccionismo maladaptivo —el socialmente prescrito— se orienta hacia la evitación: sientes que los demás esperan de ti una perfección que nunca podrás garantizar del todo, y el error no es un dato, sino una amenaza a tu valor como persona.'
+        ]
+      },
+      {
+        subtitle: 'El mecanismo: no es un paso, son dos',
+        paragraphs: [
+          'Lo que encontró Millán Isusi es que el perfeccionismo maladaptivo no lleva al burnout de forma directa. Lo hace a través de dos mediadores encadenados. El primero es el miedo al fracaso: quien siente que su valor personal depende de no fallar desarrolla una relación de alarma con el error. La energía que debería ir hacia el rendimiento va hacia la gestión del miedo.',
+          'El segundo mediador es el autosabotaje. Anticipando el fallo, la persona empieza a no comprometerse del todo, a buscar excusas preventivas, a protegerse antes de que la situación llegue a su punto crítico. El resultado es el agotamiento de quien no ha llegado siquiera a la línea de salida, sino que se ha desgastado gestionando el terror a lo que podría ocurrir si sale a competir de verdad.',
+          'El hallazgo tiene alcance muy superior al deporte. El mismo mecanismo opera en estudiantes que no entregan un trabajo porque «no estará suficientemente bien», en personas que no piden el ascenso porque «no es el momento», en cualquiera que haya confundido el perfeccionismo con la excelencia. La diferencia no está en el resultado, está en desde dónde actúas: desde lo que te importa, o desde lo que temes.'
+        ]
+      }
+    ],
+    blockquote: { text: '«El perfeccionismo maladaptivo no agota por exigir demasiado, sino porque convierte cada actuación en un examen del propio valor.»', attribution: 'Naiara Millán Isusi, Universidad de Oviedo (2025)' },
+    aplicacion: 'Antes de tu próxima tarea exigente, pregúntate de dónde viene la exigencia. «Quiero hacerlo bien porque me importa el resultado» y «tengo que hacerlo bien o demostraré que no valgo» son dos frases que producen el mismo comportamiento externo durante un tiempo, pero un desgaste interno radicalmente distinto. Aprender a distinguirlas no elimina la exigencia; la hace sostenible.',
+    sourceUrl: 'https://digibuo.uniovi.es/dspace/handle/10651/79829',
+    sourceLabel: 'Millán Isusi (2025) — TFG, Universidad de Oviedo'
+  },
+  {
+    id: 'bata-musica',
+    title: 'La música no solo te hace sentir cosas: también cambia cómo las gestionas',
+    summary: '210 adultos, dos estrategias de regulación emocional y un hallazgo que cambia la pregunta sobre la música: no es si la escuchas, sino para qué la enciendes.',
+    badge: 'Psicología de la Salud',
+    readingTime: '5 min',
+    author: { name: 'Andrea Gómez-Pantoja García', university: 'Universidad Miguel Hernández de Elche', specialty: 'Psicología de la salud y bienestar emocional' },
+    intro: 'Cuando estás ansioso y pones música, tu cerebro puede estar haciendo dos cosas completamente distintas: reinterpretar la situación o simplemente bloquearla. Un estudio de 2024 con 210 adultos españoles midió cuál de las dos hace cada tipo de persona, y encontró que la diferencia entre ambas estrategias —y lo que las predice— tiene más peso del que parece.',
+    sections: [
+      {
+        subtitle: 'El estudio: 210 adultos, dos estrategias y la variable que nadie esperaba',
+        paragraphs: [
+          'Andrea Gómez-Pantoja García, graduada en Psicología por la Universidad Miguel Hernández, reclutó a 210 adultos con una edad media de 40 años para estudiar cómo usaban la música en la vida cotidiana. No como entretenimiento, sino como herramienta emocional.',
+          'Lo que midió fue la relación entre el uso habitual de música y dos estrategias de regulación emocional bien establecidas. La primera es la reevaluación cognitiva: cambiar el modo en que interpretas una situación para que la emoción sea diferente antes de que se dispare. La segunda es la supresión expresiva: dejar que la emoción ocurra pero bloquear su expresión. La primera es más adaptativa a largo plazo. La segunda acumula. Además de esas dos, el estudio midió niveles de soledad, miedo a perderse cosas (FoMO), síntomas ansiodepresivos y bienestar general.'
+        ]
+      },
+      {
+        subtitle: 'El mecanismo: el uso importa, pero el músico importa más',
+        paragraphs: [
+          'El primer hallazgo fue coherente: el uso de música correlacionó positivamente con la reevaluación cognitiva y negativamente con la supresión expresiva. Las personas que más usaban música para regular sus emociones tendían a hacerlo de manera adaptativa, procesando en lugar de bloqueando.',
+          'Pero el hallazgo más revelador fue otro. La variable que generó diferencias más significativas fue tener formación musical. Los músicos mostraron perfiles de regulación emocional significativamente más adaptativos que los no músicos. El estudio también encontró diferencias notables por sexo y por edad. La lectura no es que aprender música te haga más sano emocionalmente de forma mágica: es que quienes conocen el lenguaje musical lo usan de forma más activa, no como fondo, sino como herramienta.',
+          'Un matiz que el estudio no dejó pasar: la relación entre uso de música y síntomas ansiodepresivos no fue linealmente positiva. En algunos casos, usar la música como estrategia principal de regulación se asoció con más síntomas, no con menos. La música puede ser una puerta hacia la emoción o una manera de mantenerla a distancia; la diferencia está en la intención con la que se usa.'
+        ]
+      }
+    ],
+    blockquote: { text: '«La música no regula igual en todas las personas. La pregunta no es si la usas, sino para qué la usas.»', attribution: 'Andrea Gómez-Pantoja García, Universidad Miguel Hernández (2024)' },
+    aplicacion: 'La próxima vez que enciendas música en un momento de malestar, para un momento y pregúntate qué estás buscando. Si es no pensar, estás en la ruta de la supresión. Si es pensar de otra forma, estás en la de la reevaluación. Ninguna está mal como estrategia puntual, pero a largo plazo solo una de las dos resuelve algo.',
+    sourceUrl: 'https://dspace.umh.es/handle/11000/33624',
+    sourceLabel: 'Gómez-Pantoja García (2024) — TFG, Universidad Miguel Hernández'
+  }
+];
+
 /* ── QUIZ BANK ──────────────────────────────────────────────────
    2 preguntas por artículo. correct: índice 0-based de la opción correcta.
    Artículos sin entrada simplemente no muestran botón de quiz.        */
@@ -2634,6 +2728,74 @@ const ARTICLE_STATS = {
 };
 
 /* ── FUNCIONES HELPER DE ARTÍCULO ──────────────────────────────── */
+function renderBataFull(art) {
+  const sectionsHTML = art.sections.map((s, i) =>
+    `<h3 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h3>${s.paragraphs.map(p => `<p>${p}</p>`).join('')}`
+  ).join('');
+  return `
+    <div class="weekly-featured-card">
+      <div class="week-label">
+        <button class="lib-back-btn" id="bata-back-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          Volver a Fuera de Bata
+        </button>
+        <span class="reading-time">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ${art.readingTime} de lectura
+        </span>
+      </div>
+      <span class="doc-badge" style="margin-bottom:0.5rem;">${art.badge}</span>
+      <h2 class="weekly-title">${art.title}</h2>
+      ${renderAuthorCard(art.author)}
+      ${_buildTocHTML(art.sections)}
+      <div class="article-content">
+        <p class="article-intro">${art.intro}</p>
+        ${sectionsHTML}
+        <blockquote class="article-blockquote">
+          <p>${art.blockquote.text}</p>
+          <cite>— ${art.blockquote.attribution}</cite>
+        </blockquote>
+        ${art.aplicacion ? `<div class="aplicacion-block">
+          <div class="aplicacion-header">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            <strong>¿Cómo te afecta esto hoy?</strong>
+          </div>
+          <p>${art.aplicacion}</p>
+        </div>` : ''}
+        <a href="${art.sourceUrl}" class="source-verify-btn" target="_blank" rel="noopener noreferrer">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          TFG original · ${art.sourceLabel}
+        </a>
+      </div>
+    </div>`;
+}
+
+function initBataArticles() {
+  const bataView  = document.getElementById('bata-article-view');
+  const bataCards = document.getElementById('documentos-list');
+  if (!bataView || !bataCards) return;
+  document.querySelectorAll('[data-bata-id] .btn-leer-bata').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const id  = btn.closest('[data-bata-id]').dataset.bataId;
+      const art = BATA_ARTICLES.find(a => a.id === id);
+      if (!art) return;
+      bataView.innerHTML = renderBataFull(art);
+      bataCards.style.display = 'none';
+      bataView.style.display  = '';
+      bataView.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('bata-back-btn')?.addEventListener('click', () => {
+        bataView.style.display  = 'none';
+        bataCards.style.display = '';
+        bataView.innerHTML      = '';
+        bataCards.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initBataArticles);
+
 function _buildTocHTML(sections) {
   if (!sections || sections.length < 2) return '';
   return `<nav class="article-toc" aria-label="Índice del artículo">
