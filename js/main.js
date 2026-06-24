@@ -2420,6 +2420,21 @@ const AUTHORS = {
     photo: null,
     university: 'Babson College',
     specialty: 'Redes organizacionales, colaboración y liderazgo'
+  },
+  'Daria Korneyko': {
+    photo: null,
+    university: 'Universidad Miguel Hernández de Elche',
+    specialty: 'Psicología del comportamiento grupal y abuso psicológico'
+  },
+  'Naiara Millán Isusi': {
+    photo: null,
+    university: 'Universidad de Oviedo',
+    specialty: 'Psicología del rendimiento y bienestar deportivo'
+  },
+  'Andrea Gómez-Pantoja García': {
+    photo: null,
+    university: 'Universidad Miguel Hernández de Elche',
+    specialty: 'Psicología de la salud y bienestar emocional'
   }
 };
 
