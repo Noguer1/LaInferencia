@@ -1056,10 +1056,34 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   gap: 1.5rem;
 }
 
-.docs-grid-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.25rem;
+.bata-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bata-pill {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+  font-family: inherit;
+}
+
+.bata-pill:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.bata-pill.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
 }
 
 /* ── TARJETA BASE ── */
@@ -3142,7 +3166,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .doc-card.doc-featured { flex-direction: column; }
   .doc-aside { width: 100%; }
   .docs-grid-2 { grid-template-columns: 1fr; }
-  .docs-grid-3 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {
@@ -3829,6 +3852,9 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .dark-base .cat-btn.active { border-color: var(--blue); background: color-mix(in srgb, var(--blue) 12%, transparent); color: var(--blue); }
 
 .dark-base .doc-badge { background: color-mix(in srgb, var(--blue) 10%, transparent); color: var(--blue); border-color: color-mix(in srgb, var(--blue) 22%, transparent); }
+.dark-base .bata-pill { border-color: rgba(255,255,255,0.12); color: #94A3B8; }
+.dark-base .bata-pill:hover { border-color: var(--blue); color: var(--blue); }
+.dark-base .bata-pill.active { background: var(--blue); border-color: var(--blue); color: #07101E; }
 .dark-base .featured-label { background: var(--blue); color: #07101E; }
 .dark-base .research-tag { background: color-mix(in srgb, var(--blue) 10%, transparent); color: var(--blue); border-color: color-mix(in srgb, var(--blue) 22%, transparent); }
 

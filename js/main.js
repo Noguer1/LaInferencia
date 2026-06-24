@@ -2770,6 +2770,47 @@ function renderBataFull(art) {
     </div>`;
 }
 
+const BATA_CATEGORY_LABELS = {
+  'comportamiento':    'Comportamiento',
+  'neuropsicologia':   'Neuropsicología',
+  'psicologia-social': 'Psicología Social',
+  'rendimiento':       'Rendimiento',
+  'salud':             'Salud',
+  'clinica':           'Clínica',
+  'educacion':         'Educación',
+  'organizacional':    'Organizacional',
+};
+
+function initBataFilter() {
+  const grid = document.getElementById('docs-grid-2');
+  if (!grid) return;
+
+  const cards      = [...grid.querySelectorAll('.doc-card')];
+  const categories = [...new Set(cards.map(c => c.dataset.category).filter(Boolean))];
+  if (categories.length < 2) return;
+
+  const pillsWrap = document.createElement('div');
+  pillsWrap.className = 'bata-filter-pills';
+  pillsWrap.id = 'bata-filter-pills';
+  pillsWrap.innerHTML =
+    `<button class="bata-pill active" data-filter="todos">Todos</button>` +
+    categories.map(cat =>
+      `<button class="bata-pill" data-filter="${cat}">${BATA_CATEGORY_LABELS[cat] || cat}</button>`
+    ).join('');
+
+  grid.insertAdjacentElement('beforebegin', pillsWrap);
+
+  pillsWrap.addEventListener('click', e => {
+    const pill = e.target.closest('.bata-pill');
+    if (!pill) return;
+    const filter = pill.dataset.filter;
+    pillsWrap.querySelectorAll('.bata-pill').forEach(p => p.classList.toggle('active', p === pill));
+    cards.forEach(card => {
+      card.style.display = (filter === 'todos' || card.dataset.category === filter) ? '' : 'none';
+    });
+  });
+}
+
 function initBataArticles() {
   const bataView  = document.getElementById('bata-article-view');
   const bataCards = document.getElementById('documentos-list');
@@ -2794,7 +2835,7 @@ function initBataArticles() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initBataArticles);
+document.addEventListener('DOMContentLoaded', () => { initBataFilter(); initBataArticles(); });
 
 function _buildTocHTML(sections) {
   if (!sections || sections.length < 2) return '';
