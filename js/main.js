@@ -259,6 +259,66 @@ const LIBRARY_ARTICLES = {
   <text x="158" y="165" font-size="7.5" fill="#10B981" font-weight="600">× 10</text>
 </svg>`
       }
+    },
+    {
+      id: 'eco-06',
+      title: 'El vino de 90€ que costaba 5€: cómo el precio cambia la experiencia real',
+      summary: 'Cuando los participantes creían beber vino caro, su cerebro lo experimentaba como mejor. El precio no solo cambiaba la opinión: cambiaba la activación neuronal real.',
+      sourceUrl: 'https://doi.org/10.1073/pnas.0706929105',
+      sourceLabel: 'Plassmann et al. (2008) — PNAS',
+      badge: 'Neuroeconomía',
+      author: { name: 'Hilke Plassmann', university: 'INSEAD / California Institute of Technology', specialty: 'Neuroeconomía y comportamiento del consumidor' },
+      readingTime: '3 min',
+      date: '9 de junio de 2026',
+      intro: 'En 2008, Hilke Plassmann y su equipo del California Institute of Technology pusieron a varios participantes dentro de un escáner de resonancia magnética funcional y los hicieron probar vino. Lo que encontraron no era que el vino más caro sabía mejor. Era que la misma botella sabía mejor cuando los participantes creían que era cara.',
+      sections: [
+        {
+          subtitle: 'El experimento: mismo vino, distinto precio, distinto cerebro',
+          paragraphs: [
+            'Los participantes probaron cinco muestras de vino que, según se les dijo, costaban entre 5 y 90 dólares la botella. En realidad, solo había tres vinos diferentes: dos de ellos aparecían dos veces, con precios distintos. El vino de 5 dólares aparecía también como el de 45; el de 90 dólares era en realidad el de 10. Mientras bebían, el escáner medía la actividad en la corteza orbitofrontal medial, la región que codifica el placer y la recompensa.',
+            'El resultado fue inequívoco: la activación de la corteza orbitofrontal medial era significativamente mayor cuando los participantes creían estar bebiendo el vino caro. Y esa activación correlacionaba directamente con el placer reportado: los participantes no solo decían que sabía mejor, sino que su cerebro lo procesaba como mejor. La expectativa había modificado la experiencia sensorial real, no solo la evaluación posterior.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: marketing placebo',
+          paragraphs: [
+            'Plassmann llamó a esto marketing placebo: igual que un placebo médico genera efectos fisiológicos reales, las expectativas de precio generan experiencias hedónicas reales. El mecanismo es la modulación descendente: el córtex prefrontal, que almacena las expectativas, envía señales hacia abajo que modulan la respuesta de las áreas sensoriales antes de que la información del sabor llegue a la conciencia. No es que el cerebro reciba el sabor y luego lo evalúe según el precio. Es que el precio llega primero y prepara el sistema sensorial para lo que va a recibir.',
+            'El hallazgo tiene consecuencias incómodas. No existe una experiencia "pura" del sabor, el sonido o la estética separada de lo que esperamos encontrar. Toda percepción llega filtrada por el contexto —el precio, el envase, el lugar, la marca— que el cerebro usa para generar predicciones. Y esas predicciones son parte de la experiencia misma, no una capa interpretativa posterior.'
+          ]
+        }
+      ],
+      blockquote: { text: '«El precio no es solo información económica: es un estímulo que modifica la experiencia sensorial antes de que ocurra.»', attribution: 'Hilke Plassmann' },
+      aplicacion: 'Si buscas evaluar un producto o servicio sin el sesgo del precio, cúbrelo o no lo consultes antes de usarlo. Decidir el valor antes de conocer el coste no elimina el sesgo, pero reduce la distorsión que el precio introduce en la experiencia real.'
+    },
+    {
+      id: 'eco-07',
+      title: 'La música que vendía vino sin que nadie lo supiera',
+      summary: 'Cambiar la música de fondo en la sección de vinos triplicó las ventas de la nacionalidad asociada al estilo musical, sin que ningún cliente lo relacionara con la música.',
+      sourceUrl: 'https://doi.org/10.1038/44385',
+      sourceLabel: 'North, Hargreaves & McKendrick (1999) — Nature',
+      badge: 'Psicología del consumidor',
+      author: { name: 'Adrian North', university: 'Universidad de Leicester', specialty: 'Psicología de la música y comportamiento del consumidor' },
+      readingTime: '3 min',
+      date: '16 de junio de 2026',
+      intro: 'Durante dos semanas, Adrian North y sus colegas de la Universidad de Leicester pusieron un equipo de música discreto en la sección de vinos de un supermercado del Reino Unido. No cambiaron los precios, ni la colocación de las botellas, ni la señalización. Solo cambiaron lo que sonaba. Las ventas cambiaron por completo.',
+      sections: [
+        {
+          subtitle: 'El experimento: acordeón francés contra brass alemán',
+          paragraphs: [
+            'Los investigadores alternaron dos tipos de música en días distintos: música francesa —chanson, acordeón— y música alemana —brass bands, folk bávaro—. El lineal tenía una selección equilibrada de vinos franceses y alemanes a precios comparables. Cuando sonaba música francesa, los clientes compraban tres veces más vino francés que alemán. Cuando sonaba música alemana, la proporción se invertía.',
+            'Al salir del supermercado, los investigadores encuestaban a los compradores sobre por qué habían elegido ese vino. Las respuestas giraban en torno al precio, la etiqueta o haberlo probado antes. Menos del 2% mencionaba la música espontáneamente. Cuando se preguntaba directamente si la música podría haber influido, la gran mayoría decía que no o que "apenas la habían notado". Sus decisiones de compra, sin embargo, la reflejaban con precisión milimétrica.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: priming ambiental',
+          paragraphs: [
+            'North denominó el fenómeno priming ambiental. Un estímulo contextual activa en memoria una red de asociaciones que hace más accesibles ciertos conceptos, categorías y preferencias. La música francesa activaba el concepto de "Francia", que hacía más saliente el vino francés frente al alemán sin que el cliente necesitara razonar conscientemente sobre ello. El efecto es automático, opera por debajo del umbral de atención consciente, y por eso no deja huella en la memoria declarativa.',
+            'Este mecanismo explica por qué los entornos en los que tomamos decisiones importan tanto como los criterios con los que creemos tomarlas. La temperatura de una sala, el olor de un espacio, el tipo de música, el nivel de ruido — todo activa redes de asociación que inclinan las decisiones antes de que el pensamiento deliberado entre en juego. No como una fuerza irresistible, pero sí como un viento constante que empuja sin que lo sintamos.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Los consumidores creían que estaban eligiendo libremente. Y lo estaban. Pero el contexto había predispuesto esa libertad en una dirección específica.»', attribution: 'Adrian North' },
+      aplicacion: 'Cuando tomes decisiones de compra importantes en entornos diseñados para influirte, identifica los elementos contextuales antes de decidir: música, aromas, atmósfera. Esos elementos no son decoración, son parte del sistema de decisión que estás usando sin saberlo. Salir físicamente del entorno antes de confirmar la elección es la forma más efectiva de neutralizar el priming ambiental.'
     }
   ],
 
@@ -1033,6 +1093,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La soledad no es un problema de introversión ni de preferencia personal. Es una señal de alarma biológica con consecuencias físicas tan reales como el hambre o el dolor.»', attribution: 'John T. Cacioppo' },
       aplicacion: 'La calidad de las conexiones importa más que la cantidad. Una conversación real —donde te sientes visto y escuchado— tiene efectos fisiológicos distintos a una interacción social superficial. Identifica una relación en tu vida donde la conexión es genuina pero has dejado que se espacie por inercia, y activa una forma concreta de retomar ese contacto esta semana.'
+    },
+    {
+      id: 'rel-06',
+      title: 'Diez segundos con una taza caliente cambiaron el juicio sobre un desconocido',
+      summary: 'Sostener brevemente un café caliente —frente a uno frío— llevó a los participantes a describir a un extraño como más cálido y generoso. La temperatura física y la "calidez" social comparten sustrato neuronal.',
+      sourceUrl: 'https://doi.org/10.1126/science.1162548',
+      sourceLabel: 'Williams & Bargh (2008) — Science',
+      badge: 'Cognición encarnada',
+      author: { name: 'Lawrence Williams', university: 'Universidad de Colorado Boulder', specialty: 'Psicología Social y Cognición Encarnada' },
+      readingTime: '3 min',
+      date: '17 de junio de 2026',
+      intro: 'En 2008, Lawrence Williams y John Bargh de la Universidad de Yale publicaron en Science un experimento que cuestionaba un supuesto básico sobre cómo juzgamos a las personas: que ese juicio se forma principalmente a partir de información sobre ellas. Lo que encontraron fue que el estado físico del cuerpo en el momento de conocer a alguien forma parte del juicio, sin que quien juzga lo sepa.',
+      sections: [
+        {
+          subtitle: 'El experimento: la taza de café y el extraño',
+          paragraphs: [
+            'El procedimiento era aparentemente inocuo. Un experimentador encontraba a cada participante en el vestíbulo del edificio y le pedía que sujetara brevemente su bebida —a unos les tocaba café caliente, a otros café con hielo— mientras él anotaba algo. Una vez en el laboratorio, los participantes leían la descripción de una persona ficticia y evaluaban su personalidad en una serie de rasgos: cálido/frío, generoso/egoísta, sociable/antisocial, entre otros.',
+            'Los que habían sostenido el café caliente describían a la persona ficticia como significativamente más cálida, generosa y sociable que los que habían sostenido el café frío. La diferencia era estadísticamente robusta y los participantes no relacionaban la taza con sus respuestas. En un segundo experimento, los investigadores comprobaron que el efecto se extendía al comportamiento: los participantes que habían sostenido el objeto caliente elegían con más frecuencia un regalo para un amigo en lugar de para ellos mismos — una medida de comportamiento prosocial real.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: temperatura física y temperatura social',
+          paragraphs: [
+            'Williams y Bargh propusieron una explicación basada en la cognición encarnada: el cerebro usa metáforas físicas para procesar conceptos abstractos, y esas metáforas son estructurales, no decorativas. La "calidez" interpersonal y la temperatura física comparten sustrato neuronal —la ínsula anterior— porque el aprendizaje de los conceptos sociales ocurre en la infancia a través de experiencias físicas: el contacto con el cuerpo de los cuidadores, la temperatura de sus manos, el calor del abrazo. El concepto "calidez social" se construye sobre el andamio sensorial de "temperatura caliente".',
+            'Esto implica que el cuerpo no es un vehículo pasivo que transporta a la mente hacia los lugares donde ocurre el pensamiento. El estado corporal —la temperatura, la postura, la tensión muscular— es parte del sistema cognitivo y afecta activamente qué conceptos se activan y cómo se procesan. La física del momento en que conoces a alguien forma parte del contexto cognitivo con el que lo evalúas, aunque ninguno de los dos lo sepa.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La mente no existe separada del cuerpo. El estado físico del momento forma parte de la cognición, no solo del humor.»', attribution: 'Lawrence Williams & John Bargh' },
+      aplicacion: 'Las primeras impresiones se forman en contextos físicos específicos que las influyen de formas que no detectamos. Si necesitas hacer una evaluación importante de alguien —una entrevista, una negociación, una primera reunión— sé consciente de tu estado físico previo: el cansancio, el frío, la tensión muscular son variables del juicio. Y ofrecer algo caliente a quien vas a conocer no es solo cortesía: tiene efectos documentados sobre cómo te percibe.'
     }
   ],
 
@@ -1420,6 +1510,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Si quieres que alguien deje de disfrutar algo que ya le gusta, págale por hacerlo. El dinero convierte la actividad en trabajo, y el trabajo requiere pago para continuarse.»', attribution: 'Edward Deci' },
       aplicacion: 'Si eres responsable de personas, revisa tu sistema de incentivos: ¿estás pagando por tareas donde ya existe motivación intrínseca? El reconocimiento no esperado —específico y centrado en el proceso, no en el resultado— preserva la motivación intrínseca mejor que el bonus predecible. Y dar más autonomía en el cómo suele mejorar el rendimiento más que cualquier incentivo económico equivalente.'
+    },
+    {
+      id: 'tra-06',
+      title: 'El CV idéntico que recibía un 50% menos de llamadas — solo por el nombre',
+      summary: 'Casi 5.000 CVs enviados a empleos reales mostraron que los nombres percibidos como afroamericanos recibían un 50% menos de respuestas que nombres anglosajones, con méritos idénticos.',
+      sourceUrl: 'https://doi.org/10.1257/0002828042002561',
+      sourceLabel: 'Bertrand & Mullainathan (2004) — American Economic Review',
+      badge: 'Psicología organizacional',
+      author: { name: 'Marianne Bertrand', university: 'Universidad de Chicago Booth School of Business', specialty: 'Economía laboral y discriminación' },
+      readingTime: '4 min',
+      date: '18 de junio de 2026',
+      intro: 'En 2001, Marianne Bertrand de la Universidad de Chicago y Sendhil Mullainathan del MIT diseñaron un experimento de una sencillez engañosa: enviarían CVs idénticos a empleos reales anunciados en periódicos de Boston y Chicago, y esperarían a ver quién recibía una llamada. La única variable que cambiarían sería el nombre del candidato. Enviaron 4.870 currículums.',
+      sections: [
+        {
+          subtitle: 'El experimento: 4.870 CVs y un único cambio',
+          paragraphs: [
+            'Los investigadores construyeron currículums ficticios de alta y baja calidad —con distintos niveles de experiencia, logros y formación— y los asignaron a nombres de pila con asociaciones étnicas claras. Los nombres "anglosajones" incluían Emily, Anne, Greg y Brad. Los "afroamericanos" incluían Lakisha, Tamika, Jamal y Tyrone. El mismo CV podía firmarse con cualquiera de ellos.',
+            'Los resultados fueron robustos. Un CV con nombre anglosajón necesitaba de media diez solicitudes para recibir una llamada de respuesta. El mismo CV firmado con un nombre afroamericano necesitaba quince — un 50% más de solicitudes para el mismo resultado. El gap era consistente en los dos niveles de calidad del CV, en los dos sectores analizados y en las dos ciudades. Mejorar la calidad del CV ayudaba más a los candidatos con nombres anglosajones: la brecha era más pronunciada en los CVs de alta calidad, no en los de baja.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: el sesgo implícito y sus consecuencias reales',
+          paragraphs: [
+            'Los reclutadores que aplicaban el sesgo no podían detectarlo en sí mismos porque no tenía expresión consciente. Un nombre activa en décimas de segundo una red de asociaciones automáticas — estatus socioeconómico percibido, nivel educativo esperado, compatibilidad cultural anticipada — que inclina la evaluación antes de que el reclutador lea la primera línea del currículum. No es un proceso deliberado. No requiere prejuicio consciente. El sesgo opera en la capa de procesamiento automático que actúa antes de que el pensamiento racional tenga oportunidad de intervenir.',
+            'El hallazgo más perturbador del estudio es este: los empleadores con declaraciones explícitas de no discriminación en su anuncio mostraban el mismo gap que los que no las incluían. La declaración de intención no modificaba el comportamiento. El sesgo implícito no es hipocresía: es un mecanismo cognitivo que opera por debajo de la conciencia y cuya corrección requiere intervenciones estructurales, no solo voluntad individual.'
+          ]
+        }
+      ],
+      blockquote: { text: '«El nombre en la parte superior del currículum es información que el cerebro procesa antes que cualquier otra, y el sesgo que activa opera antes de que ningún criterio racional entre en juego.»', attribution: 'Marianne Bertrand & Sendhil Mullainathan' },
+      aplicacion: 'Los procesos de selección que minimizan el contacto con información irrelevante para el puesto —evaluaciones ciegas al nombre, al género y al origen antes de la primera entrevista— reducen el impacto del sesgo implícito de forma demostrada. Si participas en procesos de selección, proponer estas medidas no es solo ética: es ciencia aplicada al diseño de sistemas más precisos en la identificación del talento real.'
     }
   ],
 
