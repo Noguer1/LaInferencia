@@ -3183,7 +3183,7 @@ function initWeeklySection() {
     return;
   }
   window._LI_weeklyAvailable = available;
-  renderWeeklyView(available, available[0]);
+  renderWeeklyView(available, available[0], true);
 
   window._LI_renderWeekly = function(week) {
     const art = available.find(a => a.week === week);
