@@ -3172,11 +3172,7 @@ function initWeeklySection() {
 
   window._LI_renderWeekly = function(week) {
     const art = available.find(a => a.week === week);
-    if (art) {
-      history.pushState({ v: 'semana', n: week }, '', `?v=semana&n=${week}`);
-      renderWeeklyView(available, art, true);
-      document.getElementById('weekly-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (art) renderWeeklyView(available, art, true);
   };
 }
 
@@ -5785,6 +5781,8 @@ document.addEventListener('click', e => {
 (function () {
   const p = new URLSearchParams(window.location.search);
   const v = p.get('v');
+  /* Limpiar la URL para que refrescar siempre muestre la landing */
+  if (v) history.replaceState(null, '', window.location.pathname);
   if (!v) return;
 
   function tryNavigate() {
