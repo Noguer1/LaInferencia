@@ -2435,6 +2435,26 @@ const AUTHORS = {
     photo: null,
     university: 'Universidad Miguel Hernández de Elche',
     specialty: 'Psicología de la salud y bienestar emocional'
+  },
+  'Wiktoria Zuzanna Jaroszewicz': {
+    photo: null,
+    university: 'Universidad Miguel Hernández de Elche',
+    specialty: 'Psicometría y psicopatología de las ensoñaciones'
+  },
+  'Andrea Gras Lozano': {
+    photo: null,
+    university: 'Universidad Miguel Hernández de Elche',
+    specialty: 'Psicología del burnout académico y hábitos de estudio'
+  },
+  'Lucía López Freire': {
+    photo: null,
+    university: 'Universidad de Oviedo',
+    specialty: 'Psicología clínica, conductas adictivas y regulación emocional'
+  },
+  'Marina Marrero Polegre': {
+    photo: null,
+    university: 'Universidad de La Laguna',
+    specialty: 'Psicología del estrés académico y burnout en universitarios'
   }
 };
 
@@ -2529,6 +2549,122 @@ const BATA_ARTICLES = [
     aplicacion: 'La próxima vez que enciendas música en un momento de malestar, para un momento y pregúntate qué estás buscando. Si es no pensar, estás en la ruta de la supresión. Si es pensar de otra forma, estás en la de la reevaluación. Ninguna está mal como estrategia puntual, pero a largo plazo solo una de las dos resuelve algo.',
     sourceUrl: 'https://dspace.umh.es/handle/11000/33624',
     sourceLabel: 'Gómez-Pantoja García (2024) — TFG, Universidad Miguel Hernández'
+  },
+  {
+    id: 'bata-ensonacion',
+    title: 'Soñar despierto sin parar: cuando la fantasía se convierte en adicción',
+    summary: '100 personas, una escala validada por primera vez en España y un punto de corte que separa a quienes sueñan despiertos de forma normal de quienes ya no pueden parar.',
+    badge: 'Salud Mental',
+    readingTime: '5 min',
+    author: { name: 'Wiktoria Zuzanna Jaroszewicz', university: 'Universidad Miguel Hernández de Elche', specialty: 'Psicometría y psicopatología de las ensoñaciones' },
+    intro: 'Soñar despierto es normal. La mayoría de las personas pasan casi la mitad de su tiempo consciente pensando en cosas que no están ocurriendo. Pero existe un tipo de ensoñación que tiene muy poco que ver con eso: las personas que la experimentan se sumergen en historias fantásticas elaboradas durante horas, lo prefieren a interactuar con personas reales, y sienten que no pueden parar aunque quieran. En 2025, por primera vez, una psicóloga española validó el único instrumento clínico capaz de detectarlo en población española.',
+    sections: [
+      {
+        subtitle: 'El instrumento: 100 personas y una escala que no existía en España',
+        paragraphs: [
+          'Wiktoria Zuzanna Jaroszewicz, graduada en Psicología por la Universidad Miguel Hernández, reclutó a 100 personas adultas —con edades entre 18 y 66 años— para validar la versión en castellano de la Maladaptive Daydreaming Scale de 16 ítems (MDS-16). De los 100 participantes, 34 se identificaron como soñadores excesivos: personas que reconocen que sus ensoñaciones interfieren en su vida real.',
+          'La escala mide tres dimensiones. La primera es la interferencia: hasta qué punto las ensoñaciones interrumpen el trabajo, los estudios o los objetivos cotidianos. La segunda es el afecto negativo: la angustia o irritabilidad que aparece cuando la persona no puede soñar despierta, algo que funciona exactamente como una abstinencia. La tercera es la inmersión: la absorción en la narrativa imaginada, a menudo acompañada de música y movimientos corporales involuntarios. Estas tres dimensiones explicaron el 57,6% de la varianza del constructo.'
+        ]
+      },
+      {
+        subtitle: 'El mecanismo: el punto donde soñar se convierte en problema',
+        paragraphs: [
+          'El análisis estadístico estableció el punto de corte en 36,1 sobre 100. Por encima de ese valor, la escala identifica a soñadores excesivos con una sensibilidad del 90% y una especificidad del 76%, con un área bajo la curva ROC de 0,89. No es un umbral arbitrario: los soñadores excesivos identificados mediante ese corte puntuaron casi el doble que el resto en la escala total (M = 49,0 vs M = 23,2; d = 1,75, un tamaño del efecto muy grande).',
+          'Lo que diferencia a estos soñadores del resto no es solo la cantidad de tiempo que pasan en sus fantasías. El estudio encontró que los soñadores excesivos presentaban más experiencias de despersonalización (ρ = .567, p < .001), más síntomas de TDAH (ρ = .419, p < .001), y más sintomatología ansioso-depresiva (ρ = .392, p < .001). No es casualidad: la ensoñación excesiva funciona como estrategia de evitación del malestar real, y como toda estrategia de evitación, a largo plazo lo alimenta. La música actúa como desencadenante y amplificador: activa la dopamina que mantiene el hábito, mientras que la narrativa imaginada proporciona el alivio inmediato que refuerza el ciclo.'
+        ]
+      }
+    ],
+    blockquote: { text: '«La ensoñación excesiva tiene un mecanismo de recompensa que la sostiene a largo plazo: genera placer y gratificación, y sirve como vía de escape ante las dificultades reales. Eso la convierte, por definición, en una conducta adictiva.»', attribution: 'Wiktoria Zuzanna Jaroszewicz, Universidad Miguel Hernández (2025)' },
+    aplicacion: 'Si cuando intentas concentrarte en algo importante tu mente se va sola a una narrativa elaborada que llevas tiempo desarrollando, y si interrumpirla te genera irritación o malestar real, puede merecer la pena preguntarte cuánto espacio ocupa eso en tu día. La ensoñación ocasional es sana. La que compite activamente con tu vida real —y gana— no.',
+    sourceUrl: 'https://dspace.umh.es/handle/11000/37011',
+    sourceLabel: 'Jaroszewicz (2025) — TFG, Universidad Miguel Hernández'
+  },
+  {
+    id: 'bata-burnout-academico',
+    title: 'Cómo estudias predice si te quemas: el enfoque que separa la eficacia del agotamiento',
+    summary: '53 universitarios españoles, tres dimensiones de burnout y un hallazgo que cambia la pregunta: no es cuánto estudias, sino desde dónde lo haces.',
+    badge: 'Rendimiento',
+    readingTime: '5 min',
+    author: { name: 'Andrea Gras Lozano', university: 'Universidad Miguel Hernández de Elche', specialty: 'Psicología del burnout académico y hábitos de estudio' },
+    intro: 'El burnout académico no es solo cansancio. Es un síndrome con tres caras: el agotamiento emocional que hace que estudiar cueste el doble, el cinismo que te lleva a sentir que lo que estudias no sirve para nada, y la baja eficacia que convierte cada examen en una confirmación de que no vas a poder. Un estudio de 2025 con universitarios españoles encontró que el mejor predictor de cuál de esas tres caras acabas teniendo no es cuántas horas estudias: es cómo lo haces.',
+    sections: [
+      {
+        subtitle: 'El estudio: 53 universitarios y la distinción que lo explica todo',
+        paragraphs: [
+          'Andrea Gras Lozano, graduada en Psicología por la Universidad Miguel Hernández, reclutó a 53 estudiantes universitarios de distintas disciplinas —con una edad media de 21,8 años— para analizar qué variables personales se relacionan con el burnout académico. Midió las tres dimensiones del síndrome con el MBI-SS, los hábitos de estudio con el R-SPQ-2F, y las estrategias de afrontamiento con el COPE-28.',
+          'La distinción de partida es crítica. El enfoque profundo de estudio implica buscar entender de verdad: relacionar ideas, cuestionarse el material, encontrarle sentido. El enfoque superficial implica estudiar para pasar: memorizar sin procesar, reproducir sin comprender, sobrevivir el examen. La misma asignatura, el mismo tiempo dedicado, pero dos relaciones radicalmente distintas con lo que se aprende.'
+        ]
+      },
+      {
+        subtitle: 'El mecanismo: la estrategia que usas define el burnout que desarrollas',
+        paragraphs: [
+          'Los resultados fueron claros. La eficacia académica —la sensación de que eres capaz de afrontar lo que te pide la carrera— correlacionó de forma fuerte y positiva con el enfoque profundo (r = .508, p < .001). Los estudiantes que estudiaban intentando entender tendían a sentirse competentes. Los que estudiaban en modo superficial, no: el enfoque superficial correlacionó positivamente con el cinismo (r = .401, p < .01) y con el agotamiento (r = .320, p < .05).',
+          'Las estrategias de afrontamiento añadieron otra capa. La autoinculpación —la tendencia a echarse la culpa cuando algo va mal— fue el predictor más potente del agotamiento (r = .464, p < .001). Los estudiantes que interiorizan el fracaso se agotan más. Por el contrario, la planificación (r = .480, p < .001) y el afrontamiento activo (r = .419, p < .01) correlacionaron con mayor eficacia académica. Y el agotamiento se tradujo directamente en notas: a mayor agotamiento, peor rendimiento (r = −.304, p < .05). La satisfacción con la docencia también importó: los estudiantes más cínicos eran los que menos satisfechos estaban con cómo se les enseñaba (r = −.360, p < .01).'
+        ]
+      }
+    ],
+    blockquote: { text: '«El agotamiento no viene de estudiar mucho. Viene de estudiar sin entender, culparse cuando algo falla, y desconectarse de lo que se está aprendiendo.»', attribution: 'Andrea Gras Lozano, Universidad Miguel Hernández (2025)' },
+    aplicacion: 'La próxima vez que te sientes a estudiar, hazte una pregunta antes de abrir el apunte: ¿estás intentando entender o intentando pasar? La respuesta no cambia las horas que dedicas, pero cambia casi todo lo demás: cómo recuerdas lo que estudias, cómo te sientes al terminar, y si dentro de tres meses seguirás en pie o no.',
+    sourceUrl: 'https://dspace.umh.es/handle/11000/36947',
+    sourceLabel: 'Gras Lozano (2025) — TFG, Universidad Miguel Hernández'
+  },
+  {
+    id: 'bata-adicciones-emociones',
+    title: 'El alcohol expresa lo que sientes. Los videojuegos lo bloquean. Ambos funcionan, y ese es el problema',
+    summary: '202 jóvenes adultos, cuatro sustancias y una escala de regulación emocional: lo que predice el consumo no es la falta de control, sino la forma en que cada uno gestiona lo que siente.',
+    badge: 'Comportamiento',
+    readingTime: '5 min',
+    author: { name: 'Lucía López Freire', university: 'Universidad de Oviedo', specialty: 'Psicología clínica, conductas adictivas y regulación emocional' },
+    intro: 'El alcohol tiene mala fama como anestésico emocional. Los datos de un estudio reciente con 202 jóvenes apuntan a algo diferente: el alcohol no bloquea las emociones. Las facilita. Las personas que más alcohol consumen son las que más expresan lo que sienten, no las que menos. Los videojuegos, en cambio, funcionan exactamente al revés. Que ambas cosas sean ciertas a la vez dice mucho sobre por qué la gente consume lo que consume.',
+    sections: [
+      {
+        subtitle: 'El estudio: 202 jóvenes, cuatro conductas adictivas y la regulación emocional',
+        paragraphs: [
+          'Lucía López Freire, graduada en Psicología por la Universidad de Oviedo, reclutó a 202 jóvenes adultos de entre 18 y 30 años —con una edad media de 21,5 años, 64% mujeres— para estudiar la relación entre conductas adictivas, regulación emocional y estrategias de afrontamiento. Midió el consumo de tabaco, alcohol y cannabis mediante preguntas de frecuencia y cantidad, y el uso de videojuegos con la Internet Gaming Disorder Scale-Short Form. La regulación emocional fue evaluada con la escala RE-MESACTS.',
+          'Los datos de consumo situaron el contexto: el 64,9% había consumido alcohol en el último mes —la media de inicio fue a los 15,59 años—, mientras que el uso problemático de videojuegos fue prácticamente inexistente: la puntuación media de 12,42 sobre 45 quedó muy por debajo del punto de corte de 36. El alcohol y los videojuegos son experiencias de consumo cotidiano, no patológico, para la mayoría de los participantes. Eso hace las correlaciones más relevantes, no menos: explican el uso normal, no el extremo.'
+        ]
+      },
+      {
+        subtitle: 'El mecanismo: dos rutas opuestas hacia el mismo alivio',
+        paragraphs: [
+          'El hallazgo central del estudio fue este: la expresión de emociones correlacionó positivamente con el consumo de alcohol (r = 0,152, p = .031) y negativamente con el uso de videojuegos (r = −0,149, p = .035). En palabras directas: quienes más expresan lo que sienten beben más. Quienes menos expresan lo que sienten juegan más. Son dos estrategias opuestas de regulación emocional que convergen en el mismo punto: no tener que sentarse a solas con lo que hay dentro.',
+          'El alcohol funciona como facilitador social de la emoción: baja la guardia, activa la expresión, hace más fácil decir lo que normalmente no se dice. Los videojuegos funcionan como supresores: absorben la atención, reducen el acceso a la emoción, y proporcionan un mundo alternativo con reglas claras y recompensas predecibles. Además, una mayor frecuencia de consumo de alcohol correlacionó con estrategias de afrontamiento más desadaptativas (r = 0,185, p = .008): quienes beben más también gestionan el estrés peor, no mejor. El alivio es real pero temporal, y el patrón se sostiene precisamente porque funciona a corto plazo.'
+        ]
+      }
+    ],
+    blockquote: { text: '«Los programas de prevención de conductas adictivas en jóvenes deberían abordar las habilidades de afrontamiento y de regulación emocional, no solo el consumo en sí.»', attribution: 'Lucía López Freire, Universidad de Oviedo (2024)' },
+    aplicacion: 'Si sueles beber cuando quedas con gente y te cuesta abrirte sin hacerlo, o si abres un juego cada vez que tienes algo que no quieres pensar, la pregunta útil no es "¿consumo demasiado?" sino "¿qué estaría sintiendo si no hiciera esto?". La respuesta a esa pregunta es exactamente lo que está regulando el consumo.',
+    sourceUrl: 'https://digibuo.uniovi.es/dspace/handle/10651/73004',
+    sourceLabel: 'López Freire (2024) — TFG, Universidad de Oviedo'
+  },
+  {
+    id: 'bata-burnout-rendimiento',
+    title: '1.195 estudiantes de psicología: los quemados sacan peores notas, pero el género añade una vuelta de tuerca',
+    summary: 'El estudio más grande de Fuera de Bata: siete cohortes universitarias, dos instrumentos validados, y un patrón de burnout que no afecta igual a hombres y mujeres.',
+    badge: 'Rendimiento',
+    readingTime: '5 min',
+    author: { name: 'Marina Marrero Polegre', university: 'Universidad de La Laguna', specialty: 'Psicología del estrés académico y burnout en universitarios' },
+    intro: 'El burnout académico tiene una relación documentada con el rendimiento: quien está quemado estudia peor. Pero un estudio realizado con 1.195 estudiantes de Psicología de la Universidad de La Laguna —siete cohortes entre 2013 y 2020— añadió algo que la mayoría de los estudios anteriores habían pasado por alto: los hombres y las mujeres se queman de maneras distintas, y esa diferencia no es trivial.',
+    sections: [
+      {
+        subtitle: 'El estudio: 1.195 estudiantes, dos instrumentos y un corte por rendimiento',
+        paragraphs: [
+          'Marina Marrero Polegre, graduada en Psicología por la Universidad de La Laguna, trabajó con datos de 1.195 estudiantes de tercer curso de Psicología —251 hombres y 944 mujeres— acumulados a lo largo de siete años académicos. Aplicó el Maslach Burnout Inventory-Student Survey (MBI-SS), que mide agotamiento emocional, cinismo y autoeficacia académica, y el Inventario SISCO del Estrés Académico.',
+          'Para analizar la relación con el rendimiento, formó dos grupos: estudiantes con puntuaciones tipificadas por encima de +1 desviación típica (rendimiento alto) y por debajo de −1 (rendimiento bajo). La comparación entre ambos grupos mediante pruebas t-Student para muestras independientes arrojó diferencias significativas en las tres dimensiones del burnout.'
+        ]
+      },
+      {
+        subtitle: 'El mecanismo: quemarse distinto según quién seas',
+        paragraphs: [
+          'El patrón entre rendimiento y burnout fue consistente y claro. Los estudiantes con mayor rendimiento académico mostraron menos cinismo (M = 2,33 vs M = 2,69; t(257) = −2,50, p = .013), menos agotamiento emocional (M = 3,08 vs M = 3,50; t(257) = −3,75, p < .001), y más autoeficacia académica (M = 4,75 vs M = 3,92; t(236) = 9,82, p < .001). El efecto más robusto fue el de la eficacia: sentirse capaz de afrontar los estudios fue el factor que mejor discriminó entre los dos grupos de rendimiento.',
+          'La diferencia por género reveló un patrón más complejo. Las mujeres presentaron más agotamiento que los hombres (t(1193) = −4,44, p < .001), pero también mayor autoeficacia académica (t(1193) = −2,35, p < .05). Los hombres, en cambio, mostraron más cinismo (t(1193) = 2,72, p < .01): una mayor distancia emocional hacia los estudios. En estrés académico, la brecha fue incluso más pronunciada: las mujeres percibieron las situaciones académicas como más estresantes, manifestaron más reacciones físicas y psicológicas, y al mismo tiempo usaron más estrategias de afrontamiento. Se agotan más y, aun así, compensan más.'
+        ]
+      }
+    ],
+    blockquote: { text: '«Las mujeres presentan mayor agotamiento pero también mayor autoeficacia y mayor uso de estrategias de afrontamiento. Los hombres tienen más cinismo. Son dos formas distintas de quemarse, con consecuencias distintas.»', attribution: 'Marina Marrero Polegre, Universidad de La Laguna (2021)' },
+    aplicacion: 'Si estás en un punto en que estudiar te parece inútil, no solo agotador, el cinismo es probablemente tu variante del burnout. Si sientes que puedes con todo pero te cuesta cada vez más levantarte a hacerlo, es el agotamiento. El punto de partida para salir de cualquiera de los dos es diferente, y confundirlos —tratarlos como si fueran lo mismo— es la razón por la que muchas estrategias de apoyo académico no funcionan.',
+    sourceUrl: 'https://riull.ull.es/xmlui/handle/915/24023',
+    sourceLabel: 'Marrero Polegre (2021) — TFG, Universidad de La Laguna'
   }
 ];
 
@@ -3941,8 +4077,57 @@ function initWeeklySection() {
 
   let trapHandler = null, triggerEl = null;
 
-  function openModal() {
-    triggerEl = document.activeElement;
+  function openModal(e) {
+    const btn = e.currentTarget;
+    const name = btn.textContent.trim();
+    const profile = AUTHORS[name] || {};
+    const isFounder = name === 'Miguel Noguer Escudero';
+
+    const avatarEl = modal.querySelector('.author-modal-avatar');
+    if (profile.photo) {
+      avatarEl.innerHTML = `<img src="${profile.photo}" alt="${name}" class="author-modal-avatar-img" />`;
+      avatarEl.className = 'author-modal-avatar author-modal-avatar--photo';
+    } else {
+      avatarEl.innerHTML = name.split(' ').map(n => n[0]).join('').slice(0, 2);
+      avatarEl.className = 'author-modal-avatar';
+    }
+
+    modal.querySelector('h3').textContent = name;
+
+    const badgesRow = modal.querySelector('.role-badges-row');
+    if (badgesRow) badgesRow.style.display = isFounder ? '' : 'none';
+
+    const degreeEl = modal.querySelector('.author-modal-degree');
+    if (degreeEl) {
+      if (isFounder) {
+        degreeEl.textContent = 'Graduado en Psicología · Universidad de Sevilla';
+        degreeEl.style.display = '';
+      } else {
+        degreeEl.textContent = profile.university || '';
+        degreeEl.style.display = profile.university ? '' : 'none';
+      }
+    }
+
+    const detailEl = modal.querySelector('.author-modal-detail');
+    if (detailEl) detailEl.style.display = isFounder ? '' : 'none';
+
+    const areasEl = modal.querySelector('.author-modal-areas');
+    if (areasEl) {
+      if (isFounder) {
+        areasEl.innerHTML = '<span>Psicología Clínica</span><span>Neuropsicología</span><span>Procesos del Lenguaje</span>';
+        areasEl.style.display = '';
+      } else if (profile.specialty) {
+        areasEl.innerHTML = `<span>${profile.specialty}</span>`;
+        areasEl.style.display = '';
+      } else {
+        areasEl.style.display = 'none';
+      }
+    }
+
+    const linkedinEl = modal.querySelector('.author-modal-linkedin');
+    if (linkedinEl) linkedinEl.style.display = isFounder ? '' : 'none';
+
+    triggerEl = btn;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
     trapHandler = trapFocus(modal);
