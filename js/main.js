@@ -6115,25 +6115,42 @@ document.addEventListener('click', e => {
       setTimeout(() => { if (window._LI_renderWeekly) window._LI_renderWeekly(n); }, 120);
 
     } else if (v === 'art' && p.get('id') && p.get('cat')) {
-      document.querySelector('.tab-btn[data-tab="biblioteca"]')?.click();
+      const id  = p.get('id');
       const cat = p.get('cat');
+      document.querySelector('.tab-btn[data-tab="biblioteca"]')?.click();
       setTimeout(() => {
         document.querySelector(`.cat-btn[data-cat="${cat}"]`)?.click();
         setTimeout(() => {
-          if (window._LI_openLibArticle) window._LI_openLibArticle(p.get('id'), cat);
-        }, 120);
-      }, 80);
+          if (window._LI_openLibArticle) window._LI_openLibArticle(id, cat);
+        }, 250);
+      }, 150);
 
     } else if (v === 'glosario' && p.get('t')) {
-      /* Se activará cuando el glosario esté implementado */
       window._LI_pendingGlosario = p.get('t');
     }
   }
 
+  /* Espera a que el overlay de acceso desaparezca antes de navegar */
+  function waitAndNavigate() {
+    const overlay = document.getElementById('acceso-overlay');
+    const overlayVisible = overlay && overlay.style.display !== 'none' && overlay.style.display !== '';
+    if (overlayVisible) {
+      const obs = new MutationObserver(() => {
+        if (overlay.style.display === 'none') {
+          obs.disconnect();
+          setTimeout(tryNavigate, 400);
+        }
+      });
+      obs.observe(overlay, { attributes: true, attributeFilter: ['style'] });
+    } else {
+      setTimeout(tryNavigate, 300);
+    }
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => setTimeout(tryNavigate, 500));
+    document.addEventListener('DOMContentLoaded', waitAndNavigate);
   } else {
-    setTimeout(tryNavigate, 500);
+    waitAndNavigate();
   }
 
   /* Botón atrás del navegador */
