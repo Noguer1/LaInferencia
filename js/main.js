@@ -6130,27 +6130,10 @@ document.addEventListener('click', e => {
     }
   }
 
-  /* Espera a que el overlay de acceso desaparezca antes de navegar */
-  function waitAndNavigate() {
-    const overlay = document.getElementById('acceso-overlay');
-    const overlayVisible = overlay && overlay.style.display !== 'none' && overlay.style.display !== '';
-    if (overlayVisible) {
-      const obs = new MutationObserver(() => {
-        if (overlay.style.display === 'none') {
-          obs.disconnect();
-          setTimeout(tryNavigate, 400);
-        }
-      });
-      obs.observe(overlay, { attributes: true, attributeFilter: ['style'] });
-    } else {
-      setTimeout(tryNavigate, 300);
-    }
-  }
-
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', waitAndNavigate);
+    document.addEventListener('DOMContentLoaded', () => setTimeout(tryNavigate, 300));
   } else {
-    waitAndNavigate();
+    setTimeout(tryNavigate, 300);
   }
 
   /* Botón atrás del navegador */

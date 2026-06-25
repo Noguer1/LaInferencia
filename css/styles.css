@@ -8742,7 +8742,8 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 [data-theme="carmesi"]  { --nav-bg: #0A0204; --header-bg: rgba(10, 2, 4, 0.97); }
 
 /* ── Dark base: mobile section header ── */
-.dark-base .mobile-section-header {
+.dark-base .mobile-section-header,
+.dark-base body.mobile-nav-active .mobile-section-header {
   background: var(--header-bg, rgba(3, 12, 26, 0.93));
   border-bottom-color: rgba(255, 255, 255, 0.07);
 }

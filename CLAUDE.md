@@ -30,7 +30,7 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.com
 - **Glosario:** Modal funcional. Array `GLOSARIO` en `main.js`. Completamente funcional.
 - **Propuestas:** Conectadas a Supabase. Feed compartido. Votos anónimos por dispositivo (`li_voter_uuid` en localStorage). Moderación desde Supabase Table Editor.
 - **Sección Favoritos:** `renderFavSection()` busca `#favoritos-section` que no existe — desactivada intencionalmente.
-- **Pantalla de acceso:** overlay `#acceso-overlay` — código `BATA27`. Número de invitado generado en rango 25–50, persistido en localStorage. Links personalizados con `?n=Nombre`.
+- **Acceso:** web pública sin restricciones desde junio 2026.
 
 ---
 

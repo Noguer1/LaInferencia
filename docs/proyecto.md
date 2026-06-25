@@ -228,16 +228,4 @@ Breakpoint principal: **≤680px**. Orden grid móvil: `"center" "right" "left"`
 
 ---
 
-## Pantalla de acceso anticipado
-
-Overlay `#acceso-overlay` sobre la web. Código en `<script>` inline al final del `<style>` de acceso en `index.html`.
-
-- **Código de acceso:** `ANTICIPADO26` (validación en JS, no en servidor)
-- **Número de invitado:** generado aleatoriamente entre 30–50, persistido en localStorage (`li_inv_num`), mostrado como "INVITADO #XXX"
-- **Hint visible:** texto cyan "Introduce un número entre 30 y 50" encima del input
-- **Efecto portal:** animación CSS al entrar — la card sale por el centro y aparece la web
-- **Canvas:** partículas animadas de fondo mientras el overlay está activo
-
----
-
-*Última actualización: 2026-06-09 — dominio .com, pantalla acceso con hint número 30–50*
+*Última actualización: 2026-06-25 — acceso anticipado eliminado, web pública*
