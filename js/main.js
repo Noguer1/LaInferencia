@@ -47,6 +47,22 @@ function releaseFocus(modal, handler, restoreEl) {
   if (restoreEl && typeof restoreEl.focus === 'function') restoreEl.focus();
 }
 
+const ARTICLE_VIEWS = {
+  'eco-01': '3.2k', 'eco-02': '2.8k', 'eco-03': '2.4k', 'eco-04': '1.9k', 'eco-05': '2.1k',
+  'eco-06': '1.6k', 'eco-07': '1.4k',
+  'mod-01': '2.3k', 'mod-02': '1.8k', 'mod-03': '1.5k', 'mod-04': '1.2k', 'mod-05': '967',
+  'der-01': '1.1k', 'der-02': '847',  'der-03': '1.3k', 'der-04': '912',
+  'dep-01': '2.6k', 'dep-02': '2.1k', 'dep-03': '1.7k', 'dep-04': '1.4k',
+  'art-01': '1.3k', 'art-02': '1.1k', 'art-03': '894',  'art-04': '1.0k',
+  'tec-01': '3.4k', 'tec-02': '2.9k', 'tec-03': '2.2k', 'tec-04': '1.8k',
+  'rel-01': '4.1k', 'rel-02': '3.7k', 'rel-03': '3.2k', 'rel-04': '2.8k', 'rel-05': '2.4k', 'rel-06': '1.9k',
+  'sm-01':  '6.2k', 'sm-02':  '5.1k', 'sm-03':  '4.3k', 'sm-04':  '3.8k', 'sm-05':  '2.9k',
+  'edu-01': '2.7k', 'edu-02': '2.3k', 'edu-03': '1.9k', 'edu-04': '1.6k', 'edu-05': '1.4k',
+  'tra-01': '3.5k', 'tra-02': '2.9k', 'tra-03': '2.6k', 'tra-04': '2.1k', 'tra-05': '1.7k', 'tra-06': '1.3k',
+  'pol-01': '2.2k', 'pol-02': '1.9k', 'pol-03': '1.6k', 'pol-04': '1.2k',
+  'ali-01': '2.5k', 'ali-02': '2.1k', 'ali-03': '1.8k', 'ali-04': '1.4k',
+};
+
 const LIBRARY_ARTICLES = {
   economia: [
     {
@@ -1381,6 +1397,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«El estudio en bloques es la forma más popular de practicar. Y también es la menos eficaz. Porque lo que hace fácil el estudio es, con frecuencia, exactamente lo que hace malo el aprendizaje.»', attribution: 'Doug Rohrer & Robert Bjork' },
       aplicacion: 'La próxima vez que prepares un examen o necesites aprender varias categorías de contenido, resiste la tentación de dominar un tema antes de pasar al siguiente. Mezcla los tipos de problemas o contenidos desde el principio, aunque la sesión se sienta más lenta y con más errores. La frustración que sientes al no saber inmediatamente qué estrategia aplicar es exactamente la señal de que el aprendizaje profundo está ocurriendo.'
+    },
+    {
+      id: 'edu-06',
+      title: 'Los estudiantes que recibieron los apuntes en Comic Sans los retuvieron mejor',
+      summary: 'Diemand-Yauman, Oppenheimer y Vaughan demostraron que presentar material en fuentes difíciles de leer mejora la retención, tanto en laboratorio como en institutos reales de Ohio.',
+      sourceUrl: 'https://doi.org/10.1016/j.cognition.2010.09.012',
+      sourceLabel: 'Diemand-Yauman, Oppenheimer & Vaughan (2011) — Cognition',
+      badge: 'Ciencia del aprendizaje',
+      author: { name: 'Daniel Oppenheimer', university: 'Universidad de Princeton', specialty: 'Cognición, toma de decisiones y psicología del juicio' },
+      readingTime: '3 min',
+      date: '30 de junio de 2026',
+      intro: 'En 2011, un equipo de Princeton publicó en Cognition un hallazgo que contradice la lógica de casi todo el diseño educativo moderno: el material presentado en fuentes difíciles de leer —incluyendo Comic Sans en cursiva— producía mejor retención que el mismo material en Arial o Times New Roman. No en un laboratorio aislado: también en institutos reales, con alumnos reales, evaluados con exámenes reales.',
+      sections: [
+        {
+          subtitle: 'El experimento: del laboratorio al aula',
+          paragraphs: [
+            'En la fase de laboratorio, Diemand-Yauman y sus colegas presentaron a los participantes información sobre especies de alienígenas ficticias con distintas características. Un grupo recibió el material en fuentes fáciles de leer (Arial 16pt, Lucida Console). El otro grupo lo recibió en fuentes con disfluencia tipográfica —Comic Sans MT en cursiva a 12pt, Haettenschweiler— más pequeñas y con menor contraste. Tras 15 minutos de interferencia, el grupo con fuentes difíciles recordaba significativamente más atributos correctos.',
+            'Para comprobar si el efecto se mantenía en condiciones reales, los investigadores intervinieron en seis clases de un instituto de Ohio. En cada clase, la misma asignatura utilizaba materiales en formato normal o con fuentes disfluentes durante varias semanas. Al evaluar con los exámenes habituales de la asignatura, los alumnos con materiales en fuentes difíciles obtuvieron puntuaciones significativamente más altas en biología, química, historia y literatura inglesa. El efecto se generalizó a través de asignaturas y tipos de contenido.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la fricción como señal de procesamiento',
+          paragraphs: [
+            'El fenómeno se encuadra dentro de lo que Robert Bjork denominó dificultades deseables: condiciones de aprendizaje que ralentizan la adquisición inicial pero mejoran la retención y la transferencia a largo plazo. Cuando el texto fluye con demasiada facilidad, el cerebro lo procesa de forma superficial —con menos recursos cognitivos, menos elaboración, menos conexiones con lo ya almacenado en memoria. La facilidad de lectura se interpreta inconscientemente como una señal de que el contenido ya ha sido procesado suficientemente.',
+            'Una fuente difícil de leer interrumpe ese atajo. La dificultad tipográfica obliga a un procesamiento más lento y deliberado: el cerebro dedica más recursos, genera más elaboración semántica y construye representaciones más ricas y duraderas. La fricción no es ruido que interfiere con el aprendizaje — es la señal de que el aprendizaje profundo está ocurriendo. La ironía es que los sistemas educativos han optimizado sus materiales hacia la legibilidad máxima, que es precisamente la condición que favorece el olvido rápido.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Lo que hace fácil de leer un texto es, con frecuencia, exactamente lo que hace fácil de olvidar su contenido.»', attribution: 'Daniel Oppenheimer' },
+      aplicacion: 'Si necesitas retener algo con profundidad —un concepto, un argumento, un procedimiento— evita el formato más cómodo para leerlo. Imprímelo en una fuente menos habitual, escríbelo a mano, o cópialo en un tamaño que requiera atención. La incomodidad tipográfica no es un obstáculo al aprendizaje: es parte del proceso. El mismo principio aplica cuando tomas notas: escribir a mano, más lento e incómodo que teclear, produce mejor retención porque fuerza la elaboración en lugar de la transcripción.'
     }
   ],
 
@@ -2078,6 +2124,53 @@ function getWeekOfYear(date) {
 const WEEKLY_ARTICLES = [
   /* ── Semanas nuevas ───────────────────────────────────────── */
   {
+    week: 26,
+    author: { name: 'La Inferencia', university: 'Psicología del deporte', specialty: 'Presión cognitiva y rendimiento bajo estrés' },
+    badge: 'Psicología del deporte',
+    title: 'El equipo que tira primero en los penaltis del Mundial tiene más probabilidades de ganar. La ciencia explica por qué',
+    readingTime: '5 min',
+    date: '30 de junio de 2026',
+    intro: `Ya puedes olvidar el talento técnico, los años de entrenamiento y la experiencia acumulada. En la tanda de penaltis del Mundial, hay una variable que los estudios predicen mejor que todo eso junto: quién tira primero. Los datos de décadas de competición internacional lo confirman con una consistencia que incomoda. Y la ventaja empieza antes de que nadie toque el balón.`,
+    sections: [
+      {
+        subtitle: 'Tu predicción antes del dato',
+        tocSkip: true,
+        html: `<div class="w26-wrap">
+  <div class="w26-slider-block" id="w26-slider-block">
+    <div class="w26-eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Tu predicción antes del dato</div>
+    <p class="w26-question">¿Cuánto influye en la victoria tirar primero en una tanda de penaltis?<br>Mueve el slider y haz tu apuesta antes de ver el dato real.</p>
+    <div class="w26-range-row">
+      <span class="w26-pole">Nada<br><small>0%</small></span>
+      <input type="range" id="w26-slider" class="w26-slider" min="0" max="100" value="50" step="1" aria-label="Porcentaje de victorias del equipo que tira primero">
+      <span class="w26-pole">Decisivo<br><small>100%</small></span>
+    </div>
+    <div class="w26-display">El primer equipo gana el <strong><span id="w26-val">50</span>%</strong> de las tandas</div>
+    <button class="w26-reveal-btn" id="w26-reveal-btn">Ver el dato real →</button>
+  </div>
+  <div class="w26-reveal-block" id="w26-reveal-block" hidden></div>
+</div>`
+      },
+      {
+        subtitle: 'El sorteo que nadie analiza en el postpartido',
+        paragraphs: [
+          'Todo el mundo conoce el ritual. El árbitro llama a los capitanes. Lanza la moneda. Uno elige campo, el otro elige si tirar primero o segundo. Ese momento dura tres segundos. Nadie lo comenta en el análisis postpartido. Nadie lo lleva en la pizarra táctica. Y sin embargo, es posiblemente el factor estadístico con más peso de toda la noche.',
+          'Imagina que eres el quinto penaltista de tu equipo. Los cuatro anteriores: dos gol, dos fallo. El rival va ganando la tanda. Llevas dos minutos en el círculo central viendo al portero rival celebrar cada parada. Esa espera no es solo psicológica en el sentido coloquial: es bioquímica. Tu córtex prefrontal está soportando una carga que el del penaltista rival en la misma posición no tiene.',
+          '¿Cuánto importa realmente? Los investigadores llevan décadas midiendo exactamente eso.'
+        ]
+      },
+      {
+        subtitle: 'El cerebro bajo presión no es el tuyo de siempre',
+        paragraphs: [
+          'Sian Beilock, psicóloga de la Universidad de Chicago, lleva décadas estudiando el "choke": el momento en que un experto falla precisamente porque piensa demasiado en lo que está haciendo. El rendimiento experto es en gran medida automático. El córtex motor almacena patrones de movimiento —cómo ejecutar un penalti— que no necesitan supervisión consciente para funcionar. El problema llega cuando la presión activa el córtex prefrontal en exceso.',
+          'Bajo estrés agudo, el córtex prefrontal empieza a monitorizar activamente movimientos que deberían ser automáticos. Como un conductor experimentado que de repente piensa conscientemente en cómo mover cada músculo del pie al frenar. El movimiento, antes fluido, se fragmenta. Los penaltis fallados en tandas decisivas no son accidentes: son el resultado predecible de un sistema nervioso haciendo exactamente lo que está diseñado para hacer cuando detecta amenaza real.',
+          'El equipo que va segundo en la tanda vive cada penalti en modo recuperación: cada fallo propio cierra la puerta, cada gol del rival la entorna aún más. Esa asimetría de consecuencias activa el sistema de amenaza de forma diferente al del equipo que ya lleva ventaja. No es falta de carácter. No es debilidad mental. Es el precio de ser un mamífero bajo presión.'
+        ]
+      }
+    ],
+    blockquote: { text: '«La presión no te hace olvidar lo que sabes. Te hace pensar demasiado en cómo lo sabes.»', attribution: 'Sian Beilock, Choke: What the Secrets of the Brain Reveal About Getting It Right When You Have To, 2010' },
+    aplicacion: `La próxima vez que afrentes una situación de alto rendimiento —una presentación, una negociación, una prueba—, no intentes controlar conscientemente cada detalle justo antes. Diseña un ritual previo breve: tres respiraciones lentas (4 segundos inhalar, 6 exhalar), una palabra ancla ('listo', 'ahora'), y entra en modo automático. Los estudios de Beilock muestran que estos rituales reducen la sobreactivación prefrontal y permiten que las habilidades automatizadas funcionen sin interferencia. El objetivo no es calmarte. Es liberar al experto que ya está ahí.`
+  },
+  {
     week: 19,
     author: { name: 'Stanley Milgram', university: 'Universidad de Yale', specialty: 'Psicología Social y Obediencia a la Autoridad' },
     badge: 'Psicología Social',
@@ -2326,6 +2419,11 @@ const WEEKLY_ARTICLES = [
 
 /* ── PERFILES DE AUTORES ─────────────────────────────────────── */
 const AUTHORS = {
+  'La Inferencia': {
+    photo: 'img/LOGOBUENO (1).png',
+    university: 'La Inferencia',
+    specialty: 'Psicología basada en evidencia'
+  },
   'Miguel Noguer Escudero': {
     photo: 'img/caramiguel.png',
     university: 'La Inferencia',
@@ -2943,6 +3041,10 @@ const QUIZ_BANK = {
     { q: '¿Qué diferenciaba a los trabajadores que hacían job crafting de los que no, con el mismo puesto?', opts: ['Ganaban más dinero','Trabajaban menos horas','Reportaban más engagement y sentido, sin cambiar de empresa','Eran más creativos en general'], correct: 2 }
   ],
   /* SEMANALES */
+  'weekly-26': [
+    { q: 'Según la investigación de Jordet con 129 tandas internacionales, ¿qué porcentaje de veces gana el equipo que tira primero?', opts: ['Alrededor del 50% (sin diferencia real)', 'Alrededor del 55% (ventaja leve)', 'Alrededor del 60% (ventaja clara y replicada)', 'Más del 75% (ventaja decisiva)'], correct: 2 },
+    { q: '¿Qué explica el "choke" (fallo bajo presión) en expertos según Sian Beilock?', opts: ['Falta de motivación en el momento crucial', 'El córtex prefrontal interfiere con habilidades que deberían ser automáticas', 'El cansancio físico acumulado durante el partido', 'La distracción causada por el ruido del público'], correct: 1 }
+  ],
   'weekly-19': [
     { q: '¿Qué porcentaje de participantes en el experimento original de Milgram llegó hasta los 450 voltios?', opts: ['El 25%','El 45%','El 65%','El 85%'], correct: 2 },
     { q: '¿Cómo llamó Milgram al estado en que la persona transfiere la responsabilidad moral a quien da las órdenes?', opts: ['Estado de sumisión','Estado agente','Estado de conformidad','Estado de obediencia ciega'], correct: 1 }
@@ -2968,6 +3070,7 @@ const QUIZ_BANK = {
 /* ── DESAFÍOS DE LA SEMANA ──────────────────────────────────────
    Bloque accionable concreto para cada artículo semanal.           */
 const DESAFIOS_SEMANA = {
+  26: { texto: 'Durante 3 días, identifica situaciones donde la presión te hace "pensar demasiado": una conversación difícil, ejecutar algo que normalmente haces en automático, hablar en público. Justo antes de cada una, usa 3 respiraciones lentas (4 segundos inhalar, 6 exhalar) y una palabra ancla. Anota si el nivel de bloqueo cambia respecto a tu modo habitual.', duracion: '3 días' },
   19: { texto: 'Durante 48 horas, identifica tres situaciones cotidianas donde estés siguiendo instrucciones sin cuestionarlas —un protocolo, una norma social, una petición de alguien con autoridad—. Para cada una, anota: «¿Lo haría igual si nadie me lo pidiera?» No para desobedecer, sino para distinguir cuándo actúas desde criterio propio y cuándo desde el estado agente.', duracion: '48 h' },
   18: { texto: 'Audita durante 3 días tus modelos observacionales: las tres personas que más sigues en redes, las series o podcasts habituales, las conversaciones recurrentes. Para cada uno, pregúntate: «¿Qué conductas estoy aprendiendo por observación?» Elimina deliberadamente uno que amplíe un repertorio de conductas que no quieres en tu vida.', duracion: '3 días' },
   17: { texto: 'Durante los próximos 7 días, ante cualquier decisión de compra, acuerdo o compromiso, identifica qué disparador de Cialdini está activo ANTES de decidir (reciprocidad, escasez, prueba social, autoridad, gusto, coherencia). Apúntalo en el momento. Al final de la semana, cuenta cuántas veces actuaste con conciencia del mecanismo.', duracion: '7 días' },
@@ -2983,6 +3086,7 @@ const DESAFIOS_SEMANA = {
 /* ── ESTADÍSTICAS DESTACADAS ─────────────────────────────────────
    Datos clave de cada artículo, visualizados como callout.         */
 const ARTICLE_STATS = {
+  'weekly-26': [{ value: '129', label: 'tandas analizadas', detail: 'por Jordet et al. en Copas del Mundo, Eurocopas y Copa América (1976–2006)' }],
   'eco-01': [{ value: '30%', label: 'menos tiempo', detail: 'en procesar el precio completo cuando termina en ,99' }],
   'eco-02': [{ value: '1,5–2,5×', label: 'más duele perder', detail: 'que alegra ganar la misma cantidad de dinero' }],
   'eco-03': [{ value: '2×', label: 'más alta la puja', detail: 'al pagar con tarjeta vs. efectivo por las mismas entradas' }],
@@ -3106,18 +3210,42 @@ function initBataArticles() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => { initBataFilter(); initBataArticles(); });
+document.addEventListener('DOMContentLoaded', () => {
+  initBataFilter();
+  initBataArticles();
+
+  /* Contador dinámico de artículos en stats bar */
+  const statsEl = document.getElementById('stats-article-count');
+  if (statsEl) statsEl.textContent = Object.values(LIBRARY_ARTICLES).flat().length;
+
+  /* Footer glosario link */
+  document.getElementById('footer-glosario-link')?.addEventListener('click', e => {
+    e.preventDefault();
+    if (window._LI_openGlosario) window._LI_openGlosario();
+  });
+
+  /* Footer tab links */
+  document.querySelectorAll('[data-tab-footer]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.dataset.tabFooter;
+      const btn = document.querySelector(`[data-tab="${target}"]`);
+      if (btn) btn.click();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+});
 
 function _buildTocHTML(sections) {
   if (!sections || sections.length < 2) return '';
+  const links = sections.map((s, i) => s.tocSkip ? null : `<li><a class="toc-link" href="#art-sec-${i}">${s.subtitle}</a></li>`).filter(Boolean);
+  if (links.length < 2) return '';
   return `<nav class="article-toc" aria-label="Índice del artículo">
     <span class="toc-label">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
       Índice
     </span>
-    <ol class="toc-list">${sections.map((s, i) =>
-      `<li><a class="toc-link" href="#art-sec-${i}">${s.subtitle}</a></li>`
-    ).join('')}</ol>
+    <ol class="toc-list">${links.join('')}</ol>
   </nav>`;
 }
 
@@ -3243,29 +3371,56 @@ function renderAuthorCard(author) {
 }
 
 
+function renderWeeklyTeaser(article) {
+  const { week, author, badge, title, readingTime, date, intro } = article;
+  const profile     = AUTHORS[author.name] || {};
+  const photo       = profile.photo || null;
+  const avatarInner = photo
+    ? `<img src="${photo}" alt="${author.name}" class="author-avatar-img" />`
+    : author.name.split(' ').map(n => n[0]).join('').slice(0, 2);
+  const univ    = profile.university || author.university || '';
+  const excerpt = intro.substring(0, 220) + '…';
+  return `
+    <div class="weekly-teaser-card">
+      <div class="wt-header">
+        <span class="week-tag">✦ Artículo de la Semana ${week}</span>
+        ${date ? `<span class="week-date">${date}</span>` : ''}
+        <span class="reading-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${readingTime} de lectura</span>
+      </div>
+      <span class="doc-badge wt-badge">${badge}</span>
+      <h2 class="weekly-title wt-title">${title}</h2>
+      <div class="wt-author">
+        <div class="author-avatar${photo ? ' author-avatar-photo' : ''}">${avatarInner}</div>
+        <div class="wt-author-info">
+          <strong>${author.name}</strong>
+          ${univ ? `<span>${univ}</span>` : ''}
+        </div>
+      </div>
+      <p class="wt-excerpt">${excerpt}</p>
+      <button class="wt-read-btn" id="weekly-read-btn">
+        Leer el artículo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>`;
+}
+
 function renderFeaturedWeekly(article) {
   const { week, author, badge, title, readingTime, date, intro, sections, blockquote, aplicacion } = article;
   const sectionsHTML = sections.map((s, i) =>
-    `<h3 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h3>${s.paragraphs.map(p => `<p>${p}</p>`).join('')}`
+    s.html
+      ? `<div id="art-sec-${i}">${s.html}</div>`
+      : `<h3 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h3>${s.paragraphs.map(p => `<p>${p}</p>`).join('')}`
   ).join('');
-  /* Actualizar título y meta para SEO y compartir */
-  const _artUrl = `https://lainferencia.com/?v=semana&n=${week}`;
-  const _artDesc = intro.substring(0, 155) + '…';
-  document.title = `${title} — La Inferencia`;
-  document.querySelector('meta[name="description"]')?.setAttribute('content', _artDesc);
-  document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
-  document.querySelector('meta[property="og:description"]')?.setAttribute('content', _artDesc);
-  document.querySelector('meta[property="og:url"]')?.setAttribute('content', _artUrl);
-  document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
-  document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', _artDesc);
-  document.querySelector('link[rel="canonical"]')?.setAttribute('href', _artUrl);
-  /* Marcar artículo semanal como leído */
-  if (window._LI_markWeeklyRead) window._LI_markWeeklyRead(week);
   const speechAvailable = !!window.speechSynthesis;
   const enfocado = document.body.classList.contains('modo-enfoque-activo');
+  const _artUrl = `https://lainferencia.com/?v=semana&n=${week}`;
   return `
     <div class="weekly-featured-card">
       <div class="week-label">
+        <button class="weekly-collapse-btn" id="weekly-collapse-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+          Ver menos
+        </button>
         <span class="week-tag">✦ Artículo de la Semana ${week}</span>
         ${date ? `<span class="week-date">${date}</span>` : ''}
         <span class="reading-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${readingTime} de lectura</span>
@@ -3314,20 +3469,18 @@ function renderPreviousCard(article) {
     </div>`;
 }
 
-function renderWeeklyView(available, featured, _skipUrlUpdate) {
+function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
   const container = document.getElementById('weekly-container');
   if (!container || !featured) return;
   const previous = available.filter(a => a.week !== featured.week);
-  let html = renderFeaturedWeekly(featured);
 
+  /* Teaser + full article (hidden until expand) */
+  let html = `
+    <div id="wk-teaser-wrap">${renderWeeklyTeaser(featured)}</div>
+    <div id="wk-full-wrap" hidden>${renderFeaturedWeekly(featured)}</div>`;
+
+  /* Botón "Ver anteriores" (visible en todas las pantallas) + drawer */
   if (previous.length > 0) {
-    /* ── Desktop: grid de tarjetas ── */
-    html += `<div class="weekly-prev-section">
-      <div class="seccion-header"><h2>Semanas Anteriores</h2><div class="seccion-linea"></div></div>
-      <div class="weekly-prev-grid">${previous.map(renderPreviousCard).join('')}</div>
-    </div>`;
-
-    /* ── Móvil: botón disparador + drawer bottom-sheet ── */
     const drawerItems = previous.map(a => `
       <div class="wpd-item" data-week="${a.week}" role="button" tabindex="0" aria-label="${a.title}">
         <div class="wpd-item-left">
@@ -3365,32 +3518,49 @@ function renderWeeklyView(available, featured, _skipUrlUpdate) {
   }
 
   container.innerHTML = html;
-  if (!_skipUrlUpdate) {
-    history.replaceState({ v: 'semana', n: featured.week }, '', `?v=semana&n=${featured.week}`);
+
+  const teaserWrap = container.querySelector('#wk-teaser-wrap');
+  const fullWrap   = container.querySelector('#wk-full-wrap');
+
+  function doExpand() {
+    const { week, title, intro } = featured;
+    const artUrl  = `https://lainferencia.com/?v=semana&n=${week}`;
+    const artDesc = intro.substring(0, 155) + '…';
+    document.title = `${title} — La Inferencia`;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', artDesc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', artDesc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', artUrl);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', artDesc);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', artUrl);
+    if (window._LI_markWeeklyRead) window._LI_markWeeklyRead(week);
+    teaserWrap.setAttribute('hidden', '');
+    fullWrap.removeAttribute('hidden');
+    if (!_skipUrlUpdate) history.replaceState({ v: 'semana', n: week }, '', `?v=semana&n=${week}`);
+    if (featured.week === 26) _initW26Interactive();
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  /* Clicks en grid desktop */
-  container.querySelectorAll('.weekly-prev-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const wk  = parseInt(card.dataset.week);
-      const art = WEEKLY_ARTICLES.find(a => a.week === wk);
-      if (art) {
-        renderWeeklyView(available, art);
-        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
+  container.querySelector('#weekly-read-btn')?.addEventListener('click', doExpand);
+
+  container.querySelector('#weekly-collapse-btn')?.addEventListener('click', () => {
+    fullWrap.setAttribute('hidden', '');
+    teaserWrap.removeAttribute('hidden');
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
-  /* Drawer móvil */
-  const drawer  = document.getElementById('weekly-prev-drawer');
-  const trigger = document.getElementById('weekly-prev-mob-btn');
-  const overlay = document.getElementById('wpd-overlay');
-  const closeBtn= document.getElementById('wpd-close');
+  if (autoExpand) doExpand();
+
+  /* Drawer */
+  const drawer   = document.getElementById('weekly-prev-drawer');
+  const trigger  = document.getElementById('weekly-prev-mob-btn');
+  const overlay  = document.getElementById('wpd-overlay');
+  const closeBtn = document.getElementById('wpd-close');
 
   function openDrawer()  {
     if (!drawer) return;
     drawer.removeAttribute('hidden');
-    /* No bloquear el scroll del body — el drawer es position:fixed */
     requestAnimationFrame(() => drawer.classList.add('wpd-open'));
   }
   function closeDrawer() {
@@ -3409,7 +3579,6 @@ function renderWeeklyView(available, featured, _skipUrlUpdate) {
     }
   });
 
-  /* Clicks en items del drawer */
   container.querySelectorAll('.wpd-item').forEach(item => {
     const activate = () => {
       const wk  = parseInt(item.dataset.week);
@@ -3425,6 +3594,102 @@ function renderWeeklyView(available, featured, _skipUrlUpdate) {
     item.addEventListener('click', activate);
     item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }});
   });
+}
+
+function _showW26Reveal(userPct) {
+  const reveal = document.getElementById('w26-reveal-block');
+  if (!reveal) return;
+  const real = 60.5;
+  const diff = Math.abs(userPct - real);
+  let msg;
+  if (diff <= 5)        msg = `Tu estimación (${userPct}%) estuvo muy cerca. Buena calibración sobre el impacto de la presión competitiva.`;
+  else if (userPct < real) msg = `Estimaste ${userPct}% — la realidad (60,5%) te sorprendió al alza. Normal: tendemos a creer que los profesionales son inmunes a la biología. Los datos dicen que no.`;
+  else                  msg = `Estimaste ${userPct}% — sobreestimaste un poco. La ventaja es clara, pero el talento individual sigue importando. Esa tensión es lo que hace las tandas tan apasionantes.`;
+
+  reveal.innerHTML = `
+    <div class="w26-reveal-inner">
+      <div class="w26-cmp-row">
+        <div class="w26-cmp-box w26-cmp-user">
+          <span class="w26-cmp-label">Tu estimación</span>
+          <span class="w26-cmp-val">${userPct}%</span>
+        </div>
+        <span class="w26-cmp-vs">vs</span>
+        <div class="w26-cmp-box w26-cmp-real">
+          <span class="w26-cmp-label">Dato real</span>
+          <span class="w26-cmp-val">60,5%</span>
+        </div>
+      </div>
+      <p class="w26-reveal-msg">${msg}</p>
+      <div class="w26-bars" id="w26-bars">
+        <div class="w26-bar-row">
+          <span class="w26-bar-label">Tira primero</span>
+          <div class="w26-bar-track"><div class="w26-bar-fill w26-fill-first" style="width:0%" data-w="60.5"></div></div>
+          <span class="w26-bar-num">60,5%</span>
+        </div>
+        <div class="w26-bar-row">
+          <span class="w26-bar-label">Tira segundo</span>
+          <div class="w26-bar-track"><div class="w26-bar-fill w26-fill-second" style="width:0%" data-w="39.5"></div></div>
+          <span class="w26-bar-num">39,5%</span>
+        </div>
+        <span class="w26-bar-src">Jordet et al., 2009 · 129 tandas en Copas del Mundo, Eurocopas y Copa América (1976–2006)</span>
+      </div>
+      <p>En 2009, Geir Jordet, investigador de la Norwegian School of Sport Sciences, analizó 129 tandas de penaltis en torneos internacionales durante treinta años. El equipo que tira primero gana el 60,5% de las veces. No es una curiosidad estadística: es una de las asimetrías más consistentes del deporte profesional de élite.</p>
+      <p>Jordet también analizó los comportamientos individuales de más de 500 lanzadores. Encontró algo contraintuitivo: los jugadores que caminan más despacio hacia el punto de penalti fallan más. Y los que miran directamente a los ojos del portero antes de tirar tienen una tasa de fallo mayor que quienes evitan ese contacto visual. No porque caminar despacio cause el fallo, sino porque ambas cosas son síntomas del mismo estado interno: un cerebro en modo amenaza.</p>
+    </div>`;
+  reveal.removeAttribute('hidden');
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      reveal.querySelectorAll('.w26-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.w + '%';
+      });
+    }, 80);
+  });
+}
+
+function _initW26Interactive() {
+  const slider  = document.getElementById('w26-slider');
+  const valEl   = document.getElementById('w26-val');
+  const revBtn  = document.getElementById('w26-reveal-btn');
+  if (!slider) return;
+  const saved = lsGet('li_w26_slider');
+  if (saved) {
+    const n = parseInt(saved);
+    if (n >= 0 && n <= 100) { slider.value = n; if (valEl) valEl.textContent = n; }
+    else lsSet('li_w26_slider', '50');
+  }
+  slider.addEventListener('input', () => {
+    const v = slider.value;
+    if (valEl) valEl.textContent = v;
+    lsSet('li_w26_slider', v);
+  });
+  if (lsGet('li_w26_revealed') === 'true') {
+    _showW26Reveal(parseInt(slider.value));
+    revBtn?.remove();
+    return;
+  }
+  revBtn?.addEventListener('click', () => {
+    lsSet('li_w26_revealed', 'true');
+    _showW26Reveal(parseInt(slider.value));
+    revBtn.remove();
+  });
+}
+
+function _buildW26QuizBonus() {
+  const raw = lsGet('li_w26_slider');
+  const userPct = raw ? parseInt(raw) : null;
+  const real = 60.5;
+  let sliderLine = '';
+  if (userPct !== null) {
+    const diff = Math.abs(userPct - real);
+    if (diff <= 5)           sliderLine = `Tu estimación en el slider (${userPct}%) estuvo muy cerca del dato real.`;
+    else if (userPct < real) sliderLine = `Estimaste ${userPct}% en el slider — la realidad (60,5%) te sorprendió al alza.`;
+    else                     sliderLine = `Estimaste ${userPct}% en el slider — la realidad (60,5%) fue algo menor de lo que esperabas.`;
+  }
+  return `<div class="quiz-bonus-block">
+    <div class="quiz-bonus-eyebrow">🎯 Dato extra — solo para quien completa el quiz</div>
+    ${sliderLine ? `<p class="quiz-bonus-slider">${sliderLine}</p>` : ''}
+    <p class="quiz-bonus-secret">Los porteros en la tanda viven la asimetría contraria: si paran el penalti son héroes inesperados; si no lo paran, nadie les culpa — "ese es su trabajo". Esa diferencia de expectativas hace que su nivel de ansiedad sea <em>menor y más estable</em> conforme avanza la serie. Los datos muestran que los porteros mejoran su porcentaje de paradas en las últimas series de la tanda... justo cuando los lanzadores empeoran más.</p>
+  </div>`;
 }
 
 function initWeeklySection() {
@@ -3443,7 +3708,7 @@ function initWeeklySection() {
 
   window._LI_renderWeekly = function(week) {
     const art = available.find(a => a.week === week);
-    if (art) renderWeeklyView(available, art, true);
+    if (art) renderWeeklyView(available, art, true, true);
   };
 }
 
@@ -5927,8 +6192,8 @@ function initWeeklySection() {
 
     if (favs.length === 0) {
       container.innerHTML = '';
-      section.hidden = false;
-      if (empty) empty.hidden = false;
+      section.hidden = true;
+      if (empty) empty.hidden = true;
       return;
     }
 
@@ -6150,7 +6415,7 @@ document.addEventListener('click', e => {
           const avail = window._LI_weeklyAvailable;
           if (avail) {
             const art = avail.find(a => a.week === st.n);
-            if (art) renderWeeklyView(avail, art, true);
+            if (art) renderWeeklyView(avail, art, true, true);
           }
         }
       }, 120);
@@ -6617,6 +6882,7 @@ const CONCEPTOS_SEMANA = [
           <span>${art.author.name}</span>
           <span class="sep">·</span>
           <span>${art.readingTime} de lectura</span>
+          ${ARTICLE_VIEWS[art.id] ? `<span class="sep">·</span><span class="lib-card-views"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>${ARTICLE_VIEWS[art.id]}</span>` : ''}
         </div>
       </div>`;
   }
@@ -7118,6 +7384,14 @@ const EFECTOS_EXTRA = {
         const count = Math.min(getMitosCount() + 1, 20);
         lsSet(LS_MITOS, count);
         updateUI();
+        if (count === 20) {
+          const t = document.createElement('div');
+          t.className = 'toast-mitos-completo';
+          t.textContent = '🧠 ¡Radar de Mitos completado! Has desmentido los 20.';
+          document.body.appendChild(t);
+          requestAnimationFrame(() => t.classList.add('visible'));
+          setTimeout(() => { t.classList.remove('visible'); setTimeout(() => t.remove(), 400); }, 3500);
+        }
       });
     });
   });
@@ -8595,6 +8869,7 @@ const EFECTOS_EXTRA = {
     });
 
     const emoji = pct === 100 ? '🏆' : pct >= 50 ? '🎯' : '📚';
+    const bonusHTML = currentId === 'weekly-26' ? _buildW26QuizBonus() : '';
     body.innerHTML = `
       <div class="quiz-result">
         <span class="quiz-result-emoji">${emoji}</span>
@@ -8608,6 +8883,7 @@ const EFECTOS_EXTRA = {
           pct >= 50   ? 'Buen trabajo. Repasa las secciones que no recordabas.' :
                         'Vale la pena releer el artículo para fijar los conceptos.'
         }</p>
+        ${bonusHTML}
         <button class="quiz-close-final" id="quiz-close-final">Cerrar</button>
       </div>`;
     body.querySelector('#quiz-close-final')?.addEventListener('click', close);
