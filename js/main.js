@@ -5189,75 +5189,372 @@ function initWeeklySection() {
 }());
 
 
-/* ── ONBOARDING — primera visita ────────────────────────────── */
+/* ── ONBOARDING TOUR — primera visita ───────────────────────── */
 (function () {
-  const overlay = document.getElementById('onboarding-overlay');
-  const nextBtn = document.getElementById('onboarding-next');
-  const skipBtn = document.getElementById('onboarding-skip');
-  if (!overlay || !nextBtn || !skipBtn) return;
-
   const LS_KEY = 'li_onboarded';
-  if (lsGet(LS_KEY)) return; /* ya ha visitado antes */
+  if (lsGet(LS_KEY)) return;
 
-  const steps = Array.from(overlay.querySelectorAll('.onboarding-step'));
-  const dots  = Array.from(overlay.querySelectorAll('.onboarding-dot'));
-  let current = 0;
-  let transitioning = false;
-
+  const isMob  = () => window.innerWidth <= 768;
   const CHEVRON = `<svg class="ob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>`;
 
-  function updateBtn() {
-    nextBtn.innerHTML = (current === steps.length - 1 ? '¡Empezar! ' : 'Siguiente ') + CHEVRON;
+  const TOUR_STEPS = [
+    {
+      type: 'modal',
+      title: 'Bienvenido a La Inferencia',
+      text: 'Psicología basada en evidencia, sin bata y sin condescendencia. En un momento te enseñamos todo lo que puedes hacer aquí.',
+      icon: `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>`,
+    },
+    {
+      type: 'spotlight',
+      title: 'Artículos de psicología',
+      text: 'Cientos de artículos basados en estudios reales, organizados por área. Leer uno tarda 3–4 minutos y te abre un patrón mental nuevo.',
+      tooltipPosition: 'below',
+      targetSelector: '[data-tab="biblioteca"]',
+      activateSelector: '[data-tab="biblioteca"]',
+      mobileTargetSelector: '.tab-bar',
+      mobileActivateSelector: '.mbn-tab[data-mbn="casa"]',
+      icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
+    },
+    {
+      type: 'spotlight',
+      title: 'Fuera de Bata',
+      text: 'Psicólogos reales haciendo divulgación. Sus TFGs e investigaciones, explicados de forma accesible para cualquiera.',
+      tooltipPosition: 'below',
+      targetSelector: '[data-tab="repositorio"]',
+      activateSelector: '[data-tab="repositorio"]',
+      mobileTargetSelector: '.mbn-tab[data-mbn="fuerabata"]',
+      mobileActivateSelector: '.mbn-tab[data-mbn="fuerabata"]',
+      icon: `<img src="img/lab.png" width="28" height="28" alt="" aria-hidden="true" style="object-fit:contain;">`,
+    },
+    {
+      type: 'spotlight',
+      title: 'El artículo de la semana',
+      text: 'Cada semana, el artículo que más nos ha importado. Más largo, más profundo — para cuando quieres ir en serio.',
+      tooltipPosition: 'below',
+      targetSelector: '[data-tab="semana"]',
+      activateSelector: '[data-tab="semana"]',
+      mobileTargetSelector: '[data-tab="semana"]',
+      mobileActivateSelector: '.mbn-tab[data-mbn="casa"]',
+      icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    },
+    {
+      type: 'spotlight',
+      title: 'Botiquín',
+      text: 'No solo teoría — técnicas aplicables esta semana. Haz clic en tu situación y descubre qué dice la evidencia y qué leer.',
+      tooltipPosition: 'above',
+      targetSelector: '#botiquin',
+      mobileTargetSelector: '.mbn-tab[data-mbn="botiquin"]',
+      mobileActivateSelector: '.mbn-tab[data-mbn="botiquin"]',
+      icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`,
+    },
+    {
+      type: 'spotlight',
+      title: 'Sube de nivel',
+      text: 'Todo lo que leas, explores o respondas aquí suma XP. Cuanto más subes, más se desbloquea. Hay sorpresas esperándote.',
+      tooltipPosition: 'below',
+      targetSelector: '#nivel-widget',
+      raiseParent: '.navbar',
+      mobileTargetSelector: '.mbn-tab[data-mbn="yo"]',
+      mobileActivateSelector: '.mbn-tab[data-mbn="yo"]',
+      icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    },
+    {
+      type: 'modal',
+      title: '¡Ya estás dentro!',
+      text: 'Empieza por el artículo que más te llame. No hay orden correcto — solo curiosidad.',
+      icon: `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>`,
+    },
+  ];
+
+  /* ── DOM refs ─────────────────────────────────────────────── */
+  const dim      = document.getElementById('tour-dim');
+  const shell    = document.getElementById('tour-shell');
+  const tooltip  = document.getElementById('tour-tooltip');
+  const modal    = document.getElementById('tour-modal');
+  const nextBtn  = document.getElementById('tour-next');
+  const skipBtn  = document.getElementById('tour-skip');
+  const mNext    = document.getElementById('tour-modal-next');
+  const mSkip    = document.getElementById('tour-modal-skip');
+  const dotsWrap = document.getElementById('tour-dots');
+  const arrow    = document.getElementById('tour-arrow');
+  if (!dim || !shell || !tooltip || !modal) return;
+
+  /* ── State ────────────────────────────────────────────────── */
+  let current      = 0;
+  let transitioning = false;
+  let prevTarget   = null;
+  let prevParent   = null;
+  let prevParentZ  = '';
+  let trapHandler  = null;
+  let resizeTimer  = null;
+  const TOTAL      = TOUR_STEPS.length;
+
+  /* ── Build progress dots ──────────────────────────────────── */
+  TOUR_STEPS.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'onboarding-dot' + (i === 0 ? ' active' : '');
+    dotsWrap.appendChild(dot);
+  });
+
+  /* ── Helpers ──────────────────────────────────────────────── */
+  function updateDots() {
+    Array.from(dotsWrap.querySelectorAll('.onboarding-dot'))
+      .forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
-  function retriggerIcon(step) {
-    const icon = step.querySelector('.onboarding-icon');
-    if (!icon) return;
-    icon.classList.remove('icon-retrigger');
-    void icon.offsetWidth;
-    icon.classList.add('icon-retrigger');
+  function updateBtns() {
+    const isLast = current === TOTAL - 1;
+    const label  = (isLast ? '¡Empezar! ' : 'Siguiente ') + CHEVRON;
+    nextBtn.innerHTML = label;
+    mNext.innerHTML   = label;
+    document.getElementById('tour-step-counter').textContent = (current + 1) + ' de ' + TOTAL;
+  }
+
+  function isElementVisible(el) {
+    const r = el.getBoundingClientRect();
+    if (r.width < 10 || r.height < 10) return false;
+    const cs = window.getComputedStyle(el);
+    if (cs.display === 'none' || cs.visibility === 'hidden') return false;
+    let a = el.parentElement;
+    while (a && a !== document.body) {
+      if (window.getComputedStyle(a).display === 'none' || a.hidden) return false;
+      a = a.parentElement;
+    }
+    return true;
+  }
+
+  function clearSpotlight() {
+    if (prevTarget) { prevTarget.classList.remove('tour-spotlight-target'); prevTarget = null; }
+    if (prevParent) { prevParent.style.zIndex = prevParentZ; prevParent = null; prevParentZ = ''; }
+  }
+
+  /* ── Tooltip positioning ──────────────────────────────────── */
+  function positionTooltip(target, preferred) {
+    const TW   = 320;
+    const GAP  = 16;
+    const ARW  = 10;
+    const MARG = 12;
+    const TH   = 190;
+
+    const tr  = target.getBoundingClientRect();
+    const vw  = window.innerWidth;
+    const vh  = window.innerHeight;
+
+    const space = {
+      above: tr.top    - GAP - ARW,
+      below: vh - tr.bottom - GAP - ARW,
+      left:  tr.left   - GAP - ARW,
+      right: vw - tr.right  - GAP - ARW,
+    };
+    const fits = {
+      above: space.above >= TH,
+      below: space.below >= TH,
+      left:  space.left  >= TW,
+      right: space.right >= TW,
+    };
+    const FALLBACKS = {
+      above: ['above', 'below', 'right', 'left'],
+      below: ['below', 'above', 'right', 'left'],
+      left:  ['left', 'right', 'above', 'below'],
+      right: ['right', 'left', 'below', 'above'],
+    };
+    const order = FALLBACKS[preferred] || FALLBACKS['below'];
+    const side  = order.find(s => fits[s]) || preferred;
+
+    const midY = Math.min(
+      Math.max(tr.top + tr.height / 2, tr.top + 40),
+      Math.min(tr.bottom - 40, vh * 0.55)
+    );
+
+    let top, left;
+    if (side === 'above') {
+      top  = tr.top - TH - GAP - ARW;
+      left = tr.left + tr.width / 2 - TW / 2;
+    } else if (side === 'below') {
+      top  = tr.bottom + GAP + ARW;
+      left = tr.left + tr.width / 2 - TW / 2;
+    } else if (side === 'left') {
+      top  = midY - TH / 2;
+      left = tr.left - TW - GAP - ARW;
+    } else {
+      top  = midY - TH / 2;
+      left = tr.right + GAP + ARW;
+    }
+
+    left = Math.max(MARG, Math.min(left, vw - TW - MARG));
+    top  = Math.max(MARG, Math.min(top,  vh - TH - MARG));
+
+    tooltip.style.cssText = 'position:fixed;top:' + top + 'px;left:' + left + 'px;width:' + TW + 'px;';
+
+    arrow.className = 'tour-arrow tour-arrow--' + side;
+    arrow.style.left = '';
+    arrow.style.top  = '';
+    if (side === 'above' || side === 'below') {
+      const offset = Math.max(16, Math.min(tr.left + tr.width / 2 - left, TW - 16));
+      arrow.style.left = offset + 'px';
+    } else {
+      const offset = Math.max(16, Math.min(midY - top, TH - 16));
+      arrow.style.top = offset + 'px';
+    }
+  }
+
+  /* ── Render: modal centrado ───────────────────────────────── */
+  function renderModal(step) {
+    clearSpotlight();
+    dim.hidden     = true;
+    tooltip.hidden = true;
+    modal.hidden   = false;
+    shell.hidden   = false;
+
+    document.getElementById('tour-modal-icon').innerHTML   = step.icon;
+    document.getElementById('tour-modal-title').textContent = step.title;
+    document.getElementById('tour-modal-text').textContent  = step.text;
+
+    const iconEl = document.getElementById('tour-modal-icon');
+    iconEl.classList.remove('icon-retrigger');
+    void iconEl.offsetWidth;
+    iconEl.classList.add('icon-retrigger');
+
+    if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
+    trapHandler = trapFocus(shell);
+    mNext.focus();
+  }
+
+  /* ── Render: spotlight sobre elemento ──────────────────────── */
+  function renderSpotlight(step) {
+    const mob = isMob();
+    const activeSel = mob
+      ? (step.mobileActivateSelector || step.activateSelector)
+      : step.activateSelector;
+    let navDelay = 0;
+    if (activeSel) {
+      const activateEl = document.querySelector(activeSel);
+      if (activateEl) { activateEl.click(); navDelay = 380; }
+    }
+    setTimeout(() => _doSpotlight(step, mob), navDelay);
+  }
+
+  function _doSpotlight(step, mob) {
+    const targetSel = (mob && step.mobileTargetSelector) ? step.mobileTargetSelector : step.targetSelector;
+    const target    = targetSel ? document.querySelector(targetSel) : null;
+    if (!target || !isElementVisible(target)) { renderCenteredTooltip(step); return; }
+
+    target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    const doPosition = () => {
+      clearSpotlight();
+      prevTarget = target;
+      target.classList.add('tour-spotlight-target');
+
+      if (step.raiseParent && !mob) {
+        prevParent = document.querySelector(step.raiseParent);
+        if (prevParent) { prevParentZ = prevParent.style.zIndex; prevParent.style.zIndex = '1002'; }
+      }
+
+      dim.hidden   = false;
+      modal.hidden = true;
+      tooltip.classList.remove('tour-tooltip--centered');
+      arrow.hidden = false;
+
+      document.getElementById('tour-tooltip-icon').innerHTML = step.icon;
+      document.getElementById('tour-title').textContent       = step.title;
+      document.getElementById('tour-text').textContent        = step.text;
+
+      tooltip.hidden = false;
+      shell.hidden   = false;
+
+      positionTooltip(target, step.tooltipPosition);
+
+      if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
+      trapHandler = trapFocus(shell);
+      nextBtn.focus();
+    };
+
+    if ('onscrollend' in window) {
+      const onEnd = () => { window.removeEventListener('scrollend', onEnd); doPosition(); };
+      window.addEventListener('scrollend', onEnd, { once: true });
+      setTimeout(() => { window.removeEventListener('scrollend', onEnd); doPosition(); }, 400);
+    } else {
+      setTimeout(doPosition, 220);
+    }
+  }
+
+  /* ── Render: tooltip centrado (fallback) ──────────────────── */
+  function renderCenteredTooltip(step) {
+    clearSpotlight();
+    dim.hidden   = false;
+    modal.hidden = true;
+
+    document.getElementById('tour-tooltip-icon').innerHTML = step.icon;
+    document.getElementById('tour-title').textContent       = step.title;
+    document.getElementById('tour-text').textContent        = step.text;
+
+    tooltip.style.cssText = '';
+    tooltip.classList.add('tour-tooltip--centered');
+    arrow.hidden = true;
+
+    tooltip.hidden = false;
+    shell.hidden   = false;
+
+    if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
+    trapHandler = trapFocus(shell);
+    nextBtn.focus();
+  }
+
+  /* ── Navegación ───────────────────────────────────────────── */
+  function renderStep(n) {
+    updateDots();
+    updateBtns();
+    const step = TOUR_STEPS[n];
+    if (step.type === 'modal') renderModal(step);
+    else renderSpotlight(step);
   }
 
   function goTo(n) {
-    if (transitioning) return;
+    if (transitioning || n < 0 || n >= TOTAL) return;
     transitioning = true;
-
-    const leaving = steps[current];
-    leaving.classList.add('step-exiting');
-    dots[current].classList.remove('active');
-
+    if (!tooltip.hidden) tooltip.style.opacity = '0';
     setTimeout(() => {
-      leaving.classList.remove('active', 'step-exiting');
       current = n;
-      steps[current].classList.add('active');
-      dots[current].classList.add('active');
-      retriggerIcon(steps[current]);
-      updateBtn();
+      tooltip.style.opacity = '';
+      renderStep(n);
       transitioning = false;
-    }, 210);
+    }, 160);
   }
 
-  function close() {
-    overlay.hidden = true;
+  function closeTour() {
+    clearSpotlight();
+    dim.hidden   = true;
+    shell.hidden = true;
+    if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
     lsSet(LS_KEY, '1');
   }
 
-  nextBtn.addEventListener('click', () => {
-    if (current < steps.length - 1) goTo(current + 1);
-    else close();
+  /* ── Eventos ──────────────────────────────────────────────── */
+  const advance = () => current < TOTAL - 1 ? goTo(current + 1) : closeTour();
+  nextBtn.addEventListener('click', advance);
+  mNext.addEventListener('click',   advance);
+  skipBtn.addEventListener('click', closeTour);
+  mSkip.addEventListener('click',   closeTour);
+  dim.addEventListener('click',     closeTour);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTour(); });
+
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const step = TOUR_STEPS[current];
+      if (!shell.hidden && step.type === 'spotlight') {
+        const mob = isMob();
+        const targetSel = (mob && step.mobileTargetSelector) ? step.mobileTargetSelector : step.targetSelector;
+        const t = targetSel ? document.querySelector(targetSel) : null;
+        if (t && isElementVisible(t)) positionTooltip(t, step.tooltipPosition);
+        else renderCenteredTooltip(step);
+      }
+    }, 200);
   });
-  skipBtn.addEventListener('click', close);
-  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 
-  trapFocus(overlay);
-
-  /* Mostrar con pequeño retraso para no interrumpir la carga */
-  setTimeout(() => {
-    overlay.hidden = false;
-    updateBtn();
-    nextBtn.focus();
-  }, 800);
+  /* ── Lanzar con pequeño retraso ───────────────────────────── */
+  setTimeout(() => { shell.hidden = false; renderStep(0); }, 800);
 }());
 
 /* ── BOTÓN VOLVER ARRIBA ─────────────────────────────────────── */
