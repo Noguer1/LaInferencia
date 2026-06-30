@@ -9828,135 +9828,154 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 /* ── PÁGINAS ESTÁTICAS DE ARTÍCULO ─────────────────────────── */
 
-/* Header editorial que reemplaza la navbar genérica */
-.static-top-bar {
+/* Mini-hero: mismo look que el hero principal pero compacto */
+.static-hero {
   background: #0B132B;
-  border-bottom: 1px solid rgba(0, 229, 255, 0.12);
-  padding: 0.9rem 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 2rem 1.5rem 1.75rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.10);
 }
 
-.static-top-bar-inner {
-  max-width: 740px;
+.static-hero-inner {
+  max-width: 420px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
-.static-top-bar-brand {
+/* Contenedor relativo: cerebro de fondo, logo encima */
+.static-hero-visual {
+  position: relative;
+  width: 160px;
+  height: 130px;
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  text-decoration: none;
-  flex-shrink: 0;
+  justify-content: center;
 }
 
-.static-top-bar-brand img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
+.static-hero-brain {
+  position: absolute;
+  width: 160px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: visible;
 }
 
-.static-top-bar-brand-name {
-  font-weight: 700;
-  font-size: 0.95rem;
+/* Líneas del cerebro: pulso escalonado */
+.hbl {
+  animation: hbl-flash 3.5s ease-in-out infinite;
+}
+.hbl:nth-child(3n)  { animation-delay: 0.4s; }
+.hbl:nth-child(5n)  { animation-delay: 0.8s; }
+.hbl:nth-child(7n)  { animation-delay: 1.2s; }
+.hbl:nth-child(11n) { animation-delay: 1.6s; }
+
+@keyframes hbl-flash {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.22; }
+}
+
+/* Nodos: pulso de escala */
+.hb-n {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hbn-pulse 4s ease-in-out infinite;
+}
+.hb-n.d0  { animation-delay: 0s; }
+.hb-n.d1  { animation-delay: 0.25s; }
+.hb-n.d2  { animation-delay: 0.5s; }
+.hb-n.d3  { animation-delay: 0.75s; }
+.hb-n.d4  { animation-delay: 1s; }
+.hb-n.d5  { animation-delay: 1.25s; }
+.hb-n.d6  { animation-delay: 1.5s; }
+.hb-n.d7  { animation-delay: 1.75s; }
+.hb-n.d8  { animation-delay: 2s; }
+.hb-n.d9  { animation-delay: 2.25s; }
+.hb-n.d10 { animation-delay: 2.5s; }
+.hb-n.d11 { animation-delay: 2.75s; }
+.hb-n.d12 { animation-delay: 3s; }
+.hb-n.d13 { animation-delay: 3.25s; }
+.hb-n.d14 { animation-delay: 0.1s; }
+.hb-n.d15 { animation-delay: 0.6s; }
+.hb-n.d16 { animation-delay: 1.1s; }
+.hb-n.d17 { animation-delay: 1.6s; }
+.hb-n.d18 { animation-delay: 2.1s; }
+.hb-n.d19 { animation-delay: 2.6s; }
+
+@keyframes hbn-pulse {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.25); }
+}
+
+/* Nodo central más prominente */
+.hbn-c {
+  animation-duration: 3s;
+}
+
+/* Anillos de pulso sináptico: expand + fade */
+.hb-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hbp-ring 3s ease-out infinite;
+}
+.hbp0 { animation-delay: 0s; }
+.hbp1 { animation-delay: 0.75s; }
+.hbp2 { animation-delay: 1.5s; }
+.hbp3 { animation-delay: 2.25s; }
+
+@keyframes hbp-ring {
+  0%   { transform: scale(1);   opacity: 0.85; }
+  100% { transform: scale(3.5); opacity: 0; }
+}
+
+/* Logo encima del cerebro */
+.static-hero-logo {
+  position: relative;
+  z-index: 1;
+  width: 62px !important;
+  height: auto !important;
+  margin: 0 !important;
+  animation: logo-breathe 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, #2563EB 20%, transparent)) drop-shadow(0 0 18px color-mix(in srgb, #00E5FF 12%, transparent));
+}
+
+.static-hero-title {
+  font-size: 1.55rem;
+  font-weight: 800;
   color: #fff;
-  letter-spacing: -0.01em;
-}
-
-.static-top-bar-pitch {
-  flex: 1;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: -0.04em;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.15;
 }
 
-.static-top-bar-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: #2563EB;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.8rem;
-  padding: 0.48rem 1rem;
-  border-radius: 8px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: background 0.18s ease, transform 0.15s ease;
-}
-
-.static-top-bar-cta:hover {
-  background: #1D4ED8;
-  transform: translateY(-1px);
-}
-
-/* Banner debajo del header: propuesta de valor expandida */
-.static-promo-banner {
-  background: linear-gradient(110deg, #0f1a3a 0%, #0B132B 50%, #0d1835 100%);
-  border-bottom: 1px solid rgba(37, 99, 235, 0.18);
-  padding: 1.5rem 1.5rem;
-}
-
-.static-promo-banner-inner {
-  max-width: 740px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.static-promo-banner-text {
-  flex: 1;
-}
-
-.static-promo-banner-text h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 0.3rem;
-  letter-spacing: -0.01em;
-}
-
-.static-promo-banner-text p {
-  font-size: 0.83rem;
-  color: rgba(255, 255, 255, 0.65);
+.static-hero-tagline {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.58);
   margin: 0;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
-.static-promo-banner-text p strong {
-  color: #00E5FF;
-  font-weight: 600;
-}
-
-.static-promo-banner-btn {
+.static-hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: transparent;
+  background: #2563EB;
   color: #fff;
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.62rem 1.35rem;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.82rem;
-  padding: 0.6rem 1.15rem;
-  border-radius: 10px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: border-color 0.18s ease, background 0.18s ease, transform 0.15s ease;
+  transition: background 0.2s ease, transform 0.15s ease;
+  margin-top: 0.2rem;
 }
 
-.static-promo-banner-btn:hover {
-  border-color: #2563EB;
-  background: rgba(37, 99, 235, 0.18);
+.static-hero-cta:hover {
+  background: #1D4ED8;
   transform: translateY(-1px);
 }
 
@@ -10052,11 +10071,11 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 @media (max-width: 680px) {
-  .static-top-bar          { padding: 0.75rem 1rem; }
-  .static-top-bar-pitch    { display: none; }
-  .static-promo-banner     { padding: 1.1rem 1rem; }
-  .static-promo-banner-inner { flex-direction: column; gap: 0.85rem; align-items: flex-start; }
-  .static-promo-banner-btn { width: 100%; justify-content: center; }
+  .static-hero             { padding: 1.5rem 1rem 1.4rem; }
+  .static-hero-visual      { width: 130px; height: 105px; }
+  .static-hero-brain       { width: 130px; }
+  .static-hero-logo        { width: 50px !important; }
+  .static-hero-title       { font-size: 1.3rem; }
   .static-art-main         { padding: 1.75rem 1rem 3rem; }
   .static-art-body         { padding: 1.25rem 1.1rem; border-radius: 12px; }
   .static-art-cta          { padding: 1.5rem 1rem; }
