@@ -3548,6 +3548,14 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
     fullWrap.setAttribute('hidden', '');
     teaserWrap.removeAttribute('hidden');
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const _homeDesc = 'Psicología basada en evidencia: 47 artículos, 20 mitos científicos y 18 sesgos cognitivos explicados sin jerga. Para curioso, no para psicólogo.';
+    document.title = 'La Inferencia — Divulgación de Psicología';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', _homeDesc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'La Inferencia — Divulgación de Psicología');
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', _homeDesc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', 'https://lainferencia.com/');
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://lainferencia.com/');
+    try { history.replaceState({ v: 'home' }, '', '/'); } catch (_) {}
   });
 
   if (autoExpand) doExpand();
@@ -7492,7 +7500,7 @@ const CONCEPTOS_SEMANA = [
     const _artUrl = `https://lainferencia.com/?v=art&id=${art.id}&cat=${currentCat}`;
     history.pushState({ v: 'art', id: art.id, cat: currentCat }, '', `?v=art&id=${art.id}&cat=${currentCat}`);
     document.title = `${art.title} — La Inferencia`;
-    const _artDesc = art.summary;
+    const _artDesc = (art.intro || art.summary).substring(0, 155).replace(/\.\.\.$/, '') + '…';
     document.querySelector('meta[name="description"]')?.setAttribute('content', _artDesc);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', art.title);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', _artDesc);
@@ -7500,6 +7508,22 @@ const CONCEPTOS_SEMANA = [
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', art.title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', _artDesc);
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', _artUrl);
+    document.querySelectorAll('script[data-ld="article"]').forEach(s => s.remove());
+    const _ldScript = document.createElement('script');
+    _ldScript.type = 'application/ld+json';
+    _ldScript.setAttribute('data-ld', 'article');
+    _ldScript.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      'headline': art.title,
+      'description': art.summary,
+      'author': { '@type': 'Person', 'name': art.author.name, 'affiliation': { '@type': 'Organization', 'name': art.author.university } },
+      'publisher': { '@type': 'Organization', 'name': 'La Inferencia', 'url': 'https://lainferencia.com', 'logo': { '@type': 'ImageObject', 'url': 'https://lainferencia.com/img/logo2.png' } },
+      'url': _artUrl,
+      'inLanguage': 'es',
+      'mainEntityOfPage': { '@type': 'WebPage', '@id': _artUrl }
+    });
+    document.head.appendChild(_ldScript);
     container.innerHTML = renderFull(art);
     markRead(art.id);
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -7518,7 +7542,8 @@ const CONCEPTOS_SEMANA = [
   function showCards(cat) {
     currentCat = cat;
     document.title = 'La Inferencia — Divulgación de Psicología';
-    const _homeDesc = 'La psicología más allá del aula y la consulta. Convertimos investigación en conocimiento útil, claro y accesible.';
+    const _homeDesc = 'Psicología basada en evidencia: 47 artículos, 20 mitos científicos y 18 sesgos cognitivos explicados sin jerga. Para curioso, no para psicólogo.';
+    document.querySelectorAll('script[data-ld="article"]').forEach(s => s.remove());
     document.querySelector('meta[name="description"]')?.setAttribute('content', _homeDesc);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'La Inferencia — Divulgación de Psicología');
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', _homeDesc);
@@ -7526,6 +7551,7 @@ const CONCEPTOS_SEMANA = [
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', 'La Inferencia — Divulgación de Psicología');
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', _homeDesc);
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://lainferencia.com/');
+    try { history.replaceState({ v: 'home' }, '', '/'); } catch (_) {}
     const arts = LIBRARY_ARTICLES[cat] || [];
     container.innerHTML = `<div class="lib-cards-grid">${arts.map(a => renderCard(a, cat)).join('')}</div>`;
     container.querySelectorAll('.lib-card').forEach(card => {

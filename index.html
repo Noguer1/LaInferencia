@@ -61,8 +61,15 @@
         "name": "La Inferencia",
         "description": "Divulgación de psicología basada en investigación real. Convertimos estudios académicos en conocimiento útil, claro y accesible.",
         "url": "https://lainferencia.com",
-        "logo": "https://lainferencia.com/img/logo2.png",
-        "sameAs": []
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lainferencia.com/img/logo2.png",
+          "width": 200,
+          "height": 200
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/la-inferencia"
+        ]
       },
       {
         "@type": "WebSite",
@@ -75,6 +82,17 @@
           "target": "https://lainferencia.com/?buscar={search_term_string}",
           "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://lainferencia.com/"
+          }
+        ]
       }
     ]
   }
@@ -1969,6 +1987,9 @@
 
   <!-- ── ONBOARDING TOUR — primera visita ── -->
 
+  <!-- Anillo animado que rastrea el elemento spotlight -->
+  <div id="tour-ring" class="tour-ring" aria-hidden="true" hidden></div>
+
   <!-- Capa oscura que bloquea clics en el resto de la página -->
   <div id="tour-dim" class="tour-dim" aria-hidden="true" hidden></div>
 
@@ -1977,13 +1998,16 @@
 
     <!-- Tooltip flotante para pasos spotlight (1–5) -->
     <div id="tour-tooltip" class="tour-tooltip" hidden>
+      <div class="tour-progress-track" aria-hidden="true">
+        <div class="tour-progress-fill" id="tour-progress-fill"></div>
+      </div>
       <div class="tour-tooltip-header">
         <span id="tour-tooltip-icon" class="tour-tooltip-icon" aria-hidden="true"></span>
         <h2 id="tour-title" class="tour-tooltip-title"></h2>
       </div>
       <p id="tour-text" class="tour-tooltip-text"></p>
       <div class="tour-tooltip-footer">
-        <span id="tour-step-counter" class="tour-step-counter" aria-live="polite"></span>
+        <div id="tour-dots-tt" class="tour-dots-tt" aria-hidden="true"></div>
         <div class="tour-tooltip-actions">
           <button class="tour-skip-btn" id="tour-skip">Saltar tour</button>
           <button class="tour-next-btn" id="tour-next">Siguiente <svg class="ob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>

@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://lainferencia.com/sitemap.xml
+Sitemap: https://lainferencia.com/sitemap-images.xml
