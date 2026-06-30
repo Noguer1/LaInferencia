@@ -27,6 +27,21 @@ if (!LIBRARY_ARTICLES) {
   process.exit(1);
 }
 
+// Extraer AUTHORS y ARTICLE_STATS por separado (están después del primer IIFE)
+const authStart  = mainCode.indexOf('const AUTHORS = {');
+const authEnd    = mainCode.indexOf('\n};', authStart) + 3;
+const statsStart = mainCode.indexOf('const ARTICLE_STATS = {');
+const statsEnd   = mainCode.indexOf('\n};', statsStart) + 3;
+const sandbox2   = {};
+vm.runInNewContext(
+  mainCode.slice(authStart, authEnd).replace(/\bconst\s+/g, '') +
+  '\n' +
+  mainCode.slice(statsStart, statsEnd).replace(/\bconst\s+/g, ''),
+  sandbox2
+);
+const AUTHORS       = sandbox2.AUTHORS || {};
+const ARTICLE_STATS = sandbox2.ARTICLE_STATS || {};
+
 const SEO_OVERRIDES = require('./js/seo-overrides.js');
 
 const SITE = 'https://lainferencia.com';
@@ -184,6 +199,55 @@ ${ldJsonBlocks.map(b => `  <script type="application/ld+json">\n${b}\n  </script
 </head>`;
 }
 
+// ── Helpers para replicar el diseño in-app ─────────────────────
+function buildAuthorCard(author) {
+  const profile  = AUTHORS[author.name] || {};
+  const photo    = profile.photo || null;
+  const univ     = profile.university || author.university;
+  const spec     = profile.specialty  || author.specialty;
+  const isFounder = author.name === 'Miguel Noguer Escudero';
+  const avatarHTML = photo
+    ? `<img src="/${photo}" alt="${author.name}" class="author-avatar-img" />`
+    : author.name.split(' ').map(n => n[0]).join('').slice(0, 2);
+  const metaHTML = isFounder
+    ? `<div class="role-badges-row role-badges-row--inline">
+         <span class="role-badge">Fundador de La Inferencia</span>
+         <span class="role-badge">Director de Fuera de Bata</span>
+       </div>`
+    : `<span>${univ}</span><span>${spec}</span>`;
+  return `<div class="author-card">
+      <div class="author-avatar${photo ? ' author-avatar-photo' : ''}">${avatarHTML}</div>
+      <div><strong>${author.name}</strong>${metaHTML}</div>
+    </div>`;
+}
+
+function buildTocHTML(sections) {
+  if (!sections || sections.length < 2) return '';
+  const links = sections
+    .map((s, i) => s.tocSkip ? null : `<li><a class="toc-link" href="#art-sec-${i}">${s.subtitle}</a></li>`)
+    .filter(Boolean);
+  if (links.length < 2) return '';
+  return `<nav class="article-toc" aria-label="Índice del artículo">
+    <span class="toc-label">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      Índice
+    </span>
+    <ol class="toc-list">${links.join('')}</ol>
+  </nav>`;
+}
+
+function buildStatsHTML(id) {
+  const stats = ARTICLE_STATS[id];
+  if (!stats || !stats.length) return '';
+  return `<div class="stat-callout-row">${stats.map(s =>
+    `<div class="stat-callout">
+      <span class="stat-value">${s.value}</span>
+      <span class="stat-label">${s.label}</span>
+      <span class="stat-detail">${s.detail}</span>
+    </div>`
+  ).join('')}</div>`;
+}
+
 // ── Template HTML por artículo ─────────────────────────────────
 function buildPage(art, cat) {
   const catSlug  = CAT_SLUGS[cat] || cat;
@@ -202,7 +266,7 @@ function buildPage(art, cat) {
     const chart = (i === 0 && art.chart)
       ? `\n      <figure class="article-chart">\n        ${art.chart.svg}\n        <figcaption>${art.chart.caption}</figcaption>\n      </figure>`
       : '';
-    return `    <h2>${s.subtitle}</h2>\n${paragraphs}${chart}`;
+    return `    <h2 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h2>\n${paragraphs}${chart}`;
   }).join('\n\n');
 
   const blockquoteHTML = art.blockquote
@@ -306,22 +370,20 @@ ${navHead()}
         <span aria-current="page">${art.title}</span>
       </nav>
 
-      <article class="static-art-body">
-        <header class="static-art-header">
-          <span class="doc-badge">${art.badge}</span>
-          <h1>${art.title}</h1>
-          <p class="static-art-meta">
-            <span><a href="${AUTHOR_URL}">${AUTHOR_NAME}</a></span>
-            <span class="sep">·</span>
-            <span>Investigación original: ${art.author.name}, ${art.author.university}</span>
-            <span class="sep">·</span>
-            <span>${art.readingTime} de lectura</span>
-          </p>
-          <p class="static-art-source-label">${art.sourceLabel}</p>
-        </header>
-
+      <div class="weekly-featured-card">
+        <div class="week-label">
+          <span class="week-tag">✦ ${art.badge}</span>
+          <span class="reading-time">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ${art.readingTime} de lectura
+          </span>
+        </div>
+        <h1 class="weekly-title">${art.title}</h1>
+        ${buildAuthorCard(art.author)}
+        ${buildTocHTML(art.sections)}
         <div class="article-content">
           <p class="article-intro">${art.intro}</p>
+          ${buildStatsHTML(art.id)}
 ${sectionsHTML}
 ${blockquoteHTML}
 ${aplicacionHTML}
@@ -331,7 +393,7 @@ ${aplicacionHTML}
           </a>
 ${faqHTML}
         </div>
-      </article>
+      </div>
 
 ${relatedHTML}
 
