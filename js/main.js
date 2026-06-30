@@ -5267,39 +5267,48 @@ function initWeeklySection() {
   ];
 
   /* ── DOM refs ─────────────────────────────────────────────── */
-  const dim      = document.getElementById('tour-dim');
-  const shell    = document.getElementById('tour-shell');
-  const tooltip  = document.getElementById('tour-tooltip');
-  const modal    = document.getElementById('tour-modal');
-  const nextBtn  = document.getElementById('tour-next');
-  const skipBtn  = document.getElementById('tour-skip');
-  const mNext    = document.getElementById('tour-modal-next');
-  const mSkip    = document.getElementById('tour-modal-skip');
-  const dotsWrap = document.getElementById('tour-dots');
-  const arrow    = document.getElementById('tour-arrow');
+  const ring         = document.getElementById('tour-ring');
+  const dim          = document.getElementById('tour-dim');
+  const shell        = document.getElementById('tour-shell');
+  const tooltip      = document.getElementById('tour-tooltip');
+  const modal        = document.getElementById('tour-modal');
+  const nextBtn      = document.getElementById('tour-next');
+  const skipBtn      = document.getElementById('tour-skip');
+  const mNext        = document.getElementById('tour-modal-next');
+  const mSkip        = document.getElementById('tour-modal-skip');
+  const dotsWrap     = document.getElementById('tour-dots');
+  const tooltipDots  = document.getElementById('tour-dots-tt');
+  const progressFill = document.getElementById('tour-progress-fill');
+  const arrow        = document.getElementById('tour-arrow');
   if (!dim || !shell || !tooltip || !modal) return;
 
   /* ── State ────────────────────────────────────────────────── */
-  let current      = 0;
+  let current       = 0;
   let transitioning = false;
-  let prevTarget   = null;
-  let prevParent   = null;
-  let prevParentZ  = '';
-  let trapHandler  = null;
-  let resizeTimer  = null;
-  const TOTAL      = TOUR_STEPS.length;
+  let prevTarget    = null;
+  let prevParent    = null;
+  let prevParentZ   = '';
+  let trapHandler   = null;
+  let resizeTimer   = null;
+  const TOTAL       = TOUR_STEPS.length;
 
-  /* ── Build progress dots ──────────────────────────────────── */
-  TOUR_STEPS.forEach((_, i) => {
-    const dot = document.createElement('span');
-    dot.className = 'onboarding-dot' + (i === 0 ? ' active' : '');
-    dotsWrap.appendChild(dot);
+  /* ── Build progress dots (modal + tooltip) ────────────────── */
+  [dotsWrap, tooltipDots].forEach(wrap => {
+    if (!wrap) return;
+    TOUR_STEPS.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'onboarding-dot' + (i === 0 ? ' active' : '');
+      wrap.appendChild(dot);
+    });
   });
 
   /* ── Helpers ──────────────────────────────────────────────── */
   function updateDots() {
-    Array.from(dotsWrap.querySelectorAll('.onboarding-dot'))
-      .forEach((d, i) => d.classList.toggle('active', i === current));
+    [dotsWrap, tooltipDots].forEach(wrap => {
+      if (!wrap) return;
+      Array.from(wrap.querySelectorAll('.onboarding-dot'))
+        .forEach((d, i) => d.classList.toggle('active', i === current));
+    });
   }
 
   function updateBtns() {
@@ -5307,7 +5316,12 @@ function initWeeklySection() {
     const label  = (isLast ? '¡Empezar! ' : 'Siguiente ') + CHEVRON;
     nextBtn.innerHTML = label;
     mNext.innerHTML   = label;
-    document.getElementById('tour-step-counter').textContent = (current + 1) + ' de ' + TOTAL;
+    const sc = document.getElementById('tour-step-counter');
+    if (sc) sc.textContent = (current + 1) + ' de ' + TOTAL;
+  }
+
+  function updateProgress() {
+    if (progressFill) progressFill.style.width = ((current + 1) / TOTAL * 100) + '%';
   }
 
   function isElementVisible(el) {
@@ -5328,13 +5342,33 @@ function initWeeklySection() {
     if (prevParent) { prevParent.style.zIndex = prevParentZ; prevParent = null; prevParentZ = ''; }
   }
 
-  /* ── Tooltip positioning ──────────────────────────────────── */
+  function positionRing(target) {
+    if (!ring) return;
+    const PAD = 8;
+    const r   = target.getBoundingClientRect();
+    const cs  = window.getComputedStyle(target);
+    const br  = parseFloat(cs.borderTopLeftRadius) || 8;
+    ring.style.top          = (r.top    - PAD) + 'px';
+    ring.style.left         = (r.left   - PAD) + 'px';
+    ring.style.width        = (r.width  + PAD * 2) + 'px';
+    ring.style.height       = (r.height + PAD * 2) + 'px';
+    ring.style.borderRadius = Math.min(br + PAD, 20) + 'px';
+    ring.hidden             = false;
+    ring.style.opacity      = '1';
+  }
+
+  function hideRing() {
+    if (!ring) return;
+    ring.style.opacity = '0';
+  }
+
+  /* ── Tooltip positioning (desktop) ───────────────────────── */
   function positionTooltip(target, preferred) {
     const TW   = 320;
     const GAP  = 16;
     const ARW  = 10;
     const MARG = 12;
-    const TH   = 190;
+    const TH   = tooltip.offsetHeight || 240;
 
     const tr  = target.getBoundingClientRect();
     const vw  = window.innerWidth;
@@ -5401,12 +5435,13 @@ function initWeeklySection() {
   /* ── Render: modal centrado ───────────────────────────────── */
   function renderModal(step) {
     clearSpotlight();
+    hideRing();
     dim.hidden     = true;
     tooltip.hidden = true;
     modal.hidden   = false;
     shell.hidden   = false;
 
-    document.getElementById('tour-modal-icon').innerHTML   = step.icon;
+    document.getElementById('tour-modal-icon').innerHTML    = step.icon;
     document.getElementById('tour-modal-title').textContent = step.title;
     document.getElementById('tour-modal-text').textContent  = step.text;
 
@@ -5437,9 +5472,17 @@ function initWeeklySection() {
   function _doSpotlight(step, mob) {
     const targetSel = (mob && step.mobileTargetSelector) ? step.mobileTargetSelector : step.targetSelector;
     const target    = targetSel ? document.querySelector(targetSel) : null;
-    if (!target || !isElementVisible(target)) { renderCenteredTooltip(step); return; }
+    if (!target) {
+      if (mob) renderBottomSheet(step);
+      else renderCenteredTooltip(step);
+      return;
+    }
+    if (!isElementVisible(target) && mob) {
+      renderBottomSheet(step);
+      return;
+    }
 
-    target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
     const doPosition = () => {
       clearSpotlight();
@@ -5453,17 +5496,27 @@ function initWeeklySection() {
 
       dim.hidden   = false;
       modal.hidden = true;
-      tooltip.classList.remove('tour-tooltip--centered');
-      arrow.hidden = false;
 
       document.getElementById('tour-tooltip-icon').innerHTML = step.icon;
       document.getElementById('tour-title').textContent       = step.title;
       document.getElementById('tour-text').textContent        = step.text;
 
+      positionRing(target);
+      updateProgress();
+
       tooltip.hidden = false;
       shell.hidden   = false;
 
-      positionTooltip(target, step.tooltipPosition);
+      if (mob) {
+        tooltip.style.cssText = '';
+        tooltip.classList.remove('tour-tooltip--centered');
+        tooltip.classList.add('tour-tooltip--bottom-sheet');
+        arrow.hidden = true;
+      } else {
+        tooltip.classList.remove('tour-tooltip--centered', 'tour-tooltip--bottom-sheet');
+        arrow.hidden = false;
+        positionTooltip(target, step.tooltipPosition);
+      }
 
       if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
       trapHandler = trapFocus(shell);
@@ -5479,9 +5532,10 @@ function initWeeklySection() {
     }
   }
 
-  /* ── Render: tooltip centrado (fallback) ──────────────────── */
+  /* ── Render: tooltip centrado (fallback desktop) ──────────── */
   function renderCenteredTooltip(step) {
     clearSpotlight();
+    hideRing();
     dim.hidden   = false;
     modal.hidden = true;
 
@@ -5490,11 +5544,40 @@ function initWeeklySection() {
     document.getElementById('tour-text').textContent        = step.text;
 
     tooltip.style.cssText = '';
+    tooltip.classList.remove('tour-tooltip--bottom-sheet');
     tooltip.classList.add('tour-tooltip--centered');
     arrow.hidden = true;
 
     tooltip.hidden = false;
     shell.hidden   = false;
+
+    updateProgress();
+
+    if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
+    trapHandler = trapFocus(shell);
+    nextBtn.focus();
+  }
+
+  /* ── Render: bottom sheet (móvil — siempre) ───────────────── */
+  function renderBottomSheet(step) {
+    clearSpotlight();
+    hideRing();
+    dim.hidden   = false;
+    modal.hidden = true;
+
+    document.getElementById('tour-tooltip-icon').innerHTML = step.icon;
+    document.getElementById('tour-title').textContent       = step.title;
+    document.getElementById('tour-text').textContent        = step.text;
+
+    tooltip.style.cssText = '';
+    tooltip.classList.remove('tour-tooltip--centered');
+    tooltip.classList.add('tour-tooltip--bottom-sheet');
+    arrow.hidden = true;
+
+    tooltip.hidden = false;
+    shell.hidden   = false;
+
+    updateProgress();
 
     if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
     trapHandler = trapFocus(shell);
@@ -5510,20 +5593,137 @@ function initWeeklySection() {
     else renderSpotlight(step);
   }
 
-  function goTo(n) {
+  function goTo(n, dir = 1) {
     if (transitioning || n < 0 || n >= TOTAL) return;
     transitioning = true;
-    if (!tooltip.hidden) tooltip.style.opacity = '0';
-    setTimeout(() => {
+
+    const nextStep = TOUR_STEPS[n];
+    const currStep = TOUR_STEPS[current];
+    const mob = isMob();
+
+    // Transición fluida desktop: spotlight → spotlight con card posicionada
+    if (!tooltip.hidden && !mob
+        && currStep.type === 'spotlight' && nextStep.type === 'spotlight'
+        && !tooltip.classList.contains('tour-tooltip--centered')
+        && !tooltip.classList.contains('tour-tooltip--bottom-sheet')) {
+
+      const FADE   = 140;
+      const SLIDE  = 380;
+      const CONTENT = ['tour-tooltip-icon', 'tour-title', 'tour-text'];
+
+      const targetSel = nextStep.targetSelector;
+      const target    = targetSel ? document.querySelector(targetSel) : null;
+
+      if (target && isElementVisible(target)) {
+        current = n;
+        updateDots();
+        updateBtns();
+        updateProgress();
+
+        // 1. Fade out simultáneo con el inicio del movimiento
+        CONTENT.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) { el.style.transition = `opacity ${FADE}ms ease`; el.style.opacity = '0'; }
+        });
+
+        // 2. Activar tab y mover ring+card en el mismo frame
+        const activateEl = nextStep.activateSelector ? document.querySelector(nextStep.activateSelector) : null;
+        if (activateEl) activateEl.click();
+
+        if (prevTarget) { prevTarget.classList.remove('tour-spotlight-target'); prevTarget = null; }
+        if (prevParent) { prevParent.style.zIndex = prevParentZ; prevParent = null; prevParentZ = ''; }
+        prevTarget = target;
+        target.classList.add('tour-spotlight-target');
+        if (nextStep.raiseParent) {
+          prevParent = document.querySelector(nextStep.raiseParent);
+          if (prevParent) { prevParentZ = prevParent.style.zIndex; prevParent.style.zIndex = '1002'; }
+        }
+        positionRing(target);
+
+        // 3. Card se desliza a nueva posición (transición CSS)
+        tooltip.classList.add('tour-tooltip--sliding');
+        positionTooltip(target, nextStep.tooltipPosition || 'below');
+
+        // 4. Tras fade out, actualizar contenido y hacer fade in
+        setTimeout(() => {
+          document.getElementById('tour-tooltip-icon').innerHTML = nextStep.icon;
+          document.getElementById('tour-title').textContent       = nextStep.title;
+          document.getElementById('tour-text').textContent        = nextStep.text;
+
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            CONTENT.forEach(id => {
+              const el = document.getElementById(id);
+              if (el) el.style.opacity = '1';
+            });
+            // 5. Limpiar al finalizar slide — sin parpadeo
+            setTimeout(() => {
+              CONTENT.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) { el.style.transition = ''; el.style.opacity = ''; }
+              });
+              tooltip.style.animation = 'none'; // evita que tour-tooltip-in se repita
+              tooltip.classList.remove('tour-tooltip--sliding');
+              transitioning = false;
+            }, SLIDE - FADE + 20);
+          }));
+        }, FADE);
+
+        return;
+      }
+
+      // Fallback: target no visible aún (p.ej. requiere scroll o tab no cargada)
+      const FALLBACK_DELAY = 400;
+      CONTENT.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) { el.style.transition = `opacity ${FADE}ms ease`; el.style.opacity = '0'; }
+      });
+      const activateEl2 = nextStep.activateSelector ? document.querySelector(nextStep.activateSelector) : null;
+      if (activateEl2) activateEl2.click();
+      setTimeout(() => {
+        CONTENT.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) { el.style.transition = ''; el.style.opacity = ''; }
+        });
+        current = n;
+        renderStep(n);
+        transitioning = false;
+      }, FALLBACK_DELAY);
+
+      return;
+    }
+
+    // Comportamiento original para otras transiciones
+    if (!tooltip.hidden) {
+      if (mob) {
+        // Mobile: ocultar directamente — slide-out deja tooltip sin bottom-sheet y aparece arriba
+        tooltip.hidden = true;
+        current = n;
+        renderStep(n);
+        transitioning = false;
+      } else {
+        const outClass = dir > 0 ? 'tour-out-left' : 'tour-out-right';
+        tooltip.classList.remove('tour-tooltip--centered', 'tour-tooltip--bottom-sheet');
+        tooltip.classList.add(outClass);
+        setTimeout(() => {
+          tooltip.classList.remove('tour-out-left', 'tour-out-right');
+          tooltip.style.animation = 'none';
+          void tooltip.offsetWidth;
+          tooltip.style.animation = '';
+          current = n;
+          renderStep(n);
+          transitioning = false;
+        }, 200);
+      }
+    } else {
       current = n;
-      tooltip.style.opacity = '';
       renderStep(n);
       transitioning = false;
-    }, 160);
+    }
   }
 
   function closeTour() {
     clearSpotlight();
+    if (ring) { ring.hidden = true; ring.style.opacity = ''; }
     dim.hidden   = true;
     shell.hidden = true;
     if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
@@ -5531,7 +5731,7 @@ function initWeeklySection() {
   }
 
   /* ── Eventos ──────────────────────────────────────────────── */
-  const advance = () => current < TOTAL - 1 ? goTo(current + 1) : closeTour();
+  const advance = () => current < TOTAL - 1 ? goTo(current + 1, 1) : closeTour();
   nextBtn.addEventListener('click', advance);
   mNext.addEventListener('click',   advance);
   skipBtn.addEventListener('click', closeTour);
@@ -5547,8 +5747,23 @@ function initWeeklySection() {
         const mob = isMob();
         const targetSel = (mob && step.mobileTargetSelector) ? step.mobileTargetSelector : step.targetSelector;
         const t = targetSel ? document.querySelector(targetSel) : null;
-        if (t && isElementVisible(t)) positionTooltip(t, step.tooltipPosition);
-        else renderCenteredTooltip(step);
+        if (t && isElementVisible(t)) {
+          positionRing(t);
+          if (mob) {
+            tooltip.style.cssText = '';
+            tooltip.classList.remove('tour-tooltip--centered');
+            tooltip.classList.add('tour-tooltip--bottom-sheet');
+            arrow.hidden = true;
+          } else {
+            tooltip.classList.remove('tour-tooltip--centered', 'tour-tooltip--bottom-sheet');
+            arrow.hidden = false;
+            positionTooltip(t, step.tooltipPosition);
+          }
+        } else {
+          hideRing();
+          if (mob) renderBottomSheet(step);
+          else renderCenteredTooltip(step);
+        }
       }
     }, 200);
   });
