@@ -9828,9 +9828,141 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 /* ── PÁGINAS ESTÁTICAS DE ARTÍCULO ─────────────────────────── */
 
+/* Header editorial que reemplaza la navbar genérica */
+.static-top-bar {
+  background: #0B132B;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+  padding: 0.9rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.static-top-bar-inner {
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.static-top-bar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.static-top-bar-brand img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.static-top-bar-brand-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.static-top-bar-pitch {
+  flex: 1;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.static-top-bar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #2563EB;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.48rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+
+.static-top-bar-cta:hover {
+  background: #1D4ED8;
+  transform: translateY(-1px);
+}
+
+/* Banner debajo del header: propuesta de valor expandida */
+.static-promo-banner {
+  background: linear-gradient(110deg, #0f1a3a 0%, #0B132B 50%, #0d1835 100%);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.18);
+  padding: 1.5rem 1.5rem;
+}
+
+.static-promo-banner-inner {
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.static-promo-banner-text {
+  flex: 1;
+}
+
+.static-promo-banner-text h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.static-promo-banner-text p {
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.static-promo-banner-text p strong {
+  color: #00E5FF;
+  font-weight: 600;
+}
+
+.static-promo-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 0.6rem 1.15rem;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.15s ease;
+}
+
+.static-promo-banner-btn:hover {
+  border-color: #2563EB;
+  background: rgba(37, 99, 235, 0.18);
+  transform: translateY(-1px);
+}
+
 .static-art-main {
   min-height: 100vh;
-  padding: 5rem 1.5rem 4rem;
+  padding: 2.5rem 1.5rem 4rem;
 }
 
 .static-art-wrap {
@@ -9920,9 +10052,14 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 @media (max-width: 680px) {
-  .static-art-main  { padding: 4.5rem 1rem 3rem; }
-  .static-art-body  { padding: 1.25rem 1.1rem; border-radius: 12px; }
-  .static-art-cta   { padding: 1.5rem 1rem; }
+  .static-top-bar          { padding: 0.75rem 1rem; }
+  .static-top-bar-pitch    { display: none; }
+  .static-promo-banner     { padding: 1.1rem 1rem; }
+  .static-promo-banner-inner { flex-direction: column; gap: 0.85rem; align-items: flex-start; }
+  .static-promo-banner-btn { width: 100%; justify-content: center; }
+  .static-art-main         { padding: 1.75rem 1rem 3rem; }
+  .static-art-body         { padding: 1.25rem 1.1rem; border-radius: 12px; }
+  .static-art-cta          { padding: 1.5rem 1rem; }
 }
 
 .dark-base .static-art-body { background: var(--card-bg); }
