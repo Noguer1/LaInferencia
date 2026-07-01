@@ -3,3 +3,4 @@ archive/
 .DS_Store
 Thumbs.db
 linkedin/token.json
+linkedin/.env

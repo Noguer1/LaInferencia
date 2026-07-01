@@ -24,8 +24,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="preload" as="style" href="/css/styles.css?v=38" />
-  <link rel="stylesheet" href="/css/styles.css?v=38" />
+  <link rel="preload" as="style" href="/css/styles.css?v=40" />
+  <link rel="stylesheet" href="/css/styles.css?v=40" />
   <link rel="icon" type="image/png" href="/img/logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
   <meta name="theme-color" content="#030C1A" />
@@ -138,103 +138,30 @@
 
   <a class="skip-link" href="#article-main">Saltar al contenido</a>
   <div id="bg-layer" aria-hidden="true"></div>
+  <canvas id="static-neural-canvas" aria-hidden="true"></canvas>
 
+  <header class="static-navbar">
+    <div class="static-navbar-inner">
+      <a href="/" class="static-navbar-brand">
+        <img src="/img/logo2.png" alt="La Inferencia" class="static-navbar-logo" />
+        <span>La Inferencia</span>
+      </a>
+      <a href="/" class="static-navbar-cta">Explorar los 59 artículos →</a>
+    </div>
+  </header>
   <section class="static-hero" aria-label="La Inferencia">
     <div class="static-hero-inner">
       <div class="static-hero-visual">
-        <svg class="static-hero-brain" viewBox="0 0 220 182" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <radialGradient id="shbg-core" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#2563EB"/>
-            </radialGradient>
-            <radialGradient id="shbg-outer" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#7DD3FC"/><stop offset="100%" stop-color="#3B82F6"/>
-            </radialGradient>
-          </defs>
-          <g fill="none" stroke="#2563EB" stroke-linecap="round">
-            <line class="hbl" x1="110" y1="16" x2="143" y2="23" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="143" y1="23" x2="167" y2="44" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="167" y1="44" x2="175" y2="73" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="175" y1="73" x2="167" y2="101" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="167" y1="101" x2="150" y2="125" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="150" y1="125" x2="130" y2="143" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="130" y1="143" x2="110" y2="151" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="110" y1="151" x2="90"  y2="143" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="90"  y1="143" x2="70"  y2="125" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="70"  y1="125" x2="53"  y2="101" stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="53"  y1="101" x2="45"  y2="73"  stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="45"  y1="73"  x2="53"  y2="44"  stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="53"  y1="44"  x2="77"  y2="23"  stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="77"  y1="23"  x2="110" y2="16"  stroke-width="0.9" stroke-opacity="0.32"/>
-            <line class="hbl" x1="110" y1="16"  x2="93"  y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="110" y1="16"  x2="127" y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="143" y1="23"  x2="127" y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="167" y1="44"  x2="127" y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="175" y1="73"  x2="141" y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="167" y1="101" x2="141" y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="167" y1="101" x2="127" y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="150" y1="125" x2="127" y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="130" y1="143" x2="127" y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="110" y1="151" x2="93"  y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="110" y1="151" x2="127" y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="90"  y1="143" x2="93"  y2="113" stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="70"  y1="125" x2="79"  y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="53"  y1="101" x2="79"  y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="45"  y1="73"  x2="79"  y2="84"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="53"  y1="44"  x2="93"  y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="77"  y1="23"  x2="93"  y2="48"  stroke-width="0.7" stroke-opacity="0.26"/>
-            <line class="hbl" x1="93"  y1="48"  x2="110" y2="71"  stroke-width="1.0" stroke-opacity="0.42"/>
-            <line class="hbl" x1="127" y1="48"  x2="110" y2="71"  stroke-width="1.0" stroke-opacity="0.42"/>
-            <line class="hbl" x1="79"  y1="84"  x2="110" y2="71"  stroke-width="1.0" stroke-opacity="0.42"/>
-            <line class="hbl" x1="141" y1="84"  x2="110" y2="71"  stroke-width="1.0" stroke-opacity="0.42"/>
-            <line class="hbl" x1="110" y1="71"  x2="93"  y2="113" stroke-width="1.0" stroke-opacity="0.42"/>
-            <line class="hbl" x1="110" y1="71"  x2="127" y2="113" stroke-width="1.0" stroke-opacity="0.42"/>
-            <line class="hbl" x1="93"  y1="48"  x2="127" y2="48"  stroke-width="0.8" stroke-opacity="0.30"/>
-            <line class="hbl" x1="79"  y1="84"  x2="93"  y2="113" stroke-width="0.8" stroke-opacity="0.30"/>
-            <line class="hbl" x1="141" y1="84"  x2="127" y2="113" stroke-width="0.8" stroke-opacity="0.30"/>
-            <line class="hbl" x1="93"  y1="48"  x2="79"  y2="84"  stroke-width="0.8" stroke-opacity="0.30"/>
-            <line class="hbl" x1="127" y1="48"  x2="141" y2="84"  stroke-width="0.8" stroke-opacity="0.30"/>
-            <line class="hbl" x1="93"  y1="113" x2="127" y2="113" stroke-width="0.8" stroke-opacity="0.30"/>
-          </g>
-          <circle class="hb-n hbn-o d0"  cx="110" cy="16"  r="2.5" fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d1"  cx="143" cy="23"  r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d2"  cx="167" cy="44"  r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d3"  cx="175" cy="73"  r="2.5" fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d4"  cx="167" cy="101" r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d5"  cx="150" cy="125" r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d6"  cx="130" cy="143" r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d7"  cx="110" cy="151" r="2.5" fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d8"  cx="90"  cy="143" r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d9"  cx="70"  cy="125" r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d10" cx="53"  cy="101" r="2.5" fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d11" cx="45"  cy="73"  r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d12" cx="53"  cy="44"  r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-o d13" cx="77"  cy="23"  r="2"   fill="url(#shbg-outer)"/>
-          <circle class="hb-n hbn-i d14" cx="93"  cy="48"  r="3.2" fill="url(#shbg-core)"/>
-          <circle class="hb-n hbn-i d15" cx="127" cy="48"  r="3.2" fill="url(#shbg-core)"/>
-          <circle class="hb-n hbn-i d16" cx="79"  cy="84"  r="3.2" fill="url(#shbg-core)"/>
-          <circle class="hb-n hbn-c"     cx="110" cy="71"  r="5"   fill="url(#shbg-core)"/>
-          <circle class="hb-n hbn-i d17" cx="141" cy="84"  r="3.2" fill="url(#shbg-core)"/>
-          <circle class="hb-n hbn-i d18" cx="93"  cy="113" r="3.2" fill="url(#shbg-core)"/>
-          <circle class="hb-n hbn-i d19" cx="127" cy="113" r="3.2" fill="url(#shbg-core)"/>
-          <circle class="hb-pulse hbp0" cx="110" cy="71"  r="5"   fill="none" stroke="#00E5FF" stroke-width="1.5"/>
-          <circle class="hb-pulse hbp1" cx="93"  cy="48"  r="3.2" fill="none" stroke="#3B82F6" stroke-width="1"/>
-          <circle class="hb-pulse hbp2" cx="141" cy="84"  r="3.2" fill="none" stroke="#00E5FF" stroke-width="1"/>
-          <circle class="hb-pulse hbp3" cx="127" cy="113" r="3.2" fill="none" stroke="#3B82F6" stroke-width="1"/>
-        </svg>
         <img src="/img/logo2.png" alt="La Inferencia" class="static-hero-logo" />
       </div>
       <p class="static-hero-title">La Inferencia</p>
       <p class="static-hero-tagline">La psicología más allá del aula y la consulta.<br>Investigación real, en español, gratis.</p>
-      <a href="/" class="static-hero-cta">
-        Explorar los 59 artículos
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
     </div>
   </section>
 
   <main id="article-main" class="static-art-main">
-    <div class="static-art-wrap">
+    <div class="static-layout">
+      <div class="static-art-wrap">
 
       <nav class="static-breadcrumb" aria-label="Ruta de navegación">
         <a href="/">Inicio</a>
@@ -309,12 +236,24 @@
       </div>
 
       <div class="static-related">
-        <h2>Artículos relacionados</h2>
-        <ul class="static-related-list">
-          <li><a href="https://lainferencia.com/articulos/salud-mental/la-ilusion-de-control-por-que-creer-que-mandas-sobre-lo-que-no-co/">La ilusión de control: por qué creer que mandas sobre lo que no controlas te mantiene más sano</a> <span class="static-related-cat">Salud Mental</span></li>
-          <li><a href="https://lainferencia.com/articulos/salud-mental/el-ejercicio-como-antidepresivo-por-que-caminar-30-minutos-rivali/">El ejercicio como antidepresivo: por qué caminar 30 minutos rivaliza con la medicación</a> <span class="static-related-cat">Salud Mental</span></li>
-          <li><a href="https://lainferencia.com/articulos/educacion/como-las-notas-destruyen-el-amor-por-aprender-la-investigacion-qu/">Cómo las notas destruyen el amor por aprender: la investigación que pone en cuestión la evaluación escolar</a> <span class="static-related-cat">Educación</span></li>
-        </ul>
+        <h2 class="static-related-heading">Seguir leyendo</h2>
+        <div class="static-related-grid">
+          <a href="https://lainferencia.com/articulos/salud-mental/la-ilusion-de-control-por-que-creer-que-mandas-sobre-lo-que-no-co/" class="static-related-card">
+            <span class="static-related-badge">Salud Mental</span>
+            <strong class="static-related-card-title">La ilusión de control: por qué creer que mandas sobre lo que no controlas te mantiene más sano</strong>
+            <p class="static-related-card-summary">Percibir que tienes control sobre tu entorno —aunque esa percepción sea parcialmente ilusoria— tiene efectos biológicos </p>
+          </a>
+          <a href="https://lainferencia.com/articulos/salud-mental/el-ejercicio-como-antidepresivo-por-que-caminar-30-minutos-rivali/" class="static-related-card">
+            <span class="static-related-badge">Salud Mental</span>
+            <strong class="static-related-card-title">El ejercicio como antidepresivo: por qué caminar 30 minutos rivaliza con la medicación</strong>
+            <p class="static-related-card-summary">Un estudio controlado de Duke University demostró que el ejercicio aeróbico produce los mismos efectos sobre la depresió</p>
+          </a>
+          <a href="https://lainferencia.com/articulos/educacion/como-las-notas-destruyen-el-amor-por-aprender-la-investigacion-qu/" class="static-related-card">
+            <span class="static-related-badge">Educación</span>
+            <strong class="static-related-card-title">Cómo las notas destruyen el amor por aprender: la investigación que pone en cuestión la evaluación escolar</strong>
+            <p class="static-related-card-summary">Un metaanálisis de 128 estudios demuestra que las recompensas externas contingentes al rendimiento reducen sistemáticame</p>
+          </a>
+        </div>
       </div>
 
       <div class="static-art-cta">
@@ -325,8 +264,60 @@
         </a>
       </div>
 
+      </div>
+    <aside class="static-sidebar">
+      <div class="static-sidebar-inner">
+        <p class="static-sidebar-heading">Más artículos</p>
+        <a href="https://lainferencia.com/articulos/salud-mental/la-ilusion-de-control-por-que-creer-que-mandas-sobre-lo-que-no-co/" class="static-sidebar-article">
+          <span class="static-sidebar-badge">Salud Mental</span>
+          <span class="static-sidebar-title">La ilusión de control: por qué creer que mandas sobre lo que no controlas te mantiene más sano</span>
+        </a>
+        <a href="https://lainferencia.com/articulos/salud-mental/el-ejercicio-como-antidepresivo-por-que-caminar-30-minutos-rivali/" class="static-sidebar-article">
+          <span class="static-sidebar-badge">Salud Mental</span>
+          <span class="static-sidebar-title">El ejercicio como antidepresivo: por qué caminar 30 minutos rivaliza con la medicación</span>
+        </a>
+        <a href="https://lainferencia.com/articulos/trabajo/el-principio-del-progreso-el-unico-motivador-que-realmente-import/" class="static-sidebar-article">
+          <span class="static-sidebar-badge">Trabajo</span>
+          <span class="static-sidebar-title">El principio del progreso: el único motivador que realmente importa en el trabajo</span>
+        </a>
+        <a href="https://lainferencia.com/articulos/politica/por-que-los-argumentos-contrarios-te-convencen-menos-si-ya-tienes/" class="static-sidebar-article">
+          <span class="static-sidebar-badge">Política</span>
+          <span class="static-sidebar-title">Por qué los argumentos contrarios te convencen menos si ya tienes opinión</span>
+        </a>
+        <a href="/" class="static-sidebar-cta">Ver todos los artículos →</a>
+      </div>
+    </aside>
     </div>
   </main>
+
+<script>
+(function(){
+  var c=document.getElementById('static-neural-canvas');
+  if(!c)return;
+  var x=c.getContext('2d'),pts=[],W,H,rid=null,run=false;
+  var CFG={N:80,MAX_D:140,na:0.28,la:0.42,lw:1.0,l:[16,185,129],r:[37,99,235]};
+  function nc(px,a){var t=Math.min(1,Math.max(0,px/W));return 'rgba('+Math.round(CFG.l[0]+(CFG.r[0]-CFG.l[0])*t)+','+Math.round(CFG.l[1]+(CFG.r[1]-CFG.l[1])*t)+','+Math.round(CFG.l[2]+(CFG.r[2]-CFG.l[2])*t)+','+a+')';}
+  function mkp(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*2+1.2,a:Math.random()*.3+CFG.na};}
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight;}
+  function init(){resize();pts=Array.from({length:CFG.N},mkp);}
+  var last=0,FMS=1000/30;
+  function frame(now){
+    if(now-last<FMS){if(run)rid=requestAnimationFrame(frame);return;}
+    last=now;var MD2=CFG.MAX_D*CFG.MAX_D,N=pts.length;
+    x.clearRect(0,0,W,H);
+    for(var p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle=nc(p.x,p.a);x.fill();}
+    x.lineWidth=CFG.lw;x.beginPath();
+    for(var i=0;i<N;i++)for(var j=i+1;j<N;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;if(dx*dx+dy*dy<MD2){x.moveTo(pts[i].x,pts[i].y);x.lineTo(pts[j].x,pts[j].y);}}
+    x.strokeStyle=nc(W*.5,CFG.la*.7);x.stroke();
+    if(run)rid=requestAnimationFrame(frame);
+  }
+  function start(){if(!run){run=true;rid=requestAnimationFrame(frame);}}
+  function stop(){run=false;if(rid){cancelAnimationFrame(rid);rid=null;}}
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
+  window.addEventListener('resize',function(){resize();pts.forEach(function(p){if(p.x>W)p.x=Math.random()*W;if(p.y>H)p.y=Math.random()*H;});},{passive:true});
+  init();start();
+}());
+</script>
 
 </body>
 </html>
