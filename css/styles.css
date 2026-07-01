@@ -2793,7 +2793,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 .author-avatar.author-avatar-photo {
-  background: transparent;
+  background: #F7F9FF;
   border: 2px solid color-mix(in srgb, var(--blue) 18%, transparent);
   box-shadow: 0 2px 10px rgba(11,19,43,0.10);
   position: relative;
