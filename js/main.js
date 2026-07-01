@@ -5634,47 +5634,65 @@ function initWeeklySection() {
           if (el) { el.style.transition = `opacity ${FADE}ms ease`; el.style.opacity = '0'; }
         });
 
-        // 2. Activar tab y mover ring+card en el mismo frame
+        // 2. Activar tab
         const activateEl = nextStep.activateSelector ? document.querySelector(nextStep.activateSelector) : null;
         if (activateEl) activateEl.click();
 
-        if (prevTarget) { prevTarget.classList.remove('tour-spotlight-target'); prevTarget = null; }
-        if (prevParent) { prevParent.style.zIndex = prevParentZ; prevParent = null; prevParentZ = ''; }
-        prevTarget = target;
-        target.classList.add('tour-spotlight-target');
-        if (nextStep.raiseParent) {
-          prevParent = document.querySelector(nextStep.raiseParent);
-          if (prevParent) { prevParentZ = prevParent.style.zIndex; prevParent.style.zIndex = '1002'; }
-        }
-        positionRing(target);
+        // 2b. Si el target no está en el viewport, llevar al usuario hasta él
+        const tRect  = target.getBoundingClientRect();
+        const inView = tRect.top >= 0 && tRect.bottom <= window.innerHeight;
+        if (!inView) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-        // 3. Card se desliza a nueva posición (transición CSS)
-        tooltip.classList.add('tour-tooltip--sliding');
-        positionTooltip(target, nextStep.tooltipPosition || 'below');
+        // 3. Mover ring+card (tras el scroll, si hizo falta)
+        const positionAndSwap = () => {
+          if (prevTarget) { prevTarget.classList.remove('tour-spotlight-target'); prevTarget = null; }
+          if (prevParent) { prevParent.style.zIndex = prevParentZ; prevParent = null; prevParentZ = ''; }
+          prevTarget = target;
+          target.classList.add('tour-spotlight-target');
+          if (nextStep.raiseParent) {
+            prevParent = document.querySelector(nextStep.raiseParent);
+            if (prevParent) { prevParentZ = prevParent.style.zIndex; prevParent.style.zIndex = '1002'; }
+          }
+          positionRing(target);
 
-        // 4. Tras fade out, actualizar contenido y hacer fade in
-        setTimeout(() => {
-          document.getElementById('tour-tooltip-icon').innerHTML = nextStep.icon;
-          document.getElementById('tour-title').textContent       = nextStep.title;
-          document.getElementById('tour-text').textContent        = nextStep.text;
+          // Card se desliza a nueva posición (transición CSS)
+          tooltip.classList.add('tour-tooltip--sliding');
+          positionTooltip(target, nextStep.tooltipPosition || 'below');
 
-          requestAnimationFrame(() => requestAnimationFrame(() => {
-            CONTENT.forEach(id => {
-              const el = document.getElementById(id);
-              if (el) el.style.opacity = '1';
-            });
-            // 5. Limpiar al finalizar slide — sin parpadeo
-            setTimeout(() => {
+          // Tras fade out, actualizar contenido y hacer fade in
+          setTimeout(() => {
+            document.getElementById('tour-tooltip-icon').innerHTML = nextStep.icon;
+            document.getElementById('tour-title').textContent       = nextStep.title;
+            document.getElementById('tour-text').textContent        = nextStep.text;
+
+            requestAnimationFrame(() => requestAnimationFrame(() => {
               CONTENT.forEach(id => {
                 const el = document.getElementById(id);
-                if (el) { el.style.transition = ''; el.style.opacity = ''; }
+                if (el) el.style.opacity = '1';
               });
-              tooltip.style.animation = 'none'; // evita que tour-tooltip-in se repita
-              tooltip.classList.remove('tour-tooltip--sliding');
-              transitioning = false;
-            }, SLIDE - FADE + 20);
-          }));
-        }, FADE);
+              // Limpiar al finalizar slide — sin parpadeo
+              setTimeout(() => {
+                CONTENT.forEach(id => {
+                  const el = document.getElementById(id);
+                  if (el) { el.style.transition = ''; el.style.opacity = ''; }
+                });
+                tooltip.style.animation = 'none'; // evita que tour-tooltip-in se repita
+                tooltip.classList.remove('tour-tooltip--sliding');
+                transitioning = false;
+              }, SLIDE - FADE + 20);
+            }));
+          }, FADE);
+        };
+
+        if (inView) {
+          positionAndSwap();
+        } else if ('onscrollend' in window) {
+          const onEnd = () => { window.removeEventListener('scrollend', onEnd); positionAndSwap(); };
+          window.addEventListener('scrollend', onEnd, { once: true });
+          setTimeout(() => { window.removeEventListener('scrollend', onEnd); positionAndSwap(); }, 500);
+        } else {
+          setTimeout(positionAndSwap, 350);
+        }
 
         return;
       }
