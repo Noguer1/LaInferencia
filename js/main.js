@@ -2420,7 +2420,7 @@ const WEEKLY_ARTICLES = [
 /* ── PERFILES DE AUTORES ─────────────────────────────────────── */
 const AUTHORS = {
   'La Inferencia': {
-    photo: 'img/LOGOBUENO (1).png',
+    photo: 'img/logo2.png',
     university: 'La Inferencia',
     specialty: 'Psicología basada en evidencia'
   },
