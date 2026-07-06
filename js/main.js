@@ -2168,7 +2168,12 @@ const WEEKLY_ARTICLES = [
       }
     ],
     blockquote: { text: '«La presión no te hace olvidar lo que sabes. Te hace pensar demasiado en cómo lo sabes.»', attribution: 'Sian Beilock, Choke: What the Secrets of the Brain Reveal About Getting It Right When You Have To, 2010' },
-    aplicacion: `La próxima vez que afrentes una situación de alto rendimiento —una presentación, una negociación, una prueba—, no intentes controlar conscientemente cada detalle justo antes. Diseña un ritual previo breve: tres respiraciones lentas (4 segundos inhalar, 6 exhalar), una palabra ancla ('listo', 'ahora'), y entra en modo automático. Los estudios de Beilock muestran que estos rituales reducen la sobreactivación prefrontal y permiten que las habilidades automatizadas funcionen sin interferencia. El objetivo no es calmarte. Es liberar al experto que ya está ahí.`
+    aplicacion: `La próxima vez que afrentes una situación de alto rendimiento —una presentación, una negociación, una prueba—, no intentes controlar conscientemente cada detalle justo antes. Diseña un ritual previo breve: tres respiraciones lentas (4 segundos inhalar, 6 exhalar), una palabra ancla ('listo', 'ahora'), y entra en modo automático. Los estudios de Beilock muestran que estos rituales reducen la sobreactivación prefrontal y permiten que las habilidades automatizadas funcionen sin interferencia. El objetivo no es calmarte. Es liberar al experto que ya está ahí.`,
+    libroRelacionado: {
+      libro: 'Choke', autor: 'Sian Beilock',
+      sinopsis: 'La psicóloga que investigó por qué fallamos bajo presión explica el mecanismo del "choke" con datos de deportistas, estudiantes y profesionales — y qué rituales previos funcionan realmente para evitarlo.',
+      amazon: 'https://www.amazon.es/s?k=Choke+Sian+Beilock&tag=lainferencia-21'
+    }
   },
   {
     week: 19,
@@ -3405,7 +3410,7 @@ function renderWeeklyTeaser(article) {
 }
 
 function renderFeaturedWeekly(article) {
-  const { week, author, badge, title, readingTime, date, intro, sections, blockquote, aplicacion } = article;
+  const { week, author, badge, title, readingTime, date, intro, sections, blockquote, aplicacion, libroRelacionado } = article;
   const sectionsHTML = sections.map((s, i) =>
     s.html
       ? `<div id="art-sec-${i}">${s.html}</div>`
@@ -3449,6 +3454,18 @@ function renderFeaturedWeekly(article) {
             <strong>¿Cómo te afecta esto hoy?</strong>
           </div>
           <p>${aplicacion}</p>
+        </div>` : ''}
+        ${libroRelacionado ? `<div class="weekly-libro-block">
+          <div class="weekly-libro-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <strong>Si te ha interesado esto</strong>
+          </div>
+          <p class="weekly-libro-titulo">${libroRelacionado.libro} <span class="weekly-libro-autor">— ${libroRelacionado.autor}</span></p>
+          <p class="weekly-libro-sinopsis">${libroRelacionado.sinopsis}</p>
+          <a href="${libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${libroRelacionado.libro}" data-umami-event-origen="articulo-semana">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Ver precio en Amazon
+          </a>
         </div>` : ''}
         ${_buildDesafioHTML(week)}
         ${_buildQuizBtnHTML('weekly-' + week)}
@@ -3705,6 +3722,20 @@ function initWeeklySection() {
   const available = [...WEEKLY_ARTICLES]
     .filter(a => a.week <= currentWeek)
     .sort((a, b) => b.week - a.week);
+
+  const footerStrip = document.getElementById('footer-libro-strip');
+  const footerLink  = document.getElementById('footer-libro-strip-link');
+  const featuredLibro = available.find(a => a.libroRelacionado);
+  if (footerStrip && footerLink && featuredLibro) {
+    const lr = featuredLibro.libroRelacionado;
+    footerLink.href = lr.amazon;
+    footerLink.textContent = `${lr.libro} — ${lr.autor} →`;
+    footerLink.setAttribute('data-umami-event', 'amazon-click');
+    footerLink.setAttribute('data-umami-event-libro', lr.libro);
+    footerLink.setAttribute('data-umami-event-origen', 'footer');
+    footerStrip.hidden = false;
+  }
+
   const container = document.getElementById('weekly-container');
   if (!container) return;
   if (available.length === 0) {
@@ -4795,7 +4826,12 @@ function initWeeklySection() {
         'Los sistemas de donación de órganos opt-out (todos son donantes salvo que lo rechacen) tienen tasas de donación drásticamente más altas que los opt-in.',
         'Los planes de suscripción con renovación automática explotan este sesgo: cancelar requiere acción activa y eso es costoso psicológicamente.',
         'En política, los incumbentes tienen ventaja sistemática no solo por reconocimiento sino porque el cambio se percibe como más arriesgado que la continuidad.'
-      ]
+      ],
+      libroRelacionado: {
+        libro: 'Nudge', autor: 'Richard Thaler & Cass Sunstein',
+        sinopsis: 'Los creadores del concepto explican cómo el diseño de las opciones por defecto —el statu quo que se te ofrece— determina buena parte de tus decisiones sin que lo notes, y cómo usarlo a tu favor.',
+        amazon: 'https://www.amazon.es/s?k=Nudge+Thaler+Sunstein&tag=lainferencia-21'
+      }
     },
     'efecto-espejo': {
       nombre: 'Efecto Espejo (Rapport)',
@@ -4807,7 +4843,12 @@ function initWeeklySection() {
         'Los negociadores y diplomáticos entrenados en técnicas de rapport usan la mímica deliberada para construir confianza rápidamente.',
         'En atención al cliente, los operadores que adaptan su tono y velocidad de habla a los del cliente obtienen mejores valoraciones.',
         'En terapia, el efecto camaleón es parte del mecanismo detrás de la alianza terapéutica, uno de los predictores más robustos del éxito del tratamiento.'
-      ]
+      ],
+      libroRelacionado: {
+        libro: 'Influence', autor: 'Robert Cialdini',
+        sinopsis: 'Cialdini disecciona los 6 mecanismos psicológicos —incluida la simpatía y el rapport— que usan la persuasión y el marketing para que decidas sin darte cuenta de que estás decidiendo.',
+        amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21'
+      }
     }
   };
 
@@ -4848,7 +4889,19 @@ function initWeeklySection() {
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         Aplicaciones en la vida real
       </div>
-      <ul class="aplicaciones-list">${d.aplicaciones.map(a => `<li>${a}</li>`).join('')}</ul>`;
+      <ul class="aplicaciones-list">${d.aplicaciones.map(a => `<li>${a}</li>`).join('')}</ul>
+      ${d.libroRelacionado ? `<div class="weekly-libro-block">
+        <div class="weekly-libro-header">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <strong>Si te ha interesado esto</strong>
+        </div>
+        <p class="weekly-libro-titulo">${d.libroRelacionado.libro} <span class="weekly-libro-autor">— ${d.libroRelacionado.autor}</span></p>
+        <p class="weekly-libro-sinopsis">${d.libroRelacionado.sinopsis}</p>
+        <a href="${d.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${d.libroRelacionado.libro}" data-umami-event-origen="modal-efecto">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Ver precio en Amazon
+        </a>
+      </div>` : ''}`;
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
     window._LI_currentEfecto = id;
@@ -6399,7 +6452,9 @@ function initWeeklySection() {
       card.querySelector('.flip-back-sinopsis').textContent = newItem.sinopsis;
       const cienciaBtn = card.querySelector('.flip-back-ciencia-btn');
       if (newItem.ciencia) cienciaBtn.removeAttribute('hidden'); else cienciaBtn.setAttribute('hidden', '');
-      card.querySelector('.flip-back-btn').href = newItem.amazon || '#';
+      const backBtn = card.querySelector('.flip-back-btn');
+      backBtn.href = newItem.amazon || '#';
+      backBtn.setAttribute('data-umami-event-libro', newItem.libro);
       currentItem   = newItem;
       currentSector = newSector;
     }
@@ -6421,6 +6476,9 @@ function initWeeklySection() {
             </div>
             <span>Clic para revelar la solución</span>
           </div>
+          <a href="${item.amazon || '#'}" class="flip-front-amazon-link" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${item.libro}" data-umami-event-origen="front-directo" aria-label="Ver precio en Amazon directamente, sin revelar la solución">
+            Ya sé qué libro quiero — ver precio →
+          </a>
         </div>
         <div class="flip-card-back" aria-hidden="true">
           <div class="flip-card-back-top">
@@ -6444,7 +6502,7 @@ function initWeeklySection() {
             ¿Qué dice la ciencia?
           </button>
           <div class="flip-back-actions">
-            <a href="${item.amazon || '#'}" class="flip-back-btn" target="_blank" rel="noopener noreferrer">
+            <a href="${item.amazon || '#'}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${item.libro}">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Ver precio en Amazon
             </a>
@@ -6460,6 +6518,7 @@ function initWeeklySection() {
       if (e.target.closest('.flip-back-btn'))         return;
       if (e.target.closest('.flip-back-ciencia-btn')) return;
       if (e.target.closest('.flip-back-otro-btn'))    return;
+      if (e.target.closest('.flip-front-amazon-link')) return;
       if (_busy) return;
       _busy = true;
       const front     = card.querySelector('.flip-card-front');

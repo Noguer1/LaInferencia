@@ -1490,6 +1490,30 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   margin-right: auto;
 }
 
+.footer-libro-strip {
+  max-width: 1260px;
+  margin: 1.6rem auto 0;
+  padding: 0.7rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+
+.footer-libro-strip-label { opacity: 0.75; }
+
+.footer-libro-strip-link {
+  color: #FF9900;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-libro-strip-link:hover { text-decoration: underline; }
+
 .footer-left  { display: flex; flex-direction: column; gap: 0.5rem; }
 .footer-title { font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.95); }
 .footer-desc  { font-size: 0.82rem; color: rgba(255,255,255,0.45); max-width: 280px; line-height: 1.55; }
@@ -5256,6 +5280,17 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   100% { transform: scale(2.5); opacity: 0; }
 }
 
+.flip-front-amazon-link {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(100,116,139,0.75);
+  text-decoration: none;
+  margin-top: 0.35rem;
+  align-self: flex-start;
+}
+.flip-front-amazon-link:hover { color: var(--blue); text-decoration: underline; }
+.dark-base .flip-front-amazon-link { color: rgba(148,163,184,0.65); }
+
 .dark-base .flip-card-front { background: rgba(12,22,42,0.95); border-color: rgba(148,163,184,0.10); }
 .dark-base .flip-front-q { color: #E2E8F0; }
 .dark-base .flip-front-hint-icon::before,
@@ -5435,6 +5470,27 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 .flip-back-btn:hover { background: #FFAD33; transform: translateY(-1px); }
+
+.weekly-libro-block {
+  margin: 1.4rem 0;
+  padding: 1rem 1.1rem;
+  background: color-mix(in srgb, var(--blue) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--blue) 25%, transparent);
+  border-radius: 12px;
+}
+
+.weekly-libro-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary, #64748b);
+  margin-bottom: 0.6rem;
+}
+
+.weekly-libro-titulo { font-weight: 700; margin: 0 0 0.35rem; }
+.weekly-libro-autor { font-weight: 400; opacity: 0.75; }
+.weekly-libro-sinopsis { font-size: 0.88rem; line-height: 1.55; margin: 0 0 0.75rem; opacity: 0.9; }
 
 /* ── Responsive ── */
 @media (max-width: 1100px) {
