@@ -2121,6 +2121,35 @@ function getWeekOfYear(date) {
   return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
 }
 
+/* Libros "misterio" reutilizados como recompensa en quiz y como toast de hito */
+const MYSTERY_LIBROS = [
+  { libro: 'Choke', autor: 'Sian Beilock',
+    sinopsis: 'Una investigadora de Chicago lleva décadas explicando por qué el cerebro más entrenado puede fallar justo cuando más importa, con datos de deportistas, estudiantes y profesionales — y qué rituales previos funcionan de verdad para evitarlo.',
+    amazon: 'https://www.amazon.es/s?k=Choke+Sian+Beilock&tag=lainferencia-21' },
+  { libro: 'Nudge', autor: 'Richard Thaler & Cass Sunstein',
+    sinopsis: 'Los creadores del concepto explican cómo el diseño de las opciones por defecto —el statu quo que se te ofrece— determina buena parte de tus decisiones sin que lo notes, y cómo usarlo a tu favor.',
+    amazon: 'https://www.amazon.es/s?k=Nudge+Thaler+Sunstein&tag=lainferencia-21' },
+  { libro: 'Influence', autor: 'Robert Cialdini',
+    sinopsis: 'Un psicólogo social disecciona los 6 mecanismos —incluidos la simpatía y el rapport— que usan la persuasión y el marketing para que decidas sin darte cuenta de que estás decidiendo.',
+    amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21' }
+];
+
+function _pickMysteryLibro() {
+  return MYSTERY_LIBROS[Math.floor(Math.random() * MYSTERY_LIBROS.length)];
+}
+
+function _buildMysteryUnlockHTML(origen) {
+  const lr = _pickMysteryLibro();
+  return `<div class="mystery-unlock-block">
+    <span class="mystery-unlock-badge">🎁 Recompensa desbloqueada</span>
+    <p class="mystery-unlock-sinopsis">${lr.sinopsis}</p>
+    <a href="${lr.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${lr.libro}" data-umami-event-origen="${origen}">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Descubrir cuál es →
+    </a>
+  </div>`;
+}
+
 const WEEKLY_ARTICLES = [
   /* ── Semanas nuevas ───────────────────────────────────────── */
   {
@@ -2171,7 +2200,7 @@ const WEEKLY_ARTICLES = [
     aplicacion: `La próxima vez que afrentes una situación de alto rendimiento —una presentación, una negociación, una prueba—, no intentes controlar conscientemente cada detalle justo antes. Diseña un ritual previo breve: tres respiraciones lentas (4 segundos inhalar, 6 exhalar), una palabra ancla ('listo', 'ahora'), y entra en modo automático. Los estudios de Beilock muestran que estos rituales reducen la sobreactivación prefrontal y permiten que las habilidades automatizadas funcionen sin interferencia. El objetivo no es calmarte. Es liberar al experto que ya está ahí.`,
     libroRelacionado: {
       libro: 'Choke', autor: 'Sian Beilock',
-      sinopsis: 'La psicóloga que investigó por qué fallamos bajo presión explica el mecanismo del "choke" con datos de deportistas, estudiantes y profesionales — y qué rituales previos funcionan realmente para evitarlo.',
+      sinopsis: 'Una investigadora de Chicago lleva décadas explicando por qué el cerebro más entrenado puede fallar justo cuando más importa, con datos de deportistas, estudiantes y profesionales — y qué rituales previos funcionan de verdad para evitarlo.',
       amazon: 'https://www.amazon.es/s?k=Choke+Sian+Beilock&tag=lainferencia-21'
     }
   },
@@ -3458,13 +3487,12 @@ function renderFeaturedWeekly(article) {
         ${libroRelacionado ? `<div class="weekly-libro-block">
           <div class="weekly-libro-header">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            <strong>Si te ha interesado esto</strong>
+            <strong>Hay un libro que lo explica mejor que cualquier resumen</strong>
           </div>
-          <p class="weekly-libro-titulo">${libroRelacionado.libro} <span class="weekly-libro-autor">— ${libroRelacionado.autor}</span></p>
           <p class="weekly-libro-sinopsis">${libroRelacionado.sinopsis}</p>
           <a href="${libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${libroRelacionado.libro}" data-umami-event-origen="articulo-semana">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Ver precio en Amazon
+            Descubrir cuál es →
           </a>
         </div>` : ''}
         ${_buildDesafioHTML(week)}
@@ -3729,7 +3757,6 @@ function initWeeklySection() {
   if (footerStrip && footerLink && featuredLibro) {
     const lr = featuredLibro.libroRelacionado;
     footerLink.href = lr.amazon;
-    footerLink.textContent = `${lr.libro} — ${lr.autor} →`;
     footerLink.setAttribute('data-umami-event', 'amazon-click');
     footerLink.setAttribute('data-umami-event-libro', lr.libro);
     footerLink.setAttribute('data-umami-event-origen', 'footer');
@@ -4846,7 +4873,7 @@ function initWeeklySection() {
       ],
       libroRelacionado: {
         libro: 'Influence', autor: 'Robert Cialdini',
-        sinopsis: 'Cialdini disecciona los 6 mecanismos psicológicos —incluida la simpatía y el rapport— que usan la persuasión y el marketing para que decidas sin darte cuenta de que estás decidiendo.',
+        sinopsis: 'Un psicólogo social disecciona los 6 mecanismos —incluidos la simpatía y el rapport— que usan la persuasión y el marketing para que decidas sin darte cuenta de que estás decidiendo.',
         amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21'
       }
     }
@@ -4893,13 +4920,12 @@ function initWeeklySection() {
       ${d.libroRelacionado ? `<div class="weekly-libro-block">
         <div class="weekly-libro-header">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          <strong>Si te ha interesado esto</strong>
+          <strong>Hay un libro que lo explica mejor que cualquier resumen</strong>
         </div>
-        <p class="weekly-libro-titulo">${d.libroRelacionado.libro} <span class="weekly-libro-autor">— ${d.libroRelacionado.autor}</span></p>
         <p class="weekly-libro-sinopsis">${d.libroRelacionado.sinopsis}</p>
         <a href="${d.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${d.libroRelacionado.libro}" data-umami-event-origen="modal-efecto">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Ver precio en Amazon
+          Descubrir cuál es →
         </a>
       </div>` : ''}`;
     overlay.classList.add('open');
@@ -6387,8 +6413,6 @@ function initWeeklySection() {
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
         ¿Qué dice la ciencia?
       </div>
-      <p class="bq-modal-book" id="bq-modal-book"></p>
-      <p class="bq-modal-author" id="bq-modal-author"></p>
       <p class="bq-modal-ciencia-text" id="bq-modal-ciencia"></p>
     </div>`;
   document.body.appendChild(cienciaModal);
@@ -6401,8 +6425,6 @@ function initWeeklySection() {
   document.body.appendChild(_svgDefs);
 
   function openCienciaModal(item) {
-    cienciaModal.querySelector('#bq-modal-book').textContent   = item.libro;
-    cienciaModal.querySelector('#bq-modal-author').textContent = item.autor;
     cienciaModal.querySelector('#bq-modal-ciencia').textContent = item.ciencia;
     cienciaModal.removeAttribute('hidden');
     cienciaModal.querySelector('#bq-modal-close').focus();
@@ -6445,8 +6467,6 @@ function initWeeklySection() {
       const badgeEl = card.querySelector('.flip-back-badge');
       badgeEl.querySelector('.flip-back-badge-text').textContent = newBadge;
       if (newBadge) badgeEl.removeAttribute('hidden'); else badgeEl.setAttribute('hidden', '');
-      card.querySelector('.flip-back-book').textContent     = newItem.libro;
-      card.querySelector('.flip-back-author').textContent   = newItem.autor;
       card.querySelector('.bq-stars').textContent           = stars(newItem.estrellas);
       card.querySelector('.bq-rating').textContent          = newItem.estrellas + ' / 5';
       card.querySelector('.flip-back-sinopsis').textContent = newItem.sinopsis;
@@ -6476,24 +6496,25 @@ function initWeeklySection() {
             </div>
             <span>Clic para revelar la solución</span>
           </div>
-          <a href="${item.amazon || '#'}" class="flip-front-amazon-link" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${item.libro}" data-umami-event-origen="front-directo" aria-label="Ver precio en Amazon directamente, sin revelar la solución">
-            Ya sé qué libro quiero — ver precio →
-          </a>
         </div>
         <div class="flip-card-back" aria-hidden="true">
           <div class="flip-card-back-top">
-            <img class="flip-card-cover" src="${item.imagen || ''}" alt="Portada de ${item.libro}" loading="lazy"${!item.imagen ? ' hidden' : ''}>
+            <div class="flip-cover-mystery">
+              <img class="flip-card-cover" src="${item.imagen || ''}" alt="" loading="lazy"${!item.imagen ? ' hidden' : ''}>
+              <div class="flip-cover-lock" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+            </div>
             <div class="flip-card-back-meta">
               <span class="flip-back-badge"${!badge ? ' hidden' : ''}>
                 <svg class="flip-back-badge-star" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 <span class="flip-back-badge-text">${badge}</span>
               </span>
-              <p class="flip-back-book">${item.libro}</p>
-              <p class="flip-back-author">${item.autor}</p>
               <div class="flip-back-stars">
                 <span class="bq-stars">${stars(item.estrellas)}</span>
                 <span class="bq-rating">${item.estrellas} / 5</span>
               </div>
+              <span class="flip-cover-mystery-label">Portada oculta hasta que lo descubras</span>
             </div>
           </div>
           <p class="flip-back-sinopsis">${item.sinopsis}</p>
@@ -6504,11 +6525,11 @@ function initWeeklySection() {
           <div class="flip-back-actions">
             <a href="${item.amazon || '#'}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${item.libro}">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Ver precio en Amazon
+              Descubrir cuál es →
             </a>
             <button class="flip-back-otro-btn" type="button">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
-              No me convence, ver otro
+              Ver otro misterio
             </button>
           </div>
         </div>
@@ -6518,7 +6539,6 @@ function initWeeklySection() {
       if (e.target.closest('.flip-back-btn'))         return;
       if (e.target.closest('.flip-back-ciencia-btn')) return;
       if (e.target.closest('.flip-back-otro-btn'))    return;
-      if (e.target.closest('.flip-front-amazon-link')) return;
       if (_busy) return;
       _busy = true;
       const front     = card.querySelector('.flip-card-front');
@@ -7981,6 +8001,34 @@ const EFECTOS_EXTRA = {
       strk.textContent = cur + (cur === 1 ? ' día' : ' días');
       strk.classList.toggle('streak-hot', cur >= 3);
     }
+
+    const total = artRead + weekRead + efectosSeen + mitosAnsw + quizzesDone + desafiosDone + pruebasDone;
+    checkMysteryMilestone(total);
+  }
+
+  const MYSTERY_MILESTONES = [5, 15, 30];
+  function checkMysteryMilestone(total) {
+    MYSTERY_MILESTONES.forEach(m => {
+      const flag = 'li_mystery_toast_' + m;
+      if (total >= m && !localStorage.getItem(flag)) {
+        lsSet(flag, '1');
+        showMysteryToast();
+      }
+    });
+  }
+
+  function showMysteryToast() {
+    const t = document.createElement('div');
+    t.className = 'mystery-toast';
+    t.innerHTML = `
+      <button class="mystery-toast-close" aria-label="Cerrar">&#x2715;</button>
+      <div class="mystery-toast-head">🎉 ¡Hito desbloqueado!</div>
+      ${_buildMysteryUnlockHTML('progreso-toast')}`;
+    document.body.appendChild(t);
+    requestAnimationFrame(() => t.classList.add('visible'));
+    function dismiss() { t.classList.remove('visible'); setTimeout(() => t.remove(), 400); }
+    t.querySelector('.mystery-toast-close').addEventListener('click', dismiss);
+    setTimeout(dismiss, 14000);
   }
 
   /* Hook en apertura de efectos */
@@ -8128,7 +8176,10 @@ const EFECTOS_EXTRA = {
     { año: '1938', tag: 'B. F. Skinner · Minnesota', cat: 'conductual', emoji: '🎮',
       titulo: 'Cómo las recompensas moldean el comportamiento —y nos atrapan',
       desc: 'Skinner inventa la "caja de Skinner" y documenta el condicionamiento operante: el comportamiento seguido de refuerzo se repite; el seguido de castigo se extingue. El refuerzo variable (impredecible) produce la mayor persistencia.',
-      importa: 'El scroll infinito de las redes sociales es refuerzo variable aplicado a escala industrial. Las tragaperras, los "me gusta" y las cajas de recompensa de los videojuegos son ingeniería skinneriana.' },
+      importa: 'El scroll infinito de las redes sociales es refuerzo variable aplicado a escala industrial. Las tragaperras, los "me gusta" y las cajas de recompensa de los videojuegos son ingeniería skinneriana.',
+      libroRelacionado: { libro: 'Enganchado', autor: 'Nir Eyal',
+        sinopsis: 'El propio consultor que diseñó el enganche digital para grandes apps explica el mecanismo desde dentro — y cómo recuperar el control de tu atención una vez lo conoces.',
+        amazon: 'https://www.amazon.es/s?k=Enganchado+Nir+Eyal+habitos&tag=lainferencia-21' } },
 
     { año: '1943', tag: 'Abraham Maslow · Brooklyn College', cat: 'humanista', emoji: '🏔',
       titulo: 'La pirámide que explica por qué el dinero no basta',
@@ -8168,7 +8219,10 @@ const EFECTOS_EXTRA = {
     { año: '1973', tag: 'Kahneman & Tversky · Israel', cat: 'cognitivo', emoji: '🧩',
       titulo: 'Atajos mentales que funcionan —y que nos llevan a errores sistemáticos',
       desc: 'Documentan las heurísticas cognitivas: la disponibilidad (lo que recuerdas fácil parece más probable), el anclaje (el primer número sesgua todos los demás) y la representatividad (lo que parece un X probablemente es un X).',
-      importa: 'Explican por qué somos malos estimando riesgos, por qué los precios tachados funcionan, por qué los titulares sensacionalistas distorsionan la percepción de la realidad y por qué los primeros datos de una negociación son los más poderosos.' },
+      importa: 'Explican por qué somos malos estimando riesgos, por qué los precios tachados funcionan, por qué los titulares sensacionalistas distorsionan la percepción de la realidad y por qué los primeros datos de una negociación son los más poderosos.',
+      libroRelacionado: { libro: 'Pensar rápido, pensar despacio', autor: 'Daniel Kahneman',
+        sinopsis: 'El propio autor de estos hallazgos condensa cinco décadas de investigación en un mapa completo de cómo piensa realmente tu mente: el sistema rápido e intuitivo y el lento y deliberado, y cuándo cada uno te traiciona.',
+        amazon: 'https://www.amazon.es/dp/8483068613?tag=lainferencia-21' } },
 
     { año: '1974', tag: 'Elizabeth Loftus · Washington', cat: 'cognitivo', emoji: '🧠',
       titulo: 'La memoria no graba: construye, y cada vez que recuerdas, reescribes',
@@ -8193,7 +8247,10 @@ const EFECTOS_EXTRA = {
     { año: '1984', tag: 'Robert Cialdini · Arizona State', cat: 'social', emoji: '🎭',
       titulo: 'Los seis atajos que hacen que digamos sí sin querer',
       desc: 'Tras tres años infiltrado en sectores de ventas, Cialdini sistematiza los principios de influencia: reciprocidad, escasez, autoridad, coherencia, prueba social y simpatía. Cada uno explota un atajo cognitivo legítimo.',
-      importa: 'Son tan efectivos porque funcionan incluso cuando los conoces. El cerebro usa atajos porque la deliberación completa es imposible para cada decisión. Conocerlos da un segundo de distancia; no los elimina, pero ayuda.' },
+      importa: 'Son tan efectivos porque funcionan incluso cuando los conoces. El cerebro usa atajos porque la deliberación completa es imposible para cada decisión. Conocerlos da un segundo de distancia; no los elimina, pero ayuda.',
+      libroRelacionado: { libro: 'Influence', autor: 'Robert Cialdini',
+        sinopsis: 'El propio investigador que se infiltró en sectores de ventas durante tres años sistematiza estos seis atajos con ejemplos reales — el manual definitivo para reconocerlos en el momento en que se usan contigo.',
+        amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21' } },
 
     { año: '1990', tag: 'Martin Seligman · Pennsylvania', cat: 'clinico', emoji: '☀',
       titulo: 'El giro: de estudiar lo que nos destruye a estudiar lo que nos hace florecer',
@@ -8241,6 +8298,8 @@ const EFECTOS_EXTRA = {
   const dTitulo = document.getElementById('tl-d-titulo');
   const dDesc   = document.getElementById('tl-d-desc');
   const dImp    = document.getElementById('tl-d-importa');
+  const dLibroWrap = document.getElementById('tl-d-libro-wrap');
+  const dLibroBody = document.getElementById('tl-d-libro-body');
 
   let activeItem = null;
 
@@ -8271,6 +8330,18 @@ const EFECTOS_EXTRA = {
     dTitulo.textContent = h.titulo;
     dDesc.textContent   = h.desc;
     dImp.textContent    = h.importa;
+    if (dLibroWrap && dLibroBody) {
+      if (h.libroRelacionado) {
+        dLibroBody.innerHTML = `<p class="weekly-libro-sinopsis">${h.libroRelacionado.sinopsis}</p>
+          <a href="${h.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${h.libroRelacionado.libro}" data-umami-event-origen="timeline">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Descubrir cuál es →
+          </a>`;
+        dLibroWrap.hidden = false;
+      } else {
+        dLibroWrap.hidden = true;
+      }
+    }
     detail.hidden = false;
     requestAnimationFrame(() => detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
   }
@@ -8296,6 +8367,7 @@ const EFECTOS_EXTRA = {
             <span class="tl-cat-badge tl-cat-${h.cat}">${catLabel(h.cat)}</span>
           </div>
           <h3 class="tl-titulo">${h.titulo}</h3>
+          ${h.libroRelacionado ? '<span class="tl-mystery-chip">🔒 Libro oculto dentro</span>' : ''}
         </div>`;
       const card = item.querySelector('.tl-card');
       const open = () => openDetail(h, item);
@@ -9506,6 +9578,7 @@ const EFECTOS_EXTRA = {
                         'Vale la pena releer el artículo para fijar los conceptos.'
         }</p>
         ${bonusHTML}
+        ${_buildMysteryUnlockHTML('quiz')}
         <button class="quiz-close-final" id="quiz-close-final">Cerrar</button>
       </div>`;
     body.querySelector('#quiz-close-final')?.addEventListener('click', close);

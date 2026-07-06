@@ -5280,17 +5280,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   100% { transform: scale(2.5); opacity: 0; }
 }
 
-.flip-front-amazon-link {
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: rgba(100,116,139,0.75);
-  text-decoration: none;
-  margin-top: 0.35rem;
-  align-self: flex-start;
-}
-.flip-front-amazon-link:hover { color: var(--blue); text-decoration: underline; }
-.dark-base .flip-front-amazon-link { color: rgba(148,163,184,0.65); }
-
 .dark-base .flip-card-front { background: rgba(12,22,42,0.95); border-color: rgba(148,163,184,0.10); }
 .dark-base .flip-front-q { color: #E2E8F0; }
 .dark-base .flip-front-hint-icon::before,
@@ -5306,19 +5295,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   gap: 0.5rem;
   border: 1px solid color-mix(in srgb, var(--blue) 20%, transparent);
   box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-}
-
-.flip-back-book {
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: #DBEAFE;
-  line-height: 1.35;
-}
-
-.flip-back-author {
-  font-size: 0.73rem;
-  color: rgba(147,197,253,0.75);
-  font-weight: 500;
 }
 
 .flip-back-stars {
@@ -5424,21 +5400,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   margin-bottom: 0.85rem;
 }
 
-.bq-modal-book {
-  font-size: 0.90rem;
-  font-weight: 800;
-  color: #fff;
-  margin: 0 0 0.22rem;
-  line-height: 1.3;
-  padding-right: 1.2rem;
-}
-
-.bq-modal-author {
-  font-size: 0.72rem;
-  color: rgba(147,197,253,0.70);
-  margin: 0 0 1rem;
-}
-
 .bq-modal-ciencia-text {
   font-size: 0.81rem;
   color: rgba(186,220,255,0.90);
@@ -5488,9 +5449,37 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   margin-bottom: 0.6rem;
 }
 
-.weekly-libro-titulo { font-weight: 700; margin: 0 0 0.35rem; }
-.weekly-libro-autor { font-weight: 400; opacity: 0.75; }
 .weekly-libro-sinopsis { font-size: 0.88rem; line-height: 1.55; margin: 0 0 0.75rem; opacity: 0.9; }
+
+/* ── Recompensa-misterio (quiz, hitos, toast de progreso) ── */
+.mystery-unlock-block {
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+  text-align: center;
+  background: radial-gradient(circle at 50% 0%, rgba(251,191,36,0.12), transparent 70%), rgba(255,255,255,0.04);
+  border: 1px solid rgba(251,191,36,0.35);
+  border-radius: 14px;
+  box-shadow: 0 0 24px rgba(251,191,36,0.10);
+}
+
+.mystery-unlock-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(90deg, #D97706 0%, #FBBF24 18%, #FDE68A 38%, #FFFBEB 50%, #FDE68A 62%, #FBBF24 82%, #D97706 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: badge-shine 3.5s linear infinite;
+}
+
+.mystery-unlock-sinopsis { font-size: 0.86rem; line-height: 1.55; margin: 0 0 0.9rem; opacity: 0.92; }
+
+.mystery-unlock-btn { margin: 0 auto; }
 
 /* ── Responsive ── */
 @media (max-width: 1100px) {
@@ -6008,14 +5997,41 @@ button.fav-item-cta:hover {
 }
 
 /* ── Portada en flip cards del botiquín ── */
+.flip-cover-mystery {
+  position: relative;
+  width: 56px;
+  height: 78px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+}
+
 .flip-card-cover {
   width: 56px;
   height: 78px;
   object-fit: cover;
-  border-radius: 5px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.35);
-  flex-shrink: 0;
-  align-self: flex-start;
+  filter: blur(9px) saturate(1.2) brightness(0.85);
+  transform: scale(1.25);
+}
+
+.flip-cover-lock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(9,24,48,0.35);
+  color: rgba(251,191,36,0.9);
+}
+
+.flip-cover-mystery-label {
+  display: block;
+  font-size: 0.62rem;
+  font-style: italic;
+  color: rgba(147,197,253,0.55);
+  margin-top: 0.3rem;
 }
 
 .flip-card-cover-placeholder {
@@ -7111,6 +7127,21 @@ button.fav-item-cta:hover {
   color: var(--navy);
   line-height: 1.45;
 }
+
+.tl-mystery-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.6rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  color: #B45309;
+  background: rgba(251,191,36,0.14);
+  border: 1px solid rgba(251,191,36,0.4);
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+}
+.dark-base .tl-mystery-chip { color: #FBBF24; background: rgba(251,191,36,0.10); }
 
 /* Panel de detalle: aparece bajo el track al hacer clic */
 .tl-detail {
@@ -9853,6 +9884,40 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 .toast-mitos-completo.visible {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+.mystery-toast {
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  max-width: 320px;
+  background: linear-gradient(145deg, #1A3360 0%, #0F2248 55%, #091830 100%);
+  border: 1px solid rgba(251,191,36,0.4);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(251,191,36,0.15);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  transition: opacity 0.35s, transform 0.35s;
+  color: #fff;
+}
+.mystery-toast.visible { opacity: 1; transform: translateY(0) scale(1); }
+.mystery-toast-close {
+  position: absolute;
+  top: 0.5rem; right: 0.6rem;
+  background: none; border: none;
+  color: rgba(203,213,225,0.6);
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 0.2rem;
+}
+.mystery-toast-close:hover { color: #fff; }
+.mystery-toast-head { font-weight: 800; font-size: 0.92rem; margin-bottom: 0.4rem; }
+.mystery-toast .mystery-unlock-block { margin: 0.4rem 0 0; padding: 0.9rem; }
+@media (max-width: 520px) {
+  .mystery-toast { left: 1rem; right: 1rem; max-width: none; }
 }
 
 .w26-reveal-inner p {
