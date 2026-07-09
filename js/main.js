@@ -2143,7 +2143,7 @@ function _buildMysteryUnlockHTML(origen) {
   return `<div class="mystery-unlock-block">
     <span class="mystery-unlock-badge">🎁 Recompensa desbloqueada</span>
     <p class="mystery-unlock-sinopsis">${lr.sinopsis}</p>
-    <a href="${lr.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${lr.libro}" data-umami-event-origen="${origen}">
+    <a href="${lr.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${lr.libro}" data-umami-event-origen="${origen}">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       Descubrir cuál es →
     </a>
@@ -3490,7 +3490,7 @@ function renderFeaturedWeekly(article) {
             <strong>Hay un libro que lo explica mejor que cualquier resumen</strong>
           </div>
           <p class="weekly-libro-sinopsis">${libroRelacionado.sinopsis}</p>
-          <a href="${libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${libroRelacionado.libro}" data-umami-event-origen="articulo-semana">
+          <a href="${libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libroRelacionado.libro}" data-umami-event-origen="articulo-semana">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Descubrir cuál es →
           </a>
@@ -4923,7 +4923,7 @@ function initWeeklySection() {
           <strong>Hay un libro que lo explica mejor que cualquier resumen</strong>
         </div>
         <p class="weekly-libro-sinopsis">${d.libroRelacionado.sinopsis}</p>
-        <a href="${d.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${d.libroRelacionado.libro}" data-umami-event-origen="modal-efecto">
+        <a href="${d.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${d.libroRelacionado.libro}" data-umami-event-origen="modal-efecto">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Descubrir cuál es →
         </a>
@@ -6523,7 +6523,7 @@ function initWeeklySection() {
             ¿Qué dice la ciencia?
           </button>
           <div class="flip-back-actions">
-            <a href="${item.amazon || '#'}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${item.libro}">
+            <a href="${item.amazon || '#'}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${item.libro}">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Descubrir cuál es →
             </a>
@@ -6896,6 +6896,99 @@ function initWeeklySection() {
     });
   }
 
+  /* ---- Abrir un ítem del catálogo por id (usado por la colección compartida) ---- */
+  function openCatalogItem(id) {
+    const item = CATALOG[id];
+    if (!item) return;
+    if (item.type === 'efecto') {
+      if (window._LI_openEfecto) window._LI_openEfecto(id);
+    } else if (item.type === 'weekly') {
+      document.querySelector('[data-tab="semana"]')?.click();
+      setTimeout(() => { if (window._LI_renderWeekly) window._LI_renderWeekly(item.week); }, 60);
+    } else if (item.type === 'lib') {
+      document.querySelector('[data-tab="biblioteca"]')?.click();
+      setTimeout(() => { if (window._LI_openLibArticle) window._LI_openLibArticle(item.id, item.cat); }, 60);
+    } else if (item.type === 'doc') {
+      window.open(item.pdf, '_blank');
+    }
+  }
+
+  /* ---- Añadir varios ids sin duplicar (fusión al guardar una colección compartida) ---- */
+  function addFavs(ids) {
+    const favs = getFavs();
+    ids.forEach(id => { if (!favs.includes(id)) favs.push(id); });
+    setFavs(favs);
+  }
+
+  /* ---- Compartir la colección propia por URL (?coleccion=id1,id2,...) ---- */
+  function shareCollection() {
+    const ids = getFavs().filter(id => CATALOG[id]);
+    if (!ids.length) return;
+    const url = new URL(window.location.origin + '/');
+    url.searchParams.set('coleccion', ids.join(','));
+    shareContenido('Mi colección en La Inferencia', `${ids.length} artículo${ids.length === 1 ? '' : 's'} que guardé en La Inferencia`, url.toString());
+  }
+
+  /* ---- Mostrar una colección compartida recibida por URL ---- */
+  function renderSharedCollectionBanner() {
+    const params = new URLSearchParams(window.location.search);
+    const raw = params.get('coleccion');
+    if (!raw) return;
+
+    const ids = [...new Set(raw.split(','))].filter(id => CATALOG[id]);
+    if (!ids.length) return;
+
+    const anchor = document.getElementById('favoritos-section');
+    if (!anchor || !anchor.parentNode) return;
+
+    const banner = document.createElement('section');
+    banner.className = 'coleccion-shared-banner';
+    banner.setAttribute('aria-label', 'Colección compartida contigo');
+    banner.innerHTML = `
+      <div class="coleccion-shared-head">
+        <div>
+          <h2>Colección compartida contigo</h2>
+          <p>${ids.length} artículo${ids.length === 1 ? '' : 's'} que alguien quiso enseñarte.</p>
+        </div>
+        <button type="button" class="coleccion-shared-close" aria-label="Cerrar colección compartida">&times;</button>
+      </div>
+      <div class="coleccion-shared-grid">
+        ${ids.map(id => {
+          const item = CATALOG[id];
+          const title = item.title || item.nombre;
+          const badge = item.type === 'efecto' ? 'Sesgo / Efecto' : item.badge;
+          return `<button type="button" class="coleccion-shared-card" data-open-id="${id}">
+            <span class="doc-badge">${badge}</span>
+            <strong>${title}</strong>
+          </button>`;
+        }).join('')}
+      </div>
+      <button type="button" class="coleccion-shared-save">Guardar toda la colección en la mía</button>`;
+
+    anchor.parentNode.insertBefore(banner, anchor);
+
+    function clearQueryParam() {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('coleccion');
+      window.history.replaceState({}, '', url);
+    }
+
+    banner.querySelectorAll('[data-open-id]').forEach(btn => {
+      btn.addEventListener('click', () => openCatalogItem(btn.dataset.openId));
+    });
+    banner.querySelector('.coleccion-shared-close').addEventListener('click', () => {
+      banner.remove();
+      clearQueryParam();
+    });
+    banner.querySelector('.coleccion-shared-save').addEventListener('click', () => {
+      addFavs(ids);
+      renderFavSection();
+      if (window._LI_updateFavBadge) window._LI_updateFavBadge();
+      banner.remove();
+      clearQueryParam();
+    });
+  }
+
   /* ---- Delegación global para fav-btn-dyn (artículos renderizados dinámicamente) ---- */
   document.addEventListener('click', e => {
     const btn = e.target.closest('.fav-btn-dyn');
@@ -6916,6 +7009,9 @@ function initWeeklySection() {
   initDocBtns();
   initEfectoBtns();
   renderFavSection();
+  renderSharedCollectionBanner();
+
+  document.getElementById('favoritos-share-btn')?.addEventListener('click', shareCollection);
 
   /* actualizar al activar "Por Intereses" */
   document.querySelectorAll('.tab-btn[data-tab="biblioteca"]').forEach(b =>
@@ -8333,7 +8429,7 @@ const EFECTOS_EXTRA = {
     if (dLibroWrap && dLibroBody) {
       if (h.libroRelacionado) {
         dLibroBody.innerHTML = `<p class="weekly-libro-sinopsis">${h.libroRelacionado.sinopsis}</p>
-          <a href="${h.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer" data-umami-event="amazon-click" data-umami-event-libro="${h.libroRelacionado.libro}" data-umami-event-origen="timeline">
+          <a href="${h.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${h.libroRelacionado.libro}" data-umami-event-origen="timeline">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Descubrir cuál es →
           </a>`;

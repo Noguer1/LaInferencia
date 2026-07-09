@@ -94,9 +94,25 @@ const CAT_DESCRIPTIONS = {
   alimentacion: 'Por qué comemos más en compañía, cómo las emociones controlan el apetito y por qué prohibirte un alimento dispara el deseo de comerlo.',
 };
 
+// ── Fecha en español -> ISO 8601 (para datePublished en JSON-LD) ─
+const MESES_ES = {
+  enero: '01', febrero: '02', marzo: '03', abril: '04', mayo: '05', junio: '06',
+  julio: '07', agosto: '08', septiembre: '09', setiembre: '09', octubre: '10',
+  noviembre: '11', diciembre: '12'
+};
+function toISODate(str) {
+  if (!str) return '';
+  const m = String(str).toLowerCase().match(/(\d{1,2})\s+de\s+([a-záéíóúñ]+)\s+de\s+(\d{4})/);
+  if (!m) return '';
+  const [, day, mes, year] = m;
+  const mm = MESES_ES[mes];
+  if (!mm) return '';
+  return `${year}-${mm}-${day.padStart(2, '0')}`;
+}
+
 // ── Generador de slugs ─────────────────────────────────────────
 function toSlug(str) {
-  return str
+  let s = str
     .toLowerCase()
     .normalize('NFD').replace(/[̀-ͯ]/g, '')
     .replace(/[¿?¡!,.:;()\[\]«»""''€$%&\/\\—–]/g, '')
@@ -104,8 +120,13 @@ function toSlug(str) {
     .trim()
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-    .substring(0, 65);
+    .replace(/^-|-$/g, '');
+
+  if (s.length > 65) {
+    s = s.substring(0, 65).replace(/-[^-]*$/, '');
+  }
+
+  return s.replace(/^-|-$/g, '');
 }
 
 // ── Datos comunes precalculados ────────────────────────────────
@@ -124,6 +145,101 @@ for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
 function articleUrl(art) {
   const { catSlug, artSlug } = slugMap[art.id];
   return `${SITE}/articulos/${catSlug}/${artSlug}/`;
+}
+
+function findArticleById(id) {
+  for (const arts of Object.values(LIBRARY_ARTICLES)) {
+    const found = arts.find(a => a.id === id);
+    if (found) return found;
+  }
+  return null;
+}
+
+// ── Simulador de Sesgos — datos de los 3 escenarios piloto ─────
+// Cada escenario cita un artículo real ya publicado (sourceId) — si ese
+// artículo cambia de id, este array debe actualizarse a la vez.
+const SIMULADOR_ESCENARIOS = [
+  {
+    id: 'precio-vino',
+    slug: 'el-precio-que-cambia-el-sabor',
+    titulo: 'El precio que cambia el sabor',
+    gancho: 'Antes de probarlo, ya sabes si te va a gustar.',
+    resumen: 'Dos personas prueban el mismo vino. Solo una cree que es caro. ¿Su cerebro lo experimenta igual?',
+    tipo: 'slider',
+    sliderMin: 0,
+    sliderMax: 10,
+    sliderDefault: 5,
+    sliderLabels: ['Malo', 'Excelente'],
+    pregunta: 'Sin haberlo probado todavía, ¿qué nota le pondrías a su calidad, del 0 al 10?',
+    condiciones: [
+      { key: 'caro',   contexto: 'Te sirven una copa de vino. Te dicen que esta botella cuesta <strong>90€</strong>.' },
+      { key: 'barato', contexto: 'Te sirven una copa de vino. Te dicen que esta botella cuesta <strong>5€</strong>.' }
+    ],
+    cayoSiAlto: 'caro',
+    cayoSiBajo: 'barato',
+    revelarCayo: 'Le has puesto un {rating}/10 sabiendo solo el precio — sin haberlo probado. Es lo que encontró Hilke Plassmann en 2008: el mismo vino, servido con precio distinto, activaba más placer en el cerebro cuando los participantes creían que era caro. El precio no solo cambió tu opinión: en el estudio real, cambió la experiencia sensorial medida en un escáner.',
+    revelarNoCayo: 'Esta vez tu {rating}/10 no siguió el precio que viste — pero le pasa a la mayoría: en el estudio de Hilke Plassmann (2008), el mismo vino activaba más placer cerebral cuando los participantes creían que era caro. El precio cambia la experiencia real, no solo la opinión.',
+    sourceId: 'eco-06'
+  },
+  {
+    id: 'perdida-ganancia',
+    slug: 'ganar-o-no-perder',
+    titulo: 'Ganar o no perder',
+    gancho: 'La misma decisión, contada de dos formas distintas.',
+    resumen: 'Dos decisiones con el mismo resultado matemático, contadas de forma distinta, no se sienten igual.',
+    tipo: 'ab',
+    condiciones: [
+      {
+        key: 'ganancia',
+        contexto: 'Tienes 1.000€. Debes elegir una opción:',
+        opcionA: 'Quedarte con 500€ seguros.',
+        opcionB: 'Lanzar una moneda: si sale cara ganas 1.000€ más, si sale cruz no ganas nada más.'
+      },
+      {
+        key: 'perdida',
+        contexto: 'Tienes 1.000€, pero vas a perder parte. Debes elegir una opción:',
+        opcionA: 'Perder 500€ seguros.',
+        opcionB: 'Lanzar una moneda: si sale cara no pierdes nada, si sale cruz pierdes los 1.000€.'
+      }
+    ],
+    cayoSi: { ganancia: 'A', perdida: 'B' },
+    revelarCayo: 'Has elegido la opción {opcionElegida} — exactamente lo que predice la teoría prospectiva de Kahneman y Tversky (1979): ante una ganancia, la mayoría prefiere lo seguro; ante una pérdida enmarcada igual, la mayoría prefiere arriesgarse para evitarla. Las dos decisiones tienen el mismo resultado matemático esperado. Solo cambia cómo se cuenta la historia.',
+    revelarNoCayo: 'Has elegido la opción {opcionElegida} — la contraria a lo que predice la mayoría en este marco, según la teoría prospectiva de Kahneman y Tversky (1979). Le pasa a la mayoría: ante una pérdida se vuelve más arriesgada, ante una ganancia equivalente se vuelve más conservadora, aunque el resultado matemático sea idéntico.',
+    sourceId: 'eco-02'
+  },
+  {
+    id: 'calidez-social',
+    slug: 'calidez-fisica-calidez-social',
+    titulo: 'Calidez física, calidez social',
+    gancho: 'Un vaso en la mano puede cambiar cómo juzgas a un desconocido.',
+    resumen: 'Sostener algo caliente o frío durante diez segundos, antes de conocer a alguien, cambia lo que piensas de esa persona.',
+    tipo: 'slider',
+    sliderMin: 0,
+    sliderMax: 10,
+    sliderDefault: 5,
+    sliderLabels: ['Fría / egoísta', 'Cálida / generosa'],
+    pregunta: 'Solo por esa breve charla, ¿qué tan cálida y generosa dirías que es esa persona, del 0 al 10?',
+    condiciones: [
+      { key: 'caliente', contexto: 'Alguien te da un vaso de café <strong>caliente</strong> para sujetar mientras hablas un momento con un desconocido.', textoCorto: 'algo caliente' },
+      { key: 'frio',     contexto: 'Alguien te da un vaso de café <strong>helado</strong> para sujetar mientras hablas un momento con un desconocido.', textoCorto: 'algo helado' }
+    ],
+    cayoSiAlto: 'caliente',
+    cayoSiBajo: 'frio',
+    revelarCayo: 'Le has puesto un {rating}/10 después de sujetar algo {condicionTexto} — nada más. Es lo que encontraron Williams y Bargh en 2008: sostener brevemente algo caliente hace que juzguemos a un desconocido como más cálido y generoso, sin que nos demos cuenta de por qué. La temperatura física y la calidez social comparten sustrato neuronal.',
+    revelarNoCayo: 'Esta vez tu {rating}/10 no siguió la temperatura del vaso — pero le pasa a la mayoría: Williams y Bargh (2008) encontraron que sostener brevemente algo caliente nos hace juzgar a un desconocido como más cálido y generoso, sin que seamos conscientes de por qué.',
+    sourceId: 'rel-06'
+  }
+];
+
+for (const esc of SIMULADOR_ESCENARIOS) {
+  const art = findArticleById(esc.sourceId);
+  if (!art) {
+    console.error(`ERROR: el escenario "${esc.id}" del simulador cita el artículo "${esc.sourceId}", que no existe en LIBRARY_ARTICLES.`);
+    process.exit(1);
+  }
+  esc.sourceUrl = articleUrl(art);
+  esc.sourceTitle = art.title;
+  esc.sourceLabel = art.sourceLabel;
 }
 
 // ── Artículos relacionados: 2 misma categoría + 1 de otra ──────
@@ -169,7 +285,10 @@ function staticHero() {
         <img src="/img/logo2.png" alt="La Inferencia" class="static-navbar-logo" />
         <span>La Inferencia</span>
       </a>
-      <a href="/" class="static-navbar-cta">Explorar los ${TOTAL_ARTS} artículos →</a>
+      <div class="static-navbar-links">
+        <a href="/simulador-de-sesgos/" class="static-navbar-link">Simulador de Sesgos</a>
+        <a href="/" class="static-navbar-cta">Explorar los ${TOTAL_ARTS} artículos →</a>
+      </div>
     </div>
   </header>
   <section class="static-hero" aria-label="La Inferencia">
@@ -210,8 +329,8 @@ function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="preload" as="style" href="/css/styles.css?v=40" />
-  <link rel="stylesheet" href="/css/styles.css?v=40" />
+  <link rel="preload" as="style" href="/css/styles.css?v=41" />
+  <link rel="stylesheet" href="/css/styles.css?v=41" />
   <link rel="icon" type="image/png" href="/img/logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
   <meta name="theme-color" content="#030C1A" />
@@ -332,6 +451,12 @@ ${related.map(r => {
 ${faqs.map(f => `        <details class="static-faq-item">\n          <summary>${f.q}</summary>\n          <p>${f.a}</p>\n        </details>`).join('\n')}
       </div>` : '';
 
+  const escenarioRelacionado = SIMULADOR_ESCENARIOS.find(e => e.sourceId === art.id);
+  const simuladorCtaHTML = escenarioRelacionado ? `      <div class="static-sim-cta">
+        <p><strong>¿Y si te pasara a ti?</strong> Decide antes de leer más — en menos de un minuto.</p>
+        <a href="/simulador-de-sesgos/${escenarioRelacionado.slug}/" class="static-sim-cta-btn">Probar «${escenarioRelacionado.titulo}» →</a>
+      </div>` : '';
+
   const articleLdJson = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -357,7 +482,7 @@ ${faqs.map(f => `        <details class="static-faq-item">\n          <summary>$
     'image': `${SITE}/img/OG.png`,
     'url': canonUrl,
     'inLanguage': 'es',
-    'datePublished': art.date || '',
+    'datePublished': toISODate(art.date) || art.date || '',
     'mainEntityOfPage': { '@type': 'WebPage', '@id': canonUrl },
     'breadcrumb': {
       '@type': 'BreadcrumbList',
@@ -422,6 +547,10 @@ ${staticHero()}
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             ${art.readingTime} de lectura
           </span>
+          <button type="button" class="save-btn" data-article-id="${art.id}" aria-pressed="false" aria-label="Guardar en tu colección" title="Guardar en tu colección" data-umami-event="collection-save" data-umami-event-origen="articulo-estatico" data-umami-event-articulo="${art.id}">
+            <span class="save-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+            <span class="save-btn-text">Guardar</span>
+          </button>
         </div>
         <h1 class="weekly-title">${art.title}</h1>
         ${buildAuthorCard(art.author)}
@@ -436,6 +565,7 @@ ${aplicacionHTML}
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             Verificar fuente · ${art.sourceLabel}
           </a>
+${simuladorCtaHTML}
 ${faqHTML}
         </div>
       </div>
@@ -483,6 +613,7 @@ ${sidebarHTML}
   init();start();
 }());
 </script>
+<script defer src="/js/save-button.js?v=1"></script>
 
 </body>
 </html>`;
@@ -636,6 +767,152 @@ ${articlesHTML}
 </html>`;
 }
 
+// ── Template landing del Simulador de Sesgos ────────────────────
+const SIMULADOR_URL = `${SITE}/simulador-de-sesgos/`;
+
+function buildSimuladorLandingPage() {
+  const ldJson = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': 'Simulador de Sesgos — La Inferencia',
+    'description': 'Decide antes de leer. Tres escenarios de 60 segundos que demuestran, sobre tu propia decisión, cómo funcionan los sesgos cognitivos más estudiados de la psicología.',
+    'url': SIMULADOR_URL,
+    'breadcrumb': {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': `${SITE}/` },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Simulador de Sesgos', 'item': SIMULADOR_URL }
+      ]
+    }
+  }, null, 2);
+
+  const head = htmlHead({
+    title: 'Simulador de Sesgos — Decide antes de leer — La Inferencia',
+    description: 'Tres escenarios de 60 segundos. Decides primero, y después descubres en qué sesgo cognitivo acabas de caer — con el estudio real detrás.',
+    canonUrl: SIMULADOR_URL,
+    ldJsonBlocks: [ldJson]
+  });
+
+  const cardsHTML = SIMULADOR_ESCENARIOS.map(esc => `        <a href="/simulador-de-sesgos/${esc.slug}/" class="sim-landing-card">
+          <span class="sim-landing-card-badge">${esc.gancho}</span>
+          <h2>${esc.titulo}</h2>
+          <p>${esc.resumen}</p>
+          <span class="sim-landing-card-cta">Decidir ahora →</span>
+        </a>`).join('\n');
+
+  return `${head}
+<body>
+
+  <a class="skip-link" href="#sim-main">Saltar al contenido</a>
+  <div id="bg-layer" aria-hidden="true"></div>
+${staticHero()}
+
+  <main id="sim-main" class="static-art-main">
+    <div class="static-art-wrap">
+
+      <nav class="static-breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true"> › </span>
+        <span aria-current="page">Simulador de Sesgos</span>
+      </nav>
+
+      <header class="static-cat-header">
+        <h1>Simulador de Sesgos</h1>
+        <p>Decides antes de leer. Cada escenario dura menos de un minuto — al final descubres en qué sesgo cognitivo acabas de caer, con el estudio real que lo demostró.</p>
+      </header>
+
+      <div class="sim-landing-grid">
+${cardsHTML}
+      </div>
+
+      <div id="sim-summary-root" data-role="landing-summary" hidden></div>
+
+    </div>
+  </main>
+
+<script defer src="/js/simulador.js?v=1"></script>
+</body>
+</html>`;
+}
+
+// ── Template de un escenario individual del Simulador de Sesgos ─
+function buildEscenarioPage(esc) {
+  const canonUrl = `${SITE}/simulador-de-sesgos/${esc.slug}/`;
+
+  const ldJson = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': `${esc.titulo} — Simulador de Sesgos — La Inferencia`,
+    'description': esc.resumen,
+    'url': canonUrl,
+    'isPartOf': { '@type': 'CollectionPage', 'name': 'Simulador de Sesgos', 'url': SIMULADOR_URL },
+    'breadcrumb': {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': `${SITE}/` },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Simulador de Sesgos', 'item': SIMULADOR_URL },
+        { '@type': 'ListItem', 'position': 3, 'name': esc.titulo, 'item': canonUrl }
+      ]
+    }
+  }, null, 2);
+
+  const head = htmlHead({
+    title: `${esc.titulo} — Simulador de Sesgos — La Inferencia`,
+    description: `${esc.resumen} Decide en menos de un minuto y descubre el estudio real detrás: ${esc.sourceLabel}.`,
+    canonUrl,
+    ldJsonBlocks: [ldJson]
+  });
+
+  const escConfig = {
+    id: esc.id,
+    titulo: esc.titulo,
+    tipo: esc.tipo,
+    condiciones: esc.condiciones,
+    cayoSiAlto: esc.cayoSiAlto,
+    cayoSiBajo: esc.cayoSiBajo,
+    cayoSi: esc.cayoSi,
+    pregunta: esc.pregunta,
+    sliderMin: esc.sliderMin,
+    sliderMax: esc.sliderMax,
+    sliderDefault: esc.sliderDefault,
+    sliderLabels: esc.sliderLabels,
+    revelarCayo: esc.revelarCayo,
+    revelarNoCayo: esc.revelarNoCayo,
+    sourceUrl: esc.sourceUrl,
+    sourceTitle: esc.sourceTitle,
+    sourceLabel: esc.sourceLabel,
+    allSources: SIMULADOR_ESCENARIOS.map(e => ({ titulo: e.sourceTitle, url: e.sourceUrl }))
+  };
+  const escConfigJson = JSON.stringify(escConfig).replace(/</g, '\\u003c').replace(/'/g, '&#39;');
+
+  return `${head}
+<body>
+
+  <a class="skip-link" href="#sim-esc-main">Saltar al contenido</a>
+  <div id="bg-layer" aria-hidden="true"></div>
+${staticHero()}
+
+  <main id="sim-esc-main" class="static-art-main">
+    <div class="static-art-wrap">
+
+      <nav class="static-breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true"> › </span>
+        <a href="/simulador-de-sesgos/">Simulador de Sesgos</a>
+        <span aria-hidden="true"> › </span>
+        <span aria-current="page">${esc.titulo}</span>
+      </nav>
+
+      <div id="simulador-root" data-escenario='${escConfigJson}'></div>
+
+    </div>
+  </main>
+
+<script defer src="/js/simulador.js?v=1"></script>
+</body>
+</html>`;
+}
+
 // ── Generar ficheros HTML ──────────────────────────────────────
 const ROOT        = __dirname;
 const ARTS_DIR    = path.join(ROOT, 'articulos');
@@ -665,6 +942,19 @@ for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
 
 console.log(`\n✅ ${count} páginas de artículo + ${CAT_KEYS.length} páginas de categoría generadas\n`);
 
+// ── Simulador de Sesgos ──────────────────────────────────────────
+const SIM_DIR = path.join(ROOT, 'simulador-de-sesgos');
+fs.mkdirSync(SIM_DIR, { recursive: true });
+fs.writeFileSync(path.join(SIM_DIR, 'index.html'), buildSimuladorLandingPage(), 'utf-8');
+console.log('  ✓ /simulador-de-sesgos/ (landing)');
+for (const esc of SIMULADOR_ESCENARIOS) {
+  const escDir = path.join(SIM_DIR, esc.slug);
+  fs.mkdirSync(escDir, { recursive: true });
+  fs.writeFileSync(path.join(escDir, 'index.html'), buildEscenarioPage(esc), 'utf-8');
+  console.log(`  ✓ /simulador-de-sesgos/${esc.slug}/`);
+}
+console.log(`\n✅ Simulador de Sesgos generado (1 landing + ${SIMULADOR_ESCENARIOS.length} escenarios)\n`);
+
 // ── Página de autor ─────────────────────────────────────────────
 const AUTHOR_DIR = path.join(ROOT, 'autores', 'miguel-noguer');
 fs.mkdirSync(AUTHOR_DIR, { recursive: true });
@@ -689,6 +979,11 @@ for (const cat of CAT_KEYS) {
 
 sitemap += `  <url><loc>${AUTHOR_URL}</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${today}</lastmod></url>\n`;
 
+sitemap += `  <url><loc>${SIMULADOR_URL}</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>${today}</lastmod></url>\n`;
+for (const esc of SIMULADOR_ESCENARIOS) {
+  sitemap += `  <url><loc>${SITE}/simulador-de-sesgos/${esc.slug}/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
+}
+
 for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
   for (const art of arts) {
     const { catSlug, artSlug } = slugMap[art.id];
@@ -698,7 +993,7 @@ for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
 
 sitemap += `</urlset>\n`;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap, 'utf-8');
-console.log(`✅ sitemap.xml actualizado con ${count} artículos + ${CAT_KEYS.length} categorías + autor`);
+console.log(`✅ sitemap.xml actualizado con ${count} artículos + ${CAT_KEYS.length} categorías + autor + simulador de sesgos`);
 
 // ── sitemap-images.xml ──────────────────────────────────────────
 let imgSitemap = `<?xml version="1.0" encoding="UTF-8"?>

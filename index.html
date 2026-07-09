@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=40" />
+  <link rel="stylesheet" href="css/styles.css?v=41" />
   <link rel="icon" type="image/png" href="img/logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
@@ -130,6 +130,7 @@
           <span class="navbar-brand-name">La Inferencia</span>
         </div>
         <nav class="navbar-nav" aria-label="Menú principal">
+          <a href="/simulador-de-sesgos/" class="nav-link">Simulador de Sesgos</a>
           <a href="#" class="nav-link" data-panel="quienes">El proyecto</a>
           <a href="#" class="nav-link" data-panel="participar">Publica con nosotros</a>
           <a href="#" class="nav-link" data-panel="contacto">Contacto</a>
@@ -676,6 +677,10 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 Tus Favoritos
               </h2>
+              <button type="button" id="favoritos-share-btn" class="favoritos-share-btn" aria-label="Compartir tu colección">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                Compartir
+              </button>
               <div class="seccion-linea"></div>
             </div>
             <div id="favoritos-container" class="favoritos-grid"></div>
@@ -1240,6 +1245,7 @@
           <span class="botiquin-eyebrow">Psicología aplicada · Lecturas</span>
           <h2>Tu problema, tu libro</h2>
           <p class="botiquin-sub">Cada situación esconde un patrón psicológico. Haz clic en la tarjeta para descubrir qué dice la evidencia — y qué leer.</p>
+          <p class="botiquin-disclaimer">Los libros llevan enlaces de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti. Así mantenemos La Inferencia gratuita.</p>
         </div>
         <div class="bq-search-wrap">
           <svg class="bq-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -1401,6 +1407,7 @@
             <a href="#" data-tab-footer="biblioteca">Por Intereses</a>
             <a href="#" data-tab-footer="repositorio">Fuera de Bata</a>
             <a href="#" data-tab-footer="semana">Artículo de la Semana</a>
+            <a href="/simulador-de-sesgos/">Simulador de Sesgos</a>
             <a href="#" id="footer-glosario-link">Glosario</a>
           </nav>
         </div>
@@ -1420,10 +1427,11 @@
       </div>
       <div class="footer-libro-strip" id="footer-libro-strip" hidden>
         <span class="footer-libro-strip-label">📚</span>
-        <a href="#" id="footer-libro-strip-link" class="footer-libro-strip-link" target="_blank" rel="noopener noreferrer">Hay un libro detrás del artículo de esta semana — descúbrelo →</a>
+        <a href="#" id="footer-libro-strip-link" class="footer-libro-strip-link" target="_blank" rel="noopener noreferrer sponsored">Hay un libro detrás del artículo de esta semana — descúbrelo →</a>
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 La Inferencia. Todos los derechos reservados.</p>
+        <p class="footer-affiliate-note">Algunos enlaces de esta web son de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti.</p>
       </div>
     </footer>
 
@@ -2079,6 +2087,6 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=31"></script>
+  <script src="js/main.js?v=32"></script>
 </body>
 </html>
