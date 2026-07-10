@@ -122,3 +122,4 @@ CarpetaClaude/
 - Actualizar `docs/proyecto.md` cuando haya cambios importantes en funcionalidades o estructura
 - Sin frameworks nuevos salvo decisión explícita
 - Confirmar antes de cualquier acción destructiva o irreversible
+- **Prohibido el guion largo "—" en cualquier texto de la web** (títulos, meta tags, contenido de artículos, comentarios de código). Usar coma, dos puntos, paréntesis o " | " según el contexto, nunca "—". Eliminado por completo en julio 2026.

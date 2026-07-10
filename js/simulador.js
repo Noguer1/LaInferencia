@@ -1,4 +1,4 @@
-/* Simulador de Sesgos — standalone, sin dependencias de main.js.
+/* Simulador de Sesgos, standalone, sin dependencias de main.js.
    Se carga en /simulador-de-sesgos/ y en cada página de escenario. */
 (function () {
   var SUPABASE_URL  = 'https://dbyoxssdbboxnbecgpbf.supabase.co';

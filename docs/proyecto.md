@@ -159,6 +159,21 @@ Widget en navbar (`.nivel-widget`) con barra de progreso animada. Imágenes Nive
 
 ---
 
+## Monetización — recomendaciones de producto (2026-07-10)
+
+Antes de este cambio, los enlaces de afiliado de Amazon (`tag=lainferencia-21`) solo vivían en la home (Botiquín Antisesgos, Mystery unlock, algunos efectos/hitos/artículo semanal). Las 56 páginas de artículo individual —el destino del tráfico SEO— no mostraban ninguno. Se cerró ese hueco así:
+
+- **`js/recomendaciones.js`** — mismo patrón que `js/seo-overrides.js` (objeto plano keyed por `art.id`). Cada entrada tiene `libro: {titulo, autor, sinopsis, amazon}` y, en ~7 artículos donde es genuinamente coherente, un `producto` físico opcional (mismo formato). Enlaces siempre `amazon.es/s?k=Título+Autor&tag=lainferencia-21` (búsqueda) o el `/dp/` ya vetado en `BOTIQUIN_DATA` cuando se reutiliza el mismo libro — nunca ASIN inventado.
+- **`buildRecomendacionHTML(id)`** en `generate-pages.js` — genera el bloque `.recomendacion-block`, insertado en `buildPage()` justo después de `aplicacionHTML` y antes del botón "Verificar fuente". Mismo tracking que el resto de módulos de afiliado (`data-umami-event="amazon-click"`, `rel="sponsored"`).
+- **Cross-link en páginas de categoría** (`buildCategoryPage`) — tira `.cat-libros-teaser` con 2-3 libros del sector del Botiquín equivalente (mapa `CAT_TO_SECTOR`), enlazando a la guía de compra correspondiente.
+- **Cierre de Rutas de Aprendizaje** — el bloque `.ruta-finish` (última página de cada ruta) añade `.ruta-finish-libro`: la recomendación del primer artículo de la ruta (evita repetir el libro que ya se muestra en esa misma página).
+- **Guías de compra nuevas** — `/guias/` (landing) + `/guias/<slug>/` por cada uno de los 12 sectores de `BOTIQUIN_DATA` (`buildGuiasLandingPage`, `buildGuiaPage` en `generate-pages.js`). Tabla comparativa de los ~5 libros del sector + artículos relacionados de La Inferencia. `BOTIQUIN_DATA` se extrae de `main.js` con el mismo mecanismo `vm.runInNewContext` que ya se usaba para `LIBRARY_ARTICLES`/`AUTHORS`.
+- Todo pasa por datos + plantilla — nunca se edita a mano un `articulos/*/index.html`, porque `generate-pages.js` los sobreescribe en cada deploy (`vercel.json`: `buildCommand: node generate-pages.js`).
+
+Fuera de alcance por ahora: el contenido "Fuera de Bata" (`bata-*`) no genera páginas estáticas propias, solo vive en la SPA — se puede rellenar con el mismo patrón de `libroRelacionado` que ya usan `EFECTOS_DATA`/`HITOS` si se quiere más adelante.
+
+---
+
 ## Diseño visual
 
 ### Paleta de colores

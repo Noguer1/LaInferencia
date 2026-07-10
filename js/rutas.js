@@ -1,6 +1,6 @@
-/* Progreso de Rutas de Aprendizaje — standalone, sin dependencias de main.js.
+/* Progreso de Rutas de Aprendizaje, standalone, sin dependencias de main.js.
    La navegación entre pasos (anterior/siguiente) es 100% estática, generada
-   en build time — esto solo añade la capa de "qué llevo ya leído", que es
+   en build time, esto solo añade la capa de "qué llevo ya leído", que es
    pura mejora visual y nunca bloquea nada si falla o no carga. */
 (function () {
   var LS_KEY = 'li_rutas_progreso';

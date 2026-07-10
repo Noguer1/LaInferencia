@@ -12,7 +12,7 @@ const crypto = require('crypto');
 
 // ── Cache-busting automático por contenido ──────────────────────
 // La versión ?v= de cada asset se calcula a partir de su propio
-// contenido, no a mano — así es imposible olvidar subirla cuando
+// contenido, no a mano, así es imposible olvidar subirla cuando
 // se edita css/styles.css o js/main.js (vercel.json cachea /css/
 // y /js/ como immutable durante 1 año; sin esto, un cambio de CSS
 // puede no llegar nunca a un navegador que ya visitó el sitio).
@@ -56,7 +56,18 @@ vm.runInNewContext(
 const AUTHORS       = sandbox2.AUTHORS || {};
 const ARTICLE_STATS = sandbox2.ARTICLE_STATS || {};
 
-const SEO_OVERRIDES = require('./js/seo-overrides.js');
+// Extraer BOTIQUIN_DATA (libros por sector) para las páginas de guía de compra
+const botiquinStart = mainCode.indexOf('const BOTIQUIN_DATA = {');
+const botiquinEnd   = mainCode.indexOf('\n  };', botiquinStart) + 5;
+const sandbox3      = {};
+vm.runInNewContext(
+  mainCode.slice(botiquinStart, botiquinEnd).replace(/\bconst\s+/g, ''),
+  sandbox3
+);
+const BOTIQUIN_DATA = sandbox3.BOTIQUIN_DATA || {};
+
+const SEO_OVERRIDES    = require('./js/seo-overrides.js');
+const RECOMENDACIONES  = require('./js/recomendaciones.js');
 
 const SITE = 'https://lainferencia.com';
 const AUTHOR_URL = `${SITE}/autores/miguel-noguer/`;
@@ -129,7 +140,7 @@ function toSlug(str) {
   let s = str
     .toLowerCase()
     .normalize('NFD').replace(/[̀-ͯ]/g, '')
-    .replace(/[¿?¡!,.:;()\[\]«»""''€$%&\/\\—–]/g, '')
+    .replace(/[¿?¡!,.:;()\[\]«»""''€$%&\/\\–]/g, '')
     .replace(/[^a-z0-9\s-]/g, '')
     .trim()
     .replace(/\s+/g, '-')
@@ -169,8 +180,8 @@ function findArticleById(id) {
   return null;
 }
 
-// ── Simulador de Sesgos — datos de los 3 escenarios piloto ─────
-// Cada escenario cita un artículo real ya publicado (sourceId) — si ese
+// ── Simulador de Sesgos, datos de los 3 escenarios piloto ─────
+// Cada escenario cita un artículo real ya publicado (sourceId), si ese
 // artículo cambia de id, este array debe actualizarse a la vez.
 const SIMULADOR_ESCENARIOS = [
   {
@@ -191,8 +202,8 @@ const SIMULADOR_ESCENARIOS = [
     ],
     cayoSiAlto: 'caro',
     cayoSiBajo: 'barato',
-    revelarCayo: 'Le has puesto un {rating}/10 sabiendo solo el precio — sin haberlo probado. Es lo que encontró Hilke Plassmann en 2008: el mismo vino, servido con precio distinto, activaba más placer en el cerebro cuando los participantes creían que era caro. El precio no solo cambió tu opinión: en el estudio real, cambió la experiencia sensorial medida en un escáner.',
-    revelarNoCayo: 'Esta vez tu {rating}/10 no siguió el precio que viste — pero le pasa a la mayoría: en el estudio de Hilke Plassmann (2008), el mismo vino activaba más placer cerebral cuando los participantes creían que era caro. El precio cambia la experiencia real, no solo la opinión.',
+    revelarCayo: 'Le has puesto un {rating}/10 sabiendo solo el precio, sin haberlo probado. Es lo que encontró Hilke Plassmann en 2008: el mismo vino, servido con precio distinto, activaba más placer en el cerebro cuando los participantes creían que era caro. El precio no solo cambió tu opinión: en el estudio real, cambió la experiencia sensorial medida en un escáner.',
+    revelarNoCayo: 'Esta vez tu {rating}/10 no siguió el precio que viste, pero le pasa a la mayoría: en el estudio de Hilke Plassmann (2008), el mismo vino activaba más placer cerebral cuando los participantes creían que era caro. El precio cambia la experiencia real, no solo la opinión.',
     sourceId: 'eco-06'
   },
   {
@@ -217,8 +228,8 @@ const SIMULADOR_ESCENARIOS = [
       }
     ],
     cayoSi: { ganancia: 'A', perdida: 'B' },
-    revelarCayo: 'Has elegido la opción {opcionElegida} — exactamente lo que predice la teoría prospectiva de Kahneman y Tversky (1979): ante una ganancia, la mayoría prefiere lo seguro; ante una pérdida enmarcada igual, la mayoría prefiere arriesgarse para evitarla. Las dos decisiones tienen el mismo resultado matemático esperado. Solo cambia cómo se cuenta la historia.',
-    revelarNoCayo: 'Has elegido la opción {opcionElegida} — la contraria a lo que predice la mayoría en este marco, según la teoría prospectiva de Kahneman y Tversky (1979). Le pasa a la mayoría: ante una pérdida se vuelve más arriesgada, ante una ganancia equivalente se vuelve más conservadora, aunque el resultado matemático sea idéntico.',
+    revelarCayo: 'Has elegido la opción {opcionElegida}, exactamente lo que predice la teoría prospectiva de Kahneman y Tversky (1979): ante una ganancia, la mayoría prefiere lo seguro; ante una pérdida enmarcada igual, la mayoría prefiere arriesgarse para evitarla. Las dos decisiones tienen el mismo resultado matemático esperado. Solo cambia cómo se cuenta la historia.',
+    revelarNoCayo: 'Has elegido la opción {opcionElegida}, la contraria a lo que predice la mayoría en este marco, según la teoría prospectiva de Kahneman y Tversky (1979). Le pasa a la mayoría: ante una pérdida se vuelve más arriesgada, ante una ganancia equivalente se vuelve más conservadora, aunque el resultado matemático sea idéntico.',
     sourceId: 'eco-02'
   },
   {
@@ -239,8 +250,8 @@ const SIMULADOR_ESCENARIOS = [
     ],
     cayoSiAlto: 'caliente',
     cayoSiBajo: 'frio',
-    revelarCayo: 'Le has puesto un {rating}/10 después de sujetar algo {condicionTexto} — nada más. Es lo que encontraron Williams y Bargh en 2008: sostener brevemente algo caliente hace que juzguemos a un desconocido como más cálido y generoso, sin que nos demos cuenta de por qué. La temperatura física y la calidez social comparten sustrato neuronal.',
-    revelarNoCayo: 'Esta vez tu {rating}/10 no siguió la temperatura del vaso — pero le pasa a la mayoría: Williams y Bargh (2008) encontraron que sostener brevemente algo caliente nos hace juzgar a un desconocido como más cálido y generoso, sin que seamos conscientes de por qué.',
+    revelarCayo: 'Le has puesto un {rating}/10 después de sujetar algo {condicionTexto}, nada más. Es lo que encontraron Williams y Bargh en 2008: sostener brevemente algo caliente hace que juzguemos a un desconocido como más cálido y generoso, sin que nos demos cuenta de por qué. La temperatura física y la calidez social comparten sustrato neuronal.',
+    revelarNoCayo: 'Esta vez tu {rating}/10 no siguió la temperatura del vaso, pero le pasa a la mayoría: Williams y Bargh (2008) encontraron que sostener brevemente algo caliente nos hace juzgar a un desconocido como más cálido y generoso, sin que seamos conscientes de por qué.',
     sourceId: 'rel-06'
   }
 ];
@@ -256,7 +267,7 @@ for (const esc of SIMULADOR_ESCENARIOS) {
   esc.sourceLabel = art.sourceLabel;
 }
 
-// ── Rutas de Aprendizaje — curadas a mano, no generadas ─────────
+// ── Rutas de Aprendizaje, curadas a mano, no generadas ─────────
 // Cada ruta es una secuencia de artículos ya publicados en el orden
 // que tiene sentido leerlos, no en el orden en que se publicaron.
 // Añadir una ruta nueva es trabajo editorial, no técnico.
@@ -298,7 +309,7 @@ const RUTAS = [
   }
 ];
 
-// id de artículo -> { ruta, index (0-based), total } — cada artículo
+// id de artículo -> { ruta, index (0-based), total }, cada artículo
 // pertenece como mucho a una ruta en este diseño (sets sin solapar).
 const RUTA_STEP_MAP = {};
 for (const ruta of RUTAS) {
@@ -365,6 +376,7 @@ function staticHero() {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
         <a href="/rutas/" class="static-navbar-link">Rutas</a>
+        <a href="/guias/" class="static-navbar-link">Guías de compra</a>
         <a href="/simulador-de-sesgos/" class="static-navbar-link">Simulador de Sesgos</a>
         <a href="/" class="static-navbar-cta">Explorar los ${TOTAL_ARTS} artículos →</a>
       </div>
@@ -473,6 +485,58 @@ function buildStatsHTML(id) {
   ).join('')}</div>`;
 }
 
+// ── Recomendación de producto (libro / producto físico) por artículo ──
+function buildRecomendacionHTML(id) {
+  const rec = RECOMENDACIONES[id];
+  if (!rec || !rec.libro) return '';
+  const { libro, producto } = rec;
+  return `      <div class="recomendacion-block">
+        <p class="recomendacion-label">Si quieres profundizar en esto</p>
+        <div class="recomendacion-libro">
+          <div class="recomendacion-libro-info">
+            <strong>${libro.titulo}</strong>
+            <span class="recomendacion-autor">${libro.autor}</span>
+            <p>${libro.sinopsis}</p>
+          </div>
+          <a href="${libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="articulo-pagina">Ver libro</a>
+        </div>${producto ? `
+        <div class="recomendacion-producto">
+          <span class="recomendacion-producto-nombre">Para aplicarlo hoy: ${producto.nombre}</span>
+          <p>${producto.nota}</p>
+          <a href="${producto.amazon}" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${producto.nombre}" data-umami-event-origen="articulo-pagina-producto">Ver producto →</a>
+        </div>` : ''}
+        <p class="recomendacion-disclaimer">Enlaces de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti.</p>
+      </div>`;
+}
+
+// ── Categoría de artículo -> sector del Botiquín (para cross-links) ────
+const CAT_TO_SECTOR = {
+  saludMental:  'saludMental',
+  relaciones:   'relaciones',
+  trabajo:      'trabajo',
+  alimentacion: 'habitos',
+  educacion:    'autoconocimiento',
+  economia:     'finanzas',
+};
+
+// ── Guías de compra: config por sector del Botiquín ─────────────
+const GUIA_SECTORES = [
+  { key: 'productividad',    slug: 'mejores-libros-de-productividad',           titulo: 'Los mejores libros sobre productividad y procrastinación' },
+  { key: 'relaciones',       slug: 'mejores-libros-sobre-relaciones-de-pareja',  titulo: 'Los mejores libros sobre relaciones y conflicto de pareja' },
+  { key: 'finanzas',         slug: 'mejores-libros-de-psicologia-financiera',    titulo: 'Los mejores libros sobre psicología del dinero' },
+  { key: 'saludMental',      slug: 'mejores-libros-de-salud-mental',            titulo: 'Los mejores libros sobre salud mental y bienestar emocional' },
+  { key: 'trabajo',          slug: 'mejores-libros-sobre-trabajo-y-burnout',     titulo: 'Los mejores libros sobre trabajo, autoestima laboral y burnout' },
+  { key: 'autoconocimiento', slug: 'mejores-libros-de-autoconocimiento',        titulo: 'Los mejores libros de autoconocimiento y cambio de hábitos' },
+  { key: 'crianza',          slug: 'mejores-libros-de-crianza',                 titulo: 'Los mejores libros de crianza basados en neurociencia' },
+  { key: 'sueno',            slug: 'mejores-libros-sobre-el-sueno',             titulo: 'Los mejores libros sobre el sueño y el descanso' },
+  { key: 'ansiedad',         slug: 'mejores-libros-sobre-ansiedad',             titulo: 'Los mejores libros sobre ansiedad' },
+  { key: 'autoestima',       slug: 'mejores-libros-sobre-autoestima',           titulo: 'Los mejores libros sobre autoestima' },
+  { key: 'duelo',            slug: 'mejores-libros-sobre-duelo-y-perdida',      titulo: 'Los mejores libros sobre duelo y pérdida' },
+  { key: 'habitos',          slug: 'mejores-libros-sobre-habitos',              titulo: 'Los mejores libros sobre hábitos y autocontrol' },
+];
+const GUIA_BY_SECTOR = Object.fromEntries(GUIA_SECTORES.map(g => [g.key, g]));
+const GUIAS_URL = `${SITE}/guias/`;
+
 // ── Template HTML por artículo ─────────────────────────────────
 function buildPage(art, cat) {
   const catSlug  = CAT_SLUGS[cat] || cat;
@@ -483,7 +547,7 @@ function buildPage(art, cat) {
   const override = SEO_OVERRIDES[art.id] || {};
   const desc     = override.seoDescription || (rawDesc.substring(0, 152) + '…');
   const titleEsc = art.title.replace(/"/g, '&quot;').replace(/</g, '&lt;');
-  const seoTitle = (override.seoTitle || `${art.title} — La Inferencia`).replace(/"/g, '&quot;');
+  const seoTitle = (override.seoTitle || `${art.title} | La Inferencia`).replace(/"/g, '&quot;');
   const descEsc  = desc.replace(/"/g, '&quot;');
 
   const sectionsHTML = (art.sections || []).map((s, i) => {
@@ -495,7 +559,7 @@ function buildPage(art, cat) {
   }).join('\n\n');
 
   const blockquoteHTML = art.blockquote
-    ? `    <blockquote class="article-blockquote">\n      <p>${art.blockquote.text}</p>\n      <cite>— ${art.blockquote.attribution}</cite>\n    </blockquote>`
+    ? `    <blockquote class="article-blockquote">\n      <p>${art.blockquote.text}</p>\n      <cite>${art.blockquote.attribution}</cite>\n    </blockquote>`
     : '';
 
   const aplicacionHTML = art.aplicacion
@@ -537,7 +601,7 @@ ${faqs.map(f => `        <details class="static-faq-item">\n          <summary>$
 
   const escenarioRelacionado = SIMULADOR_ESCENARIOS.find(e => e.sourceId === art.id);
   const simuladorCtaHTML = escenarioRelacionado ? `      <div class="static-sim-cta">
-        <p><strong>¿Y si te pasara a ti?</strong> Decide antes de leer más — en menos de un minuto.</p>
+        <p><strong>¿Y si te pasara a ti?</strong> Decide antes de leer más, en menos de un minuto.</p>
         <a href="/simulador-de-sesgos/${escenarioRelacionado.slug}/" class="static-sim-cta-btn">Probar «${escenarioRelacionado.titulo}» →</a>
       </div>` : '';
 
@@ -566,12 +630,19 @@ ${faqs.map(f => `        <details class="static-faq-item">\n          <summary>$
         <a href="${articleUrl(siguiente)}" class="ruta-siguiente-btn">Siguiente paso de la ruta →</a>
       </div>`;
     } else {
+      const rutaLibroRec = RECOMENDACIONES[ruta.articulos[0].id];
+      const rutaLibroHTML = rutaLibroRec && rutaLibroRec.libro ? `
+        <div class="ruta-finish-libro">
+          <p class="recomendacion-label">Para seguir profundizando en esta ruta</p>
+          <strong>${rutaLibroRec.libro.titulo}</strong> <span class="recomendacion-autor">— ${rutaLibroRec.libro.autor}</span>
+          <a href="${rutaLibroRec.libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${rutaLibroRec.libro.titulo}" data-umami-event-origen="ruta-finish">Ver libro</a>
+        </div>` : '';
       rutaSiguienteHTML = `      <div class="ruta-finish">
         <h3>Has terminado la ruta «${ruta.titulo}»</h3>
         <p>Estos son los ${total} pasos, por si quieres releer alguno:</p>
         <div class="ruta-finish-links">
 ${ruta.articulos.map((a, i) => `          <a href="${articleUrl(a)}" class="ruta-finish-link">${i + 1}. ${a.title}</a>`).join('\n')}
-        </div>
+        </div>${rutaLibroHTML}
         <a href="/rutas/" class="ruta-finish-otras">Ver otras rutas →</a>
       </div>`;
     }
@@ -682,6 +753,7 @@ ${rutaBannerHTML}
 ${sectionsHTML}
 ${blockquoteHTML}
 ${aplicacionHTML}
+${buildRecomendacionHTML(art.id)}
           <a href="${art.sourceUrl}" class="source-verify-btn" target="_blank" rel="noopener noreferrer">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             Verificar fuente · ${art.sourceLabel}
@@ -695,7 +767,7 @@ ${faqHTML}
 ${relatedHTML}
 
       <div class="static-art-cta">
-        <p><strong>${TOTAL_ARTS} artículos más</strong> esperando. Sesgos, emociones, decisiones — escritos sobre estudios reales, en español y sin jerga.</p>
+        <p><strong>${TOTAL_ARTS} artículos más</strong> esperando. Sesgos, emociones, decisiones, escritos sobre estudios reales, en español y sin jerga.</p>
         <a href="/" class="static-art-cta-btn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           Entrar a La Inferencia
@@ -749,7 +821,7 @@ function buildCategoryPage(cat) {
   const canonUrl = `${SITE}/articulos/${catSlug}/`;
   const arts     = LIBRARY_ARTICLES[cat];
   const desc     = CAT_DESCRIPTIONS[cat] || `Artículos de psicología sobre ${catLabel.toLowerCase()} basados en evidencia científica.`;
-  const title    = `Psicología de ${catLabel === 'Salud Mental' ? 'la' : (/^[AEIOU]/i.test(catLabel) ? 'la' : 'el/la')} ${catLabel} — Artículos basados en evidencia — La Inferencia`;
+  const title    = `Psicología de ${catLabel === 'Salud Mental' ? 'la' : (/^[AEIOU]/i.test(catLabel) ? 'la' : 'el/la')} ${catLabel} | Artículos basados en evidencia | La Inferencia`;
 
   const ldJson = JSON.stringify({
     '@context': 'https://schema.org',
@@ -767,7 +839,7 @@ function buildCategoryPage(cat) {
   }, null, 2);
 
   const head = htmlHead({
-    title: `Psicología de ${catLabel} — Artículos basados en evidencia — La Inferencia`,
+    title: `Psicología de ${catLabel} | Artículos basados en evidencia | La Inferencia`,
     description: desc,
     canonUrl,
     ldJsonBlocks: [ldJson]
@@ -783,6 +855,18 @@ function buildCategoryPage(cat) {
           </a>
         </li>`;
   }).join('\n');
+
+  const sector    = CAT_TO_SECTOR[cat];
+  const guia      = sector ? GUIA_BY_SECTOR[sector] : null;
+  const guiaBooks = guia ? (BOTIQUIN_DATA[sector] || []).slice(0, 3) : [];
+  const guiaHTML  = guia && guiaBooks.length ? `
+      <div class="cat-libros-teaser">
+        <p class="cat-libros-teaser-label">Libros recomendados sobre ${catLabel.toLowerCase()}</p>
+        <div class="cat-libros-teaser-row">
+${guiaBooks.map(b => `          <span class="cat-libros-teaser-item">${b.libro} <em>— ${b.autor}</em></span>`).join('\n')}
+        </div>
+        <a href="/guias/${guia.slug}/" class="cat-libros-teaser-cta">Ver la comparativa completa →</a>
+      </div>` : '';
 
   return `${head}
 <body>
@@ -801,10 +885,10 @@ ${staticHero()}
       </nav>
 
       <header class="static-cat-header">
-        <h1>Psicología de la ${catLabel} — Artículos basados en evidencia</h1>
+        <h1>Psicología de la ${catLabel}: Artículos basados en evidencia</h1>
         <p>${desc}</p>
       </header>
-
+${guiaHTML}
       <ul class="cat-article-list">
 ${articlesHTML}
       </ul>
@@ -829,7 +913,7 @@ function buildAuthorPage() {
     'name': AUTHOR_NAME,
     'url': canonUrl,
     'image': `${SITE}/img/caramiguel.png`,
-    'jobTitle': 'Fundador y editor — La Inferencia',
+    'jobTitle': 'Fundador y editor | La Inferencia',
     'worksFor': { '@type': 'Organization', 'name': 'La Inferencia', 'url': SITE },
     'description': 'Fundador de La Inferencia, web de divulgación de psicología basada en evidencia científica. Convierte investigación académica peer-reviewed en contenido accesible en español.',
     'sameAs': [
@@ -838,7 +922,7 @@ function buildAuthorPage() {
   }, null, 2);
 
   const head = htmlHead({
-    title: `${AUTHOR_NAME} — Fundador de La Inferencia`,
+    title: `${AUTHOR_NAME}, Fundador de La Inferencia`,
     description: `${AUTHOR_NAME} es el fundador y editor de La Inferencia, web de divulgación de psicología basada en evidencia. Conoce su trabajo y todos sus artículos publicados.`,
     canonUrl,
     ldJsonBlocks: [ldJson]
@@ -874,7 +958,7 @@ ${staticHero()}
       <header class="static-author-header">
         <img src="/img/caramiguel.png" alt="${AUTHOR_NAME}" class="static-author-photo" width="120" height="120" />
         <h1>${AUTHOR_NAME}</h1>
-        <p class="static-author-role">Fundador y editor — La Inferencia</p>
+        <p class="static-author-role">Fundador y editor | La Inferencia</p>
         <p class="static-author-bio">Miguel Noguer Escudero fundó La Inferencia para convertir investigación académica peer-reviewed en psicología en contenido accesible, claro y en español. Cada artículo publicado en la web parte de un estudio científico verificable, citado y enlazado a su fuente original.</p>
         <a href="https://www.linkedin.com/company/la-inferencia/" target="_blank" rel="noopener noreferrer" class="static-author-linkedin">LinkedIn de La Inferencia</a>
       </header>
@@ -892,6 +976,172 @@ ${staticFooterScripts()}
 </html>`;
 }
 
+// ── Guías de compra (rankings/comparativas por sector) ──────────
+const SECTOR_TO_CAT = Object.fromEntries(Object.entries(CAT_TO_SECTOR).map(([cat, sector]) => [sector, cat]));
+
+function buildGuiasLandingPage() {
+  const canonUrl = GUIAS_URL;
+  const ldJson = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': 'Guías de compra | La Inferencia',
+    'description': 'Comparativas de los libros de psicología mejor valorados por tema, con la investigación real detrás de cada recomendación.',
+    'url': canonUrl,
+    'breadcrumb': {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': `${SITE}/` },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Guías de compra', 'item': canonUrl }
+      ]
+    }
+  }, null, 2);
+
+  const head = htmlHead({
+    title: 'Guías de compra | Los mejores libros de psicología por tema | La Inferencia',
+    description: 'Comparativas de los libros de psicología mejor valorados por tema: relaciones, dinero, hábitos, ansiedad, sueño y más. Con la investigación real detrás de cada uno.',
+    canonUrl,
+    ldJsonBlocks: [ldJson]
+  });
+
+  const cardsHTML = GUIA_SECTORES.map(g => {
+    const n = (BOTIQUIN_DATA[g.key] || []).length;
+    return `        <a href="/guias/${g.slug}/" class="ruta-landing-card">
+          <span class="ruta-landing-card-badge">${n} libros comparados</span>
+          <h2>${g.titulo}</h2>
+        </a>`;
+  }).join('\n');
+
+  return `${head}
+<body>
+
+  <a class="skip-link" href="#guias-main">Saltar al contenido</a>
+  <div id="bg-layer" aria-hidden="true"></div>
+${staticHero()}
+
+  <main id="guias-main" class="static-art-main">
+    <div class="static-art-wrap">
+
+      <nav class="static-breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true"> › </span>
+        <span aria-current="page">Guías de compra</span>
+      </nav>
+
+      <header class="ruta-hero-header">
+        <span class="ruta-hero-eyebrow">Guías de compra</span>
+        <h1>Los mejores libros de psicología, comparados por tema</h1>
+        <p>Cada guía reúne los libros que ya recomendamos en el Botiquín Antisesgos, comparados uno a uno, con la investigación real que hay detrás de cada elección.</p>
+      </header>
+
+      <div class="ruta-landing-grid">
+${cardsHTML}
+      </div>
+
+    </div>
+  </main>
+
+${staticFooterScripts()}
+</body>
+</html>`;
+}
+
+function buildGuiaPage(guia) {
+  const canonUrl = `${GUIAS_URL}${guia.slug}/`;
+  const libros = BOTIQUIN_DATA[guia.key] || [];
+  const relCat = SECTOR_TO_CAT[guia.key];
+  const relArts = relCat ? (LIBRARY_ARTICLES[relCat] || []).slice(0, 3) : [];
+
+  const ldJson = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': guia.titulo,
+    'url': canonUrl,
+    'itemListElement': libros.map((b, i) => ({
+      '@type': 'ListItem', 'position': i + 1, 'name': b.libro
+    })),
+    'breadcrumb': {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': `${SITE}/` },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Guías de compra', 'item': GUIAS_URL },
+        { '@type': 'ListItem', 'position': 3, 'name': guia.titulo, 'item': canonUrl }
+      ]
+    }
+  }, null, 2);
+
+  const head = htmlHead({
+    title: `${guia.titulo} | La Inferencia`,
+    description: `Comparativa de los ${libros.length} libros mejor valorados sobre ${guia.titulo.replace(/^Los mejores libros (sobre|de) /i, '')}, con la ciencia real detrás de cada recomendación.`,
+    canonUrl,
+    ldJsonBlocks: [ldJson]
+  });
+
+  const filasHTML = libros.map(b => `        <tr>
+          <td>
+            <strong>${b.libro}</strong>
+            <span class="guia-tabla-autor">${b.autor}</span>
+          </td>
+          <td>${b.frente}</td>
+          <td>${b.sinopsis}</td>
+          <td class="guia-tabla-estrellas">★ ${b.estrellas}</td>
+          <td><a href="${b.amazon}" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${b.libro}" data-umami-event-origen="guia-compra" class="recomendacion-btn">Ver</a></td>
+        </tr>`).join('\n');
+
+  const relatedHTML = relArts.length ? `
+      <div class="static-related">
+        <h2 class="static-related-heading">Artículos relacionados en La Inferencia</h2>
+        <div class="static-related-grid">
+${relArts.map(a => `          <a href="${articleUrl(a)}" class="static-related-card">
+            <span class="static-related-badge">${a.badge}</span>
+            <h3>${a.title}</h3>
+          </a>`).join('\n')}
+        </div>
+      </div>` : '';
+
+  return `${head}
+<body>
+
+  <a class="skip-link" href="#guia-main">Saltar al contenido</a>
+  <div id="bg-layer" aria-hidden="true"></div>
+${staticHero()}
+
+  <main id="guia-main" class="static-art-main">
+    <div class="static-art-wrap">
+
+      <nav class="static-breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true"> › </span>
+        <a href="/guias/">Guías de compra</a>
+        <span aria-hidden="true"> › </span>
+        <span aria-current="page">${guia.titulo}</span>
+      </nav>
+
+      <header class="static-cat-header">
+        <h1>${guia.titulo}</h1>
+        <p>Comparativa de los libros que ya recomendamos en el Botiquín Antisesgos para este tema, ordenados tal cual los recomendamos allí, con la ciencia que justifica cada elección.</p>
+      </header>
+
+      <div class="guia-tabla-wrap">
+        <table class="guia-tabla">
+          <thead>
+            <tr><th>Libro</th><th>Para quién es</th><th>Qué resuelve</th><th>Valoración</th><th></th></tr>
+          </thead>
+          <tbody>
+${filasHTML}
+          </tbody>
+        </table>
+      </div>
+      <p class="recomendacion-disclaimer">Enlaces de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti.</p>
+${relatedHTML}
+
+    </div>
+  </main>
+
+${staticFooterScripts()}
+</body>
+</html>`;
+}
+
 // ── Template landing del Simulador de Sesgos ────────────────────
 const SIMULADOR_URL = `${SITE}/simulador-de-sesgos/`;
 
@@ -899,7 +1149,7 @@ function buildSimuladorLandingPage() {
   const ldJson = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    'name': 'Simulador de Sesgos — La Inferencia',
+    'name': 'Simulador de Sesgos | La Inferencia',
     'description': 'Decide antes de leer. Tres escenarios de 60 segundos que demuestran, sobre tu propia decisión, cómo funcionan los sesgos cognitivos más estudiados de la psicología.',
     'url': SIMULADOR_URL,
     'breadcrumb': {
@@ -912,8 +1162,8 @@ function buildSimuladorLandingPage() {
   }, null, 2);
 
   const head = htmlHead({
-    title: 'Simulador de Sesgos — Decide antes de leer — La Inferencia',
-    description: 'Tres escenarios de 60 segundos. Decides primero, y después descubres en qué sesgo cognitivo acabas de caer — con el estudio real detrás.',
+    title: 'Simulador de Sesgos | Decide antes de leer | La Inferencia',
+    description: 'Tres escenarios de 60 segundos. Decides primero, y después descubres en qué sesgo cognitivo acabas de caer, con el estudio real detrás.',
     canonUrl: SIMULADOR_URL,
     ldJsonBlocks: [ldJson]
   });
@@ -943,7 +1193,7 @@ ${staticHero()}
 
       <header class="static-cat-header">
         <h1>Simulador de Sesgos</h1>
-        <p>Decides antes de leer. Cada escenario dura menos de un minuto — al final descubres en qué sesgo cognitivo acabas de caer, con el estudio real que lo demostró.</p>
+        <p>Decides antes de leer. Cada escenario dura menos de un minuto, al final descubres en qué sesgo cognitivo acabas de caer, con el estudio real que lo demostró.</p>
       </header>
 
       <div class="sim-landing-grid">
@@ -968,7 +1218,7 @@ function buildEscenarioPage(esc) {
   const ldJson = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    'name': `${esc.titulo} — Simulador de Sesgos — La Inferencia`,
+    'name': `${esc.titulo} | Simulador de Sesgos | La Inferencia`,
     'description': esc.resumen,
     'url': canonUrl,
     'isPartOf': { '@type': 'CollectionPage', 'name': 'Simulador de Sesgos', 'url': SIMULADOR_URL },
@@ -983,7 +1233,7 @@ function buildEscenarioPage(esc) {
   }, null, 2);
 
   const head = htmlHead({
-    title: `${esc.titulo} — Simulador de Sesgos — La Inferencia`,
+    title: `${esc.titulo} | Simulador de Sesgos | La Inferencia`,
     description: `${esc.resumen} Decide en menos de un minuto y descubre el estudio real detrás: ${esc.sourceLabel}.`,
     canonUrl,
     ldJsonBlocks: [ldJson]
@@ -1041,7 +1291,7 @@ ${staticFooterScripts()}
 }
 
 // ── Índice de búsqueda (para js/buscador.js) ────────────────────
-// Se genera en build time a partir del mismo contenido que ya existe —
+// Se genera en build time a partir del mismo contenido que ya existe, 
 // no es una llamada a ningún servicio externo de embeddings, es un
 // índice de palabras clave ponderado. Se declara honestamente como
 // "buscador" en la interfaz, no como "IA semántica".
@@ -1105,7 +1355,7 @@ function buildRutasLandingPage() {
   const ldJson = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    'name': 'Rutas de Aprendizaje — La Inferencia',
+    'name': 'Rutas de Aprendizaje | La Inferencia',
     'description': 'Secuencias de artículos ya publicados, en el orden que tiene sentido leerlos, para entender un tema en profundidad en vez de un dato suelto.',
     'url': RUTAS_URL,
     'breadcrumb': {
@@ -1118,7 +1368,7 @@ function buildRutasLandingPage() {
   }, null, 2);
 
   const head = htmlHead({
-    title: 'Rutas de Aprendizaje — La Inferencia',
+    title: 'Rutas de Aprendizaje | La Inferencia',
     description: 'Secuencias de 4 artículos ya publicados, en el orden que tiene sentido leerlos, para entender un tema en profundidad.',
     canonUrl: RUTAS_URL,
     ldJsonBlocks: [ldJson]
@@ -1156,7 +1406,7 @@ ${staticHero()}
       <header class="ruta-hero-header">
         <span class="ruta-hero-eyebrow">Rutas de Aprendizaje</span>
         <h1>Un artículo da un dato.<br>Una ruta da comprensión.</h1>
-        <p>Cada ruta es una secuencia de artículos ya publicados, en el orden que tiene sentido leerlos — no en el orden en que se publicaron.</p>
+        <p>Cada ruta es una secuencia de artículos ya publicados, en el orden que tiene sentido leerlos, no en el orden en que se publicaron.</p>
         <div class="ruta-hero-stats">
           <div class="ruta-hero-stat"><strong>${RUTAS.length}</strong><span>Rutas disponibles</span></div>
           <div class="ruta-hero-stat"><strong>${totalArticulos}</strong><span>Artículos incluidos</span></div>
@@ -1204,7 +1454,7 @@ function buildRutaPage(ruta) {
   }, null, 2);
 
   const head = htmlHead({
-    title: `${ruta.titulo} — Ruta de Aprendizaje — La Inferencia`,
+    title: `${ruta.titulo} | Ruta de Aprendizaje | La Inferencia`,
     description: `${ruta.descripcion} ${ruta.articulos.length} artículos · ~${ruta.tiempoTotalMin} min en total.`,
     canonUrl,
     ldJsonBlocks: [ldJson]
@@ -1312,6 +1562,19 @@ for (const ruta of RUTAS) {
 }
 console.log(`\n✅ Rutas de Aprendizaje generadas (1 landing + ${RUTAS.length} rutas)\n`);
 
+// ── Guías de compra ──────────────────────────────────────────────
+const GUIAS_DIR = path.join(ROOT, 'guias');
+fs.mkdirSync(GUIAS_DIR, { recursive: true });
+fs.writeFileSync(path.join(GUIAS_DIR, 'index.html'), buildGuiasLandingPage(), 'utf-8');
+console.log('  ✓ /guias/ (landing)');
+for (const guia of GUIA_SECTORES) {
+  const guiaDir = path.join(GUIAS_DIR, guia.slug);
+  fs.mkdirSync(guiaDir, { recursive: true });
+  fs.writeFileSync(path.join(guiaDir, 'index.html'), buildGuiaPage(guia), 'utf-8');
+  console.log(`  ✓ /guias/${guia.slug}/`);
+}
+console.log(`\n✅ Guías de compra generadas (1 landing + ${GUIA_SECTORES.length} guías)\n`);
+
 // ── Página de autor ─────────────────────────────────────────────
 const AUTHOR_DIR = path.join(ROOT, 'autores', 'miguel-noguer');
 fs.mkdirSync(AUTHOR_DIR, { recursive: true });
@@ -1346,6 +1609,11 @@ for (const ruta of RUTAS) {
   sitemap += `  <url><loc>${ruta.url}</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
 }
 
+sitemap += `  <url><loc>${GUIAS_URL}</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
+for (const guia of GUIA_SECTORES) {
+  sitemap += `  <url><loc>${GUIAS_URL}${guia.slug}/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${today}</lastmod></url>\n`;
+}
+
 for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
   for (const art of arts) {
     const { catSlug, artSlug } = slugMap[art.id];
@@ -1365,7 +1633,7 @@ let imgSitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>${SITE}/</loc>
     <image:image>
       <image:loc>${SITE}/img/OG.png</image:loc>
-      <image:title>La Inferencia — Psicología basada en evidencia</image:title>
+      <image:title>La Inferencia, Psicología basada en evidencia</image:title>
     </image:image>
   </url>
 `;

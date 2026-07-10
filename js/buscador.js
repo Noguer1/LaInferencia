@@ -1,7 +1,7 @@
-/* Buscador — standalone, sin dependencias de main.js.
+/* Buscador, standalone, sin dependencias de main.js.
    Busca por palabra clave (con normalización de acentos y ponderación
    por campo) sobre el índice generado en build time por generate-pages.js
-   (js/search-index.js). No es un buscador semántico con embeddings —
+   (js/search-index.js). No es un buscador semántico con embeddings: 
    se declara así honestamente en la interfaz. */
 (function () {
   var FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])';
@@ -32,7 +32,7 @@
   };
 
   /* Pequeño mapa de sinónimos/situaciones cotidianas -> vocabulario real
-     de los artículos. Es un parche manual, no un tesauro completo — cubre
+     de los artículos. Es un parche manual, no un tesauro completo, cubre
      los casos de uso más obvios mientras no haya búsqueda semántica real.
      Ampliarlo con más entradas es trabajo editorial barato y de alto valor. */
   var SINONIMOS = {
@@ -134,7 +134,7 @@
   function renderResultados(query) {
     var q = query.trim();
     if (!q) {
-      resultsEl.innerHTML = '<p class="buscador-hint">Escribe una situación o un tema — no hace falta acertar el título exacto del artículo.</p>';
+      resultsEl.innerHTML = '<p class="buscador-hint">Escribe una situación o un tema, no hace falta acertar el título exacto del artículo.</p>';
       return;
     }
     var resultados = buscar(q);

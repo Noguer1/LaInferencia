@@ -1,6 +1,6 @@
 const SEO_OVERRIDES = {
   'eco-01': {
-    seoTitle: 'Precios ,99€: por qué tu cerebro los percibe más baratos — La Inferencia',
+    seoTitle: 'Precios ,99€: por qué tu cerebro los percibe más baratos | La Inferencia',
     seoDescription: '¿Por qué 9,99€ parece mucho más barato que 10€? El left-digit anchoring explicado con el experimento de Cornell (Thomas & Morwitz, 2005).',
     faqs: [
       { q: '¿Por qué el precio ,99 parece más barato si la diferencia es mínima?', a: 'El cerebro procesa números de izquierda a derecha y ancla el valor al primer dígito. 9,99€ se codifica mentalmente como "un nueve", no como "casi diez".' },
@@ -10,7 +10,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'eco-02': {
-    seoTitle: 'Aversión a las pérdidas: perder duele 2,5 veces más que ganar — La Inferencia',
+    seoTitle: 'Aversión a las pérdidas: perder duele 2,5 veces más que ganar | La Inferencia',
     seoDescription: '¿Por qué el dolor de perder 100€ es mayor que la alegría de ganarlos? La teoría prospectiva de Kahneman y Tversky explicada en 4 minutos.',
     faqs: [
       { q: '¿Qué es la aversión a las pérdidas en psicología?', a: 'Perder algo produce un impacto emocional 1,5 a 2,5 veces mayor que ganar la misma cantidad. Documentado por Kahneman y Tversky (1979).' },
@@ -20,7 +20,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'eco-03': {
-    seoTitle: 'Tarjeta vs efectivo: por qué gastas más sin dinero físico — La Inferencia',
+    seoTitle: 'Tarjeta vs efectivo: por qué gastas más sin dinero físico | La Inferencia',
     seoDescription: '¿Por qué gastamos más con tarjeta que en efectivo? El experimento del MIT que descubrió que el pago digital elimina el dolor de pagar.',
     faqs: [
       { q: '¿Por qué gastamos más con tarjeta que con dinero en efectivo?', a: 'El efectivo activa la ínsula anterior (zona del dolor físico). La tarjeta desactiva esa respuesta, eliminando el "dolor de pagar" y facilitando el gasto impulsivo.' },
@@ -30,7 +30,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'eco-04': {
-    seoTitle: 'Efecto IKEA: por qué valoramos más lo que construimos nosotros — La Inferencia',
+    seoTitle: 'Efecto IKEA: por qué valoramos más lo que construimos nosotros | La Inferencia',
     seoDescription: '¿Por qué valoras más un mueble que montaste tú aunque quedara mal? El efecto IKEA de Harvard: el esfuerzo infla artificialmente el valor percibido.',
     faqs: [
       { q: '¿Qué es el efecto IKEA en psicología?', a: 'El sesgo por el que el esfuerzo invertido en crear algo infla su valor percibido, incluso si el resultado es objetivamente inferior a lo que haría un experto.' },
@@ -40,7 +40,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'eco-05': {
-    seoTitle: 'Paradoja de la elección: más opciones paralizan la decisión — La Inferencia',
+    seoTitle: 'Paradoja de la elección: más opciones paralizan la decisión | La Inferencia',
     seoDescription: '¿Por qué más opciones dificultan decidir? La paradoja de la elección de Barry Schwartz: demasiadas alternativas reducen la satisfacción y paralizan.',
     faqs: [
       { q: '¿Qué es la paradoja de la elección?', a: 'El fenómeno por el que tener demasiadas opciones no mejora la decisión sino que la paraliza, aumenta el arrepentimiento y reduce la satisfacción con lo elegido.' },
@@ -50,7 +50,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'eco-06': {
-    seoTitle: 'Marketing placebo: cómo el precio cambia la experiencia real del producto — La Inferencia',
+    seoTitle: 'Marketing placebo: cómo el precio cambia la experiencia real del producto | La Inferencia',
     seoDescription: '¿Un precio caro hace que el vino sepa mejor aunque sea el mismo? Sí. El experimento de Caltech con neuroimagen lo demuestra.',
     faqs: [
       { q: '¿El precio de un producto afecta realmente a cómo lo experimentamos?', a: 'Sí. En fMRI, el cerebro muestra mayor activación en la corteza orbitofrontal cuando cree que el vino es caro, aunque sea exactamente el mismo.' },
@@ -60,7 +60,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'eco-07': {
-    seoTitle: 'Música y decisión de compra: el experimento del vino que nadie sabía — La Inferencia',
+    seoTitle: 'Música y decisión de compra: el experimento del vino que nadie sabía | La Inferencia',
     seoDescription: '¿La música de fondo de una tienda puede triplicar ventas sin que lo sepas? El experimento de Adrian North en la tienda de vinos.',
     faqs: [
       { q: '¿Cómo influye la música en las compras?', a: 'La música activa por priming representaciones mentales que se transfieren a los productos cercanos, afectando qué se elige sin que el consumidor lo perciba.' },
@@ -70,7 +70,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'mod-01': {
-    seoTitle: 'Cognición vestida: la ropa que llevas cambia cómo piensas — La Inferencia',
+    seoTitle: 'Cognición vestida: la ropa que llevas cambia cómo piensas | La Inferencia',
     seoDescription: '¿Ponerse una bata de médico mejora la concentración? El experimento de Northwestern: la ropa altera el rendimiento cognitivo real.',
     faqs: [
       { q: '¿La ropa que llevamos afecta a cómo pensamos?', a: 'Sí. Ponerse ropa asociada a un rol activa las representaciones cognitivas de ese rol, mejorando rendimiento en tareas relacionadas (enclothed cognition).' },
@@ -80,7 +80,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'mod-02': {
-    seoTitle: 'Marcas de lujo y credibilidad: por qué el lujo visible genera desconfianza — La Inferencia',
+    seoTitle: 'Marcas de lujo y credibilidad: por qué el lujo visible genera desconfianza | La Inferencia',
     seoDescription: '¿Mostrar lujo hace que confíen menos en ti? El estudio de Tilburg: las señales de estatus en contextos competitivos activan alertas de fiabilidad.',
     faqs: [
       { q: '¿Por qué mostrar marcas de lujo puede hacer que confíen menos en ti?', a: 'En contextos competitivos o profesionales, el lujo visible activa señales de alerta sobre motivaciones (¿este prioriza el estatus sobre los resultados?).' },
@@ -90,7 +90,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'mod-03': {
-    seoTitle: 'Psicología del color en la ropa: cómo afecta a cómo te perciben — La Inferencia',
+    seoTitle: 'Psicología del color en la ropa: cómo afecta a cómo te perciben | La Inferencia',
     seoDescription: '¿El color de tu ropa cambia cómo te perciben? El rojo aumenta el atractivo. Experimento de Rochester con participantes de 5 países distintos.',
     faqs: [
       { q: '¿Qué colores hacen que parezcas más atractivo o creíble?', a: 'El rojo aumenta el atractivo percibido. El azul y negro se asocian a competencia y autoridad. El amarillo y naranja a accesibilidad y calidez.' },
@@ -100,7 +100,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'mod-04': {
-    seoTitle: 'Efecto Diderot: por qué una compra dispara el deseo de comprar más — La Inferencia',
+    seoTitle: 'Efecto Diderot: por qué una compra dispara el deseo de comprar más | La Inferencia',
     seoDescription: '¿Por qué comprar un sofá nuevo hace que quieras cambiar toda la decoración? El efecto Diderot: psicología del consumo en cadena.',
     faqs: [
       { q: '¿Qué es el efecto Diderot?', a: 'El fenómeno por el que adquirir un objeto nuevo genera presión para actualizar todo lo que lo rodea, creando un ciclo de consumo difícil de detener.' },
@@ -110,7 +110,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'mod-05': {
-    seoTitle: 'Fatiga de decisión: por qué Einstein y Obama siempre vestían lo mismo — La Inferencia',
+    seoTitle: 'Fatiga de decisión: por qué Einstein y Obama siempre vestían lo mismo | La Inferencia',
     seoDescription: '¿Por qué Obama usaba siempre el mismo traje? La fatiga de decisión: cada elección agota capacidad cognitiva. La investigación de Baumeister.',
     faqs: [
       { q: '¿Qué es la fatiga de decisión?', a: 'El deterioro de la calidad de las decisiones tras tomar muchas seguidas. El autocontrol y la deliberación se agotan como un músculo (Baumeister).' },
@@ -120,7 +120,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'der-01': {
-    seoTitle: 'Testigos oculares: por qué son la prueba más peligrosa del sistema judicial — La Inferencia',
+    seoTitle: 'Testigos oculares: por qué son la prueba más peligrosa del sistema judicial | La Inferencia',
     seoDescription: '¿Son fiables los testigos oculares? El 70% de condenas erróneas incluyen un testimonio ocular. La investigación de Elizabeth Loftus.',
     faqs: [
       { q: '¿Son fiables los testigos oculares en un juicio?', a: 'No tan fiables como se cree. Más del 70% de condenas erróneas demostradas por ADN incluyeron testimonio ocular como prueba principal.' },
@@ -130,7 +130,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'der-02': {
-    seoTitle: 'Lenguaje jurídico y veredictos: las palabras del fiscal cambian la condena — La Inferencia',
+    seoTitle: 'Lenguaje jurídico y veredictos: las palabras del fiscal cambian la condena | La Inferencia',
     seoDescription: '¿El lenguaje del fiscal influye en el veredicto? Cómo las palabras elegidas en juicio modifican las condenas sin cambiar los hechos.',
     faqs: [
       { q: '¿Influye el lenguaje del fiscal en el veredicto del jurado?', a: 'Sí. El framing lingüístico activa esquemas cognitivos distintos. Las mismas acciones descritas con palabras más graves generan condenas significativamente más severas.' },
@@ -140,7 +140,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'der-03': {
-    seoTitle: 'El juez hambriento: el estado físico afecta a los veredictos judiciales — La Inferencia',
+    seoTitle: 'El juez hambriento: el estado físico afecta a los veredictos judiciales | La Inferencia',
     seoDescription: '¿Los jueces dan veredictos más duros cuando tienen hambre? Sí. El estudio israelí con 1.112 sesiones que lo demostró.',
     faqs: [
       { q: '¿Influye el hambre o el cansancio en los veredictos de los jueces?', a: 'Sí. El estudio de Danziger (2011) con 1.112 decisiones judiciales mostró que las resoluciones favorables alcanzaban el 65% tras el descanso y caían al 0% antes de él.' },
@@ -150,7 +150,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'der-04': {
-    seoTitle: 'Confesiones falsas: por qué inocentes confiesan crímenes que no cometieron — La Inferencia',
+    seoTitle: 'Confesiones falsas: por qué inocentes confiesan crímenes que no cometieron | La Inferencia',
     seoDescription: '¿Por qué personas inocentes confiesan? Las técnicas de interrogatorio y la psicología detrás de las confesiones falsas, con Saul Kassin.',
     faqs: [
       { q: '¿Por qué personas inocentes confiesan crímenes que no cometieron?', a: 'Bajo interrogatorio intensivo, el cerebro prioriza escapar del estrés inmediato sobre las consecuencias futuras. La confesión parece la salida más rápida al malestar.' },
@@ -160,7 +160,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'dep-01': {
-    seoTitle: 'Rituales deportivos: la rutina del penalti que mejora la precisión un 17% — La Inferencia',
+    seoTitle: 'Rituales deportivos: la rutina del penalti que mejora la precisión un 17% | La Inferencia',
     seoDescription: '¿Los rituales mejoran el rendimiento deportivo? El experimento que demostró que una rutina previa al lanzamiento aumenta la precisión.',
     faqs: [
       { q: '¿Sirven los rituales y rutinas para mejorar el rendimiento deportivo?', a: 'Sí. El experimento de Damisch (2010) demostró que activar una "suerte" antes de un golpe de golf mejoró la precisión en un 35%.' },
@@ -170,7 +170,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'dep-02': {
-    seoTitle: 'Choke under pressure: por qué pensar demasiado arruina el rendimiento — La Inferencia',
+    seoTitle: 'Choke under pressure: por qué pensar demasiado arruina el rendimiento | La Inferencia',
     seoDescription: '¿Por qué los atletas de élite fallan más cuando piensan en lo que hacen? El fenómeno "choke under pressure" de Sian Beilock explicado.',
     faqs: [
       { q: '¿Por qué los deportistas expertos rinden peor cuando piensan en su técnica?', a: 'La expertise motora opera en memoria procedimental sin supervisión consciente. Pensar en los movimientos los transfiere a memoria de trabajo, que es más lenta y limitada.' },
@@ -180,7 +180,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'dep-03': {
-    seoTitle: 'Diálogo interno y rendimiento: cómo la voz en tu cabeza decide el resultado — La Inferencia',
+    seoTitle: 'Diálogo interno y rendimiento: cómo la voz en tu cabeza decide el resultado | La Inferencia',
     seoDescription: '¿El diálogo interno mejora el rendimiento deportivo? La investigación de Hatzigeorgiadis: las palabras que te dices cambian el resultado.',
     faqs: [
       { q: '¿El diálogo interno afecta al rendimiento deportivo?', a: 'Sí. El self-talk instruccional mejora la precisión técnica y el self-talk motivacional aumenta la resistencia y la fuerza (Hatzigeorgiadis).' },
@@ -190,7 +190,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'dep-04': {
-    seoTitle: 'Visualización mental en el deporte: entrenamiento sin moverse — La Inferencia',
+    seoTitle: 'Visualización mental en el deporte: entrenamiento sin moverse | La Inferencia',
     seoDescription: '¿La visualización mental mejora el rendimiento real? Sí. Los estudios muestran activación neuronal idéntica a la práctica física. Experimento de Driskell.',
     faqs: [
       { q: '¿Funciona la visualización mental para mejorar el rendimiento deportivo?', a: 'Sí. El meta-análisis de Driskell (1994) mostró que la práctica mental mejora el rendimiento en un 23% comparado con no practicar.' },
@@ -200,7 +200,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'art-01': {
-    seoTitle: 'Por qué la música produce escalofríos: neurociencia de la euforia estética — La Inferencia',
+    seoTitle: 'Por qué la música produce escalofríos: neurociencia de la euforia estética | La Inferencia',
     seoDescription: '¿Por qué una canción puede darte escalofríos o hacerte llorar? La respuesta neurológica al arte y la dopamina musical, con Salimpoor (McGill).',
     faqs: [
       { q: '¿Por qué algunas canciones producen escalofríos o euforia física?', a: 'La música activa el sistema dopaminérgico. El pico de dopamina se produce en la anticipación antes del clímax musical. Es la misma vía que el placer físico.' },
@@ -210,7 +210,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'art-02': {
-    seoTitle: 'Arte abstracto vs figurativo: por qué el arte ambiguo activa más el cerebro — La Inferencia',
+    seoTitle: 'Arte abstracto vs figurativo: por qué el arte ambiguo activa más el cerebro | La Inferencia',
     seoDescription: '¿Por qué el arte abstracto impacta más que el figurativo? El estudio del Max Planck sobre la red de modo por defecto y la experiencia estética.',
     faqs: [
       { q: '¿Por qué el arte abstracto provoca más respuesta emocional que el figurativo?', a: 'La ambigüedad mantiene activo el sistema de generación de hipótesis. El cerebro interpreta, y en ese proceso se pregunta qué significa para él.' },
@@ -220,7 +220,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'art-03': {
-    seoTitle: 'Regla pico-final: el último acorde importa más que toda la sinfonía — La Inferencia',
+    seoTitle: 'Regla pico-final: el último acorde importa más que toda la sinfonía | La Inferencia',
     seoDescription: '¿Por qué recordamos mejor el final de una experiencia que todo lo demás? La regla pico-final de Kahneman aplicada al arte y la música.',
     faqs: [
       { q: '¿Qué es la regla pico-final de Kahneman?', a: 'El recuerdo de una experiencia depende desproporcionadamente de su punto más intenso (pico) y su momento final, ignorando la mayor parte de la duración.' },
@@ -230,7 +230,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'art-04': {
-    seoTitle: 'Paradoja de la autenticidad: un Picasso falso idéntico vale cero — La Inferencia',
+    seoTitle: 'Paradoja de la autenticidad: un Picasso falso idéntico vale cero | La Inferencia',
     seoDescription: '¿Por qué una copia perfecta de un Picasso no tiene valor? La psicología de la autenticidad y el esencialismo de Paul Bloom.',
     faqs: [
       { q: '¿Por qué una copia perfecta de una obra de arte no tiene el mismo valor?', a: 'Por el esencialismo psicológico: creemos que los objetos tienen una "esencia" no física. El original contiene la intención del artista; la copia, no.' },
@@ -240,7 +240,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tec-01': {
-    seoTitle: 'Scroll infinito y dopamina: cómo las redes secuestran tu atención — La Inferencia',
+    seoTitle: 'Scroll infinito y dopamina: cómo las redes secuestran tu atención | La Inferencia',
     seoDescription: '¿Por qué no puedes dejar de hacer scroll? El diseño persuasivo y el sistema de dopamina: por qué Instagram y TikTok son tan adictivos.',
     faqs: [
       { q: '¿Por qué el scroll infinito es tan difícil de parar?', a: 'Utiliza el refuerzo variable intermitente: recompensas impredecibles que producen más dopamina que las predecibles. Es el mismo mecanismo que las máquinas tragamonedas.' },
@@ -250,7 +250,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tec-02': {
-    seoTitle: 'Notificaciones y concentración: cada interrupción cuesta 23 minutos — La Inferencia',
+    seoTitle: 'Notificaciones y concentración: cada interrupción cuesta 23 minutos | La Inferencia',
     seoDescription: '¿Cuánto tardas en recuperar la concentración tras una notificación? 23 minutos. El estudio de Gloria Mark (UC Irvine) sobre interrupciones digitales.',
     faqs: [
       { q: '¿Cuánto tiempo se tarda en recuperar la concentración tras una interrupción?', a: 'Una media de 23 minutos y 15 segundos para volver al nivel de atención pre-interrupción tras una distracción digital (Gloria Mark, UC Irvine).' },
@@ -260,7 +260,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tec-03': {
-    seoTitle: 'Desinhibición online: por qué somos más agresivos en internet — La Inferencia',
+    seoTitle: 'Desinhibición online: por qué somos más agresivos en internet | La Inferencia',
     seoDescription: '¿Por qué la gente dice en internet lo que nunca diría en persona? El efecto de desinhibición online de John Suler: las 6 condiciones que nos cambian.',
     faqs: [
       { q: '¿Por qué la gente es más agresiva e impulsiva en internet que en persona?', a: 'El anonimato, la invisibilidad, la comunicación asincrónica y la distancia social reducen los frenos inhibitorios normales (efecto de desinhibición online, Suler).' },
@@ -270,7 +270,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tec-04': {
-    seoTitle: 'Burbuja de filtros: cómo el algoritmo distorsiona tu visión del mundo — La Inferencia',
+    seoTitle: 'Burbuja de filtros: cómo el algoritmo distorsiona tu visión del mundo | La Inferencia',
     seoDescription: '¿Qué es la burbuja de filtros y cómo te afecta? El algoritmo que te muestra solo lo que confirma tu visión del mundo, con Eli Pariser.',
     faqs: [
       { q: '¿Qué es la burbuja de filtros o filter bubble?', a: 'Los algoritmos nos muestran selectivamente contenido que confirma nuestras creencias, creando una visión sesgada y personalizada del mundo.' },
@@ -280,7 +280,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'rel-01': {
-    seoTitle: 'Conflictos de pareja irresolubles: el 69% no tiene solución — y está bien — La Inferencia',
+    seoTitle: 'Conflictos de pareja irresolubles: el 69% no tiene solución | y está bien | La Inferencia',
     seoDescription: '¿Por qué siempre discutís por lo mismo? Gottman: el 69% de los conflictos de pareja son perpetuos. Lo importante no es resolverlos, sino gestionarlos.',
     faqs: [
       { q: '¿Por qué las parejas discuten siempre por los mismos temas?', a: 'El 69% de los conflictos de pareja son "perpetuos": diferencias fundamentales de personalidad o valores que no se resuelven. La meta es gestionarlos, no eliminarlos.' },
@@ -290,7 +290,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'rel-02': {
-    seoTitle: 'Experimento del puente colgante: confundimos el miedo con la atracción — La Inferencia',
+    seoTitle: 'Experimento del puente colgante: confundimos el miedo con la atracción | La Inferencia',
     seoDescription: '¿Por qué sentimos atracción cuando tenemos miedo? El clásico experimento de Dutton y Aron sobre la transferencia de excitación fisiológica.',
     faqs: [
       { q: '¿Por qué sentimos atracción cuando estamos en una situación de miedo o emoción?', a: 'Por la transferencia de excitación: la activación fisiológica del miedo (corazón acelerado, adrenalina) puede atribuirse erróneamente a atracción por la persona presente.' },
@@ -300,7 +300,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'rel-03': {
-    seoTitle: 'Teoría triangular del amor de Sternberg: por qué el amor cambia con el tiempo — La Inferencia',
+    seoTitle: 'Teoría triangular del amor de Sternberg: por qué el amor cambia con el tiempo | La Inferencia',
     seoDescription: '¿Por qué el amor cambia con el tiempo? La teoría triangular de Sternberg: intimidad, pasión y compromiso. Los 7 tipos de amor explicados.',
     faqs: [
       { q: '¿Qué es la teoría triangular del amor de Sternberg?', a: 'El amor se compone de tres elementos: intimidad (conexión emocional), pasión (atracción física) y compromiso (decisión de mantener la relación). Sus combinaciones dan 7 tipos de amor.' },
@@ -310,7 +310,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'rel-04': {
-    seoTitle: 'Estilos de apego: cómo tu infancia decide cómo amas de adulto — La Inferencia',
+    seoTitle: 'Estilos de apego: cómo tu infancia decide cómo amas de adulto | La Inferencia',
     seoDescription: '¿Qué es el estilo de apego y cómo afecta a tus relaciones? Apego ansioso, evitativo y seguro: cómo se forman y cómo cambian.',
     faqs: [
       { q: '¿Qué es el estilo de apego y cómo se forma?', a: 'El patrón de relacionarse emocionalmente, que se desarrolla en la infancia según la disponibilidad del cuidador. Hay cuatro estilos: seguro, ansioso, evitativo y desorganizado.' },
@@ -320,7 +320,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'rel-05': {
-    seoTitle: 'La soledad mata: tan letal como fumar 15 cigarrillos al día — La Inferencia',
+    seoTitle: 'La soledad mata: tan letal como fumar 15 cigarrillos al día | La Inferencia',
     seoDescription: '¿La soledad es mala para la salud física? Sí. El meta-análisis de Holt-Lunstad: la soledad aumenta la mortalidad un 26%.',
     faqs: [
       { q: '¿La soledad afecta a la salud física o solo a la mental?', a: 'A ambas. El meta-análisis de Holt-Lunstad (2015) con 3,4 millones de personas mostró que la soledad aumenta la mortalidad un 26%.' },
@@ -330,7 +330,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'rel-06': {
-    seoTitle: 'Calor físico y calidez social: una taza caliente cambia tu juicio sobre alguien — La Inferencia',
+    seoTitle: 'Calor físico y calidez social: una taza caliente cambia tu juicio sobre alguien | La Inferencia',
     seoDescription: '¿Sostener algo caliente cambia cómo percibes a una persona? El experimento de Williams y Bargh (2008) sobre temperatura y percepción social.',
     faqs: [
       { q: '¿Puede sostener algo caliente cambiar cómo percibes a una persona?', a: 'Sí. Sostener un café caliente (vs frío) durante 10 segundos hacía que los participantes juzgaran a un desconocido como más cálido y generoso (Williams & Bargh, 2008).' },
@@ -340,7 +340,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'sm-01': {
-    seoTitle: 'Estado de flujo: la ciencia de la concentración total y el tiempo que desaparece — La Inferencia',
+    seoTitle: 'Estado de flujo: la ciencia de la concentración total y el tiempo que desaparece | La Inferencia',
     seoDescription: '¿Qué es el estado de flujo o flow? La investigación de Csikszentmihalyi: cuándo el tiempo desaparece y el rendimiento llega al máximo.',
     faqs: [
       { q: '¿Qué es el estado de flujo o flow?', a: 'Estado de concentración total donde el tiempo parece detenerse, el esfuerzo desaparece y el rendimiento es máximo. Descrito por Csikszentmihalyi desde los años 70.' },
@@ -350,7 +350,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'sm-02': {
-    seoTitle: 'Ilusión de control: creer que mandas sobre el azar mejora tu salud mental — La Inferencia',
+    seoTitle: 'Ilusión de control: creer que mandas sobre el azar mejora tu salud mental | La Inferencia',
     seoDescription: '¿Es buena la ilusión de control? La paradoja: creer que controlamos lo que no controlamos tiene efectos protectores sobre la salud mental.',
     faqs: [
       { q: '¿Qué es la ilusión de control en psicología?', a: 'La tendencia a creer que podemos influir en resultados que dependen del azar. Documentada por Ellen Langer (1975).' },
@@ -360,7 +360,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'sm-03': {
-    seoTitle: 'Ejercicio como antidepresivo: caminar 30 minutos rivaliza con la medicación — La Inferencia',
+    seoTitle: 'Ejercicio como antidepresivo: caminar 30 minutos rivaliza con la medicación | La Inferencia',
     seoDescription: '¿El ejercicio trata la depresión? El estudio SMILE de Duke: 30 minutos aeróbicos 3 veces/semana iguala la eficacia de la sertralina.',
     faqs: [
       { q: '¿Es el ejercicio físico tan eficaz como los antidepresivos para la depresión?', a: 'Para depresión moderada, el estudio SMILE de Blumenthal (1999) mostró que 30 min de ejercicio aeróbico 3 veces/semana tuvo eficacia comparable a la sertralina a los 4 meses.' },
@@ -370,7 +370,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'sm-04': {
-    seoTitle: 'Flow y disolución del yo: cuando el yo desaparece en la tarea — La Inferencia',
+    seoTitle: 'Flow y disolución del yo: cuando el yo desaparece en la tarea | La Inferencia',
     seoDescription: '¿Qué ocurre en el cerebro durante el estado de flujo? La desactivación del yo consciente y por qué ese estado produce satisfacción profunda.',
     faqs: [
       { q: '¿Por qué en el estado de flujo desaparece la autoconciencia?', a: 'La corteza prefrontal medial (procesamiento del yo) se desactiva durante el flujo. Sin "yo" monitorizando, la ejecución es más fluida y el disfrute más intenso.' },
@@ -380,7 +380,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'sm-05': {
-    seoTitle: 'Autocompasión: la investigación que desmonta el mito de que es debilidad — La Inferencia',
+    seoTitle: 'Autocompasión: la investigación que desmonta el mito de que es debilidad | La Inferencia',
     seoDescription: '¿La autocompasión es debilidad o fuerza? Kristin Neff: tratarte bien cuando fallas mejora el rendimiento y la resiliencia, no los reduce.',
     faqs: [
       { q: '¿Qué es la autocompasión y en qué se diferencia de la autoindulgencia?', a: 'La autocompasión (Neff) implica tres componentes: bondad hacia uno mismo, conciencia del sufrimiento, y humanidad compartida. No implica evitar la responsabilidad.' },
@@ -390,7 +390,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'edu-01': {
-    seoTitle: 'Las notas destruyen la motivación por aprender: la investigación que cuestiona la evaluación — La Inferencia',
+    seoTitle: 'Las notas destruyen la motivación por aprender: la investigación que cuestiona la evaluación | La Inferencia',
     seoDescription: '¿Las notas matan la motivación intrínseca? El experimento de Lepper: recompensar lo que ya motiva destruye el amor por aprender.',
     faqs: [
       { q: '¿Las notas y calificaciones reducen la motivación por aprender?', a: 'Sí, cuando se aplican a actividades intrínsecamente motivantes. El efecto de sobrejustificación: la recompensa externa (nota) sustituye a la motivación interna.' },
@@ -400,7 +400,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'edu-02': {
-    seoTitle: 'Errores deseables: por qué aprender con dificultad funciona mejor — La Inferencia',
+    seoTitle: 'Errores deseables: por qué aprender con dificultad funciona mejor | La Inferencia',
     seoDescription: '¿Por qué lo que cuesta más aprender se recuerda mejor? Los errores deseables y la dificultad deseable de Bjork sobre el aprendizaje.',
     faqs: [
       { q: '¿Qué son los "errores deseables" en el aprendizaje?', a: 'Condiciones que dificultan la adquisición a corto plazo pero mejoran la retención a largo plazo: espaciado, intercalado, preguntas antes de dar respuestas.' },
@@ -410,7 +410,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'edu-03': {
-    seoTitle: 'Efecto protégé: enseñar para aprender — La Inferencia',
+    seoTitle: 'Efecto protégé: enseñar para aprender | La Inferencia',
     seoDescription: '¿Enseñar a otros es la mejor forma de aprender? El efecto protégé y la técnica Feynman: explicar fuerza la comprensión profunda.',
     faqs: [
       { q: '¿Por qué enseñar algo es la mejor forma de aprenderlo?', a: 'Preparar una explicación fuerza la detección de lagunas, la organización del conocimiento y la generación de ejemplos. Lo que no puedes explicar, no lo sabes realmente.' },
@@ -420,7 +420,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'edu-04': {
-    seoTitle: 'Mentalidad de crecimiento vs mentalidad fija: la creencia que decide cuánto aprendes — La Inferencia',
+    seoTitle: 'Mentalidad de crecimiento vs mentalidad fija: la creencia que decide cuánto aprendes | La Inferencia',
     seoDescription: '¿Qué es la mentalidad de crecimiento? Carol Dweck: creer que la inteligencia se puede desarrollar transforma el aprendizaje y la resiliencia.',
     faqs: [
       { q: '¿Qué diferencia hay entre mentalidad fija y mentalidad de crecimiento?', a: 'La mentalidad fija cree que las capacidades son innatas y fijas. La de crecimiento cree que se desarrollan con esfuerzo. Esta creencia cambia el comportamiento y el rendimiento (Dweck).' },
@@ -430,7 +430,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'edu-05': {
-    seoTitle: 'Aprendizaje intercalado: mezclar temas mejora más que estudiar uno a la vez — La Inferencia',
+    seoTitle: 'Aprendizaje intercalado: mezclar temas mejora más que estudiar uno a la vez | La Inferencia',
     seoDescription: '¿Es mejor estudiar un tema hasta dominarlo o mezclar varios? El interleaving: mezclar temas en sesiones de estudio mejora la retención.',
     faqs: [
       { q: '¿Qué es el aprendizaje intercalado o interleaving?', a: 'Estrategia donde se alternan diferentes temas en la misma sesión, en lugar de estudiar un tema hasta dominarlo antes de pasar al siguiente.' },
@@ -440,7 +440,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'edu-06': {
-    seoTitle: 'Disfluencia tipográfica: Comic Sans mejora la retención — La Inferencia',
+    seoTitle: 'Disfluencia tipográfica: Comic Sans mejora la retención | La Inferencia',
     seoDescription: '¿Leer en Comic Sans ayuda a memorizar mejor? El experimento de Oppenheimer: la disfluencia tipográfica fuerza un procesamiento más profundo.',
     faqs: [
       { q: '¿Por qué una fuente difícil de leer puede mejorar la memoria?', a: 'La disfluencia tipográfica activa procesamiento más cuidadoso. La dificultad visual señala al cerebro que debe esforzarse más, mejorando la codificación.' },
@@ -450,7 +450,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tra-01': {
-    seoTitle: 'Principio del progreso: el motivador más poderoso en el trabajo — La Inferencia',
+    seoTitle: 'Principio del progreso: el motivador más poderoso en el trabajo | La Inferencia',
     seoDescription: '¿Qué motiva de verdad en el trabajo? Teresa Amabile: ver progreso en trabajo significativo es el motivador más eficaz, por encima del salario.',
     faqs: [
       { q: '¿Qué motiva más a los trabajadores según la investigación?', a: 'El principio del progreso de Teresa Amabile: ver avance en trabajo que importa es el motivador más potente, por encima del reconocimiento o los incentivos económicos.' },
@@ -460,7 +460,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tra-02': {
-    seoTitle: 'Job crafting: cómo rediseñar tu trabajo desde dentro sin pedir permiso — La Inferencia',
+    seoTitle: 'Job crafting: cómo rediseñar tu trabajo desde dentro sin pedir permiso | La Inferencia',
     seoDescription: '¿Puedes cambiar tu trabajo sin cambiar de empresa? El job crafting de Wrzesniewski: rediseñar tareas, relaciones y significado desde tu puesto.',
     faqs: [
       { q: '¿Qué es el job crafting o crafting del trabajo?', a: 'Modificar proactivamente las tareas, relaciones y/o el significado del propio trabajo para alinearlo mejor con las fortalezas y motivaciones personales.' },
@@ -470,7 +470,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tra-03': {
-    seoTitle: 'Reuniones y fragmentación cognitiva: por qué destruyen la concentración — La Inferencia',
+    seoTitle: 'Reuniones y fragmentación cognitiva: por qué destruyen la concentración | La Inferencia',
     seoDescription: '¿Las reuniones reducen la productividad? La evidencia: las interrupciones fragmentan el pensamiento profundo y reducen la productividad real.',
     faqs: [
       { q: '¿Por qué las reuniones frecuentes reducen la productividad?', a: 'Fragmentan el tiempo en bloques demasiado cortos para trabajo profundo. El pensamiento de alto nivel requiere períodos de concentración sostenida de 60-90 minutos mínimos.' },
@@ -480,7 +480,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tra-04': {
-    seoTitle: 'Burnout vs fatiga: la diferencia entre estar cansado y estar quemado — La Inferencia',
+    seoTitle: 'Burnout vs fatiga: la diferencia entre estar cansado y estar quemado | La Inferencia',
     seoDescription: '¿Tienes burnout o simplemente estás cansado? La diferencia según Maslach: agotamiento emocional, despersonalización y falta de logro.',
     faqs: [
       { q: '¿Qué es el burnout y en qué se diferencia del cansancio normal?', a: 'El burnout (Maslach) tiene tres dimensiones: agotamiento emocional crónico, despersonalización (distancia cínica) y sensación de ineficacia. El cansancio se va con descanso; el burnout no.' },
@@ -490,7 +490,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tra-05': {
-    seoTitle: 'Por qué los bonus no funcionan: motivación intrínseca vs extrínseca — La Inferencia',
+    seoTitle: 'Por qué los bonus no funcionan: motivación intrínseca vs extrínseca | La Inferencia',
     seoDescription: '¿Los bonus económicos motivan realmente? La teoría de la autodeterminación: las recompensas externas pueden destruir la motivación interna.',
     faqs: [
       { q: '¿Por qué los bonus económicos no mejoran la motivación a largo plazo?', a: 'Los incentivos externos desplazan la motivación intrínseca. Una vez que el trabajo "es por dinero", la motivación cae cuando el incentivo desaparece o se normaliza.' },
@@ -500,7 +500,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tra-06': {
-    seoTitle: 'Discriminación por nombre en el CV: el mismo CV recibe un 50% menos de llamadas — La Inferencia',
+    seoTitle: 'Discriminación por nombre en el CV: el mismo CV recibe un 50% menos de llamadas | La Inferencia',
     seoDescription: '¿El nombre en el CV afecta a las oportunidades de trabajo? El audit study: CVs idénticos con nombres de otras etnias reciben muchas menos respuestas.',
     faqs: [
       { q: '¿Discriminan las empresas a candidatos por el nombre en el CV?', a: 'Sí. El audit study de Bertrand y Mullainathan (2004): CVs idénticos con nombres anglosajones recibían un 50% más de llamadas para entrevista.' },
@@ -510,7 +510,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'pol-01': {
-    seoTitle: 'Emociones y voto: tus emociones deciden antes que tus argumentos — La Inferencia',
+    seoTitle: 'Emociones y voto: tus emociones deciden antes que tus argumentos | La Inferencia',
     seoDescription: '¿Decidimos el voto con la razón o con las emociones? Las emociones votan antes que los argumentos racionales: la investigación sobre decisión política.',
     faqs: [
       { q: '¿Votamos con la razón o con las emociones?', a: 'Las emociones primero. La respuesta emocional a candidatos ocurre 200ms antes que el procesamiento cognitivo. Los argumentos vienen después a justificar.' },
@@ -520,7 +520,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'pol-02': {
-    seoTitle: 'Sesgo de confirmación en política: los argumentos contrarios convencen menos — La Inferencia',
+    seoTitle: 'Sesgo de confirmación en política: los argumentos contrarios convencen menos | La Inferencia',
     seoDescription: '¿Por qué los argumentos contrarios nos convencen menos cuanto más fuerte es nuestra opinión? El efecto backfire y el sesgo de confirmación.',
     faqs: [
       { q: '¿Qué es el sesgo de confirmación en política?', a: 'La tendencia a buscar, interpretar y recordar información que confirma las creencias previas, ignorando la que las contradice.' },
@@ -530,7 +530,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'pol-03': {
-    seoTitle: 'Polarización afectiva: nos caemos mal aunque pensemos parecido — La Inferencia',
+    seoTitle: 'Polarización afectiva: nos caemos mal aunque pensemos parecido | La Inferencia',
     seoDescription: '¿La polarización política es ideológica o emocional? La polarización afectiva: nos desagradamos aunque compartamos más opiniones de lo que creemos.',
     faqs: [
       { q: '¿Qué es la polarización afectiva?', a: 'La hostilidad y el rechazo emocional hacia el grupo político contrario, independientemente de las diferencias ideológicas reales.' },
@@ -540,7 +540,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'pol-04': {
-    seoTitle: 'Personalidad y voto: los Big Five predicen la ideología mejor que los argumentos — La Inferencia',
+    seoTitle: 'Personalidad y voto: los Big Five predicen la ideología mejor que los argumentos | La Inferencia',
     seoDescription: '¿Tu personalidad predice tu voto? Los rasgos de personalidad (apertura, escrupulosidad) predicen la ideología política mejor que el nivel educativo.',
     faqs: [
       { q: '¿La personalidad predice la ideología política?', a: 'Sí. Alta apertura a la experiencia se asocia con liberalismo. Alta escrupulosidad y baja apertura se asocian con conservadurismo (meta-análisis de Jost, 2003, 12 países).' },
@@ -550,7 +550,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'ali-01': {
-    seoTitle: 'Efecto social en la alimentación: comemos casi el doble en compañía — La Inferencia',
+    seoTitle: 'Efecto social en la alimentación: comemos casi el doble en compañía | La Inferencia',
     seoDescription: '¿Comemos más cuando estamos acompañados? La facilitación social en la alimentación: por qué la compañía casi dobla lo que ingerimos.',
     faqs: [
       { q: '¿Por qué comemos más cuando estamos con otras personas?', a: 'Por la facilitación social de la alimentación: la presencia de otros alarga la comida, reduce la inhibición y activa normas sociales de comer lo que comen los demás.' },
@@ -560,7 +560,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'ali-02': {
-    seoTitle: 'Alimentación emocional: cómo las emociones controlan lo que comes — La Inferencia',
+    seoTitle: 'Alimentación emocional: cómo las emociones controlan lo que comes | La Inferencia',
     seoDescription: '¿Comes por hambre o por emociones? La alimentación emocional: por qué el estrés, la tristeza y el aburrimiento disparan el apetito.',
     faqs: [
       { q: '¿Qué es la alimentación emocional?', a: 'La tendencia a comer en respuesta a emociones (estrés, tristeza, aburrimiento) en lugar de hambre fisiológica. Afecta a un 30-40% de la población de forma regular.' },
@@ -570,7 +570,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'ali-03': {
-    seoTitle: 'Paradoja de las dietas: prohibirte un alimento dispara el deseo de comerlo — La Inferencia',
+    seoTitle: 'Paradoja de las dietas: prohibirte un alimento dispara el deseo de comerlo | La Inferencia',
     seoDescription: '¿Por qué las dietas restrictivas no funcionan? El efecto de supresión paradójica: prohibirse algo activa obsesión. Wegner y Herman.',
     faqs: [
       { q: '¿Por qué prohibirse comer algo hace que lo desees más?', a: 'El efecto de supresión paradójica: intentar no pensar en algo lo activa. "No pienses en el chocolate" hace que el chocolate se vuelva el pensamiento central.' },
@@ -580,7 +580,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'ali-04': {
-    seoTitle: 'Tamaño del plato y cantidad comida: la ilusión que controla cuánto comes — La Inferencia',
+    seoTitle: 'Tamaño del plato y cantidad comida: la ilusión que controla cuánto comes | La Inferencia',
     seoDescription: '¿El tamaño del plato afecta cuánto comes? La ilusión de Delboeuf: platos grandes hacen que sirvamos y comamos más sin darnos cuenta. Brian Wansink.',
     faqs: [
       { q: '¿Por qué comemos más cuando el plato es más grande?', a: 'Por la ilusión de Delboeuf: una porción parece más pequeña en un plato grande. El cerebro calibra la cantidad visualmente, no con el estómago.' },

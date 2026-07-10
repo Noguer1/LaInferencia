@@ -46,7 +46,7 @@ body {
 #app                  { position: relative; z-index: 1; }
 
 /* ══════════════════════════════════════════════════════════════
-   NIVEL WIDGET — navbar top-right
+   NIVEL WIDGET, navbar top-right
 ══════════════════════════════════════════════════════════════ */
 .nivel-widget {
   display: inline-flex;
@@ -123,7 +123,7 @@ body {
 }
 
 /* ── POPUP DE NIVEL ── */
-/* position: fixed — el JS calcula top/right dinámicamente para evitar
+/* position: fixed, el JS calcula top/right dinámicamente para evitar
    clipping por backdrop-filter/overflow del navbar en móvil */
 .nivel-popup {
   position: fixed;
@@ -236,7 +236,7 @@ body {
 .dark-base .nivel-popup-next strong { color: #E2E8F0; }
 
 @media (max-width: 768px) {
-  /* El posicionado top/right lo calcula el JS — aquí solo ajustamos tamaños */
+  /* El posicionado top/right lo calcula el JS, aquí solo ajustamos tamaños */
   .nivel-popup {
     padding: 1rem 1rem 0.9rem;
     border-radius: 14px;
@@ -638,7 +638,7 @@ textarea:focus:not(:focus-visible) { outline: none; }
 .hamburger-btn:hover { background: color-mix(in srgb, var(--blue) 7%, transparent); border-color: color-mix(in srgb, var(--blue) 22%, transparent); }
 
 .mobile-menu {
-  background: #F5F7FF;   /* 100% opaco — sin transparencia que deje pasar el blur */
+  background: #F5F7FF;   /* 100% opaco, sin transparencia que deje pasar el blur */
   padding: 0.6rem 1.5rem 1.5rem;
 }
 
@@ -663,7 +663,7 @@ textarea:focus:not(:focus-visible) { outline: none; }
   letter-spacing: -0.3px;
 }
 
-/* Overlay — el blur SOLO aquí, nunca en el panel */
+/* Overlay, el blur SOLO aquí, nunca en el panel */
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
@@ -741,7 +741,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   /* Sólo ocultar en pantallas que no tienen espacio */
 }
 
-/* Disco circular — cristal blanco, color solo en el contorno */
+/* Disco circular, cristal blanco, color solo en el contorno */
 .hero-bubble-disk {
   width: 120px;
   height: 120px;
@@ -772,7 +772,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
     box-shadow 0.32s ease;
 }
 
-/* Sin pseudo-elemento — el borde lo hace el box-shadow */
+/* Sin pseudo-elemento, el borde lo hace el box-shadow */
 .hero-bubble-disk::before { display: none; }
 
 /* Hover */
@@ -797,7 +797,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   letter-spacing: 0.15px;
 }
 
-/* Flotado vertical orgánico — sin cambios */
+/* Flotado vertical orgánico, sin cambios */
 @keyframes bubble-float {
   0%, 100% { transform: translateY(0px); }
   35%       { transform: translateY(-8px); }
@@ -1229,7 +1229,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 
 .btn-descarga:hover { background: var(--blue-hover); transform: translateY(-1px); }
 
-/* Icono libro — micro-resplandor en blanco, consistente con los demás iconos del sitio */
+/* Icono libro, micro-resplandor en blanco, consistente con los demás iconos del sitio */
 .btn-descarga-icon {
   flex-shrink: 0;
   filter: drop-shadow(0 0 3px rgba(255,255,255,0.50)) drop-shadow(0 0 6px rgba(255,255,255,0.22));
@@ -1607,7 +1607,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   NAVBAR — botón glosario
+   NAVBAR, botón glosario
 ══════════════════════════════════════════════════════════════ */
 .nav-link-btn {
   background: none;
@@ -1616,7 +1616,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   GLOSARIO — MODAL
+   GLOSARIO, MODAL
 ══════════════════════════════════════════════════════════════ */
 .glosario-overlay {
   position: fixed; inset: 0; z-index: 700;
@@ -1767,7 +1767,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   ONBOARDING — PRIMERA VISITA
+   ONBOARDING, PRIMERA VISITA
 ══════════════════════════════════════════════════════════════ */
 .onboarding-overlay {
   position: fixed;
@@ -1873,7 +1873,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   box-shadow: 0 0 12px color-mix(in srgb, var(--blue) 40%, transparent);
 }
 
-/* Steps — slide + fade transitions */
+/* Steps, slide + fade transitions */
 .onboarding-step {
   display: none;
 }
@@ -1899,7 +1899,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   to   { opacity: 0; transform: translateX(-20px) scale(0.97); }
 }
 
-/* Icon — circular with glow rings */
+/* Icon, circular with glow rings */
 .onboarding-icon {
   width: 78px; height: 78px;
   border-radius: 50%;
@@ -1945,7 +1945,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   margin-bottom: 1.2rem;
 }
 
-/* Features box — softly framed */
+/* Features box, softly framed */
 .onboarding-features {
   display: flex;
   flex-direction: column;
@@ -1999,7 +1999,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 
 .onboarding-skip:hover { color: var(--navy); }
 
-/* Next button — premium shimmer */
+/* Next button, premium shimmer */
 .onboarding-next {
   position: relative;
   overflow: hidden;
@@ -2120,7 +2120,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   TOUR GUIADO — spotlight, tooltip flotante, modal intro/cierre
+   TOUR GUIADO, spotlight, tooltip flotante, modal intro/cierre
 ══════════════════════════════════════════════════════════════ */
 
 /* ── Tour ring: anillo animado que rastrea el elemento spotlight ─ */
@@ -2373,7 +2373,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   width: min(320px, calc(100vw - 2rem)) !important;
 }
 
-/* Tooltip bottom sheet: móvil — se apoya justo encima del dock, sin taparlo */
+/* Tooltip bottom sheet: móvil, se apoya justo encima del dock, sin taparlo */
 .tour-tooltip--bottom-sheet {
   position: fixed !important;
   bottom: calc(68px + env(safe-area-inset-bottom, 0px)) !important;
@@ -2390,7 +2390,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   animation: tour-sheet-up 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-/* Dock elevado por encima del scrim durante el tour — permanece visible e iluminado */
+/* Dock elevado por encima del scrim durante el tour, permanece visible e iluminado */
 #mobile-bottom-nav.tour-dock-raised {
   z-index: 1002 !important;
 }
@@ -2407,7 +2407,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   to   { transform: translateY(0);    opacity: 1;   }
 }
 
-/* ── Flecha CSS (apunta al elemento iluminado — solo desktop) ── */
+/* ── Flecha CSS (apunta al elemento iluminado, solo desktop) ── */
 .tour-arrow {
   position: absolute;
   width: 0;
@@ -2532,7 +2532,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
    MODO LECTURA ENFOQUE
 ══════════════════════════════════════════════════════════════ */
 
-/* Botón de activación — vive dentro de week-label */
+/* Botón de activación, vive dentro de week-label */
 .btn-modo-enfoque {
   display: inline-flex;
   align-items: center;
@@ -2585,7 +2585,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   transition: opacity 0.25s ease, filter 0.25s ease;
 }
 
-/* will-change solo cuando el modo está activo — evita consumo GPU en reposo */
+/* will-change solo cuando el modo está activo, evita consumo GPU en reposo */
 body.modo-enfoque-activo .navbar,
 body.modo-enfoque-activo .reading-progress-bar,
 body.modo-enfoque-activo .search-section,
@@ -2615,7 +2615,7 @@ body.modo-enfoque-activo .propuestas-section {
   pointer-events: none;
 }
 
-/* Artículo nítido con fondo editorial — semana y biblioteca */
+/* Artículo nítido con fondo editorial, semana y biblioteca */
 body.modo-enfoque-activo #panel-semana.active .main-content,
 body.modo-enfoque-activo #panel-biblioteca.active .main-content {
   background: #fbf9f5;
@@ -2670,7 +2670,7 @@ body.modo-enfoque-activo #panel-biblioteca.active .main-content {
   body.modo-enfoque-activo .sidebar-right {
     overflow: hidden;
     min-width: 0;
-    /* Sin padding:0 — el sidebar ya es invisible (opacity 0.04).
+    /* Sin padding:0, el sidebar ya es invisible (opacity 0.04).
        Cambiar padding durante la animación provoca recálculos de layout que causan tirones. */
   }
 }
@@ -3017,6 +3017,94 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   font-style: italic; margin-bottom: 0;
 }
 
+/* ── BLOQUE RECOMENDACIÓN (libro / producto por artículo) ── */
+.recomendacion-block {
+  margin-top: 1.8rem;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 6%, transparent) 0%, color-mix(in srgb, var(--blue-accent) 4%, transparent) 100%);
+  border: 1px solid color-mix(in srgb, var(--blue) 18%, transparent);
+  border-left: 3px solid var(--blue-accent);
+  border-radius: 0 14px 14px 0;
+  padding: 1.2rem 1.5rem;
+}
+
+.recomendacion-label {
+  font-size: 0.78rem; font-weight: 700; color: var(--blue);
+  text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 0.7rem;
+}
+
+.recomendacion-libro {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+
+.recomendacion-libro-info { flex: 1; min-width: 220px; }
+.recomendacion-libro-info strong { font-size: 0.95rem; color: var(--navy); }
+.recomendacion-autor { font-size: 0.8rem; color: var(--text-muted); display: block; margin: 0.1rem 0 0.4rem; }
+.recomendacion-libro-info p { font-size: 0.85rem; color: var(--navy); line-height: 1.65; margin: 0; }
+
+.recomendacion-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.55rem 1rem; background: #FF9900; color: #111;
+  border-radius: 9px; font-size: 0.78rem; font-weight: 800;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: background 0.18s, transform 0.15s; flex-shrink: 0;
+}
+.recomendacion-btn:hover { background: #FFAD33; transform: translateY(-1px); }
+
+.recomendacion-producto {
+  margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px dashed color-mix(in srgb, var(--blue) 20%, transparent);
+}
+.recomendacion-producto-nombre { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+.recomendacion-producto p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin: 0.3rem 0 0.5rem; }
+.recomendacion-producto a { font-size: 0.8rem; font-weight: 700; color: var(--blue); text-decoration: none; }
+.recomendacion-producto a:hover { text-decoration: underline; }
+
+.recomendacion-disclaimer {
+  font-size: 0.72rem; color: var(--text-muted); margin: 0.9rem 0 0;
+  font-style: italic; line-height: 1.5;
+}
+
+/* ── Teaser de libros en página de categoría ── */
+.cat-libros-teaser {
+  margin: 1.4rem 0 2rem;
+  background: color-mix(in srgb, var(--blue) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--blue) 14%, transparent);
+  border-radius: 14px; padding: 1.1rem 1.4rem;
+}
+.cat-libros-teaser-label { font-size: 0.78rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.4px; margin: 0 0 0.6rem; }
+.cat-libros-teaser-row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; margin-bottom: 0.7rem; }
+.cat-libros-teaser-item { font-size: 0.85rem; color: var(--navy); }
+.cat-libros-teaser-item em { color: var(--text-muted); font-style: normal; }
+.cat-libros-teaser-cta { font-size: 0.82rem; font-weight: 700; color: var(--blue); text-decoration: none; }
+.cat-libros-teaser-cta:hover { text-decoration: underline; }
+
+/* ── Recomendación de cierre en Rutas ── */
+.ruta-finish-libro {
+  margin: 1.2rem 0; padding: 1rem 1.2rem;
+  background: color-mix(in srgb, var(--blue) 5%, transparent);
+  border-left: 3px solid var(--blue-accent);
+  border-radius: 0 12px 12px 0;
+  display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap;
+}
+.ruta-finish-libro strong { font-size: 0.9rem; color: var(--navy); }
+
+/* ── Tabla comparativa de Guías de compra ── */
+.guia-tabla-wrap { overflow-x: auto; margin: 1.6rem 0; }
+.guia-tabla { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.guia-tabla th {
+  text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.4px;
+  color: var(--blue); padding: 0.6rem 0.8rem; border-bottom: 2px solid color-mix(in srgb, var(--blue) 20%, transparent);
+}
+.guia-tabla td { padding: 0.9rem 0.8rem; border-bottom: 1px solid var(--card-border); vertical-align: top; color: var(--navy); }
+.guia-tabla-autor { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
+.guia-tabla-estrellas { white-space: nowrap; font-weight: 700; color: var(--blue-accent); }
+
+.botiquin-guias-link {
+  display: inline-block; margin-top: 0.6rem; font-size: 0.82rem; font-weight: 700;
+  color: var(--blue); text-decoration: none;
+}
+.botiquin-guias-link:hover { text-decoration: underline; }
+
 /* ── EXPERIMENTO INTERACTIVO ── */
 .exp-card {
   background: rgba(255,255,255,0.97);
@@ -3216,7 +3304,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   font-size: 0.76rem; font-weight: 700; cursor: pointer;
   border: 1.5px solid; transition: background 0.18s, border-color 0.18s, color 0.18s;
 }
-/* Estado neutro — fondo casi blanco, texto suave con tinte de color */
+/* Estado neutro, fondo casi blanco, texto suave con tinte de color */
 .tf-true  {
   background: rgba(16,185,129,0.05);
   color: #1E5C40;
@@ -3228,7 +3316,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   border-color: rgba(190,80,75,0.20);
 }
 
-/* Hover — verde esmeralda para Verdadero, coral elegante para Falso */
+/* Hover, verde esmeralda para Verdadero, coral elegante para Falso */
 .tf-true:hover:not(:disabled) {
   background: rgba(22,163,74,0.10);
   color: #166534;
@@ -3620,7 +3708,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
     padding: 0 0.25rem;
   }
 
-  /* Burbuja "Tu problema, tu libro" — junto al logo, a la derecha */
+  /* Burbuja "Tu problema, tu libro", junto al logo, a la derecha */
   .hero-bubble {
     display: block !important;
     position: absolute !important;
@@ -3681,7 +3769,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   }
   .tab-btn svg { width: 12px; height: 12px; }
 
-  /* Artículo semanal — tipografía editorial compacta */
+  /* Artículo semanal, tipografía editorial compacta */
   .weekly-teaser-card   { padding: 1.4rem 1.1rem 1.4rem; }
   .wt-title             { font-size: 1.3rem !important; }
   .weekly-featured-card { padding: 1rem 0.9rem; }
@@ -3813,7 +3901,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .dashboard-center { min-width: 0; max-width: 100%; }
 }
 
-/* ── ROLE BADGES — cargos de Miguel ── */
+/* ── ROLE BADGES, cargos de Miguel ── */
 .role-badges-row {
   display: flex;
   flex-wrap: wrap;
@@ -3876,7 +3964,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   white-space: nowrap;
 }
 
-/* ── FUERA DE BATA — intro + tab emoji ── */
+/* ── FUERA DE BATA, intro + tab emoji ── */
 .tab-emoji {
   font-size: 0.78em;
   opacity: 0.65;
@@ -4382,7 +4470,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   TRANSICIÓN DE TEMA — View Transition API (crossfade en GPU)
+   TRANSICIÓN DE TEMA, View Transition API (crossfade en GPU)
    Compatible: Chrome 111+, Safari 18+, Edge 111+
    Fallback para otros: cambio instantáneo (sin jank)
 ══════════════════════════════════════════════════════════════ */
@@ -4447,7 +4535,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .dark-base .mobile-menu-logo   { filter: none; }
 
 /* Botones de acceso rápido en dark mode móvil
-   —var(--navy) se convierte en #E2E8F0 en dark mode, por lo que
+  , var(--navy) se convierte en #E2E8F0 en dark mode, por lo que
    los valores heredados del bloque 768px producen claro sobre claro. */
 @media (max-width: 768px) {
   .dark-base .hqa-exp {
@@ -5177,7 +5265,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   padding: 2rem 0;
 }
 
-/* Tabs del botiquín — pill chips */
+/* Tabs del botiquín, pill chips */
 .bq-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -5596,12 +5684,12 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .botiquin-section { padding: 3.5rem 1.4rem 4.5rem; }
   .bq-search-input { font-size: 0.82rem; }
 
-  /* Gap entre "¿Qué dice la ciencia?" y "Ver en Amazon" — solo móvil.
+  /* Gap entre "¿Qué dice la ciencia?" y "Ver en Amazon", solo móvil.
      flex-grow:0 en sinopsis deja libre el espacio; margin-top:auto en
      flip-back-btn lo absorbería todo. Anclar con valor fijo. */
   .flip-back-ciencia-btn { margin-top: 0; }
 
-  /* Compactar ambas caras — reducir aire vertical */
+  /* Compactar ambas caras, reducir aire vertical */
   .flip-card-front,
   .flip-card-back      { padding: 1rem 1.1rem; }
   .card-icon-container { height: 44px; }
@@ -5971,7 +6059,7 @@ button.fav-item-cta:hover {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   LECTURAS STRIP — chips entre hero y dashboard
+   LECTURAS STRIP, chips entre hero y dashboard
 ══════════════════════════════════════════════════════════════ */
 .lstrip-section {
   padding: 2.2rem 2rem 2.8rem;
@@ -6256,7 +6344,7 @@ button.fav-item-cta:hover {
 
 .flip-card-back-meta { flex: 1; min-width: 0; }
 
-/* Badge de social proof — sello tipo medalla con texto reluciente */
+/* Badge de social proof, sello tipo medalla con texto reluciente */
 .flip-back-badge {
   display: inline-flex;
   align-items: center;
@@ -6338,7 +6426,7 @@ button.fav-item-cta:hover {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   MECANISMO BOX — ¿por qué ocurre? en modal de efectos
+   MECANISMO BOX, ¿por qué ocurre? en modal de efectos
 ══════════════════════════════════════════════════════════════ */
 .mecanismo-box {
   background: color-mix(in srgb, var(--blue-accent) 4%, transparent);
@@ -6564,7 +6652,7 @@ button.fav-item-cta:hover {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   ACORDEONES PREMIUM — Radar de Mitos, Lista de Efectos,
+   ACORDEONES PREMIUM, Radar de Mitos, Lista de Efectos,
    ¿Cuánto te manipula tu cerebro?
 ══════════════════════════════════════════════════════════════ */
 
@@ -6667,13 +6755,13 @@ button.fav-item-cta:hover {
   border-bottom: 1px solid rgba(148,163,184,0.14);
 }
 
-/* ── Radar de Mitos — estilo editorial ── */
+/* ── Radar de Mitos, estilo editorial ── */
 .mitos-accordion-btn {
   background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 7%, transparent) 0%, color-mix(in srgb, #4F46E5 4%, transparent) 100%);
   border-left-color: #4F46E5;
 }
 
-/* ── Radar de Mitos — widget prominente ── */
+/* ── Radar de Mitos, widget prominente ── */
 .mitos-section {
   background: rgba(255,255,255,0.98);
   border: 1px solid color-mix(in srgb, #4F46E5 18%, transparent);
@@ -6760,7 +6848,7 @@ button.fav-item-cta:hover {
   line-height: 1;
 }
 
-/* ── Lista de Efectos — acordeón (desktop y móvil) ── */
+/* ── Lista de Efectos, acordeón (desktop y móvil) ── */
 .efectos-accordion-btn {
   display: flex;
   background: #FFFFFF;
@@ -6863,7 +6951,7 @@ button.fav-item-cta:hover {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   TEST COGNITIVO — BOTÓN SIDEBAR
+   TEST COGNITIVO, BOTÓN SIDEBAR
 ══════════════════════════════════════════════════════════════ */
 .exp-sidebar-btn {
   width: 100%;
@@ -7041,7 +7129,7 @@ button.fav-item-cta:hover {
 .dark-base .efectos-ver-mas:hover { border-color: color-mix(in srgb, var(--blue) 35%, transparent); color: var(--blue); }
 
 /* ══════════════════════════════════════════════════════════════
-   FILTER PILLS — búsqueda por categoría en Fuera de Bata
+   FILTER PILLS, búsqueda por categoría en Fuera de Bata
 ══════════════════════════════════════════════════════════════ */
 #filter-pills {
   display: flex;
@@ -7052,7 +7140,7 @@ button.fav-item-cta:hover {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   PROGRESS TRACKER — gamificación por localStorage
+   PROGRESS TRACKER, gamificación por localStorage
 ══════════════════════════════════════════════════════════════ */
 .progress-tracker {
   margin-bottom: 1.2rem;
@@ -7191,7 +7279,7 @@ button.fav-item-cta:hover {
 .dark-base .article-share-btn:hover { border-color: color-mix(in srgb, var(--blue) 35%, transparent); color: var(--blue); background: color-mix(in srgb, var(--blue) 6%, transparent); }
 
 /* ══════════════════════════════════════════════════════════════
-   TIMELINE — hitos de la psicología
+   TIMELINE, hitos de la psicología
 ══════════════════════════════════════════════════════════════ */
 .timeline-section {
   padding: 5rem 2rem 5.5rem;
@@ -7429,10 +7517,10 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 
 /* ══════════════════════════════════════════════════════════════
-   CONCEPTO DE LA SEMANA — widget sidebar + modal completo
+   CONCEPTO DE LA SEMANA, widget sidebar + modal completo
 ══════════════════════════════════════════════════════════════ */
 
-/* ── Widget (sidebar) — modo claro por defecto ── */
+/* ── Widget (sidebar), modo claro por defecto ── */
 .concepto-semana-widget {
   background: rgba(255,255,255,0.98);
   border: 1px solid color-mix(in srgb, var(--blue) 18%, transparent);
@@ -7551,7 +7639,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 /* ══════════════════════════════════════════════════════════════
-   CONCEPTO MODAL — overlay con blur editorial
+   CONCEPTO MODAL, overlay con blur editorial
 ══════════════════════════════════════════════════════════════ */
 .concepto-modal-overlay {
   position: fixed;
@@ -7689,7 +7777,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   line-height: 1.75;
 }
 
-/* Sección "En la práctica" — blockquote editorial */
+/* Sección "En la práctica", blockquote editorial */
 .concepto-modal-section--ejemplo {
   background: color-mix(in srgb, var(--blue) 4%, transparent);
   border-left: 3px solid color-mix(in srgb, var(--blue) 30%, transparent);
@@ -7711,7 +7799,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   margin: 0;
 }
 
-/* Sección "Aplicación" — tip card */
+/* Sección "Aplicación", tip card */
 .concepto-modal-section--aplicacion {
   background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 7%, transparent) 0%, color-mix(in srgb, var(--blue-accent) 4%, transparent) 100%);
   border: 1px solid color-mix(in srgb, var(--blue) 18%, transparent);
@@ -8114,10 +8202,10 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 
 /* ════════════════════════════════════════════════════════════════
-   NUEVAS FUNCIONALIDADES — Historial · Quiz · TOC · Stats · Desafío
+   NUEVAS FUNCIONALIDADES, Historial · Quiz · TOC · Stats · Desafío
    ════════════════════════════════════════════════════════════════ */
 
-/* ── HISTORIAL DE LECTURA — badge en tarjeta ── */
+/* ── HISTORIAL DE LECTURA, badge en tarjeta ── */
 .read-badge {
   position: absolute;
   top: 0.6rem; left: 0.6rem;
@@ -8432,7 +8520,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 
 /* ══════════════════════════════════════════════════════════════
-   SEMANAS ANTERIORES — Drawer móvil
+   SEMANAS ANTERIORES, Drawer móvil
    ══════════════════════════════════════════════════════════════ */
 
 /* Botón "Ver anteriores" visible en todas las pantallas */
@@ -8568,7 +8656,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 
 /* ══════════════════════════════════════════════════════════════
-   MITO — BOTÓN DETALLE + VER MÁS + MODAL
+   MITO, BOTÓN DETALLE + VER MÁS + MODAL
 ══════════════════════════════════════════════════════════════ */
 
 .mito-detalle-btn {
@@ -8723,7 +8811,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   margin-top: 0.3rem;
 }
 
-/* Dark mode — modal mito */
+/* Dark mode, modal mito */
 .dark-base .mito-info-card {
   background: #0B1524;
   box-shadow: 0 24px 80px rgba(0,0,0,0.55);
@@ -8739,7 +8827,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 
 /* ══════════════════════════════════════════════════════════════
-   PROPUESTAS — BOTÓN DE VOTO
+   PROPUESTAS, BOTÓN DE VOTO
 ══════════════════════════════════════════════════════════════ */
 
 .prop-card-footer {
@@ -8796,7 +8884,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 
 /* ══════════════════════════════════════════════════════════════
-   ARTÍCULOS — GRÁFICOS / ILUSTRACIONES
+   ARTÍCULOS, GRÁFICOS / ILUSTRACIONES
 ══════════════════════════════════════════════════════════════ */
 
 .article-chart {
@@ -8940,7 +9028,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     radial-gradient(ellipse 65% 50% at 85% 60%, rgba(160,0,30,0.06) 0%, transparent 60%);
 }
 
-/* ── Obsidiana (Nivel 5 — Córtex Supremo) — tema claro premium ── */
+/* ── Obsidiana (Nivel 5 (Córtex Supremo)) tema claro premium ── */
 [data-theme="obsidiana"] {
   --navy:         #1C1814;
   --blue:         #B8920C;
@@ -9086,7 +9174,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   animation: obsidiana-sparkle-b 5s ease-in-out 2.2s infinite;
 }
 
-/* Texto "La Inferencia" — mismo oro 3D diagonal + barrido de luz */
+/* Texto "La Inferencia", mismo oro 3D diagonal + barrido de luz */
 [data-theme="obsidiana"] .navbar-brand-name,
 [data-theme="obsidiana"] .hero-content h1 {
   background: linear-gradient(
@@ -9118,7 +9206,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 
 /* ══════════════════════════════════════════════════════════════
-   MOBILE BOTTOM NAV — La Inferencia
+   MOBILE BOTTOM NAV | La Inferencia
 ══════════════════════════════════════════════════════════════ */
 
 /* Overlay de transición entre páginas */
@@ -9155,7 +9243,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     /* Sin box-shadow recto: la sombra la da el drop-shadow en .mbn-curve */
     height: 68px;
     overflow: visible;
-    /* GPU compositing: capa propia permanente — evita salto durante animaciones de contenido */
+    /* GPU compositing: capa propia permanente, evita salto durante animaciones de contenido */
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     will-change: transform;
@@ -9169,7 +9257,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     }
   }
 
-  /* Indicador magnético — círculo único que se desliza entre pestañas */
+  /* Indicador magnético, círculo único que se desliza entre pestañas */
   .mbn-indicator {
     position: absolute;
     width: 42px;
@@ -9239,7 +9327,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     z-index: 3;
   }
 
-  /* Campana — rellena el fondo blanco, ancho dinámico via JS */
+  /* Campana, rellena el fondo blanco, ancho dinámico via JS */
   .mbn-curve {
     position: absolute;
     top: -40px;
@@ -9256,7 +9344,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     filter: drop-shadow(0 -5px 10px rgba(0,0,0,0.09));
   }
 
-  /* Borde plasma — ancho dinámico via JS, barrido de extremo a extremo */
+  /* Borde plasma, ancho dinámico via JS, barrido de extremo a extremo */
   .mbn-curve-plasma {
     position: absolute;
     top: -40px;
@@ -9520,7 +9608,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
   /* will-change solo durante la animación (JS lo añade/quita); estático rompe fixed en Safari */
   /* overflow:hidden evita que el translateX inicial cree scroll horizontal y layout shifts */
-  /* contain:layout paint aísla reflows/repaints — la animación no afecta elementos externos */
+  /* contain:layout paint aísla reflows/repaints, la animación no afecta elementos externos */
   #mob-slide-wrap { position: relative; overflow: hidden; width: 100%; contain: layout paint; }
 
   #mob-slide-wrap.slide-enter-right {
@@ -9649,7 +9737,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 .dark-base #mbn-overlay { background: var(--nav-bg, #030C1A); }
 
 /* ══════════════════════════════════════════════════════════════
-   SECCIÓN YO — PERFIL PREMIUM MÓVIL
+   SECCIÓN YO, PERFIL PREMIUM MÓVIL
 ══════════════════════════════════════════════════════════════ */
 .mob-yo-section {
   display: none;
@@ -10168,7 +10256,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 /* ── PÁGINAS ESTÁTICAS DE ARTÍCULO ─────────────────────────── */
 
-/* Mini-hero: idéntico al hero principal — sin fondo propio (usa #bg-layer) */
+/* Mini-hero: idéntico al hero principal, sin fondo propio (usa #bg-layer) */
 /* ── Navbar sticky artículos estáticos ──────────────────────── */
 .static-navbar {
   position: sticky;
@@ -10306,7 +10394,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   100% { transform: scale(3.5); opacity: 0; }
 }
 
-/* Logo encima del cerebro — mismo tamaño que .hero-logo */
+/* Logo encima del cerebro, mismo tamaño que .hero-logo */
 .static-hero-logo {
   position: relative;
   z-index: 1;
@@ -11218,7 +11306,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 .ruta-finish-otras { font-size: 0.82rem; font-weight: 700; color: var(--navy); text-decoration: none; }
 .ruta-finish-otras:hover { color: var(--blue); }
 
-/* Cabecera premium de /rutas/ — mismo lenguaje que .sim-hero-header */
+/* Cabecera premium de /rutas/, mismo lenguaje que .sim-hero-header */
 .ruta-hero-header {
   position: relative;
   padding: 2.5rem 2.4rem;
