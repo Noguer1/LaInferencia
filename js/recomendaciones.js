@@ -480,3 +480,4 @@ const RECOMENDACIONES = {
 };
 
 if (typeof module !== 'undefined') module.exports = RECOMENDACIONES;
+if (typeof window !== 'undefined') window.RECOMENDACIONES = RECOMENDACIONES;

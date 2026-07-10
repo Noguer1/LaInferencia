@@ -3295,6 +3295,29 @@ function _buildStatsHTML(id) {
   ).join('')}</div>`;
 }
 
+function _buildRecomendacionHTML(id) {
+  const rec = (window.RECOMENDACIONES || {})[id];
+  if (!rec || !rec.libro) return '';
+  const { libro, producto } = rec;
+  return `<div class="recomendacion-block">
+    <p class="recomendacion-label">Si quieres profundizar en esto</p>
+    <div class="recomendacion-libro">
+      <div class="recomendacion-libro-info">
+        <strong>${libro.titulo}</strong>
+        <span class="recomendacion-autor">${libro.autor}</span>
+        <p>${libro.sinopsis}</p>
+      </div>
+      <a href="${libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="articulo-spa">Ver libro</a>
+    </div>${producto ? `
+    <div class="recomendacion-producto">
+      <span class="recomendacion-producto-nombre">Para aplicarlo hoy: ${producto.nombre}</span>
+      <p>${producto.nota}</p>
+      <a href="${producto.amazon}" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${producto.nombre}" data-umami-event-origen="articulo-spa-producto">Ver producto →</a>
+    </div>` : ''}
+    <p class="recomendacion-disclaimer">Enlaces de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti.</p>
+  </div>`;
+}
+
 (function _initQuizDone() {})(); /* placeholder, quiz IIFE below registers helpers */
 function _getQuizDone(id) {
   try { return JSON.parse(localStorage.getItem('li_quizzes') || '{}')[id] || false; } catch { return false; }
@@ -7658,6 +7681,7 @@ const CONCEPTOS_SEMANA = [
             </div>
             <p>${art.aplicacion}</p>
           </div>` : ''}
+          ${_buildRecomendacionHTML(art.id)}
           ${_buildQuizBtnHTML(art.id)}
           <a href="${art.sourceUrl}" class="source-verify-btn" target="_blank" rel="noopener noreferrer">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>

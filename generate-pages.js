@@ -1347,6 +1347,7 @@ const SAVE_BTN_V  = hashOf('js/save-button.js');
 const SIM_V       = hashOf('js/simulador.js');
 const BUSCADOR_V  = hashOf('js/buscador.js');
 const RUTAS_JS_V  = hashOf('js/rutas.js');
+const RECOMENDACIONES_V = hashOf('js/recomendaciones.js');
 
 // ── Template landing de Rutas de Aprendizaje ────────────────────
 const RUTAS_URL = `${SITE}/rutas/`;
@@ -1676,6 +1677,7 @@ indexHtml = indexHtml
   .replace(/css\/styles\.css\?v=[a-z0-9]+/, `css/styles.css?v=${CSS_V}`)
   .replace(/js\/main\.js\?v=[a-z0-9]+/, `js/main.js?v=${MAIN_V}`)
   .replace(/js\/search-index\.js\?v=[a-z0-9]+/, `js/search-index.js?v=${SEARCH_INDEX_V}`)
-  .replace(/js\/buscador\.js\?v=[a-z0-9]+/, `js/buscador.js?v=${BUSCADOR_V}`);
+  .replace(/js\/buscador\.js\?v=[a-z0-9]+/, `js/buscador.js?v=${BUSCADOR_V}`)
+  .replace(/js\/recomendaciones\.js\?v=[a-z0-9]+/, `js/recomendaciones.js?v=${RECOMENDACIONES_V}`);
 fs.writeFileSync(indexPath, indexHtml, 'utf-8');
 console.log('✅ index.html sincronizado con las versiones de cache-busting actuales');
