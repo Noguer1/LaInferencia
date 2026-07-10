@@ -5,9 +5,23 @@
  * Uso: node generate-pages.js
  */
 
-const fs   = require('fs');
-const path = require('path');
-const vm   = require('vm');
+const fs     = require('fs');
+const path   = require('path');
+const vm     = require('vm');
+const crypto = require('crypto');
+
+// ── Cache-busting automático por contenido ──────────────────────
+// La versión ?v= de cada asset se calcula a partir de su propio
+// contenido, no a mano — así es imposible olvidar subirla cuando
+// se edita css/styles.css o js/main.js (vercel.json cachea /css/
+// y /js/ como immutable durante 1 año; sin esto, un cambio de CSS
+// puede no llegar nunca a un navegador que ya visitó el sitio).
+function hashOf(relPath) {
+  const content = fs.readFileSync(path.join(__dirname, relPath), 'utf-8');
+  return crypto.createHash('md5').update(content).digest('hex').slice(0, 10);
+}
+const CSS_V  = hashOf('css/styles.css');
+const MAIN_V = hashOf('js/main.js');
 
 // ── Extraer datos de artículos desde main.js ───────────────────
 const mainCode  = fs.readFileSync(path.join(__dirname, 'js/main.js'), 'utf-8');
@@ -361,8 +375,8 @@ function staticHero() {
 }
 
 function staticFooterScripts() {
-  return `<script src="/js/search-index.js?v=1"></script>
-<script defer src="/js/buscador.js?v=2"></script>`;
+  return `<script src="/js/search-index.js?v=${SEARCH_INDEX_V}"></script>
+<script defer src="/js/buscador.js?v=${BUSCADOR_V}"></script>`;
 }
 
 function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {
@@ -392,8 +406,8 @@ function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="preload" as="style" href="/css/styles.css?v=42" />
-  <link rel="stylesheet" href="/css/styles.css?v=42" />
+  <link rel="preload" as="style" href="/css/styles.css?v=${CSS_V}" />
+  <link rel="stylesheet" href="/css/styles.css?v=${CSS_V}" />
   <link rel="icon" type="image/png" href="/img/logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
   <meta name="theme-color" content="#030C1A" />
@@ -714,8 +728,8 @@ ${sidebarHTML}
   init();start();
 }());
 </script>
-<script defer src="/js/save-button.js?v=1"></script>
-${rutaStep ? '<script defer src="/js/rutas.js?v=1"></script>' : ''}
+<script defer src="/js/save-button.js?v=${SAVE_BTN_V}"></script>
+${rutaStep ? `<script defer src="/js/rutas.js?v=${RUTAS_JS_V}"></script>` : ''}
 ${staticFooterScripts()}
 </body>
 </html>`;
@@ -934,7 +948,7 @@ ${cardsHTML}
     </div>
   </main>
 
-<script defer src="/js/simulador.js?v=1"></script>
+<script defer src="/js/simulador.js?v=${SIM_V}"></script>
 ${staticFooterScripts()}
 </body>
 </html>`;
@@ -1013,7 +1027,7 @@ ${staticHero()}
     </div>
   </main>
 
-<script defer src="/js/simulador.js?v=1"></script>
+<script defer src="/js/simulador.js?v=${SIM_V}"></script>
 ${staticFooterScripts()}
 </body>
 </html>`;
@@ -1067,6 +1081,15 @@ function buildSearchIndex() {
 
   return items;
 }
+
+// Se calcula ahora (no al final) para poder derivar su versión de
+// cache-busting antes de generar cualquier página que la referencie.
+const SEARCH_INDEX_JSON = JSON.stringify(buildSearchIndex());
+const SEARCH_INDEX_V = crypto.createHash('md5').update(SEARCH_INDEX_JSON).digest('hex').slice(0, 10);
+const SAVE_BTN_V  = hashOf('js/save-button.js');
+const SIM_V       = hashOf('js/simulador.js');
+const BUSCADOR_V  = hashOf('js/buscador.js');
+const RUTAS_JS_V  = hashOf('js/rutas.js');
 
 // ── Template landing de Rutas de Aprendizaje ────────────────────
 const RUTAS_URL = `${SITE}/rutas/`;
@@ -1131,7 +1154,7 @@ ${cardsHTML}
   </main>
 
 ${staticFooterScripts()}
-<script defer src="/js/rutas.js?v=1"></script>
+<script defer src="/js/rutas.js?v=${RUTAS_JS_V}"></script>
 </body>
 </html>`;
 }
@@ -1211,7 +1234,7 @@ ${listaHTML}
   </main>
 
 ${staticFooterScripts()}
-<script defer src="/js/rutas.js?v=1"></script>
+<script defer src="/js/rutas.js?v=${RUTAS_JS_V}"></script>
 </body>
 </html>`;
 }
@@ -1348,11 +1371,25 @@ imgSitemap += `</urlset>\n`;
 fs.writeFileSync(path.join(ROOT, 'sitemap-images.xml'), imgSitemap, 'utf-8');
 console.log(`✅ sitemap-images.xml generado con ${count + 1} entradas`);
 
-// ── Índice de búsqueda ────────────────────────────────────────
-const searchIndex = buildSearchIndex();
+// ── Índice de búsqueda (ya calculado arriba, para poder hashear su versión) ──
 fs.writeFileSync(
   path.join(ROOT, 'js', 'search-index.js'),
-  `window.LI_SEARCH_INDEX = ${JSON.stringify(searchIndex)};\n`,
+  `window.LI_SEARCH_INDEX = ${SEARCH_INDEX_JSON};\n`,
   'utf-8'
 );
-console.log(`✅ js/search-index.js generado con ${searchIndex.length} entradas`);
+console.log(`✅ js/search-index.js generado (versión ${SEARCH_INDEX_V})`);
+
+// ── Sincronizar index.html con las mismas versiones de cache-busting ──
+// index.html no lo genera este script (es la SPA hecha a mano), pero sus
+// referencias a estos assets deben llevar la misma versión o un navegador
+// que ya visitó el sitio puede quedarse con CSS/JS viejo indefinidamente
+// (vercel.json cachea /css/ y /js/ como immutable durante 1 año).
+const indexPath = path.join(ROOT, 'index.html');
+let indexHtml = fs.readFileSync(indexPath, 'utf-8');
+indexHtml = indexHtml
+  .replace(/css\/styles\.css\?v=[a-z0-9]+/, `css/styles.css?v=${CSS_V}`)
+  .replace(/js\/main\.js\?v=[a-z0-9]+/, `js/main.js?v=${MAIN_V}`)
+  .replace(/js\/search-index\.js\?v=[a-z0-9]+/, `js/search-index.js?v=${SEARCH_INDEX_V}`)
+  .replace(/js\/buscador\.js\?v=[a-z0-9]+/, `js/buscador.js?v=${BUSCADOR_V}`);
+fs.writeFileSync(indexPath, indexHtml, 'utf-8');
+console.log('✅ index.html sincronizado con las versiones de cache-busting actuales');
