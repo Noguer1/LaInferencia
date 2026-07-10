@@ -16,6 +16,8 @@
   --badge-border: color-mix(in srgb, var(--blue) 18%, transparent);
   --pill-bg:      linear-gradient(130deg, var(--blue-accent) 0%, var(--blue) 100%);
   --pill-shadow:  0 2px 10px color-mix(in srgb, var(--blue) 30%, transparent);
+  --card-bg:      rgba(255,255,255,0.97);
+  --border:       var(--card-border);
 }
 
 body {
@@ -4419,6 +4421,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   --card-shadow:  0 2px 8px rgba(0,0,0,0.40), 0 8px 32px rgba(0,0,0,0.35);
   --badge-bg:     color-mix(in srgb, var(--blue) 10%, transparent);
   --badge-border: color-mix(in srgb, var(--blue) 22%, transparent);
+  --card-bg:      rgba(12,22,42,0.98);
+  --border:       var(--card-border);
 }
 
 .dark-base body { background-color: #07101E; }
@@ -10761,10 +10765,74 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 /* ── Simulador de Sesgos ────────────────────────────────────── */
+.sim-hero-header {
+  position: relative;
+  padding: 2.5rem 2.4rem;
+  margin-bottom: 2rem;
+  border-radius: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow), inset 0 1px 0 rgba(255,255,255,0.85);
+  overflow: hidden;
+}
+.dark-base .sim-hero-header { box-shadow: var(--card-shadow); }
+.sim-hero-header::before {
+  content: '';
+  position: absolute;
+  top: -45%;
+  right: -8%;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--blue-accent) 16%, transparent) 0%, transparent 70%);
+  pointer-events: none;
+}
+.sim-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--pill-bg);
+  box-shadow: var(--pill-shadow);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+.sim-hero-header h1 {
+  font-size: clamp(1.7rem, 4.2vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 0 0 0.9rem;
+  max-width: 22ch;
+  position: relative;
+}
+.sim-hero-header > p {
+  font-size: 0.98rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  max-width: 54ch;
+  margin: 0 0 1.6rem;
+  position: relative;
+}
+.sim-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: relative;
+}
+.sim-hero-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.sim-hero-stat strong { font-size: 1.4rem; font-weight: 800; color: var(--blue); line-height: 1; }
+.sim-hero-stat span { font-size: 0.76rem; color: var(--text-muted); font-weight: 600; }
+
 #sim-summary-root {
-  margin-top: 1.5rem;
-  padding: 0.7rem 1rem;
-  border-radius: 10px;
+  margin: 0 0 1.6rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 12px;
   background: color-mix(in srgb, #10B981 8%, transparent);
   border: 1px solid color-mix(in srgb, #10B981 22%, transparent);
   color: var(--navy);
@@ -10774,46 +10842,78 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 .sim-landing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.1rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.4rem;
 }
 
 .sim-landing-card {
+  --accent: var(--blue);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
-  padding: 1.3rem 1.4rem;
+  gap: 0.7rem;
+  padding: 1.8rem 1.6rem 1.5rem;
   background: var(--card-bg);
-  border: 1.5px solid var(--border);
-  border-radius: 16px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
   text-decoration: none;
-  transition: border-color 0.2s, transform 0.15s;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
 }
-.sim-landing-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+.sim-landing-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--blue-accent) 100%);
+}
+.sim-landing-card:nth-child(2) { --accent: color-mix(in srgb, var(--blue) 45%, var(--blue-accent)); }
+.sim-landing-card:nth-child(3) { --accent: var(--blue-accent); }
+
+.sim-landing-card-num {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.2rem;
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--navy);
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.sim-landing-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow), 0 14px 30px color-mix(in srgb, var(--accent) 22%, transparent);
+}
 
 .sim-landing-card-badge {
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--blue);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
-.sim-landing-card h2 { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin: 0; line-height: 1.35; }
-.sim-landing-card p { font-size: 0.84rem; color: var(--text-muted); margin: 0; line-height: 1.55; }
-.sim-landing-card-cta { font-size: 0.82rem; font-weight: 700; color: var(--blue); margin-top: 0.3rem; }
+.sim-landing-card h2 { font-size: 1.14rem; font-weight: 800; color: var(--navy); margin: 0; line-height: 1.35; }
+.sim-landing-card p { font-size: 0.86rem; color: var(--text-muted); margin: 0; line-height: 1.55; }
+.sim-landing-card-cta { font-size: 0.82rem; font-weight: 700; color: var(--accent); margin-top: 0.4rem; }
 
 .sim-landing-card--done { border-color: color-mix(in srgb, #10B981 45%, var(--border)); }
+.sim-landing-card--done .sim-landing-card-num { display: none; }
 .sim-landing-card--done::after {
   content: '✓ Completado';
   position: absolute;
-  top: 0.9rem;
-  right: 1rem;
+  top: 1rem;
+  right: 1.1rem;
   font-size: 0.68rem;
   font-weight: 700;
   color: #10B981;
+  background: color-mix(in srgb, #10B981 12%, transparent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
 }
 
 .sim-card {
@@ -10939,12 +11039,117 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 .sim-finish-link { font-size: 0.85rem; font-weight: 600; color: var(--blue); text-decoration: none; }
 .sim-finish-link:hover { text-decoration: underline; }
 
-.dark-base .sim-landing-card,
-.dark-base .sim-card,
 .dark-base .sim-ab-btn { background: rgba(255,255,255,0.03); border-color: rgba(148,163,184,0.14); }
 
 @media (max-width: 680px) {
+  .sim-hero-header { padding: 1.8rem 1.5rem; }
+  .sim-hero-stats { gap: 1.4rem; }
   .sim-landing-grid { grid-template-columns: 1fr; }
+  .sim-landing-card-num { font-size: 2.6rem; }
   .sim-card { padding: 1.3rem 1.2rem; }
   .sim-context { font-size: 0.96rem; }
+}
+
+/* ── Buscador ───────────────────────────────────────────────── */
+.static-navbar-search-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(148,163,184,0.12);
+  border: none;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  flex-shrink: 0;
+}
+.static-navbar-search-btn:hover { background: color-mix(in srgb, var(--blue) 14%, transparent); color: var(--blue); }
+
+.buscador-overlay {
+  position: fixed; inset: 0; z-index: 700;
+  background: rgba(3, 8, 22, 0.55);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 4rem 1.5rem 1.5rem;
+}
+.buscador-overlay[hidden] { display: none; }
+
+.buscador-card {
+  background: rgba(247, 249, 255, 0.99);
+  border-radius: 20px;
+  width: 100%; max-width: 560px;
+  max-height: 78vh;
+  display: flex; flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.22), 0 4px 16px color-mix(in srgb, var(--blue) 10%, transparent);
+  overflow: hidden;
+  position: relative;
+}
+
+.buscador-close {
+  position: absolute; top: 0.9rem; right: 0.9rem;
+  width: 38px; height: 38px;
+  background: rgba(148,163,184,0.12); border: none; border-radius: 10px;
+  cursor: pointer; color: var(--text-body);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}
+.buscador-close:hover { background: rgba(148,163,184,0.26); }
+
+.buscador-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.3rem 3.2rem 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.buscador-header input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.98rem;
+  color: var(--navy);
+}
+.buscador-header input::placeholder { color: var(--text-muted); }
+
+.buscador-results {
+  overflow-y: auto;
+  padding: 0.6rem;
+}
+
+.buscador-hint {
+  padding: 1.4rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+.buscador-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.buscador-result:hover, .buscador-result:focus-visible { background: color-mix(in srgb, var(--blue) 7%, transparent); }
+.buscador-result-badge { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: var(--blue); }
+.buscador-result strong { font-size: 0.92rem; color: var(--navy); line-height: 1.35; }
+.buscador-result p { font-size: 0.8rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+
+.dark-base .buscador-card { background: rgba(8, 16, 34, 0.98); }
+.dark-base .buscador-header input { color: #E2E8F0; }
+.dark-base .buscador-close { background: rgba(148,163,184,0.10); }
+.dark-base .static-navbar-search-btn { background: rgba(148,163,184,0.10); color: #C0D0E4; }
+
+@media (max-width: 600px) {
+  .buscador-overlay { padding: 1.2rem; align-items: center; }
+  .buscador-card { max-height: 88vh; }
 }

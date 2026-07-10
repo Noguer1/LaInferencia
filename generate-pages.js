@@ -286,6 +286,9 @@ function staticHero() {
         <span>La Inferencia</span>
       </a>
       <div class="static-navbar-links">
+        <button type="button" class="static-navbar-search-btn" data-buscador-trigger aria-label="Buscar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
         <a href="/simulador-de-sesgos/" class="static-navbar-link">Simulador de Sesgos</a>
         <a href="/" class="static-navbar-cta">Explorar los ${TOTAL_ARTS} artículos →</a>
       </div>
@@ -300,6 +303,11 @@ function staticHero() {
       <p class="static-hero-tagline">La psicología más allá del aula y la consulta.<br>Investigación real, en español, gratis.</p>
     </div>
   </section>`;
+}
+
+function staticFooterScripts() {
+  return `<script src="/js/search-index.js?v=1"></script>
+<script defer src="/js/buscador.js?v=1"></script>`;
 }
 
 function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {
@@ -329,8 +337,8 @@ function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="preload" as="style" href="/css/styles.css?v=41" />
-  <link rel="stylesheet" href="/css/styles.css?v=41" />
+  <link rel="preload" as="style" href="/css/styles.css?v=42" />
+  <link rel="stylesheet" href="/css/styles.css?v=42" />
   <link rel="icon" type="image/png" href="/img/logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
   <meta name="theme-color" content="#030C1A" />
@@ -614,7 +622,7 @@ ${sidebarHTML}
 }());
 </script>
 <script defer src="/js/save-button.js?v=1"></script>
-
+${staticFooterScripts()}
 </body>
 </html>`;
 }
@@ -689,6 +697,7 @@ ${articlesHTML}
     </div>
   </main>
 
+${staticFooterScripts()}
 </body>
 </html>`;
 }
@@ -763,6 +772,7 @@ ${articlesHTML}
     </div>
   </main>
 
+${staticFooterScripts()}
 </body>
 </html>`;
 }
@@ -831,6 +841,7 @@ ${cardsHTML}
   </main>
 
 <script defer src="/js/simulador.js?v=1"></script>
+${staticFooterScripts()}
 </body>
 </html>`;
 }
@@ -909,8 +920,46 @@ ${staticHero()}
   </main>
 
 <script defer src="/js/simulador.js?v=1"></script>
+${staticFooterScripts()}
 </body>
 </html>`;
+}
+
+// ── Índice de búsqueda (para js/buscador.js) ────────────────────
+// Se genera en build time a partir del mismo contenido que ya existe —
+// no es una llamada a ningún servicio externo de embeddings, es un
+// índice de palabras clave ponderado. Se declara honestamente como
+// "buscador" en la interfaz, no como "IA semántica".
+function buildSearchIndex() {
+  const items = [];
+
+  for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
+    for (const art of arts) {
+      items.push({
+        tipo: 'articulo',
+        id: art.id,
+        titulo: art.title,
+        badge: art.badge,
+        resumen: (art.summary || art.intro || '').substring(0, 160),
+        texto: [art.title, art.badge, art.summary, (art.intro || '').substring(0, 200), ...(art.sections || []).map(s => s.subtitle)].filter(Boolean).join(' '),
+        url: articleUrl(art)
+      });
+    }
+  }
+
+  for (const esc of SIMULADOR_ESCENARIOS) {
+    items.push({
+      tipo: 'escenario',
+      id: esc.id,
+      titulo: esc.titulo,
+      badge: 'Simulador de Sesgos',
+      resumen: esc.resumen,
+      texto: [esc.titulo, esc.gancho, esc.resumen].filter(Boolean).join(' '),
+      url: `${SITE}/simulador-de-sesgos/${esc.slug}/`
+    });
+  }
+
+  return items;
 }
 
 // ── Generar ficheros HTML ──────────────────────────────────────
@@ -1026,3 +1075,12 @@ for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
 imgSitemap += `</urlset>\n`;
 fs.writeFileSync(path.join(ROOT, 'sitemap-images.xml'), imgSitemap, 'utf-8');
 console.log(`✅ sitemap-images.xml generado con ${count + 1} entradas`);
+
+// ── Índice de búsqueda ────────────────────────────────────────
+const searchIndex = buildSearchIndex();
+fs.writeFileSync(
+  path.join(ROOT, 'js', 'search-index.js'),
+  `window.LI_SEARCH_INDEX = ${JSON.stringify(searchIndex)};\n`,
+  'utf-8'
+);
+console.log(`✅ js/search-index.js generado con ${searchIndex.length} entradas`);
