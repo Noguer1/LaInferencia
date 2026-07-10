@@ -242,6 +242,60 @@ for (const esc of SIMULADOR_ESCENARIOS) {
   esc.sourceLabel = art.sourceLabel;
 }
 
+// ── Rutas de Aprendizaje — curadas a mano, no generadas ─────────
+// Cada ruta es una secuencia de artículos ya publicados en el orden
+// que tiene sentido leerlos, no en el orden en que se publicaron.
+// Añadir una ruta nueva es trabajo editorial, no técnico.
+const RUTAS = [
+  {
+    id: 'pareja',
+    slug: 'por-que-discuto-siempre-igual-con-mi-pareja',
+    titulo: 'Por qué discuto siempre igual con mi pareja',
+    descripcion: 'Cuatro estudios que explican por qué repites el mismo patrón de conflicto, por qué muchos problemas de pareja no tienen "solución", y por qué la conexión importa tanto como parece.',
+    articuloIds: ['rel-04', 'rel-01', 'rel-03', 'rel-05']
+  },
+  {
+    id: 'movil',
+    slug: 'por-que-no-puedes-soltar-el-movil',
+    titulo: 'Por qué no puedes soltar el móvil',
+    descripcion: 'Cuatro estudios sobre el diseño que engancha, lo que cuesta cada notificación, por qué te comportas distinto online, y cómo el algoritmo decide lo que ves.',
+    articuloIds: ['tec-01', 'tec-02', 'tec-03', 'tec-04']
+  },
+  {
+    id: 'dinero',
+    slug: 'por-que-gastas-mas-de-lo-que-crees',
+    titulo: 'Por qué gastas más de lo que crees',
+    descripcion: 'Cuatro estudios sobre los trucos de precio que no ves, por qué pagar sin tarjeta duele menos, por qué las pérdidas pesan más que las ganancias, y por qué demasiadas opciones te hacen decidir peor.',
+    articuloIds: ['eco-01', 'eco-03', 'eco-02', 'eco-05']
+  },
+  {
+    id: 'trabajo',
+    slug: 'por-que-te-quemas-en-el-trabajo',
+    titulo: 'Por qué te quemas en el trabajo',
+    descripcion: 'Cuatro estudios sobre lo que de verdad motiva, por qué las reuniones destruyen el pensamiento, por qué los bonus no funcionan, y dónde está la línea entre cansado y quemado.',
+    articuloIds: ['tra-03', 'tra-01', 'tra-05', 'tra-04']
+  }
+];
+
+// id de artículo -> { ruta, index (0-based), total } — cada artículo
+// pertenece como mucho a una ruta en este diseño (sets sin solapar).
+const RUTA_STEP_MAP = {};
+for (const ruta of RUTAS) {
+  ruta.articulos = ruta.articuloIds.map(id => {
+    const art = findArticleById(id);
+    if (!art) {
+      console.error(`ERROR: la ruta "${ruta.id}" cita el artículo "${id}", que no existe en LIBRARY_ARTICLES.`);
+      process.exit(1);
+    }
+    return art;
+  });
+  ruta.url = `${SITE}/rutas/${ruta.slug}/`;
+  ruta.tiempoTotalMin = ruta.articulos.reduce((sum, art) => sum + (parseInt(art.readingTime, 10) || 0), 0);
+  ruta.articulos.forEach((art, index) => {
+    RUTA_STEP_MAP[art.id] = { ruta, index, total: ruta.articulos.length };
+  });
+}
+
 // ── Artículos relacionados: 2 misma categoría + 1 de otra ──────
 function relatedArticles(art, cat) {
   const sameCategory = LIBRARY_ARTICLES[cat].filter(a => a.id !== art.id);
@@ -289,6 +343,7 @@ function staticHero() {
         <button type="button" class="static-navbar-search-btn" data-buscador-trigger aria-label="Buscar">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
+        <a href="/rutas/" class="static-navbar-link">Rutas</a>
         <a href="/simulador-de-sesgos/" class="static-navbar-link">Simulador de Sesgos</a>
         <a href="/" class="static-navbar-cta">Explorar los ${TOTAL_ARTS} artículos →</a>
       </div>
@@ -465,6 +520,42 @@ ${faqs.map(f => `        <details class="static-faq-item">\n          <summary>$
         <a href="/simulador-de-sesgos/${escenarioRelacionado.slug}/" class="static-sim-cta-btn">Probar «${escenarioRelacionado.titulo}» →</a>
       </div>` : '';
 
+  const rutaStep = RUTA_STEP_MAP[art.id];
+  let rutaBannerHTML = '';
+  let rutaSiguienteHTML = '';
+  if (rutaStep) {
+    const { ruta, index, total } = rutaStep;
+    const esUltimo = index === total - 1;
+    const dotsHTML = ruta.articulos.map((_, i) =>
+      `<span class="ruta-dot${i === index ? ' ruta-dot--activo' : ''}" data-ruta-dot-id="${ruta.articulos[i].id}"></span>`
+    ).join('');
+
+    rutaBannerHTML = `      <div class="ruta-banner" data-ruta-id="${ruta.id}" data-articulo-id="${art.id}">
+        <div class="ruta-banner-top">
+          <span class="ruta-banner-label">Ruta · ${ruta.titulo}</span>
+          <span class="ruta-banner-paso">Paso ${index + 1} de ${total}</span>
+        </div>
+        <div class="ruta-banner-dots" aria-hidden="true">${dotsHTML}</div>
+      </div>`;
+
+    if (!esUltimo) {
+      const siguiente = ruta.articulos[index + 1];
+      rutaSiguienteHTML = `      <div class="ruta-siguiente">
+        <p><strong>Paso ${index + 2} de ${total}:</strong> ${siguiente.title}</p>
+        <a href="${articleUrl(siguiente)}" class="ruta-siguiente-btn">Siguiente paso de la ruta →</a>
+      </div>`;
+    } else {
+      rutaSiguienteHTML = `      <div class="ruta-finish">
+        <h3>Has terminado la ruta «${ruta.titulo}»</h3>
+        <p>Estos son los ${total} pasos, por si quieres releer alguno:</p>
+        <div class="ruta-finish-links">
+${ruta.articulos.map((a, i) => `          <a href="${articleUrl(a)}" class="ruta-finish-link">${i + 1}. ${a.title}</a>`).join('\n')}
+        </div>
+        <a href="/rutas/" class="ruta-finish-otras">Ver otras rutas →</a>
+      </div>`;
+    }
+  }
+
   const articleLdJson = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -547,6 +638,7 @@ ${staticHero()}
         <span aria-hidden="true"> › </span>
         <span aria-current="page">${art.title}</span>
       </nav>
+${rutaBannerHTML}
 
       <div class="weekly-featured-card">
         <div class="week-label">
@@ -574,6 +666,7 @@ ${aplicacionHTML}
             Verificar fuente · ${art.sourceLabel}
           </a>
 ${simuladorCtaHTML}
+${rutaSiguienteHTML}
 ${faqHTML}
         </div>
       </div>
@@ -622,6 +715,7 @@ ${sidebarHTML}
 }());
 </script>
 <script defer src="/js/save-button.js?v=1"></script>
+${rutaStep ? '<script defer src="/js/rutas.js?v=1"></script>' : ''}
 ${staticFooterScripts()}
 </body>
 </html>`;
@@ -959,7 +1053,167 @@ function buildSearchIndex() {
     });
   }
 
+  for (const ruta of RUTAS) {
+    items.push({
+      tipo: 'ruta',
+      id: ruta.id,
+      titulo: ruta.titulo,
+      badge: 'Ruta de aprendizaje',
+      resumen: ruta.descripcion,
+      texto: [ruta.titulo, ruta.descripcion].filter(Boolean).join(' '),
+      url: ruta.url
+    });
+  }
+
   return items;
+}
+
+// ── Template landing de Rutas de Aprendizaje ────────────────────
+const RUTAS_URL = `${SITE}/rutas/`;
+
+function buildRutasLandingPage() {
+  const ldJson = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': 'Rutas de Aprendizaje — La Inferencia',
+    'description': 'Secuencias de artículos ya publicados, en el orden que tiene sentido leerlos, para entender un tema en profundidad en vez de un dato suelto.',
+    'url': RUTAS_URL,
+    'breadcrumb': {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': `${SITE}/` },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Rutas de Aprendizaje', 'item': RUTAS_URL }
+      ]
+    }
+  }, null, 2);
+
+  const head = htmlHead({
+    title: 'Rutas de Aprendizaje — La Inferencia',
+    description: 'Secuencias de 4 artículos ya publicados, en el orden que tiene sentido leerlos, para entender un tema en profundidad.',
+    canonUrl: RUTAS_URL,
+    ldJsonBlocks: [ldJson]
+  });
+
+  const cardsHTML = RUTAS.map(ruta => `        <a href="${ruta.url}" class="ruta-landing-card" data-ruta-progreso-id="${ruta.id}" data-ruta-articulos='${JSON.stringify(ruta.articuloIds)}'>
+          <span class="ruta-landing-card-badge">${ruta.articulos.length} artículos · ~${ruta.tiempoTotalMin} min</span>
+          <h2>${ruta.titulo}</h2>
+          <p>${ruta.descripcion}</p>
+          <span class="ruta-landing-card-progreso" data-ruta-progreso-badge hidden></span>
+          <span class="ruta-landing-card-cta">Empezar ruta →</span>
+        </a>`).join('\n');
+
+  return `${head}
+<body>
+
+  <a class="skip-link" href="#rutas-main">Saltar al contenido</a>
+  <div id="bg-layer" aria-hidden="true"></div>
+${staticHero()}
+
+  <main id="rutas-main" class="static-art-main">
+    <div class="static-art-wrap">
+
+      <nav class="static-breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true"> › </span>
+        <span aria-current="page">Rutas de Aprendizaje</span>
+      </nav>
+
+      <header class="static-cat-header">
+        <h1>Rutas de Aprendizaje</h1>
+        <p>Un artículo da un dato. Una ruta da comprensión. Cada ruta es una secuencia de 4 artículos ya publicados, en el orden que tiene sentido leerlos — no en el orden en que se publicaron.</p>
+      </header>
+
+      <div class="ruta-landing-grid">
+${cardsHTML}
+      </div>
+
+    </div>
+  </main>
+
+${staticFooterScripts()}
+<script defer src="/js/rutas.js?v=1"></script>
+</body>
+</html>`;
+}
+
+// ── Template de portada de una Ruta individual ──────────────────
+function buildRutaPage(ruta) {
+  const canonUrl = ruta.url;
+
+  const ldJson = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': ruta.titulo,
+    'description': ruta.descripcion,
+    'url': canonUrl,
+    'itemListElement': ruta.articulos.map((art, i) => ({
+      '@type': 'ListItem',
+      'position': i + 1,
+      'name': art.title,
+      'url': articleUrl(art)
+    })),
+    'breadcrumb': {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': `${SITE}/` },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Rutas de Aprendizaje', 'item': RUTAS_URL },
+        { '@type': 'ListItem', 'position': 3, 'name': ruta.titulo, 'item': canonUrl }
+      ]
+    }
+  }, null, 2);
+
+  const head = htmlHead({
+    title: `${ruta.titulo} — Ruta de Aprendizaje — La Inferencia`,
+    description: `${ruta.descripcion} ${ruta.articulos.length} artículos · ~${ruta.tiempoTotalMin} min en total.`,
+    canonUrl,
+    ldJsonBlocks: [ldJson]
+  });
+
+  const listaHTML = ruta.articulos.map((art, i) => `        <a href="${articleUrl(art)}" class="ruta-portada-item">
+          <span class="ruta-portada-num">${i + 1}</span>
+          <span class="ruta-portada-item-body">
+            <strong>${art.title}</strong>
+            <span class="ruta-portada-item-meta">${art.badge} · ${art.readingTime}</span>
+          </span>
+        </a>`).join('\n');
+
+  return `${head}
+<body>
+
+  <a class="skip-link" href="#ruta-main">Saltar al contenido</a>
+  <div id="bg-layer" aria-hidden="true"></div>
+${staticHero()}
+
+  <main id="ruta-main" class="static-art-main">
+    <div class="static-art-wrap">
+
+      <nav class="static-breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true"> › </span>
+        <a href="/rutas/">Rutas de Aprendizaje</a>
+        <span aria-hidden="true"> › </span>
+        <span aria-current="page">${ruta.titulo}</span>
+      </nav>
+
+      <header class="static-cat-header" data-ruta-progreso-id="${ruta.id}" data-ruta-articulos='${JSON.stringify(ruta.articuloIds)}'>
+        <h1>${ruta.titulo}</h1>
+        <p>${ruta.descripcion}</p>
+        <span class="ruta-portada-meta">${ruta.articulos.length} artículos · ~${ruta.tiempoTotalMin} min · <span data-ruta-progreso-badge hidden></span></span>
+      </header>
+
+      <div class="ruta-portada-lista">
+${listaHTML}
+      </div>
+
+      <a href="${articleUrl(ruta.articulos[0])}" class="ruta-portada-empezar">Empezar ruta →</a>
+
+    </div>
+  </main>
+
+${staticFooterScripts()}
+<script defer src="/js/rutas.js?v=1"></script>
+</body>
+</html>`;
 }
 
 // ── Generar ficheros HTML ──────────────────────────────────────
@@ -1004,6 +1258,19 @@ for (const esc of SIMULADOR_ESCENARIOS) {
 }
 console.log(`\n✅ Simulador de Sesgos generado (1 landing + ${SIMULADOR_ESCENARIOS.length} escenarios)\n`);
 
+// ── Rutas de Aprendizaje ──────────────────────────────────────────
+const RUTAS_DIR = path.join(ROOT, 'rutas');
+fs.mkdirSync(RUTAS_DIR, { recursive: true });
+fs.writeFileSync(path.join(RUTAS_DIR, 'index.html'), buildRutasLandingPage(), 'utf-8');
+console.log('  ✓ /rutas/ (landing)');
+for (const ruta of RUTAS) {
+  const rutaDir = path.join(RUTAS_DIR, ruta.slug);
+  fs.mkdirSync(rutaDir, { recursive: true });
+  fs.writeFileSync(path.join(rutaDir, 'index.html'), buildRutaPage(ruta), 'utf-8');
+  console.log(`  ✓ /rutas/${ruta.slug}/`);
+}
+console.log(`\n✅ Rutas de Aprendizaje generadas (1 landing + ${RUTAS.length} rutas)\n`);
+
 // ── Página de autor ─────────────────────────────────────────────
 const AUTHOR_DIR = path.join(ROOT, 'autores', 'miguel-noguer');
 fs.mkdirSync(AUTHOR_DIR, { recursive: true });
@@ -1031,6 +1298,11 @@ sitemap += `  <url><loc>${AUTHOR_URL}</loc><changefreq>monthly</changefreq><prio
 sitemap += `  <url><loc>${SIMULADOR_URL}</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>${today}</lastmod></url>\n`;
 for (const esc of SIMULADOR_ESCENARIOS) {
   sitemap += `  <url><loc>${SITE}/simulador-de-sesgos/${esc.slug}/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
+}
+
+sitemap += `  <url><loc>${RUTAS_URL}</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>${today}</lastmod></url>\n`;
+for (const ruta of RUTAS) {
+  sitemap += `  <url><loc>${ruta.url}</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
 }
 
 for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {

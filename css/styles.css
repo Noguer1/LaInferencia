@@ -11153,3 +11153,155 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   .buscador-overlay { padding: 1.2rem; align-items: center; }
   .buscador-card { max-height: 88vh; }
 }
+
+/* ── Rutas de Aprendizaje ───────────────────────────────────── */
+
+/* Banner en la cabecera del artículo (paso actual) */
+.ruta-banner {
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--blue) 6%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--blue) 20%, transparent);
+}
+.ruta-banner-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.55rem;
+}
+.ruta-banner-label { font-size: 0.78rem; font-weight: 700; color: var(--navy); }
+.ruta-banner-paso { font-size: 0.72rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.3px; }
+.ruta-banner-dots { display: flex; gap: 0.4rem; }
+.ruta-dot { width: 8px; height: 8px; border-radius: 50%; background: color-mix(in srgb, var(--blue) 22%, transparent); }
+.ruta-dot--visto { background: var(--blue); }
+.ruta-dot--activo { background: var(--navy); transform: scale(1.25); }
+
+/* CTA al siguiente paso (dentro del artículo, distinta de "Seguir leyendo") */
+.ruta-siguiente {
+  margin-top: 1.3rem;
+  padding: 1.1rem 1.2rem;
+  border-radius: 14px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--blue);
+}
+.ruta-siguiente p { margin: 0 0 0.6rem; font-size: 0.86rem; color: var(--text-body); }
+.ruta-siguiente p strong { color: var(--navy); }
+.ruta-siguiente-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.15rem;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.ruta-siguiente-btn:hover { background: var(--blue-hover); }
+
+/* Cierre al terminar la ruta (último paso) */
+.ruta-finish {
+  margin-top: 1.3rem;
+  padding: 1.2rem 1.3rem;
+  border-radius: 14px;
+  background: color-mix(in srgb, #10B981 6%, transparent);
+  border: 1.5px solid color-mix(in srgb, #10B981 24%, transparent);
+}
+.ruta-finish h3 { font-size: 0.98rem; font-weight: 800; color: var(--navy); margin: 0 0 0.3rem; }
+.ruta-finish > p { font-size: 0.84rem; color: var(--text-body); margin: 0 0 0.8rem; }
+.ruta-finish-links { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.9rem; }
+.ruta-finish-link { font-size: 0.84rem; font-weight: 600; color: var(--blue); text-decoration: none; }
+.ruta-finish-link:hover { text-decoration: underline; }
+.ruta-finish-otras { font-size: 0.82rem; font-weight: 700; color: var(--navy); text-decoration: none; }
+.ruta-finish-otras:hover { color: var(--blue); }
+
+/* Landing /rutas/ */
+.ruta-landing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.ruta-landing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1.5rem 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--card-shadow);
+}
+.ruta-landing-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+.ruta-landing-card-badge { font-size: 0.7rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.3px; }
+.ruta-landing-card h2 { font-size: 1.08rem; font-weight: 800; color: var(--navy); margin: 0; line-height: 1.35; }
+.ruta-landing-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.55; }
+.ruta-landing-card-progreso[hidden] { display: none; }
+.ruta-landing-card-progreso {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10B981;
+  background: color-mix(in srgb, #10B981 12%, transparent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+.ruta-landing-card-cta { font-size: 0.82rem; font-weight: 700; color: var(--blue); margin-top: 0.2rem; }
+
+/* Portada de una ruta individual */
+.ruta-portada-meta { display: inline-block; margin-top: 0.6rem; font-size: 0.82rem; color: var(--text-muted); }
+.ruta-portada-lista { display: flex; flex-direction: column; gap: 0.7rem; margin: 1.5rem 0; }
+.ruta-portada-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-decoration: none;
+  transition: border-color 0.18s;
+}
+.ruta-portada-item:hover { border-color: var(--blue); }
+.ruta-portada-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--blue) 12%, transparent);
+  color: var(--blue);
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ruta-portada-item-body { display: flex; flex-direction: column; gap: 0.15rem; }
+.ruta-portada-item-body strong { font-size: 0.92rem; color: var(--navy); line-height: 1.4; }
+.ruta-portada-item-meta { font-size: 0.76rem; color: var(--text-muted); }
+.ruta-portada-empezar {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.ruta-portada-empezar:hover { background: var(--blue-hover); }
+
+.dark-base .ruta-landing-card,
+.dark-base .ruta-portada-item,
+.dark-base .ruta-siguiente { background: rgba(255,255,255,0.03); border-color: rgba(148,163,184,0.14); }
+
+@media (max-width: 680px) {
+  .ruta-landing-grid { grid-template-columns: 1fr; }
+  .ruta-banner-top { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+}
