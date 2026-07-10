@@ -2138,6 +2138,21 @@ function _pickMysteryLibro() {
   return MYSTERY_LIBROS[Math.floor(Math.random() * MYSTERY_LIBROS.length)];
 }
 
+/* Tras el quiz, recomienda el libro real del artículo si existe; si no, cae al pool genérico */
+function _buildQuizLibroHTML(id) {
+  const rec = (window.RECOMENDACIONES || {})[id];
+  if (!rec || !rec.libro) return _buildMysteryUnlockHTML('quiz');
+  const { libro } = rec;
+  return `<div class="mystery-unlock-block">
+    <span class="mystery-unlock-badge">📖 El libro de este artículo</span>
+    <p class="mystery-unlock-sinopsis"><strong>${libro.titulo}</strong>, ${libro.autor}. ${libro.sinopsis}</p>
+    <a href="${libro.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="quiz">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Ver libro →
+    </a>
+  </div>`;
+}
+
 function _buildMysteryUnlockHTML(origen) {
   const lr = _pickMysteryLibro();
   return `<div class="mystery-unlock-block">
@@ -2236,7 +2251,12 @@ const WEEKLY_ARTICLES = [
       }
     ],
     blockquote: { text: '«Si un sistema de autoridad legítima pide al individuo que actúe contra sus valores más profundos, es el sistema (y no la naturaleza del individuo) lo que determina el resultado.»', attribution: 'Stanley Milgram, Obedience to Authority, 1974' },
-    aplicacion: `La próxima vez que alguien con autoridad (un jefe, un protocolo, una norma institucional) te pida hacer algo que activa tu incomodidad moral, identifica el momento exacto en que tu consciencia lo registra. Ese instante de tensión es tu sistema de alarma autónomo. Milgram demostró que la mayoría de personas lo siente pero lo silencia con la comodidad de "son las instrucciones". Nombrar la incomodidad en voz alta (incluso solo para ti mismo) activa el sistema prefrontal y reduce la probabilidad de entrar en el estado agente.`
+    aplicacion: `La próxima vez que alguien con autoridad (un jefe, un protocolo, una norma institucional) te pida hacer algo que activa tu incomodidad moral, identifica el momento exacto en que tu consciencia lo registra. Ese instante de tensión es tu sistema de alarma autónomo. Milgram demostró que la mayoría de personas lo siente pero lo silencia con la comodidad de "son las instrucciones". Nombrar la incomodidad en voz alta (incluso solo para ti mismo) activa el sistema prefrontal y reduce la probabilidad de entrar en el estado agente.`,
+    libroRelacionado: {
+      libro: 'Obediencia a la autoridad', autor: 'Stanley Milgram',
+      sinopsis: 'El propio Milgram narra en detalle el diseño y las variantes de su experimento, incluida la que redujo la obediencia al 30% con solo acercar físicamente al participante a las consecuencias de sus actos: la distancia moral, explicada por quien la descubrió.',
+      amazon: 'https://www.amazon.es/s?k=Obediencia+a+la+autoridad+Stanley+Milgram&tag=lainferencia-21'
+    }
   },
   {
     week: 18,
@@ -2263,7 +2283,12 @@ const WEEKLY_ARTICLES = [
       }
     ],
     blockquote: { text: '«La mayor parte del comportamiento humano se aprende por observación, a través del modelado. Al observar a otros, uno se forma una idea de cómo se realizan las conductas nuevas y, en ocasiones posteriores, esa información codificada sirve de guía para la acción.»', attribution: 'Albert Bandura, Social Learning Theory, 1977' },
-    aplicacion: `Durante los próximos tres días, presta atención consciente a qué modelos de conducta consumes: qué series ves, qué personas sigues en redes sociales, qué conversaciones escuchas en tu entorno cercano. Bandura demostró que el repertorio conductual disponible en tu mente refleja lo que has observado, aunque nunca lo hayas practicado. Curar tus modelos es una forma de curar tu conducta antes de que esta aparezca.`
+    aplicacion: `Durante los próximos tres días, presta atención consciente a qué modelos de conducta consumes: qué series ves, qué personas sigues en redes sociales, qué conversaciones escuchas en tu entorno cercano. Bandura demostró que el repertorio conductual disponible en tu mente refleja lo que has observado, aunque nunca lo hayas practicado. Curar tus modelos es una forma de curar tu conducta antes de que esta aparezca.`,
+    libroRelacionado: {
+      libro: 'Teoría del aprendizaje social', autor: 'Albert Bandura',
+      sinopsis: 'El propio Bandura desarrolla aquí los cuatro procesos (atención, retención, reproducción y motivación) que convierten lo observado en conducta propia, la base teórica completa detrás del experimento del muñeco Bobo.',
+      amazon: 'https://www.amazon.es/s?k=Teoria+del+aprendizaje+social+Albert+Bandura&tag=lainferencia-21'
+    }
   },
   {
     week: 17,
@@ -2290,7 +2315,12 @@ const WEEKLY_ARTICLES = [
       }
     ],
     blockquote: { text: '«El arma de influencia más poderosa no es la mentira. Es un principio psicológico legítimo aplicado fuera de contexto con suficiente habilidad para que no lo reconozcas.»', attribution: 'Robert Cialdini, Influence, 1984' },
-    aplicacion: `Antes de tomar cualquier decisión de compra, acuerdo o compromiso en los próximos días, identifica cuál de los seis disparadores está activo: ¿te sientes obligado porque recibiste algo? ¿actúas por coherencia con algo que dijiste antes? ¿lo compras porque "los demás" lo hacen? ¿te urge porque "quedan pocas unidades"? Nombrar el mecanismo no te hace inmune, pero te da un segundo de distancia suficiente para evaluar si la decisión responde a tu criterio o al del diseñador del sistema.`
+    aplicacion: `Antes de tomar cualquier decisión de compra, acuerdo o compromiso en los próximos días, identifica cuál de los seis disparadores está activo: ¿te sientes obligado porque recibiste algo? ¿actúas por coherencia con algo que dijiste antes? ¿lo compras porque "los demás" lo hacen? ¿te urge porque "quedan pocas unidades"? Nombrar el mecanismo no te hace inmune, pero te da un segundo de distancia suficiente para evaluar si la decisión responde a tu criterio o al del diseñador del sistema.`,
+    libroRelacionado: {
+      libro: 'Influencia', autor: 'Robert Cialdini',
+      sinopsis: 'El libro que da origen a este artículo: el propio Cialdini, tras tres años infiltrado en sectores de ventas, documenta los seis principios con los experimentos de campo completos, incluido el de la fotocopiadora.',
+      amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21'
+    }
   },
   {
     week: 16,
@@ -2317,7 +2347,12 @@ const WEEKLY_ARTICLES = [
       }
     ],
     blockquote: { text: '«La razón moral es más parecida a un abogado defensor que a un juez: su trabajo no es encontrar la verdad sino construir el mejor caso posible para la conclusión a la que ya ha llegado su cliente.»', attribution: 'Jonathan Haidt, The Righteous Mind, 2012' },
-    aplicacion: `La próxima vez que sientas indignación moral ante una conducta ajena, añade un paso antes de articular tu argumento: identifica qué fundación moral ha activado esa reacción (¿daño, injusticia, traición, degradación?). Descubrirás que tu razonamiento lo construiste después. Ese reconocimiento no invalida tu posición, pero la vuelve más honesta y mucho más persuasiva para quien opera desde otras fundaciones.`
+    aplicacion: `La próxima vez que sientas indignación moral ante una conducta ajena, añade un paso antes de articular tu argumento: identifica qué fundación moral ha activado esa reacción (¿daño, injusticia, traición, degradación?). Descubrirás que tu razonamiento lo construiste después. Ese reconocimiento no invalida tu posición, pero la vuelve más honesta y mucho más persuasiva para quien opera desde otras fundaciones.`,
+    libroRelacionado: {
+      libro: 'La mente de los justos', autor: 'Jonathan Haidt',
+      sinopsis: 'Haidt desarrolla aquí completas las seis fundaciones morales y explica por qué conservadores y progresistas no discrepan por racionalidad sino por qué intuiciones priorizan, la teoría entera detrás de "el perro emocional y su cola racional".',
+      amazon: 'https://www.amazon.es/s?k=La+mente+de+los+justos+Jonathan+Haidt&tag=lainferencia-21'
+    }
   },
   {
     week: 15,
@@ -2344,7 +2379,12 @@ const WEEKLY_ARTICLES = [
       }
     ],
     blockquote: { text: '«En una mentalidad fija, el esfuerzo es una mala noticia: si tienes que esforzarte, significa que no eres inteligente. En una mentalidad de crecimiento, el esfuerzo es lo que activa la inteligencia.»', attribution: 'Carol Dweck, Mindset, 2006' },
-    aplicacion: `Durante esta semana, cuando cometas un error (en el trabajo, en una conversación, en una tarea física) añade la palabra "todavía" a tu evaluación. No "no sé hacerlo" sino "todavía no sé hacerlo". No es optimismo vacío: es redirigir la atención del veredicto al proceso. Dweck demostró que este cambio lingüístico mínimo modifica qué información procesas del fracaso y cuánto tiempo persistes antes de abandonar.`
+    aplicacion: `Durante esta semana, cuando cometas un error (en el trabajo, en una conversación, en una tarea física) añade la palabra "todavía" a tu evaluación. No "no sé hacerlo" sino "todavía no sé hacerlo". No es optimismo vacío: es redirigir la atención del veredicto al proceso. Dweck demostró que este cambio lingüístico mínimo modifica qué información procesas del fracaso y cuánto tiempo persistes antes de abandonar.`,
+    libroRelacionado: {
+      libro: 'Mindset: La actitud del éxito', autor: 'Carol S. Dweck',
+      sinopsis: 'Dweck explica con más casos (empresa, deporte, pareja) el mismo hallazgo del experimento con niños de diez años: una sola frase de feedback puede activar una mentalidad fija o de crecimiento, y esa mentalidad decide cuánto persistes ante el fracaso.',
+      amazon: 'https://www.amazon.es/s?k=Mindset+la+actitud+del+exito+Carol+Dweck&tag=lainferencia-21'
+    }
   },
   /* ── Semanas existentes ───────────────────────────────────── */
   {
@@ -2379,7 +2419,12 @@ const WEEKLY_ARTICLES = [
       }
     ],
     blockquote: { text: '«El lenguaje es la herramienta más sofisticada que los humanos hemos desarrollado. No solo describe la realidad: la construye.»', attribution: 'Lera Boroditsky' },
-    aplicacion: `Hoy, cuando tengas que hablar de algo abstracto (el tiempo, el dinero, el futuro), presta atención a la metáfora que usas de forma automática. ¿Ves el futuro como algo que "viene hacia ti" o como algo hacia lo que "te diriges"? Cambia conscientemente esa metáfora y observa si cambia tu relación emocional con el concepto. Tu lengua es el primer filtro de tu realidad.`
+    aplicacion: `Hoy, cuando tengas que hablar de algo abstracto (el tiempo, el dinero, el futuro), presta atención a la metáfora que usas de forma automática. ¿Ves el futuro como algo que "viene hacia ti" o como algo hacia lo que "te diriges"? Cambia conscientemente esa metáfora y observa si cambia tu relación emocional con el concepto. Tu lengua es el primer filtro de tu realidad.`,
+    libroRelacionado: {
+      libro: 'Through the Language Glass', autor: 'Guy Deutscher',
+      sinopsis: 'Deutscher recorre, con el mismo rigor que Boroditsky, decenas de casos de lenguas que moldean la percepción del tiempo, el espacio y el color, incluidos los pueblos que no usan izquierda/derecha y se orientan por puntos cardinales.',
+      amazon: 'https://www.amazon.es/s?k=Through+the+Language+Glass+Guy+Deutscher&tag=lainferencia-21'
+    }
   },
   {
     week: 21,
@@ -2413,7 +2458,12 @@ const WEEKLY_ARTICLES = [
       }
     ],
     blockquote: { text: '«La memoria no funciona como una cámara de vídeo. Cada vez que recuerdas algo, lo estás modificando.»', attribution: 'Elizabeth Loftus' },
-    aplicacion: `La próxima vez que recuerdes con claridad algún conflicto del pasado, hazte esta pregunta: ¿cuántos de esos detalles los construí yo después, basándome en lo que quería que hubiera pasado? Antes de una conversación importante sobre un hecho pasado, escribe tu versión sin consultarla con nadie. Compárala después con la de la otra persona. La diferencia puede ser reveladora, y liberadora.`
+    aplicacion: `La próxima vez que recuerdes con claridad algún conflicto del pasado, hazte esta pregunta: ¿cuántos de esos detalles los construí yo después, basándome en lo que quería que hubiera pasado? Antes de una conversación importante sobre un hecho pasado, escribe tu versión sin consultarla con nadie. Compárala después con la de la otra persona. La diferencia puede ser reveladora, y liberadora.`,
+    libroRelacionado: {
+      libro: 'El mito del recuerdo reprimido', autor: 'Elizabeth Loftus y Katherine Ketcham',
+      sinopsis: 'Loftus, perita en más de 300 casos penales, explica desde dentro cómo una pregunta formulada de otra manera basta para plantar un recuerdo falso, y qué significa eso para la fiabilidad del testimonio ocular en los juzgados.',
+      amazon: 'https://www.amazon.es/s?k=El+mito+del+recuerdo+reprimido+Elizabeth+Loftus&tag=lainferencia-21'
+    }
   },
   {
     week: 20,
@@ -2447,7 +2497,12 @@ const WEEKLY_ARTICLES = [
       }
     ],
     blockquote: { text: '«Somos máquinas de encontrar patrones en el ruido. El problema es que no podemos apagar esa máquina.»', attribution: 'Daniel Kahneman' },
-    aplicacion: `Antes de tomar cualquier decisión que te importe hoy (comprar algo, responder un mensaje de forma impulsiva, juzgar a alguien), párate exactamente dos segundos y hazte una pregunta: ¿es esto lo que pienso o es lo que mi cerebro me ha puesto delante por ser lo más rápido y fácil? Esa micro-pausa activa el Sistema 2. Es el coste mínimo de pensar por ti mismo.`
+    aplicacion: `Antes de tomar cualquier decisión que te importe hoy (comprar algo, responder un mensaje de forma impulsiva, juzgar a alguien), párate exactamente dos segundos y hazte una pregunta: ¿es esto lo que pienso o es lo que mi cerebro me ha puesto delante por ser lo más rápido y fácil? Esa micro-pausa activa el Sistema 2. Es el coste mínimo de pensar por ti mismo.`,
+    libroRelacionado: {
+      libro: 'Pensar rápido, pensar despacio', autor: 'Daniel Kahneman',
+      sinopsis: 'El propio Kahneman condensa cinco décadas de investigación en un mapa completo de los dos sistemas: el rápido e intuitivo y el lento y deliberado, con el problema del bate y la pelota como uno de sus muchos ejemplos.',
+      amazon: 'https://www.amazon.es/dp/8483068613?tag=lainferencia-21'
+    }
   }
 ];
 
@@ -3175,6 +3230,7 @@ function renderBataFull(art) {
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           TFG original · ${art.sourceLabel}
         </a>
+        ${_buildRecomendacionHTML(art.id)}
       </div>
     </div>`;
 }
@@ -9698,7 +9754,7 @@ const EFECTOS_EXTRA = {
                         'Vale la pena releer el artículo para fijar los conceptos.'
         }</p>
         ${bonusHTML}
-        ${_buildMysteryUnlockHTML('quiz')}
+        ${_buildQuizLibroHTML(currentId)}
         <button class="quiz-close-final" id="quiz-close-final">Cerrar</button>
       </div>`;
     body.querySelector('#quiz-close-final')?.addEventListener('click', close);

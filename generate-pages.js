@@ -377,6 +377,7 @@ function staticHero() {
         </button>
         <a href="/rutas/" class="static-navbar-link">Rutas</a>
         <a href="/guias/" class="static-navbar-link">Guías de compra</a>
+        <a href="/biblioteca/" class="static-navbar-link">Biblioteca</a>
         <a href="/simulador-de-sesgos/" class="static-navbar-link">Simulador de Sesgos</a>
         <a href="/" class="static-navbar-cta">Explorar los ${TOTAL_ARTS} artículos →</a>
       </div>
@@ -630,12 +631,22 @@ ${faqs.map(f => `        <details class="static-faq-item">\n          <summary>$
         <a href="${articleUrl(siguiente)}" class="ruta-siguiente-btn">Siguiente paso de la ruta →</a>
       </div>`;
     } else {
-      const rutaLibroRec = RECOMENDACIONES[ruta.articulos[0].id];
-      const rutaLibroHTML = rutaLibroRec && rutaLibroRec.libro ? `
+      const rutaLibros = [];
+      const rutaLibrosVistos = new Set();
+      ruta.articulos.forEach(a => {
+        const rec = RECOMENDACIONES[a.id];
+        if (rec && rec.libro && !rutaLibrosVistos.has(rec.libro.titulo)) {
+          rutaLibrosVistos.add(rec.libro.titulo);
+          rutaLibros.push(rec.libro);
+        }
+      });
+      const rutaLibroHTML = rutaLibros.length ? `
         <div class="ruta-finish-libro">
-          <p class="recomendacion-label">Para seguir profundizando en esta ruta</p>
-          <strong>${rutaLibroRec.libro.titulo}</strong> <span class="recomendacion-autor">— ${rutaLibroRec.libro.autor}</span>
-          <a href="${rutaLibroRec.libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${rutaLibroRec.libro.titulo}" data-umami-event-origen="ruta-finish">Ver libro</a>
+          <p class="recomendacion-label">Los libros de esta ruta</p>
+${rutaLibros.slice(0, 3).map(libro => `          <div class="ruta-finish-libro-item">
+            <strong>${libro.titulo}</strong> <span class="recomendacion-autor">${libro.autor}</span>
+            <a href="${libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="ruta-finish">Ver libro</a>
+          </div>`).join('\n')}
         </div>` : '';
       rutaSiguienteHTML = `      <div class="ruta-finish">
         <h3>Has terminado la ruta «${ruta.titulo}»</h3>
@@ -859,14 +870,33 @@ function buildCategoryPage(cat) {
   const sector    = CAT_TO_SECTOR[cat];
   const guia      = sector ? GUIA_BY_SECTOR[sector] : null;
   const guiaBooks = guia ? (BOTIQUIN_DATA[sector] || []).slice(0, 3) : [];
+  // Sin sector de Botiquín asignado: usar los libros ya curados de los artículos de la categoría
+  const ownBooks  = guia ? [] : (() => {
+    const vistos = new Set();
+    const libros = [];
+    arts.forEach(art => {
+      const rec = RECOMENDACIONES[art.id];
+      if (rec && rec.libro && !vistos.has(rec.libro.titulo)) {
+        vistos.add(rec.libro.titulo);
+        libros.push(rec.libro);
+      }
+    });
+    return libros.slice(0, 3);
+  })();
   const guiaHTML  = guia && guiaBooks.length ? `
       <div class="cat-libros-teaser">
         <p class="cat-libros-teaser-label">Libros recomendados sobre ${catLabel.toLowerCase()}</p>
         <div class="cat-libros-teaser-row">
-${guiaBooks.map(b => `          <span class="cat-libros-teaser-item">${b.libro} <em>— ${b.autor}</em></span>`).join('\n')}
+${guiaBooks.map(b => `          <span class="cat-libros-teaser-item">${b.libro}, <em>${b.autor}</em></span>`).join('\n')}
         </div>
         <a href="/guias/${guia.slug}/" class="cat-libros-teaser-cta">Ver la comparativa completa →</a>
-      </div>` : '';
+      </div>` : (ownBooks.length ? `
+      <div class="cat-libros-teaser">
+        <p class="cat-libros-teaser-label">Libros recomendados sobre ${catLabel.toLowerCase()}</p>
+        <div class="cat-libros-teaser-row">
+${ownBooks.map(b => `          <span class="cat-libros-teaser-item">${b.titulo}, <em>${b.autor}</em></span>`).join('\n')}
+        </div>
+      </div>` : '');
 
   return `${head}
 <body>
@@ -1133,6 +1163,90 @@ ${filasHTML}
       </div>
       <p class="recomendacion-disclaimer">Enlaces de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti.</p>
 ${relatedHTML}
+
+    </div>
+  </main>
+
+${staticFooterScripts()}
+</body>
+</html>`;
+}
+
+// ── Biblioteca recomendada: todos los libros de RECOMENDACIONES, por categoría ──
+const BIBLIOTECA_URL = `${SITE}/biblioteca/`;
+
+function buildBibliotecaPage() {
+  const grupos = CAT_KEYS.map(cat => {
+    const libros = (LIBRARY_ARTICLES[cat] || [])
+      .map(art => ({ art, rec: RECOMENDACIONES[art.id] }))
+      .filter(x => x.rec && x.rec.libro);
+    return { cat, label: CAT_LABELS[cat] || cat, libros };
+  }).filter(g => g.libros.length);
+
+  const totalLibros = grupos.reduce((n, g) => n + g.libros.length, 0);
+
+  const ldJson = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': 'Biblioteca recomendada | La Inferencia',
+    'description': 'Todos los libros que recomendamos en La Inferencia, organizados por tema, cada uno enlazado al artículo que explica por qué lo elegimos.',
+    'url': BIBLIOTECA_URL,
+    'breadcrumb': {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': `${SITE}/` },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Biblioteca recomendada', 'item': BIBLIOTECA_URL }
+      ]
+    }
+  }, null, 2);
+
+  const head = htmlHead({
+    title: 'Biblioteca recomendada | Todos los libros de La Inferencia por tema | La Inferencia',
+    description: `Los ${totalLibros} libros que recomendamos en La Inferencia, organizados por tema, cada uno enlazado al artículo y al estudio que explica por qué lo elegimos.`,
+    canonUrl: BIBLIOTECA_URL,
+    ldJsonBlocks: [ldJson]
+  });
+
+  const gruposHTML = grupos.map(g => `      <section class="biblioteca-grupo">
+        <h2>${g.label}</h2>
+        <div class="biblioteca-grid">
+${g.libros.map(({ art, rec }) => `          <div class="biblioteca-item">
+            <strong>${rec.libro.titulo}</strong>
+            <span class="recomendacion-autor">${rec.libro.autor}</span>
+            <p>${rec.libro.sinopsis}</p>
+            <div class="biblioteca-item-links">
+              <a href="${articleUrl(art)}" class="biblioteca-item-articulo">Ver artículo: ${art.title}</a>
+              <a href="${rec.libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${rec.libro.titulo}" data-umami-event-origen="biblioteca">Ver libro</a>
+            </div>
+          </div>`).join('\n')}
+        </div>
+      </section>`).join('\n\n');
+
+  return `${head}
+<body>
+
+  <a class="skip-link" href="#biblioteca-main">Saltar al contenido</a>
+  <div id="bg-layer" aria-hidden="true"></div>
+${staticHero()}
+
+  <main id="biblioteca-main" class="static-art-main">
+    <div class="static-art-wrap">
+
+      <nav class="static-breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true"> › </span>
+        <span aria-current="page">Biblioteca recomendada</span>
+      </nav>
+
+      <header class="ruta-hero-header">
+        <span class="ruta-hero-eyebrow">Biblioteca recomendada</span>
+        <h1>Los ${totalLibros} libros que recomendamos en La Inferencia</h1>
+        <p>Cada libro está aquí porque un artículo concreto lo justifica: no es una lista genérica, es la bibliografía real detrás de lo que publicamos, organizada por tema.</p>
+      </header>
+
+${gruposHTML}
+
+      <p class="recomendacion-disclaimer">Enlaces de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti.</p>
 
     </div>
   </main>
@@ -1576,6 +1690,12 @@ for (const guia of GUIA_SECTORES) {
 }
 console.log(`\n✅ Guías de compra generadas (1 landing + ${GUIA_SECTORES.length} guías)\n`);
 
+// ── Biblioteca recomendada ────────────────────────────────────────
+const BIBLIOTECA_DIR = path.join(ROOT, 'biblioteca');
+fs.mkdirSync(BIBLIOTECA_DIR, { recursive: true });
+fs.writeFileSync(path.join(BIBLIOTECA_DIR, 'index.html'), buildBibliotecaPage(), 'utf-8');
+console.log('✅ /biblioteca/ generada\n');
+
 // ── Página de autor ─────────────────────────────────────────────
 const AUTHOR_DIR = path.join(ROOT, 'autores', 'miguel-noguer');
 fs.mkdirSync(AUTHOR_DIR, { recursive: true });
@@ -1614,6 +1734,8 @@ sitemap += `  <url><loc>${GUIAS_URL}</loc><changefreq>monthly</changefreq><prior
 for (const guia of GUIA_SECTORES) {
   sitemap += `  <url><loc>${GUIAS_URL}${guia.slug}/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${today}</lastmod></url>\n`;
 }
+
+sitemap += `  <url><loc>${BIBLIOTECA_URL}</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
 
 for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
   for (const art of arts) {

@@ -477,6 +477,57 @@ const RECOMENDACIONES = {
     }
   },
 
+  // ── Fuera de Bata ──────────────────────────────────────────
+  'bata-gaslighting': {
+    libro: {
+      titulo: 'Chantaje emocional', autor: 'Susan Forward',
+      sinopsis: 'Forward describe con detalle clínico cómo alguien te hace dudar de tu propia percepción para mantener el control, el mismo mecanismo de trivialización y aflicción que Korneyko mide en grupos universitarios: entender el patrón desde fuera es el primer paso para dejar de preguntarte «¿estaré exagerando?».',
+      amazon: 'https://www.amazon.es/s?k=Chantaje+emocional+Susan+Forward&tag=lainferencia-21',
+    }
+  },
+  'bata-perfeccionismo': {
+    libro: {
+      titulo: 'Los dones de la imperfección', autor: 'Brené Brown',
+      sinopsis: 'Brown documenta por qué el perfeccionismo que nace del miedo a lo que pensarán los demás (el mismo que Millán Isusi mide como «socialmente prescrito») agota antes de llegar siquiera a competir, y cómo se sustituye por una exigencia que sí es sostenible.',
+      amazon: 'https://www.amazon.es/s?k=Los+dones+de+la+imperfeccion+Brene+Brown&tag=lainferencia-21',
+    }
+  },
+  'bata-musica': {
+    libro: {
+      titulo: 'Tu cerebro y la música', autor: 'Daniel Levitin',
+      sinopsis: 'Levitin explica con neurociencia por qué la música actúa sobre las emociones de forma tan distinta según cómo la uses, la base científica que subyace al hallazgo de Gómez-Pantoja: no es cuánta música escuchas, es para qué la enciendes.',
+      amazon: 'https://www.amazon.es/s?k=Tu+cerebro+y+la+musica+Daniel+Levitin&tag=lainferencia-21',
+    }
+  },
+  'bata-ensonacion': {
+    libro: {
+      titulo: 'Irresistible', autor: 'Adam Alter',
+      sinopsis: 'Alter explica el mecanismo de recompensa común a toda conducta que se vuelve difícil de parar aunque no implique ninguna sustancia, exactamente el patrón que Jaroszewicz encontró en la ensoñación excesiva: alivio inmediato que refuerza el ciclo cada vez más.',
+      amazon: 'https://www.amazon.es/s?k=Irresistible+Adam+Alter&tag=lainferencia-21',
+    }
+  },
+  'bata-burnout-academico': {
+    libro: {
+      titulo: 'Mindset: La actitud del éxito', autor: 'Carol S. Dweck',
+      sinopsis: 'Dweck muestra por qué relacionarte con lo que aprendes desde la curiosidad en vez de desde el miedo a fallar cambia el resultado casi entero, el mismo eje (enfoque profundo vs. superficial) que Gras Lozano encontró como predictor real del burnout académico.',
+      amazon: 'https://www.amazon.es/s?k=Mindset+la+actitud+del+exito+Carol+Dweck&tag=lainferencia-21',
+    }
+  },
+  'bata-adicciones-emociones': {
+    libro: {
+      titulo: 'En el reino de los espíritus hambrientos', autor: 'Gabor Maté',
+      sinopsis: 'Maté explica la adicción como una forma (torpe pero funcional) de regular lo que sientes, la misma lógica que López Freire encuentra al comparar el alcohol, que facilita la expresión emocional, con los videojuegos, que la bloquean: ambos alivian, ambos tienen un precio.',
+      amazon: 'https://www.amazon.es/s?k=En+el+reino+de+los+espiritus+hambrientos+Gabor+Mate&tag=lainferencia-21',
+    }
+  },
+  'bata-burnout-rendimiento': {
+    libro: {
+      titulo: 'Burnout: Domina el ciclo del agotamiento', autor: 'Emily Nagoski y Amelia Nagoski',
+      sinopsis: 'Las hermanas Nagoski explican por qué el agotamiento no se resuelve solo quitando la causa del estrés y por qué afecta de forma distinta según el género, justo la vuelta de tuerca que encuentra Marrero Polegre en 1.195 estudiantes de Psicología.',
+      amazon: 'https://www.amazon.es/s?k=Burnout+domina+el+ciclo+del+agotamiento+Nagoski&tag=lainferencia-21',
+    }
+  },
+
 };
 
 if (typeof module !== 'undefined') module.exports = RECOMENDACIONES;

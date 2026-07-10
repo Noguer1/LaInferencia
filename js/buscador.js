@@ -144,10 +144,15 @@
     }
     resultsEl.innerHTML = resultados.map(function (r) {
       var tipoLabel = r.tipo === 'escenario' ? 'Simulador' : r.badge;
+      var rec = (window.RECOMENDACIONES || {})[r.id];
+      var libroHTML = rec && rec.libro
+        ? '<span class="buscador-result-libro">📖 Tiene libro recomendado: ' + rec.libro.titulo + '</span>'
+        : '';
       return '<a href="' + r.url + '" class="buscador-result" data-umami-event="buscador-result-click" data-umami-event-query="' + q.replace(/"/g, '') + '">' +
         '<span class="buscador-result-badge">' + tipoLabel + '</span>' +
         '<strong>' + r.titulo + '</strong>' +
         '<p>' + r.resumen + '</p>' +
+        libroHTML +
       '</a>';
     }).join('');
   }

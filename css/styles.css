@@ -3084,8 +3084,24 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   background: color-mix(in srgb, var(--blue) 5%, transparent);
   border-left: 3px solid var(--blue-accent);
   border-radius: 0 12px 12px 0;
-  display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap;
+  display: flex; flex-direction: column; gap: 0.7rem;
 }
+.ruta-finish-libro-item { display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap; }
+
+/* ── Biblioteca recomendada ── */
+.biblioteca-grupo { margin: 2.2rem 0; }
+.biblioteca-grupo h2 { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin: 0 0 1rem; }
+.biblioteca-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.biblioteca-item {
+  display: flex; flex-direction: column; gap: 0.4rem;
+  padding: 1.1rem; background: var(--bg-main, #F7F9FF);
+  border: 1px solid var(--border); border-radius: 12px;
+}
+.biblioteca-item strong { font-size: 0.92rem; color: var(--navy); }
+.biblioteca-item p { font-size: 0.8rem; color: var(--text-body); line-height: 1.5; margin: 0; }
+.biblioteca-item-links { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.3rem; }
+.biblioteca-item-articulo { font-size: 0.76rem; font-weight: 600; color: var(--blue); text-decoration: none; }
+.biblioteca-item-articulo:hover { text-decoration: underline; }
 .ruta-finish-libro strong { font-size: 0.9rem; color: var(--navy); }
 
 /* ── Tabla comparativa de Guías de compra ── */
@@ -11231,6 +11247,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 .buscador-result-badge { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: var(--blue); }
 .buscador-result strong { font-size: 0.92rem; color: var(--navy); line-height: 1.35; }
 .buscador-result p { font-size: 0.8rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+.buscador-result-libro { font-size: 0.74rem; color: var(--blue); margin-top: 0.1rem; }
 
 .dark-base .buscador-card { background: rgba(8, 16, 34, 0.98); }
 .dark-base .buscador-header input { color: #E2E8F0; }
