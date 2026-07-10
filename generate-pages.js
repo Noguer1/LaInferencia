@@ -307,7 +307,7 @@ function staticHero() {
 
 function staticFooterScripts() {
   return `<script src="/js/search-index.js?v=1"></script>
-<script defer src="/js/buscador.js?v=1"></script>`;
+<script defer src="/js/buscador.js?v=2"></script>`;
 }
 
 function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {

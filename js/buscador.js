@@ -58,7 +58,7 @@
 
   function tokenizarQuery(query) {
     var base = normalizar(query).split(/\s+/).filter(function (t) {
-      return t.length >= 3 && !STOPWORDS[t];
+      return t.length >= 2 && !STOPWORDS[t];
     });
     var ampliados = base.slice();
     base.forEach(function (t) {
@@ -81,7 +81,7 @@
     return puntos;
   }
 
-  var SCORE_MINIMO = 3;
+  var SCORE_MINIMO = 1;
 
   function buscar(query) {
     var index = window.LI_SEARCH_INDEX || [];
@@ -127,7 +127,7 @@
 
     input.addEventListener('input', function () {
       clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(function () { renderResultados(input.value); }, 150);
+      debounceTimer = setTimeout(function () { renderResultados(input.value); }, 90);
     });
   }
 
