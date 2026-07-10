@@ -260,6 +260,13 @@ for (const esc of SIMULADOR_ESCENARIOS) {
 // Cada ruta es una secuencia de artículos ya publicados en el orden
 // que tiene sentido leerlos, no en el orden en que se publicaron.
 // Añadir una ruta nueva es trabajo editorial, no técnico.
+const RUTA_ICONOS = {
+  pareja: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
+  movil: '<rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/>',
+  dinero: '<circle cx="12" cy="12" r="9"/><path d="M9.2 9.6a2.7 2.7 0 0 1 2.8-1.8c1.6 0 2.7.9 2.7 2.1 0 1.3-1.1 1.7-2.7 2.1-1.6.4-2.7.8-2.7 2.1 0 1.2 1.1 2.1 2.7 2.1a2.7 2.7 0 0 0 2.8-1.8" /><line x1="12" y1="6.5" x2="12" y2="17.5"/>',
+  trabajo: '<rect x="2.5" y="7" width="19" height="13.5" rx="2"/><path d="M15.5 7V5a2 2 0 0 0-2-2h-3a2 2 0 0 0-2 2v2"/><line x1="2.5" y1="13" x2="21.5" y2="13"/>'
+};
+
 const RUTAS = [
   {
     id: 'pareja',
@@ -1117,12 +1124,17 @@ function buildRutasLandingPage() {
     ldJsonBlocks: [ldJson]
   });
 
-  const cardsHTML = RUTAS.map(ruta => `        <a href="${ruta.url}" class="ruta-landing-card" data-ruta-progreso-id="${ruta.id}" data-ruta-articulos='${JSON.stringify(ruta.articuloIds)}'>
+  const totalArticulos = RUTAS.reduce((sum, r) => sum + r.articulos.length, 0);
+  const totalMin = RUTAS.reduce((sum, r) => sum + r.tiempoTotalMin, 0);
+
+  const cardsHTML = RUTAS.map((ruta, i) => `        <a href="${ruta.url}" class="ruta-landing-card" data-ruta-progreso-id="${ruta.id}" data-ruta-articulos='${JSON.stringify(ruta.articuloIds)}'>
+          <span class="ruta-landing-card-num" aria-hidden="true">0${i + 1}</span>
+          <span class="ruta-landing-card-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${RUTA_ICONOS[ruta.id] || ''}</svg></span>
           <span class="ruta-landing-card-badge">${ruta.articulos.length} artículos · ~${ruta.tiempoTotalMin} min</span>
           <h2>${ruta.titulo}</h2>
           <p>${ruta.descripcion}</p>
           <span class="ruta-landing-card-progreso" data-ruta-progreso-badge hidden></span>
-          <span class="ruta-landing-card-cta">Empezar ruta →</span>
+          <span class="ruta-landing-card-cta">Empezar ruta <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </a>`).join('\n');
 
   return `${head}
@@ -1141,9 +1153,15 @@ ${staticHero()}
         <span aria-current="page">Rutas de Aprendizaje</span>
       </nav>
 
-      <header class="static-cat-header">
-        <h1>Rutas de Aprendizaje</h1>
-        <p>Un artículo da un dato. Una ruta da comprensión. Cada ruta es una secuencia de 4 artículos ya publicados, en el orden que tiene sentido leerlos — no en el orden en que se publicaron.</p>
+      <header class="ruta-hero-header">
+        <span class="ruta-hero-eyebrow">Rutas de Aprendizaje</span>
+        <h1>Un artículo da un dato.<br>Una ruta da comprensión.</h1>
+        <p>Cada ruta es una secuencia de artículos ya publicados, en el orden que tiene sentido leerlos — no en el orden en que se publicaron.</p>
+        <div class="ruta-hero-stats">
+          <div class="ruta-hero-stat"><strong>${RUTAS.length}</strong><span>Rutas disponibles</span></div>
+          <div class="ruta-hero-stat"><strong>${totalArticulos}</strong><span>Artículos incluidos</span></div>
+          <div class="ruta-hero-stat"><strong>~${totalMin}</strong><span>Minutos en total</span></div>
+        </div>
       </header>
 
       <div class="ruta-landing-grid">
