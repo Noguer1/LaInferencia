@@ -2855,6 +2855,11 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .author-card strong { font-size: 0.9rem; color: var(--navy); font-weight: 700; }
 .author-card span { font-size: 0.78rem; color: var(--text-muted); }
 
+.weekly-escrito-por {
+  font-size: 0.72rem; color: var(--text-muted); font-style: italic;
+  margin: -0.6rem 0 0.8rem 0.2rem;
+}
+
 .weekly-title {
   font-size: 1.5rem; font-weight: 800; color: var(--navy);
   letter-spacing: -0.5px; line-height: 1.3; margin-bottom: 0.5rem;

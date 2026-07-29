@@ -2168,6 +2168,88 @@ function _buildMysteryUnlockHTML(origen) {
 const WEEKLY_ARTICLES = [
   /* ── Semanas nuevas ───────────────────────────────────────── */
   {
+    week: 32,
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    escritoPor: 'Miguel Noguer Escudero',
+    badge: 'Psicología del talento',
+    title: 'Practicar algo casi no te hará mejorar, según la ciencia',
+    readingTime: '4 min',
+    date: '3 de agosto de 2026',
+    intro: `En 2008, Malcolm Gladwell publicó <em>Fuera de serie</em> y convirtió una cifra en ley universal: hacen falta 10.000 horas de práctica para llegar a ser un experto en cualquier cosa. La citan entrenadores, profesores, padres agobiados con los deberes de sus hijos y cualquier artículo sobre productividad de los últimos quince años. El problema es que Gladwell malinterpretó el estudio en el que se basaba (sus propios autores lo han dicho en público), y cuando alguien reunió 88 estudios distintos para comprobar cuánto pesa de verdad la práctica, el resultado fue mucho más modesto de lo que la frase promete.`,
+    sections: [
+      {
+        subtitle: 'Los violinistas de Berlín y el número que nadie comprobó',
+        paragraphs: [
+          'En 1993, Anders Ericsson, Ralf Krampe y Clemens Tesch-Römer estudiaron a violinistas de la Academia de Música de Berlín y encontraron que los del grupo de élite habían acumulado, de media, unas 10.000 horas de práctica hacia los veinte años. Era una media, no un mínimo ni una garantía. La mitad de esos violinistas de élite ni siquiera había llegado a esa cifra.',
+          'El propio Ericsson ha explicado después que el número 10.000 es prácticamente arbitrario, pegadizo, fácil de recordar, pero sin ningún corte real detrás. "No es solo cuestión de acumular horas", declaró tiempo después. "Si haces tu trabajo y simplemente repites cada vez más de lo mismo, no vas a mejorar". Gladwell pasó por alto justo esa distinción: Ericsson hablaba de práctica deliberada (ejercicios diseñados para forzarte justo por encima de tu nivel actual, con corrección inmediata), no de repetir la tarea sin más durante años.'
+        ]
+      },
+      {
+        subtitle: '88 estudios después, la práctica explica mucho menos de lo que promete la frase',
+        paragraphs: [
+          'En 2014, Brooke Macnamara, David Hambrick y Frederick Oswald publicaron en Psychological Science un metaanálisis con 88 estudios sobre práctica deliberada y rendimiento, repartidos en cinco terrenos: videojuegos, música, deporte, educación y profesiones. Calcularon qué parte de la diferencia entre una persona y otra se explicaba de verdad por las horas de práctica acumuladas.',
+          'Los resultados variaban mucho según el terreno, y ninguno se acercaba a la idea de que la práctica lo explica casi todo. En videojuegos, la práctica explicaba el 26% de la diferencia entre jugadores. En música, el 21%. En deporte, el 18%. En educación, apenas el 4%. En profesiones (el terreno donde más gente querría creer que echarle horas te hace mejor) menos del 1%.',
+          'Dicho de otro modo: incluso en el mejor de los casos, la práctica explica poco más de una cuarta parte de por qué unas personas rinden mejor que otras. El resto depende de variables que ninguna charla motivacional suele mencionar.'
+        ]
+      },
+      {
+        subtitle: 'Entonces, ¿qué explica que unas personas mejoren más que otras?',
+        paragraphs: [
+          'Los propios autores del metaanálisis no dicen que practicar sea inútil. Dicen que se le ha atribuido un poder que los datos no respaldan. Y lo que sí funciona, dentro de ese margen del 18% al 26% en deporte, música y videojuegos, es la práctica deliberada de verdad: un objetivo ligeramente por encima de tu nivel actual, con una forma clara de saber en el momento si lo hiciste bien o mal. La repetición sin ese diseño no cuenta, por muchas horas que sume.',
+          'El resto de la diferencia entre personas incluye variables mucho menos motivacionales: la edad a la que empezaste, la genética, la calidad de los profesores o entrenadores a los que tuviste acceso, y el puro azar de haber empezado en el entorno adecuado en el momento adecuado. En profesiones, donde la práctica explica menos del 1%, la razón probable es que el propio puesto de trabajo cambia todo el tiempo. Las tareas de hoy no son las de dentro de cinco años, así que no hay una habilidad fija que tenga sentido acumular durante una década.'
+        ]
+      }
+    ],
+    blockquote: { text: '«La práctica deliberada es, sin duda, importante, pero no tan importante como han defendido quienes la proponen.»', attribution: 'Brooke Macnamara, David Hambrick y Frederick Oswald, Psychological Science, 2014' },
+    aplicacion: `Si llevas tiempo dándole vueltas a por qué "practicar más" no te está haciendo mejorar en algo concreto, la respuesta puede no ser que necesites más horas, sino un tipo de práctica distinto. Antes de apuntarte a echarle otras cien horas a esa habilidad, pregúntate: cada vez que practico, ¿me exige algo ligeramente por encima de lo que ya domino, con una forma clara de comprobar al momento si lo hice bien? Si la respuesta es no, estás acumulando horas, no práctica deliberada, y la mejora que esperas no va a llegar por mucho tiempo que le dediques.`,
+    libroRelacionado: {
+      libro: 'Número uno', autor: 'Anders Ericsson y Robert Pool',
+      sinopsis: 'El propio Ericsson, autor del estudio original de los violinistas de Berlín que Gladwell malinterpretó, explica con detalle qué es realmente la práctica deliberada y por qué no todas las horas de práctica valen lo mismo.',
+      amazon: 'https://www.amazon.es/s?k=Numero+uno+Peak+Anders+Ericsson&tag=lainferencia-21'
+    }
+  },
+  {
+    week: 31,
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    escritoPor: 'Miguel Noguer Escudero',
+    badge: 'Economía de la felicidad',
+    title: 'Cuanto más dinero ganas, más feliz eres. Sin límite. Eso dice la ciencia',
+    readingTime: '5 min',
+    date: '29 de julio de 2026',
+    intro: `En 2010, Daniel Kahneman y Angus Deaton publicaron un dato que se convirtió en verdad universal de sobremesa: a partir de 75.000 dólares al año, ganar más no te hace más feliz. Se ha citado en charlas TED, artículos de revista, cursos de finanzas personales y en cualquier conversación sobre si merece la pena perseguir un sueldo más alto. Once años después, un investigador con una aplicación de móvil demostró que el dato estaba incompleto. Y cuando el propio Kahneman decidió comprobarlo en persona, junto al mismo investigador que lo había contradicho, la respuesta resultó ser mejor noticia de lo que ambos esperaban: para casi todo el mundo, la felicidad sigue subiendo con el sueldo, sin techo.`,
+    sections: [
+      {
+        subtitle: 'El dato de los 75.000 dólares que lleva quince años citándose mal',
+        paragraphs: [
+          'Kahneman, premio Nobel de Economía, y Angus Deaton, de la Universidad de Princeton, analizaron más de 450.000 respuestas al Gallup-Healthways Well-Being Index, una encuesta diaria a 1.000 residentes de Estados Unidos. Preguntaban dos cosas distintas: cómo te sentiste ayer (estresado, triste, contento) y cómo calificarías tu vida en general, en una escala del cero al diez.',
+          'El resultado se partía en dos. La evaluación general de la vida seguía subiendo con el ingreso sin ningún límite visible, incluso en los tramos de renta más altos de la muestra. Pero el bienestar emocional del día a día (la parte que de verdad se siente en el cuerpo cada mañana) dejaba de mejorar a partir de aproximadamente 75.000 dólares anuales. Esa segunda cifra es la que se quedó en la cultura popular. La primera, la que no tenía techo, casi nadie la repite.'
+        ]
+      },
+      {
+        subtitle: 'La app que preguntaba por tu felicidad en tiempo real, varias veces al día',
+        paragraphs: [
+          'En 2021, Matthew Killingsworth, investigador de la Wharton School (Universidad de Pensilvania), publicó en PNAS un estudio con un método distinto. En vez de preguntar por el día anterior, con todos los sesgos de memoria que eso arrastra, su aplicación Track Your Happiness interrumpía a la gente varias veces al día, en el momento, con una sola pregunta: ¿cómo te sientes ahora mismo? Recogió 1.725.994 respuestas de 33.391 adultos empleados en Estados Unidos.',
+          'No encontró ningún techo. Ni en 75.000 dólares, ni en 100.000, ni en los tramos de renta más altos de toda la muestra. Tanto el bienestar del momento como la evaluación general de la vida subían de forma prácticamente lineal con el ingreso, con una pendiente igual de pronunciada por encima de los 80.000 dólares que por debajo. Para la persona promedio, ganar el doble se traducía en un salto de felicidad parecido, ganase lo que ganase de partida.'
+        ]
+      },
+      {
+        subtitle: 'Cuando dos científicos que se contradicen deciden resolverlo juntos, en vez de en Twitter',
+        paragraphs: [
+          'Kahneman llevaba toda su carrera defendiendo un formato poco habitual en ciencia: la colaboración adversarial, en la que dos investigadores que discrepan se sientan juntos, con un árbitro neutral, a analizar los mismos datos en vez de publicar réplicas cruzadas durante años. En 2023 aplicó su propia receta a su propio error. Junto a Killingsworth, y con Barbara Mellers (también de Wharton) como árbitro, reanalizaron los datos de ambos estudios.',
+          'La conclusión no le dio la razón completa a ninguno de los dos, y precisamente por eso es más interesante que cualquiera de las dos versiones originales. Para la mayoría de la gente, la felicidad sigue subiendo con el ingreso sin techo, tal y como había encontrado Killingsworth, incluso se acelera en el grupo más feliz de todos. Pero dentro de cada nivel de ingreso hay una minoría infeliz para la que la felicidad deja de subir alrededor de los 100.000 dólares anuales. "La excepción son las personas que económicamente están bien pero son infelices", explicó Killingsworth. "Si eres rico y estás angustiado, más dinero no va a ayudar".',
+          'La explicación más plausible es que ese grupo arrastra un tipo de sufrimiento que el dinero no puede tocar (un duelo, una enfermedad, una relación rota), mientras que para el resto la falta de dinero sigue siendo una fuente de malestar evitable, y cada tramo adicional sigue aliviando algo real.'
+        ]
+      }
+    ],
+    blockquote: { text: '«En los términos más simples, esto sugiere que, para la mayoría de la gente, un ingreso mayor está asociado con más felicidad.»', attribution: 'Matthew Killingsworth, Wharton School (Universidad de Pensilvania), Income and emotional well-being: A conflict resolved, PNAS, 2023' },
+    aplicacion: `Si estás decidiendo si merece la pena perseguir un ascenso, pedir un aumento o cambiar a un trabajo mejor pagado, la evidencia ya no respalda la excusa de "a partir de cierto punto ya da igual". Para la inmensa mayoría de la gente no es así: cada tramo adicional de ingreso sigue sumando bienestar real, no solo estatus. La excepción, según el propio estudio, aparece cuando el malestar de fondo no es económico (duelo, salud, una relación rota); ahí el dinero seguirá sin resolver lo que de verdad duele. Antes de asumir que "ya tienes suficiente", identifica primero si lo que te falta es dinero o es otra cosa que el dinero no arregla.`,
+    libroRelacionado: {
+      libro: 'Tropezar con la felicidad', autor: 'Daniel Gilbert',
+      sinopsis: 'Gilbert, psicólogo de Harvard, explica por qué somos tan malos prediciendo qué nos hará felices (el dinero incluido), y cómo la ciencia de la felicidad lleva décadas corrigiendo intuiciones que dábamos por sentadas.',
+      amazon: 'https://www.amazon.es/s?k=Tropezar+con+la+felicidad+Daniel+Gilbert&tag=lainferencia-21'
+    }
+  },
+  {
     week: 26,
     author: { name: 'La Inferencia', university: 'Psicología del deporte', specialty: 'Presión cognitiva y rendimiento bajo estrés' },
     badge: 'Psicología del deporte',
@@ -3130,6 +3212,14 @@ const QUIZ_BANK = {
     { q: '¿Qué diferenciaba a los trabajadores que hacían job crafting de los que no, con el mismo puesto?', opts: ['Ganaban más dinero','Trabajaban menos horas','Reportaban más engagement y sentido, sin cambiar de empresa','Eran más creativos en general'], correct: 2 }
   ],
   /* SEMANALES */
+  'weekly-32': [
+    { q: 'Sobre el estudio original de Ericsson con violinistas de Berlín (1993), ¿qué es cierto?', opts: ['Todos los violinistas de élite superaron las 10.000 horas', 'Las 10.000 horas eran una media, y la mitad del grupo de élite no llegó a esa cifra', 'El estudio nunca midió horas de práctica', 'Ericsson demostró que la práctica no influye en nada'], correct: 1 },
+    { q: 'Según el metaanálisis de Macnamara, Hambrick y Oswald (2014, 88 estudios), ¿en qué terreno la práctica deliberada explicaba MENOS diferencia de rendimiento entre personas?', opts: ['Videojuegos (26%)', 'Música (21%)', 'Deporte (18%)', 'Profesiones (menos del 1%)'], correct: 3 }
+  ],
+  'weekly-31': [
+    { q: 'Según Kahneman y Deaton (2010), ¿qué pasaba con el bienestar emocional del día a día a partir de los 75.000 dólares anuales?', opts: ['Seguía subiendo igual de rápido', 'Dejaba de mejorar, aunque la evaluación general de la vida seguía subiendo sin límite', 'Empezaba a bajar', 'Nunca se había medido por encima de esa cifra'], correct: 1 },
+    { q: 'La colaboración adversarial de 2023 entre Killingsworth, Kahneman y Mellers concluyó que...', opts: ['Ambos estudios originales estaban completamente equivocados', 'Para la mayoría la felicidad sigue subiendo sin techo, pero una minoría infeliz se estanca alrededor de los 100.000 dólares', 'El dinero nunca influye en la felicidad', 'Solo influye el dinero heredado, no el ganado'], correct: 1 }
+  ],
   'weekly-26': [
     { q: 'Según la investigación de Jordet con 129 tandas internacionales, ¿qué porcentaje de veces gana el equipo que tira primero?', opts: ['Alrededor del 50% (sin diferencia real)', 'Alrededor del 55% (ventaja leve)', 'Alrededor del 60% (ventaja clara y replicada)', 'Más del 75% (ventaja decisiva)'], correct: 2 },
     { q: '¿Qué explica el "choke" (fallo bajo presión) en expertos según Sian Beilock?', opts: ['Falta de motivación en el momento crucial', 'El córtex prefrontal interfiere con habilidades que deberían ser automáticas', 'El cansancio físico acumulado durante el partido', 'La distracción causada por el ruido del público'], correct: 1 }
@@ -3159,6 +3249,8 @@ const QUIZ_BANK = {
 /* ── DESAFÍOS DE LA SEMANA ──────────────────────────────────────
    Bloque accionable concreto para cada artículo semanal.           */
 const DESAFIOS_SEMANA = {
+  32: { texto: 'Elige una habilidad en la que llevas tiempo "practicando" sin mejorar tanto como esperabas. Antes de echarle más horas sin más, rediseña una sola sesión de forma deliberada: un objetivo ligeramente por encima de tu nivel actual, sin distracciones, con una forma clara de comprobar al momento si lo hiciste bien o mal. Compara cómo se siente esa sesión frente a tu práctica habitual.', duracion: '1 semana' },
+  31: { texto: 'Antes de rechazar una oportunidad de ganar más (un ascenso, una subida de sueldo, un cambio de trabajo) con la excusa de que "a partir de cierto punto el dinero ya no importa", para y pregúntate: el malestar que sientes ahora, ¿es por falta de dinero o por otra cosa que el dinero no soluciona (salud, una relación, tiempo)? Deja que la respuesta decida, no la frase hecha.', duracion: '1 semana' },
   26: { texto: 'Durante 3 días, identifica situaciones donde la presión te hace "pensar demasiado": una conversación difícil, ejecutar algo que normalmente haces en automático, hablar en público. Justo antes de cada una, usa 3 respiraciones lentas (4 segundos inhalar, 6 exhalar) y una palabra ancla. Anota si el nivel de bloqueo cambia respecto a tu modo habitual.', duracion: '3 días' },
   19: { texto: 'Durante 48 horas, identifica tres situaciones cotidianas donde estés siguiendo instrucciones sin cuestionarlas (un protocolo, una norma social, una petición de alguien con autoridad). Para cada una, anota: «¿Lo haría igual si nadie me lo pidiera?» No para desobedecer, sino para distinguir cuándo actúas desde criterio propio y cuándo desde el estado agente.', duracion: '48 h' },
   18: { texto: 'Audita durante 3 días tus modelos observacionales: las tres personas que más sigues en redes, las series o podcasts habituales, las conversaciones recurrentes. Para cada uno, pregúntate: «¿Qué conductas estoy aprendiendo por observación?» Elimina deliberadamente uno que amplíe un repertorio de conductas que no quieres en tu vida.', duracion: '3 días' },
@@ -3518,7 +3610,7 @@ function renderWeeklyTeaser(article) {
 }
 
 function renderFeaturedWeekly(article) {
-  const { week, author, badge, title, readingTime, date, intro, sections, blockquote, aplicacion, libroRelacionado } = article;
+  const { week, author, badge, title, readingTime, date, intro, sections, blockquote, aplicacion, libroRelacionado, escritoPor } = article;
   const sectionsHTML = sections.map((s, i) =>
     s.html
       ? `<div id="art-sec-${i}">${s.html}</div>`
@@ -3547,6 +3639,7 @@ function renderFeaturedWeekly(article) {
       <span class="doc-badge" style="margin-bottom:0.5rem;">${badge}</span>
       <h2 class="weekly-title">${title}</h2>
       ${renderAuthorCard(author)}
+      ${escritoPor ? `<p class="weekly-escrito-por">Escrito por ${escritoPor}</p>` : ''}
       ${_buildTocHTML(sections)}
       <div class="article-content">
         <p class="article-intro">${intro}</p>
