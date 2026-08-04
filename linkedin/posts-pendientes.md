@@ -1,6 +1,6 @@
 # Posts pendientes de publicar
 
-Lote 1 (posts 1-12) generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Lote 2 (posts 13-18) generado el mismo día, con 6 artículos nuevos de marketing, política y alimentación. Lote 3 (posts 19-24) generado el mismo día, con 6 artículos nuevos de salud mental, marketing, viajes y redes sociales, para nivelar esas categorías. Lote 4 (posts 25-31) generado el mismo día, con 7 artículos nuevos de salud mental, derecho, deporte, tecnología, trabajo, política y alimentación, para llevar esas categorías a 7 artículos cada una. Formato y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
+Lote 1 (posts 1-12) generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Lote 2 (posts 13-18) generado el mismo día, con 6 artículos nuevos de marketing, política y alimentación. Lote 3 (posts 19-24) generado el mismo día, con 6 artículos nuevos de salud mental, marketing, viajes y redes sociales, para nivelar esas categorías. Lote 4 (posts 25-31) generado el mismo día, con 7 artículos nuevos de salud mental, derecho, deporte, tecnología, trabajo, política y alimentación, para llevar esas categorías a 7 artículos cada una. Lote 5 (posts 32-38) generado el mismo día, con 7 artículos nuevos de arte, educación, marketing, relaciones, redes sociales, salud mental y viajes, para llevar esas categorías (las más finas de la web hasta ahora) a 7 artículos cada una, dejando las 15 categorías igualadas en 7 artículos. Formato y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
 
 Estado de cada uno: pendiente hasta que se marque como publicado aquí manualmente.
 
@@ -571,5 +571,147 @@ El resultado: en las semanas de pretzels cortados, los vecinos comieron un 69% m
 Los investigadores llamaron a esto sesgo de unidad. La mente trata una pieza entera, sea del tamaño que sea, como si fuera por definición la ración correcta. Al cortar el pretzel por la mitad, cada mitad se sigue leyendo como una unidad razonable más, así que se termina comiendo más piezas pequeñas de las que se habrían comido piezas grandes.
 
 Es casi lo contrario de lo que suena intuitivo: trocear la comida no reduce lo que comes, puede aumentarlo. Lo que de verdad funciona es limitar cuántas unidades tienes accesibles, no el tamaño de cada una.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 32. Los escalofríos de una canción (art-07)
+
+Estado: pendiente
+
+Diez músicos entraron uno a uno en un escáner cerebral con su canción favorita, la que de forma fiable les eriza la piel.
+
+Anne Blood y Robert Zatorre, de la Universidad McGill, seleccionaron solo a participantes con escalofríos fiables y reproducibles ante música instrumental, sin letra, para descartar que el efecto viniera del significado de las palabras. Dentro de un escáner de tomografía por emisión de positrones, midieron su flujo sanguíneo cerebral mientras escuchaban esa pieza y reportaban en tiempo real, con un dispositivo manual, la intensidad del escalofrío. Cuanto más fuerte era el escalofrío, más cambiaba la actividad en el estriado ventral, la amígdala y la corteza orbitofrontal.
+
+Es el mismo circuito de recompensa que se activa con la comida, el sexo y las drogas.
+
+La música no alimenta a nadie ni tiene ninguna función reproductiva. Es un patrón sonoro abstracto y, sin embargo, secuestra un circuito cerebral que evolucionó para reforzar comportamientos con valor directo de supervivencia.
+
+El mecanismo tiene nombre: circuito de recompensa mesolímbico. No responde solo a lo biológicamente útil, responde a la intensidad emocional del estímulo, venga de donde venga.
+
+Si tienes canciones que te provocan escalofríos de forma constante, no es una forma de hablar. Es una activación medible del mismo sistema que responde a tus recompensas más básicas.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 33. Leer cuatro veces seguidas salió peor (edu-07)
+
+Estado: pendiente
+
+180 universitarios leyeron un texto científico breve bajo tres condiciones distintas: leerlo cuatro veces, leerlo tres veces y examinarse una, o leerlo una vez y examinarse tres.
+
+Henry Roediger y Jeffrey Karpicke, de Washington University en San Luis, midieron cuánto recordaban a los cinco minutos y, en otro grupo, una semana después.
+
+A los cinco minutos ganaba la relectura: 83% de retención frente al 71% de quienes más se habían examinado. Una semana después, el resultado se invirtió por completo. Quienes se habían examinado tres veces recordaban el 61%. Quienes solo habían releído habían caído al 40%.
+
+El dato más incómodo llegó en un cuestionario aparte: los que solo releían estaban más seguros de que recordarían bien el texto una semana después que los que se habían examinado, justo al revés de lo que pasó.
+
+El mecanismo: recuperar información de la memoria con esfuerzo la fortalece de un modo que la relectura pasiva no consigue, aunque en el momento se sienta menos fluida.
+
+La próxima vez que estudies para algo importante, cierra el libro antes de lo que te pide el cuerpo e intenta escribir de memoria todo lo que recuerdes, aunque nadie vaya a corregirlo.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 34. El favor imposible antes del favor real (mkt-07)
+
+Estado: pendiente
+
+Le pidieron a un extraño ser tutor voluntario de menores delincuentes durante dos años. Nadie aceptó.
+
+Justo después de que lo rechazara, le pedían el favor real: acompañar dos horas a esos mismos menores en una excursión al zoo. El 50% aceptó.
+
+Robert Cialdini, de Arizona State University, comparó esa secuencia con pedir directamente el favor pequeño sin la petición extrema previa. Solo el 16,7% aceptaba en ese caso.
+
+El mecanismo tiene nombre: norma de reciprocidad de concesiones. Cuando alguien reduce su petición inicial, la otra persona percibe ese gesto como una cesión y siente presión social para responder con una cesión propia.
+
+Un detalle confirma que el mecanismo es real y no simple exposición: si era una persona distinta quien hacía la segunda petición, el efecto casi desaparecía. Solo funciona si el mismo interlocutor parece haber cedido personalmente.
+
+Es la técnica opuesta al pie en la puerta, que empieza pequeño para escalar. Aquí se empieza grande, deliberadamente, para que lo pequeño parezca razonable después.
+
+La próxima vez que alguien te pida algo "mucho más modesto" justo después de pedirte algo enorme, este estudio describe exactamente lo que está pasando.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 35. 36 preguntas y 45 minutos (rel-07)
+
+Estado: pendiente
+
+Dos desconocidos se sentaron cara a cara. 45 minutos después, algunos declaraban sentirse más cerca de esa persona que de amigos de toda la vida.
+
+Arthur Aron, de Stony Brook University, diseñó un experimento con 36 preguntas divididas en tres bloques de intimidad creciente, desde "¿A quién invitarías a cenar?" hasta revelar un defecto propio. Un grupo de control mantuvo una charla trivial de la misma duración.
+
+Justo después, cada participante puntuó por separado su cercanía con el otro en una escala validada. El grupo de preguntas escaló mucho más que el grupo de charla trivial.
+
+El mecanismo no es simplemente "hablar de cosas profundas". Es la reciprocidad estructurada por turnos: cada persona se abre un poco más solo después de que la otra lo haya hecho, algo que en la vida normal nadie se atreve a iniciar.
+
+Aron fue explícito en un matiz: el procedimiento genera cercanía real en ese momento, no garantiza que se convierta en relación duradera. Investigación posterior encontró que esa cercanía tiende a desvanecerse en semanas si la pareja no mantiene el contacto.
+
+La lista completa es pública. El ingrediente activo no es el contenido de las preguntas, es que nadie se salte el turno de abrirse primero.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 36. El móvil en la cama (rs-07)
+
+Estado: pendiente
+
+467 adolescentes escoceses respondieron cuánto usaban redes sociales, en general y específicamente de noche.
+
+Heather Cleland Woods y Holly Scott, de la Universidad de Glasgow, midieron también la calidad del sueño, la ansiedad, la depresión y la autoestima de cada uno con escalas validadas.
+
+El uso nocturno específico se relacionó con el sueño mucho más que el uso total durante el día. En un modelo que controlaba ansiedad, depresión y autoestima, el uso nocturno seguía prediciendo peor sueño por sí solo. El uso total del día dejó de predecir nada.
+
+Había una segunda variable, distinta de las horas: la inversión emocional, sentirse molesto o desconectado cuando no se puede acceder a las redes. Esa variable, no el tiempo de pantalla, fue la que más predijo ansiedad, depresión y baja autoestima.
+
+El mecanismo son dos vías separadas. Usar el móvil en la cama desplaza físicamente el sueño y expone a alertas que lo interrumpen. La dependencia emocional genera ansiedad anticipada a la hora de dormir, por miedo a perderse algo.
+
+Si te preocupa el sueño de un adolescente, o el tuyo, contar las horas totales de pantalla puede no ser la pregunta correcta.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 37. Escribir sobre lo que más te dolió (sm-08)
+
+Estado: pendiente
+
+46 estudiantes escribieron 15 minutos al día, cuatro días seguidos, sobre el suceso más traumático de su vida. Otro grupo escribió sobre temas triviales: su habitación, sus zapatos.
+
+James Pennebaker, de la Universidad de Texas en Austin, quería saber si confrontar un trauma por escrito deja huella medible en la salud física, más allá del simple alivio de contarlo. Midió el estado de ánimo y la presión arterial justo después de cada sesión, y las visitas a la enfermería universitaria durante los seis meses siguientes.
+
+En el momento, escribir sobre el trauma no sentaba bien: peor ánimo, presión arterial más alta que el grupo de control. Pero en los seis meses siguientes, el grupo que había escrito sobre hechos y emociones a la vez acudió a la enfermería aproximadamente la mitad de veces que el grupo de control.
+
+El mecanismo tiene nombre: modelo de inhibición. Contener de forma activa pensamientos sobre algo perturbador exige un esfuerzo fisiológico continuo. Ese esfuerzo de contención, no el suceso en sí, desgasta al cuerpo con el tiempo.
+
+Solo funcionó cuando el texto incluía hechos y emociones juntos, no uno de los dos por separado.
+
+El malestar inmediato tras escribir no es una señal de que el ejercicio falla. Es parte del mecanismo.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 38. Vivir fuera, no viajar fuera (via-07)
+
+Estado: pendiente
+
+205 estudiantes de un MBA intentaron resolver el problema de la vela: fijarla a una pared con cerillas y una caja de chinchetas, sin que gotee cera. La solución exige darse cuenta de que la caja puede servir de soporte.
+
+William Maddux, de INSEAD, midió cuánto tiempo había vivido cada participante en el extranjero y cuánto había viajado, por separado.
+
+Solo el tiempo vivido fuera predijo resolver el problema, no el tiempo de viaje turístico. Un segundo estudio con una negociación real replicó el patrón, controlando además los cinco grandes rasgos de personalidad.
+
+El factor que explicaba el vínculo no era la simple exposición a un país distinto. Era el grado de adaptación: cuánto había ajustado cada persona su comportamiento a la cultura local mientras vivía allí.
+
+Vivir fuera obliga a descubrir que un mismo gesto significa cosas opuestas según el marco cultural. Ese descubrimiento repetido entrena la costumbre de sostener varios marcos de interpretación a la vez, el ingrediente que parece producir soluciones creativas.
+
+Unas vacaciones cortas no bastan, según estos datos. Lo que predice el efecto es quedarte el tiempo suficiente para tener que cambiar cómo interpretas lo cotidiano.
 
 Descubre más estudios como este en La Inferencia → https://lainferencia.com

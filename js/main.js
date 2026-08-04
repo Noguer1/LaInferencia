@@ -1157,6 +1157,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La reducción de cortisol tras hacer arte se observó en todos los niveles de habilidad, lo que sugiere que el efecto no depende de la experiencia artística previa.»', attribution: 'Girija Kaimal' },
       aplicacion: 'Si buscas una forma de bajar el estrés acumulado de un día concreto, este estudio sugiere que 45 minutos de crear algo con las manos (sin exigirte que quede bien, sin foto para nadie) puede tener un efecto fisiológico medible, exactamente igual de válido si nunca has pintado nada que si llevas años haciéndolo.'
+    },
+    {
+      id: 'art-07',
+      title: 'Los escalofríos que te da una canción activan en el cerebro las mismas zonas que la comida, el sexo o las drogas',
+      summary: 'Un escáner cerebral a diez músicos mientras escuchaban la pieza que de forma fiable les erizaba la piel mostró que esos escalofríos activan el circuito de recompensa, la misma red que responde a los estímulos biológicos más básicos.',
+      sourceUrl: 'https://doi.org/10.1073/pnas.191355898',
+      sourceLabel: 'Blood & Zatorre (2001), Proceedings of the National Academy of Sciences (PNAS)',
+      badge: 'Neurociencia de la música',
+      author: { name: 'Anne J. Blood', university: 'McGill University', specialty: 'Neurociencia de la emoción musical' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Anne Blood y Robert Zatorre, del Instituto Neurológico de Montreal en la Universidad McGill, querían saber qué ocurre exactamente en el cerebro durante uno de los momentos más intensos que puede producir la música: el escalofrío que recorre la espalda cuando una pieza toca el punto adecuado. Para estudiarlo con precisión, en vez de usar música genérica para todos, pidieron a cada participante que llevara la suya propia.',
+      sections: [
+        {
+          subtitle: 'El experimento: diez músicos, su pieza favorita y un escáner de tomografía',
+          paragraphs: [
+            'Los participantes fueron seleccionados específicamente porque reportaban escalofríos fiables y reproducibles ante piezas musicales concretas, todas instrumentales y sin letra, para evitar que el efecto se debiera al significado de una letra en vez de a la música en sí. Cada uno llevó su propia grabación al laboratorio y la escuchó dentro de un escáner de tomografía por emisión de positrones (PET), que mide cambios en el flujo sanguíneo cerebral.',
+            'Mientras escuchaban, los participantes indicaban en tiempo real, con un dispositivo manual, la intensidad del escalofrío que sentían en cada momento de la pieza. Blood y Zatorre compararon después los instantes de escalofrío más intenso con los de menor intensidad dentro de la misma grabación, y encontraron que esa intensidad subjetiva predecía cambios de actividad en regiones cerebrales muy concretas.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: el mismo circuito que responde a la comida, el sexo o las drogas',
+          paragraphs: [
+            'Cuanto más intenso era el escalofrío, más cambiaba la actividad en el estriado ventral, el mesencéfalo, la amígdala y la corteza orbitofrontal y prefrontal ventromedial, un conjunto de estructuras conocido como circuito de recompensa. Es la misma red que se activa ante estímulos con valor biológico directo para la supervivencia y la reproducción: comida, sexo y también sustancias adictivas.',
+            'Lo llamativo es que la música no alimenta a nadie ni tiene ninguna función reproductiva. Es un patrón sonoro abstracto y, sin embargo, es capaz de secuestrar un circuito de recompensa que evolucionó para reforzar comportamientos con valor directo de supervivencia. El hallazgo sugiere que ese circuito responde a la intensidad emocional del estímulo, no solo a su utilidad biológica inmediata.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Las regiones cerebrales activadas por los escalofríos musicales son las mismas que responden a otros estímulos generadores de euforia, como la comida, el sexo o las drogas.»', attribution: 'Anne J. Blood & Robert J. Zatorre' },
+      aplicacion: 'Si tienes canciones que te provocan escalofríos de forma constante, este estudio sugiere que no es una simple expresión, es una activación medible del mismo circuito cerebral que responde a tus recompensas más básicas. Tener a mano esa lista concreta de piezas (no música genérica "relajante", sino las que de verdad te erizan la piel) es una herramienta de regulación emocional con respaldo neurobiológico directo.'
     }
   ],
 
@@ -1529,6 +1559,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La mente no existe separada del cuerpo. El estado físico del momento forma parte de la cognición, no solo del humor.»', attribution: 'Lawrence Williams & John Bargh' },
       aplicacion: 'Las primeras impresiones se forman en contextos físicos específicos que las influyen de formas que no detectamos. Si necesitas hacer una evaluación importante de alguien (una entrevista, una negociación, una primera reunión) sé consciente de tu estado físico previo: el cansancio, el frío, la tensión muscular son variables del juicio. Y ofrecer algo caliente a quien vas a conocer no es solo cortesía: tiene efectos documentados sobre cómo te percibe.'
+    },
+    {
+      id: 'rel-07',
+      title: '36 preguntas y 45 minutos hicieron que dos desconocidos se sintieran más cerca que muchos viejos amigos',
+      summary: 'Parejas de desconocidos que respondieron 36 preguntas cada vez más íntimas durante 45 minutos declararon sentirse significativamente más cerca de su compañero que quienes solo mantuvieron una charla trivial durante el mismo tiempo.',
+      sourceUrl: 'https://doi.org/10.1177/0146167297234003',
+      sourceLabel: 'Aron, Melinat, Aron, Vallone & Bator (1997), Personality and Social Psychology Bulletin',
+      badge: 'Formación de vínculos',
+      author: { name: 'Arthur Aron', university: 'Stony Brook University', specialty: 'Psicología de las relaciones cercanas' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Arthur Aron y su equipo querían saber si la cercanía entre dos personas, algo que normalmente tarda meses o años en construirse, podía generarse de forma fiable en un laboratorio, con dos desconocidos, en menos de una hora. No buscaban crear una amistad duradera, sino aislar el proceso de generación de cercanía para poder estudiarlo directamente.',
+      sections: [
+        {
+          subtitle: 'El experimento: tres tandas de preguntas cada vez más personales',
+          paragraphs: [
+            'Parejas de estudiantes que no se conocían se sentaron cara a cara durante 45 minutos y fueron respondiendo, por turnos, un total de 36 preguntas divididas en tres bloques de 12, con un nivel de intimidad creciente: del bloque inicial ("¿A quién invitarías a cenar si pudieras invitar a cualquier persona del mundo?") al último, mucho más vulnerable ("Comparte algo que consideres un defecto tuyo"). Un grupo de control realizó una tarea de estructura idéntica pero con conversación trivial, sin escalada de intimidad.',
+            'Justo después de la tarea, cada participante completó por separado una escala de cercanía (círculos que se solapan en distinto grado según cuánto sientes que la otra persona forma parte de ti). Las parejas del grupo de autorrevelación creciente puntuaron una cercanía significativamente mayor que las del grupo de charla trivial, pese a haber sido completos desconocidos 45 minutos antes.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la vulnerabilidad recíproca y progresiva genera cercanía',
+          paragraphs: [
+            'El diseño no consiste en simplemente "hablar de cosas íntimas", sino en una reciprocidad estructurada: cada persona se abre un poco más solo después de que la otra lo haya hecho, y ese turno alternado crea una sensación de vulnerabilidad compartida que, en la vida normal, tardaría mucho más en construirse porque nadie se atreve a dar el primer paso.',
+            'Aron fue explícito en un matiz importante: el procedimiento genera cercanía real y medible en ese momento, pero no garantiza que se convierta en una relación duradera. Investigación posterior que ha replicado este diseño encontró que la cercanía generada así tiende a desvanecerse en las semanas siguientes si la pareja no mantiene el contacto por su cuenta.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Es posible generar una cercanía experiencial considerable entre prácticamente cualquier par de personas mediante una tarea estructurada.»', attribution: 'Arthur Aron' },
+      aplicacion: 'La lista completa de las 36 preguntas es pública y puedes usarla con una pareja, un amigo o alguien que acabas de conocer. Este estudio sugiere que el ingrediente activo no es hablar de temas profundos sin más, es la escalada recíproca y por turnos: cada persona se abre un poco más solo después de que la otra lo haya hecho primero.'
     }
   ],
 
@@ -1688,6 +1748,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Ciertas emociones positivas pueden servir para deshacer los efectos cardiovasculares persistentes de las emociones negativas.»', attribution: 'Barbara L. Fredrickson' },
       aplicacion: 'Si sales de una situación que te ha disparado el pulso (una discusión, un susto, una mala noticia), este estudio sugiere que buscar algo que te haga sentir contento o te divierta de verdad ayuda a que el cuerpo se calme más rápido que simplemente esperar o distraerte con algo neutro. No hace falta que dure mucho: en el experimento, un clip de menos de un minuto ya marcó la diferencia.'
+    },
+    {
+      id: 'sm-08',
+      title: 'Escribir quince minutos al día sobre lo que más te ha dolido redujo a la mitad las visitas al médico',
+      summary: 'Estudiantes que escribieron durante quince minutos, cuatro días seguidos, sobre el suceso más traumático de su vida acudieron después a la enfermería universitaria aproximadamente la mitad de veces que quienes escribieron sobre temas triviales.',
+      sourceUrl: 'https://doi.org/10.1037/0021-843X.95.3.274',
+      sourceLabel: 'Pennebaker & Beall (1986), Journal of Abnormal Psychology',
+      badge: 'Escritura expresiva',
+      author: { name: 'James W. Pennebaker', university: 'University of Texas at Austin', specialty: 'Psicología de la escritura expresiva y la salud' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'James Pennebaker y Sandra Beall querían poner a prueba algo más concreto que la idea popular de "desahogarte por escrito": si confrontar activamente un suceso traumático, tanto los hechos como las emociones que lo acompañaron, produce efectos medibles sobre la salud física a medio plazo, y no solo un alivio emocional pasajero.',
+      sections: [
+        {
+          subtitle: 'El experimento: cuatro días, quince minutos, un suceso traumático',
+          paragraphs: [
+            'Cuarenta y seis estudiantes universitarios sanos fueron asignados al azar a escribir durante 15 minutos, en cuatro días consecutivos, sobre el suceso más traumático o perturbador de toda su vida, o bien sobre un tema trivial y superficial (su habitación, sus zapatos) como grupo de control. Dentro del grupo de trauma, unos escribían solo sobre los hechos, otros solo sobre las emociones, y otros sobre ambos a la vez.',
+            'Justo después de cada sesión de escritura, quienes habían escrito sobre el trauma reportaban peor estado de ánimo y mostraban una presión arterial más alta que el grupo de control: no era una experiencia agradable en el momento. Pero al revisar los registros de la enfermería universitaria durante los seis meses siguientes, el patrón se invirtió por completo: el grupo que había escrito sobre hechos y emociones a la vez acudió al centro de salud aproximadamente la mitad de veces que el grupo de control.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: reprimir un secreto tiene un coste fisiológico continuo',
+          paragraphs: [
+            'Pennebaker explica el efecto con un modelo de inhibición: contener de forma activa los pensamientos y emociones sobre un suceso perturbador exige un esfuerzo fisiológico sostenido, una especie de trabajo de bajo grado y continuo sobre el cuerpo. Ese esfuerzo de contención, más que el propio suceso traumático, es lo que desgasta al organismo con el tiempo.',
+            'Escribir obliga a procesar el suceso en palabras, a ordenarlo, a completar un proceso emocional que había quedado abierto. El malestar inmediato tras escribir no es una señal de que el ejercicio falla, es parte del mecanismo: solo funcionó cuando el texto incluía a la vez los hechos y las emociones, no cuando se limitaba a uno de los dos por separado.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Confrontar activamente un suceso perturbador reduce a largo plazo el trabajo de inhibición que exige reprimirlo, aunque a corto plazo resulte doloroso.»', attribution: 'James W. Pennebaker' },
+      aplicacion: 'Este estudio fundó lo que hoy se conoce como escritura expresiva, todavía usada en terapia. La versión práctica: escribe a mano durante 15 minutos, varios días seguidos, sobre algo doloroso que no hayas terminado de procesar, sin preocuparte por la gramática ni el orden, incluyendo tanto lo que pasó como lo que sentiste. Espera sentirte peor antes de notar cualquier beneficio.'
     }
   ],
 
@@ -1847,6 +1937,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Lo que hace fácil de leer un texto es, con frecuencia, exactamente lo que hace fácil de olvidar su contenido.»', attribution: 'Daniel Oppenheimer' },
       aplicacion: 'Si necesitas retener algo con profundidad (un concepto, un argumento, un procedimiento) evita el formato más cómodo para leerlo. Imprímelo en una fuente menos habitual, escríbelo a mano, o cópialo en un tamaño que requiera atención. La incomodidad tipográfica no es un obstáculo al aprendizaje: es parte del proceso. El mismo principio aplica cuando tomas notas: escribir a mano, más lento e incómodo que teclear, produce mejor retención porque fuerza la elaboración en lugar de la transcripción.'
+    },
+    {
+      id: 'edu-07',
+      title: 'Leer un texto cuatro veces seguidas fue peor, una semana después, que leerlo una vez y examinarte tres veces sobre él',
+      summary: '180 universitarios que solo releyeron un texto recordaban más a los cinco minutos que quienes se habían examinado sobre él, pero una semana después el patrón se invirtió por completo: examinarse ganó a releer.',
+      sourceUrl: 'https://doi.org/10.1111/j.1467-9280.2006.01693.x',
+      sourceLabel: 'Roediger & Karpicke (2006), Psychological Science',
+      badge: 'Ciencia del aprendizaje',
+      author: { name: 'Henry L. Roediger III', university: 'Washington University en San Luis', specialty: 'Memoria humana y ciencia del aprendizaje' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Henry Roediger y Jeffrey Karpicke querían comprobar el efecto de examinarse en condiciones parecidas a las de un aula real, con textos y recuerdo libre en vez de listas de palabras, y separar un factor concreto: si examinarse ayuda solo porque supone otra exposición al material, o si el propio acto de recuperar información de la memoria aporta algo más.',
+      sections: [
+        {
+          subtitle: 'El experimento: leer cuatro veces, leer y examinarse, o examinarse tres veces',
+          paragraphs: [
+            'Ciento ochenta estudiantes de Washington University en San Luis leyeron textos breves de divulgación científica bajo una de tres condiciones: leerlo cuatro veces seguidas, leerlo tres veces y examinarse una, o leerlo una sola vez y examinarse tres veces, siempre recordando por escrito todo lo posible sin recibir corrección ni respuestas. Después, unos hicieron el examen final a los cinco minutos y otros una semana más tarde.',
+            'A los cinco minutos, el patrón favorecía la relectura: quienes habían leído cuatro veces recordaban el 83% del texto, frente al 78% de quienes habían leído tres veces y se habían examinado una, y el 71% de quienes solo habían leído una vez y se habían examinado tres. Una semana después, el orden se invirtió por completo: el grupo que más se había examinado recordaba el 61%, el intermedio el 56%, y el que solo había releído había caído al 40%.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: recuperar información de la memoria la refuerza más que volver a leerla',
+          paragraphs: [
+            'El acto de intentar recordar algo, con esfuerzo y sin ayuda del texto delante, fortalece la huella de memoria de un modo que la simple relectura no consigue, aunque la relectura dé mejores resultados inmediatos porque el material está fresco. Examinarse no es solo una forma de comprobar lo aprendido, es en sí mismo un episodio de aprendizaje más potente que releer.',
+            'El dato más incómodo del estudio apareció en un cuestionario posterior: los estudiantes que solo habían releído se mostraban más seguros de que recordarían bien el texto una semana después que los que se habían examinado repetidamente, justo al revés de lo que ocurrió. La fluidez de releer genera una falsa sensación de dominio que no se corresponde con la retención real a largo plazo.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Examinarse no es solo un modo de evaluar lo que sabes, es en sí mismo una manera poderosa de aprenderlo.»', attribution: 'Henry L. Roediger III' },
+      aplicacion: 'Antes de un examen, en vez de releer los apuntes una vez más, cierra el material e intenta escribir de memoria todo lo que recuerdes, aunque nadie vaya a corregirlo. Según este estudio, esa recuperación activa sin retroalimentación ya produce mejor retención a largo plazo que cualquier número de relecturas adicionales, aunque en el momento se sienta menos fluida y más incómoda.'
     }
   ],
 
@@ -2644,6 +2764,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Una vez que alguien ha accedido a una petición pequeña, cambia su autopercepción de un modo que hace más probable que acceda después a una petición mayor.»', attribution: 'Jonathan L. Freedman' },
       aplicacion: 'Antes de pedir algo grande (una donación, una venta, un compromiso serio), considera si existe una versión mínima de esa misma petición que la otra persona pueda aceptar sin esfuerzo. Según este estudio, ese primer sí, aunque parezca irrelevante en sí mismo, es lo que más predice el segundo.'
+    },
+    {
+      id: 'mkt-07',
+      title: 'Pedir un favor imposible antes del favor real triplicó cuánta gente decía que sí',
+      summary: 'Pedir directamente a estudiantes que fueran tutores voluntarios de menores durante dos años obtuvo un 16,7% de aceptación. Pedir antes un favor extremo, dejar que lo rechazaran y solo entonces pedir el favor real disparó la aceptación al 50%.',
+      sourceUrl: 'https://doi.org/10.1037/h0036627',
+      sourceLabel: 'Cialdini, Vincent, Lewis, Catalan, Wheeler & Darby (1975), Journal of Personality and Social Psychology',
+      badge: 'Persuasión',
+      author: { name: 'Robert B. Cialdini', university: 'Arizona State University', specialty: 'Psicología social de la persuasión y la influencia' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Robert Cialdini y su equipo se preguntaron qué pasaría si, en vez de empezar por un favor pequeño para luego pedir uno grande (la técnica de pie en la puerta), se hacía justo lo contrario: empezar por una petición extrema, destinada a ser rechazada, y retirarse después a la petición real, mucho más modesta.',
+      sections: [
+        {
+          subtitle: 'El experimento: pedir dos años de voluntariado, para acabar pidiendo dos horas',
+          paragraphs: [
+            'Setenta y dos personas fueron abordadas individualmente por un estudiante en los pasillos de una universidad. A un grupo se le pedía directamente ser tutor voluntario de menores delincuentes durante un mínimo de dos años, una petición extrema que nadie aceptó. Justo después de que la rechazaran, se les pedía el favor real: acompañar dos horas, una tarde, a un grupo de esos mismos menores en una excursión al zoo.',
+            'Ese grupo aceptó el favor real el 50% de las veces. Dos grupos de control mostraron cifras mucho más bajas: quienes solo escuchaban la petición pequeña sin la extrema previa aceptaron el 16,7% de las veces, y quienes conocían ambas peticiones pero podían elegir cuál hacer, sin la secuencia de rechazo, aceptaron el 25%. La diferencia no venía de conocer la opción grande, venía de haberla rechazado primero.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: cuando alguien cede, sientes la presión de ceder tú también',
+          paragraphs: [
+            'Cialdini explica el efecto con una norma de reciprocidad aplicada no a favores sino a concesiones: cuando quien pide reduce su petición inicial, la otra persona percibe ese gesto como una cesión por su parte, y siente una presión social implícita para responder con una cesión propia, aceptando la petición más pequeña.',
+            'Un detalle confirmado en experimentos posteriores del mismo estudio resulta clave: si era una persona distinta quien hacía la segunda petición, el efecto desaparecía casi por completo. Solo funciona cuando el mismo interlocutor parece haber cedido personalmente, lo que confirma que el mecanismo es la percepción de concesión, no la simple exposición a dos peticiones seguidas.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Solo cuando la propuesta del segundo favor puede considerarse una concesión por parte de quien pide, aumenta el cumplimiento.»', attribution: 'Robert B. Cialdini' },
+      aplicacion: 'En una negociación (un salario, un plazo, un precio) plantear primero una petición deliberadamente alta que esperas que se rechace, para retirarte después a lo que de verdad querías, activa esta misma presión de reciprocidad. Funciona mejor cuanto más grande sea el contraste entre la primera petición y la segunda, y solo si eres tú, la misma persona, quien hace ambas.'
     }
   ],
   viajes: [
@@ -2826,6 +2976,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«El asombro puede llevar a las personas a centrarse menos en sus propias necesidades individuales y a sentirse parte de algo más grande que ellas mismas.»', attribution: 'Paul K. Piff' },
       aplicacion: 'Si buscas ese efecto fuera del laboratorio, no hace falta un viaje largo: un mirador, un cielo despejado de noche lejos de la ciudad o cualquier paisaje que te haga sentir pequeño durante un minuto parece bastar, según estos datos, para inclinar levemente la balanza hacia notar y ayudar a quien tienes cerca.'
+    },
+    {
+      id: 'via-07',
+      title: 'Quienes habían vivido en el extranjero resolvieron mejor un problema clásico de creatividad, y viajar no bastaba',
+      summary: 'En cinco estudios con cientos de estudiantes de posgrado, solo el tiempo que alguien había vivido en el extranjero (no el tiempo que había pasado de viaje) predijo mejores soluciones creativas, tanto en un problema individual como en una negociación.',
+      sourceUrl: 'https://doi.org/10.1037/a0014155',
+      sourceLabel: 'Maddux & Galinsky (2009), Journal of Personality and Social Psychology',
+      badge: 'Experiencia multicultural',
+      author: { name: 'William W. Maddux', university: 'INSEAD', specialty: 'Comportamiento organizacional y creatividad transcultural' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'William Maddux y Adam Galinsky querían poner a prueba con datos una idea sostenida sobre todo por anécdotas (muchos escritores y artistas famosos produjeron sus mejores obras viviendo en el extranjero): ¿vivir en otro país realmente vuelve más creativa a la gente, o simplemente atrae a personas que ya lo eran de partida?',
+      sections: [
+        {
+          subtitle: 'El experimento: el problema de la vela y una negociación con solución oculta',
+          paragraphs: [
+            'En el primer estudio, 205 estudiantes de un MBA a tiempo completo intentaron resolver el problema de la vela de Duncker: fijar una vela a una pared usando solo la vela, cerillas y una caja de chinchetas, sin que gotee cera, donde la solución exige darse cuenta de que la propia caja puede servir de soporte. Los investigadores midieron cuánto tiempo había vivido cada participante en el extranjero y cuánto había viajado, por separado.',
+            'Solo el tiempo vivido en el extranjero predijo resolver correctamente el problema, no el tiempo de viaje turístico, incluso controlando edad, género y nacionalidad. Un segundo estudio, con 108 estudiantes en una negociación que solo se resolvía bien encontrando una solución creativa más allá del precio, replicó el mismo patrón controlando además los cinco grandes rasgos de personalidad: de nuevo, solo vivir fuera predijo alcanzar un acuerdo creativo.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: adaptarte a una cultura nueva, no solo visitarla, entrena la mente',
+          paragraphs: [
+            'El factor que explicaba el vínculo no era la simple exposición a un país distinto, sino el grado de adaptación: cuánto había ajustado cada persona su comportamiento y su forma de pensar a la cultura local mientras vivía allí. Vivir fuera obliga a descubrir que un mismo gesto puede significar cosas opuestas según el marco cultural (dejar comida en el plato es cortesía en algunos sitios e insulto en otros), y ese descubrimiento repetido entrena la costumbre de sostener varios marcos de interpretación a la vez.',
+            'En un tercer estudio, los investigadores pidieron a personas que ya habían vivido en el extranjero que recordaran por escrito esa experiencia (frente a recordar un viaje turístico o un día cualquiera en su ciudad natal) antes de hacer una prueba de creatividad. Recordar la experiencia de vivir fuera mejoró temporalmente el rendimiento creativo, y la mejora era mayor cuanto más tiempo había vivido esa persona en el extranjero, algo que solo ocurrió en quienes tenían esa experiencia real detrás.'
+          ]
+        }
+      ],
+      blockquote: { text: '«No es el tiempo pasado en el extranjero por sí mismo, es el grado de adaptación a una cultura distinta lo que explica el vínculo entre vivir fuera y la creatividad.»', attribution: 'William W. Maddux' },
+      aplicacion: 'Según este estudio, unas vacaciones cortas en el extranjero no parecen suficientes para mejorar tu pensamiento creativo. Lo que predice el efecto es adaptarte de verdad: vivir en un sitio el tiempo suficiente para tener que cambiar cómo interpretas situaciones cotidianas, un tipo de viaje bastante más exigente que el turismo.'
     }
   ],
   redesSociales: [
@@ -3008,6 +3188,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Un simple número, el recuento de likes, es suficiente para alterar tanto el comportamiento como la respuesta neuronal de los adolescentes ante el contenido que ven.»', attribution: 'Lauren E. Sherman' },
       aplicacion: 'Si eres madre, padre o educador de un adolescente, este estudio sugiere que hablar solo del contenido que publica ("esa foto no es apropiada") deja fuera la mitad del problema: la métrica social que acompaña a cada publicación pesa, medida en el propio cerebro, tanto o más que el contenido en sí.'
+    },
+    {
+      id: 'rs-07',
+      title: 'Usar el móvil en la cama predijo peor sueño que el tiempo total en redes sociales durante el día',
+      summary: 'En 467 adolescentes escoceses, el uso de redes sociales por la noche y en la cama se relacionó con el sueño mucho más que el uso total durante el día, y la conexión emocional con las redes predijo, por sí sola, más ansiedad y depresión.',
+      sourceUrl: 'https://doi.org/10.1016/j.adolescence.2016.05.008',
+      sourceLabel: 'Woods & Scott (2016), Journal of Adolescence',
+      badge: 'Sueño y bienestar digital',
+      author: { name: 'Heather Cleland Woods', university: 'University of Glasgow', specialty: 'Psicología del desarrollo adolescente y bienestar digital' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Heather Cleland Woods y Holly Scott querían ir más allá de la idea genérica de que "el móvil quita horas de sueño" y precisar qué es exactamente lo que importa: cuánto tiempo total pasa un adolescente en redes sociales, en qué momento del día las usa, o cuánto le afecta emocionalmente no poder acceder a ellas.',
+      sections: [
+        {
+          subtitle: 'El experimento: 467 adolescentes, tres formas distintas de medir el uso de redes',
+          paragraphs: [
+            'Cuatrocientos sesenta y siete alumnos de secundaria escoceses, de entre 11 y 17 años, completaron cuestionarios que medían por separado el uso general de redes sociales, el uso específico nocturno (en la cama, justo antes de dormir, alertas que interrumpen el sueño) y la inversión emocional en redes (sentirse molesto o desconectado cuando no pueden acceder a ellas), junto con escalas validadas de calidad del sueño, ansiedad, depresión y autoestima.',
+            'La calidad del sueño se relacionó con más fuerza con el uso nocturno específico (r = ,34) que con el uso total durante el día (r = ,24). En un modelo estadístico que incluía además ansiedad, depresión y autoestima, el uso nocturno siguió prediciendo peor sueño por sí solo, mientras que el uso total durante el día dejó de ser un predictor significativo.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: no es cuánto usas las redes, es cuándo y cuánto te importan',
+          paragraphs: [
+            'Las autoras identifican dos vías distintas y en parte independientes: usar el móvil en la cama desplaza físicamente el sueño y expone a alertas que lo interrumpen, un mecanismo más bien físico. La inversión emocional en redes, en cambio, genera ansiedad a la hora de dormir por miedo a perderse algo, un mecanismo más bien psicológico, y fue precisamente esa inversión emocional (no las horas de uso) la que predijo con más fuerza la ansiedad, la depresión y la baja autoestima.',
+            'Un 35% de la muestra encajaba en el perfil de mal dormidor, un 47% en el de ansiedad clínica y un 21% en el de depresión, según los puntos de corte validados usados en el estudio. El diseño no permite establecer causalidad en ninguna dirección, pero señala dos palancas concretas (el móvil fuera del dormitorio por la noche y la dependencia emocional de las notificaciones) por encima de la simple cantidad de tiempo de pantalla.'
+          ]
+        }
+      ],
+      blockquote: { text: '«El momento del uso de redes sociales de los adolescentes y la conexión emocional que sienten hacia esos sitios son factores más importantes que la simple frecuencia o duración del uso.»', attribution: 'Heather Cleland Woods & Holly Scott' },
+      aplicacion: 'Si te preocupa el sueño de un adolescente, o el tuyo propio, este estudio sugiere que limitar solo las horas totales de pantalla puede no ser la palanca más eficaz. Los dos factores que más pesaron fueron mantener el móvil fuera del dormitorio por la noche y prestar atención a si consultar las redes se siente como una obligación emocional en vez de una elección.'
     }
   ]
 };

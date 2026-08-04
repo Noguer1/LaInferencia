@@ -130,6 +130,13 @@ IDs de artículos publicados (referencia interna, para no repetir estudio ni án
 | Seguridad psicológica en equipos (Edmondson) | tra-07 | trabajo |
 | Exposición selectiva a medios (Iyengar & Hahn) | pol-07 | politica |
 | Sesgo de unidad (Geier, Rozin & Doros) | ali-07 | alimentacion |
+| Escalofríos musicales y circuito de recompensa (Blood & Zatorre) | art-07 | arte |
+| Efecto testing / recuperación activa (Roediger & Karpicke) | edu-07 | educacion |
+| Door-in-the-face / puerta en la cara (Cialdini et al.) | mkt-07 | marketing |
+| 36 preguntas y cercanía experimental (Aron et al.) | rel-07 | relaciones |
+| Uso nocturno de redes y sueño adolescente (Woods & Scott) | rs-07 | redesSociales |
+| Escritura expresiva y salud (Pennebaker & Beall) | sm-08 | saludMental |
+| Vivir en el extranjero y creatividad (Maddux & Galinsky) | via-07 | viajes |
 
 ---
 
