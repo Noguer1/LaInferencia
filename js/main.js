@@ -56,7 +56,7 @@ const ARTICLE_VIEWS = {
   'art-01': '1.3k', 'art-02': '1.1k', 'art-03': '894',  'art-04': '1.0k',
   'tec-01': '3.4k', 'tec-02': '2.9k', 'tec-03': '2.2k', 'tec-04': '1.8k',
   'rel-01': '4.1k', 'rel-02': '3.7k', 'rel-03': '3.2k', 'rel-04': '2.8k', 'rel-05': '2.4k', 'rel-06': '1.9k',
-  'sm-01':  '6.2k', 'sm-02':  '5.1k', 'sm-03':  '4.3k', 'sm-04':  '3.8k', 'sm-05':  '2.9k',
+  'sm-02':  '5.1k', 'sm-03':  '4.3k', 'sm-04':  '3.8k', 'sm-05':  '2.9k',
   'edu-01': '2.7k', 'edu-02': '2.3k', 'edu-03': '1.9k', 'edu-04': '1.6k', 'edu-05': '1.4k',
   'tra-01': '3.5k', 'tra-02': '2.9k', 'tra-03': '2.6k', 'tra-04': '2.1k', 'tra-05': '1.7k', 'tra-06': '1.3k',
   'pol-01': '2.2k', 'pol-02': '1.9k', 'pol-03': '1.6k', 'pol-04': '1.2k',
@@ -1443,36 +1443,6 @@ const LIBRARY_ARTICLES = {
   ],
 
   saludMental: [
-    {
-      id: 'sm-01',
-      title: 'El estado de flujo: la ciencia detrás de cuando el tiempo desaparece',
-      summary: 'Existe un punto exacto entre el aburrimiento y la ansiedad donde el rendimiento y el bienestar alcanzan su pico simultáneamente. Csikszentmihalyi lo mapeó con décadas de investigación.',
-      sourceUrl: 'https://www.jstor.org/stable/20159000',
-      sourceLabel: 'Csikszentmihalyi (1975/1990), Flow: The Psychology of Optimal Experience',
-      badge: 'Psicología positiva',
-      author: { name: 'Mihaly Csikszentmihalyi', university: 'Universidad de Chicago / Claremont Graduate University', specialty: 'Psicología de la experiencia óptima y el bienestar' },
-      readingTime: '4 min',
-      date: '2 de junio de 2026',
-      intro: 'En los años 70, Mihaly Csikszentmihalyi entrevistó a cientos de personas que realizaban actividades que no les pagaban y que nadie les pedía: escaladores, ajedrecistas, cirujanos operando de forma voluntaria, artistas. Buscaba entender qué les motivaba cuando la recompensa externa era mínima o inexistente. Lo que encontró era una experiencia que describían de forma casi idéntica, con un vocabulario sorprendentemente convergente: un estado de concentración total donde el tiempo se distorsiona, el yo desaparece y la actividad fluye sin esfuerzo consciente. Lo llamó "flujo".',
-      sections: [
-        {
-          subtitle: 'Las condiciones del flujo: el canal entre el aburrimiento y la ansiedad',
-          paragraphs: [
-            'Csikszentmihalyi identificó que el flujo ocurre cuando el nivel de desafío de una tarea y el nivel de habilidad del ejecutante están perfectamente equilibrados y son ambos suficientemente altos. Si el desafío supera con mucho la habilidad, aparece la ansiedad. Si la habilidad supera con mucho el desafío, aparece el aburrimiento. En el canal estrecho entre ambos extremos, con desafío y habilidad elevados y equilibrados, aparece el flujo. El equilibrio debe producirse en el nivel alto: una tarea fácil realizada por un principiante no produce flujo, produce rutina.',
-            'El estado de flujo tiene características subjetivas consistentes que Csikszentmihalyi documentó transculturalmente: concentración intensa y sin esfuerzo, fusión entre acción y conciencia, pérdida del sentido del tiempo, desaparición de la autoconsciencia, sensación de control, y lo que denomina "experiencia autotélica", gratificante en sí misma, independientemente del resultado externo. Las personas en flujo no trabajan para conseguir algo: trabajan porque el proceso en sí es la recompensa.'
-          ]
-        },
-        {
-          subtitle: 'El flujo y el cerebro: qué ocurre neurológicamente',
-          paragraphs: [
-            'La investigación neuroimagen posterior al trabajo de Csikszentmihalyi ha aportado datos sobre el sustrato biológico del flujo. El estado se asocia con una reducción de actividad en la corteza prefrontal dorsolateral (la región involucrada en la autoconsciencia, la evaluación crítica y la planificación deliberada). Esta "hipofrontalidad transitoria" explica la desaparición del yo: el sistema que monitorea y evalúa el desempeño se desconecta parcialmente, liberando recursos cognitivos para la ejecución.',
-            'Al mismo tiempo, el flujo activa el sistema de recompensa (liberación de dopamina y norepinefrina) y aumenta la sincronización entre diferentes regiones cerebrales. El cerebro en flujo procesa más información de forma más eficiente, con menos ruido interno y más señal útil. Por eso el rendimiento en flujo suele superar al rendimiento en estados de esfuerzo consciente: el sistema de supervisión que normalmente introduce interferencia ha bajado su actividad.'
-          ]
-        }
-      ],
-      blockquote: { text: '«La mejor manera de mejorar la calidad de vida es hacer que las experiencias cotidianas sean más agradables. Y la experiencia de flujo es la más agradable que los humanos pueden tener de forma consistente.»', attribution: 'Mihaly Csikszentmihalyi' },
-      aplicacion: 'Para diseñar flujo deliberadamente: identifica una habilidad que tengas al 70% de tu capacidad máxima, define un objetivo concreto y medible para la sesión (no "trabajar en X" sino "completar la sección Y de X"), y elimina todas las interrupciones posibles durante al menos 90 minutos. Las notificaciones no son distracciones: son el mecanismo exacto que imposibilita el flujo, que requiere acumulación de atención sostenida.'
-    },
     {
       id: 'sm-02',
       title: 'La ilusión de control: por qué creer que mandas sobre lo que no controlas te mantiene más sano',
@@ -4181,7 +4151,7 @@ const QUIZ_BANK = {
     { q: '¿Cómo llama Sternberg a la combinación de intimidad + compromiso SIN pasión?', opts: ['Amor consumado','Amor romántico','Amor compañero','Encaprichamiento'], correct: 2 }
   ],
   /* SALUD MENTAL */
-  'sm-01': [
+  'sm-04': [
     { q: '¿Qué condición produce el estado de flujo, según Csikszentmihalyi?', opts: ['Tarea fácil sin presión','Desafío y habilidad altos y equilibrados entre sí','Máxima habilidad con mínimo desafío','Ausencia total de estrés'], correct: 1 },
     { q: '¿Qué ocurre neurológicamente con la corteza prefrontal durante el flujo?', opts: ['Se activa al máximo','Aumenta la autoconsciencia crítica','Se produce hipofrontalidad transitoria (desconexión parcial)','Libera serotonina masivamente'], correct: 2 }
   ],

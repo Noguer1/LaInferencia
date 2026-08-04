@@ -339,16 +339,6 @@ const SEO_OVERRIDES = {
       { q: '¿Existen otros efectos físicos que cambien la percepción social?', a: 'Sí. El peso (objetos pesados → juicios más serios), la textura áspera (→ interacciones percibidas más difíciles) y la dureza también afectan a juicios sociales.' }
     ]
   },
-  'sm-01': {
-    seoTitle: 'Estado de flujo: la ciencia de la concentración total y el tiempo que desaparece | La Inferencia',
-    seoDescription: '¿Qué es el estado de flujo o flow? La investigación de Csikszentmihalyi: cuándo el tiempo desaparece y el rendimiento llega al máximo.',
-    faqs: [
-      { q: '¿Qué es el estado de flujo o flow?', a: 'Estado de concentración total donde el tiempo parece detenerse, el esfuerzo desaparece y el rendimiento es máximo. Descrito por Csikszentmihalyi desde los años 70.' },
-      { q: '¿Cuándo se produce el estado de flujo?', a: 'Cuando el nivel de reto y el nivel de habilidad están equilibrados en el rango alto. Si el reto supera la habilidad: ansiedad. Si la habilidad supera el reto: aburrimiento.' },
-      { q: '¿Qué condiciones favorecen el estado de flujo?', a: 'Objetivos claros, retroalimentación inmediata, ausencia de interrupciones, y una tarea que requiere concentración total sin superar las propias habilidades.' },
-      { q: '¿Es el flujo solo para actividades creativas o deportivas?', a: 'No. El flujo ocurre en cualquier actividad suficientemente desafiante: programar, cocinar, cirugía, conversación profunda. La actividad no importa; el equilibrio reto-habilidad sí.' }
-    ]
-  },
   'sm-02': {
     seoTitle: 'Ilusión de control: creer que mandas sobre el azar mejora tu salud mental | La Inferencia',
     seoDescription: '¿Es buena la ilusión de control? La paradoja: creer que controlamos lo que no controlamos tiene efectos protectores sobre la salud mental.',

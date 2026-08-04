@@ -273,13 +273,6 @@ const RECOMENDACIONES = {
   },
 
   // ── Salud mental ───────────────────────────────────────────
-  'sm-01': {
-    libro: {
-      titulo: 'Fluir (Flow)', autor: 'Mihaly Csikszentmihalyi',
-      sinopsis: 'El propio investigador que acuñó el concepto de flujo explica, con el método de muestreo de experiencias que originó la teoría, cómo entrar deliberadamente en ese estado con más frecuencia.',
-      amazon: 'https://www.amazon.es/s?k=Fluir+Flow+Mihaly+Csikszentmihalyi&tag=lainferencia-21',
-    }
-  },
   'sm-02': {
     libro: {
       titulo: 'Mindfulness', autor: 'Ellen Langer',
