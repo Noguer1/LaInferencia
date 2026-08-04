@@ -123,6 +123,13 @@ IDs de artículos publicados (referencia interna, para no repetir estudio ni án
 | Asombro y comportamiento prosocial (Piff) | via-06 | viajes |
 | Facebook y bienestar (Kross) | rs-05 | redesSociales |
 | El poder del like en adolescentes (Sherman) | rs-06 | redesSociales |
+| El efecto deshacer de las emociones positivas (Fredrickson & Levenson) | sm-07 | saludMental |
+| Focalización en el arma / weapon focus (Loftus, Loftus & Messo) | der-07 | derecho |
+| Facilitación social, el carrete de Triplett | dep-07 | deporte |
+| Multitarea mediática y cambio de tarea (Ophir, Nass & Wagner) | tec-07 | tecnologia |
+| Seguridad psicológica en equipos (Edmondson) | tra-07 | trabajo |
+| Exposición selectiva a medios (Iyengar & Hahn) | pol-07 | politica |
+| Sesgo de unidad (Geier, Rozin & Doros) | ali-07 | alimentacion |
 
 ---
 

@@ -1,6 +1,6 @@
 # Posts pendientes de publicar
 
-Lote 1 (posts 1-12) generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Lote 2 (posts 13-18) generado el mismo día, con 6 artículos nuevos de marketing, política y alimentación. Lote 3 (posts 19-24) generado el mismo día, con 6 artículos nuevos de salud mental, marketing, viajes y redes sociales, para nivelar esas categorías. Formato y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
+Lote 1 (posts 1-12) generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Lote 2 (posts 13-18) generado el mismo día, con 6 artículos nuevos de marketing, política y alimentación. Lote 3 (posts 19-24) generado el mismo día, con 6 artículos nuevos de salud mental, marketing, viajes y redes sociales, para nivelar esas categorías. Lote 4 (posts 25-31) generado el mismo día, con 7 artículos nuevos de salud mental, derecho, deporte, tecnología, trabajo, política y alimentación, para llevar esas categorías a 7 artículos cada una. Formato y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
 
 Estado de cada uno: pendiente hasta que se marque como publicado aquí manualmente.
 
@@ -433,5 +433,143 @@ Los adolescentes daban like con mucha más frecuencia a las fotos que ya mostrab
 El hallazgo va más allá de que a los adolescentes les guste la aprobación. El número de likes cambiaba el propio juicio sobre el contenido: una foto de alcohol con muchos likes se procesaba como más aceptable que la misma foto con pocos, medido tanto en la conducta como en la actividad cerebral vinculada al control cognitivo.
 
 Sherman lo enmarca como una forma cuantificada de la presión de grupo. Antes había que inferir la aprobación de los demás. Ahora es un número visible, actualizado en tiempo real, capaz de anular parcialmente el criterio propio sobre qué contenido resulta aceptable.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 25. Un vídeo de un cachorro después del susto (sm-07)
+
+Estado: pendiente
+
+Un hombre cuelga del borde de un rascacielos en una película. Sesenta mujeres lo vieron y su corazón se aceleró de verdad.
+
+Barbara Fredrickson y Robert Levenson, de las universidades de Michigan y Berkeley, mostraron primero ese clip de miedo a las 60 participantes. Justo después, cada una veía al azar uno de cuatro vídeos: un cachorro jugando, unas olas en la orilla, una escena neutra o un funeral.
+
+A partir de ahí, midieron cuántos segundos tardaba el corazón de cada mujer en volver a su ritmo normal.
+
+Quienes vieron el cachorro o las olas recuperaron su ritmo cardíaco basal mucho más rápido que quienes vieron la escena neutra, y mucho más rápido que quienes vieron el funeral. La diferencia frente al grupo triste fue estadísticamente muy sólida.
+
+Fredrickson llamó a esto el efecto deshacer. La idea central: alegría y contento no son solo agradables, actúan como un antídoto fisiológico concreto para la activación que ha dejado el miedo en el cuerpo. El vídeo neutro también distraía, y aun así su recuperación fue más lenta. Lo que acelera la calma no es dejar de pensar en el susto, es la cualidad positiva concreta de lo que viene después.
+
+En el experimento, bastó un clip de menos de un minuto para marcar la diferencia.
+
+La próxima vez que salgas de una discusión o de una mala noticia con el pulso disparado, quizá lo que necesites no sea distraerte con cualquier cosa, sino buscar algo que de verdad te haga sentir bien.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 26. La pistola que borra la cara (der-07)
+
+Estado: pendiente
+
+En un restaurante de comida rápida, un cliente se acerca a la caja. En la mitad de las diapositivas le entrega un cheque al cajero. En la otra mitad, le apunta con una pistola.
+
+Elizabeth Loftus, Geoffrey Loftus y Jane Messo, de la Universidad de Washington, mostraron esta escena a 36 personas mientras rastreaban hacia dónde miraban sus ojos. Después les pedían identificar al hombre en una rueda de reconocimiento.
+
+Quienes vieron el arma fijaron la mirada en ella una media de 3,7 veces, frente a 2,4 veces con el cheque, y durante más tiempo cada vez.
+
+El resultado en la identificación fue contundente: con el cheque, el 39% reconoció correctamente al hombre. Con la pistola, solo el 11%. Un segundo experimento con 80 personas replicó el patrón: 35% frente a 15%.
+
+El mecanismo tiene nombre: focalización en el arma. Ante un objeto que rompe con lo esperado en el contexto, la atención se concentra ahí de forma automática y deja de repartirse hacia el resto de la escena, incluida la cara de quien la sostiene. No es que el testigo mienta ni exagere. Es que, durante esos segundos, su atención estuvo literalmente en otra parte.
+
+Es un dato incómodo para cualquier caso judicial que dependa del reconocimiento de un testigo tras un atraco o una agresión armada: cuanto más amenazante el objeto, menos fiable el recuerdo de la cara, justo lo que la investigación más necesita.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 27. El primer experimento de psicología social (dep-07)
+
+Estado: pendiente
+
+Un profesor se fijó en algo raro en los registros de ciclismo: los corredores iban más rápido compitiendo codo con codo que contra el cronómetro en solitario.
+
+Norman Triplett, de Indiana University, quiso comprobar si ese efecto se reproducía en una tarea completamente distinta. En 1898 construyó un aparato con dos carretes de pesca conectados a banderas y reclutó a 40 niños de entre 8 y 17 años para enrollar hilo lo más rápido posible, solos o junto a otro niño.
+
+El resultado: 20 de los 40 niños enrollaron más rápido con compañía. Diez fueron más lentos. Los diez restantes no mostraron ningún cambio claro, algunos incluso parecían sobreexcitarse y perder ritmo.
+
+Triplett llamó a esto factores dinamogénicos: la sola presencia de otra persona haciendo lo mismo liberaba energía competitiva adicional en la mayoría, sin premio, sin público, sin ninguna consecuencia real de por medio.
+
+Este experimento se considera hoy el primero documentado de la psicología social experimental. Y ese matiz de los que rindieron peor no es ruido, es el germen de lo que después se formalizó como facilitación social: la compañía mejora el rendimiento en tareas simples o ya dominadas, pero puede hundirlo en tareas complejas todavía no aprendidas.
+
+Si entrenas algo que ya dominas, buscar compañía puede darte un empujón real. Si estás aprendiendo algo nuevo y difícil, quizá te convenga más la soledad.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 28. Multitarea de pantallas (tec-07)
+
+Estado: pendiente
+
+262 estudiantes de Stanford respondieron cuántos medios digitales usaban a la vez: redes, mensajes, vídeo, música. Con eso, los investigadores los dividieron en dos grupos y les pusieron a prueba en el laboratorio.
+
+Eyal Ophir, Clifford Nass y Anthony Wagner esperaban encontrar que quienes practicaban más la multitarea digital serían mejores gestionándola. En una prueba de memoria con distractores visuales, el grupo que más compaginaba pantallas rindió peor cuantos más distractores había. En otra de memoria de trabajo, cometió más falsas alarmas al aumentar la carga.
+
+El dato que rompió la hipótesis inicial llegó con el cambio de tarea: alternar entre clasificar un número como par o impar y una letra como vocal o consonante. El grupo que más compaginaba pantallas fue significativamente más lento cambiando de una tarea a otra, con un coste de cambio 167 milisegundos mayor que el otro grupo.
+
+El mecanismo no es falta de capacidad, es un estilo de procesamiento distinto: quienes multitarea con más frecuencia tienen más dificultad para restringir voluntariamente la atención a lo relevante y bloquear el resto, ya venga esa distracción del entorno o de su propia memoria.
+
+Practicar la multitarea no entrena la habilidad de enfocarse. Entrena la de atender a más cosas a la vez, algo que juega en contra justo a quien necesita concentrarse en una sola tarea.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 29. Por qué unos equipos admiten errores y otros los esconden (tra-07)
+
+Estado: pendiente
+
+En un mismo hospital, una enfermera decía que los errores con la medicación se contaban siempre, sin excepción. En otro equipo del mismo hospital, otra enfermera contaba justo lo contrario: quien comete un error queda señalado.
+
+Amy Edmondson, de Harvard, quiso saber si esa diferencia de ambiente, y no solo la estructura del equipo, explicaba cuánto aprendían realmente los grupos de su propio trabajo. Estudió 51 equipos de una empresa manufacturera, combinando cuestionarios, entrevistas y observación directa.
+
+Midió tres cosas: la seguridad psicológica del equipo (la creencia de que se puede admitir un error sin ser castigado por ello), la confianza del equipo en su propia capacidad, y con qué frecuencia sus miembros pedían ayuda o hablaban de fallos abiertamente.
+
+El resultado fue claro: la seguridad psicológica predecía el comportamiento de aprendizaje del equipo, incluso controlando su nivel de confianza en sí mismo. Esa confianza, por sí sola, dejaba de importar en cuanto se tenía en cuenta la seguridad psicológica.
+
+El mecanismo es simple de nombrar y difícil de construir: admitir un error implica un riesgo social real, exponerse a parecer menos competente. En un equipo con baja seguridad psicológica, ese riesgo pesa más que el beneficio de aprender. En uno con alta seguridad, se acepta, porque existe la confianza de que nadie será avergonzado por hablar.
+
+La próxima vez que alguien admita un fallo en tu equipo, fíjate en qué pasa después. Esa reacción concreta pesa más que cualquier política de cultura escrita en un manual.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 30. El mismo titular, distinto logo (pol-07)
+
+Estado: pendiente
+
+Mil veintitrés votantes registrados en Estados Unidos vieron titulares de noticias idénticos. Lo único que cambiaba, al azar, era el logo debajo: Fox News, CNN, NPR o la BBC.
+
+Shanto Iyengar y Kyu Hahn, de Stanford, diseñaron el experimento para separar dos posibles causas de la polarización informativa: si la gente evita ciertas fuentes por su contenido real, o simplemente por lo que esa fuente representa.
+
+Los participantes conservadores y republicanos eligieron de forma sistemática las noticias etiquetadas como Fox y evitaron las de CNN y NPR. Los liberales y demócratas hicieron justo lo contrario, repartiendo su atención entre CNN y NPR mientras evitaban Fox. El contenido, insisto, era exactamente el mismo en todos los casos.
+
+Lo más revelador es que este patrón no se limitó a temas políticamente cargados como Irak o las relaciones raciales. Apareció también, más débil pero presente, en temas tan poco polémicos como los viajes o los sucesos. Y se intensificaba entre los participantes más comprometidos políticamente.
+
+El mecanismo: la fuente funciona como una señal de identidad en sí misma, no solo como un canal de contenido. La decisión de leer algo, o de no leerlo, se toma en parte antes de saber siquiera de qué trata.
+
+La próxima vez que descartes algo solo por saber de dónde viene, sin haber leído todavía una sola línea, este estudio describe exactamente ese mecanismo en marcha.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 31. Cortar los pretzels por la mitad (ali-07)
+
+Estado: pendiente
+
+En el portal de un edificio de apartamentos, dejaban pretzels gratis para los vecinos tres días por semana. Unas semanas, enteros. Otras, exactamente los mismos pretzels cortados por la mitad, con el mismo peso total puesto sobre la mesa.
+
+Andrew Geier, Paul Rozin y Gheorghe Doros, de la Universidad de Pensilvania, querían comprobar si el número de piezas disponibles, más allá del hambre o del peso real de la comida, cambiaba cuánto comía la gente.
+
+El resultado: en las semanas de pretzels cortados, los vecinos comieron un 69% más en peso que en las semanas de pretzels enteros. Un segundo experimento, con un bol de M&M's servido con una cuchara pequeña o con una cuatro veces más grande, mostró el mismo patrón: con la cuchara grande, la gente comía bastante más chocolate, aunque podía repetir sin límite con cualquiera de las dos.
+
+Los investigadores llamaron a esto sesgo de unidad. La mente trata una pieza entera, sea del tamaño que sea, como si fuera por definición la ración correcta. Al cortar el pretzel por la mitad, cada mitad se sigue leyendo como una unidad razonable más, así que se termina comiendo más piezas pequeñas de las que se habrían comido piezas grandes.
+
+Es casi lo contrario de lo que suena intuitivo: trocear la comida no reduce lo que comes, puede aumentarlo. Lo que de verdad funciona es limitar cuántas unidades tienes accesibles, no el tamaño de cada una.
 
 Descubre más estudios como este en La Inferencia → https://lainferencia.com

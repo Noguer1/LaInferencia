@@ -731,6 +731,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Ni siquiera los expertos con años de experiencia están libres del efecto de anclaje, aunque el ancla sea, de forma evidente, aleatoria e irrelevante.»', attribution: 'Birte Englich' },
       aplicacion: 'Cualquier número que se mencione justo antes de una decisión (un precio inicial, una cifra ajena al problema, una estimación de otra persona) puede estar anclando tu juicio sin que lo notes. Antes de decidir algo importante, pregúntate qué número viste u oíste en los minutos previos y si tiene alguna relación real con lo que estás valorando.'
+    },
+    {
+      id: 'der-07',
+      title: 'Ver una pistola en vez de un cheque hizo que los testigos recordaran mucho peor la cara del sospechoso',
+      summary: 'Testigos que vieron una diapositiva con un arma en vez de un cheque en las manos de un hombre identificaron correctamente su cara en la rueda de reconocimiento solo el 11% de las veces, frente al 39% cuando no había arma.',
+      sourceUrl: 'https://doi.org/10.1007/BF01044839',
+      sourceLabel: 'Loftus, Loftus & Messo (1987), Law and Human Behavior',
+      badge: 'Psicología forense',
+      author: { name: 'Elizabeth F. Loftus', university: 'Universidad de Washington', specialty: 'Psicología del testimonio y la memoria' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Elizabeth Loftus, Geoffrey Loftus y Jane Messo querían poner a prueba una idea repetida en juzgados: que un testigo que ha visto un arma de cerca debería recordar con más nitidez, no con menos, los detalles de lo ocurrido, incluida la cara de quien la sostenía. Diseñaron un experimento para comprobarlo con precisión, midiendo literalmente hacia dónde miraban los ojos de los testigos.',
+      sections: [
+        {
+          subtitle: 'El experimento: la misma escena, con un cheque o con una pistola',
+          paragraphs: [
+            '36 participantes vieron una secuencia de 18 diapositivas que recreaban una escena en un restaurante de comida rápida. En un momento dado, un cliente se acercaba a la caja: en la mitad de los casos le entregaba un cheque al cajero, en la otra mitad le apuntaba con una pistola. El resto de la escena era idéntico en ambas condiciones.',
+            'Con un rastreador de movimientos oculares, los investigadores confirmaron que los participantes fijaban la mirada en el arma una media de 3,7 veces, frente a 2,4 veces cuando el objeto era un cheque, y durante más tiempo en cada fijación. Después, se les pedía identificar al hombre de la escena en una rueda de reconocimiento fotográfica. En el grupo que había visto el cheque, el 39% identificó correctamente al hombre. En el grupo que había visto la pistola, solo lo consiguió el 11%. Un segundo experimento con 80 participantes replicó el patrón: 35% de aciertos con el cheque frente a 15% con el arma.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la atención tiene un límite, y el arma se lo lleva todo',
+          paragraphs: [
+            'Loftus y sus colegas explican el efecto con lo que llamaron la teoría de la fijación: ante un objeto que no encaja con lo esperado en el contexto (una pistola en una fila de comida rápida es, literalmente, fuera de lugar), la atención se concentra ahí de forma automática y deja de repartirse hacia el resto de la escena, incluida la cara de la persona que la sostiene.',
+            'El resultado es incómodo para cualquier intuición sobre testigos presenciales de un atraco o una agresión armada: cuanto más amenazante y llamativo es el objeto del delito, menos fiable tiende a ser el recuerdo de la cara del agresor, justo la información que la investigación policial más necesita. No es que el testigo mienta o exagere, es que su atención, de forma involuntaria, estuvo en otra parte.'
+          ]
+        }
+      ],
+      blockquote: { text: '«El arma capta y retiene la atención del testigo a expensas de otros detalles de la escena, incluida la cara del portador.»', attribution: 'Elizabeth F. Loftus' },
+      aplicacion: 'Si alguna vez tienes que dar una descripción tras presenciar una situación con un objeto amenazante de por medio, ten en cuenta que tu memoria del rostro puede ser mucho menos fiable de lo que sientes en el momento. Este estudio es también un argumento a favor de dar peso, en cualquier proceso judicial, a otra evidencia además del reconocimiento visual de un testigo cuando hubo un arma presente.'
     }
   ],
 
@@ -914,6 +944,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La gente detecta patrones en secuencias aleatorias con la misma facilidad con la que los detecta en secuencias que sí contienen un patrón real.»', attribution: 'Thomas Gilovich' },
       aplicacion: 'La próxima vez que sientas que algo (un jugador, una inversión, una máquina) está "en racha", pregúntate cuántas rachas de esa longitud esperarías ver solo por azar en una secuencia tan larga como la que estás observando. Casi siempre son más de las que la intuición calcula, y eso no significa que las rachas no existan nunca: significa que hace falta más que una racha corta para probarlo.'
+    },
+    {
+      id: 'dep-07',
+      title: 'El primer experimento de psicología social: niños que enrollaban un carrete más rápido si tenían compañía',
+      summary: 'Norman Triplett quiso comprobar en laboratorio por qué los ciclistas competían más rápido acompañados que contra el reloj, y encontró que 20 de 40 niños enrollaban un carrete de pesca más deprisa junto a otro niño.',
+      sourceUrl: 'https://doi.org/10.2307/1412188',
+      sourceLabel: 'Triplett (1898), American Journal of Psychology',
+      badge: 'Psicología del deporte',
+      author: { name: 'Norman Triplett', university: 'Indiana University', specialty: 'Psicología de la competición y facilitación social' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Norman Triplett llevaba tiempo fijándose en los registros de carreras ciclistas y había notado algo que le pareció digno de estudio: los ciclistas marcaban tiempos más rápidos cuando competían codo con codo contra otro corredor que cuando pedaleaban en solitario contra el cronómetro. Quiso saber si ese efecto de la compañía sobre el rendimiento se podía reproducir, de forma controlada, con una tarea completamente distinta al ciclismo.',
+      sections: [
+        {
+          subtitle: 'El experimento: un carrete de pesca, en vez de una bicicleta',
+          paragraphs: [
+            'Triplett construyó un aparato con dos carretes de pesca montados en un armazón de madera, conectados mediante hilo de pescar y poleas a unas pequeñas banderas que marcaban el avance. Reclutó a 40 niños de entre 8 y 17 años y les pidió que enrollaran el hilo lo más rápido posible, unas veces en solitario y otras junto a otro niño haciendo la misma tarea al mismo tiempo, en un aparato paralelo.',
+            'De los 40 niños, 20 enrollaron el hilo más rápido cuando tenían compañía. Diez fueron más lentos con compañía que en solitario, y los diez restantes no mostraron un cambio claro en ningún sentido, algunos incluso parecían sobreexcitarse hasta el punto de perder ritmo. El patrón, aunque no era universal, era demasiado marcado en una dirección como para deberse solo al azar.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la mera presencia de otro cambia el esfuerzo, para bien o para mal',
+          paragraphs: [
+            'Triplett llamó a este efecto "factores dinamogénicos": la sola presencia de otra persona haciendo la misma tarea parecía liberar energía competitiva adicional en la mayoría de los niños, incluso en una tarea tan mecánica como enrollar un hilo. No hacía falta que hubiera premio, público ni consecuencia alguna, bastaba con la copresencia de otro competidor.',
+            'Este experimento se considera hoy el primero documentado de la psicología social experimental, y sentó las bases de lo que más tarde se formalizaría como facilitación social: la presencia de otros mejora el rendimiento en tareas simples o bien aprendidas, pero puede empeorarlo en tareas complejas o poco dominadas, justo el matiz que explica por qué una minoría de los niños de Triplett rindió peor, no mejor, con compañía.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La presencia de un segundo competidor produce una energía dinamogénica no disponible en condiciones ordinarias.»', attribution: 'Norman Triplett' },
+      aplicacion: 'Si entrenas o practicas una habilidad ya dominada, buscar compañía o competencia directa puede darte un empujón de rendimiento real, tal y como sugería Triplett hace más de un siglo. Si en cambio estás aprendiendo algo nuevo y complejo, ese mismo público o esa misma compañía puede jugar en tu contra: vale la pena practicar lo difícil a solas y reservar la compañía para cuando ya domines la tarea.'
     }
   ],
 
@@ -1280,6 +1340,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Cuando esperamos tener acceso futuro a la información, recordamos menos el contenido en sí y más dónde encontrarlo.»', attribution: 'Betsy Sparrow' },
       aplicacion: 'Si notas que cada vez recuerdas menos datos concretos y más "dónde los tenía guardados", no es necesariamente un fallo de memoria: es el mismo patrón que documenta este estudio. La pregunta útil no es cómo memorizar más en un mundo con buscadores, sino qué información sí merece la pena memorizar de verdad porque no vas a tener acceso inmediato a ella cuando la necesites.'
+    },
+    {
+      id: 'tec-07',
+      title: 'Quienes más compaginan pantallas a la vez resultaron ser los peores cambiando de una tarea a otra',
+      summary: 'Los universitarios que consumían más medios de forma simultánea (redes, mensajes, vídeo y música a la vez) rindieron peor filtrando distracciones y cambiando de tarea que quienes rara vez hacían varias cosas digitales a la vez.',
+      sourceUrl: 'https://doi.org/10.1073/pnas.0903620106',
+      sourceLabel: 'Ophir, Nass & Wagner (2009), PNAS',
+      badge: 'Cognición y tecnología',
+      author: { name: 'Eyal Ophir', university: 'Stanford University', specialty: 'Cognición y multitarea mediática' },
+      readingTime: '4 min',
+      date: '4 de agosto de 2026',
+      intro: 'Eyal Ophir, Clifford Nass y Anthony Wagner partieron de una hipótesis que sonaba razonable: si alguien practica constantemente hacer varias cosas digitales a la vez (chatear, ver vídeos, navegar y escuchar música al mismo tiempo), debería volverse mejor gestionando esa carga mental. Doscientos sesenta y dos estudiantes de Stanford respondieron un cuestionario detallado sobre su consumo de medios, lo que permitió calcular un índice de multitarea mediática y dividirlos en dos grupos: los que compaginaban más medios de forma habitual y los que compaginaban menos.',
+      sections: [
+        {
+          subtitle: 'El experimento: filtrar distracciones y cambiar de tarea, bajo control de laboratorio',
+          paragraphs: [
+            'A ambos grupos se les sometió a varias pruebas clásicas de control cognitivo. En una, debían recordar la orientación de unos pocos rectángulos rojos mientras ignoraban rectángulos azules irrelevantes que aparecían junto a ellos; cuantos más distractores azules había, peor rendía el grupo que compaginaba más medios, mientras que el otro grupo apenas se veía afectado. En otra prueba de memoria de trabajo (identificar si una letra coincidía con la que había aparecido dos o tres posiciones atrás), quienes compaginaban más medios cometían más falsas alarmas a medida que aumentaba la carga de memoria.',
+            'La prueba más reveladora fue la de cambio de tarea: alternar entre clasificar un número como par o impar y clasificar una letra como vocal o consonante. Aquí es donde la hipótesis inicial se rompió del todo: el grupo que compaginaba más medios en su vida diaria fue significativamente más lento cambiando de tarea que el otro grupo, con un coste de cambio 167 milisegundos mayor.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: filtrar lo irrelevante, no procesarlo todo, es la habilidad que se pierde',
+          paragraphs: [
+            'Ophir y su equipo interpretan el patrón como una diferencia en el estilo de procesamiento, no solo en la capacidad bruta: quienes compaginan más medios parecen tener más dificultad para restringir voluntariamente su atención a lo relevante y bloquear el resto, tanto si esa distracción viene del entorno (los rectángulos azules) como de la propia memoria (letras que aparecieron antes pero ya no son objetivo).',
+            'La implicación es contraintuitiva: la práctica constante de hacer varias cosas a la vez no entrena la capacidad de cambiar el foco con eficacia, entrena para atender a más fuentes de información simultáneamente, lo que en tareas que exigen concentrarse en una sola cosa y descartar el resto termina jugando en contra. Los propios autores subrayan que el estudio no puede determinar si la multitarea intensa causa esta dificultad o si las personas con esa predisposición cognitiva tienden a multitarea más, una pregunta que dejaron abierta para investigación futura.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Los multitareas mediáticos intensos rindieron peor en una prueba de capacidad de cambio de tarea, probablemente debido a una menor capacidad para filtrar la interferencia de la tarea irrelevante.»', attribution: 'Eyal Ophir' },
+      aplicacion: 'Si notas que te cuesta concentrarte en una sola cosa después de días con muchas pestañas, chats y pantallas abiertas a la vez, este estudio sugiere que el problema no es solo cansancio: es un patrón de atención entrenado en la dirección contraria a la que necesitas para una tarea de foco único. Antes de un trabajo que exija concentración sostenida, cerrar el resto de fuentes de información, no solo silenciarlas, puede importar más de lo que parece.'
     }
   ],
 
@@ -1568,6 +1658,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Un enfoque deliberado en las bendiciones puede tener beneficios emocionales y sociales, quizá porque una persona agradecida transforma activamente cómo interpreta su experiencia cotidiana.»', attribution: 'Robert A. Emmons' },
       aplicacion: 'El protocolo con el que se probó el efecto es simple de replicar: una vez por semana, anota entre tres y cinco cosas concretas por las que te sientas agradecido en ese momento, no en abstracto. La clave según este estudio no es sentir gratitud de forma pasiva, sino el acto activo de buscarla y ponerla por escrito con regularidad.'
+    },
+    {
+      id: 'sm-07',
+      title: 'El vídeo de un cachorro después del susto hizo que el corazón volviera a la calma mucho más rápido',
+      summary: 'En un experimento con mujeres universitarias, ver un breve vídeo de contento o diversión tras pasar miedo aceleró la recuperación cardiovascular mucho más que ver un vídeo neutro, y mucho más que ver uno triste.',
+      sourceUrl: 'https://doi.org/10.1080/026999398379718',
+      sourceLabel: 'Fredrickson & Levenson (1998), Cognition & Emotion',
+      badge: 'Psicología positiva',
+      author: { name: 'Barbara L. Fredrickson', university: 'Universidad de Michigan', specialty: 'Psicología de las emociones positivas' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Barbara Fredrickson y Robert Levenson partieron de una pregunta muy concreta sobre el cuerpo, no solo sobre el estado de ánimo: si el miedo deja al corazón acelerado y en alerta, ¿puede una emoción positiva breve devolverlo a su ritmo normal más rápido que, simplemente, dejar pasar el tiempo?',
+      sections: [
+        {
+          subtitle: 'El experimento: un susto real, seguido de cuatro finales distintos',
+          paragraphs: [
+            'Sesenta estudiantes de la Universidad de California en Berkeley vieron primero el mismo vídeo, "Ledge": un hombre camina pegado a la fachada de un rascacielos, pierde el equilibrio y queda colgando sobre el vacío. El clip elevó de forma medible el ritmo cardíaco y la activación fisiológica de todas las participantes, con informes de miedo muy por encima del resto de emociones.',
+            'Justo después, cada participante veía al azar uno de cuatro vídeos cortos: "Puppy" (un cachorro jugando, diversión), "Waves" (olas rompiendo en la orilla, contento), "Sticks" (un vídeo neutro sin carga emocional) o "Cry" (un funeral, tristeza). A partir de ahí, Fredrickson y Levenson midieron cuántos segundos tardaba el sistema cardiovascular de cada participante en volver a los niveles previos al susto.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la emoción positiva "deshace" la activación de la negativa',
+          paragraphs: [
+            'El grupo que vio el vídeo del cachorro y el de las olas recuperó su ritmo cardíaco basal de forma significativamente más rápida que el grupo del vídeo neutro, y mucho más rápida que el grupo del funeral. El análisis estadístico global confirmó que el tipo de vídeo visto después del susto predecía con fuerza cuánto tardaba el cuerpo en calmarse, con una diferencia altamente significativa frente al vídeo triste (p < .001).',
+            'Fredrickson llamó a esto el "efecto deshacer": ciertas emociones positivas no se limitan a sentirse bien, funcionan como un antídoto fisiológico específico para la activación que ha dejado una emoción negativa reciente. No es solo distracción, el vídeo neutro también distraía y su recuperación fue más lenta: es la cualidad positiva concreta de la emoción, no la simple ausencia de la amenaza, la que acelera el retorno a la calma.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Ciertas emociones positivas pueden servir para deshacer los efectos cardiovasculares persistentes de las emociones negativas.»', attribution: 'Barbara L. Fredrickson' },
+      aplicacion: 'Si sales de una situación que te ha disparado el pulso (una discusión, un susto, una mala noticia), este estudio sugiere que buscar algo que te haga sentir contento o te divierta de verdad ayuda a que el cuerpo se calme más rápido que simplemente esperar o distraerte con algo neutro. No hace falta que dure mucho: en el experimento, un clip de menos de un minuto ya marcó la diferencia.'
     }
   ],
 
@@ -1886,6 +2006,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«El nombre en la parte superior del currículum es información que el cerebro procesa antes que cualquier otra, y el sesgo que activa opera antes de que ningún criterio racional entre en juego.»', attribution: 'Marianne Bertrand & Sendhil Mullainathan' },
       aplicacion: 'Los procesos de selección que minimizan el contacto con información irrelevante para el puesto (evaluaciones ciegas al nombre, al género y al origen antes de la primera entrevista) reducen el impacto del sesgo implícito de forma demostrada. Si participas en procesos de selección, proponer estas medidas no es solo ética: es ciencia aplicada al diseño de sistemas más precisos en la identificación del talento real.'
+    },
+    {
+      id: 'tra-07',
+      title: 'Por qué en algunos equipos de trabajo la gente admite sus errores, y en otros los esconde',
+      summary: 'Amy Edmondson estudió 51 equipos de una empresa manufacturera y encontró que la seguridad psicológica del equipo, no la confianza de sus miembros en su propia capacidad, era lo que predecía si se hablaba abiertamente de los fallos.',
+      sourceUrl: 'https://doi.org/10.2307/2666999',
+      sourceLabel: 'Edmondson (1999), Administrative Science Quarterly',
+      badge: 'Psicología organizacional',
+      author: { name: 'Amy C. Edmondson', university: 'Harvard University', specialty: 'Seguridad psicológica y aprendizaje en equipos' },
+      readingTime: '4 min',
+      date: '4 de agosto de 2026',
+      intro: 'Amy Edmondson había observado, en un estudio previo con equipos de enfermería, algo que le llamó la atención: en unos equipos del mismo hospital, con las mismas normas oficiales, una enfermera decía sin rodeos que los errores con la medicación se contaban siempre porque eran demasiado serios como para no hacerlo, mientras que en otro equipo, otra enfermera describía justo lo contrario, que a quien comete un error lo señalan y lo juzgan. Edmondson quiso comprobar si esa diferencia de clima, y no solo la estructura del equipo, predecía cuánto aprendían realmente los equipos de su propio trabajo.',
+      sections: [
+        {
+          subtitle: 'El estudio: 51 equipos, la misma empresa, climas internos muy distintos',
+          paragraphs: [
+            'Edmondson estudió 51 equipos de trabajo dentro de una misma empresa manufacturera, combinando cuestionarios, entrevistas y observación directa. Midió la seguridad psicológica de cada equipo (la creencia compartida de que se puede pedir ayuda, admitir un error o plantear una duda sin ser castigado ni quedar mal por ello), la confianza del equipo en su propia capacidad para hacer bien el trabajo (eficacia de equipo), y la frecuencia real con la que sus miembros pedían feedback, compartían información o hablaban de fallos abiertamente (comportamiento de aprendizaje).',
+            'El resultado principal fue claro: la seguridad psicológica predecía el comportamiento de aprendizaje del equipo con fuerza estadística, incluso controlando la eficacia del equipo. La eficacia de equipo, en cambio, dejaba de predecir el aprendizaje una vez que se tenía en cuenta la seguridad psicológica. No bastaba con que un equipo se sintiera capaz, hacía falta además que sintiera que era seguro exponer una duda o un error frente a los demás.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: el aprendizaje exige un riesgo interpersonal que no todos los equipos permiten',
+          paragraphs: [
+            'Pedir ayuda, admitir un error o cuestionar cómo se está haciendo algo son, según Edmondson, actos que implican un riesgo social real: exponen a quien los hace a parecer menos competente ante sus compañeros. En un equipo con baja seguridad psicológica, ese riesgo pesa más que el beneficio de aprender, así que las personas prefieren callar y seguir como si nada. En un equipo con alta seguridad psicológica, ese mismo riesgo se percibe como aceptable, porque existe la confianza compartida de que nadie será avergonzado ni penalizado por hablar.',
+            'El análisis de Edmondson también mostró que el aprendizaje del equipo actuaba como puente entre la seguridad psicológica y el rendimiento final: los equipos con más seguridad psicológica no rendían mejor porque sí, rendían mejor porque esa seguridad les permitía aprender más de sus propios procesos y corregir el rumbo antes y con más información.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La seguridad psicológica de equipo no es indulgencia ni ausencia de exigencia: es la confianza compartida de que el equipo no avergonzará, rechazará ni castigará a alguien por hablar.»', attribution: 'Amy C. Edmondson' },
+      aplicacion: 'Si lideras un equipo, fíjate en qué ocurre la próxima vez que alguien admita un error en una reunión. Si la respuesta es curiosidad y ayuda para corregirlo, estás reforzando la seguridad psicológica. Si es búsqueda de culpables, la estás erosionando, aunque nunca lo digas en voz alta. Según este estudio, esa reacción concreta pesa más en el aprendizaje real del equipo que cualquier política escrita sobre cultura de empresa.'
     }
   ],
 
@@ -2069,6 +2219,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La discusión con personas de opinión similar no modera las posturas: las intensifica en la dirección en la que el grupo ya se inclinaba.»', attribution: 'David G. Myers' },
       aplicacion: 'Si notas que tus opiniones sobre un tema se han vuelto más extremas con el tiempo, revisa con quién sueles discutir ese tema. Si es casi siempre con personas que ya piensan como tú, es probable que el cambio no venga de nueva evidencia, sino del simple efecto de haber hablado repetidamente solo con tu propio bando.'
+    },
+    {
+      id: 'pol-07',
+      title: 'El mismo titular, con solo cambiar el logo de la fuente, hizo que la gente quisiera leerlo o evitarlo',
+      summary: 'Shanto Iyengar y Kyu Hahn mostraron las mismas noticias etiquetadas al azar con el logo de Fox, CNN, NPR o la BBC. Conservadores y liberales eligieron leerlas o evitarlas según la fuente, incluso en temas tan poco polémicos como viajes o sucesos.',
+      sourceUrl: 'https://doi.org/10.1111/j.1460-2466.2008.01402.x',
+      sourceLabel: 'Iyengar & Hahn (2009), Journal of Communication',
+      badge: 'Exposición selectiva',
+      author: { name: 'Shanto Iyengar', university: 'Stanford University', specialty: 'Comunicación política y polarización mediática' },
+      readingTime: '4 min',
+      date: '4 de agosto de 2026',
+      intro: 'Shanto Iyengar y Kyu S. Hahn querían separar dos posibles causas de la polarización en el consumo de noticias: si la gente evita ciertas fuentes de información porque su contenido real es distinto, o si evita esas fuentes simplemente por la etiqueta, por lo que esa fuente representa, con independencia de lo que la noticia diga en realidad.',
+      sections: [
+        {
+          subtitle: 'El experimento: mismo titular, cuatro logos distintos, asignados al azar',
+          paragraphs: [
+            'Sobre una muestra representativa de 1.023 votantes registrados en Estados Unidos, los investigadores diseñaron un portal de noticias experimental. A cada participante se le mostraban titulares idénticos procedentes de la misma agencia de noticias, pero cada titular aparecía asociado, de forma aleatoria, al logo de Fox News, CNN, NPR o la BBC. Los participantes debían elegir cuál de las noticias mostradas en pantalla querían leer, repitiendo la elección para seis temas distintos: tres políticamente sensibles (relaciones entre el presidente y el Congreso, la guerra de Irak, las relaciones raciales) y tres considerados "blandos" o poco polémicos (sucesos, viajes, deporte).',
+            'El patrón fue nítido: los participantes conservadores y republicanos prefirieron de forma sistemática las noticias etiquetadas como Fox News y evitaron las etiquetadas como CNN o NPR. Los participantes liberales y demócratas mostraron el patrón exactamente contrario, repartiendo su atención entre CNN y NPR mientras evitaban Fox News. Ninguna de las cuatro fuentes tenía en realidad un contenido distinto, la única variable que cambiaba era el logo.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la etiqueta de la fuente se procesa antes que el contenido de la noticia',
+          paragraphs: [
+            'Lo más revelador del estudio es que esta selectividad no se limitó a los temas más cargados ideológicamente. El mismo patrón de preferencia y evitación por fuente apareció también, con menor intensidad pero de forma clara, en temas tan poco polarizados como los viajes o los sucesos. Iyengar y Hahn interpretan esto como evidencia de que la fuente funciona como una señal identitaria en sí misma, no solo como un canal de contenido, así que la decisión de leer o no leer algo se toma en parte antes de saber de qué trata realmente la noticia.',
+            'El hallazgo también mostró que este efecto se intensificaba entre los participantes más comprometidos políticamente: cuanto más implicada estaba una persona con su ideología, más fuerte era su tendencia a acercarse a la fuente afín y evitar la contraria, incluso a costa de dejar de leer información que podría serle relevante o precisa.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La demanda de noticias varía con la afinidad percibida entre la organización informativa y las preferencias políticas del consumidor.»', attribution: 'Shanto Iyengar' },
+      aplicacion: 'La próxima vez que decidas no leer o no escuchar algo solo por saber de qué medio viene, antes incluso de conocer el contenido, este estudio describe exactamente ese mecanismo. No implica que todas las fuentes sean igual de fiables, pero sí que vale la pena notar cuándo la decisión de informarse, o de no hacerlo, está más guiada por la etiqueta que por lo que realmente se está contando.'
     }
   ],
 
@@ -2252,6 +2432,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La comida reconfortante no calma solo el estómago. Activa el mismo sistema psicológico que se activa cuando estamos rodeados de las personas que nos importan.»', attribution: 'Shira Gabriel' },
       aplicacion: 'Si recurres a una comida reconfortante en un momento de soledad, vale la pena notar de qué relación concreta viene ese plato (quién te lo preparaba, con quién lo compartías) en vez de comerlo de forma automática. Nombrar esa asociación puede ser tan importante para el efecto como la comida misma, y además abre la puerta a buscar esa conexión de forma más directa, no solo a través del plato.'
+    },
+    {
+      id: 'ali-07',
+      title: 'Cortar los pretzels por la mitad hizo que la gente comiera más, no menos, del mismo local',
+      summary: 'Al ofrecer el doble de unidades de pretzel (cortadas a la mitad, con el mismo peso total disponible), los vecinos de un edificio comieron un 69% más en peso. Lo mismo ocurrió al usar una cuchara más grande para servirse M&M\'s.',
+      sourceUrl: 'https://doi.org/10.1111/j.1467-9280.2006.01738.x',
+      sourceLabel: 'Geier, Rozin & Doros (2006), Psychological Science',
+      badge: 'Sesgos de porción',
+      author: { name: 'Paul Rozin', university: 'University of Pennsylvania', specialty: 'Psicología del comportamiento alimentario' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Andrew Geier, Paul Rozin y Gheorghe Doros sospechaban que buena parte de cuánto comemos no depende del hambre ni del peso real de la comida disponible, sino de algo más simple: cuántas unidades separadas de esa comida tenemos delante. Para comprobarlo, diseñaron tres estudios de campo con comida real, ofrecida gratis, en situaciones cotidianas.',
+      sections: [
+        {
+          subtitle: 'El experimento: los mismos pretzels, cortados o enteros, semana sí y semana no',
+          paragraphs: [
+            'En el portal de un edificio de apartamentos, dejaban regularmente pretzels grandes a disposición de los vecinos, tres días por semana durante doce semanas. En unas semanas, los pretzels se servían enteros, unos 85 gramos cada uno; en otras, exactamente los mismos pretzels se cortaban por la mitad antes de servirse, duplicando el número de piezas disponibles pero sin cambiar la cantidad total de masa puesta en el mostrador cada día.',
+            'Los vecinos comieron sistemáticamente más peso de pretzel en las semanas en que estaban cortados por la mitad que en las semanas en que estaban enteros, con una proporción media de ingesta un 69% mayor. Un experimento paralelo con un bol de M&M\'s a la entrada del mismo edificio, servido con una cuchara pequeña o con una cuchara cuatro veces más grande, mostró el mismo patrón: con la cuchara grande, la gente se servía y comía significativamente más chocolate que con la pequeña, aunque ambas cucharas estaban disponibles sin límite de repeticiones.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: una unidad se percibe como "la ración correcta", sea del tamaño que sea',
+          paragraphs: [
+            'Geier, Rozin y Doros llamaron a este patrón "sesgo de unidad": la mente tiende a tratar una unidad discreta de un alimento (un pretzel entero, una cucharada) como si fuera, por definición, la cantidad apropiada para consumir de una vez, sin relación con su tamaño real. Cuando el pretzel se corta por la mitad, cada mitad sigue leyéndose como "una unidad más" que resulta razonable comer, así que la gente termina tomando más unidades pequeñas de las que habría tomado unidades grandes.',
+            'La implicación es prácticamente la contraria de la intuición habitual sobre raciones más pequeñas: trocear la comida no reduce automáticamente lo que se come, puede aumentarlo, porque multiplica el número de raciones aparentemente correctas disponibles. El efecto no dependía del hambre ni de cuánta gente pasaba por el edificio cada día, se repitió de forma consistente en los tres alimentos probados.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La cantidad de comida que la gente selecciona aumenta cuando aumenta el tamaño de la unidad, pero trocear una unidad grande en varias pequeñas no reduce la ingesta: puede incluso aumentarla.»', attribution: 'Paul Rozin' },
+      aplicacion: 'Si intentas comer menos de algo trocéandolo en piezas más pequeñas, este estudio sugiere revisar esa estrategia: lo que de verdad reduce la ingesta es limitar cuántas unidades tienes accesibles a la vez, no el tamaño de cada una. Servir una sola ración predefinida y guardar el resto fuera de la vista funciona mejor que dejar disponible un montón de piezas pequeñas, por pequeñas que sean.'
     }
   ],
   marketing: [
