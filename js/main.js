@@ -2009,6 +2009,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La ideología política es, en gran medida, la personalidad aplicada a la organización de la sociedad.»', attribution: 'John T. Jost' },
       aplicacion: 'Si quieres entender por qué alguien tiene las opiniones políticas que tiene (incluidas las tuyas), pregúntate primero qué necesidades psicológicas satisfacen esas opiniones: ¿necesidad de orden y predictibilidad, o de apertura y cambio? Esa pregunta llega más lejos que analizar los argumentos, porque los argumentos son la punta del iceberg.'
+    },
+    {
+      id: 'pol-05',
+      title: 'El problema de matemáticas que la gente fallaba solo cuando la respuesta no le convenía',
+      summary: 'Ante el mismo problema estadístico, las personas con más habilidad numérica lo resolvían mejor si trataba sobre una crema para la piel, y peor si trataba sobre control de armas y el resultado correcto contradecía su ideología.',
+      sourceUrl: 'https://doi.org/10.1017/bpp.2016.2',
+      sourceLabel: 'Kahan, Peters, Dawson & Slovic (2013/2017), Behavioural Public Policy',
+      badge: 'Cognición motivada',
+      author: { name: 'Dan M. Kahan', university: 'Yale University', specialty: 'Cognición cultural y percepción de riesgo' },
+      readingTime: '4 min',
+      date: '4 de agosto de 2026',
+      intro: 'Dan Kahan y su equipo querían responder a una pregunta incómoda: cuando alguien interpreta mal un dato político, ¿es porque no sabe suficiente matemática, o porque sabe la matemática perfectamente pero la aplica de forma distinta según lo que ese dato implica para sus creencias? Para separar ambas hipótesis, diseñaron un problema estadístico idéntico en su estructura numérica pero con dos versiones de contenido.',
+      sections: [
+        {
+          subtitle: 'El experimento: la misma tabla de números, dos etiquetas distintas',
+          paragraphs: [
+            'A los participantes se les presentaba una tabla de resultados de un supuesto estudio, con datos numéricos deliberadamente ambiguos que requerían un razonamiento estadístico algo más sofisticado que la simple comparación de totales. En una versión, la tabla describía la eficacia de una crema para el sarpullido cutáneo, un tema sin ninguna carga política. En otra versión, con exactamente los mismos números reorganizados, la tabla describía si prohibir portar armas de fuego en público reducía o aumentaba la delincuencia.',
+            'Con la crema para la piel, cuanta más habilidad numérica tenía el participante, mejor resolvía el problema, sin relación con su ideología. Con las armas, el patrón cambió por completo: los participantes con más habilidad numérica resolvían mejor el problema solo cuando el resultado correcto coincidía con lo que su ideología política predecía, y peor cuando el resultado correcto la contradecía. La habilidad numérica, en vez de corregir el sesgo, lo amplificaba.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: usar la inteligencia para defender, no para descubrir',
+          paragraphs: [
+            'Kahan llama a este fenómeno "numeracidad motivada": la misma capacidad analítica que debería servir para interpretar datos con más precisión se pone, en contextos con carga identitaria, al servicio de defender la conclusión que ya se prefería de antemano. No es que las personas más hábiles con los números dejen de razonar bien. Es que razonan igual de bien en ambas direcciones, según convenga, y solo se detienen a escrutar con rigor los datos que amenazan su posición.',
+            'La implicación es incómoda para cualquier estrategia de comunicación basada solo en "explicar mejor los datos": si el problema no es la falta de capacidad analítica, más gráficos y más estadísticas no van a resolverlo por sí solos. El sesgo no vive en la falta de herramientas cognitivas. Vive en para qué se usan esas herramientas cuando la conclusión ya importa desde antes de mirar los números.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Las personas no usan su capacidad de razonamiento cuantitativo para llegar a la verdad. La usan para llegar a la conclusión que su grupo espera de ellas.»', attribution: 'Dan M. Kahan' },
+      aplicacion: 'Antes de aceptar o rechazar un dato estadístico sobre un tema políticamente cargado, pregúntate cómo lo evaluarías si el mismo número apoyara la posición contraria a la tuya. Si notas que aplicarías un estándar de rigor distinto, esa diferencia es la medida exacta de cuánto está pesando la conveniencia ideológica sobre el análisis real de los datos.'
+    },
+    {
+      id: 'pol-06',
+      title: 'Por qué debatir solo con quien piensa como tú te vuelve más extremo, no más moderado',
+      summary: 'Grupos de estudiantes con actitudes raciales parecidas discutieron entre sí y, después de hablar, la distancia entre los grupos más prejuiciosos y los menos prejuiciosos había aumentado, no disminuido.',
+      sourceUrl: 'https://doi.org/10.1126/science.169.3947.778',
+      sourceLabel: 'Myers & Bishop (1970), Science',
+      badge: 'Polarización de grupo',
+      author: { name: 'David G. Myers', university: 'Hope College', specialty: 'Psicología social y dinámica de grupos' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'David Myers y George Bishop querían comprobar una intuición extendida sobre el debate: que hablar con otros suaviza las posturas y acerca a las personas hacia un término medio razonable. Para comprobarlo, formaron grupos de estudiantes de instituto con actitudes raciales previamente medidas y agruparon a cada estudiante solo con otros de opiniones similares a las suyas, ya fueran de alto o de bajo prejuicio.',
+      sections: [
+        {
+          subtitle: 'El experimento: hablar solo con los que ya piensan como tú',
+          paragraphs: [
+            'Antes de la discusión, cada estudiante respondía individualmente a una serie de afirmaciones sobre actitudes raciales. Después, los grupos (compuestos únicamente por personas con actitudes similares entre sí) discutían esas mismas afirmaciones durante un tiempo. Al terminar, cada estudiante volvía a responder individualmente al mismo cuestionario. Un grupo de control discutía temas sin ninguna relación con actitudes raciales antes de repetir la medición.',
+            'El resultado fue claro: la discusión entre personas de actitudes parecidas amplió la distancia entre el grupo de mayor prejuicio y el de menor prejuicio. Los estudiantes de alto prejuicio terminaron la discusión con actitudes más extremas que al empezar, y lo mismo ocurrió, en sentido contrario, con los de bajo prejuicio. El grupo de control, que había discutido temas neutrales, no mostró ese mismo desplazamiento.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la discusión homogénea amplifica la posición dominante',
+          paragraphs: [
+            'Myers y Bishop documentaron uno de los primeros ejemplos experimentales claros de lo que hoy se conoce como polarización de grupo: cuando personas con una inclinación previa similar discuten entre sí, la tendencia inicial del grupo se refuerza en vez de moderarse. Escuchar argumentos nuevos que apoyan la propia posición (algo que ocurre casi automáticamente en un grupo homogéneo) proporciona munición adicional que no existía antes de la conversación, y compararse con otros del mismo grupo genera presión para no parecer menos comprometido que la media.',
+            'El hallazgo tiene una lectura directa para cualquier entorno donde la gente solo discute con quienes ya piensan parecido: foros, comunidades online filtradas por afinidad, grupos de mensajería homogéneos. La conversación en esos espacios no funciona como un contrapeso moderador. Funciona como un amplificador de la posición que el grupo ya tenía antes de empezar a hablar.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La discusión con personas de opinión similar no modera las posturas: las intensifica en la dirección en la que el grupo ya se inclinaba.»', attribution: 'David G. Myers' },
+      aplicacion: 'Si notas que tus opiniones sobre un tema se han vuelto más extremas con el tiempo, revisa con quién sueles discutir ese tema. Si es casi siempre con personas que ya piensan como tú, es probable que el cambio no venga de nueva evidencia, sino del simple efecto de haber hablado repetidamente solo con tu propio bando.'
     }
   ],
 
@@ -2132,6 +2192,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«El cerebro usa el plato como señal de cuánto necesita comer. El estómago llega demasiado tarde para corregirle.»', attribution: 'Barbara J. Rolls' },
       aplicacion: 'Sirve los alimentos de alta densidad calórica en platos más pequeños, y los de baja densidad en platos grandes. No es autoengaño: es alinear las señales visuales que tu cerebro usa para decidir cuándo parar con la información calórica real de lo que estás comiendo. El experimento de Rolls sugiere que este ajuste es suficiente para reducir la ingesta entre un 20 y un 30 % sin que el nivel de saciedad percibida cambie.'
+    },
+    {
+      id: 'ali-05',
+      title: 'Cuántas veces hace falta probar una verdura nueva antes de que empiece a gustarte',
+      summary: 'Niños de dos años que probaron un alimento nuevo hasta veinte veces terminaron prefiriéndolo, aunque lo hubieran rechazado en las primeras pruebas. La mayor parte del cambio ocurría en las primeras ocho o diez exposiciones.',
+      sourceUrl: 'https://doi.org/10.1016/s0195-6663(82)80053-6',
+      sourceLabel: 'Birch & Marlin (1982), Appetite',
+      badge: 'Preferencias alimentarias',
+      author: { name: 'Leann L. Birch', university: 'University of Illinois at Urbana-Champaign', specialty: 'Desarrollo de las preferencias alimentarias infantiles' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Leann Birch y Diane Marlin se enfrentaban a una contradicción habitual en cualquier casa con niños pequeños: un niño rechaza un alimento que nunca ha probado, y ese rechazo se interpreta como una preferencia estable e inamovible, cuando en realidad no hay ninguna experiencia real detrás de esa opinión. Diseñaron un experimento para medir si la simple exposición repetida, sin ninguna recompensa asociada, podía cambiar esa preferencia inicial.',
+      sections: [
+        {
+          subtitle: 'El experimento: quesos y frutas desconocidas, expuestas una y otra vez',
+          paragraphs: [
+            'A niños de alrededor de dos años se les ofrecieron alimentos que no habían probado antes, con sabores y texturas poco familiares. Distintos grupos de niños fueron expuestos al mismo alimento 0, 5, 10 o 20 veces, en sesiones separadas y sin ninguna recompensa por comerlo ni presión para hacerlo. Antes y después del periodo de exposición, se midió cuánto preferían ese alimento frente a otros alimentos ya conocidos.',
+            'La preferencia por el alimento nuevo aumentó de forma clara con el número de exposiciones, pero no de manera lineal: la mayor parte de la ganancia en preferencia ocurría en las primeras ocho a diez exposiciones, y a partir de ahí el efecto se aplanaba. Muchos de los niños que en la primera prueba habían rechazado el alimento abiertamente terminaron, tras las exposiciones repetidas, prefiriéndolo por encima de alimentos que ya conocían desde antes.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: rechazar lo desconocido antes de haberlo probado',
+          paragraphs: [
+            'Birch y Marlin titularon su estudio con una frase que los propios niños decían literalmente sobre alimentos que nunca habían tocado: "no me gusta, nunca lo he probado". Ese rechazo anticipado, conocido en la literatura como neofobia alimentaria, es una respuesta evolutivamente sensata en una especie omnívora: probar algo desconocido conlleva un riesgo real de intoxicación, así que el cerebro infantil trata lo nuevo con cautela por defecto, antes de tener ninguna evidencia sensorial sobre si es seguro o agradable.',
+            'La exposición repetida resuelve ese problema sin necesidad de persuasión ni de premios: cada vez que el alimento se prueba sin consecuencias negativas, la cautela inicial pierde una razón de ser. El gusto no cambia porque el niño haya sido convencido de que le gusta; cambia porque la familiaridad, por sí sola, reduce la amenaza percibida de lo desconocido. Es el mismo principio que opera en la mera exposición de Zajonc, aplicado al paladar en vez de a la vista.'
+          ]
+        }
+      ],
+      blockquote: { text: '«No me gusta, nunca lo he probado: así describían los propios niños su rechazo a alimentos que ni siquiera habían llegado a tocar.»', attribution: 'Leann L. Birch' },
+      aplicacion: 'Si un niño (o tú mismo) rechaza un alimento nuevo a la primera, no lo interpretes como una preferencia definitiva. La investigación de Birch sugiere ofrecerlo de nuevo, sin presión ni negociación, en al menos ocho o diez ocasiones separadas antes de concluir que de verdad no gusta. El rechazo inicial suele ser cautela ante lo desconocido, no una valoración real del sabor.'
+    },
+    {
+      id: 'ali-06',
+      title: 'La sopa que combate la soledad: por qué la comida reconfortante funciona incluso sin hambre',
+      summary: 'Pensar en comida reconfortante activa automáticamente conceptos relacionados con las propias relaciones cercanas, y comerla ayuda a sentirse menos solo después de un rechazo social, pero solo en personas con vínculos afectivos seguros.',
+      sourceUrl: 'https://doi.org/10.1177/0956797611407931',
+      sourceLabel: 'Troisi & Gabriel (2011), Psychological Science',
+      badge: 'Alimentación y vínculo social',
+      author: { name: 'Shira Gabriel', university: 'University at Buffalo', specialty: 'Psicología social, comida y sentido de pertenencia' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Jordan Troisi y Shira Gabriel partieron de una pregunta que rara vez se investiga con rigor experimental: cuando alguien dice que un plato le "reconforta", ¿es solo una forma de hablar, o esa comida está activando de verdad algo relacionado con vínculos sociales, no solo con el sabor o la nutrición?',
+      sections: [
+        {
+          subtitle: 'El experimento: la sopa de pollo y las palabras que vienen a la mente',
+          paragraphs: [
+            'En un primer experimento, pidieron a los participantes que pensaran en una comida reconfortante o en una comida neutral y familiar, y después midieron con tareas de completar palabras cuánto se activaban conceptos relacionados con relaciones cercanas (amigo, familia, cariño) frente a conceptos sin relación con vínculos. Pensar en comida reconfortante activó esos conceptos relacionales con más fuerza que pensar en cualquier otra comida igual de familiar.',
+            'En un segundo experimento, indujeron en los participantes un sentimiento de exclusión social pidiéndoles que escribieran sobre un momento en que se habían sentido rechazados. Después medían su nivel de soledad, en algunos casos tras haber comido o pensado en su comida reconfortante habitual. El efecto protector solo apareció con claridad en personas con un estilo de apego seguro en sus relaciones cercanas: para ellas, la comida reconfortante amortiguó el aumento de soledad tras el rechazo. En personas con apego inseguro, ese efecto amortiguador no se replicó del mismo modo.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: comida asociada a relaciones, no solo a nutrientes',
+          paragraphs: [
+            'Troisi y Gabriel proponen que muchas comidas reconfortantes lo son porque se asociaron, durante la infancia o en momentos significativos, a la presencia de personas cercanas que las prepararon o compartieron. Esa asociación queda codificada de forma parecida a cómo se codifica el recuerdo de una relación: comer ese plato reactiva, en parte, la sensación de estar acompañado, incluso cuando se come completamente solo.',
+            'La condición del apego seguro es clave para entender por qué el efecto no es universal: si la historia de relaciones cercanas de una persona ha sido en general fiable y protectora, la comida asociada a esas relaciones puede evocar de forma efectiva esa sensación de seguridad. Si la historia relacional ha sido más inestable, la misma comida no tiene el mismo material afectivo positivo del que tirar.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La comida reconfortante no calma solo el estómago. Activa el mismo sistema psicológico que se activa cuando estamos rodeados de las personas que nos importan.»', attribution: 'Shira Gabriel' },
+      aplicacion: 'Si recurres a una comida reconfortante en un momento de soledad, vale la pena notar de qué relación concreta viene ese plato (quién te lo preparaba, con quién lo compartías) en vez de comerlo de forma automática. Nombrar esa asociación puede ser tan importante para el efecto como la comida misma, y además abre la puerta a buscar esa conexión de forma más directa, no solo a través del plato.'
     }
   ],
   marketing: [
@@ -2224,6 +2344,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Para la mente, lo gratuito trae consigo un beneficio propio, no solo un coste menor.»', attribution: 'Dan Ariely' },
       aplicacion: 'Ante una oferta con la palabra "gratis", resta mentalmente un céntimo del "premio" y súmaselo al resto de opciones para ver si seguirías prefiriéndolo con esa diferencia mínima restaurada. Si tu elección cambia solo porque una opción pasó a costar exactamente cero, no estás comparando valor: estás respondiendo a la palabra.'
+    },
+    {
+      id: 'mkt-04',
+      title: 'El efecto reciprocidad: una Coca-Cola gratis duplicó la venta de boletos de una rifa',
+      summary: 'Recibir un favor pequeño y no solicitado (una lata de refresco) duplicó cuántos boletos de rifa compraba después la gente al mismo desconocido, incluso cuando ese desconocido les caía mal.',
+      sourceUrl: 'https://doi.org/10.1016/0022-1031(71)90025-4',
+      sourceLabel: 'Regan (1971), Journal of Experimental Social Psychology',
+      badge: 'Reciprocidad',
+      author: { name: 'Dennis T. Regan', university: 'Cornell University', specialty: 'Psicología social de la persuasión y la reciprocidad' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Dennis Regan quería separar dos explicaciones que suelen confundirse cuando alguien nos convence de algo tras hacernos un favor: ¿compramos porque nos cae mejor esa persona, o porque sentimos la obligación de devolver el favor, nos caiga bien o no? Diseñó un experimento con un cómplice que unas veces se comportaba de forma agradable y otras de forma bastante desagradable durante una tarea compartida de valorar cuadros.',
+      sections: [
+        {
+          subtitle: 'El experimento: una lata de refresco y un cómplice antipático',
+          paragraphs: [
+            'A mitad de la tarea, el cómplice salía de la sala unos minutos. En una condición, volvía con dos refrescos, le daba uno al participante ("le pregunté al investigador si podía traer uno para mí, y me dejó traer otro para ti") y no pedía nada a cambio. En otra condición, volvía con las manos vacías. Antes de eso, los participantes habían escuchado por accidente una llamada del cómplice al teléfono en la que sonaba, según la condición asignada, o bien amable, o bien grosero y desagradable con la persona al otro lado de la línea.',
+            'Al terminar la tarea, el cómplice pedía un favor real: comprar boletos de una rifa de coche a 25 centavos cada uno, con una comisión para él si vendía suficientes. Quienes habían recibido el refresco compraron de media el doble de boletos que quienes no lo habían recibido. Y el dato central del estudio es que esa diferencia se mantuvo casi idéntica tanto si el cómplice les había caído bien como si les había caído mal por la llamada. El favor pesaba más que la simpatía.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la norma de reciprocidad no pregunta si te cae bien quien la activa',
+          paragraphs: [
+            'El sociólogo Alvin Gouldner había descrito años antes la norma de reciprocidad como una de las reglas sociales más universales documentadas en antropología: recibir algo genera una obligación de devolver algo de valor comparable, y esa obligación se siente incluso cuando el favor no se pidió. Regan confirmó experimentalmente que esa obligación opera de forma bastante independiente del afecto hacia quien la activó. No hacía falta que el cómplice cayera bien para que el mecanismo funcionara: bastaba con que hubiera dado algo primero.',
+            'La implicación para cualquier estrategia de venta es directa. Una muestra gratis en el supermercado, una copa de cortesía, un informe gratuito antes de una propuesta comercial: todos activan la misma obligación silenciosa, sin que haga falta simpatía de por medio. El regalo no busca gustar. Busca generar deuda.'
+          ]
+        }
+      ],
+      blockquote: { text: '«El favor genera una obligación de devolver algo de valor comparable, y esa obligación pesa más que la simpatía hacia quien lo hizo.»', attribution: 'Dennis T. Regan' },
+      aplicacion: 'Cuando alguien te ofrezca algo gratis antes de pedirte algo (una muestra, una copa, un informe sin coste), separa mentalmente ambos momentos como si fueran de dos personas distintas. Pregúntate si comprarías o aceptarías la petición posterior sin ese regalo previo. Si la respuesta es no, la reciprocidad, no el valor de la oferta, es lo que te está moviendo.'
+    },
+    {
+      id: 'mkt-05',
+      title: 'El cartel de hotel que multiplicó la reutilización de toallas sin pedir nada a cambio',
+      summary: 'Decirle a un huésped que "la mayoría de huéspedes reutiliza su toalla" funcionó mejor que apelar a la protección del medio ambiente, y funcionó todavía mejor si el cartel especificaba que esos otros huéspedes se habían alojado en esa misma habitación.',
+      sourceUrl: 'https://doi.org/10.1086/586910',
+      sourceLabel: 'Goldstein, Cialdini & Griskevicius (2008), Journal of Consumer Research',
+      badge: 'Normas sociales',
+      author: { name: 'Robert Cialdini', university: 'Arizona State University', specialty: 'Psicología de la persuasión y las normas sociales' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Casi todos los hoteles del mundo tienen un cartel en el baño pidiendo reutilizar las toallas para "proteger el medio ambiente". Noah Goldstein, Robert Cialdini y Vladas Griskevicius sospechaban que ese mensaje, centrado en un valor abstracto, era menos eficaz que uno que apelara a lo que de verdad mueve el comportamiento cotidiano: lo que hacen los demás.',
+      sections: [
+        {
+          subtitle: 'El experimento: dos carteles, un mismo baño de hotel',
+          paragraphs: [
+            'En un hotel real, colocaron distintos carteles en las habitaciones sin que los huéspedes supieran que participaban en un experimento. Un grupo recibió el mensaje estándar de conservación ambiental. Otro recibió un mensaje de norma social descriptiva: "el 75% de los huéspedes que se alojaron en este hotel reutilizaron su toalla en algún momento de su estancia". El comportamiento real de reutilización se midió al día siguiente por el personal de limpieza, sin que nadie lo supiera de antemano.',
+            'El cartel de norma social incrementó la reutilización un 26% frente al mensaje ambiental estándar. Pero el hallazgo más fino llegó al afinar la norma: cuando el cartel decía que ese 75% se refería específicamente a huéspedes de esa misma habitación (una "norma provincial", más cercana y específica que la norma general del hotel entero), la reutilización subió todavía más. Cuanto más se parecía el grupo de referencia a la propia situación del huésped, más fuerte era el efecto.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: hacemos lo que creemos que hace la gente como nosotros',
+          paragraphs: [
+            'Cialdini lleva décadas documentando que las normas sociales descriptivas (lo que la mayoría de gente realmente hace, no lo que debería hacer) son uno de los predictores más fuertes de conducta, incluso por delante de apelaciones morales o medioambientales bien argumentadas. El mensaje "los demás lo hacen" resuelve una pregunta que el cerebro se hace constantemente sin saberlo: ¿cuál es la conducta correcta en esta situación concreta?',
+            'El refinamiento de la norma provincial (huéspedes de esta misma habitación, no del hotel en general) funciona porque acorta la distancia psicológica entre quien lee el cartel y el grupo de referencia. Cuanto más se parece ese grupo a uno mismo, más relevante se percibe su comportamiento como guía. La conservación ambiental, en este caso, no cambió de argumento moral: cambió de mensajero, y ese cambio bastó para mover el comportamiento más que el argumento en sí.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Decirle a la gente lo que hacen los demás es, con frecuencia, una palanca de cambio de comportamiento más potente que explicarles por qué deberían cambiar.»', attribution: 'Robert Cialdini' },
+      aplicacion: 'La próxima vez que quieras cambiar un hábito propio poco sostenible (energético, de consumo, de salud), busca datos reales sobre cuánta gente parecida a ti ya lo ha cambiado, en vez de repasar solo las razones abstractas para hacerlo. Saber que "la mayoría como tú ya lo hace" activa un mecanismo de conformidad más fuerte que cualquier argumento moral aislado.'
     }
   ],
   viajes: [

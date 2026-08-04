@@ -111,6 +111,12 @@ IDs de artículos publicados (referencia interna, para no repetir estudio ni án
 | El efecto zapatillas rojas | mod-07 | moda |
 | Experiencias vs. objetos (Van Boven) | via-04 | viajes |
 | Límite de 10 min/día en redes (Hunt) | rs-04 | redesSociales |
+| Reciprocidad de la Coca-Cola (Regan) | mkt-04 | marketing |
+| Normas sociales y toallas de hotel (Cialdini) | mkt-05 | marketing |
+| Numeracidad motivada (Kahan) | pol-05 | politica |
+| Polarización de grupo (Myers & Bishop) | pol-06 | politica |
+| Exposición repetida a alimentos (Birch) | ali-05 | alimentacion |
+| Comfort food y soledad (Troisi & Gabriel) | ali-06 | alimentacion |
 
 ---
 

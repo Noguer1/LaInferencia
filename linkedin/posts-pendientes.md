@@ -1,6 +1,6 @@
 # Posts pendientes de publicar
 
-Lote generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Formato y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
+Lote 1 (posts 1-12) generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Lote 2 (posts 13-18) generado el mismo día, con 6 artículos nuevos de marketing, política y alimentación. Formato y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
 
 Estado de cada uno: pendiente hasta que se marque como publicado aquí manualmente.
 
@@ -217,5 +217,113 @@ El grupo de uso limitado mostró reducciones significativas en soledad y en sín
 Hunt lo explica por la reducción de la comparación social ascendente que sostiene buena parte del uso pasivo de redes: menos tiempo disponible significa menos publicaciones ajenas cuidadosamente seleccionadas con las que medir la propia vida. Y al ser un experimento (no solo una correlación entre uso y malestar), el estudio puede afirmar con más fuerza que reducir el uso causa la mejora, no solo que ambas cosas suelen ir juntas.
 
 No hace falta borrar las redes. Según estos datos, con reducir drásticamente el tiempo ya se nota la diferencia.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 13. Una Coca-Cola gratis duplicó la venta de boletos de una rifa (mkt-04)
+
+Estado: pendiente
+
+Un desconocido te cae mal. Te regala una lata de refresco sin que se la pidas. Diez minutos después, le compras el doble de boletos de una rifa que a alguien que no te ha dado nada.
+
+Dennis Regan, de la Universidad de Cornell, hizo que sus participantes escucharan por casualidad una llamada de teléfono en la que un colaborador suyo sonaba, según el grupo, amable o bastante desagradable. Después, ese mismo colaborador salía de la sala y volvía con dos refrescos, dándole uno al participante sin que nadie se lo hubiera pedido. En otra condición, no traía nada.
+
+Al terminar la tarea que compartían, el colaborador pedía un favor real: comprar boletos de una rifa de coche a 25 centavos cada uno. Quienes habían recibido el refresco compraron de media el doble de boletos que quienes no lo habían recibido. Y esa diferencia se mantuvo casi idéntica tanto si el colaborador les había caído bien como si les había caído mal por la llamada.
+
+El mecanismo tiene nombre: norma de reciprocidad. Recibir algo, aunque no se haya pedido, genera una obligación de devolver algo de valor comparable. Esa obligación no pregunta si la persona que dio primero te cae bien. Actúa igual en ambos casos.
+
+Una muestra gratis en el supermercado, una copa de cortesía, un informe sin coste antes de una propuesta comercial: todos activan la misma deuda silenciosa, sin que haga falta ninguna simpatía de por medio.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 14. El cartel que multiplicó la reutilización de toallas sin pedir nada a cambio (mkt-05)
+
+Estado: pendiente
+
+Casi todos los hoteles del mundo piden reutilizar las toallas apelando al medio ambiente. Un cambio de una sola frase multiplicó la eficacia de ese mensaje sin tocar el argumento ecológico.
+
+Noah Goldstein, Robert Cialdini y Vladas Griskevicius probaron dos carteles reales en las habitaciones de un hotel. Uno era el mensaje estándar de conservación ambiental. Otro decía: "el 75% de los huéspedes que se alojaron en este hotel reutilizaron su toalla en algún momento de su estancia". El comportamiento real se midió al día siguiente, sin que los huéspedes supieran que participaban en nada.
+
+El cartel de norma social incrementó la reutilización un 26% frente al mensaje ambiental. Y cuando el mensaje se afinó todavía más, diciendo que ese 75% correspondía a huéspedes de esa misma habitación, la reutilización subió otra vez. Cuanto más se parecía el grupo de referencia a la propia situación del huésped, más fuerte era el efecto.
+
+El mecanismo no es una apelación moral mejor formulada. Es informativo: el cerebro usa constantemente lo que hacen los demás como guía de cuál es la conducta correcta en una situación concreta, y cuanto más cercano y parecido a uno mismo es ese grupo de referencia, más peso tiene su ejemplo.
+
+La próxima vez que quieras cambiar un hábito propio, buscar cuánta gente parecida a ti ya lo ha cambiado puede pesar más que cualquier argumento sobre por qué deberías hacerlo.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 15. El problema de matemáticas que la gente fallaba solo cuando no le convenía (pol-05)
+
+Estado: pendiente
+
+Mismo problema. Mismos números. Una versión trata sobre una crema para la piel. La otra, sobre control de armas. La gente con más habilidad matemática lo resuelve mejor en la primera versión, y peor en la segunda si el resultado correcto contradice su ideología.
+
+Dan Kahan, de la Universidad de Yale, presentó a sus participantes una tabla de datos ambigua que exigía razonamiento estadístico algo más sofisticado que comparar totales sin más. En la versión neutral (una crema contra el sarpullido), cuanta más habilidad numérica tenía alguien, mejor resolvía el problema, sin relación con su ideología.
+
+En la versión política (si prohibir portar armas reduce o aumenta la delincuencia), el patrón cambió. Los participantes con más habilidad numérica acertaban más solo cuando el resultado correcto coincidía con lo que predecía su ideología, y acertaban menos cuando lo contradecía. La habilidad numérica, en vez de corregir el sesgo, lo amplificaba.
+
+Kahan llama a esto numeracidad motivada. La misma capacidad analítica que debería servir para leer datos con precisión se pone, en temas con carga identitaria, al servicio de defender la conclusión que ya se prefería antes de mirar los números.
+
+Antes de aceptar o rechazar un dato político, vale la pena preguntarse cómo se evaluaría si el mismo número apoyara la posición contraria.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 16. Por qué debatir solo con quien piensa como tú te vuelve más extremo (pol-06)
+
+Estado: pendiente
+
+Un grupo de estudiantes con prejuicio alto habla solo con otros de prejuicio alto. Un grupo de prejuicio bajo habla solo con otros de prejuicio bajo. Después de discutir, ambos grupos están más lejos entre sí que antes de empezar.
+
+David Myers y George Bishop midieron las actitudes raciales de estudiantes de instituto antes de agruparlos por similitud de opinión. Cada grupo discutía esas mismas actitudes durante un tiempo, sin mezclar a personas de posturas distintas. Un grupo de control discutía temas neutrales antes de repetir la medición.
+
+Al terminar, los estudiantes de prejuicio alto mostraban actitudes más extremas que al principio. Los de prejuicio bajo, lo mismo, en la dirección contraria. El grupo de control, que había hablado de otra cosa, no se movió.
+
+El mecanismo se llama polarización de grupo: cuando personas con una inclinación previa parecida discuten entre sí, esa inclinación se refuerza en vez de moderarse. Escuchar solo argumentos que ya apoyan la propia postura da munición nueva que antes no existía, y nadie quiere parecer menos convencido que el resto del grupo.
+
+Si tus opiniones sobre algo se han vuelto más extremas con el tiempo, mirar con quién sueles hablar de eso puede explicar más que cualquier evidencia nueva.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 17. Cuántas veces hace falta probar una verdura antes de que empiece a gustarte (ali-05)
+
+Estado: pendiente
+
+Un niño de dos años prueba algo nuevo y lo rechaza. Ese rechazo se suele interpretar como un gusto ya formado. No lo es.
+
+Leann Birch y Diane Marlin ofrecieron a niños de alrededor de dos años alimentos que nunca habían probado. Distintos grupos fueron expuestos al mismo alimento 0, 5, 10 o 20 veces, en sesiones separadas, sin recompensa ni presión para comerlo. Antes y después, midieron cuánto preferían ese alimento frente a otros ya conocidos.
+
+La preferencia aumentó con las exposiciones, pero no de forma lineal: la mayor parte del cambio ocurría en las primeras ocho o diez veces. Muchos niños que habían rechazado el alimento abiertamente en la primera prueba terminaron prefiriéndolo por encima de alimentos que ya conocían.
+
+Los propios niños describían su rechazo con una frase que da título al estudio: "no me gusta, nunca lo he probado". Es neofobia alimentaria, una cautela razonable ante lo desconocido en una especie que come de todo. Cada exposición sin consecuencias negativas reduce esa cautela un poco más. El gusto no cambia porque alguien convenza al niño de que le gusta. Cambia porque la familiaridad, por sí sola, baja la amenaza percibida.
+
+Si algo se rechaza a la primera, ofrecerlo de nuevo, sin negociar, en varias ocasiones separadas, dice más sobre el sabor real que un único intento.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 18. La sopa que combate la soledad, según la ciencia (ali-06)
+
+Estado: pendiente
+
+Piensas en tu comida reconfortante favorita. Sin comerla todavía, sin verla siquiera. Tu cerebro ya está activando palabras como familia y cariño.
+
+Jordan Troisi y Shira Gabriel, de la Universidad de Buffalo, pidieron a participantes que pensaran en una comida reconfortante o en una comida neutral igual de familiar, y midieron con tareas de completar palabras cuánto se activaban conceptos relacionados con vínculos cercanos. Pensar en comida reconfortante activó esos conceptos con más fuerza que pensar en cualquier otra comida conocida.
+
+En un segundo experimento, indujeron una sensación de exclusión social pidiendo a los participantes que escribieran sobre un momento de rechazo. Entre quienes tenían un estilo de apego seguro en sus relaciones cercanas, pensar en su comida reconfortante habitual amortiguó el aumento de soledad que siguió al rechazo. En personas con apego inseguro, ese amortiguador no funcionó igual.
+
+El mecanismo: muchas comidas reconfortantes se asociaron, en algún momento significativo, a personas cercanas que las prepararon o compartieron. Comer ese plato reactiva parte de esa sensación de compañía, incluso comiendo en soledad total.
+
+La próxima vez que busques consuelo en un plato concreto, vale la pena notar de qué relación viene, no solo comerlo de forma automática.
 
 Descubre más estudios como este en La Inferencia → https://lainferencia.com
