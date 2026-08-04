@@ -488,6 +488,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La fuerza de voluntad no es un rasgo de carácter: es un recurso biológico que se agota. Gestionarla bien es la diferencia entre decidir y solo reaccionar.»', attribution: 'Roy Baumeister' },
       aplicacion: 'Identifica las tres decisiones triviales que repites cada mañana (qué desayunar, qué ponerte, con qué empezar el día de trabajo) y automatízalas esta semana. Fija una respuesta estándar y no la cuestionas. Observa si la calidad de tus decisiones importantes mejora en las horas siguientes.'
+    },
+    {
+      id: 'mod-06',
+      title: 'El uniforme que hace obedecer: por qué un guardia de seguridad consigue lo que un civil no',
+      summary: 'La misma petición absurda en la calle se obedece casi tres veces más cuando quien la hace lleva uniforme de guardia, aunque nadie haya comprobado si tiene autoridad real para pedirla.',
+      sourceUrl: 'https://doi.org/10.1111/j.1559-1816.1974.tb02599.x',
+      sourceLabel: 'Bickman (1974), Journal of Applied Social Psychology',
+      badge: 'Psicología de la autoridad',
+      author: { name: 'Leonard Bickman', university: 'Loyola University Chicago', specialty: 'Psicología social de la obediencia y la autoridad' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Leonard Bickman quería saber cuánto de la obediencia a la autoridad depende de la persona y cuánto depende, simplemente, de la ropa que lleva puesta. Para comprobarlo, mandó a varios ayudantes a la calle en Brooklyn vestidos de tres formas distintas: como guardia de seguridad, como repartidor de leche o sin ningún uniforme, y les hizo pedir a 153 peatones al azar cosas que no tenían ninguna obligación de hacer.',
+      sections: [
+        {
+          subtitle: 'El experimento: la misma petición, tres uniformes distintos',
+          paragraphs: [
+            'A cada peatón se le pedía una de estas cosas: recoger una bolsa de papel tirada en el suelo, prestarle una moneda a un desconocido que aparentemente no tenía para el parquímetro, o apartarse de una parada de autobús donde, según el ayudante, "no se podía esperar". Ninguna de las tres peticiones tenía relación real con la autoridad de un guardia de seguridad: recoger basura, prestar dinero o moverse de sitio no son competencia de nadie en particular.',
+            'Aun así, el uniforme cambió el resultado de forma drástica. En la petición de apartarse del parquímetro, obedeció el 89% de los peatones cuando quien lo pedía iba de guardia, frente al 57% con el repartidor de leche y el 33% sin uniforme. En la petición de recoger la bolsa, la obediencia fue del 38% con el guardia, del 19% con el civil y del 14% con el repartidor. El patrón se repitió en las tres tareas: uniforme de autoridad, más obediencia, incluso en peticiones que ese uniforme no tenía por qué respaldar.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la ropa como atajo cognitivo para la autoridad',
+          paragraphs: [
+            'Bickman explicó el resultado con un atajo mental muy simple: el cerebro no evalúa caso por caso si quien pide algo tiene de verdad potestad para pedirlo. Usa señales visuales rápidas (el uniforme, la placa, el tono) como sustituto de esa evaluación, porque comprobar la autoridad real de cada persona que se cruza en la calle sería, en términos cognitivos, insostenible. La consecuencia es que la señal (el uniforme) puede activar obediencia aunque esté completamente desconectada de la autoridad real que representa.',
+            'Es la misma lógica que opera, décadas después, en los estudios sobre suplantación de personal médico, técnico o de seguridad: un uniforme convincente basta para que la mayoría de la gente no cuestione ni la identidad ni la legitimidad de quien lo lleva. La ropa no otorga autoridad. Simplemente hace mucho más caro, cognitivamente, dudar de ella.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Basta con la ropa para sugerir autoridad, y cuando la gente cree que alguien tiene potestad para sancionarla, obedece.»', attribution: 'Leonard Bickman' },
+      aplicacion: 'La próxima vez que obedezcas automáticamente a alguien por su aspecto (un chaleco, una placa, una bata), date un segundo para preguntarte si esa persona tiene relación real con lo que te está pidiendo. El estudio de Bickman no dice que desconfíes de todo uniforme, dice que el uniforme por sí solo no es prueba de nada.'
+    },
+    {
+      id: 'mod-07',
+      title: 'El efecto zapatillas rojas: por qué saltarte las normas de vestir te hace parecer más competente',
+      summary: 'Llevar ropa deportiva en una boutique de lujo o zapatillas rojas en una reunión formal no penaliza la imagen de quien lo hace: la mejora, siempre que quede claro que conocía la norma y decidió romperla.',
+      sourceUrl: 'https://doi.org/10.1086/674870',
+      sourceLabel: 'Bellezza, Gino & Keinan (2014), Journal of Consumer Research',
+      badge: 'Señalización social',
+      author: { name: 'Silvia Bellezza', university: 'Harvard Business School / Columbia Business School', specialty: 'Comportamiento del consumidor y señalización de estatus' },
+      readingTime: '3 min',
+      date: '28 de julio de 2026',
+      intro: 'Silvia Bellezza, Francesca Gino y Anat Keinan partieron de una observación cotidiana: en muchos entornos de prestigio (universidades de élite, sectores creativos, alta dirección) quien más se sale del código de vestimenta suele ser, precisamente, quien más estatus tiene. Diseñaron una serie de estudios para comprobar si esa asociación es real y, sobre todo, por qué existe.',
+      sections: [
+        {
+          subtitle: 'El experimento: chándal en una boutique de lujo',
+          paragraphs: [
+            'En uno de los estudios, se pedía a los participantes que evaluaran a un vendedor de una tienda de lujo descrito como vestido con ropa de gimnasio en vez de traje, o a un profesor que entraba a dar una charla en zapatillas rojas en vez de con zapato formal. En ambos casos, los observadores no penalizaron a la figura no conformista: le atribuyeron más estatus y más competencia que a la versión vestida de forma convencional, siempre que el contexto dejara claro que esa persona conocía la norma social y aun así decidió no seguirla.',
+            'El matiz importa: cuando el mismo comportamiento se presentaba como un despiste (la persona no sabía vestirse de otra forma, o no conocía el entorno), el efecto desaparecía por completo. No era la ropa distinta lo que generaba la impresión positiva. Era la ropa distinta interpretada como una elección deliberada.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: romper la norma como prueba de autonomía',
+          paragraphs: [
+            'Bellezza, Gino y Keinan encontraron que el efecto estaba mediado por la percepción de autonomía: quien se salta una norma sabiendo que existe transmite que no necesita la aprobación ajena para sentirse seguro, y esa independencia se interpreta como una señal indirecta de competencia real. La lógica implícita del observador es que solo alguien que de verdad domina su terreno puede permitirse ignorar sus convenciones sin pagar el precio social.',
+            'El propio estudio marca los límites: el efecto se diluye cuando el observador no conoce bien las normas del entorno (no puede detectar que se ha roto nada) y se invierte cuando la no conformidad se atribuye a ignorancia en vez de a elección consciente. Saltarse una norma no da estatus por sí solo. Lo da hacerlo de una forma que deje claro que se podía haber cumplido.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Las señales de no conformidad llevan a los observadores a inferir estatus y competencia, siempre que se perciban como una elección deliberada.»', attribution: 'Silvia Bellezza' },
+      aplicacion: 'Si vas a romper un código de vestimenta en un entorno profesional, la clave según este estudio no es el gesto en sí, sino que quede claro que lo conocías. Cumple visiblemente el resto de las convenciones del contexto y rompe solo una, de forma evidente: esa combinación es la que el estudio asocia con más estatus, no la ruptura indiscriminada.'
     }
   ],
 
@@ -611,6 +671,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La gente asume que nadie confesaría un crimen que no ha cometido. Esa suposición es el mayor aliado de las confesiones falsas.»', attribution: 'Saul Kassin' },
       aplicacion: 'Si alguna vez eres interrogado por cualquier autoridad (incluso en un contexto laboral o disciplinario), recuerda que tienes derecho a solicitar asesoramiento antes de responder. El instinto de cooperar para demostrar inocencia es completamente comprensible y psicológicamente natural. También es el mecanismo que más frecuentemente produce confesiones falsas.'
+    },
+    {
+      id: 'der-05',
+      title: 'La belleza que agrava la condena: cuando ser atractivo juega en tu contra ante un jurado',
+      summary: 'Ser atractivo reduce la condena cuando el delito no tiene relación con el físico, pero la aumenta cuando el propio atractivo fue la herramienta del delito, como en una estafa sentimental.',
+      sourceUrl: 'https://doi.org/10.1037/h0076468',
+      sourceLabel: 'Sigall & Ostrove (1975), Journal of Personality and Social Psychology',
+      badge: 'Psicología forense',
+      author: { name: 'Harold Sigall', university: 'University of Maryland', specialty: 'Psicología social de la persuasión y la impresión' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Harold Sigall y David Ostrove sospechaban que el efecto halo (la tendencia a atribuir más cualidades positivas a las personas atractivas) no era tan simple como "belleza igual a indulgencia". Diseñaron un experimento para comprobar si ese efecto podía revertirse según el tipo de delito, y en concreto según si el atractivo físico de la acusada tenía algo que ver con cómo había cometido el crimen.',
+      sections: [
+        {
+          subtitle: 'El experimento: la misma acusada, dos delitos distintos',
+          paragraphs: [
+            '120 participantes recibieron una ficha con la descripción de un delito cometido por una mujer llamada Barbara Helms, junto con una fotografía suya atractiva, una fotografía poco favorecedora, o ninguna fotografía. El delito era, según el grupo, un robo con allanamiento (sin relación con su aspecto) o una estafa sentimental en la que se había ganado la confianza de una víctima para robarle dinero (un delito en el que la capacidad de resultar atractiva y de fiar era, literalmente, el arma del crimen).',
+            'En el robo, la acusada atractiva recibió una condena media de 2,80 años, frente a 5,20 años para la poco atractiva y 5,10 para el grupo sin fotografía: el patrón esperado del efecto halo, belleza como atenuante. En la estafa, el resultado se invirtió: la acusada atractiva recibió una condena media de 5,45 años, más dura que los 4,35 años asignados tanto a la acusada poco atractiva como al grupo sin fotografía. La misma belleza que aligeraba la condena por robo agravaba la condena por estafa.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: cuando el atractivo deja de ser un rasgo y pasa a ser un arma',
+          paragraphs: [
+            'Sigall y Ostrove explicaron el giro con un matiz al efecto halo clásico: los jurados no solo preguntan "¿es una buena persona?" sino, de forma más precisa, "¿es razonable pensar que usó este rasgo para cometer el delito?". Cuando el atractivo es irrelevante para el crimen (un robo se comete igual siendo guapo o no), la belleza actúa como prueba indirecta de buen carácter y suaviza el juicio. Cuando el crimen depende directamente de generar confianza o deseo en la víctima, el mismo atractivo deja de leerse como virtud y pasa a leerse como instrumento.',
+            'La implicación es incómoda para cualquier intuición simple sobre los sesgos de apariencia: no existe un efecto único y estable del atractivo físico en la justicia. Existe una interacción entre lo que la persona parece y lo que se le acusa de haber hecho con ello, y esa interacción puede convertir la misma cualidad en atenuante o en agravante según el caso.'
+          ]
+        }
+      ],
+      blockquote: { text: '«El atractivo físico no beneficia siempre al acusado: beneficia cuando es irrelevante para el delito y perjudica cuando parece haber sido la herramienta.»', attribution: 'Harold Sigall' },
+      aplicacion: 'Antes de asumir que la simpatía o el atractivo de alguien predicen su inocencia, pregúntate si esa misma cualidad podría explicar cómo se cometió lo que se le atribuye. El sesgo de "buena persona, buena cara" no desaparece por conocer este estudio, pero saber que se invierte en ciertos contextos ayuda a notar cuándo tu juicio está siendo arrastrado por el aspecto de alguien en vez de por los hechos.'
+    },
+    {
+      id: 'der-06',
+      title: 'El dado que decidía la condena: cómo un número al azar influye en la sentencia de un juez experto',
+      summary: 'Jueces con más de quince años de experiencia dieron condenas distintas para el mismo delito según el número que había salido, momentos antes, en una tirada de dados que ellos mismos sabían que era irrelevante.',
+      sourceUrl: 'https://doi.org/10.1111/j.1559-1816.2001.tb02687.x',
+      sourceLabel: 'Englich & Mussweiler (2001), Journal of Applied Social Psychology',
+      badge: 'Psicología forense',
+      author: { name: 'Birte Englich', university: 'Universidad de Colonia', specialty: 'Psicología del juicio y la toma de decisiones judiciales' },
+      readingTime: '3 min',
+      date: '31 de julio de 2026',
+      intro: 'Birte Englich y Thomas Mussweiler querían llevar el efecto de anclaje (documentado por Kahneman y Tversky en contextos de laboratorio) a un escenario donde la intuición dice que no debería funcionar: una sala de justicia real, con jueces con años de experiencia decidiendo sobre un caso con toda la información delante.',
+      sections: [
+        {
+          subtitle: 'El experimento: tirar un dado antes de dictar sentencia',
+          paragraphs: [
+            'Jueces con una experiencia media superior a quince años en el cargo leyeron el expediente completo de un caso real de hurto en una tienda. Después, se les pedía que tiraran un par de dados trucados para que solo pudiera salir un 3 o un 9, un número que ellos sabían perfectamente que no tenía ninguna relación con el caso. Antes de fijar la condena, se les preguntaba si su sentencia sería mayor o menor, en meses, que el número que acababa de salir en el dado.',
+            'Los jueces que habían sacado un 9 fijaron una condena media de 8 meses de prisión. Los que habían sacado un 3 fijaron una condena media de 5 meses, para exactamente el mismo expediente. Un número aleatorio, generado por un dado cuya irrelevancia el propio juez reconocía en voz alta, desplazó la sentencia final en torno a un 50%.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: el ancla contamina el juicio antes de que el razonamiento pueda corregirlo',
+          paragraphs: [
+            'Englich y Mussweiler explican el resultado con el mecanismo de anclaje que Kahneman y Tversky habían descrito para el público general: cuando se pide comparar un valor con un número de referencia, la mente no lo descarta después de comparar. Lo usa como punto de partida para el ajuste final, y ese ajuste suele quedarse corto, arrastrando la estimación hacia el ancla original aunque el origen del ancla sea manifiestamente irrelevante.',
+            'Lo relevante del estudio no es que el sesgo de anclaje exista (eso ya se sabía), sino que sobrevive intacto en expertos con años de práctica evaluando exactamente ese tipo de decisión, y que lo hace incluso cuando la fuente del ancla es tan visiblemente arbitraria como un dado trucado delante de sus propios ojos. Saber que un número es irrelevante no impide que el cerebro lo use como referencia.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Ni siquiera los expertos con años de experiencia están libres del efecto de anclaje, aunque el ancla sea, de forma evidente, aleatoria e irrelevante.»', attribution: 'Birte Englich' },
+      aplicacion: 'Cualquier número que se mencione justo antes de una decisión (un precio inicial, una cifra ajena al problema, una estimación de otra persona) puede estar anclando tu juicio sin que lo notes. Antes de decidir algo importante, pregúntate qué número viste u oíste en los minutos previos y si tiene alguna relación real con lo que estás valorando.'
     }
   ],
 
@@ -734,6 +854,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La mente puede practicar lo que el cuerpo aún no puede ejecutar. Eso no es una metáfora: es neurofisiología.»', attribution: 'James Driskell' },
       aplicacion: 'Antes de una situación de rendimiento importante, dedica 10 minutos a una visualización en primera persona y en tiempo real: ve todo lo que verías, siente las sensaciones físicas, imagina los sonidos del entorno. Incluye también cómo gestionas un contratiempo y te recuperas. La visualización que solo imagina el éxito es menos efectiva que la que también entrena la respuesta al error.'
+    },
+    {
+      id: 'dep-05',
+      title: 'Por qué los competidores de rojo ganan más combates olímpicos que los de azul',
+      summary: 'En cuatro deportes de combate de los Juegos Olímpicos de Atenas 2004, el color del uniforme, asignado al azar, predijo quién ganaba el combate con más fuerza cuanto más igualados estaban los rivales.',
+      sourceUrl: 'https://doi.org/10.1038/435293a',
+      sourceLabel: 'Hill & Barton (2005), Nature',
+      badge: 'Psicología del deporte',
+      author: { name: 'Russell Hill', university: 'Durham University', specialty: 'Ecología del comportamiento y señales biológicas' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Russell Hill y Robert Barton partieron de una observación del reino animal: en muchas especies, el color rojo funciona como señal de dominancia y se asocia a niveles más altos de testosterona. Se preguntaron si ese mismo color, cuando se lleva puesto en vez de mostrarse en la piel, podía influir también en el resultado de un enfrentamiento humano. Los Juegos Olímpicos de Atenas 2004 les dieron el escenario perfecto: en boxeo, taekwondo y las dos modalidades de lucha, el color del uniforme (rojo o azul) se asigna a los competidores de forma aleatoria antes de cada combate.',
+      sections: [
+        {
+          subtitle: 'El experimento natural: un color asignado por sorteo',
+          paragraphs: [
+            'Como el color no depende de ninguna decisión del deportista ni del entrenador, sino de un sorteo administrativo, Hill y Barton pudieron tratar el color del uniforme como una variable verdaderamente aleatoria y analizar si predecía el resultado en los combates ya disputados en Atenas. El resultado global fue claro: el 55% de todos los combates de las cuatro disciplinas los ganó el competidor vestido de rojo, un porcentaje que por sí solo ya se aleja del 50% esperable por azar.',
+            'El dato más revelador apareció al aislar los combates entre rivales de nivel más parejo, donde no hay una diferencia de habilidad grande que pueda explicar el resultado por sí sola: ahí, el rojo ganó más del 60% de los combates. Cuanto más equilibrado el enfrentamiento, más peso parecía tener el color, justo el patrón que cabría esperar si el color actúa como un empujón psicológico que solo se nota cuando todo lo demás está igualado.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: una señal biológica heredada, no una superstición',
+          paragraphs: [
+            'Hill y Barton proponen que el rojo no funciona como una superstición cultural aprendida, sino como un residuo de un mecanismo biológico más antiguo: en primates y otras especies, la coloración roja de la piel se asocia a dominancia y capacidad competitiva, y los humanos podríamos conservar una sensibilidad perceptiva similar. Ver rojo en un rival podría elevar, de forma automática, la percepción de su amenaza; llevarlo puesto podría, en la misma lógica, aumentar la propia sensación de dominancia de quien lo lleva.',
+            'Estudios posteriores han matizado este hallazgo (el efecto se ha debilitado o desaparecido en algunas disciplinas tras cambios de reglamento y una mayor consciencia del sesgo entre árbitros), lo que sugiere que parte del efecto original podría deberse también a un sesgo de percepción arbitral, no solo a la psicología del competidor. Aun así, el hallazgo original sigue siendo uno de los ejemplos mejor documentados de cómo una señal tan superficial como un color puede desplazar el resultado de una competición de alto nivel.'
+          ]
+        }
+      ],
+      blockquote: { text: '«El rojo se asocia a dominancia en muchas especies, y nuestros datos sugieren que también puede desempeñar ese papel en el deporte humano de contacto.»', attribution: 'Russell Hill' },
+      aplicacion: 'Si compites o compara resultados en un deporte donde el color de equipación se elige de antemano, este estudio no te dice que ganar dependa del color, sino que en enfrentamientos muy igualados hasta señales mínimas y aparentemente irrelevantes pueden inclinar la balanza. Vale la pena buscar, en cualquier margen pequeño, ventajas igual de pequeñas y controlables antes de asumir que el resultado se debe solo al talento.'
+    },
+    {
+      id: 'dep-06',
+      title: 'La racha caliente que no existía: por qué el 91% de los aficionados cree en algo que los datos no confirman',
+      summary: 'Un 91% de los aficionados al baloncesto está convencido de que un jugador tiene más probabilidad de encestar tras una racha de aciertos. Al analizar miles de tiros reales, esa racha resultó estadísticamente indistinguible del azar.',
+      sourceUrl: 'https://doi.org/10.1016/0010-0285(85)90010-6',
+      sourceLabel: 'Gilovich, Vallone & Tversky (1985), Cognitive Psychology',
+      badge: 'Psicología del deporte',
+      author: { name: 'Thomas Gilovich', university: 'Cornell University', specialty: 'Psicología del juicio y las creencias erróneas' },
+      readingTime: '4 min',
+      date: '24 de julio de 2026',
+      intro: 'Thomas Gilovich, Robert Vallone y Amos Tversky partieron de una creencia casi universal entre jugadores, entrenadores y aficionados al baloncesto: que un jugador que ha encestado sus últimos lanzamientos tiene más probabilidades de encestar el siguiente, la llamada "mano caliente". Antes de analizar un solo dato, encuestaron a aficionados: el 91% estuvo de acuerdo en que un jugador tiene más probabilidades de acertar después de haber encestado sus dos o tres tiros anteriores que después de haberlos fallado.',
+      sections: [
+        {
+          subtitle: 'El experimento: temporadas enteras de tiros bajo el microscopio',
+          paragraphs: [
+            'El equipo analizó los datos de tiros de campo de los Philadelphia 76ers durante una temporada, los tiros libres de los Boston Celtics, y organizó además un experimento controlado con jugadores universitarios de Cornell, que lanzaron 100 tiros cada uno en condiciones idénticas, sin defensa ni presión de partido, para eliminar cualquier explicación alternativa relacionada con la selección de tiro o la presión del rival.',
+            'En los tres conjuntos de datos, la secuencia de aciertos y fallos resultó estadísticamente indistinguible de una secuencia generada por lanzar una moneda al aire de forma repetida: la probabilidad de encestar tras una racha de aciertos no era mayor que la probabilidad de encestar tras una racha de fallos. La racha caliente que el 91% de los aficionados daba por hecha no aparecía en los números.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: el cerebro detecta patrones incluso donde no los hay',
+          paragraphs: [
+            'Gilovich, Vallone y Tversky explicaron la discrepancia con un sesgo de percepción de la aleatoriedad: la mente humana subestima sistemáticamente cuántas rachas largas produce el puro azar, y por eso interpreta las rachas normales de una secuencia aleatoria como si fueran una señal de un estado interno cambiante del jugador, en vez de una fluctuación estadística esperable. Ver cuatro aciertos seguidos "parece" significar algo, aunque cuatro aciertos seguidos ocurran con normalidad en cualquier secuencia suficientemente larga de sucesos con la misma probabilidad.',
+            'Conviene añadir un matiz honesto: el debate no se cerró en 1985. Análisis estadísticos posteriores, en particular de Joshua Miller y Adam Sanjurjo (2018), identificaron un sesgo metodológico sutil en cómo se calculaban las probabilidades condicionadas del estudio original, y al corregirlo reaparece una pequeña pero real tendencia hacia la mano caliente en algunos conjuntos de datos. La conclusión más prudente hoy no es "la mano caliente es un mito" sino que, si existe, es mucho más débil de lo que la intuición del 91% de los aficionados sugiere.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La gente detecta patrones en secuencias aleatorias con la misma facilidad con la que los detecta en secuencias que sí contienen un patrón real.»', attribution: 'Thomas Gilovich' },
+      aplicacion: 'La próxima vez que sientas que algo (un jugador, una inversión, una máquina) está "en racha", pregúntate cuántas rachas de esa longitud esperarías ver solo por azar en una secuencia tan larga como la que estás observando. Casi siempre son más de las que la intuición calcula, y eso no significa que las rachas no existan nunca: significa que hace falta más que una racha corta para probarlo.'
     }
   ],
 
@@ -857,6 +1037,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«El placer que obtenemos de algo no depende solo de lo que es, sino de lo que creemos que es. El origen invisible de un objeto cambia la experiencia visible que produce.»', attribution: 'Paul Bloom' },
       aplicacion: 'La próxima vez que evalúes algo (una obra de arte, un producto, una idea, el trabajo de alguien), hazte esta pregunta: "¿Valoraría esto igual si no supiera quién lo hizo?" Si la respuesta es no, parte de tu evaluación está siendo determinada por la historia y el origen, no por las cualidades observables. Puede ser legítimo. Pero merece ser consciente.'
+    },
+    {
+      id: 'art-05',
+      title: 'Por qué acabas queriendo la canción que odiabas la primera vez que la oíste',
+      summary: 'Repetir la exposición a una imagen, una palabra o una melodía basta para que empiece a gustar más, sin que la persona sea consciente de por qué. El hallazgo se replicó en más de 200 estudios posteriores.',
+      sourceUrl: 'https://doi.org/10.1037/h0025848',
+      sourceLabel: 'Zajonc (1968), Journal of Personality and Social Psychology Monograph Supplement',
+      badge: 'Neuroestética',
+      author: { name: 'Robert Zajonc', university: 'University of Michigan', specialty: 'Psicología social de las emociones y la cognición' },
+      readingTime: '3 min',
+      date: '20 de julio de 2026',
+      intro: 'Robert Zajonc quería comprobar algo que hasta entonces solo era una intuición dispersa: que basta con ver algo varias veces, sin ningún premio ni castigo asociado, para empezar a valorarlo mejor. Para probarlo diseñó una serie de experimentos con estímulos que los participantes no habían visto nunca antes: palabras sin sentido, ideogramas chinos y fotografías de rostros desconocidos.',
+      sections: [
+        {
+          subtitle: 'El experimento: exponer sin explicar, y medir el gusto',
+          paragraphs: [
+            'A los participantes se les mostraban estos estímulos un número distinto de veces (algunos ni una sola vez, otros hasta veinticinco veces) y después se les pedía que valoraran cuánto les gustaba cada uno, sin decirles en ningún momento qué significaban ni por qué se les mostraban. No había ninguna recompensa asociada a ningún estímulo: solo exposición repetida, sin refuerzo de ningún tipo.',
+            'El patrón se repitió en los tres tipos de estímulo: cuantas más veces habían visto un ideograma, una palabra sin sentido o un rostro, mejor lo valoraban, incluso cuando no podían explicar por qué les resultaba más agradable ni recordaban conscientemente haberlo visto antes. El efecto era más fuerte en las primeras repeticiones y se iba suavizando con cada exposición adicional, una curva que crecía rápido al principio y luego se aplanaba.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la familiaridad como señal de seguridad',
+          paragraphs: [
+            'Zajonc propuso que este "efecto de mera exposición" no depende del procesamiento consciente ni racional del estímulo: opera incluso cuando la persona no reconoce haberlo visto antes, lo que sugiere un mecanismo más primitivo que el razonamiento deliberado. Su hipótesis fue que lo familiar se procesa, de entrada, como más seguro que lo desconocido, un atajo evolutivamente razonable en un entorno donde lo nuevo podía representar una amenaza real.',
+            'La revisión posterior de más de 200 estudios (metaanálisis de Bornstein, 1989) confirmó el patrón general con matices: el efecto es más fuerte cuando el estímulo se presenta muy brevemente, cuando la persona no es consciente de la repetición y en las primeras exposiciones. Es la explicación que hay detrás de por qué una canción, una obra o incluso una cara desconocida al principio "crece" con el tiempo sin que nada objetivo en el estímulo haya cambiado. Lo único que cambió fue cuántas veces la habías visto.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La exposición repetida y no reforzada a un estímulo es suficiente para mejorar la actitud hacia él.»', attribution: 'Robert Zajonc' },
+      aplicacion: 'Si una obra, una canción o incluso una idea te generó rechazo la primera vez, dale una segunda y una tercera oportunidad antes de descartarla del todo: parte de ese rechazo inicial puede ser, simplemente, la novedad hablando, no un juicio estético definitivo. Y a la inversa: si algo te gusta mucho de inmediato, pregúntate cuánto de ese gusto viene de lo familiar que ya te resultaba.'
+    },
+    {
+      id: 'art-06',
+      title: 'Cuarenta y cinco minutos de pintar bajaron el cortisol en el 75% de un grupo de adultos',
+      summary: 'No hace falta saber dibujar para que hacer arte reduzca la hormona del estrés: en un estudio con 39 adultos, tres de cada cuatro mostraron menos cortisol tras 45 minutos de creación libre, sin ninguna instrucción técnica.',
+      sourceUrl: 'https://doi.org/10.1080/07421656.2016.1166832',
+      sourceLabel: 'Kaimal, Ray & Muniz (2016), Art Therapy',
+      badge: 'Neuroestética',
+      author: { name: 'Girija Kaimal', university: 'Drexel University', specialty: 'Arteterapia y neurociencia de la creatividad' },
+      readingTime: '3 min',
+      date: '13 de julio de 2026',
+      intro: 'Girija Kaimal, Kendra Ray y Juan Muniz querían separar dos preguntas que suelen mezclarse cuando se habla de arte y bienestar: si hacer arte reduce el estrés de verdad, medido en el cuerpo y no solo en cuestionarios, y si hace falta tener habilidad artística para conseguirlo. Reunieron a 39 adultos sanos, de entre 18 y 59 años, con niveles de experiencia artística muy distintos entre sí.',
+      sections: [
+        {
+          subtitle: 'El experimento: pintar, moldear o recortar durante 45 minutos',
+          paragraphs: [
+            'A cada participante se le dio acceso a rotuladores y papel, arcilla de modelar y materiales de collage, sin ninguna instrucción sobre qué crear ni cómo hacerlo: cada persona decidía libremente qué obra quería producir. Antes y después de los 45 minutos de creación, se tomaron muestras de saliva para medir de forma objetiva el nivel de cortisol, la hormona asociada a la respuesta de estrés del organismo.',
+            'El resultado fue una bajada estadísticamente significativa del cortisol en el conjunto del grupo, con casi un 75% de los participantes mostrando niveles más bajos al terminar que al empezar. La reducción no dependía de la experiencia artística previa: quienes nunca habían pintado ni modelado nada mostraron beneficios comparables a quienes tenían formación artística formal.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la creación como regulación, no como talento',
+          paragraphs: [
+            'Kaimal y su equipo interpretan el hallazgo como evidencia de que el efecto reductor de estrés del arte no depende de la calidad del resultado ni de la técnica empleada, sino del propio proceso de creación: la atención sostenida en una tarea manual y abierta, sin evaluación externa ni objetivo de rendimiento, parece activar un estado de regulación fisiológica similar al que producen otras prácticas de atención plena.',
+            'Esto tiene una implicación práctica que contradice una creencia muy extendida: la barrera de entrada para beneficiarse del arte como herramienta de regulación emocional no es "saber hacerlo bien". El estudio no midió la calidad estética de las obras producidas, solo el cambio hormonal de quien las hizo, y ese cambio apareció con independencia del nivel de destreza de partida.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La reducción de cortisol tras hacer arte se observó en todos los niveles de habilidad, lo que sugiere que el efecto no depende de la experiencia artística previa.»', attribution: 'Girija Kaimal' },
+      aplicacion: 'Si buscas una forma de bajar el estrés acumulado de un día concreto, este estudio sugiere que 45 minutos de crear algo con las manos (sin exigirte que quede bien, sin foto para nadie) puede tener un efecto fisiológico medible, exactamente igual de válido si nunca has pintado nada que si llevas años haciéndolo.'
     }
   ],
 
@@ -980,6 +1220,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«La web nos está mostrando un universo personalizado para cada uno de nosotros, y ese universo tiene muy poca ventana hacia lo que piensa el resto.»', attribution: 'Eli Pariser' },
       aplicacion: 'Dedica 10 minutos a la semana a buscar activamente tres fuentes informativas con las que generalmente no estás de acuerdo (no extremistas, sino voces serias que razonan desde otras premisas). No para cambiar de opinión, sino para calibrar: si solo consumes lo que confirma lo que ya crees, tu modelo de la realidad social es tan distorsionado como el de quien hace lo opuesto.'
+    },
+    {
+      id: 'tec-05',
+      title: 'Un móvil encima de la mesa basta para que una conversación importe menos, aunque nadie lo mire',
+      summary: 'La simple presencia visible de un teléfono durante una charla entre desconocidos reduce la cercanía y la empatía percibida, incluso si nadie lo toca ni lo consulta en ningún momento.',
+      sourceUrl: 'https://doi.org/10.1177/0265407512453827',
+      sourceLabel: 'Przybylski & Weinstein (2013), Journal of Social and Personal Relationships',
+      badge: 'Cognición y tecnología',
+      author: { name: 'Andrew Przybylski', university: 'University of Essex / University of Oxford', specialty: 'Psicología de la tecnología y las relaciones interpersonales' },
+      readingTime: '3 min',
+      date: '3 de agosto de 2026',
+      intro: 'Andrew Przybylski y Netta Weinstein querían aislar un efecto muy concreto: no el de usar el móvil durante una conversación, que ya se sabía que la deteriora, sino el de su mera presencia visible sobre la mesa, sin que nadie lo tocara. Diseñaron dos experimentos con parejas de desconocidos conversando durante diez minutos.',
+      sections: [
+        {
+          subtitle: 'El experimento: el mismo diálogo, con o sin móvil a la vista',
+          paragraphs: [
+            'En el primer experimento, 34 parejas de desconocidos charlaron durante diez minutos sobre "algo interesante que os haya pasado el último mes". En algunas mesas había, de fondo y sin que nadie lo usara, un teléfono móvil; en otras, un cuaderno del mismo tamaño ocupaba ese lugar. Ningún participante interactuó con el objeto en ningún momento de la conversación.',
+            'Aun así, quienes habían conversado con el móvil visible declararon después sentir menos cercanía hacia su interlocutor y menos posibilidad de llegar a ser amigos que quienes habían conversado con el cuaderno. En el segundo experimento, con temas de conversación más personales, el efecto se amplificó: la presencia del móvil se asoció a valoraciones marcadamente más bajas de empatía y comprensión percibida en la pareja, con una asociación estadística fuerte entre la sola presencia del teléfono y la calidad relacional declarada.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la promesa de otra conversación compite con la que tienes delante',
+          paragraphs: [
+            'Przybylski y Weinstein explican el efecto por lo que el móvil representa incluso apagado o silenciado sobre la mesa: una red completa de personas y conversaciones alternativas, siempre disponible en potencia. Esa disponibilidad latente basta para captar una fracción de la atención que, de otro modo, iría entera a la persona que tienes delante, sin que haga falta consultarlo ni una sola vez para que el efecto aparezca.',
+            'El resultado más incómodo del estudio es justamente ese: el daño no depende de mirar el teléfono. Depende de que esté ahí, visible, como una posibilidad constante de fuga hacia otra parte. La atención no se reparte solo cuando se actúa sobre el móvil, se reparte ya por el simple hecho de que el móvil esté presente en el campo visual de ambas personas.'
+          ]
+        }
+      ],
+      blockquote: { text: '«La mera presencia de un móvil, sin que nadie lo use, puede reducir la calidad de una conversación cara a cara y la sensación de conexión entre las personas.»', attribution: 'Andrew Przybylski' },
+      aplicacion: 'Antes de una conversación que te importe de verdad, guarda el móvil fuera de la vista de ambos, no solo en silencio sobre la mesa. Según este estudio, la diferencia no está en si lo consultas, está en si sigue ahí, visible, recordándoos a los dos que existe un mundo alternativo de conversaciones esperando.'
+    },
+    {
+      id: 'tec-06',
+      title: 'Por qué recuerdas dónde buscarlo en Google mejor de lo que recuerdas el dato en sí',
+      summary: 'Cuando sabemos que una información va a quedar guardada y disponible más tarde, el cerebro reduce el esfuerzo de memorizarla y en su lugar prioriza recordar dónde encontrarla, no qué dice.',
+      sourceUrl: 'https://doi.org/10.1126/science.1207745',
+      sourceLabel: 'Sparrow, Liu & Wegner (2011), Science',
+      badge: 'Cognición y tecnología',
+      author: { name: 'Betsy Sparrow', university: 'Columbia University', specialty: 'Psicología cognitiva de la memoria transactiva' },
+      readingTime: '3 min',
+      date: '6 de julio de 2026',
+      intro: 'Betsy Sparrow, Jenny Liu y Daniel Wegner querían comprobar si el acceso constante a buscadores como Google está cambiando algo más profundo que el hábito de consulta: si está cambiando qué tipo de información decide memorizar el propio cerebro, ahora que sabe que gran parte de ella está siempre a un clic de distancia.',
+      sections: [
+        {
+          subtitle: 'El experimento: escribir datos que se guardarán, o no',
+          paragraphs: [
+            'En uno de los cuatro experimentos, los participantes escribían una serie de afirmaciones triviales en un ordenador, y se les decía que el texto se guardaría automáticamente en una de cinco carpetas genéricas del sistema. A un grupo se le decía que la información quedaría guardada y accesible después; a otro, que se borraría en cuanto terminaran. Después se les pedía recordar tanto el contenido de las afirmaciones como el nombre de la carpeta donde creían que se habían guardado.',
+            'Quienes creían que la información seguiría disponible más tarde recordaron peor el contenido de las afirmaciones que quienes creían que se borraría, y en cambio recordaron mejor en qué carpeta la habían guardado que el propio contenido. El patrón se repitió en los cuatro experimentos: la expectativa de acceso futuro cambiaba qué se memorizaba, priorizando la ruta hacia la información por encima de la información misma.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: internet como memoria transactiva compartida',
+          paragraphs: [
+            'Sparrow y su equipo interpretan el hallazgo dentro de la teoría de la memoria transactiva, formulada originalmente para explicar cómo las parejas y los equipos de trabajo se reparten qué recuerda cada miembro, confiando en que el otro recordará el resto. Internet, según esta lectura, ha pasado a funcionar como un miembro más de ese sistema compartido: no hace falta memorizar un dato si el sistema externo (el buscador) lo va a recordar por ti con total fiabilidad.',
+            'Esto no es necesariamente un empobrecimiento cognitivo, según los propios autores: es una redistribución eficiente de un recurso limitado. El cerebro deja de gastar esfuerzo en almacenar información que un sistema externo confiable ya conserva, y en su lugar invierte ese esfuerzo en recordar cómo y dónde recuperarla, una estrategia razonable siempre que el acceso a ese sistema externo esté garantizado.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Cuando esperamos tener acceso futuro a la información, recordamos menos el contenido en sí y más dónde encontrarlo.»', attribution: 'Betsy Sparrow' },
+      aplicacion: 'Si notas que cada vez recuerdas menos datos concretos y más "dónde los tenía guardados", no es necesariamente un fallo de memoria: es el mismo patrón que documenta este estudio. La pregunta útil no es cómo memorizar más en un mundo con buscadores, sino qué información sí merece la pena memorizar de verdad porque no vas a tener acceso inmediato a ella cuando la necesites.'
     }
   ],
 
@@ -1832,6 +2132,342 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«El cerebro usa el plato como señal de cuánto necesita comer. El estómago llega demasiado tarde para corregirle.»', attribution: 'Barbara J. Rolls' },
       aplicacion: 'Sirve los alimentos de alta densidad calórica en platos más pequeños, y los de baja densidad en platos grandes. No es autoengaño: es alinear las señales visuales que tu cerebro usa para decidir cuándo parar con la información calórica real de lo que estás comiendo. El experimento de Rolls sugiere que este ajuste es suficiente para reducir la ingesta entre un 20 y un 30 % sin que el nivel de saciedad percibida cambie.'
+    }
+  ],
+  marketing: [
+    {
+      id: 'mkt-01',
+      title: 'El efecto escasez: por qué un tarro casi vacío de galletas vale más que uno lleno',
+      summary: 'Las mismas galletas se perciben como más valiosas y más sabrosas en cuanto quedan pocas, sobre todo si antes había muchas y la escasez la ha causado la demanda de otros.',
+      sourceUrl: 'https://doi.org/10.1037/0022-3514.32.5.906',
+      sourceLabel: 'Worchel, Lee & Adewole (1975), Journal of Personality and Social Psychology',
+      badge: 'Persuasión',
+      author: { name: 'Stephen Worchel', university: 'University of Hawaii', specialty: 'Psicología Social de la Persuasión' },
+      readingTime: '3 min',
+      date: '21 de julio de 2026',
+      intro: 'En 1975, Stephen Worchel, Jerry Lee y Akanbi Adewole sentaron a 200 mujeres frente a un tarro de galletas de chocolate y les pidieron que las valorasen. El tarro no era el mismo para todas: unas veces tenía diez galletas, otras solo dos. Las galletas, en cambio, eran idénticas. La única variable que cambiaba era cuántas quedaban, y esa sola variable bastó para mover el juicio de valor, de atractivo y hasta de sabor de un producto que ninguna de las participantes había podido probar.',
+      sections: [
+        {
+          subtitle: 'El experimento del tarro que se vacía',
+          paragraphs: [
+            'Worchel diseñó dos experimentos con condiciones distintas. En el primero, unas participantes veían un tarro con diez galletas y otras un tarro con solo dos, sin más explicación. En el segundo, la escasez ya no era fija desde el principio: a un grupo se le mostraba un tarro que empezaba con diez galletas y terminaba con dos, y se le decía que la reducción se debía a un simple error de reparto o, en otra condición, a que otras personas se las habían llevado por lo populares que eran.',
+            'El patrón fue consistente en ambos experimentos: las galletas del tarro casi vacío se valoraron como más deseables y de mayor calidad que las del tarro lleno, aunque procedieran del mismo paquete. Pero el hallazgo más interesante apareció en el segundo experimento: las galletas que habían pasado de ser abundantes a escasas por la demanda de otras personas recibieron las valoraciones más altas de todo el estudio, por encima incluso de las que habían sido escasas desde el principio. No bastaba con que quedaran pocas: importaba, y mucho, por qué quedaban pocas.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la escasez como atajo de valor y la amenaza a la libertad de elegir',
+          paragraphs: [
+            'Worchel explicó el resultado con dos mecanismos que se refuerzan entre sí. El primero es un atajo cognitivo básico: en ausencia de más información, la escasez de un recurso funciona como indicio indirecto de su calidad, porque en la mayoría de contextos reales lo escaso lo es porque otros ya lo han valorado y consumido. El cerebro no necesita probar la galleta para inferir que debe de ser buena si a otros se les están acabando.',
+            'El segundo mecanismo procede de la teoría de la reactancia psicológica de Jack Brehm: cuando algo que antes estaba disponible empieza a restringirse, no solo se activa el primer atajo, también se percibe una amenaza a la libertad de poder tenerlo si se quiere. Esa amenaza genera una motivación extra por recuperar el acceso, independiente del valor real del objeto. Es la razón por la que la escasez causada por la demanda de otros (el tarro que se vacía "porque a la gente le encantan") pesa más que la escasez simplemente accidental: no solo informa de que el producto es bueno, además convierte el hecho de conseguirlo en una pequeña victoria sobre la competencia por un recurso limitado.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Creemos que algo vale más justo en el momento en que empieza a escasear.»', attribution: 'Stephen Worchel' },
+      aplicacion: 'La próxima vez que un aviso de "quedan 2 unidades" o una cuenta atrás dispare tu urgencia por comprar, pregúntate si tu interés por el producto era el mismo antes de ver ese aviso. Si la respuesta es no, la escasez (real o fabricada) está haciendo el trabajo que debería hacer la calidad del producto.'
+    },
+    {
+      id: 'mkt-02',
+      title: 'El efecto señuelo: la tercera opción que existe solo para que elijas la segunda',
+      summary: 'Añadir a un catálogo una alternativa deliberadamente peor es una técnica de venta documentada que desplaza la elección hacia la opción que interesa vender, y funciona en coches, cervezas, cines y televisores por igual.',
+      sourceUrl: 'https://doi.org/10.1086/208899',
+      sourceLabel: 'Huber, Payne & Puto (1982), Journal of Consumer Research',
+      badge: 'Sesgos de decisión',
+      author: { name: 'Joel Huber', university: 'Duke University', specialty: 'Marketing y Arquitectura de Decisiones' },
+      readingTime: '4 min',
+      date: '14 de julio de 2026',
+      intro: 'En 1982, Joel Huber, John Payne y Christopher Puto, de la Universidad de Duke, pidieron a estudiantes que eligieran entre pares de opciones (coches, cervezas, restaurantes, boletos de lotería, películas y televisores) definidas por dos atributos enfrentados, como precio y calidad. Después repitieron la elección añadiendo una tercera opción que nadie racional debería elegir nunca: una alternativa peor que una de las otras dos en todos los sentidos. Esa opción, que llamaron "asimétricamente dominada", no estaba ahí para ganar. Estaba ahí para cambiar el resultado sin ser elegida jamás.',
+      sections: [
+        {
+          subtitle: 'El experimento: seis productos, un mismo patrón',
+          paragraphs: [
+            'Huber, Payne y Puto probaron el mecanismo en seis categorías de producto distintas y encontraron el mismo patrón en todas: al añadir la alternativa dominada, la cuota de elección de la opción que la dominaba (el "objetivo") aumentaba de media 9,2 puntos porcentuales, siempre a costa de la otra opción del par original. El efecto violaba de forma sistemática el principio de regularidad de la teoría de la elección racional, que exige que añadir una opción nunca pueda aumentar la probabilidad de elegir una de las ya existentes.',
+            'El equipo también comparó distintas formas de construir el señuelo. Cuando el señuelo ampliaba el rango de valores presentes en el catálogo (por ejemplo, siendo peor en el atributo donde el objetivo ya destacaba) el aumento llegaba a 13 puntos. Cuando combinaba rango y frecuencia relativa, rondaba los 8 puntos, y en su versión más débil, apoyada solo en la frecuencia, se quedaba en 4. El efecto era además más del doble de fuerte cuando cada persona veía un único conjunto de opciones que cuando comparaba varios conjuntos seguidos, lo que apunta a que la comparación deliberada y prolongada atenúa parcialmente el sesgo.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la dificultad de comparar en abstracto',
+          paragraphs: [
+            'Elegir entre dos opciones que compiten en dos atributos distintos (más barato pero peor, más caro pero mejor) exige un juicio de compensación entre dimensiones que no se pueden sumar de forma natural: no hay un tipo de cambio evidente entre precio y calidad. Ese juicio es difícil, y la mente evita la dificultad buscando atajos relacionales en vez de evaluaciones absolutas.',
+            'El señuelo asimétricamente dominado resuelve ese atajo por la vía fácil: frente a él, una de las dos opciones originales es objetivamente mejor en todo, así que compararla con el señuelo no cuesta ningún esfuerzo. Ese contraste de comparación fácil "contamina" la evaluación del conjunto completo, y la opción que gana esa comparación trivial hereda una sensación de superioridad que se traslada, sin base lógica, a la comparación difícil que en realidad importaba. Esta es la lógica detrás de menús con tres niveles de precio o planes de suscripción con una opción intermedia deliberadamente poco atractiva: no están ahí para venderse a sí mismos, están ahí para hacer fácil una comparación que interesa que gane la opción de al lado.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Añadir una alternativa que nadie va a elegir puede cambiar, de forma predecible, cuál de las otras dos se elige.»', attribution: 'Joel Huber' },
+      aplicacion: 'Cuando un catálogo tenga exactamente tres opciones y una de ellas parezca claramente peor en todo, ignórala por completo y compara solo las otras dos como si la tercera no existiera. Si es posible, compara además con un producto de otro catálogo o marca: salir del conjunto diseñado es la forma más simple de neutralizar el señuelo.'
+    },
+    {
+      id: 'mkt-03',
+      title: 'El efecto cero: por qué "gratis" pesa más en tu decisión que cualquier descuento',
+      summary: 'Bajar un céntimo el precio de un producto barato no debería cambiar casi nada, salvo que ese céntimo lo convierta en gratis: entonces la demanda se dispara muy por encima de lo que explica el ahorro real.',
+      sourceUrl: 'https://doi.org/10.1287/mksc.1060.0254',
+      sourceLabel: 'Shampanier, Mazar & Ariely (2007), Marketing Science',
+      badge: 'Precio y valor',
+      author: { name: 'Dan Ariely', university: 'Duke University', specialty: 'Economía Conductual' },
+      readingTime: '3 min',
+      date: '7 de julio de 2026',
+      intro: 'Kristina Shampanier, Nina Mazar y Dan Ariely montaron un puesto con dos chocolatinas: un bombón Hershey’s Kiss, barato y sencillo, y una trufa Lindt, más cara y de mayor calidad percibida. Fueron variando los precios de ambas mientras mantenían siempre la misma diferencia entre ellas. La teoría económica estándar predice que, si el ahorro relativo no cambia, las proporciones de compra tampoco deberían cambiar demasiado. No fue lo que ocurrió.',
+      sections: [
+        {
+          subtitle: 'El experimento: un céntimo que lo cambia todo',
+          paragraphs: [
+            'Con el Kiss a un céntimo y la trufa a quince, el 73 % de los clientes eligió la trufa Lindt y el 27 % el Kiss: la diferencia de catorce céntimos les parecía una inversión razonable por un producto mejor. Shampanier, Mazar y Ariely bajaron entonces ambos precios exactamente un céntimo: el Kiss pasó a costar cero y la trufa quedó en catorce céntimos. La diferencia entre ambos productos seguía siendo la misma que antes, catorce céntimos, así que un comprador racional debería haber mantenido más o menos las mismas proporciones de elección.',
+            'En vez de eso, la proporción se invirtió por completo: la mayoría de los clientes dejó de elegir la trufa Lindt y pasó a preferir el Kiss, ahora gratuito, aunque seguía siendo objetivamente el producto de menor calidad y el ahorro real respecto a la trufa no había variado ni un céntimo. El precio cero no se comportó como "un poco más barato". Se comportó como una categoría de decisión completamente distinta.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: por qué cero elimina el riesgo de la decisión',
+          paragraphs: [
+            'Ariely y sus colegas propusieron que el precio cero no se procesa mediante el mismo cálculo racional de coste y beneficio que cualquier otro precio positivo. Cuando algo cuesta dinero, por poco que sea, existe la posibilidad de arrepentirse de la compra: de sentir que no mereció la pena. El precio cero elimina esa posibilidad por completo, porque no hay nada que perder si el producto decepciona. Los autores lo describen como un beneficio afectivo añadido, no solo un ahorro: gratis se siente bien de una forma que ningún descuento parcial replica, por generoso que sea en términos objetivos.',
+            'Esa asimetría explica por qué "2x1" y "envío gratis a partir de X euros" son palancas de marketing tan potentes: no compiten con el resto de descuentos en la misma escala, compiten en una categoría emocional aparte donde el análisis de coste-beneficio se relaja. Los propios autores señalaron que la explicación más plausible, entre las que evaluaron (normas sociales, dificultad de comparar el valor, y el componente afectivo), era esta última: el afecto positivo asociado a lo gratuito, no un simple error de cálculo aritmético.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Para la mente, lo gratuito trae consigo un beneficio propio, no solo un coste menor.»', attribution: 'Dan Ariely' },
+      aplicacion: 'Ante una oferta con la palabra "gratis", resta mentalmente un céntimo del "premio" y súmaselo al resto de opciones para ver si seguirías prefiriéndolo con esa diferencia mínima restaurada. Si tu elección cambia solo porque una opción pasó a costar exactamente cero, no estás comparando valor: estás respondiendo a la palabra.'
+    }
+  ],
+  viajes: [
+    {
+      id: 'via-01',
+      title: 'El efecto del asombro: por qué un monumento te hace sentir que tienes más tiempo',
+      summary: 'Sentir asombro ante algo grande, como la vista desde lo alto de un monumento, hace que el tiempo se perciba como más abundante y aumenta la paciencia y la generosidad, incluso minutos después.',
+      sourceUrl: 'https://doi.org/10.1177/0956797612438731',
+      sourceLabel: 'Rudd, Vohs & Aaker (2012), Psychological Science',
+      badge: 'Asombro y bienestar',
+      author: { name: 'Melanie Rudd', university: 'University of Houston', specialty: 'Psicología del Consumidor y las Emociones' },
+      readingTime: '4 min',
+      date: '23 de julio de 2026',
+      intro: 'Melanie Rudd, Kathleen Vohs y Jennifer Aaker querían saber si una emoción concreta, el asombro, cambia algo tan básico como la sensación de cuánto tiempo tenemos disponible. Lo pusieron a prueba en tres experimentos distintos, cambiando cada vez el estímulo que provocaba asombro: anuncios, recuerdos escritos y, en el más revelador de los tres, un relato ambientado en lo alto de la Torre Eiffel.',
+      sections: [
+        {
+          subtitle: 'Tres formas de sentir asombro, un mismo resultado',
+          paragraphs: [
+            'En el primer experimento, 63 estudiantes vieron uno de dos anuncios de un minuto: uno mostraba imágenes que suelen provocar asombro (cascadas, ballenas, el espacio exterior), el otro mostraba a gente feliz en un desfile con confeti. Quienes vieron el anuncio asombroso estuvieron más de acuerdo con frases como "tengo mucho tiempo para hacer las cosas que quiero hacer". En el segundo, 86 estudiantes escribieron sobre un recuerdo personal de asombro o de felicidad: quienes escribieron sobre asombro se declararon después menos impacientes y más dispuestos a ofrecer su tiempo como voluntarios, aunque no a donar más dinero.',
+            'El tercer experimento fue el que conectó el hallazgo directamente con los viajes: los participantes leían una de dos historias sobre subir a una torre. Una describía la subida a la Torre Eiffel y la vista de París desde arriba, diseñada para provocar asombro; la otra describía una torre sin nombre con un paisaje genérico, sin ese componente. Después, elegían entre regalos materiales o experienciales (un reloj o una entrada de teatro, una calculadora o un masaje). El grupo de la Torre Eiffel no solo declaró sentir más tiempo disponible: también prefirió las experiencias sobre los objetos con más frecuencia que el grupo de la torre neutra.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: el asombro te ancla al presente',
+          paragraphs: [
+            'Rudd, Vohs y Aaker explican el efecto por la forma en que el asombro reorganiza la atención. Ante algo que desborda lo habitual (una vista panorámica, una escala que no encaja con lo cotidiano) el foco se desplaza del pasado y del futuro hacia el momento presente, y ese presente se experimenta con mayor amplitud e intensidad. Sus análisis de mediación confirmaron que el cambio en la percepción del tiempo era, precisamente, lo que explicaba tanto la menor impaciencia como la mayor disposición a ceder tiempo a otros.',
+            'Esto ayuda a entender por qué el recuerdo de pararse frente a algo enorme durante un viaje (una vista, una catedral, un cañón) suele durar más que la simple satisfacción estética del momento: durante unos minutos alteró la forma en que el propio cerebro contaba el tiempo disponible, con efectos medibles en paciencia y generosidad que se mantuvieron después de que la vista hubiera desaparecido.'
+          ]
+        }
+      ],
+      blockquote: { text: '«El asombro expande la percepción del tiempo, y esa expansión es lo que te hace más paciente y más generoso.»', attribution: 'Melanie Rudd' },
+      aplicacion: 'Al planificar un viaje, incluye deliberadamente al menos un momento diseñado para provocar asombro: un mirador, una vista abierta, algo a una escala que no ves en tu día a día. Según este estudio, ese momento cambia durante un rato cómo sientes el tiempo que tienes, con efectos que se notan incluso después de bajar de la torre.'
+    },
+    {
+      id: 'via-02',
+      title: 'La paradoja de las vacaciones: por qué el bienestar dura menos de una semana',
+      summary: 'El bienestar que ganas durante las vacaciones mejora de verdad la salud, el ánimo y la energía, pero en la primera semana de vuelta al trabajo suele haber regresado ya a los niveles de antes de irte.',
+      sourceUrl: 'https://doi.org/10.1080/02678373.2010.493385',
+      sourceLabel: 'de Bloom et al. (2010), Work & Stress',
+      badge: 'La paradoja del descanso',
+      author: { name: 'Jessica de Bloom', university: 'University of Groningen', specialty: 'Psicología Organizacional y Recuperación del Estrés' },
+      readingTime: '3 min',
+      date: '16 de julio de 2026',
+      intro: 'Jessica de Bloom y su equipo siguieron a 96 trabajadores holandeses durante siete semanas seguidas: dos antes de sus vacaciones de esquí, un tramo durante el viaje, y hasta cuatro semanas después de volver al trabajo. En cada punto midieron siete indicadores de salud y bienestar. El objetivo no era solo comprobar si las vacaciones sientan bien (eso ya se sabía), sino averiguar cuánto dura ese efecto una vez se reincorpora la rutina.',
+      sections: [
+        {
+          subtitle: 'El experimento: siete semanas de seguimiento real',
+          paragraphs: [
+            'Durante el propio viaje, cinco de los siete indicadores mejoraron de forma medible: el estado de salud general, el ánimo, el nivel de tensión, la energía percibida y la satisfacción con la vida. Eso confirmaba lo esperable: las vacaciones funcionan mientras duran, y no de forma marginal.',
+            'Lo inesperado llegó después. Al comparar los niveles de bienestar de la primera semana de vuelta al trabajo con los de las dos semanas previas al viaje, la mejora había desaparecido en la práctica totalidad de los indicadores. El bienestar no se había erosionado poco a poco a lo largo del mes siguiente: se había desvanecido ya en los primeros días de reincorporación, mucho antes de lo que la mayoría de la gente asume cuando planea "recargar pilas" con un único viaje largo al año.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: el bienestar depende del contexto, no solo de lo vivido',
+          paragraphs: [
+            'La explicación de fondo es que buena parte de la mejora durante las vacaciones no procede solo de lo que se hace, sino del contraste con lo que se deja atrás: las exigencias laborales, los correos, los horarios. En cuanto la persona regresa a ese mismo entorno, el propio entorno reinstala rápidamente la carga psicológica que las vacaciones habían suspendido temporalmente. El bienestar no se pierde por sí solo: se pierde porque el contexto que lo generaba (la ausencia de la rutina) también se ha perdido.',
+            'De Bloom y su equipo remarcan que esto no significa que las vacaciones no sirvan para nada, sino que su función real es la de un reinicio temporal más que la de una reserva acumulable de bienestar para el resto del año. Investigaciones posteriores del mismo grupo confirmaron el patrón con vacaciones de duración distinta, y el resultado se repite: la duración del viaje influye poco en la rapidez con la que el efecto se diluye al volver.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Las vacaciones nos hacen mucho bien mientras duran. El problema es cuánto tardamos en devolver ese bien al volver.»', attribution: 'Jessica de Bloom' },
+      aplicacion: 'Si la duración del viaje apenas cambia la velocidad con la que el bienestar se diluye al volver, la implicación práctica es repartir el descanso en varios viajes cortos a lo largo del año en vez de concentrarlo todo en unas vacaciones largas anuales. Cada reinicio, aunque breve, vuelve a generar el contraste que produce el efecto.'
+    },
+    {
+      id: 'via-03',
+      title: 'Por qué esperar un viaje te hace más feliz que muchos viajes en sí',
+      summary: 'Anticipar una experiencia, como un viaje o un concierto, genera más felicidad mientras se espera que anticipar la compra de un objeto, y la diferencia se nota incluso en cómo se comporta la gente haciendo cola.',
+      sourceUrl: 'https://doi.org/10.1177/0956797614546556',
+      sourceLabel: 'Kumar, Killingsworth & Gilovich (2014), Psychological Science',
+      badge: 'La antesala del viaje',
+      author: { name: 'Thomas Gilovich', university: 'Cornell University', specialty: 'Psicología de la Felicidad y la Toma de Decisiones' },
+      readingTime: '3 min',
+      date: '9 de julio de 2026',
+      intro: 'Amit Kumar, Matthew Killingsworth y Thomas Gilovich partieron de una pregunta sencilla: si comprar experiencias (un viaje, un concierto) hace más felices que comprar objetos, como ya habían demostrado estudios anteriores del propio Gilovich, ¿ocurre lo mismo mientras todavía se está esperando poder disfrutarlos, antes incluso de que la experiencia o el objeto lleguen?',
+      sections: [
+        {
+          subtitle: 'El experimento: la espera como parte de la compra',
+          paragraphs: [
+            'Los investigadores compararon el estado de ánimo de personas que estaban esperando una compra experiencial (un pase de esquí, entradas de concierto) con el de personas esperando una compra material. Quienes esperaban la experiencia reportaron niveles más altos de felicidad durante esa espera. Para comprobar si esto se reflejaba también fuera del laboratorio, el equipo analizó noticias de prensa sobre colas multitudinarias: gente esperando toda la noche para comprar el último modelo de un producto electrónico frente a gente esperando para entradas de un espectáculo o partido.',
+            'El patrón coincidió con lo hallado en los cuestionarios: las personas que hacían cola para conseguir una experiencia estaban de mejor humor y se comportaban mejor entre ellas que las que hacían cola para conseguir un objeto material, entre las que los incidentes de mal comportamiento (empujones, discusiones, situaciones que llegaban a las noticias por su gravedad) eran mucho más frecuentes.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: lo material invita a comparar, lo experiencial invita a imaginar',
+          paragraphs: [
+            'Kumar, Killingsworth y Gilovich lo atribuyen a que esperar un objeto material activa el pensamiento comparativo: ¿habrá una versión mejor pronto?, ¿lo estaré pagando de más?, ¿me arrepentiré de la elección? Esa clase de dudas erosiona la espera de un placer anticipado y la convierte, en parte, en una fuente de ansiedad. Esperar una experiencia, en cambio, es más difícil de comparar con alternativas concretas y suele estar cargada de un componente social e imaginativo (con quién iré, qué voy a ver) que resulta agradable en sí mismo, sin necesidad de que la experiencia haya empezado siquiera.',
+            'La implicación es que gran parte del valor emocional total de un viaje no se cobra únicamente durante el viaje ni solo en el recuerdo posterior: una porción significativa se cobra durante la espera, en las semanas o meses entre reservarlo y subirse al avión, un tramo que casi nadie contabiliza como parte de la experiencia cuando calcula si mereció la pena.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Esperar una experiencia es, en sí mismo, una experiencia agradable. Esperar un objeto rara vez lo es.»', attribution: 'Thomas Gilovich' },
+      aplicacion: 'Si el presupuesto obliga a elegir entre reservar un viaje con mucha antelación o hacerlo en el último momento, este estudio sugiere adelantar la reserva siempre que sea posible: la espera forma parte del disfrute total que el viaje va a proporcionar, tanto como el viaje mismo.'
+    },
+    {
+      id: 'via-04',
+      title: 'Por qué un viaje te hace más feliz que comprarte algo por el mismo dinero',
+      summary: 'Gastar en experiencias, como un viaje, produce más felicidad duradera que gastar la misma cantidad en objetos materiales, y la diferencia se explica por cómo se recuerda cada tipo de compra con el paso del tiempo.',
+      sourceUrl: 'https://doi.org/10.1037/0022-3514.85.6.1193',
+      sourceLabel: 'Van Boven & Gilovich (2003), Journal of Personality and Social Psychology',
+      badge: 'Psicología del gasto',
+      author: { name: 'Leaf Van Boven', university: 'University of Colorado Boulder', specialty: 'Psicología del consumo y la felicidad' },
+      readingTime: '3 min',
+      date: '30 de junio de 2026',
+      intro: 'Leaf Van Boven y Thomas Gilovich se propusieron poner a prueba, con datos y no solo con intuición, una pregunta que atraviesa cualquier decisión de gasto discrecional: si el dinero sobrante de un mes conviene gastarlo en algo material que se queda contigo, o en una experiencia que se termina, como un viaje o un concierto.',
+      sections: [
+        {
+          subtitle: 'El experimento: encuestas, recuerdos y compras imaginadas',
+          paragraphs: [
+            'En dos encuestas con participantes de perfiles demográficos distintos, la mayoría identificó, al recordar sus propias compras pasadas, que las compras experienciales (viajes, salidas, entradas a espectáculos) les habían hecho más felices que las compras materiales de coste comparable. En un experimento de laboratorio posterior, se pidió a los participantes que pensaran en una compra experiencial reciente o en una compra material reciente antes de valorar su estado de ánimo: quienes habían pensado en la experiencia reportaron sentimientos más positivos que quienes habían pensado en el objeto.',
+            'Un experimento adicional añadió un matiz temporal: la ventaja de las experiencias sobre los objetos en cuanto a felicidad anticipada era más marcada cuando la persona se proyectaba a un futuro lejano que cuando pensaba en la compra desde una perspectiva cercana en el tiempo, lo que sugiere que parte del beneficio de las experiencias tiene que ver con cómo se transforman en la memoria y en la imaginación con el paso del tiempo.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: lo que se compra no compite contigo, se convierte en ti',
+          paragraphs: [
+            'Van Boven y Gilovich proponen tres razones por las que las experiencias generan más felicidad sostenida que los objetos. Primero, son más fáciles de reinterpretar de forma positiva con el tiempo (un viaje con contratiempos acaba convirtiéndose en una buena anécdota, un objeto defectuoso rara vez mejora en el recuerdo). Segundo, se comparan peor con las experiencias de otras personas, porque son menos directamente equiparables que dos objetos del mismo tipo. Tercero, tienden a vivirse en compañía, lo que las conecta con relaciones sociales que por sí solas ya predicen bienestar.',
+            'La diferencia de fondo es que un objeto material permanece separado de la identidad de quien lo compra, mientras que una experiencia se integra en la propia biografía: no tienes un viaje, en cierto sentido te conviertes, en parte, en la persona que hizo ese viaje. Esa integración con la identidad es, según los autores, el hilo común que explica por qué el mismo dinero rinde más felicidad cuando se convierte en experiencia que cuando se convierte en posesión.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Las experiencias hacen más felices a las personas, en parte, porque se convierten en parte de quiénes somos de una forma en que los objetos rara vez lo hacen.»', attribution: 'Thomas Gilovich' },
+      aplicacion: 'Ante una decisión de gasto discrecional entre un objeto y una experiencia de coste similar, este estudio sugiere inclinarte por la experiencia si tu objetivo es maximizar felicidad a medio plazo, no solo satisfacción inmediata. No porque los objetos no sirvan para nada, sino porque tienden a integrarse peor en la historia que te cuentas sobre tu propia vida.'
+    }
+  ],
+  redesSociales: [
+    {
+      id: 'rs-01',
+      title: 'El uso pasivo de redes: por qué mirar sin interactuar te deja peor de lo que estabas',
+      summary: 'Pasar tiempo desplazándote por publicaciones ajenas sin comentar ni escribir predice caídas reales en el bienestar emocional, mientras que usar la misma red para hablar con gente no produce ese efecto.',
+      sourceUrl: 'https://doi.org/10.1037/xge0000057',
+      sourceLabel: 'Verduyn et al. (2015), Journal of Experimental Psychology: General',
+      badge: 'Uso pasivo',
+      author: { name: 'Ethan Kross', university: 'University of Michigan', specialty: 'Regulación Emocional y Redes Sociales' },
+      readingTime: '4 min',
+      date: '24 de julio de 2026',
+      intro: 'Ethan Kross, Philippe Verduyn y su equipo sospechaban que hablar de "los efectos de las redes sociales" en bloque era demasiado simple, porque en una misma sesión de Facebook caben usos muy distintos: escribir a un amigo, comentar una foto, o simplemente desplazarse por el muro sin interactuar con nada. Diseñaron dos estudios para separar esos usos y medir si afectaban al bienestar de forma distinta.',
+      sections: [
+        {
+          subtitle: 'El experimento: de laboratorio a la vida real',
+          paragraphs: [
+            'En el primer estudio, asignaron en el laboratorio a distintos grupos a usar Facebook de forma pasiva (solo consultar publicaciones) o de forma activa (publicar, comentar, escribir mensajes), y midieron cómo cambiaba su estado de ánimo. En el segundo, siguieron a personas en su vida diaria durante alrededor de dos semanas, con hasta cinco encuestas breves al día preguntando cómo habían usado la red en las últimas horas y cómo se sentían en ese momento.',
+            'Los dos estudios, uno controlado y otro en condiciones reales, apuntaron en la misma dirección: el uso pasivo predecía caídas en el bienestar afectivo a lo largo del tiempo, mientras que el uso activo (la interacción real con otras personas) no mostraba ese patrón. La red social en sí misma no era el factor decisivo: lo era el tipo concreto de uso que se le daba en cada sesión.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: comparar sin conectar',
+          paragraphs: [
+            'El análisis estadístico de Verduyn y su equipo identificó la envidia como el mediador principal del efecto: desplazarse por publicaciones ajenas expone a una sucesión de momentos cuidadosamente seleccionados y editados de la vida de otras personas, lo que dispara comparaciones sociales hacia arriba (mi vida frente a lo mejor de la suya) sin que el uso pasivo ofrezca, a cambio, ninguna de las recompensas sociales reales que sí aporta interactuar, como sentirse escuchado o mantener un vínculo.',
+            'Interactuar activamente, en cambio, sustituye parte de esa comparación por conexión genuina, lo que amortigua el efecto. La consecuencia práctica es que la pregunta relevante no es "cuánto tiempo paso en redes sociales" sino "qué estoy haciendo exactamente durante ese tiempo": la misma app, la misma duración de sesión, puede dejarte peor o no dejarte peor en absoluto según el uso que le des.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Pasar el tiempo en la red mirando sin conectar es lo que erosiona el bienestar.»', attribution: 'Ethan Kross' },
+      aplicacion: 'Antes de abrir una red social, decide en ese momento si vas a interactuar con alguien concreto (responder, comentar, escribir) o si solo vas a "echar un vistazo". Si es lo segundo, ese es exactamente el tipo de uso que este estudio relaciona con el deterioro del ánimo, así que vale la pena poner un límite de tiempo más corto a esa sesión en concreto.'
+    },
+    {
+      id: 'rs-02',
+      title: 'Por qué Instagram golpea tu autoestima más que una revista (y no es por los famosos)',
+      summary: 'Diez minutos viendo el Facebook propio empeoran el estado de ánimo más que el mismo tiempo en una revista de moda, y el motivo no son las celebridades: son las comparaciones con la gente que conoces de verdad.',
+      sourceUrl: 'https://doi.org/10.1016/j.bodyim.2014.12.002',
+      sourceLabel: 'Fardouly, Diedrichs, Vartanian & Halliwell (2015), Body Image',
+      badge: 'Comparación social',
+      author: { name: 'Jasmine Fardouly', university: 'University of New South Wales', specialty: 'Psicología de la Imagen Corporal' },
+      readingTime: '3 min',
+      date: '17 de julio de 2026',
+      intro: 'Jasmine Fardouly y su equipo querían saber si Facebook afecta al estado de ánimo y a la imagen corporal de un modo distinto al de otros medios que también exponen a estándares de apariencia, como una revista de moda. Para comprobarlo asignaron a 112 mujeres a uno de tres grupos: diez minutos navegando en su propio Facebook, diez minutos en una web de moda, o diez minutos en una web de control sin contenido relacionado con la apariencia.',
+      sections: [
+        {
+          subtitle: 'El experimento: el mismo tiempo, resultados distintos',
+          paragraphs: [
+            'Después de los diez minutos, todas las participantes completaron medidas de estado de ánimo, insatisfacción corporal y discrepancia percibida en distintos rasgos de apariencia (peso, cara, pelo, piel). Quienes habían pasado ese tiempo en Facebook mostraron un estado de ánimo más negativo que quienes habían estado en la web de control, un patrón que no apareció con la misma claridad en el grupo de la revista de moda.',
+            'En una segunda parte del estudio, con una muestra más amplia, Fardouly encontró que un mayor uso habitual de Facebook se asociaba a mayor insatisfacción corporal, y que esa relación se explicaba, estadísticamente, por la tendencia a hacer comparaciones de apariencia, en concreto comparaciones con la gente conocida que aparece en el propio muro, no con modelos ni famosos.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: comparar con tus iguales pesa más que comparar con famosos',
+          paragraphs: [
+            'La razón por la que Facebook golpea distinto que una revista es precisamente esa: una modelo profesional se percibe como una categoría aparte, fácil de descartar como referencia poco realista. Una compañera de universidad o una prima con la que se comparte contexto real se percibe como un estándar comparable, alcanzable, y por tanto más relevante para juzgarse a uno mismo. Esa cercanía es justo lo que hace que la comparación duela más, no menos.',
+            'Ese estándar comparable llega, encima, en forma de fotos ya seleccionadas y editadas por la propia persona antes de publicarlas, de modo que la comparación es, en realidad, con la versión de sí misma que esa persona ha decidido mostrar, no con su vida real. El resultado es una comparación sistemáticamente desfavorable: una versión no editada de una misma frente a la versión más favorecida de alguien que, además, se percibe como un igual.'
+          ]
+        }
+      ],
+      blockquote: { text: '«No comparamos nuestra vida con la de los famosos. La comparamos con la versión editada de la vida de nuestros iguales, y eso es lo que más duele.»', attribution: 'Jasmine Fardouly' },
+      aplicacion: 'Si notas que una red social te deja de peor humor con tu propio aspecto, fíjate en si el detonante son cuentas de gente que conoces en persona más que de influencers o famosos. Silenciar o dejar de seguir a celebridades apenas toca este mecanismo concreto; ajustar la exposición al contenido de conocidos y compañeros es, según este estudio, donde está la palanca real.'
+    },
+    {
+      id: 'rs-03',
+      title: 'FOMO: el miedo a perderte algo, medido en 2.079 personas',
+      summary: 'El miedo a perderte lo que otros están viviendo tiene un nombre científico, una escala validada y una paradoja incómoda: cuanto más lo sientes, más usas las redes que lo alimentan, sin que eso lo reduzca.',
+      sourceUrl: 'https://doi.org/10.1016/j.chb.2013.02.014',
+      sourceLabel: 'Przybylski, Murayama, DeHaan & Gladwell (2013), Computers in Human Behavior',
+      badge: 'FOMO',
+      author: { name: 'Andrew Przybylski', university: 'University of Oxford', specialty: 'Psicología de la Tecnología y el Bienestar' },
+      readingTime: '3 min',
+      date: '10 de julio de 2026',
+      intro: 'Andrew Przybylski y su equipo le pusieron nombre y medida a algo que hasta 2013 se mencionaba de forma coloquial pero no se había estudiado con rigor: el miedo a perderte algo, o FOMO (fear of missing out), la sensación incómoda de que otros están viviendo experiencias gratificantes de las que tú estás fuera. Construyeron una escala de diez preguntas para medirlo y la aplicaron a una muestra representativa de 2.079 adultos del Reino Unido, en edad de trabajar, de entre 22 y 65 años, encuestados a lo largo de dos semanas.',
+      sections: [
+        {
+          subtitle: 'El experimento: una escala y una muestra nacional',
+          paragraphs: [
+            'Con esa muestra, el equipo encontró que puntuar alto en FOMO se asociaba a una menor satisfacción de necesidades psicológicas básicas (sentirse competente, autónomo y conectado con otros, según la teoría de la autodeterminación), a peor estado de ánimo y a menor satisfacción con la vida en general. Hasta aquí, un patrón esperable de malestar psicológico.',
+            'Lo llamativo llegó al cruzar el FOMO con el comportamiento real: quienes puntuaban más alto no usaban menos las redes sociales para aliviar esa ansiedad, las usaban más. El FOMO se asoció con claridad a un mayor uso de redes sociales inmediatamente después de despertarse, antes de dormir, durante las comidas, e incluso a comportamientos con riesgo objetivo, como consultar el móvil conduciendo o durante clases y reuniones.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: revisar el móvil sin resolver la necesidad de fondo',
+          paragraphs: [
+            'Przybylski interpreta el FOMO como una señal de necesidades no cubiertas: cuando faltan autonomía, competencia o conexión real en la vida de alguien, aparece una inquietud difusa por quedarse fuera de lo que sí parece estar dándole esas cosas a los demás. Revisar el móvil es la respuesta más inmediata y accesible a esa inquietud, precisamente porque promete una solución rápida.',
+            'El problema es que consultar el feed ofrece, como mucho, una simulación de conexión (ver lo que otros hacen) sin resolver la carencia real de autonomía o competencia que generó la ansiedad en primer lugar. Por eso el ciclo no se cierra solo: cuanta más FOMO siente alguien, más motivo tiene para seguir mirando, y mirar más no cubre la necesidad de fondo, así que el FOMO no baja. Es una respuesta que se autoalimenta en lugar de resolverse.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Cuanto más miedo tienes a perderte algo, más usas las redes que alimentan ese miedo. No es una solución: es el propio problema repitiéndose.»', attribution: 'Andrew Przybylski' },
+      aplicacion: 'Si te sorprendes revisando el móvil por una inquietud vaga de estar perdiéndote algo, trata esa sensación como información sobre una necesidad de autonomía, competencia o conexión que no está cubierta en otra parte de tu día, no como una señal de que debas revisar más. El propio estudio muestra que revisar más no resuelve el FOMO: solo lo acompaña.'
+    },
+    {
+      id: 'rs-04',
+      title: 'Lo que pasó cuando 143 universitarios limitaron sus redes a 10 minutos al día',
+      summary: 'Tres semanas limitando Facebook, Instagram y Snapchat a diez minutos por plataforma y día redujeron la soledad y la depresión frente a un grupo de control, con el mayor beneficio en quienes partían de más síntomas depresivos.',
+      sourceUrl: 'https://doi.org/10.1521/jscp.2018.37.10.751',
+      sourceLabel: 'Hunt, Marx, Lipson & Young (2018), Journal of Social and Clinical Psychology',
+      badge: 'Uso pasivo',
+      author: { name: 'Melissa Hunt', university: 'University of Pennsylvania', specialty: 'Psicología clínica y bienestar digital' },
+      readingTime: '3 min',
+      date: '15 de julio de 2026',
+      intro: 'La mayoría de los estudios sobre redes sociales y bienestar son correlacionales: miden cuánto usa alguien las redes y cuánto malestar declara, sin poder afirmar con certeza qué causa qué. Melissa Hunt y su equipo, de la Universidad de Pensilvania, diseñaron en cambio un experimento real: manipularon de forma activa cuánto usaban las redes 143 estudiantes universitarios y midieron qué cambiaba en su bienestar.',
+      sections: [
+        {
+          subtitle: 'El experimento: tres semanas de uso limitado frente a uso normal',
+          paragraphs: [
+            'Tras una semana inicial de referencia sin cambios, los participantes fueron asignados al azar a dos grupos durante tres semanas: uno debía limitar el uso de Facebook, Instagram y Snapchat a 10 minutos por plataforma y día (30 minutos en total), verificado con capturas de pantalla del tiempo de uso; el otro seguía usando las redes con normalidad, sin restricción alguna.',
+            'El grupo de uso limitado mostró reducciones significativas en soledad y en síntomas depresivos al cabo de las tres semanas, frente al grupo de control. El efecto fue especialmente marcado entre quienes habían empezado el estudio con más síntomas depresivos: en ese subgrupo, la puntuación media de depresión bajó de 23 puntos en la semana inicial a 14,5 puntos en la cuarta semana, dentro del grupo de uso limitado. Entre quienes partían de niveles bajos de depresión, el cambio fue mínimo (de 5,1 a 4,1 puntos), lo que indica que el beneficio se concentró en quienes más lo necesitaban.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: menos comparación social, menos munición para el malestar',
+          paragraphs: [
+            'Hunt y su equipo lo explican por la reducción de la exposición a la comparación social ascendente que sostiene buena parte del uso pasivo de redes: al limitar drásticamente el tiempo disponible en cada plataforma, se limita también el número de publicaciones ajenas cuidadosamente seleccionadas con las que medir la propia vida, un mecanismo que otros estudios (como el de Verduyn y su equipo) ya habían señalado como el motor principal del malestar asociado al uso pasivo.',
+            'El hallazgo es importante porque es experimental, no solo correlacional: al manipular activamente el uso y observar el cambio posterior en el bienestar, el estudio puede afirmar con más fuerza que reducir el uso causa la mejora, y no solo que ambas cosas suelen ir juntas. Además, ambos grupos, el limitado y el de control, mostraron descensos similares en ansiedad y en miedo a perderse algo, lo que los autores atribuyen al efecto de estar simplemente más atento al propio uso durante el estudio.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Usar menos redes sociales de lo que harías habitualmente produce una reducción significativa tanto en depresión como en soledad.»', attribution: 'Melissa Hunt' },
+      aplicacion: 'Si notas que tu ánimo empeora cuanto más tiempo pasas en redes, este estudio sugiere una prueba concreta y acotada: limita cada plataforma a 10 minutos al día durante tres semanas y compara cómo te sientes al final frente al inicio. No hace falta eliminar las redes por completo para notar la diferencia, según estos datos basta con reducir drásticamente el tiempo de exposición.'
     }
   ]
 };
@@ -3951,6 +4587,24 @@ function initWeeklySection() {
 }
 
 
+/* ── IGUALAR ALTURA DEL BLOQUE SUPERIOR (temas + sidebars) ────
+   Solo en la vista de inicio de "Por Intereses" (sin categoría
+   elegida) las tres columnas deben acabar a la misma altura que
+   la izquierda. En cuanto se elige una categoría o se cambia de
+   pestaña, el centro puede crecer con contenido real y las
+   columnas vuelven a su altura natural (ver CSS .hero-balanced). ── */
+function _syncHeroBalance() {
+  const layout = document.querySelector('.dashboard-layout');
+  if (!layout) return;
+  const activeTab     = document.querySelector('.tab-btn.active')?.dataset.tab;
+  const libContainer  = document.getElementById('biblioteca-container');
+  const isHomeLibrary = activeTab === 'biblioteca' && (!libContainer || !libContainer.children.length);
+  layout.classList.toggle('hero-balanced', isHomeLibrary);
+}
+window._LI_syncHeroBalance = _syncHeroBalance;
+_syncHeroBalance();
+
+
 /* ── PESTAÑAS ────────────────────────────────────────────────── */
 (function () {
   const tabBtns    = document.querySelectorAll('.tab-btn');
@@ -3993,6 +4647,7 @@ function initWeeklySection() {
       panels.forEach(p => p.classList.toggle('active', p.id === `panel-${tab}`));
       if (filterPills) filterPills.style.display = tab === 'repositorio' ? '' : 'none';
       moveTabPill(btn, true);
+      _syncHeroBalance();
       /* Desactivar modo enfoque al cambiar de pestaña */
       if (document.body.classList.contains('modo-enfoque-activo')) {
         if (window._LI_setEnfoque) window._LI_setEnfoque(false);
@@ -7726,7 +8381,10 @@ const CONCEPTOS_SEMANA = [
     educacion:   'Educación',
     trabajo:      'Trabajo',
     politica:     'Política',
-    alimentacion: 'Alimentación'
+    alimentacion: 'Alimentación',
+    marketing:      'Marketing y Consumo',
+    viajes:         'Viajes',
+    redesSociales:  'Redes Sociales'
   };
 
   let currentCat = null;
@@ -7926,7 +8584,9 @@ const CONCEPTOS_SEMANA = [
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://lainferencia.com/');
     try { history.replaceState({ v: 'home' }, '', '/'); } catch (_) {}
     const arts = LIBRARY_ARTICLES[cat] || [];
-    container.innerHTML = `<div class="lib-cards-grid">${arts.map(a => renderCard(a, cat)).join('')}</div>`;
+    container.innerHTML = arts.length
+      ? `<div class="lib-cards-grid">${arts.map(a => renderCard(a, cat)).join('')}</div>`
+      : `<p class="lib-cat-empty">Todavía no hay artículos en ${CAT_LABELS[cat] || 'esta categoría'}. ¡Vuelve pronto!</p>`;
     container.querySelectorAll('.lib-card').forEach(card => {
       const activate = () => {
         const art = (LIBRARY_ARTICLES[card.dataset.cat] || []).find(a => a.id === card.dataset.id);
@@ -7937,6 +8597,7 @@ const CONCEPTOS_SEMANA = [
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
       });
     });
+    if (window._LI_syncHeroBalance) window._LI_syncHeroBalance();
   }
 
   /* ── Sorpréndeme ── */
@@ -8043,22 +8704,6 @@ const CONCEPTOS_SEMANA = [
 }());
 
 
-/* ── LISTA DE EFECTOS TOGGLE (solo activo en móvil) ─────────── */
-(function () {
-  const btn     = document.getElementById('efectos-toggle-btn');
-  const section = document.getElementById('efectos-content-wrap');
-  if (btn && section) {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      section.classList.toggle('is-open', !expanded);
-      /* El contenido se expande hacia abajo con la animación CSS, 
-         sin scrollIntoView para no interrumpir el scroll nativo del usuario */
-    });
-  }
-}());
-
-
 /* ── RESEARCH TOGGLE + EFECTOS VER MÁS ──────────────────────── */
 (function () {
   /* Research section toggle */
@@ -8072,21 +8717,56 @@ const CONCEPTOS_SEMANA = [
     });
   }
 
-  /* Efectos "Ver más" */
-  const verMasBtn   = document.getElementById('efectos-ver-mas-btn');
-  const efectosExtra = document.getElementById('efectos-extra');
-  if (verMasBtn && efectosExtra) {
-    verMasBtn.addEventListener('click', () => {
-      const expanded = verMasBtn.getAttribute('aria-expanded') === 'true';
-      verMasBtn.setAttribute('aria-expanded', String(!expanded));
-      efectosExtra.hidden = expanded;
-      /* Re-attach fav buttons to newly revealed cards */
-      if (!expanded && window._LI_reinitFavEfectos) window._LI_reinitFavEfectos();
+  /* Efectos "Ver todos" → modal con blur, igual que Explorar concepto */
+  const verMasBtn = document.getElementById('efectos-ver-mas-btn');
+  const listaModal = document.getElementById('efectos-lista-modal');
+  const listaGrid  = document.getElementById('efectos-lista-modal-grid');
+  const listaClose = document.getElementById('efectos-lista-modal-close');
+  let listaTrap = null, listaTrigger = null, listaBuilt = false;
+
+  function buildListaModal() {
+    if (listaBuilt || !listaGrid) return;
+    document.querySelectorAll('#efectos-list .efecto-card, #efectos-list-full .efecto-card').forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.addEventListener('click', () => {
+        if (window._LI_openEfecto) window._LI_openEfecto(clone.dataset.efecto);
+      });
+      listaGrid.appendChild(clone);
     });
+    listaBuilt = true;
   }
+
+  function openListaModal() {
+    if (!listaModal) return;
+    buildListaModal();
+    listaTrigger = document.activeElement;
+    listaModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    listaTrap = trapFocus(listaModal);
+    requestAnimationFrame(() => listaClose && listaClose.focus());
+  }
+
+  function closeListaModal() {
+    if (!listaModal) return;
+    listaModal.hidden = true;
+    document.body.style.overflow = '';
+    if (listaTrap) { releaseFocus(listaModal, listaTrap, listaTrigger); listaTrap = null; }
+    else if (listaTrigger) listaTrigger.focus();
+  }
+
+  if (verMasBtn) verMasBtn.addEventListener('click', openListaModal);
+  if (listaClose) {
+    listaClose.addEventListener('click', closeListaModal);
+    listaClose.addEventListener('touchstart', e => { e.preventDefault(); closeListaModal(); }, { passive: false });
+  }
+  if (listaModal) {
+    listaModal.addEventListener('click', e => { if (e.target === listaModal) closeListaModal(); });
+    listaModal.addEventListener('touchstart', e => { if (e.target === listaModal) { e.preventDefault(); closeListaModal(); } }, { passive: false });
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && listaModal && !listaModal.hidden) closeListaModal();
+  });
 }());
-
-
 
 
 /* ── CONTENIDO EXTENDIDO DE EFECTOS ─────────────────────────── */

@@ -87,6 +87,9 @@ const CAT_SLUGS = {
   trabajo:      'trabajo',
   politica:     'politica',
   alimentacion: 'alimentacion',
+  marketing:    'marketing',
+  viajes:       'viajes',
+  redesSociales: 'redes-sociales',
 };
 
 const CAT_LABELS = {
@@ -102,6 +105,9 @@ const CAT_LABELS = {
   trabajo:      'Trabajo',
   politica:     'Política',
   alimentacion: 'Alimentación',
+  marketing:    'Marketing',
+  viajes:       'Viajes',
+  redesSociales: 'Redes Sociales',
 };
 
 const CAT_DESCRIPTIONS = {
@@ -117,6 +123,9 @@ const CAT_DESCRIPTIONS = {
   trabajo:      'Motivación, burnout y job crafting: la psicología organizacional que explica por qué unos trabajos enganchan y otros queman, con evidencia científica.',
   politica:     'Por qué votamos con las emociones antes que con la razón, y cómo la personalidad predice la ideología mejor que los argumentos. Psicología política basada en evidencia.',
   alimentacion: 'Por qué comemos más en compañía, cómo las emociones controlan el apetito y por qué prohibirte un alimento dispara el deseo de comerlo.',
+  marketing:    'Escasez, señuelos y precio cero: las técnicas de persuasión que deciden lo que compras, explicadas con estudios de psicología del consumidor.',
+  viajes:       'Asombro, anticipación y la paradoja del descanso: la psicología detrás de por qué viajamos y qué nos deja realmente un viaje, con evidencia científica.',
+  redesSociales: 'Uso pasivo, comparación social y FOMO: cómo las redes sociales afectan al bienestar según la investigación en psicología, más allá del tiempo de pantalla.',
 };
 
 // ── Fecha en español -> ISO 8601 (para datePublished en JSON-LD) ─

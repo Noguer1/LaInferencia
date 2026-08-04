@@ -108,7 +108,7 @@ Base de datos de artículos en JS con estructura:
 Categorías actuales: Economía (eco-01, eco-02…), Sesgos, otras.
 
 ### Filtrado por intereses
-Botones de categoría que filtran `LIBRARY_ARTICLES`. La sección "Tus Favoritos" existe en JS (`renderFavSection()` busca `#favoritos-section`) pero está desactivada en HTML.
+Botones de categoría que filtran `LIBRARY_ARTICLES`. La sección "Tus Favoritos" existe en JS (`renderFavSection()` busca `#favoritos-section`) pero está desactivada en HTML. 15 categorías (`.cat-btn`, grid de 5 columnas): las 12 originales más Marketing, Viajes y Redes Sociales (añadidas julio 2026, artículos reales con cita, DOI y autor verificados). Desde agosto 2026 las 15 categorías generan páginas estáticas y entran en el sitemap (`CAT_SLUGS`/`CAT_LABELS`/`CAT_DESCRIPTIONS` en `generate-pages.js`). Si `LIBRARY_ARTICLES[cat]` está vacío para alguna categoría futura, `showCards()` muestra un mensaje "Todavía no hay artículos..." en vez de la cuadrícula, en lugar de romper.
 
 ### Sidebar izquierdo — Radar de Mitos
 Acordeón colapsable. Toggle: `#mitos-toggle-btn`, contenido: `#mitos-cards-wrap.accordion-content`.
@@ -116,8 +116,11 @@ Acordeón colapsable. Toggle: `#mitos-toggle-btn`, contenido: `#mitos-cards-wrap
 ### Sidebar izquierdo — ¿Cuánto te manipula tu cerebro?
 Sección colapsable (`exp-sidebar-btn`). Estilo: gradiente + borde izquierdo azul.
 
-### Sidebar derecho — Lista de Efectos
-Acordeón solo en móvil (≤680px). En desktop: header fijo `.efectos-widget-header-desktop`. Toggle: `#efectos-toggle-btn`, contenido: `#efectos-content-wrap`.
+### Sidebar derecho — Vista previa de efectos
+Desde julio 2026 ya no es un acordeón: es una tarjeta fija (`.efectos-preview-card`) con 3 efectos de muestra (`#efectos-list`) y un botón "Ver más" (`#efectos-ver-mas-btn`) que abre el modal de pantalla completa con los 18 efectos (`#efectos-lista-modal`, ya existente). Los otros 15 efectos que no se muestran en la tarjeta viven ocultos en `#efectos-list-full` (`hidden`), solo como fuente de datos para ese modal — `buildListaModal()` en `main.js` clona tarjetas de ambos contenedores.
+
+### Bloque superior a igual altura (`.hero-balanced`)
+En la vista de inicio de "Por Intereses" (sin categoría elegida), `.dashboard-layout` recibe la clase `hero-balanced` vía `_syncHeroBalance()` en `main.js` (expuesta como `window._LI_syncHeroBalance`, se llama tras cambiar de pestaña y al final de `showCards()`). Con esa clase, en ≥1101px, `align-items` pasa a `stretch`, pero solo la columna **derecha** lo aprovecha: `.sidebar-right` se estira y la tarjeta de efectos empuja su botón "Ver más" abajo con `margin-top:auto`, terminando justo donde termina la izquierda (queda contenido dentro de una tarjeta con borde, no se ve como hueco). El **centro** hace lo contrario a propósito: `.dashboard-center` lleva `align-self:start` para NO estirarse, y la cuadrícula de temáticas (`.cat-selector`) mantiene `row-gap`/`column-gap` fijos sin `align-content`/`justify-content`/`grid-template-rows` en fracciones — o sea, alto natural y compacto, igual que la izquierda. Como consecuencia, el centro normalmente queda algo más corto que los laterales (hueco moderado debajo, sin filas separadas artificialmente): es la solución pedida tras probar que repartir las filas para llenar toda la altura (`space-between`/`1fr`) separaba demasiado las tarjetas. En cuanto se elige una categoría o se cambia de pestaña, la clase se quita y las tres columnas vuelven a su alto natural (`align-items:start`, comportamiento de siempre).
 
 ### Progress tracker (sidebar derecho)
 - **Mitos desmentidos** — barra `#pt-mitos-bar` / contador `#pt-mitos-count`

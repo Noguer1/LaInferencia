@@ -103,6 +103,18 @@ IDs de artículos publicados:
 | Pagar con tarjeta vs efectivo | eco-03 | economia |
 | Efecto IKEA (Norton) | eco-04 | economia |
 | Paradoja de la elección | eco-05 | economia |
+| La belleza que agrava la condena | der-05 | derecho |
+| El dado que decidía la condena | der-06 | derecho |
+| Rojo y victoria en combate olímpico | dep-05 | deporte |
+| La racha caliente que no existía | dep-06 | deporte |
+| Mera exposición (Zajonc) | art-05 | arte |
+| Arte y reducción de cortisol | art-06 | arte |
+| El móvil que arruina una conversación | tec-05 | tecnologia |
+| Efecto Google en la memoria | tec-06 | tecnologia |
+| El uniforme que hace obedecer (Bickman) | mod-06 | moda |
+| El efecto zapatillas rojas | mod-07 | moda |
+| Experiencias vs. objetos (Van Boven) | via-04 | viajes |
+| Límite de 10 min/día en redes (Hunt) | rs-04 | redesSociales |
 
 ---
 

@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=099a185c74" />
+  <link rel="stylesheet" href="css/styles.css?v=1fc40b3ad9" />
   <link rel="icon" type="image/png" href="img/logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
@@ -793,6 +793,28 @@
               <span>Alimentación</span>
             </button>
 
+            <button class="cat-btn" data-cat="marketing">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m3 11 18-5v12L3 14v-3z"/>
+                <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+              </svg>
+              <span>Marketing</span>
+            </button>
+
+            <button class="cat-btn" data-cat="viajes">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-1 .1-1.3.5l-.4.5c-.4.5-.2 1.2.3 1.5L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.5 1 .7 1.5.3l.5-.4c.4-.3.6-.8.5-1.3z"/>
+              </svg>
+              <span>Viajes</span>
+            </button>
+
+            <button class="cat-btn" data-cat="redesSociales">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+              </svg>
+              <span>Redes Sociales</span>
+            </button>
+
           </div>
           <div id="biblioteca-container"></div>
         </div>
@@ -1115,133 +1137,132 @@
           </div>
         </div>
 
-        <!-- Encabezado desktop (visible solo en escritorio, oculto en móvil) -->
-        <div class="widget-header efectos-widget-header-desktop">
-          <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Lista de Efectos</h3>
-          <p>Sesgos y fenómenos que gobiernan tu conducta sin que lo sepas. Haz clic para explorar.</p>
+        <!-- Vista previa de efectos: tarjeta fija, sin desplegable -->
+        <div class="efectos-preview-card">
+          <div class="widget-header efectos-preview-header">
+            <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Vista previa de efectos</h3>
+          </div>
+          <div class="efectos-list sk-init" id="efectos-list">
+
+            <div class="efecto-card" data-efecto="dunning-kruger">
+              <strong>Efecto Dunning-Kruger</strong>
+              <span>Los que menos saben creen saber más.</span>
+              <span class="efecto-hook">La incompetencia genera una ceguera que impide reconocer la propia incompetencia.</span>
+            </div>
+
+            <div class="efecto-card" data-efecto="halo">
+              <strong>Efecto Halo</strong>
+              <span>Una cualidad visible contamina tu percepción de todo lo demás.</span>
+              <span class="efecto-hook">Una primera impresión positiva colorea todos los juicios posteriores, incluso sin relación lógica entre ellos.</span>
+            </div>
+
+            <div class="efecto-card" data-efecto="confirmacion">
+              <strong>Sesgo de Confirmación</strong>
+              <span>Tu cerebro filtra la realidad para tener siempre razón.</span>
+              <span class="efecto-hook">Buscas activamente evidencias que validen lo que ya crees e ignoras inconscientemente las que lo refutan.</span>
+            </div>
+
+          </div>
+          <button class="efectos-preview-vermas" id="efectos-ver-mas-btn" aria-haspopup="dialog">
+            Ver más
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
-        <!-- Toggle accordion (visible solo en móvil) -->
-        <button class="accordion-toggle-btn efectos-accordion-btn" id="efectos-toggle-btn" aria-expanded="false" aria-controls="efectos-content-wrap">
-          <span class="accordion-btn-left">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            <span class="accordion-btn-title">Lista de Efectos</span>
-          </span>
-          <span class="accordion-btn-meta">18 sesgos cognitivos</span>
-          <svg class="accordion-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="efectos-content-wrap" id="efectos-content-wrap">
-          <p class="accordion-inner-desc efectos-inner-desc-mobile">Sesgos y fenómenos que gobiernan tu conducta sin que lo sepas. Haz clic para explorar.</p>
-        <div class="efectos-list sk-init" id="efectos-list">
 
-          <div class="efecto-card" data-efecto="dunning-kruger">
-            <strong>Efecto Dunning-Kruger</strong>
-            <span>Los que menos saben creen saber más.</span>
-            <span class="efecto-hook">La incompetencia genera una ceguera que impide reconocer la propia incompetencia.</span>
-          </div>
-
-          <div class="efecto-card" data-efecto="halo">
-            <strong>Efecto Halo</strong>
-            <span>Una cualidad visible contamina tu percepción de todo lo demás.</span>
-            <span class="efecto-hook">Una primera impresión positiva colorea todos los juicios posteriores, incluso sin relación lógica entre ellos.</span>
-          </div>
-
-          <div class="efecto-card" data-efecto="confirmacion">
-            <strong>Sesgo de Confirmación</strong>
-            <span>Tu cerebro filtra la realidad para tener siempre razón.</span>
-            <span class="efecto-hook">Buscas activamente evidencias que validen lo que ya crees e ignoras inconscientemente las que lo refutan.</span>
-          </div>
-
+        <!-- Resto de efectos: sin renderizar, solo alimentan el modal "Ver más" con la lista completa -->
+        <div id="efectos-list-full" hidden>
           <div class="efecto-card" data-efecto="placebo">
             <strong>Efecto Placebo</strong>
             <span>Creer que funciona lo hace funcionar de verdad.</span>
             <span class="efecto-hook">La expectativa de mejorar activa mecanismos fisiológicos reales sin ningún principio activo de por medio.</span>
           </div>
-
           <div class="efecto-card" data-efecto="bystander">
             <strong>Efecto Espectador</strong>
             <span>Cuantos más testigos, menos probabilidad de que alguien ayude.</span>
             <span class="efecto-hook">La responsabilidad se diluye en el grupo: todos asumen que será otro quien actúe.</span>
           </div>
-
           <div class="efecto-card" data-efecto="retrospectiva">
             <strong>Sesgo de Retrospectiva</strong>
             <span>Tras conocer el resultado, siempre "lo sabías".</span>
             <span class="efecto-hook">Una vez conocido el desenlace, la memoria reescribe el pasado para que siempre lo hubieras predicho.</span>
           </div>
-
-          <!-- Efectos adicionales (ocultos hasta "Ver más") -->
-          <div id="efectos-extra" hidden>
-            <div class="efecto-card" data-efecto="mera-exposicion">
-              <strong>Efecto de Mera Exposición</strong>
-              <span>Cuanto más ves algo, más te atrae sin razón aparente.</span>
-              <span class="efecto-hook">La mera familiaridad genera preferencia: la repetición aumenta el atractivo sin que haya interacción consciente.</span>
-            </div>
-            <div class="efecto-card" data-efecto="anclaje">
-              <strong>Anclaje Cognitivo</strong>
-              <span>El primer número que oyes decide todos los demás.</span>
-              <span class="efecto-hook">El primer dato recibido fija un punto de referencia que sesga todas las estimaciones posteriores.</span>
-            </div>
-            <div class="efecto-card" data-efecto="barnum">
-              <strong>Efecto Barnum</strong>
-              <span>Crees que una descripción genérica te define a ti en concreto.</span>
-              <span class="efecto-hook">Las afirmaciones vagas y universales nos parecen asombrosamente precisas cuando creemos que nos van dirigidas.</span>
-            </div>
-            <div class="efecto-card" data-efecto="disponibilidad">
-              <strong>Sesgo de Disponibilidad</strong>
-              <span>Lo que recuerdas fácilmente parece más probable que lo que no.</span>
-              <span class="efecto-hook">Juzgamos la frecuencia de un evento por la facilidad con que nos vienen ejemplos a la mente, no por estadísticas.</span>
-            </div>
-            <div class="efecto-card" data-efecto="pigmalion">
-              <strong>Efecto Pigmalión</strong>
-              <span>Las expectativas de los demás sobre ti acaban cumpliéndose.</span>
-              <span class="efecto-hook">Lo que otros esperan de nosotros moldea silenciosamente nuestro propio rendimiento y conducta.</span>
-            </div>
-            <div class="efecto-card" data-efecto="superviviente">
-              <strong>Sesgo del Superviviente</strong>
-              <span>Solo ves los éxitos porque los fracasos no cuentan su historia.</span>
-              <span class="efecto-hook">Construimos conclusiones sobre datos incompletos: los casos que fallaron desaparecieron del mapa.</span>
-            </div>
-            <div class="efecto-card" data-efecto="autoservicio">
-              <strong>Sesgo de Autoservicio</strong>
-              <span>Tus éxitos son tuyos; tus fracasos, culpa de las circunstancias.</span>
-              <span class="efecto-hook">El cerebro protege la autoestima atribuyendo los logros a capacidad propia y los fracasos a factores externos.</span>
-            </div>
-            <div class="efecto-card" data-efecto="primacia">
-              <strong>Efecto de Primacía</strong>
-              <span>Lo primero que aprendes de alguien domina todo lo que viene después.</span>
-              <span class="efecto-hook">La información inicial sobre una persona actúa como filtro que colorea toda la información posterior.</span>
-            </div>
-            <div class="efecto-card" data-efecto="optimismo">
-              <strong>Sesgo de Optimismo</strong>
-              <span>Tu cerebro cree que los malos eventos le ocurren a los demás, no a ti.</span>
-              <span class="efecto-hook">Sobreestimamos nuestra probabilidad de experimentar buenos eventos y subestimamos la de los malos.</span>
-            </div>
-            <div class="efecto-card" data-efecto="bandwagon">
-              <strong>Efecto Bandwagon</strong>
-              <span>Cuanta más gente cree algo, más probable te parece que sea verdad.</span>
-              <span class="efecto-hook">La popularidad de una idea se toma inconscientemente como evidencia de su veracidad.</span>
-            </div>
-            <div class="efecto-card" data-efecto="status-quo">
-              <strong>Sesgo del Statu Quo</strong>
-              <span>Cambiar duele más que seguir igual, aunque seguir igual sea peor.</span>
-              <span class="efecto-hook">Las pérdidas asociadas al cambio se perciben como más graves que las ganancias equivalentes que ofrece.</span>
-            </div>
-            <div class="efecto-card" data-efecto="efecto-espejo">
-              <strong>Efecto Espejo</strong>
-              <span>Imitar inconscientemente al otro genera confianza y empatía inmediata.</span>
-              <span class="efecto-hook">El mimetismo postural y gestual crea rapport y sensación de conexión emocional de forma completamente automática.</span>
-            </div>
+          <div class="efecto-card" data-efecto="mera-exposicion">
+            <strong>Efecto de Mera Exposición</strong>
+            <span>Cuanto más ves algo, más te atrae sin razón aparente.</span>
+            <span class="efecto-hook">La mera familiaridad genera preferencia: la repetición aumenta el atractivo sin que haya interacción consciente.</span>
           </div>
-          <button class="efectos-ver-mas" id="efectos-ver-mas-btn" aria-expanded="false">
-            Ver los 12 efectos restantes
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-
+          <div class="efecto-card" data-efecto="anclaje">
+            <strong>Anclaje Cognitivo</strong>
+            <span>El primer número que oyes decide todos los demás.</span>
+            <span class="efecto-hook">El primer dato recibido fija un punto de referencia que sesga todas las estimaciones posteriores.</span>
+          </div>
+          <div class="efecto-card" data-efecto="barnum">
+            <strong>Efecto Barnum</strong>
+            <span>Crees que una descripción genérica te define a ti en concreto.</span>
+            <span class="efecto-hook">Las afirmaciones vagas y universales nos parecen asombrosamente precisas cuando creemos que nos van dirigidas.</span>
+          </div>
+          <div class="efecto-card" data-efecto="disponibilidad">
+            <strong>Sesgo de Disponibilidad</strong>
+            <span>Lo que recuerdas fácilmente parece más probable que lo que no.</span>
+            <span class="efecto-hook">Juzgamos la frecuencia de un evento por la facilidad con que nos vienen ejemplos a la mente, no por estadísticas.</span>
+          </div>
+          <div class="efecto-card" data-efecto="pigmalion">
+            <strong>Efecto Pigmalión</strong>
+            <span>Las expectativas de los demás sobre ti acaban cumpliéndose.</span>
+            <span class="efecto-hook">Lo que otros esperan de nosotros moldea silenciosamente nuestro propio rendimiento y conducta.</span>
+          </div>
+          <div class="efecto-card" data-efecto="superviviente">
+            <strong>Sesgo del Superviviente</strong>
+            <span>Solo ves los éxitos porque los fracasos no cuentan su historia.</span>
+            <span class="efecto-hook">Construimos conclusiones sobre datos incompletos: los casos que fallaron desaparecieron del mapa.</span>
+          </div>
+          <div class="efecto-card" data-efecto="autoservicio">
+            <strong>Sesgo de Autoservicio</strong>
+            <span>Tus éxitos son tuyos; tus fracasos, culpa de las circunstancias.</span>
+            <span class="efecto-hook">El cerebro protege la autoestima atribuyendo los logros a capacidad propia y los fracasos a factores externos.</span>
+          </div>
+          <div class="efecto-card" data-efecto="primacia">
+            <strong>Efecto de Primacía</strong>
+            <span>Lo primero que aprendes de alguien domina todo lo que viene después.</span>
+            <span class="efecto-hook">La información inicial sobre una persona actúa como filtro que colorea toda la información posterior.</span>
+          </div>
+          <div class="efecto-card" data-efecto="optimismo">
+            <strong>Sesgo de Optimismo</strong>
+            <span>Tu cerebro cree que los malos eventos le ocurren a los demás, no a ti.</span>
+            <span class="efecto-hook">Sobreestimamos nuestra probabilidad de experimentar buenos eventos y subestimamos la de los malos.</span>
+          </div>
+          <div class="efecto-card" data-efecto="bandwagon">
+            <strong>Efecto Bandwagon</strong>
+            <span>Cuanta más gente cree algo, más probable te parece que sea verdad.</span>
+            <span class="efecto-hook">La popularidad de una idea se toma inconscientemente como evidencia de su veracidad.</span>
+          </div>
+          <div class="efecto-card" data-efecto="status-quo">
+            <strong>Sesgo del Statu Quo</strong>
+            <span>Cambiar duele más que seguir igual, aunque seguir igual sea peor.</span>
+            <span class="efecto-hook">Las pérdidas asociadas al cambio se perciben como más graves que las ganancias equivalentes que ofrece.</span>
+          </div>
+          <div class="efecto-card" data-efecto="efecto-espejo">
+            <strong>Efecto Espejo</strong>
+            <span>Imitar inconscientemente al otro genera confianza y empatía inmediata.</span>
+            <span class="efecto-hook">El mimetismo postural y gestual crea rapport y sensación de conexión emocional de forma completamente automática.</span>
+          </div>
         </div>
-        </div><!-- /.efectos-content-wrap -->
       </aside>
 
     </div><!-- /.dashboard-layout -->
+
+    <!-- MODAL: Lista de Efectos completa, overlay con blur (igual que Explorar concepto) -->
+    <div class="concepto-modal-overlay efectos-lista-modal-overlay" id="efectos-lista-modal" hidden role="dialog" aria-modal="true" aria-labelledby="elm-titulo">
+      <div class="concepto-modal-card efectos-lista-modal-card">
+        <button class="concepto-modal-close" id="efectos-lista-modal-close" aria-label="Cerrar">&#x2715;</button>
+        <div class="concepto-modal-eyebrow">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Lista de Efectos
+        </div>
+        <p class="efectos-lista-modal-titulo" id="elm-titulo">18 sesgos cognitivos que gobiernan tu conducta sin que lo sepas</p>
+        <div class="efectos-list efectos-lista-modal-grid" id="efectos-lista-modal-grid"></div>
+      </div>
+    </div>
 
     <!-- ── TU PROBLEMA, TU LIBRO ── -->
     <section class="botiquin-section" id="botiquin">
@@ -2097,9 +2118,9 @@
     </div>
   </div>
 
-  <script src="js/search-index.js?v=d3598f6c77"></script>
+  <script src="js/search-index.js?v=9504c8434f"></script>
   <script src="js/buscador.js?v=0b8d4e0970"></script>
   <script src="js/recomendaciones.js?v=7ca55c6cd1"></script>
-  <script src="js/main.js?v=e65215b791"></script>
+  <script src="js/main.js?v=8f9d83fac1"></script>
 </body>
 </html>
