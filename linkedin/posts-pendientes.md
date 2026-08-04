@@ -22,7 +22,7 @@ El mecanismo no es "belleza igual a bondad" sin matices. Los jurados preguntan, 
 
 La próxima vez que la simpatía o el atractivo de alguien te empujen a creer en su inocencia, pregúntate si esa misma cualidad podría explicar cómo se hizo lo que se le atribuye.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=der-05&cat=derecho
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -40,7 +40,7 @@ Es el efecto de anclaje que Kahneman y Tversky describieron para el público gen
 
 Cualquier cifra que veas u oigas justo antes de decidir algo (un precio inicial, una estimación ajena, un número que ni siquiera viene al caso) puede estar anclando tu juicio sin que lo notes.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=der-06&cat=derecho
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -58,7 +58,7 @@ Hill y Barton lo explican con una hipótesis que viene del reino animal: en much
 
 Investigaciones posteriores han matizado el hallazgo tras cambios de reglamento y más consciencia del sesgo entre árbitros. Pero el patrón original sigue siendo uno de los ejemplos mejor documentados de cómo una señal tan superficial como un color puede mover el resultado de una competición de alto nivel.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=dep-05&cat=deporte
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -76,7 +76,7 @@ El cerebro subestima cuántas rachas largas produce el puro azar, así que inter
 
 Un matiz honesto: el debate no se cerró en 1985. Un reanálisis de 2018 encontró un sesgo metodológico en el cálculo original, y al corregirlo reaparece una pequeña tendencia real hacia la mano caliente. La conclusión prudente no es que la racha no exista. Es que es mucho más débil de lo que la intuición del 91% asume.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=dep-06&cat=deporte
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -94,7 +94,7 @@ Zajonc propuso que lo familiar se procesa, de entrada, como más seguro que lo d
 
 Así que la próxima vez que algo te genere rechazo la primera vez (una canción, un cuadro, incluso una idea), dale una segunda oportunidad antes de descartarlo del todo. Parte de ese rechazo puede ser solo la novedad hablando.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=art-05&cat=arte
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -112,7 +112,7 @@ El efecto, según Kaimal, no depende de la calidad del resultado ni de la técni
 
 La barrera de entrada que mucha gente se pone a sí misma ("no sé dibujar, para qué voy a intentarlo") no aparece en los datos. El estudio no midió si las obras quedaban bien. Midió si bajaba el cortisol de quien las hizo, y bajó igual en ambos casos.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=art-06&cat=arte
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -130,7 +130,7 @@ El daño no depende de mirar el teléfono. El móvil representa, incluso apagado
 
 Antes de una conversación que te importe, prueba a guardar el móvil fuera de la vista de ambos, no solo en silencio sobre la mesa. La diferencia no está en si lo consultas.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=tec-05&cat=tecnologia
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -148,7 +148,7 @@ Sparrow lo explica con la teoría de la memoria transactiva, la misma que descri
 
 Sparrow lo describe como una redistribución inteligente del esfuerzo: menos recursos para el contenido, más para la ruta de acceso. La pregunta que vale la pena hacerse es qué información sí merece memorizarse de verdad, porque no vas a tener acceso inmediato a ella cuando la necesites.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=tec-06&cat=tecnologia
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -166,7 +166,7 @@ El cerebro no evalúa caso por caso si quien pide algo tiene potestad real para 
 
 La ropa no otorga autoridad. Solo hace mucho más caro, mentalmente, dudar de ella.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=mod-06&cat=moda
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -184,7 +184,7 @@ Lo que media el efecto es la percepción de autonomía. Quien se salta una norma
 
 Romper una norma no da estatus por sí solo. Lo da hacerlo de una forma que deje claro que se podía haber cumplido.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=mod-07&cat=moda
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -200,7 +200,7 @@ Tres razones explican la diferencia. Las experiencias se reinterpretan mejor con
 
 Un objeto material queda separado de quien lo compra. Una experiencia se integra en la propia biografía. No tienes un viaje: en cierto sentido, te conviertes en la persona que lo hizo.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=via-04&cat=viajes
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 
 ---
 
@@ -218,4 +218,4 @@ Hunt lo explica por la reducción de la comparación social ascendente que sosti
 
 No hace falta borrar las redes. Según estos datos, con reducir drásticamente el tiempo ya se nota la diferencia.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=rs-04&cat=redesSociales
+Descubre más estudios como este en La Inferencia → https://lainferencia.com

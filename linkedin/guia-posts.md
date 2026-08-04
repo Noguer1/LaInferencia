@@ -53,11 +53,11 @@ Una sola frase. Contundente, contraintuitiva, específica. No empieces describie
 
 ### 5. CTA
 
-Última línea. Enlace directo al artículo en La Inferencia, con una frase que invite a leer más.
+Última línea. Enlace a la home de La Inferencia (no al artículo concreto), para que quien entra desde LinkedIn navegue por la web desde cero en vez de caer directo en una página aislada.
 
 **Formato:**
 ```
-[Frase que invite] → https://lainferencia.com/?v=art&id=XXX&cat=YYY
+[Frase que invite] → https://lainferencia.com
 ```
 
 ---
@@ -83,13 +83,9 @@ Una sola frase. Contundente, contraintuitiva, específica. No empieces describie
 
 ## Fuentes y artículos
 
-Cada post debe corresponder a un artículo publicado en La Inferencia. El CTA enlaza directamente al artículo con este formato de URL:
+Cada post debe corresponder a un artículo publicado en La Inferencia, aunque el CTA ya no enlaza a ese artículo en concreto sino a la home (`https://lainferencia.com`), para que la persona llegue desde cero y explore el resto del contenido.
 
-```
-https://lainferencia.com/?v=art&id=[ID]&cat=[CATEGORIA]
-```
-
-IDs de artículos publicados:
+IDs de artículos publicados (referencia interna, para no repetir estudio ni ángulo):
 
 | Artículo | ID | Categoría |
 |---|---|---|
@@ -137,7 +133,7 @@ por defecto en el sistema judicial era denegar.
 
 Libertad o prisión. Glucosa mediante.
 
-Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=der-03&cat=derecho
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
 ```
 
 ---
@@ -149,5 +145,5 @@ Lee el estudio completo en La Inferencia → https://lainferencia.com/?v=art&id=
 - [ ] Hay al menos un dato numérico concreto
 - [ ] El mecanismo psicológico está nombrado
 - [ ] No hay moralización ni consejo no pedido
-- [ ] El CTA apunta al artículo específico, no a la home
+- [ ] El CTA apunta a la home (https://lainferencia.com), no al artículo específico
 - [ ] Entre 200 y 320 palabras
