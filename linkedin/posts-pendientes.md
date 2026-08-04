@@ -1,6 +1,6 @@
 # Posts pendientes de publicar
 
-Lote 1 (posts 1-12) generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Lote 2 (posts 13-18) generado el mismo día, con 6 artículos nuevos de marketing, política y alimentación. Formato y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
+Lote 1 (posts 1-12) generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Lote 2 (posts 13-18) generado el mismo día, con 6 artículos nuevos de marketing, política y alimentación. Lote 3 (posts 19-24) generado el mismo día, con 6 artículos nuevos de salud mental, marketing, viajes y redes sociales, para nivelar esas categorías. Formato y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
 
 Estado de cada uno: pendiente hasta que se marque como publicado aquí manualmente.
 
@@ -325,5 +325,113 @@ En un segundo experimento, indujeron una sensación de exclusión social pidiend
 El mecanismo: muchas comidas reconfortantes se asociaron, en algún momento significativo, a personas cercanas que las prepararon o compartieron. Comer ese plato reactiva parte de esa sensación de compañía, incluso comiendo en soledad total.
 
 La próxima vez que busques consuelo en un plato concreto, vale la pena notar de qué relación viene, no solo comerlo de forma automática.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 19. Escribir lo que agradeces cada semana cambió más que el ánimo (sm-06)
+
+Estado: pendiente
+
+Un grupo escribía cada semana cinco cosas por las que se sentía agradecido. Otro, cinco contrariedades. Diez semanas después, uno de los dos grupos hacía más ejercicio.
+
+Robert Emmons y Michael McCullough asignaron al azar a estudiantes universitarios a tres grupos: uno anotaba semanalmente hasta cinco cosas por las que se sentía agradecido, otro anotaba contrariedades de la semana, y un tercero simplemente hechos neutros. Todos llevaron el registro durante diez semanas.
+
+El grupo de gratitud reportó cada semana mayor bienestar, más optimismo y menos síntomas físicos que los otros dos. En un segundo experimento con registro diario, ese mismo grupo llegó a hacer casi 1,5 horas más de ejercicio a la semana que el grupo de contrariedades. Un tercer estudio, con personas con enfermedad neuromuscular, replicó el patrón: la satisfacción con la vida subió aunque la enfermedad seguía exactamente igual.
+
+El mecanismo tiene que ver con el foco atencional. El cerebro pesa por defecto más lo negativo que lo positivo, un sesgo bien documentado. Llevar un registro de gratitud obliga a escanear la propia semana buscando específicamente lo que fue bien, y ese ejercicio activo compite de forma directa con esa tendencia natural a notar antes lo que falla.
+
+La vida de los tres grupos era, en lo esencial, la misma. Lo único que cambiaba semana a semana era qué parte de ella decidían anotar primero.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 20. El cartel gigante y feo que el 76% aceptó, pero solo tras decir sí a algo mínimo (mkt-06)
+
+Estado: pendiente
+
+Pedir un cartel gigante y feo para el jardín funcionó con el 17% de los vecinos. Pedir antes una pegatina diminuta lo elevó al 76%.
+
+Jonathan Freedman y Scott Fraser pidieron a vecinos de California que instalaran en su jardín un cartel enorme y poco estético con el mensaje "conduce con cuidado". Pedido directamente, solo el 17% aceptó. A otro grupo se le pidió primero, dos semanas antes, un favor mínimo: colocar una pegatina pequeña en la ventana con el mismo mensaje. Cuando después se les pedía el cartel grande, aceptó el 76%.
+
+El efecto se mantuvo incluso cuando el primer favor no tenía relación temática con el segundo, lo que descarta que el resultado dependiera solo del compromiso con la causa de la seguridad vial. Lo decisivo era haber dicho que sí a algo, sin importar a qué.
+
+El mecanismo no es de relación con quien pide, es de autopercepción. Decir que sí a una petición pequeña, por irrelevante que parezca, hace que la persona empiece a verse a sí misma como alguien que colabora con ese tipo de causas. Y esa nueva imagen propia hace más natural aceptar después algo mayor del mismo tipo.
+
+La técnica se llama hoy pie en la puerta y funciona en cualquier sitio donde primero se pide poco: la muestra gratis antes de la compra grande, la prueba de una semana antes de la suscripción anual. El primer sí casi nunca busca el compromiso en sí mismo. Busca cambiar cómo te ves.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 21. El semestre en el extranjero que cambió la personalidad de miles de estudiantes (via-05)
+
+Estado: pendiente
+
+Más de 1.000 estudiantes alemanes, medidos antes y después de un semestre fuera. Solo uno de los dos grupos cambió de personalidad.
+
+Julia Zimmermann y Franz Neyer, de la Universidad de Jena, aprovecharon una situación real: cientos de estudiantes que ya tenían planeado un intercambio y cientos más que se quedaban en su universidad de origen. Ambos grupos completaron el mismo cuestionario de personalidad al inicio y de nuevo después del periodo que unos pasaron fuera.
+
+Quienes habían estudiado en el extranjero mostraron aumentos medibles en apertura a la experiencia, estabilidad emocional y amabilidad. El grupo que se quedó en Alemania, con edad y trayectoria comparables, no mostró esos mismos cambios en el mismo periodo. No era el simple paso del tiempo lo que explicaba la diferencia.
+
+Los autores lo atribuyen a la reorganización forzosa de la red social que implica un intercambio. Construir relaciones nuevas desde cero, en un lugar donde tu rol social todavía no está definido, obliga a poner en práctica iniciativa, tolerancia a la incertidumbre y curiosidad de un modo que la rutina en casa rara vez exige.
+
+Esto encaja con algo que la psicología de la personalidad viene defendiendo desde hace años: los rasgos no son fijos, cambian ante experiencias sostenidas que exigen actuar distinto a como se actuaba antes. Un fin de semana de vacaciones no basta. Meses relacionándote de una forma nueva, sí.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 22. Mirar árboles enormes hizo que la gente ayudara más a un desconocido (via-06)
+
+Estado: pendiente
+
+Un minuto mirando árboles de 60 metros. Después, más gente ayudó a un desconocido a recoger lo que se le había caído.
+
+Paul Piff y su equipo, en la Universidad de California en Irvine, dirigieron a transeúntes de un campus a mirar durante un minuto un grupo de eucaliptos gigantes, o un edificio corriente de altura parecida como condición de control. Justo después, un colaborador de los investigadores fingía tropezar y dejaba caer un puñado de bolígrafos delante de cada participante.
+
+Quienes habían mirado los árboles ayudaron a recogerlos con más frecuencia y más rapidez que quienes habían mirado el edificio. En otro experimento del mismo estudio, con más de 1.500 personas a nivel nacional, la tendencia a sentir asombro con frecuencia predijo mayor generosidad en un juego económico real, por encima de emociones como la compasión o el orgullo.
+
+El mecanismo tiene nombre: los autores lo llaman "pequeño yo". El asombro produce una sensación transitoria de que uno mismo, sus preocupaciones y su estatus, ocupan un lugar diminuto frente a algo mucho más grande. Estadísticamente, ese sentimiento de pequeñez explicaba buena parte del efecto sobre la generosidad, y no se debía solo a estar de mejor humor.
+
+No hace falta un viaje largo para provocarlo. Un mirador, un cielo despejado lejos de la ciudad, cualquier paisaje que te haga sentir pequeño durante un minuto parece bastar para inclinar levemente la balanza hacia notar a quien tienes cerca.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 23. El experimento que localizó a 82 jóvenes cinco veces al día para medir qué les hacía Facebook (rs-05)
+
+Estado: pendiente
+
+Cinco mensajes de texto al día, durante dos semanas, a 82 jóvenes. El patrón que reveló sobre Facebook fue más claro de lo que nadie esperaba.
+
+Ethan Kross, de la Universidad de Michigan, quería resolver algo que las encuestas retrospectivas no pueden responder: si usar Facebook empeora el ánimo momento a momento, o si simplemente la gente que ya está de mal humor usa más Facebook. Reclutó a 82 jóvenes y les envió, cinco veces al día durante dos semanas, un mensaje de texto preguntando cuánto habían usado Facebook, cómo se sentían y cuánto habían interactuado directamente con otras personas.
+
+El patrón fue consistente: cuanto más había usado Facebook una persona en el intervalo entre dos mensajes, peor decía sentirse en el mensaje siguiente. Y cuanto más lo había usado en conjunto durante las dos semanas, más había bajado su satisfacción con la vida al final del estudio.
+
+El dato que evita la lectura simplista es este: interactuar directamente con otras personas, incluso a través del propio Facebook, no predijo ningún descenso del ánimo. De hecho, predijo sentirse mejor con el tiempo. El malestar se asoció de forma específica al uso pasivo, desplazarse por publicaciones ajenas sin producir ni responder nada.
+
+Kross lo explica como comparación social pasiva: consumir el resumen editado de las vidas de otros, sin el contrapeso de una interacción real que lo matice, deja a quien mira con la sensación de estar quedándose atrás.
+
+Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 24. Misma foto, distinto número de likes: los adolescentes reaccionaban al número, no a la imagen (rs-06)
+
+Estado: pendiente
+
+Misma foto. Distinto número de likes ya puestos. Los adolescentes reaccionaban a los likes, no a la foto.
+
+Lauren Sherman y su equipo, en la Universidad de California en Los Ángeles, construyeron una versión simulada de Instagram dentro de un escáner de resonancia magnética. A 32 adolescentes de entre 13 y 18 años les mostraron fotografías, algunas con contenido de riesgo como alcohol o cigarrillos, con un número alto o bajo de "me gusta" asignado por los investigadores sin que los participantes lo supieran.
+
+Los adolescentes daban like con mucha más frecuencia a las fotos que ya mostraban muchos likes, y ese patrón se mantenía igual para el contenido de riesgo. Ver fotos con muchos likes activó regiones cerebrales de recompensa, las mismas que responden ante el dinero o la comida, con más intensidad que las mismas fotos con pocos likes.
+
+El hallazgo va más allá de que a los adolescentes les guste la aprobación. El número de likes cambiaba el propio juicio sobre el contenido: una foto de alcohol con muchos likes se procesaba como más aceptable que la misma foto con pocos, medido tanto en la conducta como en la actividad cerebral vinculada al control cognitivo.
+
+Sherman lo enmarca como una forma cuantificada de la presión de grupo. Antes había que inferir la aprobación de los demás. Ahora es un número visible, actualizado en tiempo real, capaz de anular parcialmente el criterio propio sobre qué contenido resulta aceptable.
 
 Descubre más estudios como este en La Inferencia → https://lainferencia.com

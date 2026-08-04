@@ -1568,6 +1568,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Cuando te dices cosas a ti mismo que nunca le dirías a un amigo que está sufriendo, no te estás motivando: te estás dañando con la ilusión de que el daño es productivo.»', attribution: 'Kristin Neff' },
       aplicacion: 'La próxima vez que cometas un error importante, aplica el test del amigo: ¿qué le dirías a un amigo cercano que hubiera cometido exactamente ese mismo error? Escríbelo. Luego compáralo con lo que te estás diciendo a ti mismo. La diferencia entre ambos textos es la medida exacta de la dureza con que te tratas, y el primero es el tono que produce mejor motivación y aprendizaje.'
+    },
+    {
+      id: 'sm-06',
+      title: 'Anotar cada semana lo que agradeces cambió más que el ánimo, según este experimento',
+      summary: 'Personas asignadas al azar a llevar un registro semanal de cosas por las que se sentían agradecidas mostraron mejor ánimo, más optimismo y hasta más horas de ejercicio que quienes registraron contrariedades o simplemente hechos neutros de la semana.',
+      sourceUrl: 'https://doi.org/10.1037/0022-3514.84.2.377',
+      sourceLabel: 'Emmons & McCullough (2003), Journal of Personality and Social Psychology',
+      badge: 'Psicología positiva',
+      author: { name: 'Robert A. Emmons', university: 'University of California, Davis', specialty: 'Psicología de la gratitud y el bienestar' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Robert Emmons y Michael McCullough querían comprobar si la gratitud, más allá de ser un sentimiento agradable puntual, produce efectos medibles sobre el bienestar cuando se practica de forma deliberada y sostenida. Para eso diseñaron tres estudios distintos, asignando al azar a los participantes a llevar un registro periódico centrado en agradecimientos, en contrariedades, o en hechos neutros de su semana.',
+      sections: [
+        {
+          subtitle: 'El experimento: tres grupos, un mismo cuaderno semanal',
+          paragraphs: [
+            'En el primer estudio, con estudiantes universitarios, un grupo anotaba semanalmente hasta cinco cosas por las que se sentía agradecido, otro anotaba cinco contrariedades o molestias de la semana, y un tercero anotaba simplemente cinco sucesos que le hubieran afectado, sin indicación de signo positivo o negativo. Todos llevaron el registro durante diez semanas seguidas.',
+            'El grupo de gratitud reportó, semana tras semana, mayor bienestar general, más optimismo sobre la semana siguiente y menos síntomas físicos que los otros dos grupos. En un segundo estudio con registro diario en vez de semanal, el grupo de gratitud llegó a reportar casi 1,5 horas más de ejercicio a la semana que el grupo de contrariedades, un efecto conductual que va más allá del simple estado de ánimo declarado.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: agradecer reorganiza qué información notas primero',
+          paragraphs: [
+            'Emmons explica el efecto por un cambio en el foco atencional. Llevar un registro de gratitud obliga, semana tras semana, a escanear la propia vida buscando específicamente lo que ha ido bien, un ejercicio que compite directamente con el sesgo de negatividad natural del cerebro, que por defecto pesa y recuerda más lo malo que lo bueno.',
+            'El tercer estudio, con personas con enfermedad neuromuscular, una población con motivos objetivos para centrarse en lo negativo, replicó el patrón: quienes llevaron el registro de gratitud durante tres semanas mostraron mayor satisfacción con la vida y mayor optimismo que el grupo de control, pese a que su situación médica no había cambiado en absoluto. El bienestar se movió sin que se moviera la circunstancia.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Un enfoque deliberado en las bendiciones puede tener beneficios emocionales y sociales, quizá porque una persona agradecida transforma activamente cómo interpreta su experiencia cotidiana.»', attribution: 'Robert A. Emmons' },
+      aplicacion: 'El protocolo con el que se probó el efecto es simple de replicar: una vez por semana, anota entre tres y cinco cosas concretas por las que te sientas agradecido en ese momento, no en abstracto. La clave según este estudio no es sentir gratitud de forma pasiva, sino el acto activo de buscarla y ponerla por escrito con regularidad.'
     }
   ],
 
@@ -2404,6 +2434,36 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Decirle a la gente lo que hacen los demás es, con frecuencia, una palanca de cambio de comportamiento más potente que explicarles por qué deberían cambiar.»', attribution: 'Robert Cialdini' },
       aplicacion: 'La próxima vez que quieras cambiar un hábito propio poco sostenible (energético, de consumo, de salud), busca datos reales sobre cuánta gente parecida a ti ya lo ha cambiado, en vez de repasar solo las razones abstractas para hacerlo. Saber que "la mayoría como tú ya lo hace" activa un mecanismo de conformidad más fuerte que cualquier argumento moral aislado.'
+    },
+    {
+      id: 'mkt-06',
+      title: 'El cartel gigante y feo que el 76% aceptó poner en su jardín, pero solo si antes dijeron sí a algo pequeño',
+      summary: 'Pedir directamente a vecinos de California que instalaran un cartel enorme y poco estético en su jardín obtuvo un 17% de aceptación. Pedir primero un favor mínimo y, dos semanas después, el cartel grande, disparó la aceptación al 76%.',
+      sourceUrl: 'https://doi.org/10.1037/h0023552',
+      sourceLabel: 'Freedman & Fraser (1966), Journal of Personality and Social Psychology',
+      badge: 'Persuasión',
+      author: { name: 'Jonathan L. Freedman', university: 'Stanford University', specialty: 'Psicología social de la persuasión y el conformismo' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Jonathan Freedman y Scott Fraser querían entender por qué, a veces, una persona accede a peticiones que en cualquier otro contexto rechazaría sin dudar. Para probarlo eligieron una petición deliberadamente poco atractiva: colocar en el jardín de casa un cartel grande y mal diseñado que decía "conduce con cuidado", el tipo de objeto que la mayoría de propietarios rechaza de entrada.',
+      sections: [
+        {
+          subtitle: 'El experimento: pedir un poco antes de pedir mucho',
+          paragraphs: [
+            'A un grupo de vecinos de California se les pidió directamente que instalaran el cartel grande. Solo el 17% aceptó. A otro grupo se le pidió, dos semanas antes, un favor mínimo y fácil de aceptar: colocar en la ventana una pegatina pequeña con el mismo mensaje de conducción segura, o firmar una petición relacionada. Cuando, dos semanas después, se les pedía el cartel grande, el 76% aceptó.',
+            'El efecto se sostuvo incluso cuando el primer favor y la petición grande no estaban relacionados temáticamente entre sí, lo que descartaba que el resultado se debiera solo a un compromiso previo con la causa concreta de la seguridad vial. Lo decisivo no era el contenido del primer favor, sino el simple hecho de haber accedido a algo.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: acceder a lo pequeño cambia cómo te ves a ti mismo',
+          paragraphs: [
+            'Freedman y Fraser proponen que aceptar una primera petición pequeña no cambia solo la relación con quien pide, cambia la autopercepción de quien acepta. Al decir que sí a algo, por mínimo que sea, la persona empieza a verse a sí misma como alguien que colabora con ese tipo de causas, y esa nueva autoimagen hace más coherente aceptar después una petición mayor del mismo tipo.',
+            'La técnica se conoce hoy como pie en la puerta y aparece constantemente fuera del laboratorio: la muestra gratuita antes de la compra grande, la prueba de 7 días antes de la suscripción anual, la firma de una petición online antes de pedir una donación. En todos los casos, el primer paso pequeño no busca el compromiso en sí, busca cambiar cómo se ve a sí misma la persona que lo da.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Una vez que alguien ha accedido a una petición pequeña, cambia su autopercepción de un modo que hace más probable que acceda después a una petición mayor.»', attribution: 'Jonathan L. Freedman' },
+      aplicacion: 'Antes de pedir algo grande (una donación, una venta, un compromiso serio), considera si existe una versión mínima de esa misma petición que la otra persona pueda aceptar sin esfuerzo. Según este estudio, ese primer sí, aunque parezca irrelevante en sí mismo, es lo que más predice el segundo.'
     }
   ],
   viajes: [
@@ -2526,6 +2586,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Las experiencias hacen más felices a las personas, en parte, porque se convierten en parte de quiénes somos de una forma en que los objetos rara vez lo hacen.»', attribution: 'Thomas Gilovich' },
       aplicacion: 'Ante una decisión de gasto discrecional entre un objeto y una experiencia de coste similar, este estudio sugiere inclinarte por la experiencia si tu objetivo es maximizar felicidad a medio plazo, no solo satisfacción inmediata. No porque los objetos no sirvan para nada, sino porque tienden a integrarse peor en la historia que te cuentas sobre tu propia vida.'
+    },
+    {
+      id: 'via-05',
+      title: 'El semestre en el extranjero que cambió la personalidad de miles de estudiantes, medido antes y después',
+      summary: 'Un estudio con más de 1.000 universitarios comparó a quienes se iban de intercambio con quienes se quedaban en casa y encontró cambios de personalidad medibles (más apertura, más estabilidad emocional) en quienes viajaron, que no aparecían en el grupo de control.',
+      sourceUrl: 'https://doi.org/10.1037/a0033019',
+      sourceLabel: 'Zimmermann & Neyer (2013), Journal of Personality and Social Psychology',
+      badge: 'Desarrollo de la personalidad',
+      author: { name: 'Julia Zimmermann', university: 'FernUniversität in Hagen', specialty: 'Desarrollo de la personalidad y experiencias de movilidad internacional' },
+      readingTime: '4 min',
+      date: '4 de agosto de 2026',
+      intro: 'Julia Zimmermann y Franz Neyer, en la Universidad de Jena, aprovecharon una oportunidad natural poco frecuente en la investigación de personalidad: cientos de estudiantes alemanes que ya tenían planeado irse de intercambio, y cientos más que se quedaban en su universidad de origen, lo que permitía comparar el cambio de personalidad de ambos grupos sin necesidad de asignar a nadie al azar.',
+      sections: [
+        {
+          subtitle: 'El experimento: más de 1.000 estudiantes, medidos antes y después del intercambio',
+          paragraphs: [
+            'Reclutaron a más de 1.000 estudiantes de unas 200 universidades alemanas: unos con planes firmes de pasar un semestre o un año en el extranjero, otros sin intención de moverse, usados como grupo de comparación. Ambos grupos completaron cuestionarios estandarizados de personalidad al inicio del estudio y de nuevo después del periodo que los estudiantes de intercambio pasaron fuera.',
+            'Quienes habían estudiado en el extranjero mostraron aumentos medibles en apertura a la experiencia, estabilidad emocional y amabilidad, comparados con el grupo que se había quedado en Alemania. El cambio no era simplemente cuestión de maduración por el paso del tiempo: el grupo de control, de edad y trayectoria vital comparable, no mostró los mismos aumentos en ese mismo periodo.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: nuevas relaciones, no solo nuevos paisajes',
+          paragraphs: [
+            'Zimmermann y Neyer atribuyen el cambio, en buena parte, a la reorganización de la red social que provoca un intercambio: construir relaciones nuevas desde cero, en un entorno donde el propio rol social todavía no está fijado, obliga a poner en práctica rasgos como la iniciativa social, la tolerancia a la incertidumbre o la curiosidad, de un modo que la vida rutinaria en el entorno conocido rara vez exige.',
+            'El hallazgo encaja con un principio más amplio de la psicología de la personalidad: los rasgos no son fijos de por vida, cambian en respuesta a experiencias sostenidas que exigen actuar de forma distinta a como se actuaba antes. Un viaje corto de vacaciones difícilmente produce ese efecto. Meses viviendo y relacionándote de una forma nueva, sí.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Las experiencias de movilidad internacional no son solo un episodio biográfico: dejan una huella medible en el desarrollo de la personalidad.»', attribution: 'Julia Zimmermann' },
+      aplicacion: 'Si buscas un cambio real en rasgos como la apertura o la tolerancia a la incertidumbre, este estudio sugiere que la variable decisiva no es la distancia del viaje ni lo exótico del destino, sino el tiempo sostenido construyendo relaciones nuevas en un contexto donde tu rol social todavía no está definido, algo que un viaje corto rara vez permite.'
+    },
+    {
+      id: 'via-06',
+      title: 'Mirar árboles enormes hizo que la gente ayudara más a un desconocido, según este experimento',
+      summary: 'Personas que pasaron un minuto mirando hacia unos eucaliptos gigantes se mostraron más dispuestas a ayudar a alguien que fingía tropezar, y más generosas repartiendo recompensas, que quienes habían mirado hacia un edificio corriente durante el mismo tiempo.',
+      sourceUrl: 'https://doi.org/10.1037/pspi0000018',
+      sourceLabel: 'Piff, Dietze, Feinberg, Stancato & Keltner (2015), Journal of Personality and Social Psychology',
+      badge: 'Emociones y comportamiento prosocial',
+      author: { name: 'Paul K. Piff', university: 'University of California, Irvine', specialty: 'Psicología social de la desigualdad y las emociones morales' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Paul Piff y su equipo querían aislar qué le hace exactamente el asombro (esa mezcla de sorpresa y pequeñez que provoca ver algo que desborda tu marco habitual de referencia, como un paisaje inmenso o un cielo estrellado) al comportamiento hacia otras personas, más allá de hacer sentir bien a quien lo experimenta.',
+      sections: [
+        {
+          subtitle: 'El experimento: un minuto mirando eucaliptos de 60 metros',
+          paragraphs: [
+            'En uno de los cinco estudios de la investigación, transeúntes en un campus universitario fueron dirigidos a mirar, durante un minuto, hacia un grupo de eucaliptos gigantes de más de 60 metros de altura, o hacia un edificio de ciencias corriente de altura similar, como condición de control. Justo después, un colaborador de los investigadores, fingiendo un tropiezo, dejaba caer un puñado de bolígrafos delante de cada participante.',
+            'Quienes habían mirado los árboles ayudaron a recoger los bolígrafos con más frecuencia y más rapidez que quienes habían mirado el edificio. En otro estudio del mismo trabajo, con una muestra representativa a nivel nacional de más de 1.500 personas, la tendencia disposicional a experimentar asombro con frecuencia predijo mayor generosidad en un juego económico real, por encima de otras emociones positivas como la compasión o el orgullo.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: sentirse pequeño te hace pensar menos en ti',
+          paragraphs: [
+            'Los autores documentan que el asombro produce lo que llaman "pequeño yo": una sensación transitoria de que el propio individuo, sus preocupaciones y su estatus, ocupan un lugar diminuto frente a algo mucho más grande que uno mismo. Estadísticamente, ese sentimiento de pequeñez explicaba buena parte del efecto del asombro sobre la generosidad y la ayuda posterior.',
+            'La lectura no es que el asombro haga a la gente más generosa porque se sienten mejor: los autores comprobaron que el efecto no se explicaba solo por estar de mejor humor. Se explicaba específicamente por sentirse una parte pequeña de algo más grande, un desplazamiento momentáneo de atención lejos del propio ego que deja más espacio mental para notar y responder a las necesidades de otros.'
+          ]
+        }
+      ],
+      blockquote: { text: '«El asombro puede llevar a las personas a centrarse menos en sus propias necesidades individuales y a sentirse parte de algo más grande que ellas mismas.»', attribution: 'Paul K. Piff' },
+      aplicacion: 'Si buscas ese efecto fuera del laboratorio, no hace falta un viaje largo: un mirador, un cielo despejado de noche lejos de la ciudad o cualquier paisaje que te haga sentir pequeño durante un minuto parece bastar, según estos datos, para inclinar levemente la balanza hacia notar y ayudar a quien tienes cerca.'
     }
   ],
   redesSociales: [
@@ -2648,6 +2768,66 @@ const LIBRARY_ARTICLES = {
       ],
       blockquote: { text: '«Usar menos redes sociales de lo que harías habitualmente produce una reducción significativa tanto en depresión como en soledad.»', attribution: 'Melissa Hunt' },
       aplicacion: 'Si notas que tu ánimo empeora cuanto más tiempo pasas en redes, este estudio sugiere una prueba concreta y acotada: limita cada plataforma a 10 minutos al día durante tres semanas y compara cómo te sientes al final frente al inicio. No hace falta eliminar las redes por completo para notar la diferencia, según estos datos basta con reducir drásticamente el tiempo de exposición.'
+    },
+    {
+      id: 'rs-05',
+      title: 'Lo que pasó cuando enviaron un mensaje a 82 jóvenes cinco veces al día durante dos semanas',
+      summary: 'Un experimento con mensajes de texto aleatorios mostró que cuanto más usaban Facebook las personas en un momento dado, peor se sentían la próxima vez que se les preguntaba, un patrón que no aparecía con la interacción social directa.',
+      sourceUrl: 'https://doi.org/10.1371/journal.pone.0069841',
+      sourceLabel: 'Kross et al. (2013), PLOS ONE',
+      badge: 'Bienestar digital',
+      author: { name: 'Ethan Kross', university: 'University of Michigan', specialty: 'Psicología de la autorregulación emocional' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Ethan Kross y su equipo, de la Universidad de Michigan, querían resolver algo que las encuestas retrospectivas no pueden responder bien: si usar Facebook empeora el ánimo momento a momento, o si simplemente la gente que ya está de mal humor usa más Facebook. Para eso reclutaron a 82 jóvenes con smartphone y cuenta de Facebook y los siguieron durante dos semanas, en tiempo real, sin depender de lo que recordaran después.',
+      sections: [
+        {
+          subtitle: 'El experimento: un mensaje de texto cinco veces al día',
+          paragraphs: [
+            'Cinco veces al día, en momentos aleatorios entre las 10 de la mañana y la medianoche, los participantes recibían un mensaje de texto con un enlace a una breve encuesta: cuánto habían usado Facebook desde el último mensaje, cómo se sentían en ese momento, cuánto habían interactuado directamente con otras personas (cara a cara o por teléfono) y cuánto se preocupaban o sentían solos. Al final de las dos semanas también valoraron su satisfacción general con la vida.',
+            'El patrón fue consistente: cuanto más había usado Facebook una persona en el intervalo entre dos mensajes, peor decía sentirse en el mensaje siguiente. Y cuanto más había usado Facebook en conjunto a lo largo de las dos semanas, más había bajado su satisfacción con la vida al final del estudio. El efecto se sostenía después de controlar variables como el tamaño de la red de amistades, el apoyo social percibido o el nivel de depresión de partida.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: el problema no es hablar con gente, es mirar sin hablar',
+          paragraphs: [
+            'El dato que evita la lectura simplista de que las redes sociales son malas por definición es este: interactuar directamente con otras personas, incluida la interacción a través del propio Facebook (mensajes privados, comentarios dirigidos a alguien), no predijo ningún descenso del ánimo. De hecho, la interacción social directa predijo sentirse mejor con el tiempo. El malestar se asoció de forma específica al uso pasivo: desplazarse por publicaciones ajenas sin producir ni responder nada.',
+            'Kross lo interpreta como una forma de comparación social pasiva: consumir el resumen editado de las vidas de otras personas, sin el contrapeso de una interacción real que lo matice, deja a quien mira con una sensación de estar quedándose atrás. La red social no funciona como un sustituto del contacto humano. Funciona peor cuanto más se usa como sustituto en vez de como canal.'
+          ]
+        }
+      ],
+      blockquote: { text: '«En vez de mejorar el bienestar, tal y como sugiere su enorme popularidad, el uso de Facebook predice el efecto contrario: mina el bienestar momento a momento y con el paso del tiempo.»', attribution: 'Ethan Kross' },
+      aplicacion: 'Si notas que salir de Facebook o Instagram te deja con peor ánimo del que tenías al entrar, este estudio sugiere revisar no cuánto tiempo pasas ahí, sino qué haces mientras tanto: responder a alguien concreto o comentar algo con intención parece no tener el mismo coste que desplazarte sin interactuar durante el mismo rato.'
+    },
+    {
+      id: 'rs-06',
+      title: 'El experimento que demostró que no valoras una foto por lo que muestra, sino por cuántos likes ya tiene',
+      summary: 'Un estudio con resonancia magnética simuló Instagram y descubrió que los adolescentes daban "me gusta" a las fotos con más aprobación previa, incluso cuando mostraban conductas de riesgo, y que ese número activaba las mismas regiones cerebrales de recompensa que el dinero o la comida.',
+      sourceUrl: 'https://doi.org/10.1177/0956797616645673',
+      sourceLabel: 'Sherman, Payton, Hernandez, Greenfield & Dapretto (2016), Psychological Science',
+      badge: 'Influencia de pares',
+      author: { name: 'Lauren E. Sherman', university: 'University of California, Los Angeles', specialty: 'Neurociencia social del desarrollo adolescente' },
+      readingTime: '3 min',
+      date: '4 de agosto de 2026',
+      intro: 'Lauren Sherman y su equipo, de la Universidad de California en Los Ángeles, construyeron una versión simulada de Instagram para usar dentro de un escáner de resonancia magnética funcional. Su objetivo era medir, con precisión neuronal y no solo con autoinformes, qué le hace realmente al cerebro adolescente el número de "me gusta" que acompaña a una fotografía.',
+      sections: [
+        {
+          subtitle: 'El experimento: la misma foto, distinto número de likes',
+          paragraphs: [
+            'A 32 adolescentes de entre 13 y 18 años se les mostraron, dentro del escáner, fotografías (algunas propias, otras neutrales, algunas con contenido de riesgo como alcohol o cigarrillos) que llevaban asignado, sin que los participantes lo supieran, un número alto o bajo de "me gusta" manipulado por los investigadores. Los adolescentes podían decidir si daban like a cada foto o no.',
+            'El resultado conductual fue claro: los adolescentes daban like con mucha más frecuencia a las fotos que ya mostraban muchos likes que a las mismas fotos mostradas con pocos likes, y este patrón se mantenía igual para las fotos con contenido de riesgo. Ver fotos con muchos likes activó regiones cerebrales asociadas al procesamiento de recompensa, las mismas que se activan ante el dinero o la comida, con más intensidad que ver las mismas fotos con pocos likes.'
+          ]
+        },
+        {
+          subtitle: 'El mecanismo: la aprobación de otros redefine lo que parece deseable',
+          paragraphs: [
+            'El hallazgo no es solo que a los adolescentes les guste recibir aprobación, algo ya sabido. Es que el número de likes cambiaba el propio juicio sobre el contenido: una foto de alcohol con muchos likes se procesaba como más aceptable que la misma foto con pocos, medido tanto en la conducta de dar like como en la actividad de regiones cerebrales implicadas en el control cognitivo, que mostraban menor activación ante contenido de riesgo cuando ese contenido llevaba muchos likes.',
+            'Sherman lo enmarca como una forma moderna y cuantificada de la presión de grupo: antes, la aprobación de los pares era difusa y había que inferirla. Las redes sociales la convierten en un número visible, actualizado en tiempo real, y ese número parece capaz de anular parcialmente el juicio propio sobre qué contenido es o no es aceptable.'
+          ]
+        }
+      ],
+      blockquote: { text: '«Un simple número, el recuento de likes, es suficiente para alterar tanto el comportamiento como la respuesta neuronal de los adolescentes ante el contenido que ven.»', attribution: 'Lauren E. Sherman' },
+      aplicacion: 'Si eres madre, padre o educador de un adolescente, este estudio sugiere que hablar solo del contenido que publica ("esa foto no es apropiada") deja fuera la mitad del problema: la métrica social que acompaña a cada publicación pesa, medida en el propio cerebro, tanto o más que el contenido en sí.'
     }
   ]
 };

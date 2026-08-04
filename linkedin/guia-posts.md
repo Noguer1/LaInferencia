@@ -117,6 +117,12 @@ IDs de artículos publicados (referencia interna, para no repetir estudio ni án
 | Polarización de grupo (Myers & Bishop) | pol-06 | politica |
 | Exposición repetida a alimentos (Birch) | ali-05 | alimentacion |
 | Comfort food y soledad (Troisi & Gabriel) | ali-06 | alimentacion |
+| Gratitud diaria (Emmons & McCullough) | sm-06 | saludMental |
+| Foot-in-the-door / pie en la puerta (Freedman & Fraser) | mkt-06 | marketing |
+| Personalidad y estudiar en el extranjero (Zimmermann & Neyer) | via-05 | viajes |
+| Asombro y comportamiento prosocial (Piff) | via-06 | viajes |
+| Facebook y bienestar (Kross) | rs-05 | redesSociales |
+| El poder del like en adolescentes (Sherman) | rs-06 | redesSociales |
 
 ---
 
