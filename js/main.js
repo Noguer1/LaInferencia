@@ -4729,13 +4729,14 @@ const BATA_CATEGORY_LABELS = {
   'organizacional':    'Organizacional',
 };
 
+let _bataApplyFilter = null;
+
 function initBataFilter() {
   const grid = document.getElementById('docs-grid-2');
   if (!grid) return;
 
   const cards      = [...grid.querySelectorAll('.doc-card')];
   const categories = [...new Set(cards.map(c => c.dataset.category).filter(Boolean))];
-  if (categories.length < 2) return;
 
   const pillsWrap = document.createElement('div');
   pillsWrap.className = 'bata-filter-pills';
@@ -4748,16 +4749,102 @@ function initBataFilter() {
 
   grid.insertAdjacentElement('beforebegin', pillsWrap);
 
-  pillsWrap.addEventListener('click', e => {
-    const pill = e.target.closest('.bata-pill');
-    if (!pill) return;
-    const filter = pill.dataset.filter;
-    pillsWrap.querySelectorAll('.bata-pill').forEach(p => p.classList.toggle('active', p === pill));
+  function applyFilter(filter) {
+    pillsWrap.querySelectorAll('.bata-pill').forEach(p => p.classList.toggle('active', p.dataset.filter === filter));
     cards.forEach(card => {
       card.style.display = (filter === 'todos' || card.dataset.category === filter) ? '' : 'none';
     });
+  }
+  _bataApplyFilter = applyFilter;
+
+  pillsWrap.addEventListener('click', e => {
+    const pill = e.target.closest('.bata-pill');
+    if (!pill) return;
+    applyFilter(pill.dataset.filter);
   });
 }
+
+/* Tarjetas de sección: abren el listado filtrado en overlay */
+function initBataSecciones() {
+  const grid      = document.getElementById('docs-grid-2');
+  const tilesWrap = document.getElementById('bata-secciones');
+  if (!grid || !tilesWrap) return;
+
+  const cards  = [...grid.querySelectorAll('.doc-card')];
+  const counts = {};
+  cards.forEach(c => {
+    const cat = c.dataset.category;
+    if (cat) counts[cat] = (counts[cat] || 0) + 1;
+  });
+
+  const arrow = `<svg class="bata-seccion-tile-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>`;
+
+  tilesWrap.innerHTML = Object.entries(counts).map(([cat, n]) => `
+    <button class="bata-seccion-tile" data-cat="${cat}" aria-haspopup="dialog">
+      <span class="bata-seccion-tile-body">
+        <span class="bata-seccion-tile-titulo">${BATA_CATEGORY_LABELS[cat] || cat}</span>
+        <span class="bata-seccion-tile-count">${n} artículo${n === 1 ? '' : 's'}</span>
+      </span>
+      ${arrow}
+    </button>`).join('') + `
+    <button class="bata-seccion-tile bata-ver-todos" data-cat="todos" aria-haspopup="dialog">
+      <span class="bata-seccion-tile-body">
+        <span class="bata-seccion-tile-titulo">Ver todos</span>
+        <span class="bata-seccion-tile-count">${cards.length} artículos</span>
+      </span>
+      ${arrow}
+    </button>`;
+
+  tilesWrap.addEventListener('click', e => {
+    const tile = e.target.closest('.bata-seccion-tile');
+    if (!tile) return;
+    openBataModal(tile.dataset.cat);
+  });
+}
+
+/* Modal de listado: overlay con blur, igual que Explorar concepto */
+let _bataModalTrap = null, _bataModalTrigger = null;
+
+function openBataModal(cat, focusEl) {
+  const modal = document.getElementById('bata-lista-modal');
+  const title = document.getElementById('blm-titulo');
+  if (!modal) return;
+  if (_bataApplyFilter) _bataApplyFilter(cat || 'todos');
+  if (title) title.textContent = (cat && cat !== 'todos') ? (BATA_CATEGORY_LABELS[cat] || cat) : 'Todos los artículos';
+  _bataModalTrigger = document.activeElement;
+  modal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  _bataModalTrap = trapFocus(modal);
+  requestAnimationFrame(() => {
+    if (focusEl) focusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    else document.getElementById('bata-lista-modal-close')?.focus();
+  });
+}
+
+function closeBataModal() {
+  const modal = document.getElementById('bata-lista-modal');
+  if (!modal || modal.hidden) return;
+  modal.hidden = true;
+  document.body.style.overflow = '';
+  if (_bataModalTrap) { releaseFocus(modal, _bataModalTrap, _bataModalTrigger); _bataModalTrap = null; }
+  else if (_bataModalTrigger) _bataModalTrigger.focus();
+}
+window._LI_openBataModal = openBataModal;
+
+(function () {
+  const modal = document.getElementById('bata-lista-modal');
+  const closeBtn = document.getElementById('bata-lista-modal-close');
+  if (!modal) return;
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeBataModal);
+    closeBtn.addEventListener('touchstart', e => { e.preventDefault(); closeBataModal(); }, { passive: false });
+  }
+  modal.addEventListener('click', e => { if (e.target === modal) closeBataModal(); });
+  modal.addEventListener('touchstart', e => { if (e.target === modal) { e.preventDefault(); closeBataModal(); } }, { passive: false });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.hidden) closeBataModal();
+  });
+}());
 
 function initBataArticles() {
   const bataView  = document.getElementById('bata-article-view');
@@ -4769,6 +4856,7 @@ function initBataArticles() {
       const id  = btn.closest('[data-bata-id]').dataset.bataId;
       const art = BATA_ARTICLES.find(a => a.id === id);
       if (!art) return;
+      closeBataModal();
       bataView.innerHTML = renderBataFull(art);
       bataCards.style.display = 'none';
       bataView.style.display  = '';
@@ -4785,6 +4873,7 @@ function initBataArticles() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initBataFilter();
+  initBataSecciones();
   initBataArticles();
 
   /* Contador dinámico de artículos en stats bar */
@@ -4992,6 +5081,18 @@ function renderWeeklyTeaser(article) {
       <button class="wt-read-btn" id="weekly-read-btn">
         Leer el artículo
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>`;
+}
+
+function renderSidebarWeeklyTeaser(article) {
+  const { title } = article;
+  return `
+    <div class="sidebar-weekly-inner">
+      <p class="sw-title">${title}</p>
+      <button class="sw-read-btn" id="sidebar-week-read-btn">
+        Leer el artículo de la semana
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </button>
     </div>`;
 }
@@ -5310,6 +5411,20 @@ function initWeeklySection() {
     .filter(a => a.week <= currentWeek)
     .sort((a, b) => b.week - a.week);
 
+  if (available.length > 0) {
+    const sidebarCard = document.getElementById('sidebar-weekly-card');
+    if (sidebarCard) {
+      sidebarCard.innerHTML = renderSidebarWeeklyTeaser(available[0]);
+      const readBtn = document.getElementById('sidebar-week-read-btn');
+      if (readBtn) {
+        readBtn.addEventListener('click', () => {
+          document.querySelector('[data-tab="semana"]')?.click();
+          document.querySelector('.dashboard-center')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    }
+  }
+
   const footerStrip = document.getElementById('footer-libro-strip');
   const footerLink  = document.getElementById('footer-libro-strip-link');
   const featuredLibro = available.find(a => a.libroRelacionado);
@@ -5351,8 +5466,31 @@ function _syncHeroBalance() {
   const libContainer  = document.getElementById('biblioteca-container');
   const isHomeLibrary = activeTab === 'biblioteca' && (!libContainer || !libContainer.children.length);
   layout.classList.toggle('hero-balanced', isHomeLibrary);
+  requestAnimationFrame(_syncSidebarLeftHeight);
 }
 window._LI_syncHeroBalance = _syncHeroBalance;
+
+/* El alto de la columna izquierda (Semanal + Fuera de Bata) no debe
+   copiar el de la derecha (que puede ser más alta): debe terminar
+   justo donde termina `.cat-selector`, la cuadrícula de temáticas.
+   Se fija por JS en vez de por CSS grid stretch porque la derecha
+   puede ser más alta que la cuadrícula y el stretch de grid iguala
+   siempre a la fila más alta de las tres columnas. */
+function _syncSidebarLeftHeight() {
+  const layout = document.querySelector('.dashboard-layout');
+  const left   = document.querySelector('.sidebar-left');
+  const grid   = document.querySelector('.cat-selector');
+  if (!layout || !left || !grid) return;
+  if (!layout.classList.contains('hero-balanced') || window.innerWidth < 1101) {
+    left.style.height = '';
+    return;
+  }
+  const target = grid.getBoundingClientRect().bottom - left.getBoundingClientRect().top;
+  left.style.height = target > 0 ? target + 'px' : '';
+}
+window._LI_syncSidebarLeftHeight = _syncSidebarLeftHeight;
+window.addEventListener('resize', () => requestAnimationFrame(_syncSidebarLeftHeight), { passive: true });
+window.addEventListener('load', () => requestAnimationFrame(_syncSidebarLeftHeight));
 _syncHeroBalance();
 
 
@@ -5419,6 +5557,17 @@ _syncHeroBalance();
   }, { passive: true });
 
   initWeeklySection();
+}());
+
+
+/* ── SIDEBAR: TARJETA FUERA DE BATA ──────────────────────────── */
+(function () {
+  const btn = document.getElementById('sidebar-fdb-btn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    document.querySelector('[data-tab="repositorio"]')?.click();
+    document.querySelector('.dashboard-center')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }());
 
 
@@ -5517,10 +5666,12 @@ _syncHeroBalance();
       const desc     = descEl  ? descEl.textContent.trim()  : '';
       const badge    = badgeEl ? badgeEl.textContent.trim() : '';
       const dataText = card.dataset.text || '';
+      const isFeatured = card.classList.contains('doc-featured');
       idx.push({
-        type: 'doc',
+        type: isFeatured ? 'docFeatured' : 'doc',
         title,
         sub: 'Fuera de Bata · ' + badge,
+        cat: card.dataset.category || '',
         search: (title + ' ' + desc + ' ' + badge + ' ' + dataText).toLowerCase()
       });
     });
@@ -5547,13 +5698,15 @@ _syncHeroBalance();
       lib:    'Por Intereses',
       weekly: 'Artículo semanal',
       efecto: 'Efecto cognitivo',
-      doc:    'Fuera de Bata'
+      doc:    'Fuera de Bata',
+      docFeatured: 'Fuera de Bata'
     };
     const typeIcon  = {
       lib:    `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
       weekly: `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
       efecto: `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
-      doc:    `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`
+      doc:    `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+      docFeatured: `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`
     };
 
     panel.innerHTML = hits.map(h => `
@@ -5582,11 +5735,15 @@ _syncHeroBalance();
           setTimeout(() => { if (window._LI_renderWeekly) window._LI_renderWeekly(parseInt(week)); }, 80);
         } else if (type === 'efecto') {
           document.querySelector(`.efecto-card[data-efecto="${id}"]`)?.click();
+        } else if (type === 'docFeatured') {
+          document.querySelector('.tab-btn[data-tab="repositorio"]')?.click();
+          setTimeout(() => {
+            document.getElementById('documentos-list')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 80);
         } else if (type === 'doc') {
           document.querySelector('.tab-btn[data-tab="repositorio"]')?.click();
           setTimeout(() => {
-            const lista = document.getElementById('documentos-list');
-            if (lista) lista.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (window._LI_openBataModal) window._LI_openBataModal(cat);
           }, 80);
         }
       };
@@ -8897,230 +9054,6 @@ const GLOSARIO = [
   if (window._LI_pendingGlosario) {
     setTimeout(() => openGlosario(window._LI_pendingGlosario), 600);
   }
-}());
-
-
-/* ── CONCEPTO DE LA SEMANA ───────────────────────────────────── */
-const CONCEPTOS_SEMANA = [
-  {
-    week: 34,
-    termino: 'Efecto Zeigarnik',
-    origen: 'Bluma Zeigarnik, 1927',
-    definicion: 'Recordamos mejor las tareas interrumpidas que las que terminamos. El cerebro deja abierta una tensión mental hasta que la tarea se cierra, y esa tensión sigue empujando el pensamiento hacia atrás aunque quieras ocuparte de otra cosa.',
-    definicionFull: 'El efecto Zeigarnik describe la tendencia a recordar con mayor claridad las tareas inconclusas que las completadas. Bluma Zeigarnik, psicóloga rusa formada en la escuela de la Gestalt, lo formuló tras observar a un camarero de Viena que recordaba con precisión pedidos complejos mientras estaban pendientes de cobro, pero los olvidaba en cuanto la mesa pagaba. Esa observación cotidiana se convirtió en una de las líneas de investigación más citadas sobre memoria y motivación del siglo XX.',
-    experimento: 'Zeigarnik pidió a un grupo de participantes que resolviera entre 18 y 22 tareas sencillas: puzzles, cuentas, pequeños trabajos manuales. En la mitad de los casos interrumpía la tarea antes de que la terminaran, con una excusa cualquiera. Después preguntó qué tareas recordaban. Las interrumpidas se recordaron entre un 90% y un 130% mejor que las completadas, según la versión del experimento. El dato sorprendió incluso a la propia autora, que esperaba que el cierre reforzara el recuerdo, y ocurrió justo lo opuesto.',
-    mecanismo: 'Cuando empiezas una tarea, el cerebro activa una representación del objetivo que permanece encendida hasta que detecta que se ha cumplido. Esa activación funciona como una alarma de fondo en la memoria de trabajo y consume atención aunque no lo notes. Terminar la tarea apaga la alarma. Interrumpirla la deja sonando, y el contenido asociado se vuelve más accesible al recuerdo porque el sistema lo sigue tratando como asunto abierto.',
-    reconoceras: [
-      'Pensar en un correo sin responder en mitad de la ducha, cuando llevas horas sin verlo',
-      'Recordar con detalle el capítulo de una serie que dejaste a media escena, y olvidar los que terminaste hace un mes',
-      'Series y videojuegos que cortan justo antes del clímax: el cliffhanger explota directamente este efecto',
-      'Notar que una discusión sin resolver con alguien te sigue rondando la cabeza días después, mucho más que las que sí se cerraron'
-    ],
-    aplicacion: 'No hace falta terminar una tarea para apagar la alarma mental que genera. Un estudio posterior de Baumeister y Masicampo (2011) mostró que basta con escribir un plan concreto de cuándo y cómo se va a completar para que la mente deje de rumiarla, aunque siga sin estar hecha. Si algo pendiente te está robando concentración, no lo termines a la fuerza. Escribe el siguiente paso exacto y la fecha: el cerebro cierra la alarma con la intención, no solo con el resultado.'
-  },
-  {
-    week: 23,
-    termino: 'Efecto Pigmalión',
-    origen: 'Rosenthal & Jacobson, 1968',
-    definicion: 'Las expectativas que otros tienen sobre nosotros moldean nuestro rendimiento real. El trato diferencial generado por esas expectativas produce cambios objetivamente medibles, incluso cuando las expectativas son completamente falsas.',
-    definicionFull: 'El efecto Pigmalión es el fenómeno por el que las expectativas de una persona sobre otra se convierten en profecías autocumplidas. El trato diferencial (inconsciente) que genera la expectativa produce cambios reales en el comportamiento y el rendimiento de quien es evaluado. La denominación hace referencia al mito griego de Pigmalión, el escultor enamorado de su propia estatua, que cobró vida. El efecto no requiere intención ni engaño: basta con que una expectativa exista para que comience a materializarse a través del comportamiento cotidiano del que evalúa.',
-    experimento: 'Rosenthal y Jacobson informaron a maestros de primaria que ciertos alumnos (elegidos completamente al azar) habían obtenido puntuaciones excepcionales en un test de "potencial de crecimiento intelectual". El test era ficticio. Al cabo de un año, esos alumnos habían mejorado significativamente más en CI medido que sus compañeros de control. Los maestros no habían recibido ninguna instrucción adicional: la diferencia estaba en cómo trataban a los alumnos etiquetados como prometedores. Les prestaban más atención, daban feedback más elaborado, proponían más desafíos y toleraban mejor sus dudas. No por intención consciente, sino por expectativa inconsciente.',
-    mecanismo: 'Las expectativas operan a través de cuatro canales simultáneos: el clima emocional (más calidez y apoyo hacia quien se percibe como prometedor), el feedback (más detallado y constructivo), la cantidad de input (material más estimulante y desafiante), y las oportunidades de respuesta (más tiempo para responder, mayor tolerancia al error). Estos cuatro canales, sumados y sostenidos en el tiempo, producen diferencias de rendimiento reales que no existían antes de que la expectativa fuera formulada.',
-    reconoceras: [
-      'Un jefe que etiqueta a un empleado como "promedio" le asigna tareas rutinarias, confirma su propia predicción y nunca descubre el potencial real',
-      'Los hijos mayores sistemáticamente superan a los menores en pruebas estandarizadas: los padres les dedican más atención antes de que lleguen los hermanos',
-      'La diferencia entre un entrenador que te dice "llegarás lejos" y uno que te descarta cambia cómo te tratan mucho antes de que cambies tú',
-      'Los sesgos implícitos en procesos de selección laboral generan los resultados que los seleccionadores esperaban: los candidatos tratados como mejores acaban siendo mejores en la entrevista'
-    ],
-    aplicacion: 'Tus expectativas sobre las personas a tu cargo no son predicciones neutrales: son acciones que moldean el resultado antes de que ocurra. Si crees que alguien tiene potencial y lo tratas de acuerdo con esa creencia, puede que no estés observando algo que ya existe. Puede que lo estés creando. Pregúntate qué tipo de expectativas estás comunicando con tu comportamiento cotidiano, y a quién.'
-  },
-  {
-    week: 22,
-    termino: 'Disonancia cognitiva',
-    origen: 'Leon Festinger, 1957',
-    definicion: 'El malestar mental que surge al sostener dos pensamientos contradictorios o cuando nuestras acciones contradicen lo que creemos. El cerebro trabaja para eliminar esa tensión, generalmente cambiando la creencia más cómoda, no la más correcta.',
-    definicionFull: 'La disonancia cognitiva es el estado de tensión psicológica que experimenta una persona al mantener simultáneamente dos ideas, creencias o actitudes que se contradicen, o cuando su conducta entra en conflicto con lo que cree o valora. Festinger propuso que este malestar no es una experiencia opcional: es un mecanismo automático del sistema cognitivo que genera presión hacia la resolución. Lo perturbador no es solo que ocurra, sino cómo el cerebro elige resolverla.',
-    experimento: 'En 1959, Festinger y Carlsmith pagaron a participantes 1 o 20 dólares para mentirle a un desconocido diciéndole que una tarea aburrida había sido fascinante. Después preguntaron a los participantes cuánto les había gustado la tarea. Los que recibieron 1 dólar dijeron que había sido significativamente más interesante que los que recibieron 20. La lógica es contraintuitiva: quienes cobraron más podían justificar la mentira con el dinero; quienes cobraron poco necesitaban creer que la tarea era buena para sentirse coherentes consigo mismos.',
-    mecanismo: 'El cerebro trata la coherencia interna como señal de salud cognitiva. Cuando detecta una contradicción, activa el mismo sistema de alerta que usa ante amenazas externas. Para reducir ese malestar tiene tres opciones: cambiar una de las creencias, añadir una creencia que justifique la inconsistencia, o minimizar la importancia de la contradicción. La primera opción es la más honesta pero exige más esfuerzo. Las otras dos (racionalización y trivialización) son las que el cerebro elige por defecto.',
-    reconoceras: [
-      'Comprar algo que no necesitabas y convencerte después de que era una inversión necesaria',
-      'Votar a alguien y recordar selectivamente solo sus aciertos, ignorando sistemáticamente sus fracasos',
-      'Seguir en una relación que no funciona y decirte que "en realidad no está tan mal"',
-      'El fumador que concluye que "algo te va a matar de todas formas" en lugar de afrontar la contradicción real'
-    ],
-    aplicacion: 'La próxima vez que notes que estás construyendo argumentos para justificar una decisión que ya tomaste, detente. Eso es disonancia resuelta de la forma más cómoda, no más honesta. Hazte esta pregunta: "¿Cambiaría esta decisión si no la hubiera tomado ya?" Si la respuesta no es un no claro, probablemente estás racionalizando, no razonando.'
-  },
-  {
-    week: 21,
-    termino: 'Heurística de disponibilidad',
-    origen: 'Kahneman & Tversky, 1973',
-    definicion: 'Juzgamos la frecuencia o probabilidad de algo según la facilidad con que ejemplos nos vienen a la mente. Lo que aparece más en las noticias parece más probable, independientemente de las estadísticas reales.',
-    definicionFull: 'La heurística de disponibilidad es el atajo mental por el que evaluamos la probabilidad o frecuencia de un evento basándonos en la facilidad con que podemos evocar ejemplos. Si recordamos fácilmente instancias de algo, concluimos que es frecuente. Si nos cuesta, concluimos que es raro. El problema es que la facilidad de recuerdo depende de la intensidad emocional, la cobertura mediática y la proximidad temporal, no solo de la frecuencia real.',
-    experimento: 'Tversky y Kahneman pidieron estimar cuál era más frecuente en inglés: palabras que empiezan por "r" o palabras con "r" como tercera letra. La mayoría eligió las que empiezan por "r". En realidad, hay casi el doble de palabras con "r" en tercera posición. Las palabras que empiezan por una letra se recuperan más fácilmente, así que parecen más numerosas. La misma ilusión opera a escala real con aviones, tiburones y crímenes violentos.',
-    mecanismo: 'El cerebro usa la facilidad de recuperación como señal de frecuencia porque, en entornos con información limitada y estable, esa correlación era válida: lo que habías visto muchas veces era realmente más común. El problema surge en un mundo de medios que amplifican lo raro y lo dramático. Un accidente de avión recibe cobertura en todo el mundo; miles de accidentes de tráfico ese mismo día, ninguna. El cerebro registra la cobertura, no la estadística.',
-    reconoceras: [
-      'Creer que los accidentes de avión matan a más gente que las caídas en el hogar (las caídas causan 15 veces más muertes)',
-      'Pensar que la criminalidad está en máximos históricos cuando está en mínimos, por la cobertura mediática de cada crimen',
-      'Sobreestimar la probabilidad de un atentado terrorista frente a la de una enfermedad cardiovascular',
-      'Juzgar que el mercado inmobiliario "siempre sube" porque solo recuerdas los períodos de bonanza que se celebraron públicamente'
-    ],
-    aplicacion: 'Antes de estimar un riesgo o tomar una decisión importante, pregúntate: "¿Me viene fácilmente a la mente porque es realmente frecuente, o porque fue emocionalmente impactante o mediáticamente amplificado?" Son preguntas distintas con respuestas distintas. Busca las estadísticas reales antes de dejarte guiar por la primera impresión.'
-  },
-  {
-    week: 20,
-    termino: 'Autodeterminación',
-    origen: 'Deci & Ryan, 1985',
-    definicion: 'Las personas necesitan tres cosas para estar genuinamente motivadas: sentir que eligen (autonomía), que mejoran (competencia) y que pertenecen (vinculación). Privar de cualquiera de las tres destruye la motivación intrínseca, aunque el salario sea alto.',
-    definicionFull: 'La Teoría de la Autodeterminación propone que los seres humanos tienen tres necesidades psicológicas básicas y universales: la autonomía (sentir que uno es el origen de sus propias acciones), la competencia (sentir que uno es efectivo en su entorno y mejora) y la vinculación (sentir conexión con los demás). Cuando estas tres necesidades están satisfechas, las personas experimentan motivación intrínseca, bienestar y desarrollo psicológico. Cuando están frustradas, aparecen la desmotivación, el malestar y la reducción de la calidad del trabajo.',
-    experimento: 'Deci reclutó a universitarios para resolver puzzles interesantes sin recompensa. En la segunda sesión, pagó a la mitad por cada puzzle resuelto. En la tercera, eliminó el pago. Los que habían sido pagados pasaron significativamente menos tiempo con los puzzles que antes de que existiera la recompensa. El pago externo había sustituido la motivación interna, y al retirarse, la motivación no regresó a su nivel original. Este resultado fue confirmado por un metaanálisis de 128 estudios.',
-    mecanismo: 'Cuando una recompensa externa controla el comportamiento, la persona desplaza la causa de su acción de "lo hago porque me interesa" a "lo hago por la recompensa". La actividad deja de ser un fin y se convierte en un medio. Y los medios no sostienen el comportamiento cuando la recompensa desaparece. Las notas escolares, los bonus laborales y las recompensas tangibles condicionadas al rendimiento operan exactamente así: pueden incrementar la conducta a corto plazo mientras destruyen la motivación a largo plazo.',
-    reconoceras: [
-      'Un trabajador que hacía horas extra voluntarias deja de hacerlas en cuanto empiezan a pagárselas: ahora "es una obligación"',
-      'Un niño que leía por placer pierde el hábito en verano cuando no hay deberes que lo obliguen: "leer" se había convertido en una tarea',
-      'Sentirte menos dueño de tus decisiones cuando tu jefe te supervisa de cerca, aunque hagas exactamente lo mismo que harías solo',
-      'Preferir un trabajo con menos dinero pero donde sientes que tu trabajo importa y tienes control sobre cómo lo realizas'
-    ],
-    aplicacion: 'Antes de introducir incentivos externos en una actividad que ya genera motivación intrínseca, considera si el beneficio a corto plazo merece el coste a largo plazo. El reconocimiento no esperado ("lo que hiciste hoy fue excelente porque...") preserva la motivación mejor que el incentivo contingente ("si lo haces bien, te doy X"). La diferencia es si el control percibido se mantiene interno o se externaliza.'
-  },
-  {
-    week: 19,
-    termino: 'Reconsolidación mnémica',
-    origen: 'Nader, Schafe & LeDoux, 2000',
-    definicion: 'Cada vez que recuperamos un recuerdo, este vuelve a ser vulnerable a modificaciones durante varias horas antes de consolidarse de nuevo. La memoria no es un archivo: es un documento en edición permanente que se reescribe cada vez que se abre.',
-    definicionFull: 'La reconsolidación mnémica es el proceso por el que un recuerdo, al ser recuperado de la memoria a largo plazo, vuelve a un estado lábil durante un período de varias horas, antes de consolidarse de nuevo. Esto implica que cada acto de recordar es también un acto de reescritura: el recuerdo se vuelve a almacenar integrando elementos del contexto presente. Las implicaciones son profundas tanto para la comprensión del testimonio judicial como para el tratamiento clínico del trauma.',
-    experimento: 'Nader, Schafe y LeDoux entrenaron a ratas en un condicionamiento de miedo: un sonido seguido de una descarga. Al día siguiente, reactivaron el recuerdo del miedo haciendo sonar el tono solo. Inmediatamente después, bloquearon la síntesis de proteínas en la amígdala (necesaria para que el recuerdo se reconsolidara). Las ratas perdieron el miedo de forma permanente, aunque habían tardado días en aprenderlo. El hallazgo demostró que el recuerdo reactivado vuelve a ser modificable, y que esa ventana puede usarse para extinguirlo.',
-    mecanismo: 'Cuando recuperamos un recuerdo, se reactiva la huella mnémica original y se integran en ella el estado emocional actual, las preguntas que alguien nos hace, y lo que sabemos ahora que no sabíamos entonces. Después, el recuerdo se reconsolida incorporando esas modificaciones. El resultado es que los recuerdos más evocados son los más reescritos. La memoria episódica de larga duración no es un registro fiel del pasado: es una reconstrucción influida por el presente.',
-    reconoceras: [
-      'Recordar la misma discusión de forma diferente según cómo te sientes hoy al evocarla',
-      'Que tus recuerdos de la infancia difieran significativamente de los de tus hermanos que vivieron los mismos eventos',
-      'Que un testimonio judicial sea más fiable si se toma inmediatamente después del evento que semanas después de múltiples interrogatorios',
-      'Que las preguntas de un terapeuta sobre el pasado puedan, sin quererlo, modificar los recuerdos que el paciente evoca en cada sesión'
-    ],
-    aplicacion: 'Antes de una conversación difícil sobre un hecho del pasado, escribe tu versión sin consultarla con la otra persona. Compárala después. La diferencia entre ambas versiones no refleja quién miente: refleja cómo cada recuerdo ha sido reescrito por los contextos distintos en que cada persona lo ha evocado. Eso es reconsolidación, no mala fe.'
-  },
-  {
-    week: 18,
-    termino: 'Priming',
-    origen: 'Meyer & Schvaneveldt, 1971 · Bargh et al., 1996',
-    definicion: 'La exposición a un estímulo modifica (sin que lo notemos) cómo respondemos a estímulos posteriores relacionados. Palabras, imágenes y contextos activan esquemas que dirigen el comportamiento siguiente antes de que ningún proceso consciente intervenga.',
-    definicionFull: 'El priming es el fenómeno por el que la exposición a un estímulo (el prime) influye en la respuesta a estímulos posteriores relacionados, sin que el sujeto sea consciente de esa influencia. El prime puede ser perceptivo (una palabra activa otras semánticamente relacionadas), conceptual (una idea activa conceptos asociados) o comportamental (un concepto activa conductas relacionadas con él). El efecto opera de forma automática, antes de cualquier procesamiento consciente.',
-    experimento: 'John Bargh (1996) hizo que participantes descodificaran frases con palabras relacionadas con la vejez (arrugas, jubilación, Florida, olvido). Al salir del laboratorio, caminaban significativamente más despacio que los que habían descodificado frases neutras. Nadie los había instruido sobre la velocidad de paso; ni siquiera sabían que eso se medía. El concepto de "ancianidad" había activado el esquema de comportamiento asociado sin que mediara ninguna intención consciente.',
-    mecanismo: 'El cerebro almacena conceptos en redes semánticas: nodos vinculados según la frecuencia con que han aparecido juntos en la experiencia. Cuando se activa un nodo, la activación se propaga por los nodos conectados, bajando el umbral de activación de conductas y percepciones relacionadas. El sujeto no experimenta esta propagación: solo experimenta sus efectos en las respuestas posteriores.',
-    reconoceras: [
-      'Que el ambiente elegante de una tienda de lujo haga el precio parecer menos importante antes de que lo veas',
-      'Que estudiar rodeado de objetos relacionados con el trabajo (libros, escritorio) genere más concentración que hacerlo en el sofá',
-      'Que ver un thriller antes de dormir haga más probable que interpretes ruidos nocturnos normales como amenazas',
-      'Que el diseño de una web o aplicación (colores, palabras, imágenes) active disposiciones emocionales antes de que leas el mensaje principal'
-    ],
-    aplicacion: 'El entorno en el que tomas tus decisiones importantes no es neutral: está primando tu pensamiento antes de que lo notes. Si necesitas generar ideas creativas, no trabajes en un espacio caótico. Si necesitas tomar decisiones financieras importantes, no lo hagas mientras consumes publicidad. Diseña el contexto con la misma atención con que diseñas el contenido de tu trabajo.'
-  },
-  {
-    week: 17,
-    termino: 'Estado de Flujo',
-    origen: 'Mihaly Csikszentmihalyi, 1975',
-    definicion: 'Estado de concentración total donde el yo desaparece, el tiempo se distorsiona y la tarea fluye sin esfuerzo consciente. Ocurre exactamente cuando desafío y habilidad son ambos altos y están perfectamente equilibrados.',
-    definicionFull: 'El estado de flujo es una forma de experiencia psicológica óptima caracterizada por concentración intensa, fusión de la acción y la consciencia, pérdida de la noción del tiempo y de la autoconsciencia, sensación de control, y motivación intrínseca sostenida por el proceso en sí mismo. Csikszentmihalyi lo identificó tras entrevistar durante años a cirujanos, escaladores, músicos y ajedrecistas que describían sus mejores momentos con un vocabulario sorprendentemente convergente, independientemente de la cultura y la actividad.',
-    experimento: 'Csikszentmihalyi desarrolló el Muestreo de Experiencias: daba bippers a participantes que sonaban a horas aleatorias, en las que debían anotar qué hacían y cómo se sentían. Analizando miles de registros, identificó que los estados de máximo bienestar y rendimiento coincidían con situaciones donde el nivel de desafío era alto y exactamente calibrado al nivel de habilidad. Demasiado fácil: aburrimiento. Demasiado difícil: ansiedad. En el canal entre ambos, con ambos elevados: flujo.',
-    mecanismo: 'Los estudios de neuroimagen muestran que el flujo se asocia con hipofrontalidad transitoria: una reducción de la actividad en la corteza prefrontal dorsolateral, la región responsable de la autoconsciencia y la autocrítica. Al desconectarse parcialmente ese sistema, los recursos cognitivos liberados se destinan íntegramente a la tarea. El resultado es mayor eficiencia de procesamiento, menos ruido interno, y mayor rendimiento. Simultáneamente, el sistema de recompensa libera dopamina y norepinefrina, haciendo la experiencia intrínsecamente gratificante.',
-    reconoceras: [
-      'Mirar el reloj después de lo que te pareció una hora y descubrir que han pasado cuatro',
-      'Estar tan absorbido en un problema difícil que olvidas comer, aunque habitualmente pienses mucho en la comida',
-      'La sensación específica de "no quiero que esto acabe" cuando tocas un instrumento o escribes algo que fluye',
-      'Que los videojuegos más adictivos son exactamente los que calibran automáticamente la dificultad a tu nivel: nunca demasiado fáciles, nunca imposibles'
-    ],
-    aplicacion: 'Para diseñar flujo deliberadamente: define un objetivo claro y específico para la sesión (no "trabajar en X", sino "completar la sección Y"); asegúrate de que la tarea supere ligeramente tu zona de confort actual sin ser imposible; elimina todas las interrupciones durante al menos 90 minutos. Las notificaciones no son distracciones menores: son el mecanismo exacto que imposibilita el flujo, que requiere acumulación de atención sostenida para activarse.'
-  }
-];
-
-(function () {
-  const block = document.getElementById('concepto-widget-block');
-  if (!block) return;
-
-  /* ── Calcular semana actual ── */
-  const week = (function () {
-    const d   = new Date();
-    const day = d.getDay() || 7;
-    d.setDate(d.getDate() + 4 - day);
-    const y   = new Date(d.getFullYear(), 0, 1);
-    return Math.ceil((((d - y) / 86400000) + 1) / 7);
-  }());
-
-  const concepto = CONCEPTOS_SEMANA.find(c => c.week === week)
-    || CONCEPTOS_SEMANA[0];
-
-  /* ── Rellenar widget compacto ── */
-  const termEl   = document.getElementById('concepto-termino');
-  const origenEl = document.getElementById('concepto-origen');
-  const defEl    = document.getElementById('concepto-def');
-
-  if (termEl)   termEl.textContent   = concepto.termino;
-  if (origenEl) origenEl.textContent = concepto.origen;
-  if (defEl)    defEl.textContent    = concepto.definicion;
-
-  /* ── Modal ── */
-  const modal       = document.getElementById('concepto-modal');
-  const closeBtn    = document.getElementById('concepto-modal-close');
-  const abrirBtn    = document.getElementById('concepto-abrir-btn');
-  let conceptoTrap  = null;
-
-  function openModal() {
-    if (!modal) return;
-    const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text || ''; };
-
-    set('cm-termino',    concepto.termino);
-    set('cm-origen',     concepto.origen);
-    set('cm-def',        concepto.definicionFull || concepto.definicion);
-    set('cm-experimento', concepto.experimento || '');
-    set('cm-mecanismo',  concepto.mecanismo || '');
-    set('cm-aplicacion', concepto.aplicacion || '');
-
-    /* Lista "Lo reconocerás en" */
-    const ul = document.getElementById('cm-reconoceras');
-    if (ul) {
-      ul.innerHTML = '';
-      (concepto.reconoceras || []).forEach(txt => {
-        const li = document.createElement('li');
-        li.textContent = txt;
-        ul.appendChild(li);
-      });
-    }
-
-    /* Ocultar secciones vacías */
-    const secExp = modal.querySelector('.concepto-modal-section--exp');
-    const secMec = modal.querySelector('.concepto-modal-section--mec');
-    const secRec = modal.querySelector('.concepto-modal-section--reco');
-    if (secExp) secExp.hidden = !concepto.experimento;
-    if (secMec) secMec.hidden = !concepto.mecanismo;
-    if (secRec) secRec.hidden = !(concepto.reconoceras && concepto.reconoceras.length);
-
-    modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    conceptoTrap = trapFocus(modal);
-    requestAnimationFrame(() => closeBtn && closeBtn.focus());
-  }
-
-  function closeModal() {
-    if (!modal) return;
-    modal.hidden = true;
-    document.body.style.overflow = '';
-    if (conceptoTrap) { releaseFocus(modal, conceptoTrap, abrirBtn); conceptoTrap = null; }
-    else if (abrirBtn) abrirBtn.focus();
-  }
-
-  if (abrirBtn) abrirBtn.addEventListener('click', openModal);
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-    closeBtn.addEventListener('touchstart', e => { e.preventDefault(); closeModal(); }, { passive: false });
-  }
-
-  if (modal) {
-    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-    modal.addEventListener('touchstart', e => { if (e.target === modal) { e.preventDefault(); closeModal(); } }, { passive: false });
-  }
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal && !modal.hidden) closeModal();
-  });
 }());
 
 

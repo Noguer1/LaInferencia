@@ -110,11 +110,15 @@ Categorías actuales: Economía (eco-01, eco-02…), Sesgos, otras.
 ### Filtrado por intereses
 Botones de categoría que filtran `LIBRARY_ARTICLES`. La sección "Tus Favoritos" existe en JS (`renderFavSection()` busca `#favoritos-section`) pero está desactivada en HTML. 15 categorías (`.cat-btn`, grid de 5 columnas): las 12 originales más Marketing, Viajes y Redes Sociales (añadidas julio 2026, artículos reales con cita, DOI y autor verificados). Desde agosto 2026 las 15 categorías generan páginas estáticas y entran en el sitemap (`CAT_SLUGS`/`CAT_LABELS`/`CAT_DESCRIPTIONS` en `generate-pages.js`). Si `LIBRARY_ARTICLES[cat]` está vacío para alguna categoría futura, `showCards()` muestra un mensaje "Todavía no hay artículos..." en vez de la cuadrícula, en lugar de romper.
 
-### Sidebar izquierdo — Radar de Mitos
-Acordeón colapsable. Toggle: `#mitos-toggle-btn`, contenido: `#mitos-cards-wrap.accordion-content`.
+### Sidebar izquierdo — Artículo de la Semana + Fuera de Bata
+Desde agosto 2026, dos tarjetas venden las secciones que dejaron de tener pestaña visible (ver "Tab-bar simplificado" abajo):
+- **`.sidebar-weekly-card`** (`#sidebar-weekly-card`): rellenada por JS. `renderSidebarWeeklyTeaser(article)` en `main.js` genera una versión compacta del teaser semanal (badge, título recortado con `-webkit-line-clamp`, autor, extracto ~100 caracteres, botón `#sidebar-week-read-btn`). Se invoca desde `initWeeklySection()` con `available[0]` (el artículo destacado de la semana). El botón activa `[data-tab="semana"]` y hace scroll suave a `.dashboard-center`.
+- **`.sidebar-fdb-card`**: HTML estático (sin JS de renderizado), vende Fuera de Bata con un resumen corto y el botón `#sidebar-fdb-btn`, que activa `[data-tab="repositorio"]` y también hace scroll a `.dashboard-center`. Listener en su propia IIFE en `main.js`.
 
-### Sidebar izquierdo — ¿Cuánto te manipula tu cerebro?
-Sección colapsable (`exp-sidebar-btn`). Estilo: gradiente + borde izquierdo azul.
+Concepto de la Semana (widget + modal + array `CONCEPTOS_SEMANA`) se eliminó por completo en agosto 2026. Radar de Mitos y el test cognitivo "¿Cuánto te manipula tu cerebro?" ya se habían eliminado antes (menos ruido, foco en monetización vía Audible).
+
+### Tab-bar simplificado (agosto 2026)
+"Por Intereses" es ahora la experiencia central de la home en escritorio. Las pestañas "Fuera de Bata" (`#tab-repositorio`) y "El Artículo de la Semana" (`#tab-semana`) siguen en el DOM (con `aria-hidden="true"`, `tabindex="-1"` y la clase `.tab-btn--hidden` que las oculta visualmente) porque más de 10 sitios en `main.js` navegan a ellas vía `document.querySelector('[data-tab="semana|repositorio"]')?.click()` (deep-linking, links del footer, redirecciones tras quizzes, las dos tarjetas del sidebar izquierdo). El contenedor `.tab-bar` lleva la clase `.tab-bar--single` cuando solo queda un botón visible: pierde el fondo/borde de selector y el `.tab-pill` deslizante, y pasa a verse como una etiqueta simple, no como una pestaña "seleccionable entre varias".
 
 ### Sidebar derecho — Vista previa de efectos
 Desde julio 2026 ya no es un acordeón: es una tarjeta fija (`.efectos-preview-card`) con 3 efectos de muestra (`#efectos-list`) y un botón "Ver más" (`#efectos-ver-mas-btn`) que abre el modal de pantalla completa con los 18 efectos (`#efectos-lista-modal`, ya existente). Los otros 15 efectos que no se muestran en la tarjeta viven ocultos en `#efectos-list-full` (`hidden`), solo como fuente de datos para ese modal — `buildListaModal()` en `main.js` clona tarjetas de ambos contenedores.
@@ -123,13 +127,8 @@ Desde julio 2026 ya no es un acordeón: es una tarjeta fija (`.efectos-preview-c
 En la vista de inicio de "Por Intereses" (sin categoría elegida), `.dashboard-layout` recibe la clase `hero-balanced` vía `_syncHeroBalance()` en `main.js` (expuesta como `window._LI_syncHeroBalance`, se llama tras cambiar de pestaña y al final de `showCards()`). Con esa clase, en ≥1101px, `align-items` pasa a `stretch`, pero solo la columna **derecha** lo aprovecha: `.sidebar-right` se estira y la tarjeta de efectos empuja su botón "Ver más" abajo con `margin-top:auto`, terminando justo donde termina la izquierda (queda contenido dentro de una tarjeta con borde, no se ve como hueco). El **centro** hace lo contrario a propósito: `.dashboard-center` lleva `align-self:start` para NO estirarse, y la cuadrícula de temáticas (`.cat-selector`) mantiene `row-gap`/`column-gap` fijos sin `align-content`/`justify-content`/`grid-template-rows` en fracciones — o sea, alto natural y compacto, igual que la izquierda. Como consecuencia, el centro normalmente queda algo más corto que los laterales (hueco moderado debajo, sin filas separadas artificialmente): es la solución pedida tras probar que repartir las filas para llenar toda la altura (`space-between`/`1fr`) separaba demasiado las tarjetas. En cuanto se elige una categoría o se cambia de pestaña, la clase se quita y las tres columnas vuelven a su alto natural (`align-items:start`, comportamiento de siempre).
 
 ### Progress tracker (sidebar derecho)
-- **Mitos desmentidos** — barra `#pt-mitos-bar` / contador `#pt-mitos-count`
-- **Pruebas realizadas** — barra `#pt-pruebas-bar` / contador `#pt-pruebas-count` (0/8)
-- Cada respuesta en el test cognitivo llama `window._LI_incrementPrueba()`
+- Artículos leídos, semanales leídos, efectos explorados, quizzes completados, desafíos aceptados
 - Persiste en localStorage
-
-### Test cognitivo (hero)
-Botón "Test cognitivo" en sección hero. Oculto en móvil (`display: none !important` en ≤680px). Llama `_LI_incrementPrueba()` al responder.
 
 ### Sistema de temas
 6 temas: claro (default), dark-base, naranja, tormenta, cosmos, carmesi. Guardados en localStorage, aplicados vía `data-theme` en `<html>`.
@@ -222,7 +221,7 @@ Tres `radial-gradient` superpuestos sobre #F7F9FF. Definidos en `#bg-layer` (div
 - Animaciones CSS solo con `transform` u `opacity` — nunca con `filter` animado (fuerza rasterización CPU por frame)
 
 ### Responsive
-Breakpoint principal: **≤680px**. Orden grid móvil: `"center" "right" "left"` (Tu Progreso + Lista Efectos antes que Test + Mitos).
+Breakpoint principal: **≤680px**. Orden grid móvil: `"center" "right" "left"` (Tu Progreso + Lista Efectos antes que las tarjetas Artículo de la Semana / Fuera de Bata del sidebar izquierdo).
 
 ---
 

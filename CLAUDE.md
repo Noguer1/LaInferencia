@@ -42,7 +42,8 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.com
 | localStorage para progreso y tema | Sin autenticación — datos del usuario en su propio dispositivo |
 | `lsSet`/`lsGet` con try/catch | Modo incógnito lanza excepciones en algunos browsers |
 | Acordeón de Efectos solo en ≤680px | Desktop tiene espacio; colapsar allí no aporta |
-| Orden grid móvil `"center" "right" "left"` | Tu Progreso + Lista Efectos más útiles que Test + Mitos en primer scroll |
+| Orden grid móvil `"center" "right" "left"` | Tu Progreso + Lista Efectos más útiles que Concepto de la Semana en primer scroll |
+| Radar de Mitos y Test cognitivo eliminados (agosto 2026) | Menos ruido en la home, más foco en la monetización vía Audible |
 | Hero buttons ocultos en móvil | Espacio limitado; los botones hero no son esenciales en móvil |
 | Favoritos desactivados en HTML | Funcionalidad no lista — JS preparado pero HTML no tiene el nodo |
 | Propuestas en Supabase sin auth | Feed compartido entre usuarios sin pedirles cuenta — más confianza |
@@ -103,12 +104,12 @@ CarpetaClaude/
 
 1. **Tabs principales** — "Por Intereses", "Fuera de Bata", "El Artículo de la Semana" en ese orden
 2. **Persistencia de tema** — el tema elegido sobrevive recarga (localStorage)
-3. **Acordeones en móvil** — Lista de Efectos (≤680px) y Radar de Mitos colapsan/expanden bien
-4. **Progress tracker** — "Mitos desmentidos" y "Pruebas realizadas" incrementan y persisten
+3. **Acordeón en móvil** — Lista de Efectos (≤680px) colapsa/expande bien
+4. **Progress tracker** — artículos leídos, efectos explorados, quizzes y desafíos incrementan y persisten
 5. **Compartir contenido** — `shareContenido()` con fallback a clipboard nunca lanza errores visibles
 6. **localStorage wrappers** — `lsSet`/`lsGet` fallan silenciosamente (incógnito, cuota llena)
 7. **Focus trap en modales** — `trapFocus()` / `releaseFocus()` necesarios para accesibilidad WCAG
-8. **Orden móvil del grid** — `"center" "right" "left"` (Tu Progreso + Lista Efectos antes que Test + Mitos)
+8. **Orden móvil del grid** — `"center" "right" "left"` (Tu Progreso + Lista Efectos antes que Concepto de la Semana)
 9. **SEO metadata** — title, description, OG tags, JSON-LD coherentes
 10. **Sin dependencias JS externas** — solo Google Fonts permitido
 

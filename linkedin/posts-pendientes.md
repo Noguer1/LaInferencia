@@ -1,6 +1,6 @@
 # Posts pendientes de publicar
 
-Lote 1 (posts 1-12) generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Lote 2 (posts 13-18) generado el mismo día, con 6 artículos nuevos de marketing, política y alimentación. Lote 3 (posts 19-24) generado el mismo día, con 6 artículos nuevos de salud mental, marketing, viajes y redes sociales, para nivelar esas categorías. Lote 4 (posts 25-31) generado el mismo día, con 7 artículos nuevos de salud mental, derecho, deporte, tecnología, trabajo, política y alimentación, para llevar esas categorías a 7 artículos cada una. Lote 5 (posts 32-38) generado el mismo día, con 7 artículos nuevos de arte, educación, marketing, relaciones, redes sociales, salud mental y viajes, para llevar esas categorías (las más finas de la web hasta ahora) a 7 artículos cada una, dejando las 15 categorías igualadas en 7 artículos. Formato y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
+Lote 1 (posts 1-12) generado el 4 de agosto de 2026, junto con los 12 artículos nuevos de derecho, deporte, arte, tecnología, moda, viajes y redes sociales. Lote 2 (posts 13-18) generado el mismo día, con 6 artículos nuevos de marketing, política y alimentación. Lote 3 (posts 19-24) generado el mismo día, con 6 artículos nuevos de salud mental, marketing, viajes y redes sociales, para nivelar esas categorías. Lote 4 (posts 25-31) generado el mismo día, con 7 artículos nuevos de salud mental, derecho, deporte, tecnología, trabajo, política y alimentación, para llevar esas categorías a 7 artículos cada una. Lote 5 (posts 32-38) generado el mismo día, con 7 artículos nuevos de arte, educación, marketing, relaciones, redes sociales, salud mental y viajes, para llevar esas categorías (las más finas de la web hasta ahora) a 7 artículos cada una, dejando las 15 categorías igualadas en 7 artículos. Posts 39-48, generados el mismo día, son distintos al resto: no explican un estudio ni están ligados a un artículo, hablan de La Inferencia como proyecto (proceso de verificación, por qué no hay listas de trucos, el idioma, las propuestas de la comunidad, el test cognitivo, el Radar de Mitos, el catálogo de sesgos, quién hay detrás). Pensados para intercalarse entre los posts de estudios, no para publicarse seguidos. Formato de ambos tipos y checklist en `guia-posts.md`. Para publicar uno, copia el texto y pásalo como argumento a `node linkedin/publicar.js "texto"` (o pégalo directo en LinkedIn).
 
 Estado de cada uno: pendiente hasta que se marque como publicado aquí manualmente.
 
@@ -715,3 +715,191 @@ Vivir fuera obliga a descubrir que un mismo gesto significa cosas opuestas segú
 Unas vacaciones cortas no bastan, según estos datos. Lo que predice el efecto es quedarte el tiempo suficiente para tener que cambiar cómo interpretas lo cotidiano.
 
 Descubre más estudios como este en La Inferencia → https://lainferencia.com
+
+---
+
+## 39. El enlace que no llegó a ningún sitio
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+Un artículo entero, ya escrito, se quedó fuera de la web por un solo motivo: el DOI del estudio no resolvía a ninguna parte.
+
+En La Inferencia cada fuente pasa una comprobación antes de publicarse. Si el enlace a la revista, al DOI o al paper original no carga, el artículo no sale, por bueno que sea el hallazgo que describe. No hay excepción por plazo ni por lo interesante que suene el titular.
+
+La regla nació de un problema concreto. Buena parte del contenido de psicología que circula cita "un estudio" sin decir cuál, o enlaza a un blog que a su vez enlaza a otro blog, sin llegar nunca al paper. Al final nadie puede comprobar nada.
+
+Aquí el orden es el inverso. Primero el enlace funciona y lleva al documento real: la página de la revista, el DOI, o al menos un repositorio universitario donde el paper se pueda leer entero. Después, y solo después, se escribe el artículo.
+
+Cuesta más tiempo, y bastantes candidatos se descartan solo por esto, aunque el hallazgo en sí sea real y esté bien hecho.
+
+Un dato que no se puede rastrear hasta su origen no es un dato. Es un rumor con estadística encima.
+
+Descubre los estudios verificados de La Inferencia → https://lainferencia.com
+
+---
+
+## 40. Por qué no hay "5 trucos para..."
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+En La Inferencia no vas a encontrar titulares del tipo "7 trucos psicológicos para caer mejor".
+
+No es una cuestión de estilo. Ese formato suele extraer una conclusión práctica de un estudio sin contar cómo se llegó a ella: el tamaño de la muestra, las condiciones del experimento, si el efecto se replicó después o se quedó en un único paper de los años 70.
+
+Cada artículo de la web sigue el mismo orden. Primero el experimento, con su procedimiento y sus cifras. Después el mecanismo psicológico que lo explica, nombrado y descrito. Solo al final, una aplicación práctica que no se separa de lo que el estudio midió realmente.
+
+El resultado es más lento de leer que una lista de trucos. También es más difícil de tergiversar, porque el lector ve el experimento entero, no solo la frase que alguien decidió destacar.
+
+La aplicación práctica que cierra cada artículo tampoco se inventa aparte: sale de lo que el propio estudio midió, ni un paso más allá. Si el experimento se hizo con estudiantes universitarios en una sesión de laboratorio, el artículo no promete que el resultado se sostenga igual con cualquier persona en cualquier situación.
+
+Cuando un consejo psicológico llega sin el experimento detrás, lo único que tienes delante es la opinión de quien lo escribió.
+
+Los estudios completos, con su procedimiento y sus cifras, están en La Inferencia → https://lainferencia.com
+
+---
+
+## 41. La ciencia de la mente que no está en español
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+Casi todo lo que se publica sobre psicología con revisión por pares está en inglés. Los papers, las revistas, las bases de datos académicas: inglés casi sin excepción.
+
+Eso deja fuera a mucha gente con curiosidad real por cómo funciona la mente, pero sin ganas ni tiempo de leer un paper de 20 páginas en un idioma que no domina del todo, con su propio lenguaje estadístico incluido.
+
+La Inferencia traduce y adapta ese material al español, pero no lo simplifica hasta vaciarlo. Se mantiene el nombre del investigador, la universidad, el año, el tamaño de la muestra y el dato concreto que arrojó el estudio. Lo que cambia es la forma de contarlo, no el contenido.
+
+Hay un coste en esto. Cada artículo tarda más en escribirse que si solo tradujera un resumen ya masticado por otra persona, porque hay que volver al paper original en inglés, revisar sus cifras exactas y traducirlas sin perder precisión en el camino, no adaptar un resumen que ya venía simplificado de origen.
+
+La barrera del idioma no debería decidir quién entiende un experimento entero y quién se queda solo con el titular.
+
+Los estudios traducidos y verificados, en español, están en La Inferencia → https://lainferencia.com
+
+---
+
+## 42. Dos fuentes o no se publica
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+Ningún estudio entra en La Inferencia con una sola fuente detrás.
+
+Antes de escribir un artículo se busca el paper original y al menos una segunda fuente independiente que confirme autor, institución, año y resultado: la propia revista, una réplica posterior, o una cobertura académica seria del mismo hallazgo. Si las dos fuentes no coinciden, el estudio se descarta.
+
+Esto no es desconfianza gratuita. La psicología ha tenido su propia crisis de replicación: estudios muy citados, incluso célebres, que no se sostuvieron cuando otros equipos intentaron repetir el mismo procedimiento años después con más participantes o mejores controles. Contrastar cada estudio contra una segunda fuente independiente es una forma barata de reducir ese riesgo antes de escribir una sola línea, aunque no lo elimine del todo.
+
+El criterio es simple de aplicar y, a la vez, incómodo. Si algo no se puede verificar dos veces, no se publica, aunque el titular sea irresistible y el estudio lleve años circulando sin que nadie lo haya cuestionado.
+
+Verificar antes de publicar no es un extra encima del trabajo. Es la única razón por la que vale la pena leer lo que sigue después del titular.
+
+Los estudios de La Inferencia pasan ese doble filtro antes de publicarse → https://lainferencia.com
+
+---
+
+## 43. El titular dice una cosa, el paper dice otra
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+Un titular puede decir "la música te hace más inteligente". El estudio detrás, casi siempre, midió algo mucho más estrecho: una tarea concreta, con un grupo concreto, durante un tiempo concreto.
+
+Ese salto entre lo que un estudio mide y lo que el titular promete es uno de los motivos por los que tanta gente desconfía, con razón, de cualquier frase que empiece por "la ciencia dice".
+
+En La Inferencia cada artículo nombra la tarea exacta que se usó, cuántas personas participaron y qué se comparó contra qué. No "mejora la memoria": mejora el recuerdo de una lista de palabras a los cinco minutos, en un grupo de 60 universitarios, frente a otro grupo que hizo una tarea distinta durante el mismo tiempo.
+
+Es menos vistoso que el titular. También es lo único que permite distinguir un hallazgo real de una generalización que alguien añadió después, sin que el estudio la respaldara en ningún momento, y saber si ese "mejora la memoria" se sostiene también fuera del laboratorio o se quedó ahí dentro.
+
+La próxima vez que leas "la ciencia dice que...", pregúntate qué tarea, con quién, y comparado con qué.
+
+Los datos exactos detrás de cada titular están en La Inferencia → https://lainferencia.com
+
+---
+
+## 44. Quién decide el próximo tema
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+El próximo artículo de La Inferencia puede salir de una propuesta que dejó alguien que ni siquiera puso su nombre.
+
+Al final de la web hay una sección donde cualquiera escribe qué tema de psicología le gustaría ver explicado, sin necesidad de registrarse. El resto de visitantes puede votar esas propuestas, también sin cuenta, y las que más apoyo reúnen se investigan antes que las demás.
+
+No es un buzón decorativo. La cola de temas pendientes sale directamente de ahí, y varios artículos publicados nacieron de una propuesta con votos, no de una decisión editorial tomada sin más consulta. Cada propuesta y cada voto quedan registrados, así que la lista de lo más pedido es pública en todo momento, no una selección que se anuncia ya cerrada.
+
+El límite sigue siendo el de siempre. Un tema puede entrar en la cola con muchos votos, pero el artículo solo se escribe si hay un estudio real y verificable detrás. Una propuesta interesante sin estudio que la respalde se queda esperando, por popular que sea, hasta que aparezca la investigación que la sostenga.
+
+Quien lee la web también decide, en parte, qué se investiga después.
+
+Propón un tema o vota uno ya publicado en La Inferencia → https://lainferencia.com
+
+---
+
+## 45. Un experimento de hace décadas, en tu navegador, en treinta segundos
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+El test cognitivo de la portada de La Inferencia no pregunta "¿qué tipo de persona eres?", como los que circulan por redes sociales sin ningún estudio detrás. Te hace resolver, en el momento, una versión reducida de un experimento real de psicología.
+
+No mide personalidad. Mide un patrón concreto de comportamiento, una decisión bajo presión de tiempo, un sesgo de memoria, una ilusión perceptiva, que también apareció en el estudio original con participantes reales, hace décadas.
+
+Ahí está la diferencia con un test de revista o de red social. Aquí el resultado no depende de cómo te describas a ti mismo. Depende de qué eliges cuando el reloj corre, igual que le pasó a la muestra del experimento que lo inspiró, sin que haya una respuesta que quede mejor que otra.
+
+No hace falta registrarse para hacerlo, y tampoco guarda ningún dato personal: solo cuenta la respuesta en el momento y la suma al contador de "pruebas realizadas" de tu perfil en la web, así que queda constancia de por cuántos de estos experimentos en miniatura has pasado ya.
+
+Se tarda menos en hacerlo que en leer este post entero.
+
+Prueba el test cognitivo de La Inferencia → https://lainferencia.com
+
+---
+
+## 46. Un contador que sube cada vez que se cae un mito
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+Que solo usamos el 10% del cerebro. Que escuchar Mozart de bebé te hace más listo. Que hay personas "visuales" y personas "auditivas" y por eso hay que enseñarles distinto. Ninguno de los tres ha resistido la evidencia cuando se ha puesto a prueba en un laboratorio, y los tres siguen circulando como si fueran hechos asentados, incluso entre gente formada.
+
+El Radar de Mitos de La Inferencia recoge esas ideas, una por una, y las contrasta con lo que de verdad se ha medido: de dónde salió el mito, por qué sonaba plausible, y qué encontraron después los estudios que intentaron confirmarlo, incluidos los que terminaron desmontándolo del todo.
+
+Cada mito que lees ahí suma al contador de "mitos desmentidos" de tu perfil en la web. No es un logro decorativo. Es un registro de cuántas de esas ideas, que probablemente diste por ciertas alguna vez porque las oíste repetidas mil veces, ya has revisado con la fuente delante, mito a mito, sin dar ninguna por buena de entrada.
+
+Un mito repetido lo suficiente empieza a sonar a memoria propia, no a algo que leíste una vez en algún sitio hace años.
+
+Repasa el Radar de Mitos en La Inferencia → https://lainferencia.com
+
+---
+
+## 47. Ponerle nombre a un sesgo cambia si lo reconoces
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+Hay 18 sesgos y efectos cognitivos catalogados en La Inferencia, cada uno con su nombre, su mecanismo y el experimento que lo demostró por primera vez.
+
+Ponerle nombre a algo no es un detalle menor. El efecto anclaje, el sesgo de confirmación, el efecto halo: mientras no tienen etiqueta son solo cosas raras que "a veces pasan". En cuanto tienen nombre y mecanismo, se vuelven reconocibles la próxima vez que ocurren, mientras están ocurriendo, no después.
+
+No es garantía de inmunidad. Conocer el efecto anclaje no impide que un número irrelevante siga influyendo en una decisión, los propios estudios lo muestran hasta en jueces con quince años de experiencia encima. Pero cambia algo: da una palabra a la que agarrarse para notar el patrón, en vez de descubrirlo cuando ya no sirve de nada.
+
+Cada uno de los 18 tiene su propia tarjeta, con el nombre, una descripción breve y el experimento que lo puso encima de la mesa por primera vez, así que se puede ir directo al que interesa sin leer los otros 17. Ese catálogo está pensado para consultarse suelto, no para leerse de un tirón. Cuando algo te huela raro en una decisión, puede estar ahí el nombre de lo que está pasando.
+
+Consulta el catálogo de sesgos de La Inferencia → https://lainferencia.com
+
+---
+
+## 48. Una sola persona detrás de cada artículo
+
+Estado: pendiente
+Tipo: sobre La Inferencia (no ligado a un artículo)
+
+No hay una redacción detrás de La Inferencia. Hay una persona que busca el estudio, lo lee entero, verifica la fuente y escribe el artículo, uno detrás de otro.
+
+Eso tiene una desventaja obvia: el ritmo de publicación es más lento que el de un medio con varios redactores repartiéndose temas. Tiene también una consecuencia menos obvia. No hay presión de cierre empujando a publicar un estudio a medio verificar porque "toca sacar algo hoy", ni un calendario editorial que obligue a rellenar un hueco con lo primero que aparezca.
+
+El criterio para descartar un candidato es siempre el mismo, lo revise quien lo revise, porque siempre lo revisa la misma persona: si el enlace funciona, si hay una segunda fuente que lo confirma, y si el dato que se va a citar es exactamente el que midió el estudio. Si falta cualquiera de los tres, se descarta, sin excepción por plazo de entrega.
+
+Miguel Noguer Escudero fundó La Inferencia con esa idea: que fuera posible mantener el mismo nivel de rigor artículo tras artículo, precisamente porque nadie más se reparte la decisión de qué entra y qué se queda fuera.
+
+Todos los artículos, escritos y verificados uno a uno, están en La Inferencia → https://lainferencia.com

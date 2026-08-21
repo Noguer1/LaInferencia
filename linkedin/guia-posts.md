@@ -140,6 +140,21 @@ IDs de artículos publicados (referencia interna, para no repetir estudio ni án
 
 ---
 
+## Posts sobre La Inferencia (no ligados a un estudio)
+
+Un segundo tipo de post, pensado para intercalarse con los posts de estudios y no publicarse en tandas seguidas. No explican un experimento: hablan del proyecto, su proceso o sus funcionalidades. Reglas propias:
+
+- **No es un anuncio.** Nada de "estamos encantados de presentar" ni frases que venderían igual cualquier producto. Cada post parte de un hecho concreto y verificable del propio proyecto (una regla editorial, una función de la web, un número real), no de una afirmación de marca.
+- **Mismo rigor factual que un post de estudio.** Si se menciona un dato del proyecto (número de sesgos catalogados, cómo funciona una sección), tiene que ser exacto, comprobado contra el estado real de la web, nunca aproximado para que suene mejor.
+- **Gancho igual de directo**, pero anclado en el proyecto en vez de en un investigador.
+- **Sin la estructura experimento/mecanismo** de los posts de estudio: en su lugar, un hecho o regla del proyecto, el porqué o el coste que implica, y una reflexión final.
+- **Mismas prohibiciones de estilo:** sin guion largo, sin la fórmula "No era X. Era Y", sin moralizar, 200-320 palabras, CTA a la home.
+- El CTA varía según el tema del post (invita a probar el test, a ver el Radar de Mitos, a leer los artículos) pero siempre enlaza a `https://lainferencia.com`.
+
+Ver posts 39-48 en `posts-pendientes.md` como referencia de tono y estructura.
+
+---
+
 ## Ejemplo completo
 
 ```

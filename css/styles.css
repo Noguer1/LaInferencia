@@ -900,15 +900,6 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 
 .hqa-icon { opacity: 0.55; flex-shrink: 0; }
 
-.hqa-exp {
-  background: var(--blue);
-  color: white;
-  border-color: var(--blue);
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--blue) 30%, transparent);
-}
-
-.hqa-exp:hover   { background: var(--blue-hover); border-color: var(--blue-hover); }
-
 .hqa-mitos {
   background: rgba(124,58,237,0.09);
   color: #7C3AED;
@@ -1059,10 +1050,59 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   gap: 1.5rem;
 }
 
+.bata-secciones-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.bata-seccion-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  background: rgba(255,255,255,0.97);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--card-shadow), inset 0 1px 0 rgba(255,255,255,0.85);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.bata-seccion-tile:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--blue) 28%, transparent);
+  box-shadow: 0 4px 12px rgba(11,19,43,0.10), 0 12px 36px rgba(11,19,43,0.13);
+}
+
+.bata-seccion-tile-body { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+.bata-seccion-tile-titulo { font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+.bata-seccion-tile-count  { font-size: 0.76rem; color: var(--text-muted); }
+
+.bata-seccion-tile.bata-ver-todos {
+  background: color-mix(in srgb, var(--blue) 6%, transparent);
+  border-color: color-mix(in srgb, var(--blue) 22%, transparent);
+}
+.bata-seccion-tile.bata-ver-todos .bata-seccion-tile-titulo { color: var(--blue); }
+
+.bata-seccion-tile-arrow { flex-shrink: 0; color: var(--blue); opacity: 0.7; transition: transform 0.2s; }
+.bata-seccion-tile:hover .bata-seccion-tile-arrow { transform: translateX(3px); }
+
+@media (max-width: 640px) {
+  .bata-secciones-grid { grid-template-columns: 1fr; }
+}
+
+.dark-base .bata-seccion-tile { background: rgba(12,22,42,0.92); }
+.dark-base .bata-seccion-tile.bata-ver-todos { background: color-mix(in srgb, var(--blue) 10%, transparent); }
+
 .bata-filter-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-bottom: 1.4rem;
 }
 
 .bata-pill {
@@ -1592,6 +1632,35 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 .tab-btn.active svg { opacity: 0.9; }
 
 .tab-btn:hover:not(.active) { color: var(--navy); background: color-mix(in srgb, var(--blue) 6%, transparent); }
+
+.tab-btn--hidden { display: none; }
+
+/* Con Fuera de Bata y El Artículo de la Semana ocultas, la barra deja de
+   parecer un selector con varias opciones y pasa a ser un encabezado simple */
+.tab-bar--single {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  width: auto;
+}
+
+.tab-bar--single .tab-pill { display: none; }
+
+.tab-bar--single .tab-btn {
+  flex: none;
+  padding: 0;
+  cursor: default;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.tab-bar--single .tab-btn.active,
+.tab-bar--single .tab-btn:hover:not(.active) {
+  background: transparent;
+  text-shadow: none;
+  box-shadow: none;
+}
 
 /* ── TAB PANELS ── */
 .tab-panel { display: none; }
@@ -2941,7 +3010,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   align-items: start;
   max-width: 1620px;
   margin: 0 auto;
-  padding: 0.3rem 2rem 4rem;
+  padding: 0.3rem 2rem 1.5rem;
   transition: grid-template-columns 0.28s ease-out,
               gap 0.28s ease-out;
 }
@@ -2975,6 +3044,26 @@ body.modo-enfoque-activo .btn-modo-enfoque {
     min-height: 0;
   }
   .dashboard-layout.hero-balanced .efectos-preview-vermas { margin-top: auto; }
+
+  /* La izquierda NO se estira al alto de fila del grid (ese alto lo
+     marca la derecha, que puede ser más alta que la cuadrícula de
+     temáticas). Su altura la fija JS (_syncSidebarLeftHeight en
+     main.js) para que coincida exactamente con el alto real de
+     `.cat-selector`. Cada tarjeta conserva su alto natural (según su
+     contenido real, sin forzar ni recortar nada dentro) y el espacio
+     sobrante se reparte como aire ENTRE las dos tarjetas y sus bordes
+     (space-between en el contenedor), nunca dentro de una tarjeta. */
+  .dashboard-layout.hero-balanced .sidebar-left {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .dashboard-layout.hero-balanced .sidebar-left .sidebar-weekly-card,
+  .dashboard-layout.hero-balanced .sidebar-left .sidebar-fdb-card {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+  }
 }
 
 /* Sidebars: visualmente secundarios, no compiten con el centro */
@@ -3154,265 +3243,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 .botiquin-guias-link:hover { text-decoration: underline; }
 
-/* ── EXPERIMENTO INTERACTIVO ── */
-.exp-card {
-  background: rgba(255,255,255,0.97);
-  border: 1px solid var(--card-border); border-radius: 20px;
-  padding: 2rem; box-shadow: var(--card-shadow);
-  min-height: 240px;
-}
-
-/* Start screen */
-.exp-start { text-align: center; padding: 1rem 0; }
-.exp-icon { font-size: 3rem; margin-bottom: 1rem; }
-
-/* ── CEREBRO NEURONAL SVG ── */
-.neural-brain-svg {
-  width: 88px; height: 88px;
-  display: block; margin: 0 auto 1.4rem;
-  overflow: visible;
-  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--blue-accent) 40%, transparent)) drop-shadow(0 0 14px color-mix(in srgb, var(--blue) 22%, transparent));
-  animation: brain-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes brain-pulse {
-  0%, 100% { opacity: 0.88; }
-  50%       { opacity: 1;    }
-}
-
-/* Cada path del cerebro con animación de color alternada */
-.brain-outline-path {
-  animation: brain-stroke 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-.brain-outline-path:nth-child(2n) { animation-delay: 0.4s; }
-.brain-outline-path:nth-child(3n) { animation-delay: 0.8s; }
-
-@keyframes brain-stroke {
-  0%, 100% { opacity: 0.75; }
-  50%       { opacity: 1;    }
-}
-
-/* Líneas: pulso escalonado por clase delay */
-.nbl { animation: nb-flash 3s ease-in-out infinite; }
-.nbl.d1 { animation-delay: 0s; }
-.nbl.d2 { animation-delay: 0.5s; }
-.nbl.d3 { animation-delay: 1s; }
-.nbl.d4 { animation-delay: 1.5s; }
-.nbl.d5 { animation-delay: 2s; }
-.nbl.d6 { animation-delay: 2.5s; }
-
-@keyframes nb-flash {
-  0%, 100% { opacity: 0.20; }
-  50%       { opacity: 0.65; }
-}
-
-/* Nodos: parpadeo más lento */
-.nbn { animation: nb-dot 2.8s ease-in-out infinite; }
-.nbn.d1 { animation-delay: 0s; }
-.nbn.d2 { animation-delay: 0.38s; }
-.nbn.d3 { animation-delay: 0.76s; }
-.nbn.d4 { animation-delay: 1.14s; }
-.nbn.d5 { animation-delay: 1.52s; }
-.nbn.d6 { animation-delay: 1.9s; }
-
-@keyframes nb-dot {
-  0%, 100% { opacity: 0.80; }
-  50%       { opacity: 0.30; }
-}
-
-/* Nodo central: pulso más pronunciado */
-.nbn-core {
-  animation: nb-core 2s ease-in-out infinite;
-  transform-origin: 60px 46px;
-}
-
-@keyframes nb-core {
-  0%, 100% { opacity: 1;    transform: scale(1);    }
-  50%       { opacity: 0.55; transform: scale(0.72); }
-}
-.exp-start h3 { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 0.7rem; }
-.exp-start p { font-size: 0.88rem; color: var(--text-body); line-height: 1.7; margin-bottom: 1.6rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-
-/* Question */
-.exp-q-wrapper { display: flex; flex-direction: column; gap: 1.2rem; }
-.exp-progress-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-.exp-sesgo-tag { font-size: 0.70rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.5px; }
-.exp-counter { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; }
-.exp-progress-track { height: 4px; background: rgba(148,163,184,0.2); border-radius: 99px; }
-.exp-progress-fill { height: 100%; background: var(--blue); border-radius: 99px; transition: width 0.35s ease; }
-.exp-q-text { font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.6; }
-.exp-options { display: flex; flex-direction: column; gap: 0.6rem; }
-.exp-option {
-  text-align: left; padding: 0.75rem 1.1rem;
-  border: 1.5px solid rgba(148,163,184,0.25); border-radius: 10px;
-  background: rgba(255,255,255,0.6); font-family: inherit;
-  font-size: 0.88rem; font-weight: 500; color: var(--navy);
-  cursor: pointer; transition: border-color 0.18s, background 0.18s, color 0.18s;
-}
-.exp-option:hover { border-color: var(--blue); background: color-mix(in srgb, var(--blue) 6%, transparent); color: var(--blue); }
-
-/* Result */
-.exp-result { display: flex; flex-direction: column; gap: 1rem; }
-.exp-result-badge {
-  display: inline-flex; align-self: flex-start;
-  padding: 0.3rem 0.9rem; border-radius: 999px;
-  font-size: 0.78rem; font-weight: 700;
-}
-.exp-correct   { background: rgba(16,185,129,0.12); color: #059669; border: 1px solid rgba(16,185,129,0.3); }
-.exp-incorrect { background: rgba(239,68,68,0.10); color: #DC2626; border: 1px solid rgba(239,68,68,0.25); }
-.exp-explain { font-size: 0.88rem; color: var(--text-body); line-height: 1.75; }
-.exp-bars { display: flex; flex-direction: column; gap: 0.55rem; margin: 0.3rem 0; }
-.exp-bar-row { display: flex; flex-direction: column; gap: 0.25rem; }
-.exp-bar-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; }
-.exp-bar-track { height: 8px; background: rgba(148,163,184,0.18); border-radius: 99px; overflow: hidden; }
-.exp-bar-fill { height: 100%; border-radius: 99px; transition: width 0.85s cubic-bezier(0.4,0,0.2,1); }
-.exp-bar-wrong { background: linear-gradient(90deg, #EF4444, #F97316); }
-.exp-bar-right { background: linear-gradient(90deg, #10B981, var(--blue)); }
-
-/* Final */
-.exp-final { text-align: center; padding: 0.5rem 0; }
-.exp-score-display {
-  font-size: 5rem; font-weight: 800; color: var(--navy);
-  letter-spacing: -3px; line-height: 1; margin-bottom: 1rem;
-}
-.exp-score-display span { font-size: 2rem; color: var(--text-muted); font-weight: 600; }
-.exp-final-titulo {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: -0.3px;
-  margin: 0 auto 0.5rem;
-}
-.exp-final-msg { font-size: 0.92rem; color: var(--text-body); line-height: 1.75; max-width: 480px; margin: 0 auto 1.6rem; }
-
-/* Buttons */
-.exp-btn-primary {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 0.72rem 1.8rem; background: var(--blue); color: white;
-  border: none; border-radius: 10px; font-family: inherit;
-  font-size: 0.9rem; font-weight: 700; cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-}
-.exp-btn-primary:hover { background: var(--blue-hover); transform: translateY(-1px); }
-.exp-btn-secondary {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 0.65rem 1.5rem; background: transparent; color: var(--blue);
-  border: 1.5px solid color-mix(in srgb, var(--blue) 35%, transparent); border-radius: 10px;
-  font-family: inherit; font-size: 0.88rem; font-weight: 700;
-  cursor: pointer; transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-.exp-btn-secondary:hover { background: var(--blue); color: white; border-color: var(--blue); }
-
-/* ── RADAR DE MITOS (T/F interactivo) ── */
-#mitos-cards {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  gap: 0;
-  touch-action: pan-x;
-  contain: paint;
-}
-#mitos-cards::-webkit-scrollbar { display: none; }
-#mitos-extra { display: contents; }
-
-.mitos-counter {
-  text-align: right;
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  margin: -0.3rem 0 0.5rem;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
-}
-
-.mito-tf-card {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  flex: 0 0 100%;
-  box-sizing: border-box;
-  background: rgba(255,255,255,0.96);
-  border: 1px solid var(--card-border);
-  border-radius: 14px; padding: 1.1rem 1.2rem;
-  transition: box-shadow 0.2s;
-}
-.mito-tf-card.answered { border-color: rgba(148,163,184,0.15); }
-
-.mito-statement {
-  font-size: 0.84rem; font-weight: 600; color: var(--navy);
-  line-height: 1.5; margin-bottom: 0.75rem; font-style: italic;
-}
-
-.mito-tf-btns { display: flex; gap: 0.45rem; }
-
-.tf-btn {
-  flex: 1; padding: 0.42rem 0.7rem;
-  border-radius: 8px; font-family: inherit;
-  font-size: 0.76rem; font-weight: 700; cursor: pointer;
-  border: 1.5px solid; transition: background 0.18s, border-color 0.18s, color 0.18s;
-}
-/* Estado neutro, fondo casi blanco, texto suave con tinte de color */
-.tf-true  {
-  background: rgba(16,185,129,0.05);
-  color: #1E5C40;
-  border-color: rgba(16,185,129,0.22);
-}
-.tf-false {
-  background: rgba(190,60,55,0.04);
-  color: #7A2828;
-  border-color: rgba(190,80,75,0.20);
-}
-
-/* Hover, verde esmeralda para Verdadero, coral elegante para Falso */
-.tf-true:hover:not(:disabled) {
-  background: rgba(22,163,74,0.10);
-  color: #166534;
-  border-color: rgba(22,163,74,0.38);
-}
-.tf-false:hover:not(:disabled) {
-  background: rgba(210,80,65,0.08);
-  color: #8B3020;
-  border-color: rgba(200,75,60,0.32);
-}
-
-.tf-btn:disabled { cursor: default; }
-
-/* Confirmación tras responder */
-.tf-btn.tf-chosen-correct {
-  background: rgba(16,185,129,0.14);
-  color: #065F46;
-  border-color: rgba(16,185,129,0.55);
-}
-.tf-btn.tf-chosen-wrong {
-  background: rgba(190,55,50,0.10);
-  color: #7F1D1D;
-  border-color: rgba(185,55,50,0.45);
-  opacity: 0.6;
-}
-.tf-btn.tf-show-correct {
-  background: rgba(16,185,129,0.14);
-  color: #065F46;
-  border-color: rgba(16,185,129,0.55);
-}
-
-.mito-reveal {
-  display: none; overflow: hidden; max-height: 0;
-  transition: max-height 0.4s ease;
-}
-.mito-reveal.open { display: block; }
-
-.mito-reveal-badge {
-  display: inline-flex; padding: 0.22rem 0.7rem; border-radius: 999px;
-  font-size: 0.72rem; font-weight: 700; margin: 0.65rem 0 0.45rem;
-}
-.mito-reveal-badge.badge-correct   { background: rgba(16,185,129,0.12); color: #059669; }
-.mito-reveal-badge.badge-incorrect { background: rgba(239,68,68,0.10); color: #DC2626; }
-
-.mito-evidence {
-  font-size: 0.78rem; color: var(--text-body); line-height: 1.65;
-}
 
 /* ── AUTOR: botón disparador + modal ── */
 .author-trigger {
@@ -3776,8 +3606,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   /* Botones de acceso rápido */
   .hero-quick-access { margin-top: 0.75rem; gap: 0.32rem; flex-wrap: wrap; }
   .hqa-btn           { padding: 0.3rem 0.85rem; font-size: 13px; font-weight: 600; gap: 0.26rem; }
-  .hqa-exp           { background: var(--navy); color: #fff; border-color: var(--navy); box-shadow: none; }
-  .hqa-exp:hover     { background: #1a2a4a; border-color: #1a2a4a; color: #fff; }
   .hqa-mitos         { background: rgba(255,255,255,0.88); color: var(--navy); border-color: rgba(11,19,43,0.18); }
   .hqa-mitos:hover   { background: rgba(11,19,43,0.05); }
 
@@ -3935,8 +3763,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .stat-number { font-size: 1.3rem; }
   .stat-divider { display: none; }
   .footer-main { padding: 1.6rem 1.2rem calc(68px + env(safe-area-inset-bottom, 0px) + 0.8rem); }
-  .exp-card         { padding: 1.1rem; }
-  .exp-score-display { font-size: 3.5rem; }
   .author-modal-card { padding: 1.3rem 1.1rem; }
   .info-modal-card  { padding: 1.3rem 1.1rem; }
 
@@ -4324,9 +4150,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .footer-inner--3col { grid-template-columns: 1fr; }
 }
 
-/* ── RADAR DE MITOS en sidebar izquierdo ── */
-.mitos-section .widget-header { margin-bottom: 0.8rem; }
-
 /* ── LISTA DE EFECTOS ── */
 .efectos-list {
   display: flex;
@@ -4596,15 +4419,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   , var(--navy) se convierte en #E2E8F0 en dark mode, por lo que
    los valores heredados del bloque 768px producen claro sobre claro. */
 @media (max-width: 768px) {
-  .dark-base .hqa-exp {
-    background: color-mix(in srgb, var(--blue) 14%, transparent) !important;
-    color: var(--blue) !important;
-    border-color: color-mix(in srgb, var(--blue) 32%, transparent) !important;
-  }
-  .dark-base .hqa-exp:hover {
-    background: color-mix(in srgb, var(--blue) 24%, transparent) !important;
-    color: #7DD3FC !important;
-  }
   .dark-base .hqa-mitos {
     background: rgba(255,255,255,0.06) !important;
     color: #C4D0E3 !important;
@@ -4644,9 +4458,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 .dark-base .doc-card.doc-featured { background: rgba(12,22,42,0.98); }
-
-.dark-base .mito-tf-card,
-.dark-base .exp-card { background: rgba(12,22,42,0.92); }
 
 .dark-base .efecto-card {
   background: #1E293B;
@@ -4689,16 +4500,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .dark-base .experimento-box { background: color-mix(in srgb, var(--blue) 5%, transparent); border-color: color-mix(in srgb, var(--blue) 12%, transparent); border-left-color: var(--blue); }
 
 .dark-base .research-section { border-top-color: rgba(148,163,184,0.08); }
-.dark-base .mitos-section {
-  background: rgba(8,16,34,0.82);
-  border-color: color-mix(in srgb, #818CF8 18%, transparent);
-  border-left-color: #6366F1;
-  box-shadow: 0 2px 14px color-mix(in srgb, #6366F1 8%, transparent);
-}
-.dark-base .mitos-headline { color: #C4D0E3; }
-.dark-base .mitos-eyebrow { color: #818CF8; }
-.dark-base .mitos-nav-btn { color: #818CF8; border-color: color-mix(in srgb, #818CF8 30%, transparent); background: color-mix(in srgb, #6366F1 9%, transparent); }
-.dark-base .mitos-nav-btn:hover { background: #4F46E5; border-color: #4F46E5; color: #ffffff; }
 .dark-base .footer-main { background: #030810; }
 
 .dark-base .cat-btn { background: rgba(12,22,42,0.80); border-color: color-mix(in srgb, var(--blue) 14%, transparent); color: #94A3B8; }
@@ -4711,14 +4512,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .dark-base .bata-pill.active { background: var(--blue); border-color: var(--blue); color: #07101E; }
 .dark-base .featured-label { background: var(--blue); color: #07101E; }
 .dark-base .research-tag { background: color-mix(in srgb, var(--blue) 10%, transparent); color: var(--blue); border-color: color-mix(in srgb, var(--blue) 22%, transparent); }
-
-.dark-base .tf-true  { background: rgba(16,185,129,0.07); border-color: rgba(16,185,129,0.22); color: #4ADE80; }
-.dark-base .tf-false { background: rgba(239,68,68,0.07); border-color: rgba(239,68,68,0.22); color: #FC8181; }
-.dark-base .tf-true:hover:not(:disabled)  { background: rgba(16,185,129,0.14); border-color: rgba(16,185,129,0.45); color: #34D399; }
-.dark-base .tf-false:hover:not(:disabled) { background: rgba(239,68,68,0.14); border-color: rgba(239,68,68,0.40); color: #F87171; }
-
-.dark-base .mito-reveal-badge.badge-correct   { background: rgba(16,185,129,0.15); }
-.dark-base .mito-reveal-badge.badge-incorrect { background: rgba(239,68,68,0.13); }
 
 .dark-base .btn-descarga { background: var(--blue); }
 .dark-base .btn-descarga:hover { background: #7DD3FC; }
@@ -4759,21 +4552,10 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   color: #B0C4D8;
 }
 
-.dark-base .sidebar-widget .widget-header p,
-.dark-base .mitos-section .widget-header p {
+.dark-base .sidebar-widget .widget-header p {
   color: #94A3B8;
   opacity: 1;
 }
-
-/* 5 · Descripción de la tarjeta-base del experimento */
-.dark-base .exp-start p,
-.dark-base .exp-q-text { color: #C4D0E3; }
-
-.dark-base .exp-explain { color: #B0C4D8; }
-
-/* 6 · Texto de declaraciones del Radar de Mitos */
-.dark-base .mito-statement { color: #C4D0E3; }
-.dark-base .mito-evidence  { color: #B0C4D8; }
 
 /* 7 · Textos de tarjetas de documentos */
 .dark-base .doc-card h3         { color: #E2E8F0; }
@@ -5195,7 +4977,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
    BOTIQUÍN ANTISESGOS
 ══════════════════════════════════════════════════════════════ */
 .botiquin-section {
-  padding: 5rem 2rem 6.5rem;
+  padding: 2.8rem 2rem 6.5rem;
   background:
     radial-gradient(ellipse 65% 45% at 10% 50%, color-mix(in srgb, var(--blue-accent) 4%, transparent) 0%, transparent 60%),
     radial-gradient(ellipse 50% 40% at 90% 30%, color-mix(in srgb, var(--blue) 4%, transparent) 0%, transparent 55%),
@@ -6668,8 +6450,7 @@ button.fav-item-cta:hover {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   ACORDEONES PREMIUM, Radar de Mitos, Lista de Efectos,
-   ¿Cuánto te manipula tu cerebro?
+   ACORDEONES PREMIUM, Lista de Efectos
 ══════════════════════════════════════════════════════════════ */
 
 /* ── Base compartida ── */
@@ -6771,99 +6552,6 @@ button.fav-item-cta:hover {
   border-bottom: 1px solid rgba(148,163,184,0.14);
 }
 
-/* ── Radar de Mitos, estilo editorial ── */
-.mitos-accordion-btn {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 7%, transparent) 0%, color-mix(in srgb, #4F46E5 4%, transparent) 100%);
-  border-left-color: #4F46E5;
-}
-
-/* ── Radar de Mitos, widget prominente ── */
-.mitos-section {
-  background: rgba(255,255,255,0.98);
-  border: 1px solid color-mix(in srgb, #4F46E5 18%, transparent);
-  border-left: 3px solid #4F46E5;
-  border-radius: 16px;
-  padding: 1.1rem 1.1rem 0.9rem;
-  margin-bottom: 1rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 2px 22px color-mix(in srgb, #4F46E5 10%, transparent), 0 8px 36px rgba(11,19,43,0.07), inset 0 1px 0 rgba(255,255,255,0.85);
-  transition: box-shadow 0.22s;
-}
-.mitos-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #4F46E5, #2563EB 60%, transparent);
-  border-radius: 16px 16px 0 0;
-}
-.mitos-widget-header { margin-bottom: 0.8rem; }
-.mitos-eyebrow-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.4rem;
-}
-.mitos-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.60rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  color: #4F46E5;
-}
-.mitos-headline {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: -0.3px;
-  line-height: 1.15;
-  margin: 0 0 0.18rem;
-}
-.mitos-sub {
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin: 0;
-}
-.mitos-nav-row {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  flex-shrink: 0;
-}
-.mitos-nav-btn {
-  background: color-mix(in srgb, #4F46E5 9%, transparent);
-  border: 1px solid color-mix(in srgb, #4F46E5 26%, transparent);
-  border-radius: 50%;
-  width: 22px; height: 22px;
-  font-size: 1rem; line-height: 1;
-  cursor: pointer;
-  color: #4F46E5;
-  display: flex; align-items: center; justify-content: center;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
-  padding: 0;
-  font-family: inherit;
-}
-.mitos-nav-btn:hover {
-  background: #4F46E5;
-  border-color: #4F46E5;
-  color: #ffffff;
-}
-.mitos-counter {
-  font-size: 0.68rem;
-  color: var(--text-muted);
-  font-variant-numeric: tabular-nums;
-  min-width: 2.8rem;
-  text-align: center;
-  letter-spacing: 0.02em;
-  margin: 0;
-  line-height: 1;
-}
-
 /* ── Vista previa de efectos (tarjeta fija, sin desplegable) ── */
 .efectos-preview-card {
   background: #FFFFFF;
@@ -6925,90 +6613,6 @@ button.fav-item-cta:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   color: #C4D0E3;
 }
-
-.dark-base .mitos-accordion-btn {
-  border-left-color: #6366F1;
-}
-
-/* ══════════════════════════════════════════════════════════════
-   TEST COGNITIVO, BOTÓN SIDEBAR
-══════════════════════════════════════════════════════════════ */
-.exp-sidebar-btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.875rem 1.1rem;
-  margin-bottom: 0.1rem;
-  background: #FFFFFF;
-  border: 1.5px solid #E8EEF4;
-  border-left: 3px solid var(--blue);
-  box-shadow: 0 4px 12px rgba(11,19,43,0.10);
-  border-radius: 12px;
-  font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--navy);
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-
-.exp-sidebar-btn:hover {
-  background: #F8FAFC;
-  border-color: #CBD5E1;
-  box-shadow: 0 6px 18px rgba(11,19,43,0.14);
-  transform: translateY(-1px);
-}
-
-.exp-sidebar-btn-left {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.dark-base .exp-sidebar-btn {
-  background: #1E293B;
-  border: 1.5px solid rgba(51,65,85,0.5);
-  border-left: 3px solid var(--blue);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  color: #C4D0E3;
-}
-.dark-base .exp-sidebar-btn:hover {
-  background: #263548;
-  border-color: rgba(51,65,85,0.8);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-  transform: translateY(-1px);
-}
-
-.exp-toggle-chevron {
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
-
-.exp-toggle-btn[aria-expanded="true"] .exp-toggle-chevron { transform: rotate(180deg); }
-#exp-toggle-btn[aria-expanded="true"] .exp-toggle-chevron { transform: rotate(180deg); }
-
-#exp-section {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  padding: 0;
-  will-change: max-height, opacity;
-  transition:
-    max-height 0.32s ease-out,
-    opacity    0.22s ease;
-}
-
-#exp-section.is-open {
-  max-height: 600px;
-  opacity: 1;
-  padding: 1.5rem 0 0.5rem;
-}
-
-.dark-base .exp-toggle-btn { color: var(--blue); border-color: rgba(51,65,85,0.5); background: #1E293B; }
-.dark-base .exp-toggle-btn:hover { background: #263548; border-color: rgba(51,65,85,0.8); }
-.dark-base .exp-toggle-wrap { border-top-color: rgba(148,163,184,0.08); }
 
 /* ══════════════════════════════════════════════════════════════
    RESEARCH TOGGLE
@@ -7497,11 +7101,10 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 
 /* ══════════════════════════════════════════════════════════════
-   CONCEPTO DE LA SEMANA, widget sidebar + modal completo
+   SIDEBAR IZQUIERDO: tarjetas Artículo de la Semana + Fuera de Bata
 ══════════════════════════════════════════════════════════════ */
-
-/* ── Widget (sidebar), modo claro por defecto ── */
-.concepto-semana-widget {
+.sidebar-weekly-card,
+.sidebar-fdb-card {
   background: rgba(255,255,255,0.98);
   border: 1px solid color-mix(in srgb, var(--blue) 18%, transparent);
   border-left: 3px solid var(--blue);
@@ -7511,14 +7114,12 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   position: relative;
   overflow: hidden;
   box-shadow: 0 2px 18px color-mix(in srgb, var(--blue) 10%, transparent), 0 8px 32px rgba(11,19,43,0.07), inset 0 1px 0 rgba(255,255,255,0.85);
-  transition: box-shadow 0.22s;
 }
 
-.concepto-semana-widget:hover {
-  box-shadow: 0 4px 24px color-mix(in srgb, var(--blue) 14%, transparent), 0 12px 40px rgba(11,19,43,0.09), inset 0 1px 0 rgba(255,255,255,0.90);
-}
+.sidebar-weekly-card:empty { display: none; }
 
-.concepto-semana-widget::before {
+.sidebar-weekly-card::before,
+.sidebar-fdb-card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -7527,7 +7128,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   border-radius: 16px 16px 0 0;
 }
 
-.concepto-eyebrow {
+.sidebar-weekly-eyebrow {
   display: flex;
   align-items: center;
   gap: 0.38rem;
@@ -7540,78 +7141,94 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   opacity: 0.85;
 }
 
-.concepto-termino {
-  font-size: 1.1rem;
+.sidebar-fdb-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: var(--navy);
+  margin-bottom: 0.65rem;
+}
+
+.sidebar-fdb-eyebrow svg { flex-shrink: 0; color: var(--blue); width: 15px; height: 15px; }
+
+.sw-title {
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--navy);
-  letter-spacing: -0.4px;
-  line-height: 1.2;
-  margin-bottom: 0.2rem;
+  letter-spacing: -0.6px;
+  line-height: 1.28;
+  margin-bottom: 1.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.concepto-origen {
-  font-size: 0.63rem;
-  color: color-mix(in srgb, var(--blue) 65%, transparent);
-  font-style: italic;
-  margin-bottom: 0.7rem;
-}
-
-.concepto-def {
-  font-size: 0.75rem;
+.sidebar-fdb-desc {
+  font-size: 0.92rem;
   color: var(--text-body);
-  line-height: 1.65;
-  margin-bottom: 0.8rem;
+  line-height: 1.55;
+  margin-bottom: 0.9rem;
 }
 
-.concepto-abrir-btn {
+.sw-read-btn,
+.sidebar-fdb-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.38rem;
   font-family: inherit;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--blue);
   background: #FFFFFF;
   border: 1px solid #E8EEF4;
   box-shadow: 0 4px 12px rgba(11,19,43,0.10);
   border-radius: 999px;
-  padding: 0.52rem 1.1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, color 0.18s, transform 0.2s;
 }
 
-.concepto-abrir-btn:hover {
+.sw-read-btn:hover,
+.sidebar-fdb-btn:hover {
   background: #F8FAFC;
   border-color: #CBD5E1;
   box-shadow: 0 6px 18px rgba(11,19,43,0.14);
   transform: translateY(-2px);
 }
 
-/* ── Widget dark mode ── */
-.dark-base .concepto-semana-widget {
+/* ── Dark mode ── */
+.dark-base .sidebar-weekly-card,
+.dark-base .sidebar-fdb-card {
   background: linear-gradient(135deg, rgba(11,19,43,0.92) 0%, rgba(15,32,68,0.92) 100%);
   border-color: color-mix(in srgb, var(--blue-accent) 18%, transparent);
   border-left-color: var(--blue-accent);
   box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 
-.dark-base .concepto-semana-widget::before {
+.dark-base .sidebar-weekly-card::before,
+.dark-base .sidebar-fdb-card::before {
   background: linear-gradient(90deg, var(--blue-accent), var(--blue), transparent);
 }
 
-.dark-base .concepto-eyebrow { color: var(--blue-hover); }
-.dark-base .concepto-termino { color: #E8F4FF; }
-.dark-base .concepto-origen  { color: color-mix(in srgb, var(--blue-hover) 60%, transparent); }
-.dark-base .concepto-def     { color: rgba(196,208,227,0.88); }
+.dark-base .sidebar-weekly-eyebrow,
+.dark-base .sidebar-fdb-eyebrow { color: var(--blue-hover); }
+.dark-base .sw-title   { color: #E8F4FF; }
+.dark-base .sidebar-fdb-desc { color: rgba(196,208,227,0.88); }
 
-.dark-base .concepto-abrir-btn {
+.dark-base .sw-read-btn,
+.dark-base .sidebar-fdb-btn {
   color: var(--blue-accent);
   background: #1E293B;
   border: 1px solid rgba(51,65,85,0.5);
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-.dark-base .concepto-abrir-btn:hover {
+.dark-base .sw-read-btn:hover,
+.dark-base .sidebar-fdb-btn:hover {
   background: #263548;
   border-color: rgba(51,65,85,0.8);
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
@@ -7619,7 +7236,8 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 /* ══════════════════════════════════════════════════════════════
-   CONCEPTO MODAL, overlay con blur editorial
+   MODAL BASE, overlay con blur editorial (compartido por
+   Lista de Efectos, el único modal que queda de esta familia)
 ══════════════════════════════════════════════════════════════ */
 .concepto-modal-overlay {
   position: fixed;
@@ -7636,6 +7254,11 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 .concepto-modal-overlay[hidden] { display: none; }
+
+.bata-lista-modal-overlay {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
 
 @keyframes cm-in {
   from { opacity: 0; }
@@ -7712,94 +7335,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   margin-bottom: 0.7rem;
 }
 
-.concepto-modal-termino {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: -0.8px;
-  line-height: 1.15;
-  margin-bottom: 0.3rem;
-}
-
-.concepto-modal-origen {
-  font-size: 0.72rem;
-  color: color-mix(in srgb, var(--blue) 65%, transparent);
-  font-style: italic;
-  margin-bottom: 0;
-}
-
-.concepto-modal-divider {
-  height: 1px;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--blue) 25%, transparent), transparent);
-  margin: 1.4rem 0;
-}
-
-/* ── Secciones del modal ── */
-.concepto-modal-section {
-  margin-bottom: 1.4rem;
-}
-
-.concepto-modal-lbl {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.62rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-  color: var(--blue);
-  margin-bottom: 0.55rem;
-}
-
-.concepto-modal-def {
-  font-size: 0.93rem;
-  color: var(--navy);
-  line-height: 1.75;
-}
-
-/* Sección "En la práctica", blockquote editorial */
-.concepto-modal-section--ejemplo {
-  background: color-mix(in srgb, var(--blue) 4%, transparent);
-  border-left: 3px solid color-mix(in srgb, var(--blue) 30%, transparent);
-  border-radius: 0 12px 12px 0;
-  padding: 1rem 1.1rem;
-  margin-left: -0.2rem;
-}
-
-.concepto-modal-section--ejemplo .concepto-modal-lbl {
-  color: var(--blue);
-  opacity: 0.80;
-}
-
-.concepto-modal-ejemplo {
-  font-size: 0.87rem;
-  font-style: italic;
-  color: var(--text-body);
-  line-height: 1.72;
-  margin: 0;
-}
-
-/* Sección "Aplicación", tip card */
-.concepto-modal-section--aplicacion {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 7%, transparent) 0%, color-mix(in srgb, var(--blue-accent) 4%, transparent) 100%);
-  border: 1px solid color-mix(in srgb, var(--blue) 18%, transparent);
-  border-radius: 14px;
-  padding: 1rem 1.1rem;
-  margin-bottom: 0;
-}
-
-.concepto-modal-lbl--aplicacion {
-  color: var(--blue);
-}
-
-.concepto-modal-aplicacion {
-  font-size: 0.87rem;
-  color: var(--navy);
-  line-height: 1.72;
-  font-weight: 500;
-}
-
-/* ── Modal Lista de Efectos completa (variante ancha del concepto-modal) ── */
+/* ── Modal Lista de Efectos completa (variante ancha del modal base) ── */
 .efectos-lista-modal-card {
   max-width: 820px;
 }
@@ -7850,35 +7386,10 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 .dark-base .concepto-modal-eyebrow { color: var(--blue); }
-.dark-base .concepto-modal-termino  { color: #E8F4FF; }
-.dark-base .concepto-modal-origen   { color: color-mix(in srgb, var(--blue) 60%, transparent); }
-.dark-base .concepto-modal-divider  { background: linear-gradient(90deg, color-mix(in srgb, var(--blue) 25%, transparent), transparent); }
-.dark-base .concepto-modal-lbl      { color: var(--blue); }
-.dark-base .concepto-modal-def      { color: #C4D0E3; }
-
-.dark-base .concepto-modal-section--ejemplo {
-  background: color-mix(in srgb, var(--blue) 5%, transparent);
-  border-left-color: color-mix(in srgb, var(--blue) 30%, transparent);
-}
-
-.dark-base .concepto-modal-section--ejemplo .concepto-modal-lbl { color: var(--blue); }
-.dark-base .concepto-modal-ejemplo { color: #B0C4D8; }
-
-.dark-base .concepto-modal-section--aplicacion {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 7%, transparent) 0%, color-mix(in srgb, var(--blue-accent) 4%, transparent) 100%);
-  border-color: color-mix(in srgb, var(--blue) 18%, transparent);
-}
-
-.dark-base .concepto-modal-lbl--aplicacion { color: var(--blue); }
-.dark-base .concepto-modal-aplicacion { color: #C4D0E3; }
 
 /* ── Modal responsive ── */
 @media (max-width: 600px) {
   .concepto-modal-card    { padding: 1.8rem 1.3rem 1.5rem; border-radius: 20px; }
-  .concepto-modal-termino { font-size: 1.55rem; }
-  .concepto-modal-def,
-  .concepto-modal-ejemplo,
-  .concepto-modal-aplicacion { font-size: 0.84rem; }
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -8656,176 +8167,6 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 .dark-base .wpd-item-title { color: #E2E8F0; }
 .dark-base .wpd-handle { background: rgba(148,163,184,0.25); }
 
-
-/* ══════════════════════════════════════════════════════════════
-   MITO, BOTÓN DETALLE + VER MÁS + MODAL
-══════════════════════════════════════════════════════════════ */
-
-.mito-detalle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.7rem;
-  padding: 0.52rem 1.0rem;
-  background: #FFFFFF;
-  border: 1px solid #E8EEF4;
-  box-shadow: 0 4px 12px rgba(11,19,43,0.10);
-  border-radius: 999px;
-  font-family: inherit;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--blue);
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, color 0.18s, transform 0.2s;
-}
-.mito-detalle-btn:hover {
-  background: #F8FAFC;
-  border-color: #CBD5E1;
-  box-shadow: 0 6px 18px rgba(11,19,43,0.14);
-  transform: translateY(-2px);
-}
-.dark-base .mito-detalle-btn {
-  background: #1E293B;
-  border: 1px solid rgba(51,65,85,0.5);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  color: var(--blue-accent);
-}
-.dark-base .mito-detalle-btn:hover {
-  background: #263548;
-  border-color: rgba(51,65,85,0.8);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-  transform: translateY(-2px);
-}
-
-/* "Ver más mitos" */
-.mitos-ver-mas {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0.9rem auto 0;
-  padding: 0.45rem 1.1rem;
-  background: none;
-  border: 1px solid color-mix(in srgb, var(--blue) 25%, transparent);
-  border-radius: 999px;
-  font-family: inherit;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--blue);
-  cursor: pointer;
-  transition: background 0.18s, border-color 0.18s;
-}
-.mitos-ver-mas:hover { background: color-mix(in srgb, var(--blue) 6%, transparent); border-color: color-mix(in srgb, var(--blue) 45%, transparent); }
-.dark-base .mitos-ver-mas { border-color: color-mix(in srgb, var(--blue) 28%, transparent); color: var(--blue); }
-.dark-base .mitos-ver-mas:hover { background: color-mix(in srgb, var(--blue) 7%, transparent); }
-
-/* Overlay */
-.mito-info-overlay {
-  position: fixed; inset: 0; z-index: 2000;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(3,12,26,0.72);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  padding: 1rem;
-}
-.mito-info-overlay[hidden] { display: none; }
-
-.mito-info-card {
-  position: relative;
-  width: 100%; max-width: 560px;
-  max-height: 90dvh;
-  overflow-y: auto;
-  background: #fff;
-  border-radius: 20px;
-  padding: 2rem 2rem 1.8rem;
-  box-shadow: 0 24px 80px rgba(3,12,26,0.30);
-  animation: mitoSlideIn 0.28s cubic-bezier(0.34,1.26,0.64,1) both;
-}
-@keyframes mitoSlideIn {
-  from { opacity: 0; transform: translateY(18px) scale(0.97); }
-  to   { opacity: 1; transform: none; }
-}
-
-.mito-info-close {
-  position: absolute; top: 1rem; right: 1rem;
-  width: 30px; height: 30px;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(148,163,184,0.12);
-  border: none; border-radius: 50%;
-  cursor: pointer; color: var(--navy);
-  transition: background 0.18s;
-}
-.mito-info-close:hover { background: rgba(148,163,184,0.22); }
-
-.mito-info-eyebrow {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--blue); opacity: 0.75;
-  margin-bottom: 0.55rem;
-}
-
-.mito-info-statement {
-  font-size: 1.1rem; font-weight: 700; color: var(--navy);
-  line-height: 1.4; margin: 0 0 0.75rem; font-style: italic;
-}
-
-.mito-info-veredicto {
-  display: inline-flex; align-items: center; gap: 0.35rem;
-  padding: 0.28rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.75rem; font-weight: 700;
-  margin-bottom: 1.2rem;
-}
-.veredicto-verdadero { background: rgba(16,185,129,0.12); color: #059669; }
-.veredicto-falso     { background: rgba(239,68,68,0.10); color: #DC2626; }
-
-.mito-info-body { display: flex; flex-direction: column; gap: 1.1rem; }
-
-.mito-info-section { display: flex; flex-direction: column; gap: 0.45rem; }
-
-.mito-info-lbl {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.07em; color: var(--blue); opacity: 0.8;
-}
-.mito-info-lbl--realidad { color: #059669; }
-.mito-info-lbl--ciencia  { color: #7C3AED; }
-
-.mito-info-section p {
-  font-size: 0.84rem; color: var(--text-body); line-height: 1.7; margin: 0;
-}
-
-.mito-info-section--realidad {
-  padding: 0.8rem 1rem;
-  background: rgba(16,185,129,0.06);
-  border-left: 3px solid rgba(16,185,129,0.4);
-  border-radius: 0 10px 10px 0;
-}
-.mito-info-section--ciencia {
-  padding: 0.8rem 1rem;
-  background: rgba(124,58,237,0.05);
-  border-left: 3px solid rgba(124,58,237,0.3);
-  border-radius: 0 10px 10px 0;
-}
-
-.mito-info-ref {
-  display: block;
-  font-size: 0.7rem; font-style: normal; font-weight: 600;
-  color: rgba(124,58,237,0.65);
-  margin-top: 0.3rem;
-}
-
-/* Dark mode, modal mito */
-.dark-base .mito-info-card {
-  background: #0B1524;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.55);
-}
-.dark-base .mito-info-close { color: #94A3B8; }
-.dark-base .mito-info-statement { color: #E2E8F0; }
-.dark-base .mito-info-section p { color: #B0C4D8; }
-.dark-base .mito-info-section--realidad { background: rgba(16,185,129,0.08); }
-.dark-base .mito-info-section--ciencia  { background: rgba(124,58,237,0.08); }
-.dark-base .mito-info-ref { color: rgba(167,139,250,0.7); }
-.dark-base .veredicto-verdadero { background: rgba(16,185,129,0.15); }
-.dark-base .veredicto-falso     { background: rgba(239,68,68,0.13); }
 
 
 /* ══════════════════════════════════════════════════════════════
@@ -10153,30 +9494,6 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   gap: 0.25rem;
   color: var(--text-muted);
   font-size: 0.70rem;
-}
-
-/* ── TOAST: Mitos completados ── */
-.toast-mitos-completo {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(12px);
-  background: linear-gradient(135deg, var(--blue) 0%, color-mix(in srgb, var(--blue) 70%, var(--blue-accent)) 100%);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-  white-space: nowrap;
-  box-shadow: 0 4px 20px rgba(37,99,235,0.35);
-}
-.toast-mitos-completo.visible {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
 }
 
 .mystery-toast {

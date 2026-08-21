@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Inferencia, Divulgación de Psicología</title>
-  <meta name="description" content="Psicología basada en evidencia: 47 artículos, 20 mitos científicos y 18 sesgos cognitivos explicados sin jerga. Para curioso, no para psicólogo." />
+  <meta name="description" content="Psicología basada en evidencia: 47 artículos y 18 sesgos cognitivos explicados sin jerga. Para curioso, no para psicólogo." />
   <meta name="robots" content="index, follow" />
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="La Inferencia" />
   <meta property="og:title"       content="La Inferencia, Divulgación de Psicología" />
-  <meta property="og:description" content="Psicología de investigación aplicada a la vida real. 47 artículos, 20 mitos desmentidos y 18 sesgos cognitivos, con estudios reales, sin jerga ni condescendencia." />
+  <meta property="og:description" content="Psicología de investigación aplicada a la vida real. 47 artículos y 18 sesgos cognitivos, con estudios reales, sin jerga ni condescendencia." />
   <!--
     OG IMAGE: Abre og-image-generator.html en el navegador, sigue las instrucciones
     para crear img/OG.png, luego cambia las dos líneas marcadas con (ACTUALIZAR).
@@ -23,7 +23,7 @@
   <meta property="og:locale"      content="es_ES" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="La Inferencia, Divulgación de Psicología" />
-  <meta name="twitter:description" content="Psicología de investigación aplicada a la vida real. 47 artículos, 20 mitos desmentidos y 18 sesgos cognitivos, con estudios reales, sin jerga ni condescendencia." />
+  <meta name="twitter:description" content="Psicología de investigación aplicada a la vida real. 47 artículos y 18 sesgos cognitivos, con estudios reales, sin jerga ni condescendencia." />
   <meta name="twitter:image"       content="https://lainferencia.com/img/OG.png" />
   <link rel="canonical" href="https://lainferencia.com/" />
   <link rel="alternate" hreflang="es" href="https://lainferencia.com/" />
@@ -75,7 +75,7 @@
         "@type": "WebSite",
         "name": "La Inferencia",
         "url": "https://lainferencia.com",
-        "description": "Divulgación de psicología basada en investigación peer-reviewed. Artículos sobre sesgos cognitivos, mitos psicológicos y psicología aplicada.",
+        "description": "Divulgación de psicología basada en investigación peer-reviewed. Artículos sobre sesgos cognitivos y psicología aplicada.",
         "inLanguage": "es",
         "potentialAction": {
           "@type": "SearchAction",
@@ -281,10 +281,6 @@
 
         <!-- Acceso rápido, solo visible en móvil -->
         <div class="hero-quick-access">
-          <button class="hqa-btn hqa-exp" id="hqa-exp-btn">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" class="hqa-icon"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-            Test cognitivo
-          </button>
           <button class="hqa-btn hqa-mitos" id="hqa-mitos-btn">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" class="hqa-icon"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
             Lista de Efectos
@@ -308,323 +304,26 @@
     <!-- ── DASHBOARD LAYOUT ── -->
     <div class="dashboard-layout">
 
-      <!-- SIDEBAR IZQUIERDO: Test cognitivo + Radar de Mitos -->
+      <!-- SIDEBAR IZQUIERDO: Artículo de la Semana + Fuera de Bata -->
       <aside class="sidebar-widget sidebar-left">
         <button class="sidebar-close-btn" aria-label="Cerrar panel">✕</button>
 
-        <!-- Concepto de la Semana -->
-        <div class="concepto-semana-widget" id="concepto-widget-block">
-          <div class="concepto-eyebrow">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            Concepto de la Semana
+        <!-- Artículo de la Semana (rellenado por JS, ver renderSidebarWeeklyTeaser) -->
+        <div class="sidebar-weekly-card" id="sidebar-weekly-card"></div>
+
+        <!-- Fuera de Bata -->
+        <div class="sidebar-fdb-card">
+          <div class="sidebar-fdb-eyebrow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Fuera de Bata
           </div>
-          <p class="concepto-termino" id="concepto-termino">-</p>
-          <p class="concepto-origen" id="concepto-origen">-</p>
-          <p class="concepto-def" id="concepto-def">-</p>
-          <button class="concepto-abrir-btn" id="concepto-abrir-btn" aria-haspopup="dialog">
-            Explorar concepto
+          <p class="sidebar-fdb-desc">Jóvenes psicólogos se quitan la bata de científico. Aquí te cuentan sus descubrimientos de la mente humana antes de que se pierdan entre las estanterías de una biblioteca universitaria.</p>
+          <button class="sidebar-fdb-btn" id="sidebar-fdb-btn">
+            Explorar Fuera de Bata
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
 
-        <!-- Radar de Mitos -->
-        <div class="mitos-section">
-          <div class="mitos-widget-header">
-            <div class="mitos-eyebrow-row">
-              <span class="mitos-eyebrow">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
-                Radar de Mitos
-              </span>
-              <span class="mitos-nav-row">
-                <button class="mitos-nav-btn" id="mitos-prev" aria-label="Mito anterior"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
-                <span id="mitos-counter" class="mitos-counter">1 / 20</span>
-                <button class="mitos-nav-btn" id="mitos-next" aria-label="Mito siguiente"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
-              </span>
-            </div>
-            <p class="mitos-headline">¿Verdadero o Falso?</p>
-            <p class="mitos-sub">Los mitos más resistentes son los que parecen más obvios. ¿Cuántos llevas años asumiendo sin cuestionarlos?</p>
-          </div>
-          <div id="mitos-cards">
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-01">
-              <p class="mito-statement">«Solo usamos el 10% de nuestro cerebro»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Las técnicas de neuroimagen (fMRI, PET) muestran actividad en prácticamente todas las regiones cerebrales. El cerebro consume ~20% de la energía corporal incluso en reposo. Ningún estudio respalda este mito.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-01" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="verdadero" data-mito="mito-02">
-              <p class="mito-statement">«Perder 100 € nos duele más de lo que nos alegra ganarlos»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Verdadero. Kahneman y Tversky demostraron que el dolor de una pérdida es entre 1,5 y 2,5 veces mayor que la satisfacción de una ganancia equivalente. Lo llamaron aversión a las pérdidas y es uno de los hallazgos más replicados de la psicología conductual.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-02" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-03">
-              <p class="mito-statement">«Los estilos de aprendizaje visual, auditivo y kinestésico tienen respaldo científico»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. Múltiples metaanálisis (Pashler et al., 2008; Rogowsky et al., 2020) no hallaron evidencia de que adaptar la instrucción al «estilo» preferido mejore el rendimiento. La teoría VAK es un neuromito con refutación empírica sólida.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-03" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="verdadero" data-mito="mito-04">
-              <p class="mito-statement">«Dormir menos de 7 horas deteriora el rendimiento cognitivo de forma objetivamente medible»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Verdadero. Walker (2017) y numerosos estudios documentan deterioro significativo en atención sostenida, consolidación de memoria y toma de decisiones con menos de 7 horas. El problema: quienes duermen poco se adaptan subjetivamente y dejan de notar el déficit, aunque las pruebas objetivas lo detectan con claridad.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-04" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-05">
-              <p class="mito-statement">«Escuchar música de Mozart aumenta la inteligencia (el "Efecto Mozart")»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. El estudio original (Rausher et al., 1993) encontró una mejora de 15 minutos en tareas espaciales en adultos universitarios, nunca en bebés. El metaanálisis de Chabris (1999) descartó el efecto generalizado. La industria "Baby Einstein" se construyó sobre una distorsión mediática de ese hallazgo puntual.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-05" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <!-- Mitos 6–20 -->
-            <div id="mitos-extra">
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-06">
-              <p class="mito-statement">«"Soltar vapor" (gritar o golpear un cojín) reduce la agresividad»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. Bushman (2002) demostró que practicar conductas agresivas activa y refuerza los circuitos del enfado en lugar de aliviarlos. El grupo que "descargó" golpeando un saco mostró mayor agresividad posterior que el grupo que no hizo nada.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-06" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-07">
-              <p class="mito-statement">«Los recuerdos son fijos: una vez formados, no cambian»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. Loftus y Palmer (1974) demostraron que cambiar una sola palabra en una pregunta alteraba los recuerdos de testigos oculares. Loftus plantó recuerdos completamente falsos (perderse de niño en un centro comercial) en adultos sanos. Cada vez que recuerdas algo, lo reconstruyes.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-07" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-08">
-              <p class="mito-statement">«Las personas más inteligentes son menos susceptibles a los sesgos cognitivos»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. West, Meserve &amp; Stanovich (2012) encontraron que mayor CI no reduce los sesgos estándar. De hecho, personas con mayor capacidad cognitiva muestran más sesgo de punto ciego: creen con más convicción que son ellas las que no tienen sesgos, mientras los demás sí.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-08" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-09">
-              <p class="mito-statement">«El estrés siempre es perjudicial para la salud»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. La curva de Yerkes-Dodson (1908) documenta que el rendimiento alcanza su pico con activación moderada. McGonigal (2013) mostró en 30.000 adultos que el estrés solo aumentaba la mortalidad en quienes creían que era perjudicial. Quienes lo percibían como energizante tenían el riesgo más bajo de toda la muestra.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-09" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-10">
-              <p class="mito-statement">«Los hombres y las mujeres tienen cerebros radicalmente diferentes»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. Joel et al. (2015) analizaron 1.400 cerebros con neuroimagen: solo entre el 0% y el 8% mostraba el patrón consistentemente masculino o femenino en todas las medidas. La mayoría presenta un «mosaico» de características que se solapan enormemente entre sexos.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-10" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-11">
-              <p class="mito-statement">«La multitarea es una habilidad que algunos dominan bien»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso en el 97,5% de los casos. Strayer &amp; Watson (2012) encontraron que solo el 2,5% de la población son «supertaskers» sin coste cognitivo real. El hallazgo más paradójico: quienes se consideran buenos en multitarea son sistemáticamente los peores en pruebas objetivas.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-11" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-12">
-              <p class="mito-statement">«Las personas que mienten evitan el contacto visual»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. DePaulo et al. (2003) revisaron 116 estudios: el contacto visual no predice el engaño. Bond &amp; DePaulo (2006) calcularon que la tasa media de detección de mentiras es del 54%, apenas por encima del azar. Los mentirosos a menudo mantienen más contacto visual para compensar.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-12" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-13">
-              <p class="mito-statement">«Los test MBTI (Myers-Briggs) predicen con fiabilidad el éxito profesional»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. La fiabilidad test-retest del MBTI es débil: el 50% de personas obtiene un tipo diferente al repetirlo 5 semanas después. Pittenger (1993) y múltiples revisiones confirman que su validez predictiva del rendimiento laboral es prácticamente nula. El Big Five sí muestra validez incremental real.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-13" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-14">
-              <p class="mito-statement">«El azúcar causa hiperactividad en los niños»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. Wolraich et al. (1995) en JAMA revisaron 23 ensayos controlados aleatorios: el azúcar no afecta el comportamiento ni la cognición. Hoover &amp; Milich (1994) demostraron que el efecto es completamente real… pero en los padres: quienes creían que su hijo había tomado azúcar (aunque tomó placebo) lo calificaban como más hiperactivo.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-14" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-15">
-              <p class="mito-statement">«Los sueños revelan deseos inconscientes ocultos»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">No tiene respaldo empírico. Hobson &amp; McCarley (1977) propusieron que los sueños son el resultado de la activación aleatoria del tronco encefálico y la interpretación que el córtex hace de esas señales. La neurociencia actual los vincula a consolidación de memoria y regulación emocional, no a mensajes simbólicos del inconsciente.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-15" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-16">
-              <p class="mito-statement">«La regla de las 10.000 horas garantiza la maestría en cualquier disciplina»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso en su versión popular. Ericsson señaló que Gladwell simplificó su investigación: lo que importa es la práctica deliberada (diseñada para corregir debilidades con feedback). Macnamara et al. (2014) encontraron que la práctica explica solo el 18-26% de la varianza en el rendimiento; factores genéticos y la calidad del entrenamiento explican el resto.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-16" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-17">
-              <p class="mito-statement">«Los introvertidos son simplemente tímidos»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. Cheek &amp; Buss (1981) establecieron que introversión y timidez son constructos distintos. La introversión es preferencia por baja estimulación social; la timidez es miedo a la evaluación negativa. Un introvertido puede hablar ante miles de personas sin ansiedad; un extrovertido puede ser profundamente tímido.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-17" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-18">
-              <p class="mito-statement">«Las personas funcionan principalmente con el hemisferio izquierdo o el derecho del cerebro»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. Nielsen et al. (2013) analizaron la conectividad de 1.000 cerebros con fMRI y no encontraron evidencia de dominancia hemisférica como rasgo individual. Prácticamente todas las funciones cognitivas complejas implican ambos hemisferios. La lateralización existe a nivel de proceso específico, no de personalidad.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-18" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-19">
-              <p class="mito-statement">«Los humanos detectamos las mentiras mejor que el azar»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. Bond &amp; DePaulo (2006) analizaron 206 estudios con 24.000 participantes: la tasa media de detección es del 54%, casi idéntica al azar. Policías, jueces y agentes de inteligencia no mejoran significativamente ese resultado, aunque confían mucho más en su capacidad.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-19" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            <div class="mito-tf-card" data-answer="falso" data-mito="mito-20">
-              <p class="mito-statement">«Releer y subrayar son técnicas de estudio tan efectivas como el repaso activo»</p>
-              <div class="mito-tf-btns">
-                <button class="tf-btn tf-true" data-val="verdadero">Verdadero</button>
-                <button class="tf-btn tf-false" data-val="falso">Falso</button>
-              </div>
-              <div class="mito-reveal">
-                <span class="mito-reveal-badge"></span>
-                <p class="mito-evidence">Falso. Roediger &amp; Karpicke (2006) demostraron que intentar recordar sin mirar el material es entre 1,5 y 3 veces más efectivo para la retención a largo plazo. Dunlosky et al. (2013) revisaron 10 técnicas: solo la práctica de recuperación y el espaciado obtuvieron rating de alta utilidad. Releer produce una ilusión de fluidez que confundimos con aprendizaje real.</p>
-              </div>
-              <button class="mito-detalle-btn" data-mito="mito-20" aria-label="Ver explicación completa">Ver explicación completa ></button>
-            </div>
-
-            </div><!-- /#mitos-extra -->
-
-          </div>
-        </div>
-
-        <!-- Test cognitivo colapsable -->
-        <button class="exp-sidebar-btn" id="exp-toggle-btn" aria-expanded="false" aria-controls="exp-section">
-          <span class="exp-sidebar-btn-left">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>
-            ¿Cuánto te manipula tu cerebro?
-          </span>
-          <svg class="exp-toggle-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="exp-section" id="exp-section">
-          <div class="exp-card" id="exp-card"></div>
-        </div>
       </aside>
 
       <!-- CENTRO: Pestañas y contenido principal -->
@@ -643,7 +342,7 @@
               <input type="text" id="search-input" placeholder="Busca por título de artículo" autocomplete="off" />
             </div>
             <!-- ── PESTAÑAS ── -->
-            <div class="tab-bar" role="tablist" aria-label="Secciones de contenido">
+            <div class="tab-bar tab-bar--single" role="tablist" aria-label="Secciones de contenido">
               <span class="tab-pill" aria-hidden="true"></span>
               <button class="tab-btn active" role="tab" aria-selected="true" data-tab="biblioteca" id="tab-biblioteca">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -651,13 +350,13 @@
                 </svg>
                 Por Intereses
               </button>
-              <button class="tab-btn" role="tab" aria-selected="false" data-tab="repositorio" id="tab-repositorio">
+              <button class="tab-btn tab-btn--hidden" role="tab" aria-selected="false" data-tab="repositorio" id="tab-repositorio" aria-hidden="true" tabindex="-1">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
                 </svg>
                 Fuera de Bata
               </button>
-              <button class="tab-btn" role="tab" aria-selected="false" data-tab="semana" id="tab-semana">
+              <button class="tab-btn tab-btn--hidden" role="tab" aria-selected="false" data-tab="semana" id="tab-semana" aria-hidden="true" tabindex="-1">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
                   <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
@@ -852,8 +551,243 @@
               </div>
             </div>
 
-            <!-- GRID: todos los artículos (filtrable por categoría) -->
-            <div class="docs-grid-2" id="docs-grid-2">
+            <!-- SECCIONES: abren el listado filtrado en overlay -->
+            <div class="bata-secciones-grid" id="bata-secciones"></div>
+          </div>
+
+          <div id="bata-article-view" style="display:none"></div>
+
+          <p class="empty-state" id="empty-state">No se encontraron documentos para esta búsqueda.</p>
+        </main>
+
+        <!-- Líneas de investigación (colapso/expande) -->
+        <div class="research-toggle-wrap">
+          <button class="research-toggle-btn" id="research-toggle-btn" aria-expanded="false" aria-controls="research-section">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            Ver investigaciones en curso
+            <svg class="research-toggle-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <section class="research-section" id="research-section">
+          <div class="research-inner">
+            <div class="research-grid">
+              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Enmarcamiento metafórico y percepción social de los trastornos mentales</h3></div>
+              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Lenguaje, estigma y búsqueda de ayuda psicológica</h3></div>
+              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Neuropsicología clínica y cognición social</h3></div>
+              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Comunicación científica y divulgación en salud mental</h3></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- PANEL 3: ARTÍCULO DE LA SEMANA -->
+      <div class="tab-panel" id="panel-semana" role="tabpanel" aria-labelledby="tab-semana">
+        <div class="main-content">
+          <div id="weekly-container">
+            <!-- Renderizado por JS -->
+          </div>
+        </div>
+      </div>
+
+        </div><!-- /.tab-panels -->
+
+      </div><!-- /.dashboard-center -->
+
+      <!-- SIDEBAR DERECHO: Lista de Efectos -->
+      <aside class="sidebar-widget sidebar-right">
+        <button class="sidebar-close-btn" aria-label="Cerrar panel">✕</button>
+
+        <!-- Progress tracker -->
+        <div class="progress-tracker" id="progress-tracker" aria-label="Tu progreso">
+          <div class="pt-header">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Tu progreso
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Artículos leídos</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-articulos-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-articulos-count">0 / -</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Semanales leídos</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-semanales-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-semanales-count">0 / -</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Efectos explorados</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-efectos-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-efectos-count">0 / 18</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Quizzes completados</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-quizzes-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-quizzes-count">0 / -</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Desafíos aceptados</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-desafios-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-desafios-count">0 / -</span>
+            </div>
+          </div>
+
+          <div class="pt-streak" id="pt-streak-row">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            <span class="pt-streak-label">Racha</span>
+            <span class="pt-streak-value" id="pt-streak-value">0 días</span>
+          </div>
+        </div>
+
+        <!-- Widget Glosario: acceso directo desde Explorar (solo en móvil) -->
+        <div class="mob-glosario-widget" id="mob-glosario-widget">
+          <div class="mob-glosario-widget-inner">
+            <div class="mob-glosario-widget-text">
+              <span class="mob-glosario-widget-label">Glosario</span>
+              <span class="mob-glosario-widget-desc">40 términos psicológicos con definición y ejemplo</span>
+            </div>
+            <button class="mob-glosario-widget-btn" id="mob-glosario-widget-btn" aria-label="Abrir glosario de psicología">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Consultar
+            </button>
+          </div>
+        </div>
+
+        <!-- Vista previa de efectos: tarjeta fija, sin desplegable -->
+        <div class="efectos-preview-card">
+          <div class="widget-header efectos-preview-header">
+            <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Vista previa de efectos</h3>
+          </div>
+          <div class="efectos-list sk-init" id="efectos-list">
+
+            <div class="efecto-card" data-efecto="dunning-kruger">
+              <strong>Efecto Dunning-Kruger</strong>
+              <span>Los que menos saben creen saber más.</span>
+              <span class="efecto-hook">La incompetencia genera una ceguera que impide reconocer la propia incompetencia.</span>
+            </div>
+
+            <div class="efecto-card" data-efecto="halo">
+              <strong>Efecto Halo</strong>
+              <span>Una cualidad visible contamina tu percepción de todo lo demás.</span>
+              <span class="efecto-hook">Una primera impresión positiva colorea todos los juicios posteriores, incluso sin relación lógica entre ellos.</span>
+            </div>
+
+            <div class="efecto-card" data-efecto="confirmacion">
+              <strong>Sesgo de Confirmación</strong>
+              <span>Tu cerebro filtra la realidad para tener siempre razón.</span>
+              <span class="efecto-hook">Buscas activamente evidencias que validen lo que ya crees e ignoras inconscientemente las que lo refutan.</span>
+            </div>
+
+          </div>
+          <button class="efectos-preview-vermas" id="efectos-ver-mas-btn" aria-haspopup="dialog">
+            Ver más
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <!-- Resto de efectos: sin renderizar, solo alimentan el modal "Ver más" con la lista completa -->
+        <div id="efectos-list-full" hidden>
+          <div class="efecto-card" data-efecto="placebo">
+            <strong>Efecto Placebo</strong>
+            <span>Creer que funciona lo hace funcionar de verdad.</span>
+            <span class="efecto-hook">La expectativa de mejorar activa mecanismos fisiológicos reales sin ningún principio activo de por medio.</span>
+          </div>
+          <div class="efecto-card" data-efecto="bystander">
+            <strong>Efecto Espectador</strong>
+            <span>Cuantos más testigos, menos probabilidad de que alguien ayude.</span>
+            <span class="efecto-hook">La responsabilidad se diluye en el grupo: todos asumen que será otro quien actúe.</span>
+          </div>
+          <div class="efecto-card" data-efecto="retrospectiva">
+            <strong>Sesgo de Retrospectiva</strong>
+            <span>Tras conocer el resultado, siempre "lo sabías".</span>
+            <span class="efecto-hook">Una vez conocido el desenlace, la memoria reescribe el pasado para que siempre lo hubieras predicho.</span>
+          </div>
+          <div class="efecto-card" data-efecto="mera-exposicion">
+            <strong>Efecto de Mera Exposición</strong>
+            <span>Cuanto más ves algo, más te atrae sin razón aparente.</span>
+            <span class="efecto-hook">La mera familiaridad genera preferencia: la repetición aumenta el atractivo sin que haya interacción consciente.</span>
+          </div>
+          <div class="efecto-card" data-efecto="anclaje">
+            <strong>Anclaje Cognitivo</strong>
+            <span>El primer número que oyes decide todos los demás.</span>
+            <span class="efecto-hook">El primer dato recibido fija un punto de referencia que sesga todas las estimaciones posteriores.</span>
+          </div>
+          <div class="efecto-card" data-efecto="barnum">
+            <strong>Efecto Barnum</strong>
+            <span>Crees que una descripción genérica te define a ti en concreto.</span>
+            <span class="efecto-hook">Las afirmaciones vagas y universales nos parecen asombrosamente precisas cuando creemos que nos van dirigidas.</span>
+          </div>
+          <div class="efecto-card" data-efecto="disponibilidad">
+            <strong>Sesgo de Disponibilidad</strong>
+            <span>Lo que recuerdas fácilmente parece más probable que lo que no.</span>
+            <span class="efecto-hook">Juzgamos la frecuencia de un evento por la facilidad con que nos vienen ejemplos a la mente, no por estadísticas.</span>
+          </div>
+          <div class="efecto-card" data-efecto="pigmalion">
+            <strong>Efecto Pigmalión</strong>
+            <span>Las expectativas de los demás sobre ti acaban cumpliéndose.</span>
+            <span class="efecto-hook">Lo que otros esperan de nosotros moldea silenciosamente nuestro propio rendimiento y conducta.</span>
+          </div>
+          <div class="efecto-card" data-efecto="superviviente">
+            <strong>Sesgo del Superviviente</strong>
+            <span>Solo ves los éxitos porque los fracasos no cuentan su historia.</span>
+            <span class="efecto-hook">Construimos conclusiones sobre datos incompletos: los casos que fallaron desaparecieron del mapa.</span>
+          </div>
+          <div class="efecto-card" data-efecto="autoservicio">
+            <strong>Sesgo de Autoservicio</strong>
+            <span>Tus éxitos son tuyos; tus fracasos, culpa de las circunstancias.</span>
+            <span class="efecto-hook">El cerebro protege la autoestima atribuyendo los logros a capacidad propia y los fracasos a factores externos.</span>
+          </div>
+          <div class="efecto-card" data-efecto="primacia">
+            <strong>Efecto de Primacía</strong>
+            <span>Lo primero que aprendes de alguien domina todo lo que viene después.</span>
+            <span class="efecto-hook">La información inicial sobre una persona actúa como filtro que colorea toda la información posterior.</span>
+          </div>
+          <div class="efecto-card" data-efecto="optimismo">
+            <strong>Sesgo de Optimismo</strong>
+            <span>Tu cerebro cree que los malos eventos le ocurren a los demás, no a ti.</span>
+            <span class="efecto-hook">Sobreestimamos nuestra probabilidad de experimentar buenos eventos y subestimamos la de los malos.</span>
+          </div>
+          <div class="efecto-card" data-efecto="bandwagon">
+            <strong>Efecto Bandwagon</strong>
+            <span>Cuanta más gente cree algo, más probable te parece que sea verdad.</span>
+            <span class="efecto-hook">La popularidad de una idea se toma inconscientemente como evidencia de su veracidad.</span>
+          </div>
+          <div class="efecto-card" data-efecto="status-quo">
+            <strong>Sesgo del Statu Quo</strong>
+            <span>Cambiar duele más que seguir igual, aunque seguir igual sea peor.</span>
+            <span class="efecto-hook">Las pérdidas asociadas al cambio se perciben como más graves que las ganancias equivalentes que ofrece.</span>
+          </div>
+          <div class="efecto-card" data-efecto="efecto-espejo">
+            <strong>Efecto Espejo</strong>
+            <span>Imitar inconscientemente al otro genera confianza y empatía inmediata.</span>
+            <span class="efecto-hook">El mimetismo postural y gestual crea rapport y sensación de conexión emocional de forma completamente automática.</span>
+          </div>
+        </div>
+      </aside>
+
+    </div><!-- /.dashboard-layout -->
+          <!-- MODAL: listado de artículos de Fuera de Bata, por sección o todos -->
+          <div class="concepto-modal-overlay bata-lista-modal-overlay" id="bata-lista-modal" hidden role="dialog" aria-modal="true" aria-labelledby="blm-titulo">
+            <div class="concepto-modal-card efectos-lista-modal-card">
+              <button class="concepto-modal-close" id="bata-lista-modal-close" aria-label="Cerrar">&#x2715;</button>
+              <div class="concepto-modal-eyebrow">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Fuera de Bata
+              </div>
+              <p class="efectos-lista-modal-titulo" id="blm-titulo">Todos los artículos</p>
+              <div class="docs-grid-2" id="docs-grid-2">
 
               <div class="doc-card" data-category="comportamiento" data-text="análisis manipulación lenguaje influencia toma decisiones framing mecanismo procesamiento cognitivo dual">
                 <div class="doc-meta"><button class="author-trigger" aria-label="Ver perfil del autor">Miguel Noguer Escudero</button> <span class="sep">·</span> <span class="meta-time"><svg class="clock-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4 min de lectura</span></div>
@@ -1008,248 +942,10 @@
                 </div>
               </div>
 
+              </div>
             </div>
           </div>
 
-          <div id="bata-article-view" style="display:none"></div>
-
-          <p class="empty-state" id="empty-state">No se encontraron documentos para esta búsqueda.</p>
-        </main>
-
-        <!-- Líneas de investigación (colapso/expande) -->
-        <div class="research-toggle-wrap">
-          <button class="research-toggle-btn" id="research-toggle-btn" aria-expanded="false" aria-controls="research-section">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-            Ver investigaciones en curso
-            <svg class="research-toggle-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-        </div>
-        <section class="research-section" id="research-section">
-          <div class="research-inner">
-            <div class="research-grid">
-              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Enmarcamiento metafórico y percepción social de los trastornos mentales</h3></div>
-              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Lenguaje, estigma y búsqueda de ayuda psicológica</h3></div>
-              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Neuropsicología clínica y cognición social</h3></div>
-              <div class="research-card"><span class="research-tag">Próximamente</span><h3>Comunicación científica y divulgación en salud mental</h3></div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- PANEL 3: ARTÍCULO DE LA SEMANA -->
-      <div class="tab-panel" id="panel-semana" role="tabpanel" aria-labelledby="tab-semana">
-        <div class="main-content">
-          <div id="weekly-container">
-            <!-- Renderizado por JS -->
-          </div>
-        </div>
-      </div>
-
-        </div><!-- /.tab-panels -->
-
-      </div><!-- /.dashboard-center -->
-
-      <!-- SIDEBAR DERECHO: Lista de Efectos -->
-      <aside class="sidebar-widget sidebar-right">
-        <button class="sidebar-close-btn" aria-label="Cerrar panel">✕</button>
-
-        <!-- Progress tracker -->
-        <div class="progress-tracker" id="progress-tracker" aria-label="Tu progreso">
-          <div class="pt-header">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            Tu progreso
-          </div>
-
-          <div class="pt-stat">
-            <span class="pt-stat-label">Artículos leídos</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-articulos-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-articulos-count">0 / -</span>
-            </div>
-          </div>
-
-          <div class="pt-stat">
-            <span class="pt-stat-label">Semanales leídos</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-semanales-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-semanales-count">0 / -</span>
-            </div>
-          </div>
-
-          <div class="pt-stat">
-            <span class="pt-stat-label">Efectos explorados</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-efectos-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-efectos-count">0 / 18</span>
-            </div>
-          </div>
-
-          <div class="pt-stat">
-            <span class="pt-stat-label">Mitos desmentidos</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-mitos-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-mitos-count">0 / 5</span>
-            </div>
-          </div>
-
-          <div class="pt-stat">
-            <span class="pt-stat-label">Quizzes completados</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-quizzes-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-quizzes-count">0 / -</span>
-            </div>
-          </div>
-
-          <div class="pt-stat">
-            <span class="pt-stat-label">Desafíos aceptados</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-desafios-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-desafios-count">0 / -</span>
-            </div>
-          </div>
-
-          <div class="pt-stat">
-            <span class="pt-stat-label">Pruebas cognitivas</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-pruebas-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-pruebas-count">0 / 8</span>
-            </div>
-          </div>
-
-          <div class="pt-streak" id="pt-streak-row">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
-            <span class="pt-streak-label">Racha</span>
-            <span class="pt-streak-value" id="pt-streak-value">0 días</span>
-          </div>
-        </div>
-
-        <!-- Widget Glosario: acceso directo desde Explorar (solo en móvil) -->
-        <div class="mob-glosario-widget" id="mob-glosario-widget">
-          <div class="mob-glosario-widget-inner">
-            <div class="mob-glosario-widget-text">
-              <span class="mob-glosario-widget-label">Glosario</span>
-              <span class="mob-glosario-widget-desc">40 términos psicológicos con definición y ejemplo</span>
-            </div>
-            <button class="mob-glosario-widget-btn" id="mob-glosario-widget-btn" aria-label="Abrir glosario de psicología">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              Consultar
-            </button>
-          </div>
-        </div>
-
-        <!-- Vista previa de efectos: tarjeta fija, sin desplegable -->
-        <div class="efectos-preview-card">
-          <div class="widget-header efectos-preview-header">
-            <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Vista previa de efectos</h3>
-          </div>
-          <div class="efectos-list sk-init" id="efectos-list">
-
-            <div class="efecto-card" data-efecto="dunning-kruger">
-              <strong>Efecto Dunning-Kruger</strong>
-              <span>Los que menos saben creen saber más.</span>
-              <span class="efecto-hook">La incompetencia genera una ceguera que impide reconocer la propia incompetencia.</span>
-            </div>
-
-            <div class="efecto-card" data-efecto="halo">
-              <strong>Efecto Halo</strong>
-              <span>Una cualidad visible contamina tu percepción de todo lo demás.</span>
-              <span class="efecto-hook">Una primera impresión positiva colorea todos los juicios posteriores, incluso sin relación lógica entre ellos.</span>
-            </div>
-
-            <div class="efecto-card" data-efecto="confirmacion">
-              <strong>Sesgo de Confirmación</strong>
-              <span>Tu cerebro filtra la realidad para tener siempre razón.</span>
-              <span class="efecto-hook">Buscas activamente evidencias que validen lo que ya crees e ignoras inconscientemente las que lo refutan.</span>
-            </div>
-
-          </div>
-          <button class="efectos-preview-vermas" id="efectos-ver-mas-btn" aria-haspopup="dialog">
-            Ver más
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-
-        <!-- Resto de efectos: sin renderizar, solo alimentan el modal "Ver más" con la lista completa -->
-        <div id="efectos-list-full" hidden>
-          <div class="efecto-card" data-efecto="placebo">
-            <strong>Efecto Placebo</strong>
-            <span>Creer que funciona lo hace funcionar de verdad.</span>
-            <span class="efecto-hook">La expectativa de mejorar activa mecanismos fisiológicos reales sin ningún principio activo de por medio.</span>
-          </div>
-          <div class="efecto-card" data-efecto="bystander">
-            <strong>Efecto Espectador</strong>
-            <span>Cuantos más testigos, menos probabilidad de que alguien ayude.</span>
-            <span class="efecto-hook">La responsabilidad se diluye en el grupo: todos asumen que será otro quien actúe.</span>
-          </div>
-          <div class="efecto-card" data-efecto="retrospectiva">
-            <strong>Sesgo de Retrospectiva</strong>
-            <span>Tras conocer el resultado, siempre "lo sabías".</span>
-            <span class="efecto-hook">Una vez conocido el desenlace, la memoria reescribe el pasado para que siempre lo hubieras predicho.</span>
-          </div>
-          <div class="efecto-card" data-efecto="mera-exposicion">
-            <strong>Efecto de Mera Exposición</strong>
-            <span>Cuanto más ves algo, más te atrae sin razón aparente.</span>
-            <span class="efecto-hook">La mera familiaridad genera preferencia: la repetición aumenta el atractivo sin que haya interacción consciente.</span>
-          </div>
-          <div class="efecto-card" data-efecto="anclaje">
-            <strong>Anclaje Cognitivo</strong>
-            <span>El primer número que oyes decide todos los demás.</span>
-            <span class="efecto-hook">El primer dato recibido fija un punto de referencia que sesga todas las estimaciones posteriores.</span>
-          </div>
-          <div class="efecto-card" data-efecto="barnum">
-            <strong>Efecto Barnum</strong>
-            <span>Crees que una descripción genérica te define a ti en concreto.</span>
-            <span class="efecto-hook">Las afirmaciones vagas y universales nos parecen asombrosamente precisas cuando creemos que nos van dirigidas.</span>
-          </div>
-          <div class="efecto-card" data-efecto="disponibilidad">
-            <strong>Sesgo de Disponibilidad</strong>
-            <span>Lo que recuerdas fácilmente parece más probable que lo que no.</span>
-            <span class="efecto-hook">Juzgamos la frecuencia de un evento por la facilidad con que nos vienen ejemplos a la mente, no por estadísticas.</span>
-          </div>
-          <div class="efecto-card" data-efecto="pigmalion">
-            <strong>Efecto Pigmalión</strong>
-            <span>Las expectativas de los demás sobre ti acaban cumpliéndose.</span>
-            <span class="efecto-hook">Lo que otros esperan de nosotros moldea silenciosamente nuestro propio rendimiento y conducta.</span>
-          </div>
-          <div class="efecto-card" data-efecto="superviviente">
-            <strong>Sesgo del Superviviente</strong>
-            <span>Solo ves los éxitos porque los fracasos no cuentan su historia.</span>
-            <span class="efecto-hook">Construimos conclusiones sobre datos incompletos: los casos que fallaron desaparecieron del mapa.</span>
-          </div>
-          <div class="efecto-card" data-efecto="autoservicio">
-            <strong>Sesgo de Autoservicio</strong>
-            <span>Tus éxitos son tuyos; tus fracasos, culpa de las circunstancias.</span>
-            <span class="efecto-hook">El cerebro protege la autoestima atribuyendo los logros a capacidad propia y los fracasos a factores externos.</span>
-          </div>
-          <div class="efecto-card" data-efecto="primacia">
-            <strong>Efecto de Primacía</strong>
-            <span>Lo primero que aprendes de alguien domina todo lo que viene después.</span>
-            <span class="efecto-hook">La información inicial sobre una persona actúa como filtro que colorea toda la información posterior.</span>
-          </div>
-          <div class="efecto-card" data-efecto="optimismo">
-            <strong>Sesgo de Optimismo</strong>
-            <span>Tu cerebro cree que los malos eventos le ocurren a los demás, no a ti.</span>
-            <span class="efecto-hook">Sobreestimamos nuestra probabilidad de experimentar buenos eventos y subestimamos la de los malos.</span>
-          </div>
-          <div class="efecto-card" data-efecto="bandwagon">
-            <strong>Efecto Bandwagon</strong>
-            <span>Cuanta más gente cree algo, más probable te parece que sea verdad.</span>
-            <span class="efecto-hook">La popularidad de una idea se toma inconscientemente como evidencia de su veracidad.</span>
-          </div>
-          <div class="efecto-card" data-efecto="status-quo">
-            <strong>Sesgo del Statu Quo</strong>
-            <span>Cambiar duele más que seguir igual, aunque seguir igual sea peor.</span>
-            <span class="efecto-hook">Las pérdidas asociadas al cambio se perciben como más graves que las ganancias equivalentes que ofrece.</span>
-          </div>
-          <div class="efecto-card" data-efecto="efecto-espejo">
-            <strong>Efecto Espejo</strong>
-            <span>Imitar inconscientemente al otro genera confianza y empatía inmediata.</span>
-            <span class="efecto-hook">El mimetismo postural y gestual crea rapport y sensación de conexión emocional de forma completamente automática.</span>
-          </div>
-        </div>
-      </aside>
-
-    </div><!-- /.dashboard-layout -->
 
     <!-- MODAL: Lista de Efectos completa, overlay con blur (igual que Explorar concepto) -->
     <div class="concepto-modal-overlay efectos-lista-modal-overlay" id="efectos-lista-modal" hidden role="dialog" aria-modal="true" aria-labelledby="elm-titulo">
@@ -1508,29 +1204,11 @@
 
         <div class="mob-yo-stat-card">
           <div class="mob-yo-stat-top">
-            <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
-            <span class="mob-yo-stat-label">Mitos desmentidos</span>
-            <span class="mob-yo-stat-num" id="mob-yo-s-mit">0 / 20</span>
-          </div>
-          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-mit" style="width:0%"></div></div>
-        </div>
-
-        <div class="mob-yo-stat-card">
-          <div class="mob-yo-stat-top">
             <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
             <span class="mob-yo-stat-label">Racha de días</span>
             <span class="mob-yo-stat-num" id="mob-yo-s-rac">0</span>
           </div>
           <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-rac" style="width:0%"></div></div>
-        </div>
-
-        <div class="mob-yo-stat-card">
-          <div class="mob-yo-stat-top">
-            <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>
-            <span class="mob-yo-stat-label">Pruebas cognitivas</span>
-            <span class="mob-yo-stat-num" id="mob-yo-s-pru">0 / 8</span>
-          </div>
-          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-pru" style="width:0%"></div></div>
         </div>
 
         <div class="mob-yo-stat-card">
@@ -1792,68 +1470,6 @@
     </div>
   </div>
 
-  <!-- ── MODAL CONCEPTO DE LA SEMANA ── -->
-  <div class="concepto-modal-overlay" id="concepto-modal" role="dialog" aria-modal="true" aria-label="Concepto de la semana" hidden>
-    <div class="concepto-modal-card">
-      <button class="concepto-modal-close" id="concepto-modal-close" aria-label="Cerrar concepto">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="concepto-modal-eyebrow">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        Concepto de la Semana
-      </div>
-      <h2 class="concepto-modal-termino" id="cm-termino"></h2>
-      <p class="concepto-modal-origen" id="cm-origen"></p>
-
-      <div class="concepto-modal-divider"></div>
-
-      <!-- 1. Definición extendida -->
-      <div class="concepto-modal-section">
-        <span class="concepto-modal-lbl">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-          Qué es exactamente
-        </span>
-        <p class="concepto-modal-def" id="cm-def"></p>
-      </div>
-
-      <!-- 2. El experimento fundacional -->
-      <div class="concepto-modal-section concepto-modal-section--exp">
-        <span class="concepto-modal-lbl">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 3H5a2 2 0 0 0-2 2v4"/><path d="M15 3h4a2 2 0 0 1 2 2v4"/><path d="M9 21H5a2 2 0 0 1-2-2v-4"/><path d="M15 21h4a2 2 0 0 0 2-2v-4"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
-          El experimento fundacional
-        </span>
-        <p class="concepto-modal-exp" id="cm-experimento"></p>
-      </div>
-
-      <!-- 3. Por qué ocurre -->
-      <div class="concepto-modal-section concepto-modal-section--mec">
-        <span class="concepto-modal-lbl">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>
-          Por qué ocurre
-        </span>
-        <p class="concepto-modal-mec" id="cm-mecanismo"></p>
-      </div>
-
-      <!-- 4. Lo reconocerás en -->
-      <div class="concepto-modal-section concepto-modal-section--reco">
-        <span class="concepto-modal-lbl">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          Lo reconocerás en
-        </span>
-        <ul class="concepto-modal-reco" id="cm-reconoceras"></ul>
-      </div>
-
-      <!-- 5. Aplicación -->
-      <div class="concepto-modal-section concepto-modal-section--aplicacion">
-        <span class="concepto-modal-lbl concepto-modal-lbl--aplicacion">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-          Cómo usarlo hoy
-        </span>
-        <p class="concepto-modal-aplicacion" id="cm-aplicacion"></p>
-      </div>
-    </div>
-  </div>
-
   <!-- ── LEVEL-UP OVERLAY ── -->
   <div class="levelup-overlay" id="levelup-overlay" hidden role="dialog" aria-modal="true" aria-label="Has subido de nivel">
     <canvas class="levelup-canvas" id="levelup-canvas" aria-hidden="true"></canvas>
@@ -2070,42 +1686,6 @@
       </div>
     </div>
 
-  </div>
-
-  <!-- ── MODAL DETALLE MITO ── -->
-  <div class="mito-info-overlay" id="mito-info-modal" role="dialog" aria-modal="true" aria-label="Detalle del mito" hidden>
-    <div class="mito-info-card">
-      <button class="mito-info-close" id="mito-info-close" aria-label="Cerrar">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="mito-info-eyebrow" id="mi-eyebrow"></div>
-      <h2 class="mito-info-statement" id="mi-statement"></h2>
-      <div class="mito-info-veredicto" id="mi-veredicto"></div>
-      <div class="mito-info-body">
-        <div class="mito-info-section">
-          <span class="mito-info-lbl">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-            Por qué se cree
-          </span>
-          <p id="mi-porque"></p>
-        </div>
-        <div class="mito-info-section mito-info-section--realidad">
-          <span class="mito-info-lbl mito-info-lbl--realidad">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            La realidad
-          </span>
-          <p id="mi-realidad"></p>
-        </div>
-        <div class="mito-info-section mito-info-section--ciencia">
-          <span class="mito-info-lbl mito-info-lbl--ciencia">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 3H5a2 2 0 0 0-2 2v4"/><path d="M15 3h4a2 2 0 0 1 2 2v4"/><path d="M9 21H5a2 2 0 0 1-2-2v-4"/><path d="M15 21h4a2 2 0 0 0 2-2v-4"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
-            Respaldo científico
-          </span>
-          <p id="mi-ciencia"></p>
-          <cite class="mito-info-ref" id="mi-ref"></cite>
-        </div>
-      </div>
-    </div>
   </div>
 
   <script src="js/search-index.js?v=bb5be3a08f"></script>
