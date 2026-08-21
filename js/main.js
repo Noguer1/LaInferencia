@@ -9061,7 +9061,42 @@ const GLOSARIO = [
 (function () {
   const container = document.getElementById('biblioteca-container');
   const catBtns   = document.querySelectorAll('.cat-btn');
+  const modal     = document.getElementById('biblioteca-modal');
+  const modalClose = document.getElementById('biblioteca-modal-close');
   if (!container) return;
+
+  let libModalTrap = null, libModalTrigger = null;
+  function openLibModal() {
+    if (!modal || !modal.hidden) return;
+    libModalTrigger = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    libModalTrap = trapFocus(modal);
+    const card = modal.querySelector('.concepto-modal-card');
+    if (card) card.scrollTop = 0;
+  }
+  function closeLibModal() {
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (libModalTrap) { releaseFocus(modal, libModalTrap, libModalTrigger); libModalTrap = null; }
+    else if (libModalTrigger) libModalTrigger.focus();
+  }
+  if (modalClose) {
+    modalClose.addEventListener('click', closeLibModal);
+    modalClose.addEventListener('touchstart', e => { e.preventDefault(); closeLibModal(); }, { passive: false });
+  }
+  if (modal) {
+    modal.addEventListener('click', e => { if (e.target === modal) closeLibModal(); });
+    modal.addEventListener('touchstart', e => { if (e.target === modal) { e.preventDefault(); closeLibModal(); } }, { passive: false });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeLibModal(); });
+  }
+  window._LI_openBibliotecaModal = openLibModal;
+
+  const modalTitleEl = document.getElementById('bm-titulo');
+  function setModalTitle(cat) {
+    if (modalTitleEl) modalTitleEl.textContent = CAT_LABELS[cat] || cat || '';
+  }
 
   const CAT_LABELS = {
     economia:    'Economía',
@@ -9222,6 +9257,7 @@ const GLOSARIO = [
 
   function openArticle(art, cat) {
     currentCat = cat || currentCat;
+    setModalTitle(currentCat);
     const _artUrl = `https://lainferencia.com/?v=art&id=${art.id}&cat=${currentCat}`;
     history.pushState({ v: 'art', id: art.id, cat: currentCat }, '', `?v=art&id=${art.id}&cat=${currentCat}`);
     document.title = `${art.title} | La Inferencia`;
@@ -9266,6 +9302,7 @@ const GLOSARIO = [
 
   function showCards(cat) {
     currentCat = cat;
+    setModalTitle(cat);
     document.title = 'La Inferencia, Divulgación de Psicología';
     const _homeDesc = 'Psicología basada en evidencia: 47 artículos, 20 mitos científicos y 18 sesgos cognitivos explicados sin jerga. Para curioso, no para psicólogo.';
     document.querySelectorAll('script[data-ld="article"]').forEach(s => s.remove());
@@ -9304,6 +9341,7 @@ const GLOSARIO = [
       const art  = arts[Math.floor(Math.random() * arts.length)];
       catBtns.forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
       openArticle(art, cat);
+      openLibModal();
       sorBtn.classList.add('spinning');
       setTimeout(() => sorBtn.classList.remove('spinning'), 600);
     });
@@ -9314,7 +9352,7 @@ const GLOSARIO = [
       catBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showCards(btn.dataset.cat);
-      setTimeout(() => container.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+      openLibModal();
     });
   });
 

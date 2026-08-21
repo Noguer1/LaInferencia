@@ -515,7 +515,6 @@
             </button>
 
           </div>
-          <div id="biblioteca-container"></div>
         </div>
       </div>
 
@@ -778,6 +777,18 @@
       </aside>
 
     </div><!-- /.dashboard-layout -->
+          <!-- MODAL: artículos de Por Intereses -->
+          <div class="concepto-modal-overlay bata-lista-modal-overlay" id="biblioteca-modal" hidden role="dialog" aria-modal="true" aria-label="Artículos por temática">
+            <div class="concepto-modal-card efectos-lista-modal-card">
+              <button class="concepto-modal-close" id="biblioteca-modal-close" aria-label="Cerrar">&#x2715;</button>
+              <div class="concepto-modal-eyebrow">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Por Intereses
+              </div>
+              <h2 class="biblioteca-modal-titulo" id="bm-titulo">&nbsp;</h2>
+              <div id="biblioteca-container"></div>
+            </div>
+          </div>
           <!-- MODAL: listado de artículos de Fuera de Bata, por sección o todos -->
           <div class="concepto-modal-overlay bata-lista-modal-overlay" id="bata-lista-modal" hidden role="dialog" aria-modal="true" aria-labelledby="blm-titulo">
             <div class="concepto-modal-card efectos-lista-modal-card">
