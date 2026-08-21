@@ -1,3 +1,6 @@
+/* AUDIBLE_LINK (afiliado, prueba gratuita) se declara en recomendaciones.js,
+   cargado antes que este archivo en index.html. No redeclarar aquí. */
+
 /* ── FORZAR INICIO EN TOP, evita que el navegador móvil restaure
    scroll de sesiones anteriores ─────────────────────────────── */
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -3507,17 +3510,17 @@ function getWeekOfYear(date) {
   return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
 }
 
-/* Libros "misterio" reutilizados como recompensa en quiz y como toast de hito */
+/* Pool de libros reutilizados como recompensa (audiolibro gratis) en quiz y como toast de hito */
 const MYSTERY_LIBROS = [
   { libro: 'Choke', autor: 'Sian Beilock',
     sinopsis: 'Una investigadora de Chicago lleva décadas explicando por qué el cerebro más entrenado puede fallar justo cuando más importa, con datos de deportistas, estudiantes y profesionales, y qué rituales previos funcionan de verdad para evitarlo.',
-    amazon: 'https://www.amazon.es/s?k=Choke+Sian+Beilock&tag=lainferencia-21' },
+    amazon: AUDIBLE_LINK },
   { libro: 'Nudge', autor: 'Richard Thaler & Cass Sunstein',
     sinopsis: 'Los creadores del concepto explican cómo el diseño de las opciones por defecto (el statu quo que se te ofrece) determina buena parte de tus decisiones sin que lo notes, y cómo usarlo a tu favor.',
-    amazon: 'https://www.amazon.es/s?k=Nudge+Thaler+Sunstein&tag=lainferencia-21' },
+    amazon: AUDIBLE_LINK },
   { libro: 'Influence', autor: 'Robert Cialdini',
     sinopsis: 'Un psicólogo social disecciona los 6 mecanismos (incluidos la simpatía y el rapport) que usan la persuasión y el marketing para que decidas sin darte cuenta de que estás decidiendo.',
-    amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21' }
+    amazon: AUDIBLE_LINK }
 ];
 
 function _pickMysteryLibro() {
@@ -3530,24 +3533,26 @@ function _buildQuizLibroHTML(id) {
   if (!rec || !rec.libro) return _buildMysteryUnlockHTML('quiz');
   const { libro } = rec;
   return `<div class="mystery-unlock-block">
-    <span class="mystery-unlock-badge">📖 El libro de este artículo</span>
+    <span class="mystery-unlock-badge">🎧 Tu audiolibro gratis</span>
     <p class="mystery-unlock-sinopsis"><strong>${libro.titulo}</strong>, ${libro.autor}. ${libro.sinopsis}</p>
-    <a href="${libro.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="quiz">
+    <a href="${libro.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="quiz">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      Ver libro →
+      Consigue este audiolibro gratis
     </a>
+    <p class="mystery-unlock-valor">+ miles de audiolibros más durante 30 días, sin coste.</p>
   </div>`;
 }
 
 function _buildMysteryUnlockHTML(origen) {
   const lr = _pickMysteryLibro();
   return `<div class="mystery-unlock-block">
-    <span class="mystery-unlock-badge">🎁 Recompensa desbloqueada</span>
-    <p class="mystery-unlock-sinopsis">${lr.sinopsis}</p>
-    <a href="${lr.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${lr.libro}" data-umami-event-origen="${origen}">
+    <span class="mystery-unlock-badge">🎧 Tu audiolibro gratis</span>
+    <p class="mystery-unlock-sinopsis"><strong>${lr.libro}</strong>, ${lr.autor}. ${lr.sinopsis}</p>
+    <a href="${lr.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${lr.libro}" data-umami-event-origen="${origen}">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      Descubrir cuál es →
+      Consigue este audiolibro gratis
     </a>
+    <p class="mystery-unlock-valor">+ miles de audiolibros más durante 30 días, sin coste.</p>
   </div>`;
 }
 
@@ -3591,7 +3596,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'Número uno', autor: 'Anders Ericsson y Robert Pool',
       sinopsis: 'El propio Ericsson, autor del estudio original de los violinistas de Berlín que Gladwell malinterpretó, explica con detalle qué es realmente la práctica deliberada y por qué no todas las horas de práctica valen lo mismo.',
-      amazon: 'https://www.amazon.es/s?k=Numero+uno+Peak+Anders+Ericsson&tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   {
@@ -3632,7 +3637,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'Tropezar con la felicidad', autor: 'Daniel Gilbert',
       sinopsis: 'Gilbert, psicólogo de Harvard, explica por qué somos tan malos prediciendo qué nos hará felices (el dinero incluido), y cómo la ciencia de la felicidad lleva décadas corrigiendo intuiciones que dábamos por sentadas.',
-      amazon: 'https://www.amazon.es/s?k=Tropezar+con+la+felicidad+Daniel+Gilbert&tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   {
@@ -3684,7 +3689,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'Choke', autor: 'Sian Beilock',
       sinopsis: 'Una investigadora de Chicago lleva décadas explicando por qué el cerebro más entrenado puede fallar justo cuando más importa, con datos de deportistas, estudiantes y profesionales, y qué rituales previos funcionan de verdad para evitarlo.',
-      amazon: 'https://www.amazon.es/s?k=Choke+Sian+Beilock&tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   {
@@ -3723,7 +3728,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'Obediencia a la autoridad', autor: 'Stanley Milgram',
       sinopsis: 'El propio Milgram narra en detalle el diseño y las variantes de su experimento, incluida la que redujo la obediencia al 30% con solo acercar físicamente al participante a las consecuencias de sus actos: la distancia moral, explicada por quien la descubrió.',
-      amazon: 'https://www.amazon.es/s?k=Obediencia+a+la+autoridad+Stanley+Milgram&tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   {
@@ -3755,7 +3760,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'Teoría del aprendizaje social', autor: 'Albert Bandura',
       sinopsis: 'El propio Bandura desarrolla aquí los cuatro procesos (atención, retención, reproducción y motivación) que convierten lo observado en conducta propia, la base teórica completa detrás del experimento del muñeco Bobo.',
-      amazon: 'https://www.amazon.es/s?k=Teoria+del+aprendizaje+social+Albert+Bandura&tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   {
@@ -3787,7 +3792,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'Influencia', autor: 'Robert Cialdini',
       sinopsis: 'El libro que da origen a este artículo: el propio Cialdini, tras tres años infiltrado en sectores de ventas, documenta los seis principios con los experimentos de campo completos, incluido el de la fotocopiadora.',
-      amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   {
@@ -3819,7 +3824,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'La mente de los justos', autor: 'Jonathan Haidt',
       sinopsis: 'Haidt desarrolla aquí completas las seis fundaciones morales y explica por qué conservadores y progresistas no discrepan por racionalidad sino por qué intuiciones priorizan, la teoría entera detrás de "el perro emocional y su cola racional".',
-      amazon: 'https://www.amazon.es/s?k=La+mente+de+los+justos+Jonathan+Haidt&tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   {
@@ -3851,7 +3856,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'Mindset: La actitud del éxito', autor: 'Carol S. Dweck',
       sinopsis: 'Dweck explica con más casos (empresa, deporte, pareja) el mismo hallazgo del experimento con niños de diez años: una sola frase de feedback puede activar una mentalidad fija o de crecimiento, y esa mentalidad decide cuánto persistes ante el fracaso.',
-      amazon: 'https://www.amazon.es/s?k=Mindset+la+actitud+del+exito+Carol+Dweck&tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   /* ── Semanas existentes ───────────────────────────────────── */
@@ -3891,7 +3896,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'Through the Language Glass', autor: 'Guy Deutscher',
       sinopsis: 'Deutscher recorre, con el mismo rigor que Boroditsky, decenas de casos de lenguas que moldean la percepción del tiempo, el espacio y el color, incluidos los pueblos que no usan izquierda/derecha y se orientan por puntos cardinales.',
-      amazon: 'https://www.amazon.es/s?k=Through+the+Language+Glass+Guy+Deutscher&tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   {
@@ -3930,7 +3935,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'El mito del recuerdo reprimido', autor: 'Elizabeth Loftus y Katherine Ketcham',
       sinopsis: 'Loftus, perita en más de 300 casos penales, explica desde dentro cómo una pregunta formulada de otra manera basta para plantar un recuerdo falso, y qué significa eso para la fiabilidad del testimonio ocular en los juzgados.',
-      amazon: 'https://www.amazon.es/s?k=El+mito+del+recuerdo+reprimido+Elizabeth+Loftus&tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   },
   {
@@ -3969,7 +3974,7 @@ const WEEKLY_ARTICLES = [
     libroRelacionado: {
       libro: 'Pensar rápido, pensar despacio', autor: 'Daniel Kahneman',
       sinopsis: 'El propio Kahneman condensa cinco décadas de investigación en un mapa completo de los dos sistemas: el rápido e intuitivo y el lento y deliberado, con el problema del bate y la pelota como uno de sus muchos ejemplos.',
-      amazon: 'https://www.amazon.es/dp/8483068613?tag=lainferencia-21'
+      amazon: AUDIBLE_LINK
     }
   }
 ];
@@ -4832,7 +4837,7 @@ function _buildStatsHTML(id) {
 function _buildRecomendacionHTML(id) {
   const rec = (window.RECOMENDACIONES || {})[id];
   if (!rec || !rec.libro) return '';
-  const { libro, producto } = rec;
+  const { libro } = rec;
   return `<div class="recomendacion-block">
     <p class="recomendacion-label">Si quieres profundizar en esto</p>
     <div class="recomendacion-libro">
@@ -4841,14 +4846,10 @@ function _buildRecomendacionHTML(id) {
         <span class="recomendacion-autor">${libro.autor}</span>
         <p>${libro.sinopsis}</p>
       </div>
-      <a href="${libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="articulo-spa">Ver libro</a>
-    </div>${producto ? `
-    <div class="recomendacion-producto">
-      <span class="recomendacion-producto-nombre">Para aplicarlo hoy: ${producto.nombre}</span>
-      <p>${producto.nota}</p>
-      <a href="${producto.amazon}" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${producto.nombre}" data-umami-event-origen="articulo-spa-producto">Ver producto →</a>
-    </div>` : ''}
-    <p class="recomendacion-disclaimer">Enlaces de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti.</p>
+      <a href="${libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="articulo-spa">Consigue este audiolibro gratis</a>
+    </div>
+    <p class="recomendacion-valor">Además, tienes acceso a miles de audiolibros más durante 30 días, sin coste.</p>
+    <p class="recomendacion-disclaimer">Enlace de afiliado.</p>
   </div>`;
 }
 
@@ -5047,10 +5048,10 @@ function renderFeaturedWeekly(article) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             <strong>Hay un libro que lo explica mejor que cualquier resumen</strong>
           </div>
-          <p class="weekly-libro-sinopsis">${libroRelacionado.sinopsis}</p>
-          <a href="${libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libroRelacionado.libro}" data-umami-event-origen="articulo-semana">
+          <p class="weekly-libro-sinopsis"><strong>${libroRelacionado.libro}</strong>, ${libroRelacionado.autor}. ${libroRelacionado.sinopsis}</p>
+          <a href="${libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${libroRelacionado.libro}" data-umami-event-origen="articulo-semana">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Descubrir cuál es →
+            Consigue este audiolibro gratis
           </a>
         </div>` : ''}
         ${_buildDesafioHTML(week)}
@@ -5315,7 +5316,7 @@ function initWeeklySection() {
   if (footerStrip && footerLink && featuredLibro) {
     const lr = featuredLibro.libroRelacionado;
     footerLink.href = lr.amazon;
-    footerLink.setAttribute('data-umami-event', 'amazon-click');
+    footerLink.setAttribute('data-umami-event', 'audible-click');
     footerLink.setAttribute('data-umami-event-libro', lr.libro);
     footerLink.setAttribute('data-umami-event-origen', 'footer');
     footerStrip.hidden = false;
@@ -6434,7 +6435,7 @@ _syncHeroBalance();
       libroRelacionado: {
         libro: 'Nudge', autor: 'Richard Thaler & Cass Sunstein',
         sinopsis: 'Los creadores del concepto explican cómo el diseño de las opciones por defecto (el statu quo que se te ofrece) determina buena parte de tus decisiones sin que lo notes, y cómo usarlo a tu favor.',
-        amazon: 'https://www.amazon.es/s?k=Nudge+Thaler+Sunstein&tag=lainferencia-21'
+        amazon: AUDIBLE_LINK
       }
     },
     'efecto-espejo': {
@@ -6451,7 +6452,7 @@ _syncHeroBalance();
       libroRelacionado: {
         libro: 'Influence', autor: 'Robert Cialdini',
         sinopsis: 'Un psicólogo social disecciona los 6 mecanismos (incluidos la simpatía y el rapport) que usan la persuasión y el marketing para que decidas sin darte cuenta de que estás decidiendo.',
-        amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21'
+        amazon: AUDIBLE_LINK
       }
     }
   };
@@ -6499,10 +6500,10 @@ _syncHeroBalance();
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <strong>Hay un libro que lo explica mejor que cualquier resumen</strong>
         </div>
-        <p class="weekly-libro-sinopsis">${d.libroRelacionado.sinopsis}</p>
-        <a href="${d.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${d.libroRelacionado.libro}" data-umami-event-origen="modal-efecto">
+        <p class="weekly-libro-sinopsis"><strong>${d.libroRelacionado.libro}</strong>, ${d.libroRelacionado.autor}. ${d.libroRelacionado.sinopsis}</p>
+        <a href="${d.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${d.libroRelacionado.libro}" data-umami-event-origen="modal-efecto">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Descubrir cuál es →
+          Consigue este audiolibro gratis
         </a>
       </div>` : ''}`;
     overlay.classList.add('open');
@@ -7650,265 +7651,265 @@ _syncHeroBalance();
       { frente: '¿Por qué sé lo que tengo que hacer y no lo hago?',
         libro: 'Los 5 elementos del pensamiento efectivo', autor: 'Edward B. Burger', estrellas: '4,3',
         ciencia: 'La procrastinación activa las mismas regiones cerebrales que el dolor. El cerebro obtiene alivio inmediato al posponer la tarea, reforzando el ciclo mediante condicionamiento operante negativo.',
-        sinopsis: 'Este libro desmonta el bloqueo desde la raíz y te da herramientas concretas para empezar aunque no te sientas preparado.', amazon: 'https://www.amazon.es/s?k=Los+5+elementos+del+pensamiento+efectivo+Burger&tag=lainferencia-21' },
+        sinopsis: 'Este libro desmonta el bloqueo desde la raíz y te da herramientas concretas para empezar aunque no te sientas preparado.', amazon: AUDIBLE_LINK },
       { frente: 'Tengo 7 tareas abiertas y no avanzo nada',
         libro: 'Esencialismo', autor: 'Greg McKeown', estrellas: '4,6',
         ciencia: 'El efecto Zeigarnik muestra que las tareas incompletas ocupan memoria de trabajo de forma involuntaria. Múltiples frentes abiertos reducen la capacidad cognitiva disponible incluso cuando no trabajas en ellos.',
-        sinopsis: 'McKeown te entrena para eliminar lo que parece urgente pero no importa, y enfocarte en lo único que mueve la aguja de verdad.', amazon: 'https://www.amazon.es/dp/8418053461?tag=lainferencia-21' },
+        sinopsis: 'McKeown te entrena para eliminar lo que parece urgente pero no importa, y enfocarte en lo único que mueve la aguja de verdad.', amazon: AUDIBLE_LINK },
       { frente: 'Empiezo con energía y abandono a mitad',
         libro: 'Grit', autor: 'Angela Duckworth', estrellas: '4,5',
         ciencia: 'La motivación inicial está impulsada por dopamina anticipatoria. Al consumirse, debe ser reemplazada por hábito o propósito. Sin esa transición, la caída motivacional es neurológicamente inevitable.',
-        sinopsis: 'Lo que separa a quien termina de quien abandona no es el talento sino la perseverancia entrenada. Duckworth explica exactamente cómo se construye esa resistencia.', amazon: 'https://www.amazon.es/dp/847953964X?tag=lainferencia-21' },
+        sinopsis: 'Lo que separa a quien termina de quien abandona no es el talento sino la perseverancia entrenada. Duckworth explica exactamente cómo se construye esa resistencia.', amazon: AUDIBLE_LINK },
       { frente: 'Siempre digo sí a todo y no llego a nada',
         libro: 'Cuando digo no, me siento culpable', autor: 'Manuel J. Smith', estrellas: '4,4',
         ciencia: 'Decir sí activa el sistema de recompensa social de forma inmediata, mientras la sobrecarga queda diferida. El cerebro prioriza el alivio presente sobre el bienestar futuro: descuento temporal hiperbólico.',
-        sinopsis: 'Este clásico de la asertividad te da un lenguaje concreto para poner límites sin sentir que estás defraudando a nadie.', amazon: 'https://www.amazon.es/dp/8499086497?tag=lainferencia-21' },
+        sinopsis: 'Este clásico de la asertividad te da un lenguaje concreto para poner límites sin sentir que estás defraudando a nadie.', amazon: AUDIBLE_LINK },
       { frente: 'Trabajo mucho pero siento que no produzco',
         libro: 'Trabajo profundo', autor: 'Cal Newport', estrellas: '4,7',
         ciencia: 'Según Gloria Mark (UC Irvine), tras cada interrupción el cerebro tarda 23 minutos en recuperar el mismo nivel de concentración. El trabajo superficial produce la ilusión de actividad sin generar valor cognitivo real.',
-        sinopsis: 'Newport te muestra por qué el trabajo superficial te agota sin avanzar y cómo recuperar la concentración que las notificaciones te han ido robando.', amazon: 'https://www.amazon.es/dp/8411000516?tag=lainferencia-21' }
+        sinopsis: 'Newport te muestra por qué el trabajo superficial te agota sin avanzar y cómo recuperar la concentración que las notificaciones te han ido robando.', amazon: AUDIBLE_LINK }
     ],
     relaciones: [
       { frente: 'Discuto y la conversación siempre empeora',
         libro: 'El arte de tener razón', autor: 'Arthur Schopenhauer', estrellas: '4,4',
         ciencia: 'Cuando el cortisol supera cierto umbral la conversación deja de ser razonada y se vuelve puramente reactiva. Gottman lo llama «inundación fisiológica» y es el predictor más fiable de rupturas.',
-        sinopsis: 'Schopenhauer cataloga las trampas que usamos sin saberlo para ganar en lugar de entendernos, y reconocerlas es el primer paso para salir del bucle.', amazon: 'https://www.amazon.es/s?k=El+arte+de+tener+razon+Schopenhauer&tag=lainferencia-21' },
+        sinopsis: 'Schopenhauer cataloga las trampas que usamos sin saberlo para ganar en lugar de entendernos, y reconocerlas es el primer paso para salir del bucle.', amazon: AUDIBLE_LINK },
       { frente: 'Me cuesta decir lo que siento sin que suene a ataque',
         libro: 'Comunicación no violenta', autor: 'Marshall Rosenberg', estrellas: '4,7',
         ciencia: 'Los mensajes en primera persona activan menos defensa en el receptor que los mensajes en segunda persona. El marco lingüístico de la acusación dispara respuesta defensiva antes de que el otro procese el contenido.',
-        sinopsis: 'Rosenberg ofrece un método simple para expresar necesidades reales sin activar la defensiva del otro.', amazon: 'https://www.amazon.es/dp/8415053665?tag=lainferencia-21' },
+        sinopsis: 'Rosenberg ofrece un método simple para expresar necesidades reales sin activar la defensiva del otro.', amazon: AUDIBLE_LINK },
       { frente: 'Asumo lo que el otro piensa y me equivoco',
         libro: 'Conversaciones cruciales', autor: 'Patterson, Grenny y McMillan', estrellas: '4,6',
         ciencia: 'El «mindreading» es un atajo del Sistema 1: el cerebro llena los vacíos de información con sus propias proyecciones. Los errores de atribución se multiplican cuando hay estrés o fatiga cognitiva.',
-        sinopsis: 'Este libro te enseña a distinguir lo que observas de lo que interpretas, y a abrir conversaciones que normalmente se evitan.', amazon: 'https://www.amazon.es/dp/8416997586?tag=lainferencia-21' },
+        sinopsis: 'Este libro te enseña a distinguir lo que observas de lo que interpretas, y a abrir conversaciones que normalmente se evitan.', amazon: AUDIBLE_LINK },
       { frente: 'Las mismas discusiones se repiten siempre',
         libro: 'Atados al amor', autor: 'Susan Forward', estrellas: '4,3',
         ciencia: 'Los patrones repetitivos son esquemas relacionales aprendidos en la infancia que funcionan como guiones automáticos. Bowlby los llamó «modelos operativos internos» y se activan con independencia de la voluntad consciente.',
-        sinopsis: 'Forward te ayuda a identificar los programas que siguen ejecutándose en automático y a reescribirlos.', amazon: 'https://www.amazon.es/s?k=Atados+al+amor+Susan+Forward&tag=lainferencia-21' },
+        sinopsis: 'Forward te ayuda a identificar los programas que siguen ejecutándose en automático y a reescribirlos.', amazon: AUDIBLE_LINK },
       { frente: 'Me afectan demasiado los comentarios de otros',
         libro: 'Los cuatro acuerdos', autor: 'Miguel Ruiz', estrellas: '4,7',
         ciencia: 'La hipersensibilidad al juicio ajeno está ligada al córtex cingulado anterior, la misma región que procesa el dolor físico. Eisenberger (2003) demostró que el rechazo social y el dolor comparten sustrato neuronal.',
-        sinopsis: 'Ruiz construye una filosofía práctica para dejar de tomar como personal lo que nunca fue dirigido a ti de verdad.', amazon: 'https://www.amazon.es/dp/847953253X?tag=lainferencia-21' }
+        sinopsis: 'Ruiz construye una filosofía práctica para dejar de tomar como personal lo que nunca fue dirigido a ti de verdad.', amazon: AUDIBLE_LINK }
     ],
     finanzas: [
       { frente: 'Compro cuando estoy estresado o aburrido',
         libro: 'La trampa del dinero', autor: 'Brent Kessel', estrellas: '4,2',
         ciencia: 'El estrés crónico eleva el umbral de recompensa dopaminérgico, necesitando estímulos cada vez más intensos. El retail therapy genera alivio real pero construye un ciclo compra-culpa que se retroalimenta.',
-        sinopsis: 'Kessel conecta la psicología profunda con el comportamiento financiero y te da herramientas para romper ese circuito antes de que llegues al carrito.', amazon: 'https://www.amazon.es/s?k=La+trampa+del+dinero+Brent+Kessel&tag=lainferencia-21' },
+        sinopsis: 'Kessel conecta la psicología profunda con el comportamiento financiero y te da herramientas para romper ese circuito antes de que llegues al carrito.', amazon: AUDIBLE_LINK },
       { frente: 'Me cuesta invertir por miedo a perderlo todo',
         libro: 'Pensar rápido, pensar despacio', autor: 'Daniel Kahneman', estrellas: '4,7',
         ciencia: 'La aversión a la pérdida (Kahneman & Tversky, 1979) es uno de los sesgos más robustos: perder 100€ genera entre 1,5 y 2,5 veces más respuesta emocional que ganar la misma cantidad.',
-        sinopsis: 'Kahneman es la lectura obligatoria para entender por qué tus decisiones financieras casi nunca son tan racionales como crees.', amazon: 'https://www.amazon.es/dp/8483068613?tag=lainferencia-21' },
+        sinopsis: 'Kahneman es la lectura obligatoria para entender por qué tus decisiones financieras casi nunca son tan racionales como crees.', amazon: AUDIBLE_LINK },
       { frente: 'Gasto más con tarjeta que con efectivo',
         libro: 'Dinero: domina el juego', autor: 'Tony Robbins', estrellas: '4,5',
         ciencia: 'El efecto «pain of paying» (Prelec & Loewenstein, 1998) muestra que el efectivo activa la ínsula generando una señal de dolor que frena el gasto. El pago digital desactiva esa señal por completo.',
-        sinopsis: 'Robbins te da una arquitectura mental y práctica para relacionarte con el dinero desde la consciencia y no desde el impulso.', amazon: 'https://www.amazon.es/dp/8423429016?tag=lainferencia-21' },
+        sinopsis: 'Robbins te da una arquitectura mental y práctica para relacionarte con el dinero desde la consciencia y no desde el impulso.', amazon: AUDIBLE_LINK },
       { frente: 'Siento que una oferta es una oportunidad que no puedo perder',
         libro: 'Influencia', autor: 'Robert Cialdini', estrellas: '4,8',
         ciencia: 'La escasez artificial activa el sistema de amenaza cerebral, produciendo urgencia que deteriora el pensamiento deliberado. Bajo ese estado el córtex prefrontal delega en la amígdala, favoreciendo decisiones de las que luego se arrepiente.',
-        sinopsis: 'Cialdini disecciona los 6 mecanismos psicológicos que usa el marketing para que decidas sin darte cuenta de que estás decidiendo.', amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21' },
+        sinopsis: 'Cialdini disecciona los 6 mecanismos psicológicos que usa el marketing para que decidas sin darte cuenta de que estás decidiendo.', amazon: AUDIBLE_LINK },
       { frente: 'Sé que debería ahorrar pero lo dejo para después',
         libro: 'El hombre más rico de Babilonia', autor: 'George S. Clason', estrellas: '4,6',
         ciencia: 'El descuento hiperbólico (Ainslie, 1975) explica por qué preferimos recompensas pequeñas ahora a grandes más tarde. El «yo futuro» se procesa neurológicamente como si fuera otra persona.',
-        sinopsis: 'Clason explica de forma irresistiblemente clara por qué pagarte a ti primero es la única regla financiera que realmente cambia el rumbo.', amazon: 'https://www.amazon.es/dp/8491115706?tag=lainferencia-21' }
+        sinopsis: 'Clason explica de forma irresistiblemente clara por qué pagarte a ti primero es la única regla financiera que realmente cambia el rumbo.', amazon: AUDIBLE_LINK }
     ],
     saludMental: [
       { frente: 'La ansiedad me bloquea antes de poder actuar',
         libro: 'Adiós, ansiedad', autor: 'Judson Brewer', estrellas: '4,5',
         ciencia: 'La ansiedad anticipatoria activa la amígdala ante amenazas inexistentes, generando un bucle que el córtex prefrontal interpreta como peligro real. Es un circuito de hábito, y como tal puede interrumpirse.',
-        sinopsis: 'Brewer explica cómo funciona el bucle de la ansiedad desde la neurociencia y ofrece técnicas basadas en mindfulness para salir de él sin suprimirlo.', amazon: 'https://www.amazon.es/dp/8449338999?tag=lainferencia-21' },
+        sinopsis: 'Brewer explica cómo funciona el bucle de la ansiedad desde la neurociencia y ofrece técnicas basadas en mindfulness para salir de él sin suprimirlo.', amazon: AUDIBLE_LINK },
       { frente: 'No puedo salir de los pensamientos negativos en bucle',
         libro: 'Mindfulness para la felicidad', autor: 'Mark Williams y Danny Penman', estrellas: '4,6',
         ciencia: 'El rumineo activa la red neuronal por defecto (default mode network), el mismo circuito que dispara la depresión. La mente que divaga hacia el pasado incrementa el cortisol de forma proporcional al tiempo que pasa en ese estado.',
-        sinopsis: 'Williams y Penman ofrecen un programa de 8 semanas basado en la terapia cognitiva para interrumpir el ciclo de rumiación que alimenta la tristeza crónica.', amazon: 'https://www.amazon.es/dp/8408237497?tag=lainferencia-21' },
+        sinopsis: 'Williams y Penman ofrecen un programa de 8 semanas basado en la terapia cognitiva para interrumpir el ciclo de rumiación que alimenta la tristeza crónica.', amazon: AUDIBLE_LINK },
       { frente: 'Me afecta todo mucho y no sé cómo regularlo',
         libro: 'Inteligencia emocional', autor: 'Daniel Goleman', estrellas: '4,6',
         ciencia: 'La regulación emocional depende de la comunicación entre amígdala (respuesta emocional) y córtex prefrontal (control consciente). Este canal se puede entrenar deliberadamente; no es un rasgo de personalidad fijo.',
-        sinopsis: 'Goleman explica por qué el coeficiente emocional predice el bienestar mejor que el intelectual, y cómo desarrollar las habilidades que nos hacen funcionar con los demás.', amazon: 'https://www.amazon.es/dp/8472453715?tag=lainferencia-21' },
+        sinopsis: 'Goleman explica por qué el coeficiente emocional predice el bienestar mejor que el intelectual, y cómo desarrollar las habilidades que nos hacen funcionar con los demás.', amazon: AUDIBLE_LINK },
       { frente: 'Hace tiempo que nada me ilusiona de verdad',
         libro: 'El hombre en busca de sentido', autor: 'Viktor Frankl', estrellas: '4,8',
         ciencia: 'La anhedonia está ligada a déficits en el sistema dopaminérgico de anticipación. Recuperar propósito activa vías de recompensa que la inercia cotidiana anestesia, independientemente de las circunstancias externas.',
-        sinopsis: 'Desde los campos de concentración, Frankl construye una argumentación poderosa: quien tiene un porqué puede soportar casi cualquier cómo.', amazon: 'https://www.amazon.es/dp/8425423317?tag=lainferencia-21' },
+        sinopsis: 'Desde los campos de concentración, Frankl construye una argumentación poderosa: quien tiene un porqué puede soportar casi cualquier cómo.', amazon: AUDIBLE_LINK },
       { frente: 'Sé que algo me pasa pero no sé ponerle nombre',
         libro: 'El cuerpo lleva la cuenta', autor: 'Bessel van der Kolk', estrellas: '4,8',
         ciencia: 'Las emociones no procesadas se almacenan en el cuerpo como tensión crónica y patrones autonómicos. El trauma no necesita ser grave para dejar huella somática, y el cuerpo la registra incluso cuando la mente no lo recuerda.',
-        sinopsis: 'Van der Kolk revolucionó la psicología al demostrar que el trauma vive en el cuerpo. Un libro que redefine lo que significa sanar.', amazon: 'https://www.amazon.es/dp/8412067193?tag=lainferencia-21' }
+        sinopsis: 'Van der Kolk revolucionó la psicología al demostrar que el trauma vive en el cuerpo. Un libro que redefine lo que significa sanar.', amazon: AUDIBLE_LINK }
     ],
     trabajo: [
       { frente: 'Nada de lo que hago parece suficiente',
         libro: 'Los dones de la imperfección', autor: 'Brené Brown', estrellas: '4,5',
         ciencia: 'El perfeccionismo no es un estándar de calidad: es un escudo frente al juicio ajeno. Genera un ciclo de esfuerzo-insatisfacción que Hewitt llama «perfeccionismo socialmente prescrito» y correlaciona con burnout.',
-        sinopsis: 'Brown te invita a soltar la armadura del perfeccionismo y construir una vida basada en lo que realmente te importa, no en lo que crees que deberías ser.', amazon: 'https://www.amazon.es/dp/8484456560?tag=lainferencia-21' },
+        sinopsis: 'Brown te invita a soltar la armadura del perfeccionismo y construir una vida basada en lo que realmente te importa, no en lo que crees que deberías ser.', amazon: AUDIBLE_LINK },
       { frente: 'Me comparo con compañeros y siempre salgo perdiendo',
         libro: 'Mindset: la actitud del éxito', autor: 'Carol Dweck', estrellas: '4,6',
         ciencia: 'La comparación social ascendente activa los mismos circuitos de amenaza que el dolor físico (Eisenberger, 2003). La diferencia entre quien se paraliza y quien se motiva está en el tipo de mentalidad con que la procesa.',
-        sinopsis: 'Dweck demuestra que la diferencia entre prosperar y estancarse no es el talento, sino la creencia sobre si ese talento puede cambiar.', amazon: 'https://www.amazon.es/dp/8416579164?tag=lainferencia-21' },
+        sinopsis: 'Dweck demuestra que la diferencia entre prosperar y estancarse no es el talento, sino la creencia sobre si ese talento puede cambiar.', amazon: AUDIBLE_LINK },
       { frente: 'Siento que no merezco el puesto que tengo',
         libro: 'El síndrome del impostor', autor: 'Jessamy Hibberd', estrellas: '4,3',
         ciencia: 'El síndrome del impostor afecta al 70% de las personas en algún momento (Clance & Imes, 1978). Es más frecuente en entornos de alta exigencia y correlaciona con el pensamiento todo-o-nada y la atribución externa del éxito.',
-        sinopsis: 'Hibberd explica por qué personas brillantes se sienten un fraude, y ofrece estrategias concretas para cambiar la narrativa interna.', amazon: 'https://www.amazon.es/dp/8419870145?tag=lainferencia-21' },
+        sinopsis: 'Hibberd explica por qué personas brillantes se sienten un fraude, y ofrece estrategias concretas para cambiar la narrativa interna.', amazon: AUDIBLE_LINK },
       { frente: 'Las reuniones me agotan y siento que pierdo el tiempo',
         libro: 'El poder de los introvertidos', autor: 'Susan Cain', estrellas: '4,7',
         ciencia: 'Las reuniones de más de 7 personas disparan el «social loafing» (Ringelmann): la responsabilidad individual se diluye al aumentar el grupo, resultando en menos producción por persona aunque se perciba como trabajo.',
-        sinopsis: 'Cain reivindica el valor del pensamiento tranquilo en un mundo diseñado para los extrovertidos, con implicaciones directas para cómo organizamos el trabajo.', amazon: 'https://www.amazon.es/dp/849006363X?tag=lainferencia-21' },
+        sinopsis: 'Cain reivindica el valor del pensamiento tranquilo en un mundo diseñado para los extrovertidos, con implicaciones directas para cómo organizamos el trabajo.', amazon: AUDIBLE_LINK },
       { frente: 'Me cuesta pedir ayuda por miedo a parecer incapaz',
         libro: 'El poder de la vulnerabilidad', autor: 'Brené Brown', estrellas: '4,7',
         ciencia: 'Pedir ayuda activa la misma red cerebral que la amenaza social. Sin embargo, quienes piden ayuda son percibidos como más competentes por sus equipos, no menos: el efecto es contrario a la intuición.',
-        sinopsis: 'Brown convierte la vulnerabilidad en fortaleza, demostrando que la conexión real con los demás solo es posible cuando dejamos de fingir que todo está bajo control.', amazon: 'https://www.amazon.es/dp/8479539496?tag=lainferencia-21' }
+        sinopsis: 'Brown convierte la vulnerabilidad en fortaleza, demostrando que la conexión real con los demás solo es posible cuando dejamos de fingir que todo está bajo control.', amazon: AUDIBLE_LINK }
     ],
     autoconocimiento: [
       { frente: 'No sé bien qué quiero de mi vida',
         libro: 'Ikigai', autor: 'Héctor García y Francesc Miralles', estrellas: '4,5',
         ciencia: 'La ambigüedad de identidad activa los mismos marcadores de estrés que el dolor físico. La psicología de las metas distingue entre metas de aproximación (lo que quieres) y de evitación (lo que temes), y solo las primeras generan bienestar sostenido.',
-        sinopsis: 'García y Miralles exploran el concepto japonés de ikigai (la razón de ser) y ofrecen claves concretas para encontrar el cruce entre lo que amas, lo que sabes hacer y lo que el mundo necesita.', amazon: 'https://www.amazon.es/dp/8479539224?tag=lainferencia-21' },
+        sinopsis: 'García y Miralles exploran el concepto japonés de ikigai (la razón de ser) y ofrecen claves concretas para encontrar el cruce entre lo que amas, lo que sabes hacer y lo que el mundo necesita.', amazon: AUDIBLE_LINK },
       { frente: 'Me cuesta mantener las promesas que me hago a mí mismo',
         libro: 'El instinto de la fuerza de voluntad', autor: 'Kelly McGonigal', estrellas: '4,5',
         ciencia: 'La fuerza de voluntad funciona como un músculo: se agota con el uso (Baumeister, 1998, ego depletion). Las promesas que más se rompen son las que se hacen en estados de alta activación emocional.',
-        sinopsis: 'McGonigal convierte la ciencia del autocontrol en un programa práctico. No se trata de tener más fuerza de voluntad, sino de usarla de forma más inteligente.', amazon: 'https://www.amazon.es/dp/8479538171?tag=lainferencia-21' },
+        sinopsis: 'McGonigal convierte la ciencia del autocontrol en un programa práctico. No se trata de tener más fuerza de voluntad, sino de usarla de forma más inteligente.', amazon: AUDIBLE_LINK },
       { frente: 'Reacciono de formas que luego no entiendo',
         libro: 'Vinculados', autor: 'Amir Levine y Rachel Heller', estrellas: '4,7',
         ciencia: 'Los patrones de respuesta emocional se codifican antes de los 7 años en circuitos subcorticales. Cuando se activan, el córtex prefrontal queda temporalmente desconectado: actuamos de formas que no elegimos conscientemente.',
-        sinopsis: 'Levine y Heller aplican la teoría del apego adulto para explicar por qué te comportas así en las relaciones cercanas, y cómo cambiar esos patrones.', amazon: 'https://www.amazon.es/dp/8479537817?tag=lainferencia-21' },
+        sinopsis: 'Levine y Heller aplican la teoría del apego adulto para explicar por qué te comportas así en las relaciones cercanas, y cómo cambiar esos patrones.', amazon: AUDIBLE_LINK },
       { frente: 'Siempre pongo las necesidades de los demás antes que las mías',
         libro: 'Límites', autor: 'Henry Cloud y John Townsend', estrellas: '4,6',
         ciencia: 'La complacencia crónica activa el sistema de recompensa a corto plazo (evitar el conflicto) pero acumula resentimiento en la memoria emocional. Los psicólogos llaman a este patrón «afrontamiento sumiso» y correlaciona con burnout y pérdida de identidad.',
-        sinopsis: 'Cloud y Townsend explican qué son los límites, por qué nos cuesta tanto tenerlos y cómo establecerlos sin culpa ni conflicto.', amazon: 'https://www.amazon.es/dp/0829750045?tag=lainferencia-21' },
+        sinopsis: 'Cloud y Townsend explican qué son los límites, por qué nos cuesta tanto tenerlos y cómo establecerlos sin culpa ni conflicto.', amazon: AUDIBLE_LINK },
       { frente: 'Me cuesta cambiar aunque sé que necesito hacerlo',
         libro: 'Switch: cómo cambiar las cosas cuando el cambio es difícil', autor: 'Chip y Dan Heath', estrellas: '4,5',
         ciencia: 'El cerebro interpreta el cambio como pérdida incluso cuando es positivo (sesgo del statu quo). La neuroplasticidad muestra que el cambio duradero requiere repetición en contexto emocional positivo, no solo voluntad consciente.',
-        sinopsis: 'Los Heath proponen un marco sencillo con tres elementos: dirigir al jinete racional, motivar al elefante emocional y moldear el camino del entorno.', amazon: 'https://www.amazon.es/s?k=Switch+como+cambiar+las+cosas+Heath&tag=lainferencia-21' }
+        sinopsis: 'Los Heath proponen un marco sencillo con tres elementos: dirigir al jinete racional, motivar al elefante emocional y moldear el camino del entorno.', amazon: AUDIBLE_LINK }
     ],
     crianza: [
       { frente: 'Mi hijo tiene rabietas que no sé cómo manejar',
         libro: 'El cerebro del niño', autor: 'Daniel J. Siegel y Tina Payne Bryson', estrellas: '4,7',
         ciencia: 'Hasta los 3-4 años el córtex prefrontal aún no está conectado con la amígdala. El niño literalmente no puede regular su respuesta emocional sin ayuda externa: no es manipulación, es inmadurez neurológica.',
-        sinopsis: 'Siegel y Bryson explican cómo funciona el cerebro infantil y ofrecen estrategias concretas para convertir los momentos difíciles en oportunidades de desarrollo.', amazon: 'https://www.amazon.es/dp/8484287149?tag=lainferencia-21' },
+        sinopsis: 'Siegel y Bryson explican cómo funciona el cerebro infantil y ofrecen estrategias concretas para convertir los momentos difíciles en oportunidades de desarrollo.', amazon: AUDIBLE_LINK },
       { frente: 'Me preocupa cuánto tiempo pasa mi hijo con el móvil',
         libro: 'La generación ansiosa', autor: 'Jonathan Haidt', estrellas: '4,6',
         ciencia: 'El uso de redes sociales activa el sistema de recompensa variable (similar a las tragaperras), reduciendo la tolerancia al aburrimiento y aumentando la necesidad de validación social externa, especialmente en la adolescencia.',
-        sinopsis: 'Haidt documenta con datos el impacto de los smartphones en la salud mental de los adolescentes y propone una agenda concreta para los padres y las escuelas.', amazon: 'https://www.amazon.es/dp/8423437299?tag=lainferencia-21' },
+        sinopsis: 'Haidt documenta con datos el impacto de los smartphones en la salud mental de los adolescentes y propone una agenda concreta para los padres y las escuelas.', amazon: AUDIBLE_LINK },
       { frente: 'No sé cómo hablar con mi hijo adolescente',
         libro: 'El cerebro adolescente', autor: 'Frances E. Jensen', estrellas: '4,5',
         ciencia: 'Durante la adolescencia el sistema límbico (emociones e impulsos) madura antes que el córtex prefrontal (juicio y planificación). El adolescente no es irracional: es neurológicamente inmaduro de forma normal y temporal.',
-        sinopsis: 'Jensen explica la neurociencia detrás del comportamiento adolescente con un lenguaje accesible, transformando la frustración en comprensión.', amazon: 'https://www.amazon.es/dp/8491872434?tag=lainferencia-21' },
+        sinopsis: 'Jensen explica la neurociencia detrás del comportamiento adolescente con un lenguaje accesible, transformando la frustración en comprensión.', amazon: AUDIBLE_LINK },
       { frente: 'Siento que estoy transmitiendo mis miedos a mis hijos',
         libro: 'Padres conscientes', autor: 'Daniel J. Siegel y Mary Hartzell', estrellas: '4,5',
         ciencia: 'Los miedos parentales se transmiten a través de señales no verbales: tono de voz, contacto ocular, postura corporal. Los niños aprenden qué es «peligroso» observando principalmente las respuestas emocionales de sus cuidadores.',
-        sinopsis: 'Siegel y Hartzell muestran cómo la historia emocional de los padres influye en los hijos, y cómo desarrollar la conciencia necesaria para romper esos ciclos.', amazon: 'https://www.amazon.es/dp/8466656944?tag=lainferencia-21' },
+        sinopsis: 'Siegel y Hartzell muestran cómo la historia emocional de los padres influye en los hijos, y cómo desarrollar la conciencia necesaria para romper esos ciclos.', amazon: AUDIBLE_LINK },
       { frente: 'Pongo límites pero no se cumplen',
         libro: 'Disciplina sin lágrimas', autor: 'Daniel J. Siegel y Tina Payne Bryson', estrellas: '4,6',
         ciencia: 'Los límites fallidos casi siempre se establecen en momentos de alta activación emocional del adulto, cuando el niño está menos receptivo. La neurociencia del aprendizaje muestra que los límites se interiorizan en estados de calma relacional.',
-        sinopsis: 'Siegel y Bryson ofrecen un enfoque que combina firmeza y conexión emocional, demostrando que los límites más efectivos son los que no necesitan gritos.', amazon: 'https://www.amazon.es/s?k=Disciplina+sin+lagrimas+Siegel+Bryson&tag=lainferencia-21' }
+        sinopsis: 'Siegel y Bryson ofrecen un enfoque que combina firmeza y conexión emocional, demostrando que los límites más efectivos son los que no necesitan gritos.', amazon: AUDIBLE_LINK }
     ],
     sueno: [
       { frente: 'No puedo apagar el cerebro cuando me acuesto',
         libro: 'Por qué dormimos', autor: 'Matthew Walker', estrellas: '4,7',
         ciencia: 'El insomnio de activación ocurre porque el córtex prefrontal no consigue inhibir la amígdala y la red de modo por defecto. La preocupación nocturna eleva el cortisol, hormona incompatible con el inicio del sueño.',
-        sinopsis: 'Walker, neurocientífico de Berkeley, explica con datos por qué el sueño no es un lujo sino el sistema de mantenimiento más crítico de tu cerebro y tu salud.', amazon: 'https://www.amazon.es/dp/8412064526?tag=lainferencia-21' },
+        sinopsis: 'Walker, neurocientífico de Berkeley, explica con datos por qué el sueño no es un lujo sino el sistema de mantenimiento más crítico de tu cerebro y tu salud.', amazon: AUDIBLE_LINK },
       { frente: 'Me despierto a las 3 de la madrugada y no puedo volver a dormirme',
         libro: 'Duerme', autor: 'Nick Littlehales', estrellas: '4,3',
         ciencia: 'El despertar a mitad de noche coincide con un ciclo ultradiaco de sueño ligero. El problema real no es el despertar sino la ansiedad secundaria que genera intentar forzar el retorno al sueño, lo que activa aún más el sistema nervioso.',
-        sinopsis: 'El entrenador de sueño de atletas de élite como Cristiano Ronaldo comparte el sistema que usa en el deporte profesional para optimizar la recuperación nocturna.', amazon: 'https://www.amazon.es/dp/8408168630?tag=lainferencia-21' },
+        sinopsis: 'El entrenador de sueño de atletas de élite como Cristiano Ronaldo comparte el sistema que usa en el deporte profesional para optimizar la recuperación nocturna.', amazon: AUDIBLE_LINK },
       { frente: 'Duermo 8 horas y sigo amaneciendo destrozado',
         libro: 'La solución del sueño', autor: 'W. Chris Winter', estrellas: '4,4',
         ciencia: 'La eficiencia del sueño importa más que la duración. Pasar muchas horas en cama fragmenta la presión de sueño acumulada (adenosina), generando noches superficiales aunque largas. La restricción controlada del tiempo en cama mejora la calidad.',
-        sinopsis: 'Winter, especialista en medicina del sueño, explica por qué lo que cuentas como descanso quizás no te está reparando y cómo reajustar el sistema sin pastillas.', amazon: 'https://www.amazon.es/s?k=La+solucion+del+sueno+Winter&tag=lainferencia-21' },
+        sinopsis: 'Winter, especialista en medicina del sueño, explica por qué lo que cuentas como descanso quizás no te está reparando y cómo reajustar el sistema sin pastillas.', amazon: AUDIBLE_LINK },
       { frente: 'El estrés del día no me deja desconectar al llegar a casa',
         libro: 'Duerme bien para vivir mejor', autor: 'Eduard Estivill', estrellas: '4,2',
         ciencia: 'El estrés crónico mantiene elevado el cortisol durante la tarde-noche, bloqueando la secreción de melatonina en la glándula pineal. Sin ese descenso hormonal, el reloj circadiano no puede iniciar el proceso de sueño correctamente.',
-        sinopsis: 'Estivill, el médico más consultado en España sobre sueño, da un método claro y progresivo para reeducar el ciclo vigilia-sueño sin medicación.', amazon: 'https://www.amazon.es/s?k=Duerme+bien+para+vivir+mejor+Estivill&tag=lainferencia-21' },
+        sinopsis: 'Estivill, el médico más consultado en España sobre sueño, da un método claro y progresivo para reeducar el ciclo vigilia-sueño sin medicación.', amazon: AUDIBLE_LINK },
       { frente: 'Las pantallas hasta tarde me destrozan las mañanas',
         libro: 'Irresistible', autor: 'Adam Alter', estrellas: '4,4',
         ciencia: 'La luz azul LED suprime la melatonina hasta 3 horas (Harvard Medical School, 2015). Pero el efecto mayor es conductual: la hiperactivación dopaminérgica por scroll y notificaciones mantiene el sistema de recompensa activo de forma incompatible con el inicio del sueño.',
-        sinopsis: 'Alter investiga la ciencia del diseño adictivo desde dentro. Entender cómo funciona es el primer paso para recuperar el control de tus noches.', amazon: 'https://www.amazon.es/dp/8449334020?tag=lainferencia-21' }
+        sinopsis: 'Alter investiga la ciencia del diseño adictivo desde dentro. Entender cómo funciona es el primer paso para recuperar el control de tus noches.', amazon: AUDIBLE_LINK }
     ],
     ansiedad: [
       { frente: 'Siento que algo malo va a pasar aunque todo vaya bien',
         libro: 'Atrévete', autor: 'Barry McDonagh', estrellas: '4,6',
         ciencia: 'La ansiedad anticipatoria se mantiene por dos mecanismos: la evitación (que confirma al cerebro que el peligro era real) y la lucha contra el propio estado ansioso, que activa aún más el sistema de amenaza. Ambos retroalimentan el ciclo.',
-        sinopsis: 'McDonagh propone una estrategia contraintuitiva basada en ACT: en lugar de combatir la ansiedad, acercarse a ella. Escrito desde su propia recuperación del trastorno de pánico.', amazon: 'https://www.amazon.es/s?k=Atrevete+ansiedad+Barry+McDonagh&tag=lainferencia-21' },
+        sinopsis: 'McDonagh propone una estrategia contraintuitiva basada en ACT: en lugar de combatir la ansiedad, acercarse a ella. Escrito desde su propia recuperación del trastorno de pánico.', amazon: AUDIBLE_LINK },
       { frente: 'Mi cuerpo reacciona antes de que yo entienda qué está pasando',
         libro: 'El cuerpo lleva la cuenta', autor: 'Bessel van der Kolk', estrellas: '4,8',
         ciencia: 'La amígdala procesa señales de amenaza 12 veces más rápido que el córtex prefrontal. La respuesta corporal (taquicardia, tensión, respiración acelerada) precede a la consciencia del estímulo; lo que el cuerpo registra no siempre llega al lenguaje.',
-        sinopsis: 'Van der Kolk explica con décadas de investigación clínica por qué la ansiedad crónica y el trauma se alojan en el cuerpo, y cuáles son las vías de recuperación que realmente funcionan.', amazon: 'https://www.amazon.es/dp/8412067193?tag=lainferencia-21' },
+        sinopsis: 'Van der Kolk explica con décadas de investigación clínica por qué la ansiedad crónica y el trauma se alojan en el cuerpo, y cuáles son las vías de recuperación que realmente funcionan.', amazon: AUDIBLE_LINK },
       { frente: 'Me preocupo por cosas que sé que probablemente nunca van a pasar',
         libro: 'La trampa de la felicidad', autor: 'Russ Harris', estrellas: '4,4',
         ciencia: 'La mente produce en torno a 60.000 pensamientos diarios, la mayoría repetitivos y negativos. Este sesgo de negatividad tiene valor evolutivo, pero en entornos seguros mantiene al sistema nervioso en alerta permanente innecesaria.',
-        sinopsis: 'Harris introduce la Terapia de Aceptación y Compromiso: no combatir los pensamientos ansiosos sino cambiar la relación que tienes con ellos, reduciendo su impacto sin necesidad de suprimirlos.', amazon: 'https://www.amazon.es/dp/8408261908?tag=lainferencia-21' },
+        sinopsis: 'Harris introduce la Terapia de Aceptación y Compromiso: no combatir los pensamientos ansiosos sino cambiar la relación que tienes con ellos, reduciendo su impacto sin necesidad de suprimirlos.', amazon: AUDIBLE_LINK },
       { frente: 'Los ataques de pánico me asustan más que el miedo en sí',
         libro: 'Adiós, ansiedad', autor: 'David D. Burns', estrellas: '4,5',
         ciencia: 'El pánico sigue un ciclo predecible: sensación física → catastrofización → más activación → más sensaciones. La interpretación catastrófica de síntomas benignos es el motor del ciclo (Clark, 1986), no las sensaciones corporales en sí.',
-        sinopsis: 'Burns adapta la terapia cognitivo-conductual a un formato accesible y práctico: técnicas concretas para identificar y cortar el ciclo del pánico antes de que escale.', amazon: 'https://www.amazon.es/s?k=Adios+ansiedad+Burns+cognitivo&tag=lainferencia-21' },
+        sinopsis: 'Burns adapta la terapia cognitivo-conductual a un formato accesible y práctico: técnicas concretas para identificar y cortar el ciclo del pánico antes de que escale.', amazon: AUDIBLE_LINK },
       { frente: 'Me siento ansioso sin saber exactamente por qué',
         libro: 'Cuando el cuerpo dice no', autor: 'Gabor Maté', estrellas: '4,7',
         ciencia: 'La ansiedad difusa sin desencadenante aparente suele estar ligada al estrés crónico acumulado y a la desconexión emocional. Maté documenta cómo la supresión sistemática de emociones se convierte en una señal de estrés sostenido que el cuerpo termina expresando.',
-        sinopsis: 'Maté conecta la biología del estrés con la historia emocional personal, mostrando cómo el cuerpo acaba hablando lo que la mente no ha procesado.', amazon: 'https://www.amazon.es/dp/8484458296?tag=lainferencia-21' }
+        sinopsis: 'Maté conecta la biología del estrés con la historia emocional personal, mostrando cómo el cuerpo acaba hablando lo que la mente no ha procesado.', amazon: AUDIBLE_LINK }
     ],
     autoestima: [
       { frente: 'Me critico a mí mismo constantemente por cualquier error',
         libro: 'Autocompasión', autor: 'Kristin Neff', estrellas: '4,6',
         ciencia: 'La autocrítica activa el mismo sistema de amenaza que un ataque externo: libera cortisol y activa la amígdala. La autocompasión, en cambio, activa el sistema de cuidado, libera oxitocina y reduce la respuesta de estrés de forma medible.',
-        sinopsis: 'Neff, investigadora de referencia mundial en autocompasión, demuestra que tratarse con amabilidad no es debilidad sino la base neurológica de la resiliencia y el rendimiento sostenido.', amazon: 'https://www.amazon.es/dp/8449331986?tag=lainferencia-21' },
+        sinopsis: 'Neff, investigadora de referencia mundial en autocompasión, demuestra que tratarse con amabilidad no es debilidad sino la base neurológica de la resiliencia y el rendimiento sostenido.', amazon: AUDIBLE_LINK },
       { frente: 'Necesito que los demás me aprueben para sentirme bien',
         libro: 'Los seis pilares de la autoestima', autor: 'Nathaniel Branden', estrellas: '4,5',
         ciencia: 'La dependencia de la validación externa está asociada a un locus de control externo y a niveles bajos de autoeficacia. Bandura mostró que la autoeficacia percibida predice el bienestar con más fiabilidad que el éxito objetivamente medido.',
-        sinopsis: 'Branden construye el modelo más completo sobre autoestima disponible en español: no como algo que se tiene o no se tiene sino como algo que se practica con acciones diarias específicas.', amazon: 'https://www.amazon.es/dp/8449324750?tag=lainferencia-21' },
+        sinopsis: 'Branden construye el modelo más completo sobre autoestima disponible en español: no como algo que se tiene o no se tiene sino como algo que se practica con acciones diarias específicas.', amazon: AUDIBLE_LINK },
       { frente: 'Siento que no merezco lo bueno que me pasa',
         libro: 'El síndrome del impostor', autor: 'Jessamy Hibberd', estrellas: '4,4',
         ciencia: 'El síndrome del impostor es más prevalente en personas de alto rendimiento: cuanto más exigente el entorno, más se activan los mecanismos de comparación ascendente. La mente atribuye los éxitos al azar y los fracasos a deficiencias internas permanentes.',
-        sinopsis: 'Hibberd examina la psicología del sentimiento de fraude y ofrece estrategias basadas en TCC para reconocer el patrón y recalibrar la narrativa interna.', amazon: 'https://www.amazon.es/dp/8419870145?tag=lainferencia-21' },
+        sinopsis: 'Hibberd examina la psicología del sentimiento de fraude y ofrece estrategias basadas en TCC para reconocer el patrón y recalibrar la narrativa interna.', amazon: AUDIBLE_LINK },
       { frente: 'Me comparo con los demás y siempre salgo perdiendo',
         libro: 'Mindset: la actitud del éxito', autor: 'Carol Dweck', estrellas: '4,7',
         ciencia: 'La comparación social ascendente constante está ligada al mindset fijo: cuando el éxito se atribuye a rasgos invariables, compararse genera amenaza identitaria directa. Dweck mostró que atribuir el progreso al esfuerzo reduce ese impacto drásticamente.',
-        sinopsis: 'Dweck demuestra con 20 años de investigación que la diferencia entre quien crece y quien se estanca no es el talento: es la creencia sobre si ese talento puede cambiar.', amazon: 'https://www.amazon.es/dp/8416579164?tag=lainferencia-21' },
+        sinopsis: 'Dweck demuestra con 20 años de investigación que la diferencia entre quien crece y quien se estanca no es el talento: es la creencia sobre si ese talento puede cambiar.', amazon: AUDIBLE_LINK },
       { frente: 'Me cuesta aceptar un elogio sin restarlo o negarlo',
         libro: 'Amarse con los ojos abiertos', autor: 'Jorge Bucay y Silvia Salinas', estrellas: '4,3',
         ciencia: 'La dificultad para aceptar elogios está ligada a la disonancia cognitiva: el reconocimiento externo contradice el modelo interno negativo. El cerebro tiende a resolver esa contradicción descartando la información discordante antes que revisar la creencia.',
-        sinopsis: 'Bucay aborda la relación con uno mismo como el eje del que parten todas las demás, con un lenguaje directo y accesible construido desde décadas de práctica clínica.', amazon: 'https://www.amazon.es/dp/6075570551?tag=lainferencia-21' }
+        sinopsis: 'Bucay aborda la relación con uno mismo como el eje del que parten todas las demás, con un lenguaje directo y accesible construido desde décadas de práctica clínica.', amazon: AUDIBLE_LINK }
     ],
     duelo: [
       { frente: 'He perdido a alguien importante y no sé cómo seguir',
         libro: 'El año del pensamiento mágico', autor: 'Joan Didion', estrellas: '4,5',
         ciencia: 'El duelo activa en el cerebro los mismos circuitos que el dolor físico. La búsqueda obsesiva de la persona perdida es una respuesta adaptativa del sistema de apego, no patología: el cerebro continúa ejecutando comportamientos de vinculación durante meses.',
-        sinopsis: 'Didion narra con precisión clínica y literaria el año tras la muerte repentina de su marido, convirtiendo la experiencia más íntima en una descripción universal de cómo el duelo transforma la percepción de la realidad.', amazon: 'https://www.amazon.es/dp/8439729073?tag=lainferencia-21' },
+        sinopsis: 'Didion narra con precisión clínica y literaria el año tras la muerte repentina de su marido, convirtiendo la experiencia más íntima en una descripción universal de cómo el duelo transforma la percepción de la realidad.', amazon: AUDIBLE_LINK },
       { frente: 'Una ruptura me tiene completamente paralizado',
         libro: 'Cómo curar un corazón roto', autor: 'Guy Winch', estrellas: '4,4',
         ciencia: 'El rechazo romántico activa el núcleo accumbens y la corteza cingulada anterior de la misma forma que la adicción. Cuando el cerebro ha construido un apego, su interrupción genera un proceso neurológico de abstinencia real.',
-        sinopsis: 'Winch, psicólogo clínico, aplica ciencia al proceso de ruptura y da herramientas específicas para acortar el sufrimiento innecesario sin saltarse el proceso necesario.', amazon: 'https://www.amazon.es/s?k=Como+curar+un+corazon+roto+Guy+Winch&tag=lainferencia-21' },
+        sinopsis: 'Winch, psicólogo clínico, aplica ciencia al proceso de ruptura y da herramientas específicas para acortar el sufrimiento innecesario sin saltarse el proceso necesario.', amazon: AUDIBLE_LINK },
       { frente: 'Un cambio importante me genera más pérdida que alivio',
         libro: 'Transiciones', autor: 'William Bridges', estrellas: '4,3',
         ciencia: 'Los cambios externos generan transiciones internas que siguen tres fases: final, zona neutral y nuevo inicio. Saltarse el cierre del final es la causa más frecuente de bloqueo ante el cambio, no la falta de adaptación o resiliencia.',
-        sinopsis: 'Bridges distingue entre el cambio (lo que ocurre fuera) y la transición (lo que ocurre dentro), y explica por qué gestionar bien los finales es la única forma real de empezar algo nuevo.', amazon: 'https://www.amazon.es/s?k=Transiciones+William+Bridges&tag=lainferencia-21' },
+        sinopsis: 'Bridges distingue entre el cambio (lo que ocurre fuera) y la transición (lo que ocurre dentro), y explica por qué gestionar bien los finales es la única forma real de empezar algo nuevo.', amazon: AUDIBLE_LINK },
       { frente: 'Sigo aferrado a algo que ya sé que no va a volver',
         libro: 'Desapegarse sin anestesia', autor: 'Walter Riso', estrellas: '4,5',
         ciencia: 'El apego patológico activa el sistema de amenaza cada vez que la mente anticipa la pérdida. La resistencia al cambio está mediada por el mismo circuito dopaminérgico que refuerza los hábitos: lo familiar es preferido aunque no sea beneficioso.',
-        sinopsis: 'Riso analiza el apego desde la psicología cognitiva y da argumentos y herramientas para soltar sin que sea una rendición: sin anestesia emocional pero sin autocastigo.', amazon: 'https://www.amazon.es/dp/8408136658?tag=lainferencia-21' },
+        sinopsis: 'Riso analiza el apego desde la psicología cognitiva y da argumentos y herramientas para soltar sin que sea una rendición: sin anestesia emocional pero sin autocastigo.', amazon: AUDIBLE_LINK },
       { frente: 'Me cuesta aceptar que algo (o alguien) ya no está',
         libro: 'Sobre el duelo y el dolor', autor: 'Elisabeth Kübler-Ross', estrellas: '4,6',
         ciencia: 'Las etapas del duelo de Kübler-Ross (negación, ira, negociación, depresión, aceptación) no son lineales sino cíclicas. Bonanno mostró que la mayoría de personas son resilientes al duelo de forma natural, pero necesitan tiempo, permiso y comprensión del proceso.',
-        sinopsis: 'La psiquiatra que revolucionó la comprensión occidental de la pérdida escribe sobre el duelo desde dentro, combinando la mirada clínica con la experiencia profundamente humana.', amazon: 'https://www.amazon.es/dp/8415864906?tag=lainferencia-21' }
+        sinopsis: 'La psiquiatra que revolucionó la comprensión occidental de la pérdida escribe sobre el duelo desde dentro, combinando la mirada clínica con la experiencia profundamente humana.', amazon: AUDIBLE_LINK }
     ],
     habitos: [
       { frente: 'Sé que debería mantener el hábito pero a la semana lo dejo',
         libro: 'Hábitos atómicos', autor: 'James Clear', estrellas: '4,8',
         ciencia: 'Los hábitos se forman mediante un bucle neurológico: señal, rutina, recompensa. Cada repetición mieliniza el circuito haciéndolo más automático. El problema no es la motivación sino el diseño del entorno que facilita o dificulta la señal de inicio.',
-        sinopsis: 'El libro de hábitos más vendido de la última década. Clear explica que la diferencia no está en la fuerza de voluntad sino en hacer que el comportamiento correcto sea el más fácil.', amazon: 'https://www.amazon.es/dp/8418118032?tag=lainferencia-21' },
+        sinopsis: 'El libro de hábitos más vendido de la última década. Clear explica que la diferencia no está en la fuerza de voluntad sino en hacer que el comportamiento correcto sea el más fácil.', amazon: AUDIBLE_LINK },
       { frente: 'Intento dejar un mal hábito pero vuelvo a él cuando estoy estresado',
         libro: 'El poder de los hábitos', autor: 'Charles Duhigg', estrellas: '4,6',
         ciencia: 'Los hábitos bajo estrés se vuelven más automáticos, no menos. El estrés reduce la actividad del córtex prefrontal y aumenta la dependencia del estriado, donde los hábitos están almacenados. Cambiar el hábito requiere cambiar la señal, no solo la respuesta.',
-        sinopsis: 'Duhigg explica la neurociencia del bucle habitual y muestra por qué los hábitos negativos son tan resistentes al cambio voluntario, y cómo hackear el sistema desde dentro.', amazon: 'https://www.amazon.es/dp/8479538163?tag=lainferencia-21' },
+        sinopsis: 'Duhigg explica la neurociencia del bucle habitual y muestra por qué los hábitos negativos son tan resistentes al cambio voluntario, y cómo hackear el sistema desde dentro.', amazon: AUDIBLE_LINK },
       { frente: 'Empiezo con motivación y a los días ya no puedo más',
         libro: 'Pequeños hábitos', autor: 'BJ Fogg', estrellas: '4,5',
         ciencia: 'La motivación es un recurso que fluctúa con el sueño, el estrés y el estado emocional. Fogg demostró en Stanford que anclar un comportamiento nuevo a uno ya existente tiene una tasa de mantenimiento muy superior a depender de la motivación variable.',
-        sinopsis: 'Fogg propone empezar ridículamente pequeño: el tamaño del comportamiento inicial determina si se convierte en hábito automático o se convierte en otra promesa rota.', amazon: 'https://www.amazon.es/dp/841769434X?tag=lainferencia-21' },
+        sinopsis: 'Fogg propone empezar ridículamente pequeño: el tamaño del comportamiento inicial determina si se convierte en hábito automático o se convierte en otra promesa rota.', amazon: AUDIBLE_LINK },
       { frente: 'Cojo el teléfono sin saber cómo llegué a él',
         libro: 'Enganchado', autor: 'Nir Eyal', estrellas: '4,4',
         ciencia: 'Las aplicaciones usan refuerzo de ratio variable, el mismo mecanismo que hace adictivas las tragaperras. El scroll infinito y las notificaciones están diseñadas para secuestrar el sistema dopaminérgico de búsqueda de novedad de forma específica e intencional.',
-        sinopsis: 'Eyal explica cómo funciona el diseño adictivo desde dentro (fue el consultor que lo diseñó) y ahora escribe exactamente cómo recuperar el control de la atención.', amazon: 'https://www.amazon.es/s?k=Enganchado+Nir+Eyal+habitos&tag=lainferencia-21' },
+        sinopsis: 'Eyal explica cómo funciona el diseño adictivo desde dentro (fue el consultor que lo diseñó) y ahora escribe exactamente cómo recuperar el control de la atención.', amazon: AUDIBLE_LINK },
       { frente: 'Cuando estoy solo recaigo en lo de siempre aunque no quiera',
         libro: 'La fuerza de voluntad', autor: 'Roy Baumeister y John Tierney', estrellas: '4,4',
         ciencia: 'El ego depletion (Baumeister, 1998) muestra que la fuerza de voluntad es un recurso que se agota con las decisiones sucesivas. Las recaídas vespertinas o solitarias no son falta de carácter: son el resultado predecible del agotamiento del sistema de autocontrol.',
-        sinopsis: 'Baumeister, el mayor investigador en autocontrol del mundo, demuestra que la voluntad no es un rasgo de personalidad sino un recurso que puede gestionarse inteligentemente con estrategias concretas.', amazon: 'https://www.amazon.es/s?k=La+fuerza+de+la+voluntad+Baumeister+Tierney&tag=lainferencia-21' }
+        sinopsis: 'Baumeister, el mayor investigador en autocontrol del mundo, demuestra que la voluntad no es un rasgo de personalidad sino un recurso que puede gestionarse inteligentemente con estrategias concretas.', amazon: AUDIBLE_LINK }
     ]
   };
 
@@ -8038,9 +8039,8 @@ _syncHeroBalance();
       card.querySelector('.flip-front-q').textContent      = newItem.frente;
       const iconSvg = card.querySelector('.flip-front-icon-wrap svg');
       if (iconSvg) iconSvg.innerHTML = SECTOR_ICONS[newSector] || '';
-      const coverEl = card.querySelector('.flip-card-cover');
-      coverEl.src = newItem.imagen || '';
-      if (newItem.imagen) coverEl.removeAttribute('hidden'); else coverEl.setAttribute('hidden', '');
+      card.querySelector('.flip-back-titulo').textContent = newItem.libro;
+      card.querySelector('.flip-back-autor').textContent  = newItem.autor;
       const badgeEl = card.querySelector('.flip-back-badge');
       badgeEl.querySelector('.flip-back-badge-text').textContent = newBadge;
       if (newBadge) badgeEl.removeAttribute('hidden'); else badgeEl.setAttribute('hidden', '');
@@ -8076,13 +8076,9 @@ _syncHeroBalance();
         </div>
         <div class="flip-card-back" aria-hidden="true">
           <div class="flip-card-back-top">
-            <div class="flip-cover-mystery">
-              <img class="flip-card-cover" src="${item.imagen || ''}" alt="" loading="lazy"${!item.imagen ? ' hidden' : ''}>
-              <div class="flip-cover-lock" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </div>
-            </div>
             <div class="flip-card-back-meta">
+              <strong class="flip-back-titulo">${item.libro}</strong>
+              <span class="flip-back-autor">${item.autor}</span>
               <span class="flip-back-badge"${!badge ? ' hidden' : ''}>
                 <svg class="flip-back-badge-star" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 <span class="flip-back-badge-text">${badge}</span>
@@ -8091,7 +8087,6 @@ _syncHeroBalance();
                 <span class="bq-stars">${stars(item.estrellas)}</span>
                 <span class="bq-rating">${item.estrellas} / 5</span>
               </div>
-              <span class="flip-cover-mystery-label">Portada oculta hasta que lo descubras</span>
             </div>
           </div>
           <p class="flip-back-sinopsis">${item.sinopsis}</p>
@@ -8100,13 +8095,13 @@ _syncHeroBalance();
             ¿Qué dice la ciencia?
           </button>
           <div class="flip-back-actions">
-            <a href="${item.amazon || '#'}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${item.libro}">
+            <a href="${item.amazon || '#'}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${item.libro}">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Descubrir cuál es →
+              Consigue este audiolibro gratis
             </a>
             <button class="flip-back-otro-btn" type="button">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
-              Ver otro misterio
+              Ver otra recomendación
             </button>
           </div>
         </div>
@@ -8907,6 +8902,22 @@ const GLOSARIO = [
 
 /* ── CONCEPTO DE LA SEMANA ───────────────────────────────────── */
 const CONCEPTOS_SEMANA = [
+  {
+    week: 34,
+    termino: 'Efecto Zeigarnik',
+    origen: 'Bluma Zeigarnik, 1927',
+    definicion: 'Recordamos mejor las tareas interrumpidas que las que terminamos. El cerebro deja abierta una tensión mental hasta que la tarea se cierra, y esa tensión sigue empujando el pensamiento hacia atrás aunque quieras ocuparte de otra cosa.',
+    definicionFull: 'El efecto Zeigarnik describe la tendencia a recordar con mayor claridad las tareas inconclusas que las completadas. Bluma Zeigarnik, psicóloga rusa formada en la escuela de la Gestalt, lo formuló tras observar a un camarero de Viena que recordaba con precisión pedidos complejos mientras estaban pendientes de cobro, pero los olvidaba en cuanto la mesa pagaba. Esa observación cotidiana se convirtió en una de las líneas de investigación más citadas sobre memoria y motivación del siglo XX.',
+    experimento: 'Zeigarnik pidió a un grupo de participantes que resolviera entre 18 y 22 tareas sencillas: puzzles, cuentas, pequeños trabajos manuales. En la mitad de los casos interrumpía la tarea antes de que la terminaran, con una excusa cualquiera. Después preguntó qué tareas recordaban. Las interrumpidas se recordaron entre un 90% y un 130% mejor que las completadas, según la versión del experimento. El dato sorprendió incluso a la propia autora, que esperaba que el cierre reforzara el recuerdo, y ocurrió justo lo opuesto.',
+    mecanismo: 'Cuando empiezas una tarea, el cerebro activa una representación del objetivo que permanece encendida hasta que detecta que se ha cumplido. Esa activación funciona como una alarma de fondo en la memoria de trabajo y consume atención aunque no lo notes. Terminar la tarea apaga la alarma. Interrumpirla la deja sonando, y el contenido asociado se vuelve más accesible al recuerdo porque el sistema lo sigue tratando como asunto abierto.',
+    reconoceras: [
+      'Pensar en un correo sin responder en mitad de la ducha, cuando llevas horas sin verlo',
+      'Recordar con detalle el capítulo de una serie que dejaste a media escena, y olvidar los que terminaste hace un mes',
+      'Series y videojuegos que cortan justo antes del clímax: el cliffhanger explota directamente este efecto',
+      'Notar que una discusión sin resolver con alguien te sigue rondando la cabeza días después, mucho más que las que sí se cerraron'
+    ],
+    aplicacion: 'No hace falta terminar una tarea para apagar la alarma mental que genera. Un estudio posterior de Baumeister y Masicampo (2011) mostró que basta con escribir un plan concreto de cuándo y cómo se va a completar para que la mente deje de rumiarla, aunque siga sin estar hecha. Si algo pendiente te está robando concentración, no lo termines a la fuerza. Escribe el siguiente paso exacto y la fecha: el cerebro cierra la alarma con la intención, no solo con el resultado.'
+  },
   {
     week: 23,
     termino: 'Efecto Pigmalión',
@@ -9878,7 +9889,7 @@ const EFECTOS_EXTRA = {
       importa: 'El scroll infinito de las redes sociales es refuerzo variable aplicado a escala industrial. Las tragaperras, los "me gusta" y las cajas de recompensa de los videojuegos son ingeniería skinneriana.',
       libroRelacionado: { libro: 'Enganchado', autor: 'Nir Eyal',
         sinopsis: 'El propio consultor que diseñó el enganche digital para grandes apps explica el mecanismo desde dentro, y cómo recuperar el control de tu atención una vez lo conoces.',
-        amazon: 'https://www.amazon.es/s?k=Enganchado+Nir+Eyal+habitos&tag=lainferencia-21' } },
+        amazon: AUDIBLE_LINK } },
 
     { año: '1943', tag: 'Abraham Maslow · Brooklyn College', cat: 'humanista', emoji: '🏔',
       titulo: 'La pirámide que explica por qué el dinero no basta',
@@ -9921,7 +9932,7 @@ const EFECTOS_EXTRA = {
       importa: 'Explican por qué somos malos estimando riesgos, por qué los precios tachados funcionan, por qué los titulares sensacionalistas distorsionan la percepción de la realidad y por qué los primeros datos de una negociación son los más poderosos.',
       libroRelacionado: { libro: 'Pensar rápido, pensar despacio', autor: 'Daniel Kahneman',
         sinopsis: 'El propio autor de estos hallazgos condensa cinco décadas de investigación en un mapa completo de cómo piensa realmente tu mente: el sistema rápido e intuitivo y el lento y deliberado, y cuándo cada uno te traiciona.',
-        amazon: 'https://www.amazon.es/dp/8483068613?tag=lainferencia-21' } },
+        amazon: AUDIBLE_LINK } },
 
     { año: '1974', tag: 'Elizabeth Loftus · Washington', cat: 'cognitivo', emoji: '🧠',
       titulo: 'La memoria no graba: construye, y cada vez que recuerdas, reescribes',
@@ -9949,7 +9960,7 @@ const EFECTOS_EXTRA = {
       importa: 'Son tan efectivos porque funcionan incluso cuando los conoces. El cerebro usa atajos porque la deliberación completa es imposible para cada decisión. Conocerlos da un segundo de distancia; no los elimina, pero ayuda.',
       libroRelacionado: { libro: 'Influence', autor: 'Robert Cialdini',
         sinopsis: 'El propio investigador que se infiltró en sectores de ventas durante tres años sistematiza estos seis atajos con ejemplos reales, el manual definitivo para reconocerlos en el momento en que se usan contigo.',
-        amazon: 'https://www.amazon.es/dp/849139690X?tag=lainferencia-21' } },
+        amazon: AUDIBLE_LINK } },
 
     { año: '1990', tag: 'Martin Seligman · Pennsylvania', cat: 'clinico', emoji: '☀',
       titulo: 'El giro: de estudiar lo que nos destruye a estudiar lo que nos hace florecer',
@@ -10031,10 +10042,10 @@ const EFECTOS_EXTRA = {
     dImp.textContent    = h.importa;
     if (dLibroWrap && dLibroBody) {
       if (h.libroRelacionado) {
-        dLibroBody.innerHTML = `<p class="weekly-libro-sinopsis">${h.libroRelacionado.sinopsis}</p>
-          <a href="${h.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${h.libroRelacionado.libro}" data-umami-event-origen="timeline">
+        dLibroBody.innerHTML = `<p class="weekly-libro-sinopsis"><strong>${h.libroRelacionado.libro}</strong>, ${h.libroRelacionado.autor}. ${h.libroRelacionado.sinopsis}</p>
+          <a href="${h.libroRelacionado.amazon}" class="flip-back-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${h.libroRelacionado.libro}" data-umami-event-origen="timeline">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Descubrir cuál es →
+            Consigue este audiolibro gratis
           </a>`;
         dLibroWrap.hidden = false;
       } else {
@@ -10066,7 +10077,7 @@ const EFECTOS_EXTRA = {
             <span class="tl-cat-badge tl-cat-${h.cat}">${catLabel(h.cat)}</span>
           </div>
           <h3 class="tl-titulo">${h.titulo}</h3>
-          ${h.libroRelacionado ? '<span class="tl-mystery-chip">🔒 Libro oculto dentro</span>' : ''}
+          ${h.libroRelacionado ? '<span class="tl-mystery-chip">🎧 Audiolibro gratis dentro</span>' : ''}
         </div>`;
       const card = item.querySelector('.tl-card');
       const open = () => openDetail(h, item);

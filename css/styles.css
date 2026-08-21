@@ -3079,24 +3079,21 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 
 .recomendacion-btn {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 0.55rem 1rem; background: #FF9900; color: #111;
-  border-radius: 9px; font-size: 0.78rem; font-weight: 800;
+  padding: 0.85rem 1.6rem; background: #FF9900; color: #111;
+  border-radius: 10px; font-size: 0.95rem; font-weight: 800;
   text-decoration: none; border: none; cursor: pointer;
-  transition: background 0.18s, transform 0.15s; flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(255,153,0,0.35);
+  transition: background 0.18s, transform 0.15s, box-shadow 0.18s; flex-shrink: 0;
 }
-.recomendacion-btn:hover { background: #FFAD33; transform: translateY(-1px); }
+.recomendacion-btn:hover { background: #FFAD33; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255,153,0,0.45); }
 
-.recomendacion-producto {
-  margin-top: 1rem; padding-top: 1rem;
-  border-top: 1px dashed color-mix(in srgb, var(--blue) 20%, transparent);
+.recomendacion-valor {
+  font-size: 0.82rem; color: var(--blue); font-weight: 600;
+  margin: 0.7rem 0 0; line-height: 1.5;
 }
-.recomendacion-producto-nombre { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
-.recomendacion-producto p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin: 0.3rem 0 0.5rem; }
-.recomendacion-producto a { font-size: 0.8rem; font-weight: 700; color: var(--blue); text-decoration: none; }
-.recomendacion-producto a:hover { text-decoration: underline; }
 
 .recomendacion-disclaimer {
-  font-size: 0.72rem; color: var(--text-muted); margin: 0.9rem 0 0;
+  font-size: 0.72rem; color: var(--text-muted); margin: 0.4rem 0 0;
   font-style: italic; line-height: 1.5;
 }
 
@@ -5668,21 +5665,22 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.55rem 1rem;
+  padding: 0.8rem 1.5rem;
   background: #FF9900;
   color: #111;
-  border-radius: 9px;
-  font-size: 0.78rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
   font-weight: 800;
   text-decoration: none;
   border: none;
   cursor: pointer;
   font-family: inherit;
-  transition: background 0.18s, transform 0.15s;
+  box-shadow: 0 4px 14px rgba(255,153,0,0.35);
+  transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
   flex-shrink: 0;
 }
 
-.flip-back-btn:hover { background: #FFAD33; transform: translateY(-1px); }
+.flip-back-btn:hover { background: #FFAD33; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255,153,0,0.45); }
 
 .weekly-libro-block {
   margin: 1.4rem 0;
@@ -5732,6 +5730,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .mystery-unlock-sinopsis { font-size: 0.86rem; line-height: 1.55; margin: 0 0 0.9rem; opacity: 0.92; }
 
 .mystery-unlock-btn { margin: 0 auto; }
+
+.mystery-unlock-valor { font-size: 0.74rem; color: rgba(147,197,253,0.75); margin: 0.6rem 0 0; }
 
 /* ── Responsive ── */
 @media (max-width: 1100px) {
@@ -6348,52 +6348,8 @@ button.fav-item-cta:hover {
   .lstrip-panel.open { max-height: 700px; }
 }
 
-/* ── Portada en flip cards del botiquín ── */
-.flip-cover-mystery {
-  position: relative;
-  width: 56px;
-  height: 78px;
-  flex-shrink: 0;
-  border-radius: 5px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.08);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.35);
-}
-
-.flip-card-cover {
-  width: 56px;
-  height: 78px;
-  object-fit: cover;
-  filter: blur(9px) saturate(1.2) brightness(0.85);
-  transform: scale(1.25);
-}
-
-.flip-cover-lock {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(9,24,48,0.35);
-  color: rgba(251,191,36,0.9);
-}
-
-.flip-cover-mystery-label {
-  display: block;
-  font-size: 0.62rem;
-  font-style: italic;
-  color: rgba(147,197,253,0.55);
-  margin-top: 0.3rem;
-}
-
-.flip-card-cover-placeholder {
-  width: 56px;
-  height: 78px;
-  border-radius: 5px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  display: none;
-}
+.flip-back-titulo { display: block; font-size: 0.85rem; color: #F1F5F9; }
+.flip-back-autor { display: block; font-size: 0.72rem; color: rgba(203,213,225,0.65); margin: 0.05rem 0 0.4rem; }
 
 .flip-card-back-top {
   display: flex;
@@ -6454,9 +6410,8 @@ button.fav-item-cta:hover {
   100% { background-position: -200% center; }
 }
 .flip-back-badge[hidden] { display: none; }
-.flip-card-cover[hidden] { display: none; }
 
-/* Acciones (Amazon + otro libro) */
+/* Acciones (Audible + otra recomendación) */
 .flip-back-actions {
   display: flex;
   flex-direction: column;

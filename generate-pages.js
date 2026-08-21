@@ -32,8 +32,19 @@ if (dataStart === -1 || dataEnd === -1) {
   process.exit(1);
 }
 
+// AUDIBLE_LINK se define en recomendaciones.js (única declaración; en el
+// navegador ese script carga antes que main.js) y se referencia dentro de
+// los bloques de datos extraídos de main.js (WEEKLY_ARTICLES, BOTIQUIN_DATA...).
+const recomendacionesCode = fs.readFileSync(path.join(__dirname, 'js/recomendaciones.js'), 'utf-8');
+const audibleLinkMatch = recomendacionesCode.match(/const AUDIBLE_LINK = '[^']+';/);
+if (!audibleLinkMatch) {
+  console.error('ERROR: No se encontró AUDIBLE_LINK en recomendaciones.js');
+  process.exit(1);
+}
+const AUDIBLE_LINK_DECL = audibleLinkMatch[0] + '\n';
+
 const sandbox = {};
-const dataCode = mainCode.slice(dataStart, dataEnd).replace(/\bconst\s+/g, '').replace(/\blet\s+/g, '');
+const dataCode = AUDIBLE_LINK_DECL + mainCode.slice(dataStart, dataEnd).replace(/\bconst\s+/g, '').replace(/\blet\s+/g, '');
 vm.runInNewContext(dataCode, sandbox);
 const { LIBRARY_ARTICLES } = sandbox;
 if (!LIBRARY_ARTICLES) {
@@ -61,7 +72,7 @@ const botiquinStart = mainCode.indexOf('const BOTIQUIN_DATA = {');
 const botiquinEnd   = mainCode.indexOf('\n  };', botiquinStart) + 5;
 const sandbox3      = {};
 vm.runInNewContext(
-  mainCode.slice(botiquinStart, botiquinEnd).replace(/\bconst\s+/g, ''),
+  AUDIBLE_LINK_DECL + mainCode.slice(botiquinStart, botiquinEnd).replace(/\bconst\s+/g, ''),
   sandbox3
 );
 const BOTIQUIN_DATA = sandbox3.BOTIQUIN_DATA || {};
@@ -495,11 +506,11 @@ function buildStatsHTML(id) {
   ).join('')}</div>`;
 }
 
-// ── Recomendación de producto (libro / producto físico) por artículo ──
+// ── Recomendación de libro (audiolibro gratis vía Audible) por artículo ──
 function buildRecomendacionHTML(id) {
   const rec = RECOMENDACIONES[id];
   if (!rec || !rec.libro) return '';
-  const { libro, producto } = rec;
+  const { libro } = rec;
   return `      <div class="recomendacion-block">
         <p class="recomendacion-label">Si quieres profundizar en esto</p>
         <div class="recomendacion-libro">
@@ -508,14 +519,10 @@ function buildRecomendacionHTML(id) {
             <span class="recomendacion-autor">${libro.autor}</span>
             <p>${libro.sinopsis}</p>
           </div>
-          <a href="${libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="articulo-pagina">Ver libro</a>
-        </div>${producto ? `
-        <div class="recomendacion-producto">
-          <span class="recomendacion-producto-nombre">Para aplicarlo hoy: ${producto.nombre}</span>
-          <p>${producto.nota}</p>
-          <a href="${producto.amazon}" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${producto.nombre}" data-umami-event-origen="articulo-pagina-producto">Ver producto →</a>
-        </div>` : ''}
-        <p class="recomendacion-disclaimer">Enlaces de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti.</p>
+          <a href="${libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="articulo-pagina">Consigue este audiolibro gratis</a>
+        </div>
+        <p class="recomendacion-valor">Además, tienes acceso a miles de audiolibros más durante 30 días, sin coste.</p>
+        <p class="recomendacion-disclaimer">Enlace de afiliado.</p>
       </div>`;
 }
 
@@ -654,7 +661,7 @@ ${faqs.map(f => `        <details class="static-faq-item">\n          <summary>$
           <p class="recomendacion-label">Los libros de esta ruta</p>
 ${rutaLibros.slice(0, 3).map(libro => `          <div class="ruta-finish-libro-item">
             <strong>${libro.titulo}</strong> <span class="recomendacion-autor">${libro.autor}</span>
-            <a href="${libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="ruta-finish">Ver libro</a>
+            <a href="${libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${libro.titulo}" data-umami-event-origen="ruta-finish">Consíguelo gratis en Audible →</a>
           </div>`).join('\n')}
         </div>` : '';
       rutaSiguienteHTML = `      <div class="ruta-finish">
@@ -1123,7 +1130,7 @@ function buildGuiaPage(guia) {
           <td>${b.frente}</td>
           <td>${b.sinopsis}</td>
           <td class="guia-tabla-estrellas">★ ${b.estrellas}</td>
-          <td><a href="${b.amazon}" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${b.libro}" data-umami-event-origen="guia-compra" class="recomendacion-btn">Ver</a></td>
+          <td><a href="${b.amazon}" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${b.libro}" data-umami-event-origen="guia-compra" class="recomendacion-btn">Gratis en Audible</a></td>
         </tr>`).join('\n');
 
   const relatedHTML = relArts.length ? `
@@ -1170,7 +1177,7 @@ ${filasHTML}
           </tbody>
         </table>
       </div>
-      <p class="recomendacion-disclaimer">Enlaces de afiliado de Amazon: si compras a través de ellos, ganamos una pequeña comisión sin coste extra para ti.</p>
+      <p class="recomendacion-disclaimer">Enlace de afiliado.</p>
 ${relatedHTML}
 
     </div>
@@ -1225,7 +1232,7 @@ ${g.libros.map(({ art, rec }) => `          <div class="biblioteca-item">
             <p>${rec.libro.sinopsis}</p>
             <div class="biblioteca-item-links">
               <a href="${articleUrl(art)}" class="biblioteca-item-articulo">Ver artículo: ${art.title}</a>
-              <a href="${rec.libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="amazon-click" data-umami-event-libro="${rec.libro.titulo}" data-umami-event-origen="biblioteca">Ver libro</a>
+              <a href="${rec.libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${rec.libro.titulo}" data-umami-event-origen="biblioteca">Consíguelo gratis en Audible →</a>
             </div>
           </div>`).join('\n')}
         </div>

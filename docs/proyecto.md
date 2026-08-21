@@ -162,18 +162,40 @@ Widget en navbar (`.nivel-widget`) con barra de progreso animada. Imágenes Nive
 
 ---
 
-## Monetización — recomendaciones de producto (2026-07-10)
+## Monetización — recomendaciones de producto (2026-07-10, migrado a Audible 2026-08-21)
 
 Antes de este cambio, los enlaces de afiliado de Amazon (`tag=lainferencia-21`) solo vivían en la home (Botiquín Antisesgos, Mystery unlock, algunos efectos/hitos/artículo semanal). Las 56 páginas de artículo individual —el destino del tráfico SEO— no mostraban ninguno. Se cerró ese hueco así:
 
-- **`js/recomendaciones.js`** — mismo patrón que `js/seo-overrides.js` (objeto plano keyed por `art.id`). Cada entrada tiene `libro: {titulo, autor, sinopsis, amazon}` y, en ~7 artículos donde es genuinamente coherente, un `producto` físico opcional (mismo formato). Enlaces siempre `amazon.es/s?k=Título+Autor&tag=lainferencia-21` (búsqueda) o el `/dp/` ya vetado en `BOTIQUIN_DATA` cuando se reutiliza el mismo libro — nunca ASIN inventado.
-- **`buildRecomendacionHTML(id)`** en `generate-pages.js` — genera el bloque `.recomendacion-block`, insertado en `buildPage()` justo después de `aplicacionHTML` y antes del botón "Verificar fuente". Mismo tracking que el resto de módulos de afiliado (`data-umami-event="amazon-click"`, `rel="sponsored"`).
+- **`js/recomendaciones.js`** — mismo patrón que `js/seo-overrides.js` (objeto plano keyed por `art.id`). Cada entrada tiene `libro: {titulo, autor, sinopsis, amazon}`. Ya no existen bloques `producto` (producto físico): se eliminaron en la migración a Audible porque no tenían equivalente en el nuevo modelo.
+- **`buildRecomendacionHTML(id)`** en `generate-pages.js` — genera el bloque `.recomendacion-block`, insertado en `buildPage()` justo después de `aplicacionHTML` y antes del botón "Verificar fuente". Mismo tracking que el resto de módulos de afiliado (`data-umami-event="audible-click"`, `rel="sponsored"`).
 - **Cross-link en páginas de categoría** (`buildCategoryPage`) — tira `.cat-libros-teaser` con 2-3 libros del sector del Botiquín equivalente (mapa `CAT_TO_SECTOR`), enlazando a la guía de compra correspondiente.
 - **Cierre de Rutas de Aprendizaje** — el bloque `.ruta-finish` (última página de cada ruta) añade `.ruta-finish-libro`: la recomendación del primer artículo de la ruta (evita repetir el libro que ya se muestra en esa misma página).
 - **Guías de compra nuevas** — `/guias/` (landing) + `/guias/<slug>/` por cada uno de los 12 sectores de `BOTIQUIN_DATA` (`buildGuiasLandingPage`, `buildGuiaPage` en `generate-pages.js`). Tabla comparativa de los ~5 libros del sector + artículos relacionados de La Inferencia. `BOTIQUIN_DATA` se extrae de `main.js` con el mismo mecanismo `vm.runInNewContext` que ya se usaba para `LIBRARY_ARTICLES`/`AUTHORS`.
 - Todo pasa por datos + plantilla — nunca se edita a mano un `articulos/*/index.html`, porque `generate-pages.js` los sobreescribe en cada deploy (`vercel.json`: `buildCommand: node generate-pages.js`).
 
 Fuera de alcance por ahora: el contenido "Fuera de Bata" (`bata-*`) no genera páginas estáticas propias, solo vive en la SPA — se puede rellenar con el mismo patrón de `libroRelacionado` que ya usan `EFECTOS_DATA`/`HITOS` si se quiere más adelante.
+
+### Migración a Audible (2026-08-21)
+
+Se sustituyó por completo el modelo de afiliados de Amazon (comisión por venta de libro) por el programa de afiliados de la prueba gratuita de Audible (comisión fija ~10€ por alta, sin coste para el usuario). Cambios clave:
+
+- **`AUDIBLE_LINK`** — constante con el link de afiliado (`amazon.es/hz/audible/mlp/mdp/discovery?actionCode=...&tag=lainferencia-21`, es un link genérico de prueba, no apunta a la ficha de un libro concreto). Se declara **una sola vez**, en `js/recomendaciones.js` (necesario porque ese archivo también se `require()`a desde Node en `generate-pages.js`). `js/main.js` la reutiliza como global del navegador — **no la redeclara**, porque en `index.html` ambos scripts comparten el mismo scope global y un `const` duplicado rompe la página entera (`Identifier 'AUDIBLE_LINK' has already been declared`). `generate-pages.js` extrae esa misma declaración por regex desde `recomendaciones.js` para poder evaluar en sandbox (`vm.runInNewContext`) los fragmentos de `main.js` que también usan `AUDIBLE_LINK` (`WEEKLY_ARTICLES`, `BOTIQUIN_DATA`, `MYSTERY_LIBROS`).
+- **Se eliminó toda la ocultación de título de libro** que existía para forzar el clic a Amazon (candado sobre la portada en las tarjetas flip del Botiquín, sinopsis sin título en la recompensa-misterio del quiz, chip "🔒 Libro oculto dentro" en el timeline). Con un link genérico de Audible, ocultar el título ya no tenía sentido (el clic no "revela" nada). Ahora título y autor se muestran siempre (portada sin implementar, no hay fuente de imagen); el CTA vende directamente el valor ("Consigue este audiolibro gratis").
+- **Copy**: CTA principal siempre en clave de valor, nunca "descúbrelo"/"misterio". Bloque `.recomendacion-block` sigue el patrón botón (valor grande) + `.recomendacion-valor` (línea de beneficio: "+miles de audiolibros, 30 días sin coste") + `.recomendacion-disclaimer` (legal, pequeño: "Enlace de afiliado.").
+- **Eventos umami**: `amazon-click` → `audible-click` en todos los módulos.
+
+### Estrategia de venta y objetivo (2026-08-21)
+
+**Objetivo:** maximizar altas en la prueba gratuita de Audible (comisión fija ~10€ por alta, sin coste para el usuario). Cada punto de contacto con un libro recomendado en la web es una oportunidad de conversión hacia `AUDIBLE_LINK`.
+
+**Principio rector:** el lector siempre debe percibir regalo/valor, nunca publicidad.
+
+- **CTA siempre en clave de regalo, nunca de curiosidad.** Texto fijo: "Consigue este audiolibro gratis" (sin variantes tipo "Descúbrelo" o "Ver más" que generan gancho de misterio en vez de valor directo).
+- **Sin ocultar nada.** Título, autor, sinopsis y valoración se muestran siempre antes del clic — el usuario decide con toda la información, no "abre una caja sorpresa". (Ver arriba: eliminación de mecánicas de ocultación de julio-agosto 2026.)
+- **Refuerzo de valor explícito junto al botón.** Línea `.recomendacion-valor` / `.mystery-unlock-valor`: "Además, tienes acceso a miles de audiolibros más durante 30 días, sin coste." — vende la prueba gratuita en sí, no solo el libro puntual.
+- **Disclaimer legal separado y discreto.** "Enlace de afiliado." va aparte, pequeño, después de la línea de valor — cumple LSSICE/Amazon Associates sin competir visualmente con el mensaje de valor.
+- **Botón como elemento dominante.** CTA con color de marca Audible (#FF9900), tamaño y sombra por encima del resto de botones secundarios de la tarjeta/bloque ("¿Qué dice la ciencia?", "Ver otra recomendación") — el ojo va primero al regalo.
+- Al evaluar cualquier cambio futuro en estos módulos (nuevo copy, nuevo punto de inserción, rediseño de tarjeta), la pregunta de referencia es: **¿esto se siente a que le estoy regalando algo, o a que le estoy vendiendo algo?** Si se acerca a lo segundo, replantear.
 
 ---
 

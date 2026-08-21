@@ -40,7 +40,7 @@ Personalizado según perfil. Estructura base:
 > Me gustaría que escribieses ahí sobre cualquier cosa que te mole. No hace falta que me des un artículo acabado, si tienes una idea, yo te ayudo a darle formato divulgativo.
 >
 > A cambio:
-> - Puedes incluir enlaces de afiliado de Amazon en tus artículos para generar ingresos pasivos.
+> - Tus artículos incluyen un enlace de afiliado a la prueba gratuita de Audible, que genera ingresos pasivos para el proyecto sin coste para el lector.
 > - Figuras en LinkedIn como investigadora y divulgadora en La Inferencia, lo que suma visibilidad a tu perfil.
 >
 > La web no está publicada, pero te paso en confianza un código personal que te he creado para que puedas bichearla. La web es lainferencia.com?n=[Nombre] y la contraseña BATA27. La sección de la que te hablo es la de "Fuera de Bata".
