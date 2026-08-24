@@ -3910,7 +3910,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .research-inner   { padding: 0; }
   .navbar-inner     { padding: 0 1rem; gap: 0.6rem; height: 52px; }
   #app              { padding-top: 52px; }
-  .reading-progress-bar { top: 52px; }
   .navbar-brand     { gap: 0.5rem; }
   .logo             { height: 28px; }
   .navbar-brand-name { font-size: 0.92rem; }
@@ -4950,6 +4949,10 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 .reading-progress-bar.visible { opacity: 1; }
+
+@media (max-width: 680px) {
+  .reading-progress-bar { top: 52px; }
+}
 
 .reading-progress-fill {
   height: 100%;
