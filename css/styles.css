@@ -1227,6 +1227,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 .doc-badge {
   display: inline-flex;
   align-items: center;
+  gap: 0.35rem;
   background: var(--badge-bg);
   color: var(--blue);
   border: 1px solid var(--badge-border);
@@ -1236,6 +1237,77 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+/* ── Color e icono por categoría (Fuera de Bata) ── */
+:root {
+  --cat-comportamiento: var(--blue);
+  --cat-neuropsicologia: #7C3AED;
+  --cat-psicologia-social: var(--blue-accent);
+  --cat-rendimiento: #F59E0B;
+  --cat-salud: #10B981;
+  --cat-icon-comportamiento: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 12h-4l-3 9L9 3l-3 9H2'/%3E%3C/svg%3E");
+  --cat-icon-neuropsicologia: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z'/%3E%3C/svg%3E");
+  --cat-icon-psicologia-social: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='11' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E");
+  --cat-icon-rendimiento: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 7 13.5 15.5 8.5 10.5 2 17'/%3E%3Cpath d='M16 7h6v6'/%3E%3C/svg%3E");
+  --cat-icon-salud: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black' stroke='none'%3E%3Cpath d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.5 4.04 3 5.5l7 7Z'/%3E%3C/svg%3E");
+}
+
+#docs-grid-2 .doc-card { border-left: 3px solid var(--cat-comportamiento); }
+#docs-grid-2 .doc-card[data-category="neuropsicologia"]   { border-left-color: var(--cat-neuropsicologia); }
+#docs-grid-2 .doc-card[data-category="psicologia-social"] { border-left-color: var(--cat-psicologia-social); }
+#docs-grid-2 .doc-card[data-category="rendimiento"]        { border-left-color: var(--cat-rendimiento); }
+#docs-grid-2 .doc-card[data-category="salud"]               { border-left-color: var(--cat-salud); }
+
+#docs-grid-2 .doc-card .doc-badge {
+  background: color-mix(in srgb, var(--cat-comportamiento) 12%, transparent);
+  color: var(--cat-comportamiento);
+  border-color: color-mix(in srgb, var(--cat-comportamiento) 30%, transparent);
+}
+#docs-grid-2 .doc-card[data-category="neuropsicologia"] .doc-badge {
+  background: color-mix(in srgb, var(--cat-neuropsicologia) 12%, transparent);
+  color: var(--cat-neuropsicologia);
+  border-color: color-mix(in srgb, var(--cat-neuropsicologia) 30%, transparent);
+}
+#docs-grid-2 .doc-card[data-category="psicologia-social"] .doc-badge {
+  background: color-mix(in srgb, var(--cat-psicologia-social) 12%, transparent);
+  color: var(--cat-psicologia-social);
+  border-color: color-mix(in srgb, var(--cat-psicologia-social) 30%, transparent);
+}
+#docs-grid-2 .doc-card[data-category="rendimiento"] .doc-badge {
+  background: color-mix(in srgb, var(--cat-rendimiento) 12%, transparent);
+  color: var(--cat-rendimiento);
+  border-color: color-mix(in srgb, var(--cat-rendimiento) 30%, transparent);
+}
+#docs-grid-2 .doc-card[data-category="salud"] .doc-badge {
+  background: color-mix(in srgb, var(--cat-salud) 12%, transparent);
+  color: var(--cat-salud);
+  border-color: color-mix(in srgb, var(--cat-salud) 30%, transparent);
+}
+
+#docs-grid-2 .doc-card .doc-badge::before {
+  content: '';
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask: var(--cat-icon-comportamiento) center / contain no-repeat;
+  mask: var(--cat-icon-comportamiento) center / contain no-repeat;
+}
+#docs-grid-2 .doc-card[data-category="neuropsicologia"] .doc-badge::before   { -webkit-mask-image: var(--cat-icon-neuropsicologia); mask-image: var(--cat-icon-neuropsicologia); }
+#docs-grid-2 .doc-card[data-category="psicologia-social"] .doc-badge::before { -webkit-mask-image: var(--cat-icon-psicologia-social); mask-image: var(--cat-icon-psicologia-social); }
+#docs-grid-2 .doc-card[data-category="rendimiento"] .doc-badge::before       { -webkit-mask-image: var(--cat-icon-rendimiento); mask-image: var(--cat-icon-rendimiento); }
+#docs-grid-2 .doc-card[data-category="salud"] .doc-badge::before             { -webkit-mask-image: var(--cat-icon-salud); mask-image: var(--cat-icon-salud); }
+
+/* ── Fade-in escalonado al hacer scroll dentro del modal ── */
+#docs-grid-2 .doc-card {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#docs-grid-2 .doc-card.card-in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .doc-card h3 {

@@ -4972,6 +4972,26 @@ function initBataSecciones() {
   });
 }
 
+/* Fade-in escalonado de las tarjetas al hacer scroll dentro del modal */
+let _bataCardObserver = null;
+
+function initBataCardFadeIn() {
+  const modalCard = document.querySelector('#bata-lista-modal .concepto-modal-card');
+  const grid      = document.getElementById('docs-grid-2');
+  if (!modalCard || !grid) return;
+  if (_bataCardObserver) _bataCardObserver.disconnect();
+  const cards = grid.querySelectorAll('.doc-card');
+  cards.forEach(c => c.classList.remove('card-in-view'));
+  _bataCardObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('card-in-view');
+      _bataCardObserver.unobserve(entry.target);
+    });
+  }, { root: modalCard, threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  cards.forEach(c => _bataCardObserver.observe(c));
+}
+
 /* Modal de listado: overlay con blur, igual que Explorar concepto */
 let _bataModalTrap = null, _bataModalTrigger = null;
 
@@ -4985,6 +5005,7 @@ function openBataModal(cat, focusEl) {
   modal.hidden = false;
   document.body.style.overflow = 'hidden';
   _bataModalTrap = trapFocus(modal);
+  initBataCardFadeIn();
   requestAnimationFrame(() => {
     if (focusEl) focusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     else document.getElementById('bata-lista-modal-close')?.focus();
