@@ -115,12 +115,12 @@
     </defs>
   </svg>
 
-  <!-- Barra de progreso de lectura (fija, bajo navbar) -->
-  <div class="reading-progress-bar" id="reading-progress-bar" aria-hidden="true">
-    <div class="reading-progress-fill" id="reading-progress-fill"></div>
-  </div>
-
   <div id="app">
+
+    <!-- Barra de progreso de lectura (fija, bajo navbar) -->
+    <div class="reading-progress-bar" id="reading-progress-bar" aria-hidden="true">
+      <div class="reading-progress-fill" id="reading-progress-fill"></div>
+    </div>
 
     <!-- ── NAVBAR ── -->
     <header class="navbar">
@@ -282,8 +282,8 @@
         <!-- Acceso rápido, solo visible en móvil -->
         <div class="hero-quick-access">
           <button class="hqa-btn hqa-mitos" id="hqa-mitos-btn">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" class="hqa-icon"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            Lista de Efectos
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" class="hqa-icon"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Tu Progreso
           </button>
         </div>
       </div>
@@ -592,7 +592,7 @@
 
       </div><!-- /.dashboard-center -->
 
-      <!-- SIDEBAR DERECHO: Lista de Efectos -->
+      <!-- SIDEBAR DERECHO: Tu Progreso -->
       <aside class="sidebar-widget sidebar-right">
         <button class="sidebar-close-btn" aria-label="Cerrar panel">✕</button>
 
@@ -602,6 +602,43 @@
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             Tu progreso
           </div>
+
+          <div class="pt-nivel-block" id="pt-nivel-block">
+            <div class="pt-nivel-row">
+              <div class="pt-nivel-id">
+                <img class="pt-nivel-badge" id="pt-nivel-badge" src="img/Nivel00.png" alt="" loading="lazy" />
+                <span class="pt-nivel-nombre" id="pt-nivel-nombre">Nivel 1: Estado Latente</span>
+              </div>
+              <span class="pt-nivel-xp-restante" id="pt-nivel-xp-restante">0 XP para el siguiente nivel</span>
+            </div>
+            <div class="pt-bar-wrap pt-nivel-bar-wrap">
+              <div class="pt-bar" id="pt-nivel-bar" style="width:0%"></div>
+            </div>
+            <div class="pt-nivel-xp-actual" id="pt-nivel-xp-actual">0 / 74 XP</div>
+          </div>
+
+          <div class="pt-reward-block" id="pt-reward-block">
+            <div class="pt-reward-row">
+              <span class="pt-reward-label" id="pt-reward-label">Artículos leídos para desbloquear tu recompensa</span>
+              <span class="pt-reward-count" id="pt-reward-count">0 / 4</span>
+            </div>
+            <div class="pt-reward-segments" id="pt-reward-bar">
+              <div class="pt-reward-segment"></div>
+              <div class="pt-reward-segment"></div>
+              <div class="pt-reward-segment"></div>
+              <div class="pt-reward-segment"></div>
+            </div>
+          </div>
+
+          <button type="button" class="pt-reward-claim" id="pt-reward-claim" hidden>
+            <span class="pt-reward-claim-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v10H4V12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            </span>
+            <span class="pt-reward-claim-copy">
+              <span class="pt-reward-claim-title">Recompensa lista para reclamar</span>
+              <span class="pt-reward-claim-sub">30 días de audiolibros gratis te esperan</span>
+            </span>
+          </button>
 
           <div class="pt-stat">
             <span class="pt-stat-label">Artículos leídos</span>
@@ -620,10 +657,10 @@
           </div>
 
           <div class="pt-stat">
-            <span class="pt-stat-label">Efectos explorados</span>
+            <span class="pt-stat-label">Rutas completadas</span>
             <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-efectos-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-efectos-count">0 / 18</span>
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-rutas-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-rutas-count">0 / 4</span>
             </div>
           </div>
 
@@ -664,116 +701,6 @@
           </div>
         </div>
 
-        <!-- Vista previa de efectos: tarjeta fija, sin desplegable -->
-        <div class="efectos-preview-card">
-          <div class="widget-header efectos-preview-header">
-            <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Vista previa de efectos</h3>
-          </div>
-          <div class="efectos-list sk-init" id="efectos-list">
-
-            <div class="efecto-card" data-efecto="dunning-kruger">
-              <strong>Efecto Dunning-Kruger</strong>
-              <span>Los que menos saben creen saber más.</span>
-              <span class="efecto-hook">La incompetencia genera una ceguera que impide reconocer la propia incompetencia.</span>
-            </div>
-
-            <div class="efecto-card" data-efecto="halo">
-              <strong>Efecto Halo</strong>
-              <span>Una cualidad visible contamina tu percepción de todo lo demás.</span>
-              <span class="efecto-hook">Una primera impresión positiva colorea todos los juicios posteriores, incluso sin relación lógica entre ellos.</span>
-            </div>
-
-            <div class="efecto-card" data-efecto="confirmacion">
-              <strong>Sesgo de Confirmación</strong>
-              <span>Tu cerebro filtra la realidad para tener siempre razón.</span>
-              <span class="efecto-hook">Buscas activamente evidencias que validen lo que ya crees e ignoras inconscientemente las que lo refutan.</span>
-            </div>
-
-          </div>
-          <button class="efectos-preview-vermas" id="efectos-ver-mas-btn" aria-haspopup="dialog">
-            Ver más
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-
-        <!-- Resto de efectos: sin renderizar, solo alimentan el modal "Ver más" con la lista completa -->
-        <div id="efectos-list-full" hidden>
-          <div class="efecto-card" data-efecto="placebo">
-            <strong>Efecto Placebo</strong>
-            <span>Creer que funciona lo hace funcionar de verdad.</span>
-            <span class="efecto-hook">La expectativa de mejorar activa mecanismos fisiológicos reales sin ningún principio activo de por medio.</span>
-          </div>
-          <div class="efecto-card" data-efecto="bystander">
-            <strong>Efecto Espectador</strong>
-            <span>Cuantos más testigos, menos probabilidad de que alguien ayude.</span>
-            <span class="efecto-hook">La responsabilidad se diluye en el grupo: todos asumen que será otro quien actúe.</span>
-          </div>
-          <div class="efecto-card" data-efecto="retrospectiva">
-            <strong>Sesgo de Retrospectiva</strong>
-            <span>Tras conocer el resultado, siempre "lo sabías".</span>
-            <span class="efecto-hook">Una vez conocido el desenlace, la memoria reescribe el pasado para que siempre lo hubieras predicho.</span>
-          </div>
-          <div class="efecto-card" data-efecto="mera-exposicion">
-            <strong>Efecto de Mera Exposición</strong>
-            <span>Cuanto más ves algo, más te atrae sin razón aparente.</span>
-            <span class="efecto-hook">La mera familiaridad genera preferencia: la repetición aumenta el atractivo sin que haya interacción consciente.</span>
-          </div>
-          <div class="efecto-card" data-efecto="anclaje">
-            <strong>Anclaje Cognitivo</strong>
-            <span>El primer número que oyes decide todos los demás.</span>
-            <span class="efecto-hook">El primer dato recibido fija un punto de referencia que sesga todas las estimaciones posteriores.</span>
-          </div>
-          <div class="efecto-card" data-efecto="barnum">
-            <strong>Efecto Barnum</strong>
-            <span>Crees que una descripción genérica te define a ti en concreto.</span>
-            <span class="efecto-hook">Las afirmaciones vagas y universales nos parecen asombrosamente precisas cuando creemos que nos van dirigidas.</span>
-          </div>
-          <div class="efecto-card" data-efecto="disponibilidad">
-            <strong>Sesgo de Disponibilidad</strong>
-            <span>Lo que recuerdas fácilmente parece más probable que lo que no.</span>
-            <span class="efecto-hook">Juzgamos la frecuencia de un evento por la facilidad con que nos vienen ejemplos a la mente, no por estadísticas.</span>
-          </div>
-          <div class="efecto-card" data-efecto="pigmalion">
-            <strong>Efecto Pigmalión</strong>
-            <span>Las expectativas de los demás sobre ti acaban cumpliéndose.</span>
-            <span class="efecto-hook">Lo que otros esperan de nosotros moldea silenciosamente nuestro propio rendimiento y conducta.</span>
-          </div>
-          <div class="efecto-card" data-efecto="superviviente">
-            <strong>Sesgo del Superviviente</strong>
-            <span>Solo ves los éxitos porque los fracasos no cuentan su historia.</span>
-            <span class="efecto-hook">Construimos conclusiones sobre datos incompletos: los casos que fallaron desaparecieron del mapa.</span>
-          </div>
-          <div class="efecto-card" data-efecto="autoservicio">
-            <strong>Sesgo de Autoservicio</strong>
-            <span>Tus éxitos son tuyos; tus fracasos, culpa de las circunstancias.</span>
-            <span class="efecto-hook">El cerebro protege la autoestima atribuyendo los logros a capacidad propia y los fracasos a factores externos.</span>
-          </div>
-          <div class="efecto-card" data-efecto="primacia">
-            <strong>Efecto de Primacía</strong>
-            <span>Lo primero que aprendes de alguien domina todo lo que viene después.</span>
-            <span class="efecto-hook">La información inicial sobre una persona actúa como filtro que colorea toda la información posterior.</span>
-          </div>
-          <div class="efecto-card" data-efecto="optimismo">
-            <strong>Sesgo de Optimismo</strong>
-            <span>Tu cerebro cree que los malos eventos le ocurren a los demás, no a ti.</span>
-            <span class="efecto-hook">Sobreestimamos nuestra probabilidad de experimentar buenos eventos y subestimamos la de los malos.</span>
-          </div>
-          <div class="efecto-card" data-efecto="bandwagon">
-            <strong>Efecto Bandwagon</strong>
-            <span>Cuanta más gente cree algo, más probable te parece que sea verdad.</span>
-            <span class="efecto-hook">La popularidad de una idea se toma inconscientemente como evidencia de su veracidad.</span>
-          </div>
-          <div class="efecto-card" data-efecto="status-quo">
-            <strong>Sesgo del Statu Quo</strong>
-            <span>Cambiar duele más que seguir igual, aunque seguir igual sea peor.</span>
-            <span class="efecto-hook">Las pérdidas asociadas al cambio se perciben como más graves que las ganancias equivalentes que ofrece.</span>
-          </div>
-          <div class="efecto-card" data-efecto="efecto-espejo">
-            <strong>Efecto Espejo</strong>
-            <span>Imitar inconscientemente al otro genera confianza y empatía inmediata.</span>
-            <span class="efecto-hook">El mimetismo postural y gestual crea rapport y sensación de conexión emocional de forma completamente automática.</span>
-          </div>
-        </div>
       </aside>
 
     </div><!-- /.dashboard-layout -->
@@ -957,19 +884,6 @@
             </div>
           </div>
 
-
-    <!-- MODAL: Lista de Efectos completa, overlay con blur (igual que Explorar concepto) -->
-    <div class="concepto-modal-overlay efectos-lista-modal-overlay" id="efectos-lista-modal" hidden role="dialog" aria-modal="true" aria-labelledby="elm-titulo">
-      <div class="concepto-modal-card efectos-lista-modal-card">
-        <button class="concepto-modal-close" id="efectos-lista-modal-close" aria-label="Cerrar">&#x2715;</button>
-        <div class="concepto-modal-eyebrow">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          Lista de Efectos
-        </div>
-        <p class="efectos-lista-modal-titulo" id="elm-titulo">18 sesgos cognitivos que gobiernan tu conducta sin que lo sepas</p>
-        <div class="efectos-list efectos-lista-modal-grid" id="efectos-lista-modal-grid"></div>
-      </div>
-    </div>
 
     <!-- ── TU PROBLEMA, TU LIBRO ── -->
     <section class="botiquin-section" id="botiquin">
@@ -1207,10 +1121,10 @@
         <div class="mob-yo-stat-card">
           <div class="mob-yo-stat-top">
             <svg class="mob-yo-stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            <span class="mob-yo-stat-label">Efectos explorados</span>
-            <span class="mob-yo-stat-num" id="mob-yo-s-efe">0 / 18</span>
+            <span class="mob-yo-stat-label">Rutas completadas</span>
+            <span class="mob-yo-stat-num" id="mob-yo-s-rut">0 / 4</span>
           </div>
-          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-efe" style="width:0%"></div></div>
+          <div class="mob-yo-stat-bar" role="presentation"><div class="mob-yo-stat-bar-fill" id="mob-yo-b-rut" style="width:0%"></div></div>
         </div>
 
         <div class="mob-yo-stat-card">
@@ -1688,8 +1602,16 @@
       <div class="onboarding-card">
         <div id="tour-dots" class="onboarding-progress"></div>
         <div id="tour-modal-icon" class="onboarding-icon"></div>
+        <p id="tour-modal-eyebrow" class="onboarding-eyebrow" hidden></p>
         <h2 id="tour-modal-title" class="onboarding-title"></h2>
         <p id="tour-modal-text" class="onboarding-text"></p>
+        <div id="tour-modal-reward" class="onboarding-reward" hidden>
+          <p id="tour-modal-reward-hook" class="onboarding-reward-hook"></p>
+          <p id="tour-modal-reward-highlight" class="onboarding-reward-highlight"></p>
+          <div id="tour-modal-reward-badge" class="onboarding-reward-badge"></div>
+        </div>
+        <div id="tour-modal-counter" class="onboarding-counter" hidden></div>
+        <div id="tour-modal-chips" class="onboarding-chips" hidden></div>
         <div class="onboarding-actions">
           <button class="onboarding-skip" id="tour-modal-skip">Saltar</button>
           <button class="onboarding-next" id="tour-modal-next">Siguiente <svg class="ob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
@@ -1702,6 +1624,6 @@
   <script src="js/search-index.js?v=bb5be3a08f"></script>
   <script src="js/buscador.js?v=0b8d4e0970"></script>
   <script src="js/recomendaciones.js?v=b3a3c6f91b"></script>
-  <script src="js/main.js?v=ad74a46a3a"></script>
+  <script src="js/main.js?v=ad74a46a3d"></script>
 </body>
 </html>

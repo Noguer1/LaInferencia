@@ -3543,17 +3543,142 @@ function _buildQuizLibroHTML(id) {
   </div>`;
 }
 
-function _buildMysteryUnlockHTML(origen) {
-  const lr = _pickMysteryLibro();
+function _buildMysteryUnlockHTML(origen, libroOverride) {
+  const lr = libroOverride || _pickMysteryLibro();
   return `<div class="mystery-unlock-block">
     <span class="mystery-unlock-badge">🎧 Tu audiolibro gratis</span>
-    <p class="mystery-unlock-sinopsis"><strong>${lr.libro}</strong>, ${lr.autor}. ${lr.sinopsis}</p>
-    <a href="${lr.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${lr.libro}" data-umami-event-origen="${origen}">
+    <p class="mystery-unlock-sinopsis"><strong>${lr.libro || lr.titulo}</strong>, ${lr.autor}. ${lr.sinopsis}</p>
+    <a href="${lr.amazon}" class="flip-back-btn mystery-unlock-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${lr.libro || lr.titulo}" data-umami-event-origen="${origen}">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       Consigue este audiolibro gratis
     </a>
     <p class="mystery-unlock-valor">+ miles de audiolibros más durante 30 días, sin coste.</p>
   </div>`;
+}
+
+/* ── Regalo de bienvenida: al leer 4 artículos ───────────────── */
+const WELCOME_GIFT_FLAG = 'li_welcome_gift_shown';
+const WELCOME_GIFT_CLAIMED_FLAG = 'li_welcome_gift_claimed';
+const WELCOME_GIFT_ANSWERED_FLAG = 'li_welcome_gift_answered';
+const WELCOME_GIFT_ARTICULOS = 4;
+
+const WELCOME_GIFT_Q1 = {
+  a: { label: 'Me gusta aprender cosas nuevas' },
+  b: { label: 'Prefiero lo que ya conozco' }
+};
+const WELCOME_GIFT_Q2 = {
+  a: { label: 'Sí, me gustaría leer más' },
+  b: { label: 'Ya leo lo que quiero' }
+};
+
+let _wgModal = null;
+function _buildWelcomeGiftModal() {
+  const overlay = document.createElement('div');
+  overlay.id = 'wg-modal';
+  overlay.className = 'concepto-modal-overlay';
+  overlay.setAttribute('hidden', '');
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Recompensa desbloqueada');
+  overlay.innerHTML = `
+    <div class="concepto-modal-card wg-modal-card">
+      <button class="concepto-modal-close" aria-label="Cerrar">&#x2715;</button>
+      <div class="wg-step wg-step-intro" data-step="0">
+        <span class="wg-icon-badge wg-icon-badge-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.912 5.813a2.5 2.5 0 0 0 1.626 1.626L21 12l-5.462 1.561a2.5 2.5 0 0 0-1.626 1.626L12 21l-1.912-5.813a2.5 2.5 0 0 0-1.626-1.626L3 12l5.462-1.561a2.5 2.5 0 0 0 1.626-1.626L12 3z"/></svg>
+        </span>
+        <p class="wg-intro-title">¡Enhorabuena!</p>
+        <p class="wg-intro-text">Has desbloqueado tu recompensa por leer 4 artículos en La Inferencia.</p>
+        <p class="wg-intro-sub">Antes de dártela, 2 preguntas rápidas.</p>
+        <button class="flip-back-btn wg-cta" type="button" id="wg-continue">Continuar</button>
+      </div>
+      <div class="wg-step" data-step="1" hidden>
+        <p class="wg-question">¿Te gusta aprender cosas nuevas, o prefieres lo que ya conoces?</p>
+        <div class="wg-options">
+          <button class="wg-opt" type="button" data-answer="a"><span class="wg-opt-badge">A</span><span class="wg-opt-label">${WELCOME_GIFT_Q1.a.label}</span></button>
+          <button class="wg-opt" type="button" data-answer="b"><span class="wg-opt-badge">B</span><span class="wg-opt-label">${WELCOME_GIFT_Q1.b.label}</span></button>
+        </div>
+      </div>
+      <div class="wg-step" data-step="2" hidden>
+        <p class="wg-question">¿Te gustaría leer más de lo que el tiempo te deja?</p>
+        <div class="wg-options">
+          <button class="wg-opt" type="button" data-answer="a"><span class="wg-opt-badge">A</span><span class="wg-opt-label">${WELCOME_GIFT_Q2.a.label}</span></button>
+          <button class="wg-opt" type="button" data-answer="b"><span class="wg-opt-badge">B</span><span class="wg-opt-label">${WELCOME_GIFT_Q2.b.label}</span></button>
+        </div>
+      </div>
+      <div class="wg-step wg-step-final" data-step="3" hidden>
+        <p class="wg-final-eyebrow">Regalo por leer en La Inferencia</p>
+        <span class="wg-icon-badge wg-icon-badge-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3v5zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3v5z"/></svg>
+        </span>
+        <p class="wg-final-heading">Aprende incluso cuando no tienes tiempo para leer</p>
+        <p class="wg-final-sub">Escucha audiolibros mientras paseas, vas al trabajo o preparas el café.</p>
+        <p class="wg-final-stats"><strong>30 días gratis</strong> · <strong>+200.000 audiolibros</strong></p>
+        <a href="${AUDIBLE_LINK}" class="flip-back-btn wg-cta" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-origen="regalo-bienvenida">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Probar Audible gratis
+        </a>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+  return overlay;
+}
+
+function showWelcomeGiftModal() {
+  if (!_wgModal) _wgModal = _buildWelcomeGiftModal();
+  const modal = _wgModal;
+  const step0 = modal.querySelector('[data-step="0"]');
+  const step1 = modal.querySelector('[data-step="1"]');
+  const step2 = modal.querySelector('[data-step="2"]');
+  const step3 = modal.querySelector('[data-step="3"]');
+  const yaRespondio = !!localStorage.getItem(WELCOME_GIFT_ANSWERED_FLAG);
+  step0.hidden = yaRespondio; step1.hidden = true; step2.hidden = true;
+  step3.hidden = !yaRespondio;
+
+  const triggerEl = document.activeElement;
+
+  modal.querySelector('#wg-continue').onclick = () => {
+    step0.hidden = true; step1.hidden = false;
+    step1.querySelector('.wg-opt').focus();
+  };
+  step1.querySelectorAll('.wg-opt').forEach(btn => {
+    btn.onclick = () => {
+      step1.hidden = true; step2.hidden = false;
+      step2.querySelector('.wg-opt').focus();
+    };
+  });
+  step2.querySelectorAll('.wg-opt').forEach(btn => {
+    btn.onclick = () => {
+      lsSet(WELCOME_GIFT_ANSWERED_FLAG, '1');
+      step2.hidden = true; step3.hidden = false;
+      step3.querySelector('.wg-cta').focus();
+    };
+  });
+
+  modal.removeAttribute('hidden');
+  const focusHandler = trapFocus(modal);
+  function close() {
+    modal.setAttribute('hidden', '');
+    releaseFocus(modal, focusHandler, triggerEl);
+    document.removeEventListener('keydown', onEsc);
+  }
+  function onEsc(e) { if (e.key === 'Escape') close(); }
+  document.addEventListener('keydown', onEsc);
+  modal.querySelector('.concepto-modal-close').onclick = close;
+  modal.onclick = e => { if (e.target === modal) close(); };
+  step3.querySelector('.wg-cta').onclick = () => {
+    lsSet(WELCOME_GIFT_CLAIMED_FLAG, '1');
+    if (window._LI_updateProgress) window._LI_updateProgress();
+  };
+
+  (yaRespondio ? step3.querySelector('.wg-cta') : modal.querySelector('#wg-continue')).focus();
+}
+
+function checkWelcomeGiftMilestone(articulosLeidos) {
+  if (articulosLeidos >= WELCOME_GIFT_ARTICULOS && !localStorage.getItem(WELCOME_GIFT_FLAG)) {
+    lsSet(WELCOME_GIFT_FLAG, '1');
+    showWelcomeGiftModal();
+  }
 }
 
 const WEEKLY_ARTICLES = [
@@ -5086,10 +5211,11 @@ function renderWeeklyTeaser(article) {
 }
 
 function renderSidebarWeeklyTeaser(article) {
-  const { title } = article;
+  const { title, badge } = article;
   return `
     <div class="sidebar-weekly-inner">
       <p class="sw-title">${title}</p>
+      ${badge ? `<p class="sw-subtitle">${badge}</p>` : ''}
       <button class="sw-read-btn" id="sidebar-week-read-btn">
         Leer el artículo de la semana
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -5470,23 +5596,31 @@ function _syncHeroBalance() {
 }
 window._LI_syncHeroBalance = _syncHeroBalance;
 
-/* El alto de la columna izquierda (Semanal + Fuera de Bata) no debe
-   copiar el de la derecha (que puede ser más alta): debe terminar
-   justo donde termina `.cat-selector`, la cuadrícula de temáticas.
-   Se fija por JS en vez de por CSS grid stretch porque la derecha
-   puede ser más alta que la cuadrícula y el stretch de grid iguala
-   siempre a la fila más alta de las tres columnas. */
+/* Ni la izquierda (Semanal + Fuera de Bata) ni la derecha (Tu Progreso)
+   deben copiar la altura de la otra: ambas deben terminar justo donde
+   termina `.cat-selector`, la cuadrícula de temáticas. Se fija por JS en
+   vez de por CSS grid stretch porque cualquiera de las dos puede ser más
+   alta que la cuadrícula y el stretch de grid iguala siempre a la fila
+   más alta de las tres columnas. Si el contenido de la derecha no cabe
+   en esa altura, hace scroll interno (ver overflow-y en .progress-tracker). */
 function _syncSidebarLeftHeight() {
   const layout = document.querySelector('.dashboard-layout');
   const left   = document.querySelector('.sidebar-left');
+  const right  = document.querySelector('.sidebar-right');
   const grid   = document.querySelector('.cat-selector');
   if (!layout || !left || !grid) return;
   if (!layout.classList.contains('hero-balanced') || window.innerWidth < 1101) {
     left.style.height = '';
+    if (right) right.style.height = '';
     return;
   }
-  const target = grid.getBoundingClientRect().bottom - left.getBoundingClientRect().top;
+  const bottom = grid.getBoundingClientRect().bottom;
+  const target = bottom - left.getBoundingClientRect().top;
   left.style.height = target > 0 ? target + 'px' : '';
+  if (right) {
+    const targetRight = bottom - right.getBoundingClientRect().top;
+    right.style.height = targetRight > 0 ? targetRight + 'px' : '';
+  }
 }
 window._LI_syncSidebarLeftHeight = _syncSidebarLeftHeight;
 window.addEventListener('resize', () => requestAnimationFrame(_syncSidebarLeftHeight), { passive: true });
@@ -7011,6 +7145,42 @@ _syncHeroBalance();
 }());
 
 
+window.LI_CAT_LABELS = {
+  economia:    'Economía',
+  moda:        'Moda y Estética',
+  derecho:     'Derecho',
+  deporte:     'Deporte',
+  arte:        'Arte y Creatividad',
+  tecnologia:  'Tecnología',
+  relaciones:  'Relaciones',
+  saludMental: 'Salud Mental',
+  educacion:   'Educación',
+  trabajo:      'Trabajo',
+  politica:     'Política',
+  alimentacion: 'Alimentación',
+  marketing:      'Marketing y Consumo',
+  viajes:         'Viajes',
+  redesSociales:  'Redes Sociales'
+};
+
+window.LI_CAT_ICONS = {
+  economia:    `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`,
+  moda:        `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>`,
+  derecho:     `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><line x1="12" y1="3" x2="12" y2="21"/><path d="M7 21h10"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>`,
+  deporte:     `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2h4"/><circle cx="12" cy="14" r="8"/><path d="M12 10v4l2.5 2.5"/></svg>`,
+  arte:        `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>`,
+  tecnologia:  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`,
+  relaciones:  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  saludMental: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>`,
+  educacion:   `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+  trabajo:      `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`,
+  politica:     `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>`,
+  alimentacion: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 4 L3 12 L18 20"/><rect x="18" y="4" width="4" height="16" rx="1"/></svg>`,
+  marketing:      `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>`,
+  viajes:         `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-1 .1-1.3.5l-.4.5c-.4.5-.2 1.2.3 1.5L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.5 1 .7 1.5.3l.5-.4c.4-.3.6-.8.5-1.3z"/></svg>`,
+  redesSociales:  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>`
+};
+
 /* ── ONBOARDING TOUR, primera visita ───────────────────────── */
 (function () {
   const LS_KEY = 'li_onboarded';
@@ -7021,70 +7191,20 @@ _syncHeroBalance();
 
   const TOUR_STEPS = [
     {
-      type: 'modal',
-      title: 'Bienvenido a La Inferencia',
-      text: 'Psicología basada en evidencia, sin bata y sin condescendencia. En un momento te enseñamos todo lo que puedes hacer aquí.',
-      icon: `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>`,
-    },
-    {
-      type: 'spotlight',
-      title: 'Artículos de psicología',
-      text: 'Cientos de artículos basados en estudios reales, organizados por área. Leer uno tarda 3–4 minutos y te abre un patrón mental nuevo.',
-      tooltipPosition: 'below',
-      targetSelector: '[data-tab="biblioteca"]',
-      activateSelector: '[data-tab="biblioteca"]',
-      mobileTargetSelector: '.mbn-tab[data-mbn="casa"]',
-      mobileActivateSelector: '.mbn-tab[data-mbn="casa"]',
-      icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
-    },
-    {
-      type: 'spotlight',
-      title: 'Fuera de Bata',
-      text: 'Psicólogos reales haciendo divulgación. Sus TFGs e investigaciones, explicados de forma accesible para cualquiera.',
-      tooltipPosition: 'below',
-      targetSelector: '[data-tab="repositorio"]',
-      activateSelector: '[data-tab="repositorio"]',
-      mobileTargetSelector: '.mbn-tab[data-mbn="fuerabata"]',
-      mobileActivateSelector: '.mbn-tab[data-mbn="fuerabata"]',
-      icon: `<img src="img/lab.png" width="28" height="28" alt="" aria-hidden="true" style="object-fit:contain;">`,
-    },
-    {
-      type: 'spotlight',
-      title: 'El artículo de la semana',
-      text: 'Cada semana, el artículo que más nos ha importado. Más largo, más profundo, para cuando quieres ir en serio.',
-      tooltipPosition: 'below',
-      targetSelector: '[data-tab="semana"]',
-      activateSelector: '[data-tab="semana"]',
-      mobileTargetSelector: '.mbn-tab[data-mbn="casa"]',
-      mobileActivateSelector: '.mbn-tab[data-mbn="casa"]',
-      icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
-    },
-    {
-      type: 'spotlight',
-      title: 'Botiquín',
-      text: 'No solo teoría, técnicas aplicables esta semana. Haz clic en tu situación y descubre qué dice la evidencia y qué leer.',
-      tooltipPosition: 'above',
-      targetSelector: '#botiquin',
-      mobileTargetSelector: '.mbn-tab[data-mbn="botiquin"]',
-      mobileActivateSelector: '.mbn-tab[data-mbn="botiquin"]',
-      icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`,
-    },
-    {
-      type: 'spotlight',
-      title: 'Sube de nivel',
-      text: 'Todo lo que leas, explores o respondas aquí suma XP. Cuanto más subes, más se desbloquea. Hay sorpresas esperándote.',
-      tooltipPosition: 'below',
-      targetSelector: '#nivel-widget',
-      raiseParent: '.navbar',
-      mobileTargetSelector: '.mbn-tab[data-mbn="yo"]',
-      mobileActivateSelector: '.mbn-tab[data-mbn="yo"]',
-      icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+      type: 'intereses',
+      eyebrow: 'Bienvenido/a a La Inferencia',
+      title: '¿Qué temas te interesan?',
+      text: 'Elige 3 y empezamos por ahí. Psicología real, contada como se explica a un amigo, no como en un manual.',
+      icon: `<img src="img/logo2.png" alt="La Inferencia" />`,
     },
     {
       type: 'modal',
-      title: '¡Ya estás dentro!',
-      text: 'Empieza por el artículo que más te llame. No hay orden correcto, solo curiosidad.',
-      icon: `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>`,
+      noSkip: true,
+      hideIcon: true,
+      title: 'Tienes un regalo esperando',
+      rewardHook: 'Sabemos que te gusta aprender, aunque el tiempo no siempre da para leer todo lo que querrías.',
+      rewardHighlight: 'Lee tus primeros 4 artículos y desbloquea un regalo',
+      rewardBadge: '🎁 Normalmente hay que pagarlo. Te lo hemos conseguido gratis.',
     },
   ];
 
@@ -7269,9 +7389,103 @@ _syncHeroBalance();
     modal.hidden   = false;
     shell.hidden   = false;
 
+    const iconEl = document.getElementById('tour-modal-icon');
+    iconEl.innerHTML = step.icon || '';
+    iconEl.hidden    = !!step.hideIcon;
+    document.getElementById('tour-modal-title').textContent = step.title;
+
+    const textEl   = document.getElementById('tour-modal-text');
+    const rewardEl = document.getElementById('tour-modal-reward');
+    if (step.rewardHighlight) {
+      textEl.hidden   = true;
+      rewardEl.hidden = false;
+      document.getElementById('tour-modal-reward-hook').textContent      = step.rewardHook || '';
+      document.getElementById('tour-modal-reward-highlight').textContent = step.rewardHighlight;
+      document.getElementById('tour-modal-reward-badge').textContent     = step.rewardBadge || '';
+    } else {
+      textEl.hidden   = false;
+      rewardEl.hidden = true;
+      textEl.textContent = step.text;
+    }
+
+    const eyebrowEl = document.getElementById('tour-modal-eyebrow');
+    if (eyebrowEl) {
+      eyebrowEl.textContent = step.eyebrow || '';
+      eyebrowEl.hidden      = !step.eyebrow;
+    }
+
+    const chipsWrap = document.getElementById('tour-modal-chips');
+    const counterEl = document.getElementById('tour-modal-counter');
+    if (chipsWrap)  chipsWrap.hidden  = true;
+    if (counterEl)  counterEl.hidden  = true;
+    mSkip.hidden    = !!step.noSkip;
+    mNext.disabled  = false;
+
+    iconEl.classList.remove('icon-retrigger');
+    void iconEl.offsetWidth;
+    iconEl.classList.add('icon-retrigger');
+
+    if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
+    trapHandler = trapFocus(shell);
+    mNext.focus();
+  }
+
+  /* ── Render: selector de intereses obligatorio (paso 0) ────── */
+  function renderInterestPicker(step) {
+    clearSpotlight();
+    hideRing();
+    dim.hidden     = true;
+    tooltip.hidden = true;
+    modal.hidden   = false;
+    shell.hidden   = false;
+
     document.getElementById('tour-modal-icon').innerHTML    = step.icon;
     document.getElementById('tour-modal-title').textContent = step.title;
     document.getElementById('tour-modal-text').textContent  = step.text;
+
+    const eyebrowEl = document.getElementById('tour-modal-eyebrow');
+    if (eyebrowEl) {
+      eyebrowEl.textContent = step.eyebrow || '';
+      eyebrowEl.hidden      = !step.eyebrow;
+    }
+
+    const chipsWrap   = document.getElementById('tour-modal-chips');
+    const counterEl   = document.getElementById('tour-modal-counter');
+    const labels = window.LI_CAT_LABELS || {};
+    const icons  = window.LI_CAT_ICONS  || {};
+    chipsWrap.innerHTML = Object.keys(labels).map(id =>
+      `<button type="button" class="onboarding-chip" data-cat="${id}">${icons[id] || ''}<span>${labels[id]}</span></button>`
+    ).join('');
+    chipsWrap.hidden   = false;
+    counterEl.hidden   = false;
+    mSkip.hidden       = true;
+    mNext.disabled     = true;
+
+    const selected = new Set();
+    function updateCounter() {
+      counterEl.textContent = selected.size + ' / 3 elegidos';
+    }
+    updateCounter();
+
+    chipsWrap.querySelectorAll('.onboarding-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const cat = chip.dataset.cat;
+        if (selected.has(cat)) {
+          selected.delete(cat);
+          chip.classList.remove('selected');
+        } else if (selected.size < 3) {
+          selected.add(cat);
+          chip.classList.add('selected');
+        }
+        const full = selected.size === 3;
+        chipsWrap.querySelectorAll('.onboarding-chip').forEach(c => {
+          c.disabled = full && !c.classList.contains('selected');
+        });
+        mNext.disabled = !full;
+        updateCounter();
+        if (full) lsSet('li_intereses', JSON.stringify(Array.from(selected)));
+      });
+    });
 
     const iconEl = document.getElementById('tour-modal-icon');
     iconEl.classList.remove('icon-retrigger');
@@ -7280,7 +7494,6 @@ _syncHeroBalance();
 
     if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
     trapHandler = trapFocus(shell);
-    mNext.focus();
   }
 
   /* ── Render: spotlight sobre elemento ──────────────────────── */
@@ -7418,7 +7631,8 @@ _syncHeroBalance();
     updateDots();
     updateBtns();
     const step = TOUR_STEPS[n];
-    if (step.type === 'modal') renderModal(step);
+    if (step.type === 'intereses') renderInterestPicker(step);
+    else if (step.type === 'modal') renderModal(step);
     else renderSpotlight(step);
   }
 
@@ -7573,6 +7787,7 @@ _syncHeroBalance();
     if (ring) { ring.hidden = true; ring.style.opacity = ''; }
     dim.hidden   = true;
     shell.hidden = true;
+    document.body.style.overflow = '';
     if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
     lsSet(LS_KEY, '1');
   }
@@ -7584,7 +7799,10 @@ _syncHeroBalance();
   skipBtn.addEventListener('click', closeTour);
   mSkip.addEventListener('click',   closeTour);
   dim.addEventListener('click',     closeTour);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTour(); });
+  document.addEventListener('keydown', e => {
+    const currentStep = TOUR_STEPS[current];
+    if (e.key === 'Escape' && currentStep.type !== 'intereses' && !currentStep.noSkip) closeTour();
+  });
 
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -7616,7 +7834,7 @@ _syncHeroBalance();
   });
 
   /* ── Lanzar con pequeño retraso ───────────────────────────── */
-  setTimeout(() => { shell.hidden = false; renderStep(0); }, 800);
+  setTimeout(() => { shell.hidden = false; document.body.style.overflow = 'hidden'; renderStep(0); }, 800);
 }());
 
 /* ── BOTÓN VOLVER ARRIBA ─────────────────────────────────────── */
@@ -7761,26 +7979,7 @@ _syncHeroBalance();
 
 /* ── SKELETON LOADING ────────────────────────────────────────── */
 (function () {
-  const efectosList = document.getElementById('efectos-list');
   const docsLayout  = document.getElementById('documentos-list');
-
-  /* Reveal efectos con stagger suave */
-  setTimeout(() => {
-    if (!efectosList) return;
-    efectosList.classList.remove('sk-init');
-    const cards = efectosList.querySelectorAll('.efecto-card');
-    cards.forEach((card, i) => {
-      card.style.opacity    = '0';
-      card.style.transform  = 'translateY(7px)';
-      card.style.transition = `opacity 0.32s ${i * 0.055}s ease, transform 0.32s ${i * 0.055}s ease`;
-    });
-    requestAnimationFrame(() => {
-      cards.forEach(card => { card.style.opacity = '1'; card.style.transform = 'none'; });
-    });
-    setTimeout(() => {
-      cards.forEach(card => { card.style.opacity = ''; card.style.transform = ''; card.style.transition = ''; });
-    }, 900);
-  }, 420);
 
   /* Reveal docs cards */
   setTimeout(() => {
@@ -8522,13 +8721,6 @@ _syncHeroBalance();
     });
   }
 
-  /* ---- inyectar botones en tarjetas de efectos ---- */
-  function initEfectoBtns() {
-    document.querySelectorAll('.efecto-card[data-efecto]').forEach(card => {
-      card.appendChild(makeFavBtn(card.dataset.efecto, 'fav-btn--efecto'));
-    });
-  }
-
   /* ---- renderizar la sección Tus Favoritos ---- */
   function renderFavSection() {
     const section   = document.getElementById('favoritos-section');
@@ -8736,7 +8928,6 @@ _syncHeroBalance();
 
   /* ---- init ---- */
   initDocBtns();
-  initEfectoBtns();
   renderFavSection();
   renderSharedCollectionBanner();
 
@@ -9065,6 +9256,13 @@ const GLOSARIO = [
   const modalClose = document.getElementById('biblioteca-modal-close');
   if (!container) return;
 
+  try {
+    const intereses = JSON.parse(localStorage.getItem('li_intereses') || '[]');
+    catBtns.forEach(btn => {
+      if (intereses.includes(btn.dataset.cat)) btn.classList.add('cat-btn--recomendado');
+    });
+  } catch {}
+
   let libModalTrap = null, libModalTrigger = null;
   function openLibModal() {
     if (!modal || !modal.hidden) return;
@@ -9098,23 +9296,7 @@ const GLOSARIO = [
     if (modalTitleEl) modalTitleEl.textContent = CAT_LABELS[cat] || cat || '';
   }
 
-  const CAT_LABELS = {
-    economia:    'Economía',
-    moda:        'Moda y Estética',
-    derecho:     'Derecho',
-    deporte:     'Deporte',
-    arte:        'Arte y Creatividad',
-    tecnologia:  'Tecnología',
-    relaciones:  'Relaciones',
-    saludMental: 'Salud Mental',
-    educacion:   'Educación',
-    trabajo:      'Trabajo',
-    politica:     'Política',
-    alimentacion: 'Alimentación',
-    marketing:      'Marketing y Consumo',
-    viajes:         'Viajes',
-    redesSociales:  'Redes Sociales'
-  };
+  const CAT_LABELS = window.LI_CAT_LABELS;
 
   let currentCat = null;
 
@@ -9125,6 +9307,7 @@ const GLOSARIO = [
     const r = getRead();
     if (!r.includes(id)) { r.push(id); lsSet(LS_READ, JSON.stringify(r)); }
     updateCatProgress();
+    if (window._LI_updateProgress) window._LI_updateProgress();
   }
 
   function updateCatProgress() {
@@ -9436,9 +9619,8 @@ const GLOSARIO = [
 }());
 
 
-/* ── RESEARCH TOGGLE + EFECTOS VER MÁS ──────────────────────── */
+/* ── RESEARCH TOGGLE ─────────────────────────────────────────── */
 (function () {
-  /* Research section toggle */
   const btn     = document.getElementById('research-toggle-btn');
   const section = document.getElementById('research-section');
   if (btn && section) {
@@ -9448,56 +9630,6 @@ const GLOSARIO = [
       section.classList.toggle('is-open', !expanded);
     });
   }
-
-  /* Efectos "Ver todos" → modal con blur, igual que Explorar concepto */
-  const verMasBtn = document.getElementById('efectos-ver-mas-btn');
-  const listaModal = document.getElementById('efectos-lista-modal');
-  const listaGrid  = document.getElementById('efectos-lista-modal-grid');
-  const listaClose = document.getElementById('efectos-lista-modal-close');
-  let listaTrap = null, listaTrigger = null, listaBuilt = false;
-
-  function buildListaModal() {
-    if (listaBuilt || !listaGrid) return;
-    document.querySelectorAll('#efectos-list .efecto-card, #efectos-list-full .efecto-card').forEach(card => {
-      const clone = card.cloneNode(true);
-      clone.addEventListener('click', () => {
-        if (window._LI_openEfecto) window._LI_openEfecto(clone.dataset.efecto);
-      });
-      listaGrid.appendChild(clone);
-    });
-    listaBuilt = true;
-  }
-
-  function openListaModal() {
-    if (!listaModal) return;
-    buildListaModal();
-    listaTrigger = document.activeElement;
-    listaModal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    listaTrap = trapFocus(listaModal);
-    requestAnimationFrame(() => listaClose && listaClose.focus());
-  }
-
-  function closeListaModal() {
-    if (!listaModal) return;
-    listaModal.hidden = true;
-    document.body.style.overflow = '';
-    if (listaTrap) { releaseFocus(listaModal, listaTrap, listaTrigger); listaTrap = null; }
-    else if (listaTrigger) listaTrigger.focus();
-  }
-
-  if (verMasBtn) verMasBtn.addEventListener('click', openListaModal);
-  if (listaClose) {
-    listaClose.addEventListener('click', closeListaModal);
-    listaClose.addEventListener('touchstart', e => { e.preventDefault(); closeListaModal(); }, { passive: false });
-  }
-  if (listaModal) {
-    listaModal.addEventListener('click', e => { if (e.target === listaModal) closeListaModal(); });
-    listaModal.addEventListener('touchstart', e => { if (e.target === listaModal) { e.preventDefault(); closeListaModal(); } }, { passive: false });
-  }
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && listaModal && !listaModal.hidden) closeListaModal();
-  });
 }());
 
 
@@ -9593,24 +9725,56 @@ const EFECTOS_EXTRA = {
 
 /* ── PROGRESS TRACKER + RACHA ────────────────────────────────── */
 (function () {
-  const LS_EFECTOS   = 'li_efectos_seen';
   const LS_MITOS     = 'li_mitos_answered';
   const LS_PRUEBAS   = 'li_pruebas_done';
   const LS_STREAK    = 'li_streak';
   const LS_LAST      = 'li_last_visit';
   const LS_LIB_READ  = 'li_lib_read';
   const LS_WEEKLY_R  = 'li_weekly_read';
-  const TOTAL_EFECTOS = 18;
+  const LS_RUTAS     = 'li_rutas_progreso';
+  const LS_XP        = 'li_xp_v1';
   const TOTAL_MITOS   = 20;
   const TOTAL_PRUEBAS = 8;
+  const RECOMPENSA_NIVEL_1 = '30 días gratis de audiolibros en Audible';
+  /* Mismos umbrales que el array NIVELES del bloque "SISTEMA DE NIVELES XP" (mantener sincronizados) */
+  const NIVELES_PT = [
+    { nivel: 0, nombre: 'Estado Latente',       xpMin: 0,    xpMax: 74,       badge: 'img/Nivel00.png' },
+    { nivel: 1, nombre: 'Observador Casual',    xpMin: 75,   xpMax: 299,      badge: 'img/Nivel1.png'  },
+    { nivel: 2, nombre: 'Mente Inquisitiva',    xpMin: 300,  xpMax: 749,      badge: 'img/Nivel2.png'  },
+    { nivel: 3, nombre: 'Analista Crítico',     xpMin: 750,  xpMax: 1499,     badge: 'img/Nivel3.png'  },
+    { nivel: 4, nombre: 'Pensador Estratégico', xpMin: 1500, xpMax: 2749,     badge: 'img/Nivel04.png' },
+    { nivel: 5, nombre: 'Córtex Supremo',       xpMin: 2750, xpMax: Infinity, badge: 'img/Nivel05.png' }
+  ];
+  function getXP() { return parseInt(localStorage.getItem(LS_XP) || '0', 10); }
+  function getNivelActual(xp) {
+    for (let i = NIVELES_PT.length - 1; i >= 0; i--) {
+      if (xp >= NIVELES_PT[i].xpMin) return NIVELES_PT[i];
+    }
+    return NIVELES_PT[0];
+  }
+  const RUTAS_DEF = [
+    { id: 'pareja',  articulos: ['rel-04','rel-01','rel-03','rel-05'] },
+    { id: 'movil',   articulos: ['tec-01','tec-02','tec-03','tec-04'] },
+    { id: 'dinero',  articulos: ['eco-01','eco-03','eco-02','eco-05'] },
+    { id: 'trabajo', articulos: ['tra-03','tra-01','tra-05','tra-04'] }
+  ];
 
-  function getSeenEfectos()  { try { return JSON.parse(localStorage.getItem(LS_EFECTOS)  || '[]'); } catch { return []; } }
   function getMitosCount()   { return parseInt(localStorage.getItem(LS_MITOS)   || '0', 10); }
   function getPruebasCount() { return parseInt(localStorage.getItem(LS_PRUEBAS) || '0', 10); }
   function getReadLib()      { try { return JSON.parse(localStorage.getItem(LS_LIB_READ) || '[]'); } catch { return []; } }
   function getReadWeekly()   { try { return JSON.parse(localStorage.getItem(LS_WEEKLY_R) || '[]'); } catch { return []; } }
   function getQuizzesDone()  { try { return Object.keys(JSON.parse(localStorage.getItem('li_quizzes') || '{}')).length; } catch { return 0; } }
   function getDesafiosDone() { try { return Object.keys(JSON.parse(localStorage.getItem('li_challenges') || '{}')).length; } catch { return 0; } }
+  function pct(a, b) { return b ? Math.round(a / b * 100) : 0; }
+
+  function getRutasCompletadas() {
+    let progreso;
+    try { progreso = JSON.parse(localStorage.getItem(LS_RUTAS) || '{}'); } catch { progreso = {}; }
+    return RUTAS_DEF.filter(r => {
+      const visitados = progreso[r.id] || [];
+      return r.articulos.every(a => visitados.includes(a));
+    }).length;
+  }
 
   /* ── Racha de visitas ── */
   function calcStreak() {
@@ -9640,22 +9804,20 @@ const EFECTOS_EXTRA = {
 
     const artRead      = getReadLib().length;
     const weekRead     = getReadWeekly().length;
-    const efectosSeen  = getSeenEfectos().length;
+    const rutasDone    = getRutasCompletadas();
     const mitosAnsw    = Math.min(getMitosCount(),   TOTAL_MITOS);
     const pruebasDone  = Math.min(getPruebasCount(), TOTAL_PRUEBAS);
     const quizzesDone  = getQuizzesDone();
     const desafiosDone = getDesafiosDone();
 
-    function pct(a, b) { return b ? Math.round(a / b * 100) : 0; }
-
     const sets = [
-      ['pt-articulos-bar',  'pt-articulos-count',  artRead,      totalLib,       totalLib],
-      ['pt-semanales-bar',  'pt-semanales-count',  weekRead,     totalWeekly,    totalWeekly],
-      ['pt-efectos-bar',    'pt-efectos-count',    efectosSeen,  TOTAL_EFECTOS,  TOTAL_EFECTOS],
-      ['pt-mitos-bar',      'pt-mitos-count',      mitosAnsw,    TOTAL_MITOS,    TOTAL_MITOS],
-      ['pt-quizzes-bar',    'pt-quizzes-count',    quizzesDone,  totalQuizzes,   totalQuizzes],
-      ['pt-desafios-bar',   'pt-desafios-count',   desafiosDone, totalDesafios,  totalDesafios],
-      ['pt-pruebas-bar',    'pt-pruebas-count',    pruebasDone,  TOTAL_PRUEBAS,  TOTAL_PRUEBAS],
+      ['pt-articulos-bar',  'pt-articulos-count',  artRead,      totalLib,        totalLib],
+      ['pt-semanales-bar',  'pt-semanales-count',  weekRead,     totalWeekly,     totalWeekly],
+      ['pt-rutas-bar',      'pt-rutas-count',      rutasDone,    RUTAS_DEF.length, RUTAS_DEF.length],
+      ['pt-mitos-bar',      'pt-mitos-count',      mitosAnsw,    TOTAL_MITOS,     TOTAL_MITOS],
+      ['pt-quizzes-bar',    'pt-quizzes-count',    quizzesDone,  totalQuizzes,    totalQuizzes],
+      ['pt-desafios-bar',   'pt-desafios-count',   desafiosDone, totalDesafios,   totalDesafios],
+      ['pt-pruebas-bar',    'pt-pruebas-count',    pruebasDone,  TOTAL_PRUEBAS,   TOTAL_PRUEBAS],
     ];
     sets.forEach(([barId, cntId, val, total, display]) => {
       const bar = document.getElementById(barId);
@@ -9683,9 +9845,84 @@ const EFECTOS_EXTRA = {
       strk.classList.toggle('streak-hot', cur >= 3);
     }
 
-    const total = artRead + weekRead + efectosSeen + mitosAnsw + quizzesDone + desafiosDone + pruebasDone;
+    const total = artRead + weekRead + rutasDone + mitosAnsw + quizzesDone + desafiosDone + pruebasDone;
     checkMysteryMilestone(total);
+    checkWelcomeGiftMilestone(artRead);
+    updateNivelBlock();
+    updateRewardBlock();
   }
+
+  function updateNivelBlock() {
+    const xp = getXP();
+    const actual = getNivelActual(xp);
+    const siguiente = NIVELES_PT[actual.nivel + 1];
+
+    const badgeEl  = document.getElementById('pt-nivel-badge');
+    const nombreEl = document.getElementById('pt-nivel-nombre');
+    const xpEl     = document.getElementById('pt-nivel-xp-restante');
+    const barEl    = document.getElementById('pt-nivel-bar');
+    const actualEl = document.getElementById('pt-nivel-xp-actual');
+
+    if (badgeEl)  { badgeEl.src = actual.badge; badgeEl.alt = actual.nombre; }
+    if (nombreEl) nombreEl.textContent = 'Nivel ' + (actual.nivel + 1) + ': ' + actual.nombre;
+    if (siguiente) {
+      const faltan = siguiente.xpMin - xp;
+      if (xpEl) xpEl.textContent = faltan + ' XP para nivel ' + (siguiente.nivel + 1);
+      if (barEl) {
+        const rango = siguiente.xpMin - actual.xpMin;
+        barEl.style.width = pct(xp - actual.xpMin, rango) + '%';
+      }
+    } else {
+      if (xpEl) xpEl.textContent = 'Nivel máximo alcanzado';
+      if (barEl) barEl.style.width = '100%';
+    }
+
+    if (actualEl) {
+      actualEl.textContent = actual.xpMax === Infinity
+        ? xp + ' XP'
+        : xp + ' / ' + actual.xpMax + ' XP';
+    }
+  }
+
+  function updateRewardBlock() {
+    const block  = document.getElementById('pt-reward-block');
+    const claimEl= document.getElementById('pt-reward-claim');
+    const labelEl= document.getElementById('pt-reward-label');
+    const countEl= document.getElementById('pt-reward-count');
+    const barEl  = document.getElementById('pt-reward-bar');
+    if (!block) return;
+
+    const leidos    = getReadLib().length;
+    const desbloqueado = leidos >= WELCOME_GIFT_ARTICULOS;
+    const reclamado  = !!localStorage.getItem(WELCOME_GIFT_CLAIMED_FLAG);
+
+    block.hidden = desbloqueado;
+    if (claimEl) {
+      claimEl.hidden = !desbloqueado;
+      claimEl.classList.toggle('pt-reward-claim--claimed', reclamado);
+      const titleEl = claimEl.querySelector('.pt-reward-claim-title');
+      const subEl   = claimEl.querySelector('.pt-reward-claim-sub');
+      if (reclamado) {
+        if (titleEl) titleEl.textContent = 'Recompensa reclamada';
+        if (subEl)   subEl.textContent   = '¿No llegaste a canjear los 30 días? Vuelve a intentarlo';
+      } else {
+        if (titleEl) titleEl.textContent = 'Recompensa lista para reclamar';
+        if (subEl)   subEl.textContent   = '30 días de audiolibros gratis te esperan';
+      }
+    }
+
+    if (labelEl) labelEl.textContent = 'Artículos leídos para desbloquear tu recompensa';
+    if (countEl) countEl.textContent = Math.min(leidos, WELCOME_GIFT_ARTICULOS) + ' / ' + WELCOME_GIFT_ARTICULOS;
+    if (barEl) {
+      const filled = Math.min(leidos, WELCOME_GIFT_ARTICULOS);
+      barEl.querySelectorAll('.pt-reward-segment').forEach((seg, i) => {
+        seg.classList.toggle('is-filled', i < filled);
+      });
+    }
+  }
+
+  const rewardClaimBtn = document.getElementById('pt-reward-claim');
+  if (rewardClaimBtn) rewardClaimBtn.addEventListener('click', () => showWelcomeGiftModal());
 
   const MYSTERY_MILESTONES = [5, 15, 30];
   function checkMysteryMilestone(total) {
@@ -9711,19 +9948,6 @@ const EFECTOS_EXTRA = {
     t.querySelector('.mystery-toast-close').addEventListener('click', dismiss);
     setTimeout(dismiss, 14000);
   }
-
-  /* Hook en apertura de efectos */
-  document.querySelectorAll('.efecto-card[data-efecto]').forEach(card => {
-    card.addEventListener('click', () => {
-      const id   = card.dataset.efecto;
-      const seen = getSeenEfectos();
-      if (!seen.includes(id)) {
-        seen.push(id);
-        lsSet(LS_EFECTOS, JSON.stringify(seen));
-        updateUI();
-      }
-    });
-  });
 
   /* Hook en respuesta de mitos */
   document.querySelectorAll('.mito-tf-card').forEach(card => {
@@ -10461,12 +10685,12 @@ const EFECTOS_EXTRA = {
   const LS_XP = 'li_xp_v1';
 
   const NIVELES = [
-    { nivel: 0, nombre: 'Estado Latente',       xpMin: 0,    xpMax: 149,      badge: 'img/Nivel00.png' },
-    { nivel: 1, nombre: 'Observador Casual',    xpMin: 150,  xpMax: 599,      badge: 'img/Nivel1.png'  },
-    { nivel: 2, nombre: 'Mente Inquisitiva',    xpMin: 600,  xpMax: 1499,     badge: 'img/Nivel2.png'  },
-    { nivel: 3, nombre: 'Analista Crítico',     xpMin: 1500, xpMax: 2999,     badge: 'img/Nivel3.png'  },
-    { nivel: 4, nombre: 'Pensador Estratégico', xpMin: 3000, xpMax: 5499,     badge: 'img/Nivel04.png' },
-    { nivel: 5, nombre: 'Córtex Supremo',       xpMin: 5500, xpMax: Infinity, badge: 'img/Nivel05.png' }
+    { nivel: 0, nombre: 'Estado Latente',       xpMin: 0,    xpMax: 74,       badge: 'img/Nivel00.png' },
+    { nivel: 1, nombre: 'Observador Casual',    xpMin: 75,   xpMax: 299,      badge: 'img/Nivel1.png'  },
+    { nivel: 2, nombre: 'Mente Inquisitiva',    xpMin: 300,  xpMax: 749,      badge: 'img/Nivel2.png'  },
+    { nivel: 3, nombre: 'Analista Crítico',     xpMin: 750,  xpMax: 1499,     badge: 'img/Nivel3.png'  },
+    { nivel: 4, nombre: 'Pensador Estratégico', xpMin: 1500, xpMax: 2749,     badge: 'img/Nivel04.png' },
+    { nivel: 5, nombre: 'Córtex Supremo',       xpMin: 2750, xpMax: Infinity, badge: 'img/Nivel05.png' }
   ];
 
   const RECOMPENSAS = {
@@ -10532,6 +10756,7 @@ const EFECTOS_EXTRA = {
     const next      = prev + amount;
     setXP(next);
     updateNavbar(next);
+    if (window._LI_updateProgress) window._LI_updateProgress();
     const newNivel = getNivel(next).nivel;
     if (newNivel > prevNivel) {
       setTimeout(() => playLevelUp(NIVELES[newNivel]), 350);
@@ -10704,10 +10929,6 @@ const EFECTOS_EXTRA = {
     const addOnce = (key, amt) => { if (XP_ONCE.has(key)) return; XP_ONCE.add(key); addXP(amt); };
     const t = e.target;
 
-    /* Efectos explorados */
-    const efectoCard = t.closest('.efecto-card[data-efecto]');
-    if (efectoCard) { addOnce('efecto-' + efectoCard.dataset.efecto, 5); return; }
-
     /* Mito respondido */
     const tfBtn = t.closest('.tf-btn');
     if (tfBtn) {
@@ -10860,12 +11081,12 @@ const EFECTOS_EXTRA = {
 
   /* ⚠️ Mismos umbrales que el IIFE principal del XP, deben mantenerse sincronizados */
   const NIVELES = [
-    { nivel: 0, nombre: 'Estado Latente',       xpMin: 0,    xpMax: 149,      badge: 'img/Nivel00.png' },
-    { nivel: 1, nombre: 'Observador Casual',    xpMin: 150,  xpMax: 599,      badge: 'img/Nivel1.png'  },
-    { nivel: 2, nombre: 'Mente Inquisitiva',    xpMin: 600,  xpMax: 1499,     badge: 'img/Nivel2.png'  },
-    { nivel: 3, nombre: 'Analista Crítico',     xpMin: 1500, xpMax: 2999,     badge: 'img/Nivel3.png'  },
-    { nivel: 4, nombre: 'Pensador Estratégico', xpMin: 3000, xpMax: 5499,     badge: 'img/Nivel04.png' },
-    { nivel: 5, nombre: 'Córtex Supremo',       xpMin: 5500, xpMax: Infinity, badge: 'img/Nivel05.png' }
+    { nivel: 0, nombre: 'Estado Latente',       xpMin: 0,    xpMax: 74,       badge: 'img/Nivel00.png' },
+    { nivel: 1, nombre: 'Observador Casual',    xpMin: 75,   xpMax: 299,      badge: 'img/Nivel1.png'  },
+    { nivel: 2, nombre: 'Mente Inquisitiva',    xpMin: 300,  xpMax: 749,      badge: 'img/Nivel2.png'  },
+    { nivel: 3, nombre: 'Analista Crítico',     xpMin: 750,  xpMax: 1499,     badge: 'img/Nivel3.png'  },
+    { nivel: 4, nombre: 'Pensador Estratégico', xpMin: 1500, xpMax: 2749,     badge: 'img/Nivel04.png' },
+    { nivel: 5, nombre: 'Córtex Supremo',       xpMin: 2750, xpMax: Infinity, badge: 'img/Nivel05.png' }
   ];
 
   const MSGS = [
@@ -11592,25 +11813,30 @@ const EFECTOS_EXTRA = {
 /* ── SECCIÓN YO, Perfil Premium Móvil ─────────────────────── */
 (function () {
   const LS_XP      = 'li_xp_v1';
-  const LS_EFECTOS = 'li_efectos_seen';
   const LS_MITOS   = 'li_mitos_answered';
   const LS_PRUEBAS = 'li_pruebas_done';
   const LS_STREAK  = 'li_streak';
   const LS_LIB     = 'li_lib_read';
   const LS_WEEKLY  = 'li_weekly_read';
   const LS_FAVS    = 'li_favorites';
+  const LS_RUTAS   = 'li_rutas_progreso';
 
-  const TOTAL_EFECTOS = 18;
   const TOTAL_MITOS   = 20;
   const TOTAL_PRUEBAS = 8;
+  const RUTAS_DEF = [
+    { id: 'pareja',  articulos: ['rel-04','rel-01','rel-03','rel-05'] },
+    { id: 'movil',   articulos: ['tec-01','tec-02','tec-03','tec-04'] },
+    { id: 'dinero',  articulos: ['eco-01','eco-03','eco-02','eco-05'] },
+    { id: 'trabajo', articulos: ['tra-03','tra-01','tra-05','tra-04'] }
+  ];
 
   const NIVELES = [
-    { nivel: 0, nombre: 'Estado Latente',       xpMin: 0,    xpMax: 149,      badge: 'img/Nivel00.png' },
-    { nivel: 1, nombre: 'Observador Casual',    xpMin: 150,  xpMax: 599,      badge: 'img/Nivel1.png'  },
-    { nivel: 2, nombre: 'Mente Inquisitiva',    xpMin: 600,  xpMax: 1499,     badge: 'img/Nivel2.png'  },
-    { nivel: 3, nombre: 'Analista Crítico',     xpMin: 1500, xpMax: 2999,     badge: 'img/Nivel3.png'  },
-    { nivel: 4, nombre: 'Pensador Estratégico', xpMin: 3000, xpMax: 5499,     badge: 'img/Nivel04.png' },
-    { nivel: 5, nombre: 'Córtex Supremo',       xpMin: 5500, xpMax: Infinity, badge: 'img/Nivel05.png' }
+    { nivel: 0, nombre: 'Estado Latente',       xpMin: 0,    xpMax: 74,       badge: 'img/Nivel00.png' },
+    { nivel: 1, nombre: 'Observador Casual',    xpMin: 75,   xpMax: 299,      badge: 'img/Nivel1.png'  },
+    { nivel: 2, nombre: 'Mente Inquisitiva',    xpMin: 300,  xpMax: 749,      badge: 'img/Nivel2.png'  },
+    { nivel: 3, nombre: 'Analista Crítico',     xpMin: 750,  xpMax: 1499,     badge: 'img/Nivel3.png'  },
+    { nivel: 4, nombre: 'Pensador Estratégico', xpMin: 1500, xpMax: 2749,     badge: 'img/Nivel04.png' },
+    { nivel: 5, nombre: 'Córtex Supremo',       xpMin: 2750, xpMax: Infinity, badge: 'img/Nivel05.png' }
   ];
 
   function safeLs(key, fallback) {
@@ -11657,7 +11883,11 @@ const EFECTOS_EXTRA = {
     /* Stats */
     const artRead     = safeLs(LS_LIB, '[]').length;
     const weekRead    = safeLs(LS_WEEKLY, '[]').length;
-    const efectosSeen = safeLs(LS_EFECTOS, '[]').length;
+    const rutasProgreso = safeLs(LS_RUTAS, '{}');
+    const rutasDone   = RUTAS_DEF.filter(r => {
+      const visitados = rutasProgreso[r.id] || [];
+      return r.articulos.every(a => visitados.includes(a));
+    }).length;
     const mitosAnsw   = Math.min(parseInt(localStorage.getItem(LS_MITOS) || '0', 10), TOTAL_MITOS);
     const streak      = parseInt(localStorage.getItem(LS_STREAK) || '0', 10);
     const pruebasDone = Math.min(parseInt(localStorage.getItem(LS_PRUEBAS) || '0', 10), TOTAL_PRUEBAS);
@@ -11671,7 +11901,7 @@ const EFECTOS_EXTRA = {
 
     setStat('mob-yo-s-art', 'mob-yo-b-art', artRead,     null,           v => v);
     setStat('mob-yo-s-sem', 'mob-yo-b-sem', weekRead,    null,           v => v);
-    setStat('mob-yo-s-efe', 'mob-yo-b-efe', efectosSeen, TOTAL_EFECTOS,  (v,t) => v + ' / ' + t);
+    setStat('mob-yo-s-rut', 'mob-yo-b-rut', rutasDone,   RUTAS_DEF.length, (v,t) => v + ' / ' + t);
     setStat('mob-yo-s-mit', 'mob-yo-b-mit', mitosAnsw,   TOTAL_MITOS,    (v,t) => v + ' / ' + t);
     setStat('mob-yo-s-rac', 'mob-yo-b-rac', streak,      7,              v => v);
     setStat('mob-yo-s-pru', 'mob-yo-b-pru', pruebasDone, TOTAL_PRUEBAS,  (v,t) => v + ' / ' + t);
