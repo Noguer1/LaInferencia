@@ -3649,19 +3649,25 @@ function _wgAdvanceStep(step, next, opts) {
       next.classList.add('wg-step-enter');
       const endH = card.scrollHeight;
       void card.offsetHeight;
-      card.classList.add('wg-card-resizing');
-      card.style.height = endH + 'px';
       void next.offsetWidth;
       next.classList.remove('wg-step-enter');
       const target = opts.focusSelector ? next.querySelector(opts.focusSelector) : null;
       if (target) target.focus();
-      const onEnd = (e) => {
-        if (e.target !== card || e.propertyName !== 'height') return;
+
+      function settle() {
         card.style.height = '';
         card.classList.remove('wg-card-resizing');
         card.removeEventListener('transitionend', onEnd);
-      };
-      card.addEventListener('transitionend', onEnd);
+      }
+      if (Math.abs(endH - startH) < 1) {
+        card.style.height = '';
+      } else {
+        card.classList.add('wg-card-resizing');
+        card.style.height = endH + 'px';
+        var onEnd = (e) => { if (e.target === card && e.propertyName === 'height') settle(); };
+        card.addEventListener('transitionend', onEnd);
+        setTimeout(settle, 400);
+      }
     }, 300);
   }, opts.btn ? 200 : 0);
 }
