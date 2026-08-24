@@ -1880,6 +1880,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
     inset 0 1px 0 rgba(255, 255, 255, 0.92);
   animation: ob-card-in 0.58s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   max-height: 90vh;
+  max-height: 90dvh;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -2216,6 +2217,7 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
+  margin-left: auto;
   transition:
     transform 0.24s cubic-bezier(0.25,0.46,0.45,0.94),
     box-shadow 0.24s ease;
@@ -2329,29 +2331,20 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 .dark-base .onboarding-skip { color: #4B5A72; }
 .dark-base .onboarding-skip:hover { color: #8899B0; }
 
+/* Móvil: compactar siempre en vertical (no depender de max-height, poco fiable
+   por la barra de direcciones dinámica de Safari/Chrome móvil) */
 @media (max-width: 480px) {
-  .onboarding-card     { padding: 1.6rem 1.4rem 1.5rem; border-radius: 22px; }
-  .onboarding-title    { font-size: 1.18rem; }
-  .onboarding-next     { padding: 0.72rem 1.55rem; }
-  .onboarding-progress { margin-bottom: 1.3rem; }
-  .onboarding-actions  { margin-top: 1.3rem; }
-}
-
-/* Pantallas bajas (iPhone SE y similares): comprimir verticalmente para que la card quepa entera sin scroll */
-@media (max-height: 700px) {
-  .onboarding-card     { padding: 0.9rem 1.4rem 0.9rem; }
-  .onboarding-icon     { width: 44px; height: 44px; margin: 0 auto 0.6rem; }
-  .onboarding-icon:has(img) { width: 44px; height: 44px; }
-  .onboarding-icon img { width: 44px; height: 44px; }
-  .onboarding-progress { margin-bottom: 0.6rem; }
-  .onboarding-title    { margin-bottom: 0.3rem; }
+  .onboarding-card     { padding: 1rem 1.3rem 1rem; border-radius: 22px; }
+  .onboarding-title    { font-size: 1.18rem; margin-bottom: 0.3rem; }
   .onboarding-text     { margin-bottom: 0.5rem; line-height: 1.4; }
-  .onboarding-actions  { margin-top: 0.6rem; }
-}
-
-@media (max-height: 700px) and (max-width: 480px) {
-  .onboarding-chips { gap: 0.28rem; }
-  .onboarding-chip  { padding: 0.3rem 0.2rem; font-size: 0.6rem; }
+  .onboarding-next     { padding: 0.72rem 1.55rem; }
+  .onboarding-progress { margin-bottom: 0.7rem; }
+  .onboarding-actions  { margin-top: 0.7rem; }
+  .onboarding-icon     { width: 46px; height: 46px; margin: 0 auto 0.6rem; }
+  .onboarding-icon:has(img) { width: 46px; height: 46px; }
+  .onboarding-icon img { width: 46px; height: 46px; }
+  .onboarding-chips    { grid-template-columns: repeat(3, 1fr); gap: 0.32rem; }
+  .onboarding-chip     { padding: 0.32rem 0.22rem; font-size: 0.6rem; gap: 0.25rem; }
 }
 
 /* ══════════════════════════════════════════════════════════════
