@@ -1135,7 +1135,9 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 
 /* ── TARJETA BASE ── */
 .doc-card {
-  background: rgba(255,255,255,0.97);
+  background:
+    radial-gradient(ellipse 65% 55% at 8% 0%, color-mix(in srgb, var(--blue-accent) 5%, transparent) 0%, transparent 60%),
+    rgba(255,255,255,0.97);
   border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 1.8rem;
@@ -1144,6 +1146,12 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   gap: 0.75rem;
   box-shadow: var(--card-shadow), inset 0 1px 0 rgba(255,255,255,0.85);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.doc-card:nth-child(even) {
+  background:
+    radial-gradient(ellipse 65% 55% at 92% 0%, rgba(157,0,255,0.035) 0%, transparent 60%),
+    rgba(255,255,255,0.97);
 }
 
 .doc-card:hover {
@@ -4538,8 +4546,16 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .dark-base .weekly-prev-card,
 .dark-base .lib-card,
 .dark-base .research-card {
-  background: rgba(12,22,42,0.95);
+  background:
+    radial-gradient(ellipse 65% 55% at 8% 0%, color-mix(in srgb, var(--blue-accent) 4%, transparent) 0%, transparent 60%),
+    rgba(12,22,42,0.95);
   border-color: rgba(148,163,184,0.10);
+}
+
+.dark-base .doc-card:nth-child(even) {
+  background:
+    radial-gradient(ellipse 65% 55% at 92% 0%, rgba(157,0,255,0.05) 0%, transparent 60%),
+    rgba(12,22,42,0.95);
 }
 
 .dark-base .doc-card.doc-featured { background: rgba(12,22,42,0.98); }
@@ -7716,7 +7732,10 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 .concepto-modal-card {
   position: relative;
-  background: #ffffff;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 0%, color-mix(in srgb, var(--blue-accent) 6%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 95% 100%, color-mix(in srgb, var(--blue) 5%, transparent) 0%, transparent 60%),
+    #ffffff;
   border-radius: 24px;
   padding: 2.2rem 2rem 2rem;
   max-width: 540px;
@@ -7843,7 +7862,10 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 .dark-base .concepto-modal-card {
-  background: #0b1428;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 0%, color-mix(in srgb, var(--blue-accent) 5%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 95% 100%, color-mix(in srgb, var(--blue) 6%, transparent) 0%, transparent 60%),
+    #0b1428;
   box-shadow:
     0 24px 64px rgba(0,0,0,0.65),
     0 4px 16px color-mix(in srgb, var(--blue-accent) 8%, transparent),
