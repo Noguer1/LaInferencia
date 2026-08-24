@@ -4960,6 +4960,8 @@ window._LI_openBataModal = openBataModal;
   const modal = document.getElementById('bata-lista-modal');
   const closeBtn = document.getElementById('bata-lista-modal-close');
   if (!modal) return;
+  /* Sacarlo de #mob-slide-wrap: su `contain` en móvil rompe el position:fixed del modal */
+  document.body.appendChild(modal);
   if (closeBtn) {
     closeBtn.addEventListener('click', closeBataModal);
     closeBtn.addEventListener('touchstart', e => { e.preventDefault(); closeBataModal(); }, { passive: false });
@@ -5671,6 +5673,13 @@ _syncHeroBalance();
       if (filterPills) filterPills.style.display = tab === 'repositorio' ? '' : 'none';
       moveTabPill(btn, true);
       _syncHeroBalance();
+      /* En móvil el sistema de páginas (mp-*) controla la visibilidad real */
+      if (window._LI_mobileNav && document.body.classList.contains('mobile-nav-active')) {
+        const targetPage = tab === 'repositorio' ? 'fuerabata' : 'casa';
+        if (!document.body.classList.contains('mp-' + targetPage)) {
+          window._LI_mobileNav.switchPage(targetPage);
+        }
+      }
       /* Desactivar modo enfoque al cambiar de pestaña */
       if (document.body.classList.contains('modo-enfoque-activo')) {
         if (window._LI_setEnfoque) window._LI_setEnfoque(false);
@@ -9255,6 +9264,8 @@ const GLOSARIO = [
   const modal     = document.getElementById('biblioteca-modal');
   const modalClose = document.getElementById('biblioteca-modal-close');
   if (!container) return;
+  /* Sacarlo de #mob-slide-wrap: su `contain` en móvil rompe el position:fixed del modal */
+  if (modal) document.body.appendChild(modal);
 
   try {
     const intereses = JSON.parse(localStorage.getItem('li_intereses') || '[]');
