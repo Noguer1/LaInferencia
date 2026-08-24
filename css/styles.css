@@ -1746,6 +1746,25 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   box-shadow: none;
 }
 
+.tab-bar--single .tab-btn:not(.active) {
+  cursor: pointer;
+  color: var(--blue);
+  padding: 0.35rem 0.7rem 0.35rem 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.tab-bar--single .tab-btn:not(.active)::before {
+  content: "←";
+  font-size: 0.9em;
+}
+
+.tab-bar--single .tab-btn:hover:not(.active) {
+  background: color-mix(in srgb, var(--blue) 8%, transparent);
+  color: var(--blue-hover);
+  transform: translateX(-2px);
+}
+
 /* ── TAB PANELS ── */
 .tab-panel { display: none; }
 .tab-panel.active {
@@ -4645,6 +4664,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .dark-base .tab-btn.active { background: transparent; box-shadow: none; }
 .dark-base .tab-btn:not(.active) { color: #94A3B8; }
 .dark-base .tab-btn:not(.active):hover { color: #E2E8F0; background: color-mix(in srgb, var(--blue) 7%, transparent); }
+.dark-base .tab-bar--single .tab-btn:not(.active) { color: #5B9CFF; }
+.dark-base .tab-bar--single .tab-btn:hover:not(.active) { color: #8FBCFF; }
 
 .dark-base .author-modal-card,
 .dark-base .info-modal-card,
