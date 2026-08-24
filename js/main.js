@@ -9940,12 +9940,15 @@ const EFECTOS_EXTRA = {
     }
   }
 
-  function updateRewardBlock() {
-    const block  = document.getElementById('pt-reward-block');
-    const claimEl= document.getElementById('pt-reward-claim');
-    const labelEl= document.getElementById('pt-reward-label');
-    const countEl= document.getElementById('pt-reward-count');
-    const barEl  = document.getElementById('pt-reward-bar');
+  /* Actualiza un widget de recompensa (barra + botón de canje). Se reutiliza
+     para el sidebar de escritorio (pt-*) y para el perfil móvil (mob-yo-reward-*),
+     que comparten exactamente la misma lógica de desbloqueo/canje. */
+  function _updateRewardWidget(ids) {
+    const block  = document.getElementById(ids.block);
+    const claimEl= document.getElementById(ids.claim);
+    const labelEl= document.getElementById(ids.label);
+    const countEl= document.getElementById(ids.count);
+    const barEl  = document.getElementById(ids.bar);
     if (!block) return;
 
     const leidos    = getReadLib().length;
@@ -9977,8 +9980,33 @@ const EFECTOS_EXTRA = {
     }
   }
 
+  function updateHeaderGiftBtn() {
+    const btn = document.getElementById('header-gift-btn');
+    if (!btn) return;
+    const leidos = getReadLib().length;
+    const desbloqueado = leidos >= WELCOME_GIFT_ARTICULOS;
+    const reclamado = !!localStorage.getItem(WELCOME_GIFT_CLAIMED_FLAG);
+    btn.hidden = !desbloqueado;
+    btn.classList.toggle('header-gift-btn--claimed', reclamado);
+    const texto = reclamado
+      ? '¿No llegaste a canjear tu regalo? Vuelve a intentarlo'
+      : 'Reclama tu regalo: 30 días de audiolibros gratis';
+    btn.title = texto;
+    btn.setAttribute('aria-label', texto);
+  }
+
+  function updateRewardBlock() {
+    _updateRewardWidget({ block: 'pt-reward-block', claim: 'pt-reward-claim', label: 'pt-reward-label', count: 'pt-reward-count', bar: 'pt-reward-bar' });
+    _updateRewardWidget({ block: 'mob-yo-reward-block', claim: 'mob-yo-reward-claim', label: 'mob-yo-reward-label', count: 'mob-yo-reward-count', bar: 'mob-yo-reward-bar' });
+    updateHeaderGiftBtn();
+  }
+
   const rewardClaimBtn = document.getElementById('pt-reward-claim');
   if (rewardClaimBtn) rewardClaimBtn.addEventListener('click', () => showWelcomeGiftModal());
+  const mobYoRewardClaimBtn = document.getElementById('mob-yo-reward-claim');
+  if (mobYoRewardClaimBtn) mobYoRewardClaimBtn.addEventListener('click', () => showWelcomeGiftModal());
+  const headerGiftBtn = document.getElementById('header-gift-btn');
+  if (headerGiftBtn) headerGiftBtn.addEventListener('click', () => showWelcomeGiftModal());
 
   const MYSTERY_MILESTONES = [5, 15, 30];
   function checkMysteryMilestone(total) {
