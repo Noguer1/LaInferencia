@@ -3624,6 +3624,48 @@ function _buildWelcomeGiftModal() {
   return overlay;
 }
 
+/* Anima el paso de una tarjeta wg-step a la siguiente: si viene de un botón
+   de opción, primero lo resalta en azul brevemente y atenúa el resto, luego
+   desliza/funde la tarjeta actual y entra la siguiente, mientras la tarjeta
+   del modal se redimensiona con transición (técnica FLIP) en vez de saltar. */
+function _wgAdvanceStep(step, next, opts) {
+  opts = opts || {};
+  if (step.classList.contains('wg-transitioning')) return;
+  step.classList.add('wg-transitioning');
+  const card = step.parentElement;
+  if (opts.btn) {
+    opts.btn.classList.add('wg-opt-selected');
+    step.querySelectorAll('.wg-opt').forEach(b => { if (b !== opts.btn) b.classList.add('wg-opt-dim'); });
+  }
+  setTimeout(() => {
+    step.classList.add('wg-step-leave');
+    setTimeout(() => {
+      const startH = card.offsetHeight;
+      card.style.height = startH + 'px';
+      step.hidden = true;
+      step.classList.remove('wg-step-leave', 'wg-transitioning');
+      step.querySelectorAll('.wg-opt').forEach(b => b.classList.remove('wg-opt-selected', 'wg-opt-dim'));
+      next.hidden = false;
+      next.classList.add('wg-step-enter');
+      const endH = card.scrollHeight;
+      void card.offsetHeight;
+      card.classList.add('wg-card-resizing');
+      card.style.height = endH + 'px';
+      void next.offsetWidth;
+      next.classList.remove('wg-step-enter');
+      const target = opts.focusSelector ? next.querySelector(opts.focusSelector) : null;
+      if (target) target.focus();
+      const onEnd = (e) => {
+        if (e.target !== card || e.propertyName !== 'height') return;
+        card.style.height = '';
+        card.classList.remove('wg-card-resizing');
+        card.removeEventListener('transitionend', onEnd);
+      };
+      card.addEventListener('transitionend', onEnd);
+    }, 300);
+  }, opts.btn ? 200 : 0);
+}
+
 function showWelcomeGiftModal() {
   if (!_wgModal) _wgModal = _buildWelcomeGiftModal();
   const modal = _wgModal;
@@ -3634,24 +3676,25 @@ function showWelcomeGiftModal() {
   const yaRespondio = !!localStorage.getItem(WELCOME_GIFT_ANSWERED_FLAG);
   step0.hidden = yaRespondio; step1.hidden = true; step2.hidden = true;
   step3.hidden = !yaRespondio;
+  [step0, step1, step2, step3].forEach(s => {
+    s.classList.remove('wg-step-leave', 'wg-step-enter', 'wg-transitioning');
+    s.querySelectorAll('.wg-opt').forEach(b => b.classList.remove('wg-opt-selected', 'wg-opt-dim'));
+  });
+  step0.parentElement.style.height = '';
+  step0.parentElement.classList.remove('wg-card-resizing');
 
   const triggerEl = document.activeElement;
 
   modal.querySelector('#wg-continue').onclick = () => {
-    step0.hidden = true; step1.hidden = false;
-    step1.querySelector('.wg-opt').focus();
+    _wgAdvanceStep(step0, step1, { focusSelector: '.wg-opt' });
   };
   step1.querySelectorAll('.wg-opt').forEach(btn => {
-    btn.onclick = () => {
-      step1.hidden = true; step2.hidden = false;
-      step2.querySelector('.wg-opt').focus();
-    };
+    btn.onclick = () => _wgAdvanceStep(step1, step2, { btn, focusSelector: '.wg-opt' });
   });
   step2.querySelectorAll('.wg-opt').forEach(btn => {
     btn.onclick = () => {
       lsSet(WELCOME_GIFT_ANSWERED_FLAG, '1');
-      step2.hidden = true; step3.hidden = false;
-      step3.querySelector('.wg-cta').focus();
+      _wgAdvanceStep(step2, step3, { btn, focusSelector: '.wg-cta' });
     };
   });
 
@@ -5329,21 +5372,22 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
       </button>
     </div>
 
-    <div class="weekly-prev-drawer" id="weekly-prev-drawer" role="dialog" aria-modal="true" aria-label="Semanas anteriores" hidden>
-      <div class="wpd-overlay" id="wpd-overlay"></div>
-      <div class="wpd-sheet" role="document">
-        <div class="wpd-handle" aria-hidden="true"></div>
-        <div class="wpd-header">
-          <span class="wpd-title">Semanas anteriores</span>
-          <button class="wpd-close" id="wpd-close" aria-label="Cerrar">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </button>
+    <div class="concepto-modal-overlay bata-lista-modal-overlay" id="weekly-prev-drawer" role="dialog" aria-modal="true" aria-labelledby="wpd-titulo" hidden>
+      <div class="concepto-modal-card efectos-lista-modal-card">
+        <button class="concepto-modal-close" id="wpd-close" aria-label="Cerrar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="concepto-modal-eyebrow">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          El Artículo de la Semana
         </div>
+        <p class="efectos-lista-modal-titulo" id="wpd-titulo">Semanas anteriores</p>
         <div class="wpd-list">${drawerItems}</div>
       </div>
     </div>`;
   }
 
+  document.getElementById('weekly-prev-drawer')?.remove();
   container.innerHTML = html;
 
   const teaserWrap = container.querySelector('#wk-teaser-wrap');
@@ -5387,34 +5431,41 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
 
   if (autoExpand) doExpand();
 
-  /* Drawer */
+  /* Modal "Semanas anteriores" */
   const drawer   = document.getElementById('weekly-prev-drawer');
   const trigger  = document.getElementById('weekly-prev-mob-btn');
-  const overlay  = document.getElementById('wpd-overlay');
   const closeBtn = document.getElementById('wpd-close');
 
+  /* Sacarlo de #mob-slide-wrap: su `contain` en móvil rompe el position:fixed del modal */
+  if (drawer) document.body.appendChild(drawer);
+
+  let wpdTrap = null, wpdTrigger = null;
   function openDrawer()  {
-    if (!drawer) return;
-    drawer.removeAttribute('hidden');
-    requestAnimationFrame(() => drawer.classList.add('wpd-open'));
+    if (!drawer || !drawer.hidden) return;
+    wpdTrigger = document.activeElement;
+    drawer.hidden = false;
+    document.body.style.overflow = 'hidden';
+    wpdTrap = trapFocus(drawer);
   }
   function closeDrawer() {
-    if (!drawer) return;
-    drawer.classList.remove('wpd-open');
-    setTimeout(() => drawer.setAttribute('hidden', ''), 320);
+    if (!drawer || drawer.hidden) return;
+    drawer.hidden = true;
+    document.body.style.overflow = '';
+    if (wpdTrap) { releaseFocus(drawer, wpdTrap, wpdTrigger); wpdTrap = null; }
+    else if (wpdTrigger) wpdTrigger.focus();
   }
 
   trigger?.addEventListener('click', openDrawer);
-  overlay?.addEventListener('click', closeDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
+  drawer?.addEventListener('click', e => { if (e.target === drawer) closeDrawer(); });
   document.addEventListener('keydown', function wpdEsc(e) {
-    if (e.key === 'Escape' && drawer && !drawer.hasAttribute('hidden')) {
+    if (e.key === 'Escape' && drawer && !drawer.hidden) {
       closeDrawer();
       document.removeEventListener('keydown', wpdEsc);
     }
   });
 
-  container.querySelectorAll('.wpd-item').forEach(item => {
+  drawer?.querySelectorAll('.wpd-item').forEach(item => {
     const activate = () => {
       const wk  = parseInt(item.dataset.week);
       const art = WEEKLY_ARTICLES.find(a => a.week === wk);
