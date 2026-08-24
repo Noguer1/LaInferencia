@@ -668,10 +668,6 @@ ${rutaBannerHTML}
       <div class="weekly-featured-card">
         <div class="week-label">
           <span class="week-tag">✦ ${art.badge}</span>
-          <span class="reading-time">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            ${art.readingTime} de lectura
-          </span>
           <button type="button" class="save-btn" data-article-id="${art.id}" aria-pressed="false" aria-label="Guardar en tu colección" title="Guardar en tu colección" data-umami-event="collection-save" data-umami-event-origen="articulo-estatico" data-umami-event-articulo="${art.id}">
             <span class="save-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
             <span class="save-btn-text">Guardar</span>
@@ -1339,7 +1335,7 @@ function buildRutaPage(ruta) {
           <span class="ruta-portada-num">${i + 1}</span>
           <span class="ruta-portada-item-body">
             <strong>${art.title}</strong>
-            <span class="ruta-portada-item-meta">${art.badge} · ${art.readingTime}</span>
+            <span class="ruta-portada-item-meta">${art.badge}</span>
           </span>
         </a>`).join('\n');
 

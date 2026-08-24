@@ -1,6 +1,6 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 @media (min-width: 1024px) {
   html { font-size: 13.5px; }
@@ -2123,26 +2123,8 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   gap: 0.5rem;
   justify-content: center;
   margin: 0.4rem 0 0.2rem;
-  max-height: 260px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--blue) 45%, transparent) transparent;
 }
 .onboarding-chips[hidden] { display: none; }
-
-.onboarding-chips::-webkit-scrollbar { width: 6px; }
-.onboarding-chips::-webkit-scrollbar-track { background: transparent; }
-.onboarding-chips::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--blue) 45%, transparent);
-  border-radius: 99px;
-}
-.onboarding-chips::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in srgb, var(--blue) 65%, transparent);
-}
-
-.dark-base .onboarding-chips { scrollbar-color: color-mix(in srgb, var(--blue-accent, #00E5FF) 40%, transparent) transparent; }
-.dark-base .onboarding-chips::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--blue-accent, #00E5FF) 40%, transparent); }
-.dark-base .onboarding-chips::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--blue-accent, #00E5FF) 60%, transparent); }
 
 .onboarding-chip {
   display: flex;
@@ -2190,7 +2172,8 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 .dark-base .onboarding-chip.selected { border-color: var(--blue); background: color-mix(in srgb, var(--blue) 12%, transparent); color: var(--blue); }
 
 @media (max-width: 480px) {
-  .onboarding-chips { grid-template-columns: repeat(2, 1fr); max-height: 300px; }
+  .onboarding-chips { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+  .onboarding-chip { padding: 0.45rem 0.25rem; font-size: 0.64rem; gap: 0.25rem; }
 }
 
 /* Actions row */
@@ -2347,9 +2330,28 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 .dark-base .onboarding-skip:hover { color: #8899B0; }
 
 @media (max-width: 480px) {
-  .onboarding-card  { padding: 2rem 1.6rem 1.8rem; border-radius: 22px; }
-  .onboarding-title { font-size: 1.18rem; }
-  .onboarding-next  { padding: 0.72rem 1.55rem; }
+  .onboarding-card     { padding: 1.6rem 1.4rem 1.5rem; border-radius: 22px; }
+  .onboarding-title    { font-size: 1.18rem; }
+  .onboarding-next     { padding: 0.72rem 1.55rem; }
+  .onboarding-progress { margin-bottom: 1.3rem; }
+  .onboarding-actions  { margin-top: 1.3rem; }
+}
+
+/* Pantallas bajas (iPhone SE y similares): comprimir verticalmente para que la card quepa entera sin scroll */
+@media (max-height: 700px) {
+  .onboarding-card     { padding: 0.9rem 1.4rem 0.9rem; }
+  .onboarding-icon     { width: 44px; height: 44px; margin: 0 auto 0.6rem; }
+  .onboarding-icon:has(img) { width: 44px; height: 44px; }
+  .onboarding-icon img { width: 44px; height: 44px; }
+  .onboarding-progress { margin-bottom: 0.6rem; }
+  .onboarding-title    { margin-bottom: 0.3rem; }
+  .onboarding-text     { margin-bottom: 0.5rem; line-height: 1.4; }
+  .onboarding-actions  { margin-top: 0.6rem; }
+}
+
+@media (max-height: 700px) and (max-width: 480px) {
+  .onboarding-chips { gap: 0.28rem; }
+  .onboarding-chip  { padding: 0.3rem 0.2rem; font-size: 0.6rem; }
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -3702,6 +3704,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 @media (max-width: 768px) {
   .navbar-nav        { display: none; }
   .hamburger-btn     { display: inline-flex; flex-shrink: 0; }
+  .btn-modo-enfoque  { display: none !important; }
   .hero-quick-access { display: none !important; }
 
   /* ── Navbar fija en móvil ── */
@@ -4124,6 +4127,10 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   box-shadow: 0 10px 30px rgba(11,19,43,0.11), 0 0 20px color-mix(in srgb, var(--blue) 9%, transparent);
   border-color: color-mix(in srgb, var(--blue) 32%, transparent);
 }
+
+/* Despega la etiqueta del tick de leído y el corazón de favorito, ambos
+   position:absolute sobre la esquina superior de la tarjeta */
+.lib-card .doc-badge { margin-top: 1.6rem; }
 
 /* Hover cromático por categoría */
 .lib-card[data-cat="economia"]:hover {

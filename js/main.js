@@ -4809,12 +4809,8 @@ function renderBataFull(art) {
       <div class="week-label">
         <button class="lib-back-btn" id="bata-back-btn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-          Volver a Fuera de Bata
+          Volver
         </button>
-        <span class="reading-time">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          ${art.readingTime} de lectura
-        </span>
       </div>
       <span class="doc-badge" style="margin-bottom:0.5rem;">${art.badge}</span>
       <h2 class="weekly-title">${art.title}</h2>
@@ -5193,7 +5189,6 @@ function renderWeeklyTeaser(article) {
       <div class="wt-header">
         <span class="week-tag">✦ Artículo de la Semana ${week}</span>
         ${date ? `<span class="week-date">${date}</span>` : ''}
-        <span class="reading-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${readingTime} de lectura</span>
       </div>
       <span class="doc-badge wt-badge">${badge}</span>
       <h2 class="weekly-title wt-title">${title}</h2>
@@ -5244,7 +5239,6 @@ function renderFeaturedWeekly(article) {
         </button>
         <span class="week-tag">✦ Artículo de la Semana ${week}</span>
         ${date ? `<span class="week-date">${date}</span>` : ''}
-        <span class="reading-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${readingTime} de lectura</span>
         <button class="btn-modo-enfoque" id="btn-modo-enfoque" aria-pressed="${enfocado}">${enfocado ? '✕ Salir de enfoque' : '📖 Modo Enfoque'}</button>
         ${_favBtnHTML('weekly-' + week, 'fav-btn--article')}
         <button class="article-share-btn" data-share-title="${title.replace(/"/g,'&quot;')}" data-share-text="Artículo de La Inferencia: ${title.replace(/"/g,'&quot;')}" data-share-url="${_artUrl}" aria-label="Compartir artículo" title="Compartir">
@@ -5297,7 +5291,7 @@ function renderPreviousCard(article) {
       ${_favBtnHTML('weekly-' + article.week, 'fav-btn--prev-card')}
       <span class="doc-badge">${article.badge}</span>
       <h3>${article.title}</h3>
-      <p class="weekly-prev-meta">${article.author.name} · ${article.date} · <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ${article.readingTime}</p>
+      <p class="weekly-prev-meta">${article.author.name} · ${article.date}</p>
       <p class="weekly-prev-excerpt">${excerpt}</p>
     </div>`;
 }
@@ -5320,7 +5314,7 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
           <span class="doc-badge wpd-badge">${a.badge}</span>
           <div class="wpd-item-body">
             <span class="wpd-item-title">${a.title}</span>
-            <span class="wpd-item-meta">${a.author.name} · ${a.date} · ${a.readingTime} de lectura</span>
+            <span class="wpd-item-meta">${a.author.name} · ${a.date}</span>
           </div>
         </div>
         <svg class="wpd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
@@ -8766,7 +8760,7 @@ window.LI_CAT_ICONS = {
         card.innerHTML = `
           <div class="fav-item-top"><span class="doc-badge">${item.badge}</span>${removeBtn}</div>
           <h3 class="fav-item-title">${item.title}</h3>
-          <p class="fav-item-sub">${item.author} · ${item.time} de lectura</p>
+          <p class="fav-item-sub">${item.author}</p>
           <a href="${item.pdf}" class="fav-item-cta" download>↓ Descargar PDF</a>`;
 
       } else if (item.type === 'efecto') {
@@ -8787,7 +8781,7 @@ window.LI_CAT_ICONS = {
         card.innerHTML = `
           <div class="fav-item-top"><span class="doc-badge">${item.badge}</span>${removeBtn}</div>
           <h3 class="fav-item-title">${item.title}</h3>
-          <p class="fav-item-sub">${item.authorName} · ${item.readingTime} de lectura</p>
+          <p class="fav-item-sub">${item.authorName}</p>
           <button class="fav-item-cta fav-lib-open" data-id="${item.id}" data-cat="${item.cat}">Leer artículo →</button>`;
       }
 
@@ -9353,8 +9347,6 @@ const GLOSARIO = [
         <p class="lib-card-summary">${art.summary}</p>
         <div class="lib-card-meta">
           <span>${art.author.name}</span>
-          <span class="sep">·</span>
-          <span>${art.readingTime} de lectura</span>
           ${ARTICLE_VIEWS[art.id] ? `<span class="sep">·</span><span class="lib-card-views"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>${ARTICLE_VIEWS[art.id]}</span>` : ''}
         </div>
       </div>`;
@@ -9377,15 +9369,11 @@ const GLOSARIO = [
     return `
       <button class="lib-back-btn" id="lib-back-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        Volver a ${CAT_LABELS[currentCat] || currentCat}
+        Volver
       </button>
       <div class="weekly-featured-card">
         <div class="week-label">
           <span class="week-tag">✦ ${art.badge}</span>
-          <span class="reading-time">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            ${art.readingTime} de lectura
-          </span>
           <button class="btn-modo-enfoque" aria-pressed="${enfocadoLib}">${enfocadoLib ? '✕ Salir de enfoque' : '📖 Modo Enfoque'}</button>
           ${_favBtnHTML('lib-' + art.id, 'fav-btn--article')}
           <button class="article-share-btn" data-share-title="${art.title.replace(/"/g,'&quot;')}" data-share-text="Artículo de La Inferencia: ${art.title.replace(/"/g,'&quot;')}" aria-label="Compartir artículo" title="Compartir">
