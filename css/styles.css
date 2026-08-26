@@ -3499,6 +3499,16 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .guia-tabla-autor { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
 .guia-tabla-estrellas { white-space: nowrap; font-weight: 700; color: var(--blue-accent); }
 
+/* ── Bibliografía de documentos Fuera de Bata ── */
+.biblio-block { margin: 2.2rem 0; }
+.biblio-block h2 { margin-bottom: 0.8rem; }
+.biblio-cite { font-size: 0.85rem; color: var(--text-muted); background: color-mix(in srgb, var(--blue) 6%, transparent); border-left: 3px solid var(--blue-accent); padding: 0.8rem 1rem; margin-bottom: 1.4rem; }
+.biblio-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.biblio-list li { font-size: 0.85rem; color: var(--navy); padding-left: 1.6rem; text-indent: -1.6rem; line-height: 1.5; }
+.biblio-list em { font-style: italic; }
+.original-doc-btn { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--blue-accent); text-decoration: none; font-weight: 600; margin-top: 0.6rem; }
+.original-doc-btn:hover { text-decoration: underline; }
+
 .botiquin-guias-link {
   display: inline-block; margin-top: 0.6rem; font-size: 0.82rem; font-weight: 700;
   color: var(--blue); text-decoration: none;
