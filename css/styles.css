@@ -10188,7 +10188,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   color: var(--navy);
 }
 .static-navbar-logo { height: 28px; mix-blend-mode: multiply; }
-.dark-base .static-navbar-logo { mix-blend-mode: normal; filter: brightness(0) invert(1); }
+.dark-base .static-navbar-logo { mix-blend-mode: normal; filter: invert(0.9) brightness(1.5) drop-shadow(0 0 6px color-mix(in srgb, var(--blue-accent) 40%, transparent)); }
 .static-navbar-cta {
   display: inline-flex;
   align-items: center;
