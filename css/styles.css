@@ -43,6 +43,14 @@ body {
     radial-gradient(ellipse 50% 40% at 55% 92%, color-mix(in srgb, var(--blue) 20%, transparent) 0%, transparent 55%);
 }
 
+@media (max-width: 680px) {
+  #bg-layer {
+    background-image:
+      radial-gradient(ellipse 80% 55% at 15% 25%, color-mix(in srgb, var(--blue-accent) 20%, transparent) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 55% 92%, color-mix(in srgb, var(--blue) 13%, transparent) 0%, transparent 55%);
+  }
+}
+
 /* ── CANVAS ── */
 #neural-canvas        { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
 #static-neural-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
@@ -5381,15 +5389,15 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 /* Grid de tarjetas */
 .bq-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
   transition: opacity 0.22s ease;
 }
 
 /* ── FLIP CARD ── */
 .flip-card {
   perspective: 1000px;
-  height: 460px;
+  height: 340px;
   cursor: pointer;
 }
 
@@ -5412,7 +5420,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   position: absolute;
   inset: 0;
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 1.15rem 1.2rem;
   backface-visibility: hidden !important;
   -webkit-backface-visibility: hidden !important;
 }
@@ -5902,8 +5910,12 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 /* ── Responsive ── */
-@media (max-width: 1100px) {
-  .bq-grid { grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
+@media (max-width: 1200px) {
+  .bq-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+}
+
+@media (max-width: 960px) {
+  .bq-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 }
 
 @media (max-width: 720px) {
@@ -9374,27 +9386,6 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   /* En Casa no hace falta: el hero ya da contexto */
   body.mp-casa .mobile-section-header { display: none !important; }
 
-  .msh-brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .msh-logo {
-    height: 18px;
-    width: auto;
-    mix-blend-mode: multiply;
-    opacity: 0.78;
-  }
-
-  .msh-brand-name {
-    font-size: 0.72rem;
-    font-weight: 600;
-    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-    color: var(--text-muted);
-    letter-spacing: 0.01em;
-  }
-
   .msh-section-name {
     font-size: 1.75rem;
     font-weight: 800;
@@ -9626,9 +9617,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   background: var(--header-bg, rgba(3, 12, 26, 0.93));
   border-bottom-color: rgba(255, 255, 255, 0.07);
 }
-.dark-base .msh-brand-name { color: var(--text-muted, #94a3b8); }
 .dark-base .msh-section-name { color: var(--text, #e2e8f0); }
-.dark-base .msh-logo { mix-blend-mode: screen; opacity: 0.50; }
 
 .dark-base #mbn-overlay { background: var(--nav-bg, #030C1A); }
 
