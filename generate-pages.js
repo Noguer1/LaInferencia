@@ -296,8 +296,8 @@ function sidebarArticles(art, cat) {
   return [...same, ...other];
 }
 
-function staticHero() {
-  return `
+function staticHero(opts = {}) {
+  const navbar = `
   <header class="static-navbar">
     <div class="static-navbar-inner">
       <a href="/" class="static-navbar-brand">
@@ -314,7 +314,9 @@ function staticHero() {
         <a href="/" class="static-navbar-cta">Explorar los ${TOTAL_ARTS} artículos →</a>
       </div>
     </div>
-  </header>
+  </header>`;
+  if (opts.compact) return navbar;
+  return `${navbar}
   <section class="static-hero" aria-label="La Inferencia">
     <div class="static-hero-inner">
       <div class="static-hero-visual">
@@ -849,9 +851,29 @@ ${staticFooterScripts()}
 }
 
 // ── Template página de autor ───────────────────────────────────
+const AUTHOR_OWN_WORKS = [
+  {
+    title: 'Cómo extraer información de una persona a través de cómo habla',
+    url: `${SITE}/fuera-de-bata/como-extraer-informacion-de-una-persona-a-traves-de-como-habla/`,
+    doi: 'https://doi.org/10.5281/zenodo.20477086'
+  },
+  {
+    title: 'Manipulación del lenguaje y toma de decisiones',
+    url: `${SITE}/fuera-de-bata/manipulacion-del-lenguaje-y-toma-de-decisiones/`,
+    doi: 'https://doi.org/10.5281/zenodo.19116809'
+  },
+  {
+    title: 'Cómo el lenguaje metafórico manipula el razonamiento humano',
+    url: `${SITE}/fuera-de-bata/como-el-lenguaje-metaforico-manipula-el-razonamiento-humano/`,
+    doi: 'https://doi.org/10.5281/zenodo.19223379'
+  }
+];
+const AUTHOR_PERSONAL_LINKEDIN = 'https://www.linkedin.com/in/miguelnoguer';
+const AUTHOR_COMPANY_LINKEDIN  = 'https://www.linkedin.com/company/la-inferencia/';
+
 function buildAuthorPage() {
   const canonUrl = AUTHOR_URL;
-  const allArts = Object.entries(LIBRARY_ARTICLES).flatMap(([cat, arts]) => arts.map(a => ({ art: a, cat })));
+  const totalArts = Object.values(LIBRARY_ARTICLES).reduce((n, arts) => n + arts.length, 0);
 
   const ldJson = JSON.stringify({
     '@context': 'https://schema.org',
@@ -862,39 +884,37 @@ function buildAuthorPage() {
     'image': `${SITE}/img/caramiguel.png`,
     'jobTitle': 'Fundador y editor | La Inferencia',
     'worksFor': { '@type': 'Organization', 'name': 'La Inferencia', 'url': SITE },
-    'description': 'Fundador de La Inferencia, web de divulgación de psicología basada en evidencia científica. Convierte investigación académica peer-reviewed en contenido accesible en español.',
+    'description': 'Fundador de La Inferencia, web de divulgación de psicología basada en evidencia científica. Convierte investigación académica peer-reviewed en contenido accesible en español. Autor de investigación propia publicada en Fuera de Bata.',
     'sameAs': [
-      'https://www.linkedin.com/company/la-inferencia/'
+      AUTHOR_PERSONAL_LINKEDIN,
+      AUTHOR_COMPANY_LINKEDIN
     ]
   }, null, 2);
 
   const head = htmlHead({
     title: `${AUTHOR_NAME}, Fundador de La Inferencia`,
-    description: `${AUTHOR_NAME} es el fundador y editor de La Inferencia, web de divulgación de psicología basada en evidencia. Conoce su trabajo y todos sus artículos publicados.`,
+    description: `${AUTHOR_NAME} es el fundador y editor de La Inferencia, web de divulgación de psicología basada en evidencia. Conoce su trabajo y su investigación propia en Fuera de Bata.`,
     canonUrl,
     ldJsonBlocks: [ldJson]
   });
 
-  const articlesHTML = allArts.map(({ art, cat }) => {
-    const url = articleUrl(art);
-    const catLabel = CAT_LABELS[cat] || cat;
-    return `        <li class="cat-article-item">
-          <a href="${url}">
-            <span class="cat-article-badge">${catLabel}</span>
-            <h2>${art.title}</h2>
+  const worksHTML = AUTHOR_OWN_WORKS.map(w => `        <li class="cat-article-item">
+          <a href="${w.url}">
+            <span class="cat-article-badge">Fuera de Bata</span>
+            <h2>${w.title}</h2>
           </a>
-        </li>`;
-  }).join('\n');
+        </li>`).join('\n');
 
   return `${head}
 <body>
 
   <a class="skip-link" href="#author-main">Saltar al contenido</a>
   <div id="bg-layer" aria-hidden="true"></div>
-${staticHero()}
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+${staticHero({ compact: true })}
 
   <main id="author-main" class="static-art-main">
-    <div class="static-art-wrap">
+    <div class="static-art-wrap static-art-wrap-narrow">
 
       <nav class="static-breadcrumb" aria-label="Ruta de navegación">
         <a href="/">Inicio</a>
@@ -902,23 +922,34 @@ ${staticHero()}
         <span aria-current="page">${AUTHOR_NAME}</span>
       </nav>
 
-      <header class="static-author-header">
-        <img src="/img/caramiguel.png" alt="${AUTHOR_NAME}" class="static-author-photo" width="120" height="120" />
+      <header class="author-ficha">
+        <img src="/img/caramiguel.png" alt="${AUTHOR_NAME}" class="author-ficha-photo" width="140" height="140" />
         <h1>${AUTHOR_NAME}</h1>
-        <p class="static-author-role">Fundador y editor | La Inferencia</p>
-        <p class="static-author-bio">Miguel Noguer Escudero fundó La Inferencia para convertir investigación académica peer-reviewed en psicología en contenido accesible, claro y en español. Cada artículo publicado en la web parte de un estudio científico verificable, citado y enlazado a su fuente original.</p>
-        <a href="https://www.linkedin.com/company/la-inferencia/" target="_blank" rel="noopener noreferrer" class="static-author-linkedin">LinkedIn de La Inferencia</a>
+        <p class="author-ficha-role">Fundador y editor de La Inferencia</p>
+        <p class="author-ficha-bio">Convierto investigación académica peer-reviewed en psicología en contenido claro y en español. Además de editar los ${totalArts} artículos de la web, publico investigación propia sobre lenguaje y comportamiento en la sección Fuera de Bata.</p>
+        <div class="author-ficha-stats">
+          <div class="author-ficha-stat"><strong>${totalArts}</strong><span>Artículos editados</span></div>
+          <div class="author-ficha-stat"><strong>${AUTHOR_OWN_WORKS.length}</strong><span>Investigación propia</span></div>
+          <div class="author-ficha-stat"><strong>100%</strong><span>Basado en evidencia</span></div>
+        </div>
+        <div class="author-ficha-ctas">
+          <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">Conecta conmigo en LinkedIn</a>
+          <a href="${AUTHOR_COMPANY_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-secondary">La Inferencia en LinkedIn</a>
+        </div>
       </header>
 
-      <h2 class="static-author-arts-title">Artículos publicados (${allArts.length})</h2>
+      <h2 class="static-author-arts-title">Investigación propia (Fuera de Bata)</h2>
       <ul class="cat-article-list">
-${articlesHTML}
+${worksHTML}
       </ul>
+
+      <p class="author-ficha-explore"><a href="/">Explorar los ${totalArts} artículos de La Inferencia →</a></p>
 
     </div>
   </main>
 
 ${staticFooterScripts()}
+<script defer src="/js/neural-canvas.js?v=${NEURAL_V}"></script>
 </body>
 </html>`;
 }
@@ -1218,6 +1249,7 @@ const SAVE_BTN_V  = hashOf('js/save-button.js');
 const BUSCADOR_V  = hashOf('js/buscador.js');
 const RUTAS_JS_V  = hashOf('js/rutas.js');
 const RECOMENDACIONES_V = hashOf('js/recomendaciones.js');
+const NEURAL_V    = hashOf('js/neural-canvas.js');
 
 // ── Template landing de Rutas de Aprendizaje ────────────────────
 const RUTAS_URL = `${SITE}/rutas/`;
@@ -1539,6 +1571,7 @@ indexHtml = indexHtml
   .replace(/js\/main\.js\?v=[a-z0-9]+/, `js/main.js?v=${MAIN_V}`)
   .replace(/js\/search-index\.js\?v=[a-z0-9]+/, `js/search-index.js?v=${SEARCH_INDEX_V}`)
   .replace(/js\/buscador\.js\?v=[a-z0-9]+/, `js/buscador.js?v=${BUSCADOR_V}`)
-  .replace(/js\/recomendaciones\.js\?v=[a-z0-9]+/, `js/recomendaciones.js?v=${RECOMENDACIONES_V}`);
+  .replace(/js\/recomendaciones\.js\?v=[a-z0-9]+/, `js/recomendaciones.js?v=${RECOMENDACIONES_V}`)
+  .replace(/js\/neural-canvas\.js\?v=[a-z0-9]+/, `js/neural-canvas.js?v=${NEURAL_V}`);
 fs.writeFileSync(indexPath, indexHtml, 'utf-8');
 console.log('✅ index.html sincronizado con las versiones de cache-busting actuales');

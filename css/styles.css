@@ -10350,6 +10350,8 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 }
 
 .static-art-main {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   padding: 2.5rem 1.5rem 4rem;
 }
@@ -10705,59 +10707,128 @@ body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340
 }
 
 /* ── Página de autor ────────────────────────────────────────── */
-.static-author-header {
+.static-art-wrap-narrow { max-width: 720px; margin: 0 auto; }
+
+.author-ficha {
+  position: relative;
   text-align: center;
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
+  margin: 1.5rem 0 3rem;
+  padding: 3rem 2rem 2.5rem;
+  border-radius: 24px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--blue) 7%, var(--card-bg)) 0%, var(--card-bg) 60%);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
 }
-.static-author-photo {
-  width: 120px;
-  height: 120px;
+.author-ficha::before {
+  content: '';
+  position: absolute;
+  top: -60%; left: 50%;
+  width: 480px; height: 480px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--blue-accent) 18%, transparent) 0%, transparent 70%);
+  pointer-events: none;
+}
+.author-ficha-photo {
+  position: relative;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  border: 3px solid var(--card-bg);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--blue) 35%, transparent), 0 10px 30px rgba(11,19,43,0.18);
 }
-.static-author-header h1 {
-  font-size: 1.6rem;
+.author-ficha h1 {
+  position: relative;
+  font-size: 1.9rem;
   font-weight: 800;
   color: var(--navy);
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.35rem;
 }
-.static-author-role {
-  font-size: 0.88rem;
+.author-ficha-role {
+  position: relative;
+  font-size: 0.92rem;
   color: var(--blue);
-  font-weight: 600;
-  margin: 0 0 1rem;
+  font-weight: 700;
+  margin: 0 0 1.1rem;
 }
-.static-author-bio {
-  max-width: 560px;
-  margin: 0 auto 1.2rem;
-  font-size: 0.9rem;
+.author-ficha-bio {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto 1.6rem;
+  font-size: 0.92rem;
   color: var(--text-body);
   line-height: 1.65;
 }
-.static-author-linkedin {
+.author-ficha-stats {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  margin-bottom: 1.8rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--card-border);
+}
+.author-ficha-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.author-ficha-stat strong { font-size: 1.35rem; font-weight: 800; color: var(--navy); }
+.author-ficha-stat span { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; }
+.author-ficha-ctas {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.author-ficha-cta-primary {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #fff;
   background: var(--blue);
-  padding: 0.55rem 1.3rem;
+  padding: 0.65rem 1.5rem;
   border-radius: 999px;
   text-decoration: none;
+  transition: background 0.18s;
 }
-.static-author-linkedin:hover { background: var(--blue-hover); }
+.author-ficha-cta-primary:hover { background: var(--blue-hover); }
+.author-ficha-cta-secondary {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+  background: transparent;
+  border: 1px solid var(--card-border);
+  padding: 0.62rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: border-color 0.18s, color 0.18s;
+}
+.author-ficha-cta-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
 .static-author-arts-title {
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--navy);
   margin: 0 0 1rem;
 }
+.author-ficha-explore {
+  text-align: center;
+  margin-top: 2rem;
+}
+.author-ficha-explore a {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+}
+.author-ficha-explore a:hover { color: var(--blue-hover); }
 
 @media (max-width: 680px) {
   .static-related   { padding: 1.1rem 1.1rem; }
   .cat-article-item a { padding: 0.9rem 1.1rem; }
+  .author-ficha { padding: 2.2rem 1.3rem 2rem; }
+  .author-ficha-stats { gap: 1.4rem; }
 }
 
 /* ── Buscador ───────────────────────────────────────────────── */
