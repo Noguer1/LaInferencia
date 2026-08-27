@@ -8,6 +8,8 @@
     /* Oro sobre fondo claro: más nodos, más brillo, destellos visibles */
     obsidiana: { N: 152, MAX_D: 170, nodeAlpha: 0.45, lineAlpha: 0.55, lw: 1.1,
                  l: [212, 175, 55], r: [232, 200, 80] },
+    dark:      { N: 55,  MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
+                 l: [96, 165, 250], r: [37, 99, 235], depth: true },
     default:   { N: 55,  MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
                  l: [16, 185, 129], r: [37, 99, 235] }
   };
@@ -26,7 +28,14 @@
   function mkPt(cfg) {
     const rnd = Math.random();
     const x   = rnd < 0.63 ? Math.random() * W * 0.42 : W * 0.42 + Math.random() * W * 0.58;
-    return { x, y: Math.random() * H,
+    if (cfg.depth) {
+      const z  = Math.random();
+      const sp = 0.10 + z * 0.28;
+      return { x, y: Math.random() * H, z,
+               vx: (Math.random() - 0.5) * sp, vy: (Math.random() - 0.5) * sp,
+               r: 0.6 + z * 2.2, a: cfg.nodeAlpha * (0.35 + z * 0.9) };
+    }
+    return { x, y: Math.random() * H, z: 1,
              vx: (Math.random() - 0.5) * 0.30, vy: (Math.random() - 0.5) * 0.30,
              r: Math.random() * 2.0 + 1.2, a: Math.random() * 0.35 + cfg.nodeAlpha };
   }
@@ -34,7 +43,9 @@
   let activeCfg = null;
   function syncParticles(cfg) {
     if (activeCfg === cfg) return;
+    const wasDepth = activeCfg && activeCfg.depth;
     activeCfg = cfg;
+    if (wasDepth !== !!cfg.depth) pts.length = 0;
     while (pts.length < cfg.N) pts.push(mkPt(cfg));
     if (pts.length > cfg.N) pts.length = cfg.N;
   }
@@ -70,6 +81,7 @@
     ctx.beginPath();
     for (let i = 0; i < N; i++) {
       for (let j = i + 1; j < N; j++) {
+        if (cfg.depth && pts[i].z < 0.25 && pts[j].z < 0.25) continue;
         const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
         const d2 = dx * dx + dy * dy;
         if (d2 < MAX_D2) {
