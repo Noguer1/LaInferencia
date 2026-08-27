@@ -871,43 +871,23 @@ const AUTHOR_OWN_WORKS = [
 const AUTHOR_PERSONAL_LINKEDIN = 'https://www.linkedin.com/in/miguelnoguer';
 const AUTHOR_COMPANY_LINKEDIN  = 'https://www.linkedin.com/company/la-inferencia/';
 
-const AUTHOR_EXPERIENCE = [
-  {
-    role: 'Fundador y Director Ejecutivo',
-    org: 'La Inferencia',
-    period: 'may. 2026 · actualidad',
-    desc: 'Fundé La Inferencia para acercar la investigación en psicología a cualquier persona sin perder rigor científico por el camino. Dirijo el proyecto en su totalidad: estrategia, contenido editorial, desarrollo web y crecimiento de comunidad.'
-  },
-  {
-    role: 'Investigador y divulgador en psicología',
-    org: 'Independiente',
-    period: 'jun. 2026 · actualidad',
-    desc: 'Investigación y divulgación independiente en psicolingüística, enmarcamiento metafórico y percepción de la salud mental. Publico los bloques teóricos de mi investigación en la sección Fuera de Bata.'
-  },
-  {
-    role: 'Analista de lenguaje y comportamiento comunicativo',
-    org: 'Outlier',
-    period: 'may. 2025 · actualidad',
-    desc: 'Análisis de intención comunicativa, carga emocional y patrones lingüísticos en proyectos internacionales de entrenamiento de modelos de lenguaje. Redacción en múltiples registros con criterios de precisión conceptual y coherencia narrativa.'
-  },
-  {
-    role: 'Psicólogo en prácticas',
-    org: 'Cáritas Diocesana de Sevilla',
-    period: 'mar. 2026 · jun. 2026',
-    desc: 'Intervención y acompañamiento psicológico con personas en situación de exclusión social, trastornos mentales graves y drogodependencias, en coordinación con un equipo multidisciplinar.'
-  }
-];
+const AUTHOR_ROLE_CHIPS = ['Psicólogo', 'Fundador de La Inferencia', 'Investigación en psicolingüística'];
 
-const AUTHOR_EDUCATION = [
+const AUTHOR_CREDENTIALS = [
   {
-    title: 'Doble Máster en Psicología General Sanitaria y Neuropsicología',
-    org: 'Universidad Loyola Andalucía',
-    period: 'En curso'
+    icon: '<path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>',
+    title: 'Grado en Psicología',
+    sub: 'Universidad de Sevilla'
   },
   {
-    title: 'Grado en Psicología',
-    org: 'Universidad de Sevilla',
-    period: 'Trabajo de Fin de Grado con Matrícula de Honor'
+    icon: '<path d="M12 20c-4-2.5-7-5-7-9a7 7 0 0 1 14 0c0 4-3 6.5-7 9Z"/><path d="M9.5 10.5 11 12l3.5-3.5"/>',
+    title: 'Máster en Psic. Sanitaria y Neuropsicología',
+    sub: 'Universidad Loyola Andalucía · en curso'
+  },
+  {
+    icon: '<circle cx="12" cy="8" r="5"/><path d="m8.5 13-1.5 8 5-3 5 3-1.5-8"/>',
+    title: 'TFG con Matrícula de Honor',
+    sub: 'Persuasión lingüística y psicolingüística'
   }
 ];
 
@@ -928,7 +908,7 @@ function buildAuthorPage() {
       { '@type': 'CollegeOrUniversity', 'name': 'Universidad de Sevilla' },
       { '@type': 'CollegeOrUniversity', 'name': 'Universidad Loyola Andalucía' }
     ],
-    'description': 'Psicólogo, fundador y CEO de La Inferencia. Investigo psicolingüística y publico investigación propia sobre cómo el lenguaje moldea juicios y decisiones de forma no consciente.',
+    'description': 'Psicólogo, fundador y CEO de La Inferencia. Investigación propia en psicolingüística sobre cómo el lenguaje moldea juicios y decisiones de forma no consciente.',
     'sameAs': [
       AUTHOR_PERSONAL_LINKEDIN,
       AUTHOR_COMPANY_LINKEDIN
@@ -949,20 +929,15 @@ function buildAuthorPage() {
           </a>
         </li>`).join('\n');
 
-  const experienceHTML = AUTHOR_EXPERIENCE.map(e => `        <li class="author-timeline-item">
-          <div class="author-timeline-dot" aria-hidden="true"></div>
-          <div class="author-timeline-body">
-            <p class="author-timeline-role">${e.role}</p>
-            <p class="author-timeline-org">${e.org} <span class="author-timeline-period">${e.period}</span></p>
-            <p class="author-timeline-desc">${e.desc}</p>
-          </div>
-        </li>`).join('\n');
+  const chipsHTML = AUTHOR_ROLE_CHIPS.map(c => `<span class="author-chip">${c}</span>`).join('\n          ');
 
-  const educationHTML = AUTHOR_EDUCATION.map(ed => `        <li class="author-edu-item">
-          <p class="author-edu-title">${ed.title}</p>
-          <p class="author-edu-org">${ed.org}</p>
-          <p class="author-edu-period">${ed.period}</p>
-        </li>`).join('\n');
+  const credentialsHTML = AUTHOR_CREDENTIALS.map(c => `        <div class="author-cred-card">
+          <svg class="author-cred-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${c.icon}</svg>
+          <div>
+            <p class="author-cred-title">${c.title}</p>
+            <p class="author-cred-sub">${c.sub}</p>
+          </div>
+        </div>`).join('\n');
 
   return `${head}
 <body>
@@ -984,29 +959,20 @@ ${staticHero({ compact: true })}
       <header class="author-ficha">
         <img src="/img/caramiguel.png" alt="${AUTHOR_NAME}" class="author-ficha-photo" width="140" height="140" />
         <h1>${AUTHOR_NAME}</h1>
-        <p class="author-ficha-role">Psicólogo · Fundador y CEO de La Inferencia</p>
-        <p class="author-ficha-location">Sevilla, España</p>
-        <p class="author-ficha-bio">Graduado en Psicología por la Universidad de Sevilla y cursando el Doble Máster en Psicología General Sanitaria y Neuropsicología en la Universidad Loyola Andalucía. Mi Trabajo de Fin de Grado, con Matrícula de Honor, investiga cómo el lenguaje moldea juicios y decisiones de forma no consciente, desarrollando indicadores psicolingüísticos para inferir procesos cognitivos a partir de la producción verbal. Fundé La Inferencia para acercar esa investigación, y la de otros, a cualquier persona sin perder rigor científico.</p>
-        <div class="author-ficha-credentials">
-          <div class="author-ficha-cred"><strong>Matrícula de Honor</strong><span>TFG en psicolingüística</span></div>
-          <div class="author-ficha-cred"><strong>Grado + Máster</strong><span>Universidad de Sevilla · Loyola Andalucía</span></div>
-          <div class="author-ficha-cred"><strong>${AUTHOR_OWN_WORKS.length} documentos</strong><span>Investigación propia</span></div>
+        <div class="author-chips">
+          ${chipsHTML}
         </div>
+        <p class="author-ficha-location">Sevilla, España</p>
+        <p class="author-ficha-tagline">Divulgación de psicología basada en evidencia, con investigación propia sobre cómo el lenguaje moldea el pensamiento.</p>
         <div class="author-ficha-ctas">
-          <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">Conecta en LinkedIn</a>
+          <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">LinkedIn</a>
           <a href="${AUTHOR_COMPANY_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-secondary">La Inferencia en LinkedIn</a>
         </div>
       </header>
 
-      <h2 class="static-author-arts-title">Experiencia</h2>
-      <ul class="author-timeline">
-${experienceHTML}
-      </ul>
-
-      <h2 class="static-author-arts-title">Formación</h2>
-      <ul class="author-edu-list">
-${educationHTML}
-      </ul>
+      <div class="author-cred-grid">
+${credentialsHTML}
+      </div>
 
       <h2 class="static-author-arts-title">Investigación propia (Fuera de Bata)</h2>
       <ul class="cat-article-list">
