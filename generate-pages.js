@@ -967,7 +967,6 @@ ${staticHero({ compact: true })}
           <p class="author-ficha-tagline">Investigación en psicolingüística: cómo el lenguaje decide antes que la razón, a través de la persuasión, la metáfora y el enmarcamiento.</p>
           <div class="author-ficha-ctas">
             <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">LinkedIn</a>
-            <a href="${AUTHOR_COMPANY_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-secondary">La Inferencia en LinkedIn</a>
           </div>
         </div>
       </header>
