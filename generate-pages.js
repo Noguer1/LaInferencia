@@ -1217,6 +1217,7 @@ ${g.libros.map(({ art, rec }) => `          <div class="biblioteca-item">
 
   <a class="skip-link" href="#biblioteca-main">Saltar al contenido</a>
   <div id="bg-layer" aria-hidden="true"></div>
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
 ${staticHero()}
 
   <main id="biblioteca-main" class="static-art-main">
@@ -1242,6 +1243,7 @@ ${gruposHTML}
   </main>
 
 ${staticFooterScripts()}
+<script defer src="/js/neural-canvas.js?v=${NEURAL_V}"></script>
 </body>
 </html>`;
 }
@@ -1337,6 +1339,7 @@ function buildRutasLandingPage() {
 
   <a class="skip-link" href="#rutas-main">Saltar al contenido</a>
   <div id="bg-layer" aria-hidden="true"></div>
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
 ${staticHero()}
 
   <main id="rutas-main" class="static-art-main">
@@ -1368,6 +1371,7 @@ ${cardsHTML}
 
 ${staticFooterScripts()}
 <script defer src="/js/rutas.js?v=${RUTAS_JS_V}"></script>
+<script defer src="/js/neural-canvas.js?v=${NEURAL_V}"></script>
 </body>
 </html>`;
 }
@@ -1418,6 +1422,7 @@ function buildRutaPage(ruta) {
 
   <a class="skip-link" href="#ruta-main">Saltar al contenido</a>
   <div id="bg-layer" aria-hidden="true"></div>
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
 ${staticHero()}
 
   <main id="ruta-main" class="static-art-main">
@@ -1448,6 +1453,7 @@ ${listaHTML}
 
 ${staticFooterScripts()}
 <script defer src="/js/rutas.js?v=${RUTAS_JS_V}"></script>
+<script defer src="/js/neural-canvas.js?v=${NEURAL_V}"></script>
 </body>
 </html>`;
 }
