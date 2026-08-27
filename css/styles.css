@@ -10306,6 +10306,10 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   animation: logo-breathe 5s ease-in-out infinite;
   filter: drop-shadow(0 0 8px color-mix(in srgb, var(--blue) 20%, transparent)) drop-shadow(0 0 18px color-mix(in srgb, var(--blue-accent) 12%, transparent));
 }
+.dark-base .static-hero-logo {
+  filter: invert(0.9) brightness(1.5) drop-shadow(0 0 12px color-mix(in srgb, var(--blue-accent) 40%, transparent));
+  animation-name: logo-breathe-dark;
+}
 
 /* Título y tagline: heredan estilos de .hero h1 / .hero p */
 .static-hero-title {
