@@ -822,6 +822,7 @@ ${ownBooks.map(b => `          <span class="cat-libros-teaser-item">${b.titulo},
 
   <a class="skip-link" href="#cat-main">Saltar al contenido</a>
   <div id="bg-layer" aria-hidden="true"></div>
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
 ${staticHero()}
 
   <main id="cat-main" class="static-art-main">
@@ -846,6 +847,7 @@ ${articlesHTML}
   </main>
 
 ${staticFooterScripts()}
+<script defer src="/js/neural-canvas.js?v=${NEURAL_V}"></script>
 </body>
 </html>`;
 }
@@ -929,7 +931,7 @@ function buildAuthorPage() {
           </a>
         </li>`).join('\n');
 
-  const chipsHTML = AUTHOR_ROLE_CHIPS.map(c => `<span class="author-chip">${c}</span>`).join('\n          ');
+  const roleLine = AUTHOR_ROLE_CHIPS.slice(0, 2).join(' <span class="author-role-sep">·</span> ');
 
   const credentialsHTML = AUTHOR_CREDENTIALS.map(c => `        <div class="author-cred-card">
           <svg class="author-cred-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${c.icon}</svg>
@@ -957,16 +959,16 @@ ${staticHero({ compact: true })}
       </nav>
 
       <header class="author-ficha">
-        <img src="/img/caramiguel.png" alt="${AUTHOR_NAME}" class="author-ficha-photo" width="140" height="140" />
-        <h1>${AUTHOR_NAME}</h1>
-        <div class="author-chips">
-          ${chipsHTML}
-        </div>
-        <p class="author-ficha-location">Sevilla, España</p>
-        <p class="author-ficha-tagline">Divulgación de psicología basada en evidencia, con investigación propia sobre cómo el lenguaje moldea el pensamiento.</p>
-        <div class="author-ficha-ctas">
-          <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">LinkedIn</a>
-          <a href="${AUTHOR_COMPANY_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-secondary">La Inferencia en LinkedIn</a>
+        <img src="/img/caramiguel.png" alt="${AUTHOR_NAME}" class="author-ficha-photo" width="168" height="168" />
+        <div class="author-ficha-body">
+          <h1>${AUTHOR_NAME}</h1>
+          <p class="author-ficha-role">${roleLine}</p>
+          <p class="author-ficha-location">Sevilla, España</p>
+          <p class="author-ficha-tagline">Investigación en psicolingüística: cómo el lenguaje decide antes que la razón, a través de la persuasión, la metáfora y el enmarcamiento.</p>
+          <div class="author-ficha-ctas">
+            <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">LinkedIn</a>
+            <a href="${AUTHOR_COMPANY_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-secondary">La Inferencia en LinkedIn</a>
+          </div>
         </div>
       </header>
 
@@ -1030,6 +1032,7 @@ function buildGuiasLandingPage() {
 
   <a class="skip-link" href="#guias-main">Saltar al contenido</a>
   <div id="bg-layer" aria-hidden="true"></div>
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
 ${staticHero()}
 
   <main id="guias-main" class="static-art-main">
@@ -1055,6 +1058,7 @@ ${cardsHTML}
   </main>
 
 ${staticFooterScripts()}
+<script defer src="/js/neural-canvas.js?v=${NEURAL_V}"></script>
 </body>
 </html>`;
 }
@@ -1117,6 +1121,7 @@ ${relArts.map(a => `          <a href="${articleUrl(a)}" class="static-related-c
 
   <a class="skip-link" href="#guia-main">Saltar al contenido</a>
   <div id="bg-layer" aria-hidden="true"></div>
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
 ${staticHero()}
 
   <main id="guia-main" class="static-art-main">
@@ -1152,6 +1157,7 @@ ${relatedHTML}
   </main>
 
 ${staticFooterScripts()}
+<script defer src="/js/neural-canvas.js?v=${NEURAL_V}"></script>
 </body>
 </html>`;
 }
