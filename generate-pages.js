@@ -362,7 +362,10 @@ function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   <link rel="preload" as="style" href="/css/styles.css?v=${CSS_V}" />
   <link rel="stylesheet" href="/css/styles.css?v=${CSS_V}" />
-  <link rel="icon" type="image/png" href="/img/logo.png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
   <meta name="theme-color" content="#030C1A" />
 ${ldJsonBlocks.map(b => `  <script type="application/ld+json">\n${b}\n  </script>`).join('\n')}
@@ -954,7 +957,7 @@ ${staticHero({ compact: true })}
           <p class="author-ficha-location">Sevilla, España</p>
           <div class="author-ficha-ctas">
             <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">LinkedIn</a>
-            <a href="mailto:${AUTHOR_CONTACT_EMAIL}" class="author-ficha-cta-secondary">Contacto</a>
+            <a href="mailto:${AUTHOR_CONTACT_EMAIL}" class="author-ficha-cta-secondary">Colaboraciones y prensa</a>
           </div>
         </div>
       </header>
