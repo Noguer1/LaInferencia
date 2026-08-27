@@ -8,7 +8,7 @@
     /* Oro sobre fondo claro: más nodos, más brillo, destellos visibles */
     obsidiana: { N: 152, MAX_D: 170, nodeAlpha: 0.45, lineAlpha: 0.55, lw: 1.1,
                  l: [212, 175, 55], r: [232, 200, 80] },
-    dark:      { N: 55,  MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
+    dark:      { N: 95,  MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
                  l: [96, 165, 250], r: [37, 99, 235], depth: true },
     default:   { N: 55,  MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
                  l: [16, 185, 129], r: [37, 99, 235] }
@@ -29,11 +29,26 @@
     const rnd = Math.random();
     const x   = rnd < 0.63 ? Math.random() * W * 0.42 : W * 0.42 + Math.random() * W * 0.58;
     if (cfg.depth) {
-      const z  = Math.random();
-      const sp = 0.10 + z * 0.28;
+      const t = Math.random();
+      let z, r, a, sp;
+      if (t < 0.42) {                       // lejos: pequeñas y muy tenues
+        z = 0.12;
+        r = Math.random() * 0.7 + 0.5;
+        a = cfg.nodeAlpha * (Math.random() * 0.25 + 0.28);
+        sp = 0.12;
+      } else if (t < 0.94) {                // capa base: como antes
+        z = 0.5;
+        r = Math.random() * 2.0 + 1.2;
+        a = Math.random() * 0.35 + cfg.nodeAlpha;
+        sp = 0.30;
+      } else {                              // cerca: grandes y brillantes
+        z = 0.95;
+        r = Math.random() * 1.6 + 3.0;
+        a = Math.min(0.9, cfg.nodeAlpha + Math.random() * 0.35 + 0.4);
+        sp = 0.42;
+      }
       return { x, y: Math.random() * H, z,
-               vx: (Math.random() - 0.5) * sp, vy: (Math.random() - 0.5) * sp,
-               r: 0.6 + z * 2.2, a: cfg.nodeAlpha * (0.35 + z * 0.9) };
+               vx: (Math.random() - 0.5) * sp, vy: (Math.random() - 0.5) * sp, r, a };
     }
     return { x, y: Math.random() * H, z: 1,
              vx: (Math.random() - 0.5) * 0.30, vy: (Math.random() - 0.5) * 0.30,
