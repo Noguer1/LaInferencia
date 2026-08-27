@@ -876,22 +876,13 @@ const AUTHOR_COMPANY_LINKEDIN  = 'https://www.linkedin.com/company/la-inferencia
 const AUTHOR_ROLE_CHIPS = ['Psicólogo', 'Fundador de La Inferencia', 'Investigación en psicolingüística'];
 
 const AUTHOR_CREDENTIALS = [
-  {
-    icon: '<path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>',
-    title: 'Grado en Psicología',
-    sub: 'Universidad de Sevilla'
-  },
-  {
-    icon: '<path d="M12 20c-4-2.5-7-5-7-9a7 7 0 0 1 14 0c0 4-3 6.5-7 9Z"/><path d="M9.5 10.5 11 12l3.5-3.5"/>',
-    title: 'Máster en Psic. Sanitaria y Neuropsicología',
-    sub: 'Universidad Loyola Andalucía · en curso'
-  },
-  {
-    icon: '<circle cx="12" cy="8" r="5"/><path d="m8.5 13-1.5 8 5-3 5 3-1.5-8"/>',
-    title: 'TFG con Matrícula de Honor',
-    sub: 'Persuasión lingüística y psicolingüística'
-  }
+  { value: 'Grado', label: 'Psicología · Universidad de Sevilla' },
+  { value: 'Máster en curso', label: 'Psic. Sanitaria y Neuropsicología · Loyola Andalucía' },
+  { value: 'Matrícula de Honor', label: 'TFG en persuasión lingüística' },
+  { value: 'Outlier', label: 'Analista de lenguaje en proyectos de IA · alcance internacional' }
 ];
+
+const AUTHOR_CONTACT_EMAIL = 'contacto@lainferencia.com';
 
 function buildAuthorPage() {
   const canonUrl = AUTHOR_URL;
@@ -933,12 +924,9 @@ function buildAuthorPage() {
 
   const roleLine = AUTHOR_ROLE_CHIPS.slice(0, 2).join(' <span class="author-role-sep">·</span> ');
 
-  const credentialsHTML = AUTHOR_CREDENTIALS.map(c => `        <div class="author-cred-card">
-          <svg class="author-cred-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${c.icon}</svg>
-          <div>
-            <p class="author-cred-title">${c.title}</p>
-            <p class="author-cred-sub">${c.sub}</p>
-          </div>
+  const credentialsHTML = AUTHOR_CREDENTIALS.map(c => `        <div class="author-stat">
+          <p class="author-stat-value">${c.value}</p>
+          <p class="author-stat-label">${c.label}</p>
         </div>`).join('\n');
 
   return `${head}
@@ -964,14 +952,15 @@ ${staticHero({ compact: true })}
           <h1>${AUTHOR_NAME}</h1>
           <p class="author-ficha-role">${roleLine}</p>
           <p class="author-ficha-location">Sevilla, España</p>
-          <p class="author-ficha-tagline">Investigación en psicolingüística: cómo el lenguaje decide antes que la razón, a través de la persuasión, la metáfora y el enmarcamiento.</p>
+          <blockquote class="author-ficha-quote">Solo por analizar el lenguaje de los líderes de Al-Qaeda se supo quién era el más peligroso antes de que actuara.</blockquote>
           <div class="author-ficha-ctas">
             <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">LinkedIn</a>
+            <a href="mailto:${AUTHOR_CONTACT_EMAIL}" class="author-ficha-cta-secondary">Contacto</a>
           </div>
         </div>
       </header>
 
-      <div class="author-cred-grid">
+      <div class="author-stats-bar">
 ${credentialsHTML}
       </div>
 

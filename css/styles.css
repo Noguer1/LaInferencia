@@ -10763,13 +10763,17 @@ body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340
   color: var(--text-muted);
   margin: 0 0 1rem;
 }
-.author-ficha-tagline {
+.author-ficha-quote {
+  position: relative;
   max-width: 620px;
   margin: 0 0 1.6rem;
-  font-size: 1.02rem;
-  font-weight: 500;
-  color: var(--text-body);
-  line-height: 1.55;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--blue);
+  font-size: 1.12rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--navy);
+  line-height: 1.5;
 }
 .author-ficha-ctas {
   display: flex;
@@ -10777,40 +10781,35 @@ body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340
   gap: 0.7rem;
 }
 
-/* ── Credenciales ───────────────────────────────────────────── */
-.author-cred-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-  margin-bottom: 3rem;
-}
-.author-cred-card {
+/* ── Credenciales: barra de stats ─────────────────────────────── */
+.author-stats-bar {
   display: flex;
-  align-items: flex-start;
-  gap: 0.85rem;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 1.4rem 1.3rem;
-  box-shadow: var(--card-shadow);
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
 }
-.author-cred-icon {
-  flex-shrink: 0;
-  color: var(--blue);
-  margin-top: 0.1rem;
+.author-stat {
+  flex: 1 1 0;
+  min-width: 160px;
+  padding: 1.4rem 1.6rem;
+  border-left: 1px solid var(--card-border);
 }
-.author-cred-title { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin: 0 0 0.25rem; line-height: 1.35; }
-.author-cred-sub { font-size: 0.8rem; color: var(--text-muted); margin: 0; line-height: 1.4; }
+.author-stat:first-child { border-left: none; }
+.author-stat-value { font-size: 1rem; font-weight: 800; color: var(--navy); margin: 0 0 0.3rem; line-height: 1.3; }
+.author-stat-label { font-size: 0.78rem; color: var(--text-muted); margin: 0; line-height: 1.4; }
 
 @media (max-width: 900px) {
   .author-ficha { grid-template-columns: 1fr; text-align: center; padding: 2.6rem 2rem; }
   .author-ficha-photo { margin: 0 auto; }
   .author-ficha-body { text-align: center; }
-  .author-ficha-tagline { margin-left: auto; margin-right: auto; }
+  .author-ficha-quote { margin-left: auto; margin-right: auto; text-align: left; }
   .author-ficha-ctas { justify-content: center; }
 }
-@media (max-width: 780px) {
-  .author-cred-grid { grid-template-columns: 1fr; }
+@media (max-width: 680px) {
+  .author-stats-bar { flex-direction: column; }
+  .author-stat { border-left: none; border-top: 1px solid var(--card-border); }
+  .author-stat:first-child { border-top: none; }
 }
 .author-ficha-cta-primary {
   display: inline-block;
