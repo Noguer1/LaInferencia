@@ -876,10 +876,10 @@ const AUTHOR_COMPANY_LINKEDIN  = 'https://www.linkedin.com/company/la-inferencia
 const AUTHOR_ROLE_CHIPS = ['Psicólogo', 'Fundador de La Inferencia', 'Investigación en psicolingüística'];
 
 const AUTHOR_CREDENTIALS = [
-  { value: 'Grado', label: 'Psicología · Universidad de Sevilla' },
-  { value: 'Máster en curso', label: 'Psic. Sanitaria y Neuropsicología · Loyola Andalucía' },
+  { value: 'Psicología', label: 'Grado · Universidad de Sevilla' },
+  { value: 'Neuropsicología', label: 'Máster en curso · Loyola Andalucía' },
   { value: 'Matrícula de Honor', label: 'TFG en persuasión lingüística' },
-  { value: 'Outlier', label: 'Analista de lenguaje en proyectos de IA · alcance internacional' }
+  { value: 'Analista de lenguaje', label: 'Outlier · proyectos de IA, alcance internacional' }
 ];
 
 const AUTHOR_CONTACT_EMAIL = 'contacto@lainferencia.com';
@@ -952,7 +952,6 @@ ${staticHero({ compact: true })}
           <h1>${AUTHOR_NAME}</h1>
           <p class="author-ficha-role">${roleLine}</p>
           <p class="author-ficha-location">Sevilla, España</p>
-          <blockquote class="author-ficha-quote">Solo por analizar el lenguaje de los líderes de Al-Qaeda se supo quién era el más peligroso antes de que actuara.</blockquote>
           <div class="author-ficha-ctas">
             <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">LinkedIn</a>
             <a href="mailto:${AUTHOR_CONTACT_EMAIL}" class="author-ficha-cta-secondary">Contacto</a>

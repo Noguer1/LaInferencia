@@ -10761,19 +10761,7 @@ body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340
 .author-ficha-location {
   font-size: 0.78rem;
   color: var(--text-muted);
-  margin: 0 0 1rem;
-}
-.author-ficha-quote {
-  position: relative;
-  max-width: 620px;
-  margin: 0 0 1.6rem;
-  padding-left: 1.1rem;
-  border-left: 3px solid var(--blue);
-  font-size: 1.12rem;
-  font-weight: 600;
-  font-style: normal;
-  color: var(--navy);
-  line-height: 1.5;
+  margin: 0 0 1.4rem;
 }
 .author-ficha-ctas {
   display: flex;
@@ -10803,7 +10791,6 @@ body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340
   .author-ficha { grid-template-columns: 1fr; text-align: center; padding: 2.6rem 2rem; }
   .author-ficha-photo { margin: 0 auto; }
   .author-ficha-body { text-align: center; }
-  .author-ficha-quote { margin-left: auto; margin-right: auto; text-align: left; }
   .author-ficha-ctas { justify-content: center; }
 }
 @media (max-width: 680px) {
