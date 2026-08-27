@@ -383,7 +383,7 @@ function buildAuthorCard(author) {
     : author.name.split(' ').map(n => n[0]).join('').slice(0, 2);
   const metaHTML = isFounder
     ? `<div class="role-badges-row role-badges-row--inline">
-         <span class="role-badge">Fundador de La Inferencia</span>
+         <span class="role-badge">Fundador y CEO de La Inferencia</span>
          <span class="role-badge">Director de Fuera de Bata</span>
        </div>`
     : `<span>${univ}</span><span>${spec}</span>`;
@@ -873,7 +873,7 @@ const AUTHOR_OWN_WORKS = [
 const AUTHOR_PERSONAL_LINKEDIN = 'https://www.linkedin.com/in/miguelnoguer';
 const AUTHOR_COMPANY_LINKEDIN  = 'https://www.linkedin.com/company/la-inferencia/';
 
-const AUTHOR_ROLE_CHIPS = ['Psicólogo', 'Fundador de La Inferencia', 'Investigación en psicolingüística'];
+const AUTHOR_ROLE_CHIPS = ['Psicólogo', 'Fundador y CEO de La Inferencia', 'Investigación en psicolingüística'];
 
 const AUTHOR_CREDENTIALS = [
   { value: 'Psicología', label: 'Grado · Universidad de Sevilla' },
@@ -909,7 +909,7 @@ function buildAuthorPage() {
   }, null, 2);
 
   const head = htmlHead({
-    title: `${AUTHOR_NAME}, Psicólogo y Fundador de La Inferencia`,
+    title: `${AUTHOR_NAME}, Psicólogo y CEO de La Inferencia`,
     description: `Psicólogo, fundador y CEO de La Inferencia. Investigación propia en psicolingüística y divulgación de psicología basada en evidencia.`,
     canonUrl,
     ldJsonBlocks: [ldJson]
