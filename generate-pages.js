@@ -871,6 +871,46 @@ const AUTHOR_OWN_WORKS = [
 const AUTHOR_PERSONAL_LINKEDIN = 'https://www.linkedin.com/in/miguelnoguer';
 const AUTHOR_COMPANY_LINKEDIN  = 'https://www.linkedin.com/company/la-inferencia/';
 
+const AUTHOR_EXPERIENCE = [
+  {
+    role: 'Fundador y Director Ejecutivo',
+    org: 'La Inferencia',
+    period: 'may. 2026 · actualidad',
+    desc: 'Fundé La Inferencia para acercar la investigación en psicología a cualquier persona sin perder rigor científico por el camino. Dirijo el proyecto en su totalidad: estrategia, contenido editorial, desarrollo web y crecimiento de comunidad.'
+  },
+  {
+    role: 'Investigador y divulgador en psicología',
+    org: 'Independiente',
+    period: 'jun. 2026 · actualidad',
+    desc: 'Investigación y divulgación independiente en psicolingüística, enmarcamiento metafórico y percepción de la salud mental. Publico los bloques teóricos de mi investigación en la sección Fuera de Bata.'
+  },
+  {
+    role: 'Analista de lenguaje y comportamiento comunicativo',
+    org: 'Outlier',
+    period: 'may. 2025 · actualidad',
+    desc: 'Análisis de intención comunicativa, carga emocional y patrones lingüísticos en proyectos internacionales de entrenamiento de modelos de lenguaje. Redacción en múltiples registros con criterios de precisión conceptual y coherencia narrativa.'
+  },
+  {
+    role: 'Psicólogo en prácticas',
+    org: 'Cáritas Diocesana de Sevilla',
+    period: 'mar. 2026 · jun. 2026',
+    desc: 'Intervención y acompañamiento psicológico con personas en situación de exclusión social, trastornos mentales graves y drogodependencias, en coordinación con un equipo multidisciplinar.'
+  }
+];
+
+const AUTHOR_EDUCATION = [
+  {
+    title: 'Doble Máster en Psicología General Sanitaria y Neuropsicología',
+    org: 'Universidad Loyola Andalucía',
+    period: 'En curso'
+  },
+  {
+    title: 'Grado en Psicología',
+    org: 'Universidad de Sevilla',
+    period: 'Trabajo de Fin de Grado con Matrícula de Honor'
+  }
+];
+
 function buildAuthorPage() {
   const canonUrl = AUTHOR_URL;
   const totalArts = Object.values(LIBRARY_ARTICLES).reduce((n, arts) => n + arts.length, 0);
@@ -882,9 +922,13 @@ function buildAuthorPage() {
     'name': AUTHOR_NAME,
     'url': canonUrl,
     'image': `${SITE}/img/caramiguel.png`,
-    'jobTitle': 'Fundador y editor | La Inferencia',
+    'jobTitle': 'Psicólogo, Fundador y CEO de La Inferencia',
     'worksFor': { '@type': 'Organization', 'name': 'La Inferencia', 'url': SITE },
-    'description': 'Fundador de La Inferencia, web de divulgación de psicología basada en evidencia científica. Convierte investigación académica peer-reviewed en contenido accesible en español. Autor de investigación propia publicada en Fuera de Bata.',
+    'alumniOf': [
+      { '@type': 'CollegeOrUniversity', 'name': 'Universidad de Sevilla' },
+      { '@type': 'CollegeOrUniversity', 'name': 'Universidad Loyola Andalucía' }
+    ],
+    'description': 'Psicólogo, fundador y CEO de La Inferencia. Investigo psicolingüística y publico investigación propia sobre cómo el lenguaje moldea juicios y decisiones de forma no consciente.',
     'sameAs': [
       AUTHOR_PERSONAL_LINKEDIN,
       AUTHOR_COMPANY_LINKEDIN
@@ -892,8 +936,8 @@ function buildAuthorPage() {
   }, null, 2);
 
   const head = htmlHead({
-    title: `${AUTHOR_NAME}, Fundador de La Inferencia`,
-    description: `${AUTHOR_NAME} es el fundador y editor de La Inferencia, web de divulgación de psicología basada en evidencia. Conoce su trabajo y su investigación propia en Fuera de Bata.`,
+    title: `${AUTHOR_NAME}, Psicólogo y Fundador de La Inferencia`,
+    description: `Psicólogo, fundador y CEO de La Inferencia. Investigación propia en psicolingüística y divulgación de psicología basada en evidencia.`,
     canonUrl,
     ldJsonBlocks: [ldJson]
   });
@@ -903,6 +947,21 @@ function buildAuthorPage() {
             <span class="cat-article-badge">Fuera de Bata</span>
             <h2>${w.title}</h2>
           </a>
+        </li>`).join('\n');
+
+  const experienceHTML = AUTHOR_EXPERIENCE.map(e => `        <li class="author-timeline-item">
+          <div class="author-timeline-dot" aria-hidden="true"></div>
+          <div class="author-timeline-body">
+            <p class="author-timeline-role">${e.role}</p>
+            <p class="author-timeline-org">${e.org} <span class="author-timeline-period">${e.period}</span></p>
+            <p class="author-timeline-desc">${e.desc}</p>
+          </div>
+        </li>`).join('\n');
+
+  const educationHTML = AUTHOR_EDUCATION.map(ed => `        <li class="author-edu-item">
+          <p class="author-edu-title">${ed.title}</p>
+          <p class="author-edu-org">${ed.org}</p>
+          <p class="author-edu-period">${ed.period}</p>
         </li>`).join('\n');
 
   return `${head}
@@ -925,18 +984,29 @@ ${staticHero({ compact: true })}
       <header class="author-ficha">
         <img src="/img/caramiguel.png" alt="${AUTHOR_NAME}" class="author-ficha-photo" width="140" height="140" />
         <h1>${AUTHOR_NAME}</h1>
-        <p class="author-ficha-role">Fundador y editor de La Inferencia</p>
-        <p class="author-ficha-bio">Convierto investigación académica peer-reviewed en psicología en contenido claro y en español. Además de editar los ${totalArts} artículos de la web, publico investigación propia sobre lenguaje y comportamiento en la sección Fuera de Bata.</p>
-        <div class="author-ficha-stats">
-          <div class="author-ficha-stat"><strong>${totalArts}</strong><span>Artículos editados</span></div>
-          <div class="author-ficha-stat"><strong>${AUTHOR_OWN_WORKS.length}</strong><span>Investigación propia</span></div>
-          <div class="author-ficha-stat"><strong>100%</strong><span>Basado en evidencia</span></div>
+        <p class="author-ficha-role">Psicólogo · Fundador y CEO de La Inferencia</p>
+        <p class="author-ficha-location">Sevilla, España</p>
+        <p class="author-ficha-bio">Graduado en Psicología por la Universidad de Sevilla y cursando el Doble Máster en Psicología General Sanitaria y Neuropsicología en la Universidad Loyola Andalucía. Mi Trabajo de Fin de Grado, con Matrícula de Honor, investiga cómo el lenguaje moldea juicios y decisiones de forma no consciente, desarrollando indicadores psicolingüísticos para inferir procesos cognitivos a partir de la producción verbal. Fundé La Inferencia para acercar esa investigación, y la de otros, a cualquier persona sin perder rigor científico.</p>
+        <div class="author-ficha-credentials">
+          <div class="author-ficha-cred"><strong>Matrícula de Honor</strong><span>TFG en psicolingüística</span></div>
+          <div class="author-ficha-cred"><strong>Grado + Máster</strong><span>Universidad de Sevilla · Loyola Andalucía</span></div>
+          <div class="author-ficha-cred"><strong>${AUTHOR_OWN_WORKS.length} documentos</strong><span>Investigación propia</span></div>
         </div>
         <div class="author-ficha-ctas">
-          <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">Conecta conmigo en LinkedIn</a>
+          <a href="${AUTHOR_PERSONAL_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-primary">Conecta en LinkedIn</a>
           <a href="${AUTHOR_COMPANY_LINKEDIN}" target="_blank" rel="noopener noreferrer" class="author-ficha-cta-secondary">La Inferencia en LinkedIn</a>
         </div>
       </header>
+
+      <h2 class="static-author-arts-title">Experiencia</h2>
+      <ul class="author-timeline">
+${experienceHTML}
+      </ul>
+
+      <h2 class="static-author-arts-title">Formación</h2>
+      <ul class="author-edu-list">
+${educationHTML}
+      </ul>
 
       <h2 class="static-author-arts-title">Investigación propia (Fuera de Bata)</h2>
       <ul class="cat-article-list">

@@ -39,9 +39,9 @@ body {
   z-index: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(ellipse 80% 55% at 15% 25%, color-mix(in srgb, var(--blue-accent) 7%, transparent) 0%, transparent 65%),
-    radial-gradient(ellipse 65% 50% at 85% 60%, rgba(157,0,255,0.045) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 55% 92%, color-mix(in srgb, var(--blue) 6%, transparent) 0%, transparent 55%);
+    radial-gradient(ellipse 80% 55% at 15% 25%, color-mix(in srgb, var(--blue-accent) 22%, transparent) 0%, transparent 65%),
+    radial-gradient(ellipse 65% 50% at 85% 60%, rgba(157,0,255,0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 55% 92%, color-mix(in srgb, var(--blue) 18%, transparent) 0%, transparent 55%);
 }
 
 /* ── CANVAS ── */
@@ -4598,8 +4598,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .dark-base body { background-color: #07101E; }
 .dark-base #bg-layer {
   background-image:
-    radial-gradient(ellipse 80% 55% at 15% 25%, color-mix(in srgb, var(--blue-accent) 3%, transparent) 0%, transparent 65%),
-    radial-gradient(ellipse 65% 50% at 85% 60%, color-mix(in srgb, var(--blue) 2%, transparent) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 55% at 15% 25%, color-mix(in srgb, var(--blue-accent) 16%, transparent) 0%, transparent 65%),
+    radial-gradient(ellipse 65% 50% at 85% 60%, color-mix(in srgb, var(--blue) 13%, transparent) 0%, transparent 60%);
 }
 
 .dark-base .navbar {
@@ -10751,28 +10751,87 @@ body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340
   font-size: 0.92rem;
   color: var(--blue);
   font-weight: 700;
+  margin: 0 0 0.3rem;
+}
+.author-ficha-location {
+  position: relative;
+  font-size: 0.78rem;
+  color: var(--text-muted);
   margin: 0 0 1.1rem;
 }
 .author-ficha-bio {
   position: relative;
-  max-width: 520px;
+  max-width: 580px;
   margin: 0 auto 1.6rem;
   font-size: 0.92rem;
   color: var(--text-body);
   line-height: 1.65;
+  text-align: left;
 }
-.author-ficha-stats {
+.author-ficha-stats,
+.author-ficha-credentials {
   position: relative;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 2.2rem;
   margin-bottom: 1.8rem;
   padding-top: 1.6rem;
   border-top: 1px solid var(--card-border);
 }
-.author-ficha-stat { display: flex; flex-direction: column; gap: 0.15rem; }
-.author-ficha-stat strong { font-size: 1.35rem; font-weight: 800; color: var(--navy); }
-.author-ficha-stat span { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; }
+.author-ficha-stat,
+.author-ficha-cred { display: flex; flex-direction: column; gap: 0.15rem; }
+.author-ficha-stat strong,
+.author-ficha-cred strong { font-size: 1.1rem; font-weight: 800; color: var(--navy); }
+.author-ficha-stat span,
+.author-ficha-cred span { font-size: 0.72rem; color: var(--text-muted); }
+
+/* ── Experiencia y formación ────────────────────────────────── */
+.author-timeline {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.author-timeline-item {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding-left: 0.2rem;
+}
+.author-timeline-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: 0.4rem;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 18%, transparent);
+}
+.author-timeline-role { font-size: 0.98rem; font-weight: 700; color: var(--navy); margin: 0 0 0.15rem; }
+.author-timeline-org { font-size: 0.82rem; color: var(--blue); font-weight: 600; margin: 0 0 0.5rem; }
+.author-timeline-period { color: var(--text-muted); font-weight: 500; }
+.author-timeline-desc { font-size: 0.86rem; color: var(--text-body); line-height: 1.6; margin: 0; }
+
+.author-edu-list {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.author-edu-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.3rem;
+}
+.author-edu-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin: 0 0 0.2rem; }
+.author-edu-org { font-size: 0.85rem; color: var(--blue); font-weight: 600; margin: 0 0 0.2rem; }
+.author-edu-period { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
 .author-ficha-ctas {
   position: relative;
   display: flex;
