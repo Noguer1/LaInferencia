@@ -7079,11 +7079,11 @@ _syncHeroBalance();
 
   function getUserNivel() {
     const xp = parseInt(lsGet('li_xp_v1', '0'), 10) || 0;
-    if (xp >= 5500) return 5;
-    if (xp >= 3000) return 4;
-    if (xp >= 1500) return 3;
-    if (xp >= 600)  return 2;
-    if (xp >= 150)  return 1;
+    if (xp >= 2750) return 5;
+    if (xp >= 1500) return 4;
+    if (xp >= 750)  return 3;
+    if (xp >= 300)  return 2;
+    if (xp >= 75)   return 1;
     return 0;
   }
 
