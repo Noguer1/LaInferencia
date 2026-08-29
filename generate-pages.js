@@ -390,10 +390,13 @@ function buildAuthorCard(author) {
          <span class="role-badge">Director de Fuera de Bata</span>
        </div>`
     : `<span>${univ}</span><span>${spec}</span>`;
+  const redactorHTML = isFounder
+    ? ''
+    : `\n    <p class="article-redactor">Redactado por <a href="/autores/miguel-noguer/" class="article-redactor-link">${AUTHOR_NAME}</a>, sobre la investigación de ${author.name}.</p>`;
   return `<div class="author-card">
       <div class="author-avatar${photo ? ' author-avatar-photo' : ''}">${avatarHTML}</div>
       <div><strong>${author.name}</strong>${metaHTML}</div>
-    </div>`;
+    </div>${redactorHTML}`;
 }
 
 function buildTocHTML(sections) {
@@ -887,6 +890,31 @@ const AUTHOR_CREDENTIALS = [
 
 const AUTHOR_CONTACT_EMAIL = 'contacto@lainferencia.com';
 
+const AUTHOR_BIO_PARAGRAPHS = [
+  `${AUTHOR_NAME} es psicólogo por la Universidad de Sevilla y fundador de La Inferencia, la plataforma donde investigación revisada por pares se convierte en lectura clara para quien no viene del mundo académico.`,
+  `Su Trabajo de Fin de Grado obtuvo Matrícula de Honor. Es un estudio experimental sobre persuasión encubierta: una réplica conceptual del quinto experimento de Hendricks y colaboradores (2018) que amplió al campo de la ansiedad con dos metáforas nuevas y un análisis psicolingüístico de las respuestas de los participantes. El hallazgo: cambiar una sola metáfora en la descripción de un trastorno mental desplazaba los juicios de los lectores hacia posiciones opuestas, y casi ninguno era consciente de que el lenguaje les había movido. Dirigieron el trabajo Mercedes Cubero Pérez y Samuel Arias Sánchez.`,
+  `Cursa el Doble Máster en Psicología General Sanitaria y Neuropsicología en la Universidad Loyola Andalucía. Mantiene tres estudios propios publicados con DOI sobre cómo la forma del lenguaje condiciona decisiones y razonamiento, que constituyen la sección Fuera de Bata de La Inferencia. Trabaja además como analista de lenguaje para proyectos internacionales de inteligencia artificial en Outlier, evaluando el uso del lenguaje de modelos de gran escala.`
+];
+
+const AUTHOR_FAQS = [
+  {
+    q: '¿Quién es Miguel Noguer Escudero?',
+    a: 'Psicólogo por la Universidad de Sevilla y fundador y CEO de La Inferencia, un proyecto de divulgación que traduce investigación revisada por pares a un lenguaje claro en español. Dirige Fuera de Bata, su sección de investigación original en psicolingüística.'
+  },
+  {
+    q: '¿Qué formación tiene Miguel Noguer Escudero?',
+    a: 'Graduado en Psicología por la Universidad de Sevilla, con un Trabajo de Fin de Grado calificado con Matrícula de Honor sobre persuasión encubierta y lenguaje. Cursa el Doble Máster en Psicología General Sanitaria y Neuropsicología en la Universidad Loyola Andalucía.'
+  },
+  {
+    q: '¿Dónde se pueden leer sus investigaciones?',
+    a: 'Mantiene tres estudios propios publicados con DOI en Zenodo sobre cómo la forma del lenguaje condiciona decisiones y razonamiento. Están enlazados en esta página, en la sección Fuera de Bata.'
+  },
+  {
+    q: '¿Qué es La Inferencia?',
+    a: 'Una plataforma de divulgación de psicología basada en evidencia. Convierte artículos académicos revisados por pares en contenido accesible y en español para el público general, citando siempre la fuente original.'
+  }
+];
+
 function buildAuthorPage() {
   const canonUrl = AUTHOR_URL;
   const totalArts = Object.values(LIBRARY_ARTICLES).reduce((n, arts) => n + arts.length, 0);
@@ -911,18 +939,39 @@ function buildAuthorPage() {
     ]
   }, null, 2);
 
+  const faqJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': AUTHOR_FAQS.map(f => ({
+      '@type': 'Question',
+      'name': f.q,
+      'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+    }))
+  }, null, 2);
+
   const head = htmlHead({
     title: `${AUTHOR_NAME}, Psicólogo y CEO de La Inferencia`,
     description: `Psicólogo, fundador y CEO de La Inferencia. Investigación propia en psicolingüística y divulgación de psicología basada en evidencia.`,
     canonUrl,
-    ldJsonBlocks: [ldJson]
+    ldJsonBlocks: [ldJson, faqJsonLd]
   });
+
+  const bioHTML = `      <section class="author-bio">
+        <h2>Sobre ${AUTHOR_NAME}</h2>
+${AUTHOR_BIO_PARAGRAPHS.map(p => `        <p>${p}</p>`).join('\n')}
+      </section>`;
+
+  const faqHTML = `      <div class="static-faq">
+        <h2>Preguntas frecuentes</h2>
+${AUTHOR_FAQS.map(f => `        <details class="static-faq-item">\n          <summary>${f.q}</summary>\n          <p>${f.a}</p>\n        </details>`).join('\n')}
+      </div>`;
 
   const worksHTML = AUTHOR_OWN_WORKS.map(w => `        <li class="cat-article-item">
           <a href="${w.url}">
             <span class="cat-article-badge">Fuera de Bata</span>
             <h2>${w.title}</h2>
           </a>
+          <a href="${w.doi}" class="cat-article-doi" target="_blank" rel="noopener noreferrer">Estudio con DOI en Zenodo →</a>
         </li>`).join('\n');
 
   const roleLine = AUTHOR_ROLE_CHIPS.slice(0, 2).join(' <span class="author-role-sep">·</span> ');
@@ -966,10 +1015,14 @@ ${staticHero({ compact: true })}
 ${credentialsHTML}
       </div>
 
+${bioHTML}
+
       <h2 class="static-author-arts-title">Investigación propia (Fuera de Bata)</h2>
       <ul class="cat-article-list">
 ${worksHTML}
       </ul>
+
+${faqHTML}
 
       <p class="author-ficha-explore"><a href="/">Explorar los ${totalArts} artículos de La Inferencia →</a></p>
 

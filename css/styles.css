@@ -3535,6 +3535,17 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .author-card-link:hover { color: var(--blue-accent); border-color: var(--blue-accent); }
 .author-card span { font-size: 0.78rem; color: var(--text-muted); }
 
+.article-redactor {
+  font-size: 0.8rem; color: var(--text-muted);
+  margin: -0.4rem 0 1rem 0.2rem; line-height: 1.5;
+}
+.article-redactor-link {
+  color: var(--blue); font-weight: 600; text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--blue) 30%, transparent);
+  transition: border-color 0.18s, color 0.18s;
+}
+.article-redactor-link:hover { color: var(--blue-accent); border-color: var(--blue-accent); }
+
 .weekly-escrito-por {
   font-size: 0.72rem; color: var(--text-muted); font-style: italic;
   margin: -0.6rem 0 0.8rem 0.2rem;
@@ -11179,6 +11190,33 @@ body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340
   color: var(--navy);
   margin: 0 0 1rem;
 }
+
+.author-bio {
+  margin: 2rem 0;
+}
+.author-bio h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 0.9rem;
+}
+.author-bio p {
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin: 0 0 0.9rem;
+}
+.author-bio p:last-child { margin-bottom: 0; }
+
+.cat-article-doi {
+  display: inline-block;
+  margin: 0.5rem 0 0 1.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: none;
+}
+.cat-article-doi:hover { color: var(--blue-hover); }
 .author-ficha-explore {
   text-align: center;
   margin-top: 2rem;
