@@ -7429,8 +7429,8 @@ window.LI_CAT_ICONS = {
     const counterEl   = document.getElementById('tour-modal-counter');
     const labels = window.LI_CAT_LABELS || {};
     const icons  = window.LI_CAT_ICONS  || {};
-    chipsWrap.innerHTML = Object.keys(labels).map(id =>
-      `<button type="button" class="onboarding-chip" data-cat="${id}">${icons[id] || ''}<span>${labels[id]}</span></button>`
+    chipsWrap.innerHTML = Object.keys(labels).map((id, i) =>
+      `<button type="button" class="onboarding-chip" data-cat="${id}" style="--ci:${i}">${icons[id] || ''}<span>${labels[id]}</span></button>`
     ).join('');
     chipsWrap.hidden   = false;
     counterEl.hidden   = false;
@@ -7439,7 +7439,11 @@ window.LI_CAT_ICONS = {
 
     const selected = new Set();
     function updateCounter() {
-      counterEl.textContent = selected.size + ' / 3 elegidos';
+      const n = selected.size;
+      counterEl.innerHTML =
+        '<span class="ob-count-dots" aria-hidden="true">' +
+        [0, 1, 2].map(i => `<i class="${i < n ? 'on' : ''}"></i>`).join('') +
+        '</span><span>' + n + ' / 3 elegidos</span>';
     }
     updateCounter();
 

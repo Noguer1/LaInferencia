@@ -370,7 +370,7 @@ function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {
   <meta name="theme-color" content="#030C1A" />
 ${ldJsonBlocks.map(b => `  <script type="application/ld+json">\n${b}\n  </script>`).join('\n')}
   <script defer src="https://cloud.umami.is/script.js" data-website-id="79211994-3fb4-4d6a-84d4-8860aeadcd92"></script>
-  <script>(function(){var t=localStorage.getItem('theme');if(t&&t!=='light'){document.documentElement.setAttribute('data-theme',t);if(['dark','naranja','tormenta','cosmos','carmesi'].indexOf(t)>-1)document.documentElement.classList.add('dark-base');}})();</script>
+  <script>(function(){var t=localStorage.getItem('theme')||'dark';if(t!=='light'){document.documentElement.setAttribute('data-theme',t);if(['dark','naranja','tormenta','cosmos','carmesi'].indexOf(t)>-1)document.documentElement.classList.add('dark-base');}})();</script>
 </head>`;
 }
 
