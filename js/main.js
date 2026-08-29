@@ -7396,6 +7396,7 @@ window.LI_CAT_ICONS = {
     if (counterEl)  counterEl.hidden  = true;
     mSkip.hidden    = !!step.noSkip;
     mNext.disabled  = false;
+    mNext.classList.remove('ob-ready');
 
     iconEl.classList.remove('icon-retrigger');
     void iconEl.offsetWidth;
@@ -7427,17 +7428,24 @@ window.LI_CAT_ICONS = {
 
     const chipsWrap   = document.getElementById('tour-modal-chips');
     const counterEl   = document.getElementById('tour-modal-counter');
+    const textEl      = document.getElementById('tour-modal-text');
+    const baseText    = step.text;
     const labels = window.LI_CAT_LABELS || {};
     const icons  = window.LI_CAT_ICONS  || {};
-    chipsWrap.innerHTML = Object.keys(labels).map((id, i) =>
-      `<button type="button" class="onboarding-chip" data-cat="${id}" style="--ci:${i}">${icons[id] || ''}<span>${labels[id]}</span></button>`
-    ).join('');
+    const noMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    chipsWrap.innerHTML =
+      '<svg class="ob-constellation" aria-hidden="true"></svg>' +
+      Object.keys(labels).map((id, i) =>
+        `<button type="button" class="onboarding-chip" data-cat="${id}" style="--ci:${i}">${icons[id] || ''}<span>${labels[id]}</span></button>`
+      ).join('');
     chipsWrap.hidden   = false;
     counterEl.hidden   = false;
     mSkip.hidden       = true;
     mNext.disabled     = true;
 
+    const svg      = chipsWrap.querySelector('.ob-constellation');
     const selected = new Set();
+
     function updateCounter() {
       const n = selected.size;
       counterEl.innerHTML =
@@ -7445,6 +7453,45 @@ window.LI_CAT_ICONS = {
         [0, 1, 2].map(i => `<i class="${i < n ? 'on' : ''}"></i>`).join('') +
         '</span><span>' + n + ' / 3 elegidos</span>';
     }
+
+    function updateSubtitle() {
+      let txt = baseText;
+      if (selected.size === 3) {
+        const names = Array.from(selected).map(id => labels[id]);
+        const list  = names.slice(0, -1).join(', ') + ' y ' + names[names.length - 1];
+        txt = list + '. Buena mezcla, empezamos por ahí.';
+      }
+      if (txt === textEl.textContent) return;
+      textEl.classList.remove('ob-swap');
+      void textEl.offsetWidth;
+      textEl.textContent = txt;
+      if (!noMotion) textEl.classList.add('ob-swap');
+    }
+
+    function drawConstellation() {
+      const pts = Array.from(chipsWrap.querySelectorAll('.onboarding-chip.selected')).map(c => ({
+        x: c.offsetLeft + c.offsetWidth / 2,
+        y: c.offsetTop  + c.offsetHeight / 2
+      }));
+      const segs = [];
+      for (let i = 0; i < pts.length; i++)
+        for (let j = i + 1; j < pts.length; j++)
+          segs.push([pts[i], pts[j]]);
+      svg.innerHTML = segs.map(([a, b]) =>
+        `<line x1="${a.x.toFixed(1)}" y1="${a.y.toFixed(1)}" x2="${b.x.toFixed(1)}" y2="${b.y.toFixed(1)}"></line>`
+      ).join('');
+      if (!noMotion && segs.length) {
+        const lns = svg.querySelectorAll('line');
+        segs.forEach(([a, b], k) => {
+          const len = Math.hypot(b.x - a.x, b.y - a.y).toFixed(1);
+          lns[k].style.strokeDasharray  = len;
+          lns[k].style.strokeDashoffset = len;
+        });
+        void svg.getBoundingClientRect();
+        lns.forEach(ln => { ln.style.strokeDashoffset = '0'; });
+      }
+    }
+
     updateCounter();
 
     chipsWrap.querySelectorAll('.onboarding-chip').forEach(chip => {
@@ -7462,10 +7509,15 @@ window.LI_CAT_ICONS = {
           c.disabled = full && !c.classList.contains('selected');
         });
         mNext.disabled = !full;
+        mNext.classList.toggle('ob-ready', full);
         updateCounter();
+        updateSubtitle();
+        drawConstellation();
         if (full) lsSet('li_intereses', JSON.stringify(Array.from(selected)));
       });
     });
+
+    window.addEventListener('resize', drawConstellation, { passive: true });
 
     const iconEl = document.getElementById('tour-modal-icon');
     iconEl.classList.remove('icon-retrigger');
@@ -7762,14 +7814,45 @@ window.LI_CAT_ICONS = {
     }
   }
 
-  function closeTour() {
+  function finalizeClose() {
     clearSpotlight();
     if (ring) { ring.hidden = true; ring.style.opacity = ''; }
     dim.hidden   = true;
     shell.hidden = true;
     document.body.style.overflow = '';
     if (trapHandler) { releaseFocus(shell, trapHandler); trapHandler = null; }
+    const card = modal && modal.querySelector('.onboarding-card');
+    if (card) card.classList.remove('ob-dissolve');
+    if (modal) modal.classList.remove('ob-closing');
     lsSet(LS_KEY, '1');
+  }
+
+  function closeTour() {
+    const noMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    const card = (modal && !modal.hidden) ? modal.querySelector('.onboarding-card') : null;
+    if (!card || noMotion) { finalizeClose(); return; }
+
+    const r = card.getBoundingClientRect();
+    card.classList.add('ob-dissolve');
+    modal.classList.add('ob-closing');
+
+    const layer = document.createElement('div');
+    layer.className = 'ob-particle-layer';
+    for (let i = 0; i < 16; i++) {
+      const p    = document.createElement('span');
+      const ang  = Math.random() * Math.PI * 2;
+      const dist = 60 + Math.random() * 130;
+      p.className = 'ob-particle';
+      p.style.left = (r.left + Math.random() * r.width)  + 'px';
+      p.style.top  = (r.top  + Math.random() * r.height) + 'px';
+      p.style.setProperty('--dx', (Math.cos(ang) * dist).toFixed(1) + 'px');
+      p.style.setProperty('--dy', (Math.sin(ang) * dist).toFixed(1) + 'px');
+      p.style.animationDelay = (Math.random() * 0.09).toFixed(2) + 's';
+      layer.appendChild(p);
+    }
+    document.body.appendChild(layer);
+    setTimeout(() => layer.remove(), 900);
+    setTimeout(finalizeClose, 480);
   }
 
   /* ── Eventos ──────────────────────────────────────────────── */
