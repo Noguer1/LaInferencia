@@ -51,7 +51,7 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script> -->
-  <script>(function(){var t=localStorage.getItem('theme');if(t&&t!=='light'){document.documentElement.setAttribute('data-theme',t);if(['dark','naranja','tormenta','cosmos','carmesi'].indexOf(t)>-1)document.documentElement.classList.add('dark-base');}})();</script>
+  <script>(function(){var t=localStorage.getItem('theme')||'dark';if(t!=='light'){document.documentElement.setAttribute('data-theme',t);if(['dark','naranja','tormenta','cosmos','carmesi'].indexOf(t)>-1)document.documentElement.classList.add('dark-base');}})();</script>
   <!-- Datos estructurados para Google (sustituye TU-DOMINIO.com cuando lo tengas) -->
   <script type="application/ld+json">
   {
