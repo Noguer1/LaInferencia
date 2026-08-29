@@ -7468,8 +7468,9 @@ window.LI_CAT_ICONS = {
       if (!noMotion) textEl.classList.add('ob-swap');
     }
 
-    function drawConstellation() {
+    function drawConstellation(newCat) {
       const pts = Array.from(chipsWrap.querySelectorAll('.onboarding-chip.selected')).map(c => ({
+        cat: c.dataset.cat,
         x: c.offsetLeft + c.offsetWidth / 2,
         y: c.offsetTop  + c.offsetHeight / 2
       }));
@@ -7477,14 +7478,29 @@ window.LI_CAT_ICONS = {
       for (let i = 0; i < pts.length; i++)
         for (let j = i + 1; j < pts.length; j++)
           segs.push([pts[i], pts[j]]);
+
       const linesSvg = segs.map(([a, b]) =>
         `<line x1="${a.x.toFixed(1)}" y1="${a.y.toFixed(1)}" x2="${b.x.toFixed(1)}" y2="${b.y.toFixed(1)}"></line>`
       ).join('');
-      const nodesSvg = pts.map(p =>
-        `<circle class="ob-node-halo" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="9"></circle>` +
-        `<circle class="ob-node" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5"></circle>`
-      ).join('');
-      svg.innerHTML = linesSvg + nodesSvg;
+
+      const pulsesSvg = noMotion ? '' : segs.map(([a, b]) => {
+        const begin = (0.65 + Math.random() * 1.4).toFixed(2);
+        return `<circle class="ob-pulse" r="2.4">` +
+          `<animate attributeName="opacity" values="0;1;1;0" dur="1.9s" begin="${begin}s" repeatCount="indefinite"/>` +
+          `<animateMotion dur="1.9s" begin="${begin}s" repeatCount="indefinite" ` +
+          `path="M ${a.x.toFixed(1)} ${a.y.toFixed(1)} L ${b.x.toFixed(1)} ${b.y.toFixed(1)}"/>` +
+          `</circle>`;
+      }).join('');
+
+      const nodesSvg = pts.map(p => {
+        const isNew = !noMotion && p.cat === newCat;
+        return `<circle class="ob-node-halo" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="9"></circle>` +
+          (isNew ? `<circle class="ob-node-land-wave" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4"></circle>` : '') +
+          `<circle class="ob-node${isNew ? ' ob-node--new' : ''}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5"></circle>`;
+      }).join('');
+
+      svg.innerHTML = linesSvg + pulsesSvg + nodesSvg;
+
       if (!noMotion && segs.length) {
         const lns = svg.querySelectorAll('line');
         segs.forEach(([a, b], k) => {
@@ -7494,6 +7510,16 @@ window.LI_CAT_ICONS = {
         });
         void svg.getBoundingClientRect();
         lns.forEach(ln => { ln.style.strokeDashoffset = '0'; });
+      }
+
+      if (!noMotion && pts.length === 3) {
+        svg.classList.remove('ob-complete');
+        void svg.getBoundingClientRect();
+        svg.classList.add('ob-complete');
+        clearTimeout(drawConstellation._t);
+        drawConstellation._t = setTimeout(() => svg.classList.remove('ob-complete'), 900);
+      } else {
+        svg.classList.remove('ob-complete');
       }
     }
 
@@ -7517,7 +7543,7 @@ window.LI_CAT_ICONS = {
         mNext.classList.toggle('ob-ready', full);
         updateCounter();
         updateSubtitle();
-        drawConstellation();
+        drawConstellation(selected.has(cat) ? cat : null);
         if (full) lsSet('li_intereses', JSON.stringify(Array.from(selected)));
       });
     });

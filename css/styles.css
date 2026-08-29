@@ -2357,6 +2357,62 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   70%  { opacity: 0;    transform: scale(1.9); }
   100% { opacity: 0;    transform: scale(1.9); }
 }
+
+/* Impulso que viaja por la línea de un nodo a otro */
+.ob-constellation .ob-pulse {
+  fill: #fff;
+  filter: drop-shadow(0 0 6px var(--blue-accent)) drop-shadow(0 0 10px color-mix(in srgb, var(--blue-accent) 60%, transparent));
+}
+
+/* Nodo recién elegido: rebote de aterrizaje + onda */
+.ob-constellation .ob-node--new {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ob-node-land 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes ob-node-land {
+  0%   { transform: scale(2.6); opacity: 0; }
+  40%  { opacity: 1; }
+  62%  { transform: scale(0.78); }
+  100% { transform: scale(1); }
+}
+
+.ob-constellation .ob-node-land-wave {
+  fill: none;
+  stroke: var(--blue-accent);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ob-node-land-wave 0.55s ease-out forwards;
+}
+
+@keyframes ob-node-land-wave {
+  from { opacity: 0.75; transform: scale(0.4); }
+  to   { opacity: 0;    transform: scale(4.5); }
+}
+
+/* Constelación completa (3 temas): destello del triángulo + nodos que vitorean */
+.ob-constellation.ob-complete line {
+  animation: ob-line-flash 0.8s ease-out;
+}
+
+@keyframes ob-line-flash {
+  0%   { opacity: 1; stroke-width: 2.6; }
+  100% { opacity: 0.5; stroke-width: 1.25; }
+}
+
+.ob-constellation.ob-complete .ob-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ob-node-cheer 0.7s ease-out;
+}
+
+@keyframes ob-node-cheer {
+  0%, 100% { transform: scale(1); }
+  45%      { transform: scale(1.75); }
+}
+
 .onboarding-chips[hidden] { display: none; }
 
 .onboarding-chip {
@@ -2531,6 +2587,11 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   .onboarding-chip.selected svg { animation: none; }
   .ob-constellation line { transition: none; animation: none; }
   .ob-constellation .ob-node-halo { animation: none; opacity: 0; }
+  .ob-constellation .ob-pulse { display: none; }
+  .ob-constellation .ob-node--new,
+  .ob-constellation .ob-node-land-wave,
+  .ob-constellation.ob-complete line,
+  .ob-constellation.ob-complete .ob-node { animation: none; }
   .onboarding-text.ob-swap { animation: none; }
   .onboarding-next.ob-ready { animation: none; }
   .onboarding-next.ob-ready::before { animation: none; }
