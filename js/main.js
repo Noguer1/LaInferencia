@@ -7477,9 +7477,14 @@ window.LI_CAT_ICONS = {
       for (let i = 0; i < pts.length; i++)
         for (let j = i + 1; j < pts.length; j++)
           segs.push([pts[i], pts[j]]);
-      svg.innerHTML = segs.map(([a, b]) =>
+      const linesSvg = segs.map(([a, b]) =>
         `<line x1="${a.x.toFixed(1)}" y1="${a.y.toFixed(1)}" x2="${b.x.toFixed(1)}" y2="${b.y.toFixed(1)}"></line>`
       ).join('');
+      const nodesSvg = pts.map(p =>
+        `<circle class="ob-node-halo" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="9"></circle>` +
+        `<circle class="ob-node" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5"></circle>`
+      ).join('');
+      svg.innerHTML = linesSvg + nodesSvg;
       if (!noMotion && segs.length) {
         const lns = svg.querySelectorAll('line');
         segs.forEach(([a, b], k) => {
@@ -7832,27 +7837,42 @@ window.LI_CAT_ICONS = {
     const card = (modal && !modal.hidden) ? modal.querySelector('.onboarding-card') : null;
     if (!card || noMotion) { finalizeClose(); return; }
 
-    const r = card.getBoundingClientRect();
+    const r  = card.getBoundingClientRect();
+    const cx = r.left + r.width / 2;
+    const cy = r.top  + r.height / 2;
     card.classList.add('ob-dissolve');
     modal.classList.add('ob-closing');
 
     const layer = document.createElement('div');
     layer.className = 'ob-particle-layer';
-    for (let i = 0; i < 16; i++) {
-      const p    = document.createElement('span');
-      const ang  = Math.random() * Math.PI * 2;
-      const dist = 60 + Math.random() * 130;
+
+    const wave = document.createElement('span');
+    wave.className = 'ob-shockwave';
+    wave.style.left   = cx + 'px';
+    wave.style.top    = cy + 'px';
+    wave.style.width  = (r.width  * 0.9) + 'px';
+    wave.style.height = (r.height * 0.9) + 'px';
+    layer.appendChild(wave);
+
+    for (let i = 0; i < 36; i++) {
+      const p     = document.createElement('span');
+      const ang   = Math.random() * Math.PI * 2;
+      const dist  = 90 + Math.random() * 240;
+      const scale = (0.7 + Math.random() * 1.6).toFixed(2);
+      const rot   = ((Math.random() - 0.5) * 320).toFixed(0);
       p.className = 'ob-particle';
       p.style.left = (r.left + Math.random() * r.width)  + 'px';
       p.style.top  = (r.top  + Math.random() * r.height) + 'px';
-      p.style.setProperty('--dx', (Math.cos(ang) * dist).toFixed(1) + 'px');
-      p.style.setProperty('--dy', (Math.sin(ang) * dist).toFixed(1) + 'px');
-      p.style.animationDelay = (Math.random() * 0.09).toFixed(2) + 's';
+      p.style.setProperty('--dx',  (Math.cos(ang) * dist).toFixed(1) + 'px');
+      p.style.setProperty('--dy',  (Math.sin(ang) * dist).toFixed(1) + 'px');
+      p.style.setProperty('--s',   scale);
+      p.style.setProperty('--rot', rot + 'deg');
+      p.style.animationDelay = (Math.random() * 0.14).toFixed(2) + 's';
       layer.appendChild(p);
     }
     document.body.appendChild(layer);
-    setTimeout(() => layer.remove(), 900);
-    setTimeout(finalizeClose, 480);
+    setTimeout(() => layer.remove(), 1200);
+    setTimeout(finalizeClose, 620);
   }
 
   /* ── Eventos ──────────────────────────────────────────────── */

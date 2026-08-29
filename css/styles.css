@@ -2329,9 +2329,33 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   stroke: var(--blue-accent);
   stroke-width: 1.25;
   stroke-linecap: round;
-  opacity: 0.45;
+  opacity: 0.5;
   filter: drop-shadow(0 0 3px color-mix(in srgb, var(--blue-accent) 55%, transparent));
   transition: stroke-dashoffset 0.55s ease;
+  animation: ob-line-breathe 3.2s ease-in-out infinite;
+}
+
+@keyframes ob-line-breathe {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 0.62; }
+}
+
+.ob-constellation .ob-node {
+  fill: var(--blue-accent);
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--blue-accent) 85%, transparent));
+}
+
+.ob-constellation .ob-node-halo {
+  fill: color-mix(in srgb, var(--blue-accent) 30%, transparent);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ob-node-pulse 2s ease-out infinite;
+}
+
+@keyframes ob-node-pulse {
+  0%   { opacity: 0.55; transform: scale(0.55); }
+  70%  { opacity: 0;    transform: scale(1.9); }
+  100% { opacity: 0;    transform: scale(1.9); }
 }
 .onboarding-chips[hidden] { display: none; }
 
@@ -2442,16 +2466,17 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
 
 /* Cierre: la tarjeta se deshace en nodos */
 .onboarding-card.ob-dissolve {
-  animation: ob-card-dissolve 0.5s ease forwards;
+  animation: ob-card-dissolve 0.62s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .tour-modal-backdrop.ob-closing {
-  animation: ob-backdrop-out 0.5s ease forwards;
+  animation: ob-backdrop-out 0.66s ease forwards;
 }
 
 @keyframes ob-card-dissolve {
-  from { opacity: 1; transform: scale(1);    filter: blur(0); }
-  to   { opacity: 0; transform: scale(1.05); filter: blur(6px); }
+  from { opacity: 1; transform: scale(1)     rotate(0deg);    filter: blur(0); }
+  35%  { opacity: 1; transform: scale(1.03)  rotate(-0.6deg); filter: blur(1px); }
+  to   { opacity: 0; transform: scale(1.16)  rotate(1.2deg);  filter: blur(14px); }
 }
 
 @keyframes ob-backdrop-out {
@@ -2465,32 +2490,54 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   z-index: 1003;
 }
 
+/* Onda expansiva al romperse */
+.ob-shockwave {
+  position: fixed;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--blue-accent) 60%, transparent);
+  box-shadow:
+    0 0 30px color-mix(in srgb, var(--blue-accent) 45%, transparent),
+    inset 0 0 24px color-mix(in srgb, var(--blue-accent) 25%, transparent);
+  transform: translate(-50%, -50%) scale(0.2);
+  pointer-events: none;
+  z-index: 1003;
+  animation: ob-shockwave-out 0.6s ease-out forwards;
+}
+
+@keyframes ob-shockwave-out {
+  from { opacity: 0.85; transform: translate(-50%, -50%) scale(0.2); }
+  to   { opacity: 0;    transform: translate(-50%, -50%) scale(1.35); }
+}
+
 .ob-particle {
   position: fixed;
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--blue-accent);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--blue-accent) 70%, transparent);
-  animation: ob-particle-fly 0.6s ease-out forwards;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--blue-accent) 75%, transparent);
+  animation: ob-particle-fly 0.78s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
 }
 
 @keyframes ob-particle-fly {
-  from { opacity: 1; transform: translate(0, 0) scale(1); }
-  to   { opacity: 0; transform: translate(var(--dx, 0), var(--dy, 0)) scale(0.3); }
+  from { opacity: 1; transform: translate(0, 0) scale(var(--s, 1)) rotate(0deg); }
+  15%  { opacity: 1; }
+  to   { opacity: 0; transform: translate(var(--dx, 0), var(--dy, 0)) scale(0.2) rotate(var(--rot, 90deg)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .onboarding-card::after { animation: none; opacity: 0; }
   .onboarding-chip { animation-delay: 0s; animation-duration: 0.01s; }
   .onboarding-chip.selected svg { animation: none; }
-  .ob-constellation line { transition: none; }
+  .ob-constellation line { transition: none; animation: none; }
+  .ob-constellation .ob-node-halo { animation: none; opacity: 0; }
   .onboarding-text.ob-swap { animation: none; }
   .onboarding-next.ob-ready { animation: none; }
   .onboarding-next.ob-ready::before { animation: none; }
   .onboarding-card.ob-dissolve { animation: none; opacity: 0; }
   .tour-modal-backdrop.ob-closing { animation: none; opacity: 0; }
   .ob-particle { display: none; }
+  .ob-shockwave { display: none; }
   .onboarding-reward::before { animation: none; }
   .onboarding-reward-badge::after { animation: none; opacity: 0; }
 }
