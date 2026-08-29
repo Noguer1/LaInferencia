@@ -2434,6 +2434,11 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   filter: drop-shadow(0 0 14px color-mix(in srgb, var(--blue) 28%, transparent)) drop-shadow(0 0 30px color-mix(in srgb, var(--blue-accent) 20%, transparent));
 }
 
+.dark-base .onboarding-icon img,
+:is([data-theme="naranja"], [data-theme="tormenta"], [data-theme="cosmos"], [data-theme="carmesi"], [data-theme="obsidiana"]) .onboarding-icon img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 14px color-mix(in srgb, var(--blue) 28%, transparent)) drop-shadow(0 0 30px color-mix(in srgb, var(--blue-accent) 20%, transparent));
+}
+
 .dark-base .onboarding-dot.active {
   box-shadow: 0 0 12px color-mix(in srgb, var(--blue-hover) 45%, transparent);
 }
@@ -7467,6 +7472,26 @@ button.fav-item-cta:hover {
 .propuestas-feed::-webkit-scrollbar-thumb:hover,
 .progress-tracker::-webkit-scrollbar-thumb:hover {
   background: color-mix(in srgb, var(--blue) 40%, transparent);
+}
+
+.onboarding-card {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--blue) 25%, transparent) transparent;
+}
+.onboarding-card::-webkit-scrollbar { width: 6px; }
+.onboarding-card::-webkit-scrollbar-track { background: transparent; }
+.onboarding-card::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--blue) 25%, transparent);
+  border-radius: 999px;
+}
+.onboarding-card::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--blue) 40%, transparent);
+}
+.dark-base .onboarding-card {
+  scrollbar-color: color-mix(in srgb, var(--blue-accent) 30%, transparent) transparent;
+}
+.dark-base .onboarding-card::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--blue-accent) 30%, transparent);
 }
 
 /* Cada ítem genera su propio segmento de línea → línea continua que scrollea */
