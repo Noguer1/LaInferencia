@@ -305,7 +305,7 @@ function staticHero(opts = {}) {
         <span>La Inferencia</span>
       </a>
       <div class="static-navbar-links">
-        <a href="/" class="static-navbar-cta">Ir a La Inferencia →</a>
+        <a href="/" class="static-navbar-cta">Ir a La Inferencia <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
       </div>
     </div>
   </header>`;

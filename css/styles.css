@@ -10532,11 +10532,13 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  height: 56px;
-  display: flex;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
 }
+.static-navbar-brand { justify-self: start; }
+.static-navbar-links { justify-self: center; }
 .static-navbar-brand {
   display: flex;
   align-items: center;
@@ -10551,17 +10553,25 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 .static-navbar-cta {
   display: inline-flex;
   align-items: center;
-  background: var(--blue);
+  gap: 0.45rem;
+  background: linear-gradient(135deg, var(--blue), var(--blue-hover));
   color: #fff;
   font-weight: 700;
-  font-size: 0.82rem;
-  padding: 0.5rem 1.1rem;
+  font-size: 0.86rem;
+  letter-spacing: 0.01em;
+  padding: 0.62rem 1.5rem;
   border-radius: 999px;
   text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 4px 14px rgba(37,99,235,0.32), inset 0 1px 0 rgba(255,255,255,0.18);
+  transition: box-shadow 0.2s, transform 0.15s;
   white-space: nowrap;
 }
-.static-navbar-cta:hover { background: var(--blue-hover); transform: translateY(-1px); }
+.static-navbar-cta svg { transition: transform 0.2s; }
+.static-navbar-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(37,99,235,0.45), inset 0 1px 0 rgba(255,255,255,0.24);
+}
+.static-navbar-cta:hover svg { transform: translateX(3px); }
 
 .static-navbar-links { display: flex; align-items: center; gap: 1.1rem; }
 .static-navbar-link { font-size: 0.82rem; font-weight: 600; color: var(--text-body); text-decoration: none; white-space: nowrap; }
