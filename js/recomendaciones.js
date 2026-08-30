@@ -226,7 +226,7 @@ const RECOMENDACIONES = {
   'rel-02': {
     libro: {
       titulo: 'Por qué amamos', autor: 'Helen Fisher',
-      sinopsis: 'Fisher explica la base biológica de la atracción y por qué el cuerpo puede confundir dos activaciones fisiológicas parecidas —el miedo y el deseo— exactamente como ocurre en el puente colgante.',
+      sinopsis: 'Fisher explica la base biológica de la atracción y por qué el cuerpo puede confundir dos activaciones fisiológicas parecidas, el miedo y el deseo, exactamente como ocurre en el puente colgante.',
       amazon: AUDIBLE_LINK,
     }
   },

@@ -305,13 +305,7 @@ function staticHero(opts = {}) {
         <span>La Inferencia</span>
       </a>
       <div class="static-navbar-links">
-        <button type="button" class="static-navbar-search-btn" data-buscador-trigger aria-label="Buscar">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </button>
-        <a href="/rutas/" class="static-navbar-link">Rutas</a>
-        <a href="/guias/" class="static-navbar-link">Guías de compra</a>
-        <a href="/biblioteca/" class="static-navbar-link">Biblioteca</a>
-        <a href="/" class="static-navbar-cta">Explorar los ${TOTAL_ARTS} artículos →</a>
+        <a href="/" class="static-navbar-cta">Ir a La Inferencia →</a>
       </div>
     </div>
   </header>`;
@@ -1024,7 +1018,7 @@ ${worksHTML}
 
 ${faqHTML}
 
-      <p class="author-ficha-explore"><a href="/">Explorar los ${totalArts} artículos de La Inferencia →</a></p>
+      <p class="author-ficha-explore"><a href="/">Explorar los artículos de La Inferencia →</a></p>
 
     </div>
   </main>

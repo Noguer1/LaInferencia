@@ -213,6 +213,24 @@ Personalizado según perfil. Estructura base:
 
 ---
 
+## Lucía Juárez
+
+**Estado:** En conversación — captación directa
+
+**Perfil:**
+- Psicóloga forense: evaluaciones periciales e informes periciales
+- Mediación civil, mercantil y familiar
+- Formación/conferencias en empresas: gestión de conflictos, comunicación efectiva, violencia de género, ventas desde perspectiva psicológica
+- Consulta en Madrid y online, adultos y menores
+
+**Por qué nos interesa:** Psicología forense y jurídica tiene gancho muy fuerte para público general (curiosidad tipo true crime, pero con rigor real) y hoy no hay ningún tema de este ángulo en la sección. Mediación y violencia de género también son temas con demanda.
+
+**Enfoque:** Captación directa, mensaje de networking suyo sin pedir nada concreto. Proponerle escribir sobre su especialidad, dándole ganchos concretos (qué hace de verdad un perito psicológico vs lo que se cree por ficción, cómo se evalúa la credibilidad de un testimonio, mediación como alternativa al juicio).
+
+**Conversación:** Contactó tras conectar en LinkedIn, mensaje genérico mencionando interés en colaborar. Pendiente de enviar propuesta para Fuera de Bata.
+
+---
+
 ## Teresa González González
 
 **Estado:** En conversación — perfil muy interesante
@@ -230,3 +248,13 @@ Personalizado según perfil. Estructura base:
 **Enfoque:** Confirmar que colaboración puntual es perfecta. Dejarle elegir por cuál tema empieza.
 
 **Conversación:** Le mandamos acceso anticipado (lainferencia.com?n=Teresa, BATA27). Respondió con entusiasmo y dos temas claros.
+
+**Propuesta concreta (recibida):** No publicar el TFM completo, sino un artículo divulgativo basado en él, adaptado al estilo de la sección, para psicólogos, profesionales del deporte, estudiantes y público interesado en protección infantil en el deporte. Estructura que propone: entornos deportivos seguros, qué es la salvaguarda más allá de la prevención de abusos, por qué hacen falta herramientas de evaluación en clubes, cómo nació CHASSE. Al final, referencia y enlace al TFM completo para quien quiera profundizar. Nos subió el TFM (`TFMTERESA.pdf`).
+
+**TFM:** "Diseño de un sistema de autoevaluación para clubes deportivos sobre factores de riesgo que atentan contra la salvaguarda de la infancia y adolescencia. Estudio piloto." UAM, Máster en Psicología de la Actividad Física y del Deporte, curso 2023-24. Tutor: Víctor J. Rubio Franco.
+- CHASSE (Children and Adolescents Safeguarding risks Self-assessment in sport organizations), instrumento del grupo de investigación PSIDEP UAM.
+- Evalúa 6 condiciones de riesgo: lesiones, TCA, burnout, dopaje, agresividad/violencia, salvaguarda. Dos niveles: organizacional y equipo.
+- Estudio piloto en 3 clubes deportivos de Madrid (400, 200 y 850 menores). Resultado con semáforo: Club 1 riesgo bajo (85,6% real), Club 2 riesgo alto (32% real pese a que la directiva estimaba 60%), Club 3 (el más grande, 850 menores) riesgo moderado-alto (57,4% real frente a 83% estimado). Fiabilidad interjueces significativa (p < 0.05) en los tres.
+- Gancho divulgativo fuerte: la brecha entre lo que las directivas de los clubes creen que cumplen y lo que realmente cumplen.
+
+**Siguiente paso:** Confirmarle que el enfoque le encaja perfecto a la sección, que tiene total libertad de estilo y que puede meter el enlace de afiliado de Audible si quiere. Preguntar si prefiere que le demos una primera vuelta de estructura o si escribe ella el primer borrador.

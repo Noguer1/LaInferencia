@@ -43,11 +43,26 @@ Una sola frase. Contundente, contraintuitiva, específica. No empieces describie
 
 ---
 
-### 4. REFLEXIÓN FINAL
+### 4. REFLEXIÓN FINAL (revisado agosto 2026, ver diagnóstico abajo)
 
-- Una frase o pregunta que conecta el estudio con la vida del lector
-- Que haga pensar, no que aleccione
-- No usar "esto nos enseña que" ni "así que ya sabes"
+Antes esto era una frase que invitaba a pensar en silencio. Se cambia porque 90 días de
+página, 7.322 impresiones, 0 comentarios: nadie tenía ningún motivo real para escribir algo.
+
+Ahora la reflexión final tiene que convertirse, casi siempre, en una **pregunta con postura**,
+no una pregunta retórica cerrada. La diferencia:
+
+- Cerrada (evitar): "¿No te hace pensar en cómo decides tú?"
+- Con postura (usar): pregunta que exige tomar partido, contar una experiencia propia, o
+  discrepar. "¿Tú a qué le echarías la culpa?", "¿Te ha pasado y no lo habías conectado con
+  esto?", una afirmación discutible seguida de "¿de acuerdo o no?"
+
+No aleccionar. No usar "esto nos enseña que" ni "así que ya sabes". La pregunta gana si
+alguien pudiera responder en un comentario de una frase sin pensarlo mucho.
+
+**Que no sea trivia de recuerdo** ("¿te ha pasado alguna vez...?"): eso se contesta con un
+sí/no reflejo y no genera debate. Tiene que tener dos lados defendibles y algo real en juego
+(ética, política, una implicación práctica), no solo curiosidad. Si la respuesta obvia es "sí,
+claro" para todo el mundo, no vale, ver `guia-posts-personal.md` para ejemplos.
 
 ---
 
@@ -60,6 +75,9 @@ Una sola frase. Contundente, contraintuitiva, específica. No empieces describie
 [Frase que invite] → https://lainferencia.com
 ```
 
+La pregunta con postura (punto 4) va ANTES del CTA, como párrafo propio. El CTA no sustituye
+a la pregunta, son dos cosas distintas: una pide comentario, la otra pide clic.
+
 ---
 
 ## Tono y estilo
@@ -67,9 +85,11 @@ Una sola frase. Contundente, contraintuitiva, específica. No empieces describie
 - **Preciso:** siempre datos concretos. Si el estudio dice 65%, pon 65%, no "la mayoría".
 - **Directo:** sin relleno. Cada frase debe ganar su sitio.
 - **Riguroso pero ligero:** el lector es curioso, no académico. Nada de abstracciones sin anclar en el experimento.
-- **Sin moralizar:** no decirle al lector qué debe pensar ni cómo cambiar su vida. La reflexión final insinúa, no impone.
+- **Sin moralizar en el cuerpo:** no decirle al lector qué debe pensar. La postura llega en la pregunta final (punto 4), no antes.
 - **Sin hashtags** por defecto (salvo que se pidan explícitamente).
 - **Longitud:** entre 200 y 320 palabras. Ni más corto (queda superficial), ni más largo (se abandona).
+- **Ritmo irregular a propósito:** frases de una línea intercaladas entre párrafos más largos, nunca todo del mismo tamaño. Ver skill `anti-ia` (aplicar siempre antes de publicar, checklist completo).
+- Reglas anti-IA completas y ejemplos de los dos corpus de referencia de Miguel (ensayo de opinión + newsletter): ver memoria `feedback-estilo-redaccion-anti-ia`.
 
 ---
 
@@ -148,7 +168,7 @@ Un segundo tipo de post, pensado para intercalarse con los posts de estudios y n
 - **Mismo rigor factual que un post de estudio.** Si se menciona un dato del proyecto (número de sesgos catalogados, cómo funciona una sección), tiene que ser exacto, comprobado contra el estado real de la web, nunca aproximado para que suene mejor.
 - **Gancho igual de directo**, pero anclado en el proyecto en vez de en un investigador.
 - **Sin la estructura experimento/mecanismo** de los posts de estudio: en su lugar, un hecho o regla del proyecto, el porqué o el coste que implica, y una reflexión final.
-- **Mismas prohibiciones de estilo:** sin guion largo, sin la fórmula "No era X. Era Y", sin moralizar, 200-320 palabras, CTA a la home.
+- **Mismas prohibiciones de estilo:** sin guion largo, sin la fórmula "No era X. Era Y", sin moralizar, 200-320 palabras, CTA a la home, cierre con pregunta con postura (punto 4 arriba).
 - El CTA varía según el tema del post (invita a probar el test, a ver el Radar de Mitos, a leer los artículos) pero siempre enlaza a `https://lainferencia.com`.
 
 Ver posts 39-48 en `posts-pendientes.md` como referencia de tono y estructura.
@@ -169,10 +189,13 @@ volvía al 65%.
 
 El mecanismo tiene nombre: agotamiento del ego. La capacidad de
 deliberar es un recurso finito que se consume con cada decisión. Lo
-que queda cuando se agota no es neutralidad — es inercia. Y la opción
+que queda cuando se agota no es neutralidad, es inercia. Y la opción
 por defecto en el sistema judicial era denegar.
 
-Libertad o prisión. Glucosa mediante.
+Libertad o prisión, glucosa mediante.
+
+¿A ti qué decisión te sale peor cuando llevas horas sin parar, la que
+tomas con el estómago vacío o la que tomas ya reventado al final del día?
 
 Descubre más estudios como este en La Inferencia → https://lainferencia.com
 ```
@@ -186,5 +209,7 @@ Descubre más estudios como este en La Inferencia → https://lainferencia.com
 - [ ] Hay al menos un dato numérico concreto
 - [ ] El mecanismo psicológico está nombrado
 - [ ] No hay moralización ni consejo no pedido
+- [ ] La reflexión final es una pregunta con postura, contestable en un comentario corto (no retórica cerrada)
 - [ ] El CTA apunta a la home (https://lainferencia.com), no al artículo específico
 - [ ] Entre 200 y 320 palabras
+- [ ] Pasado el checklist de la skill `anti-ia` (guion largo, conectores, atenuadores, "No es X, es Y"...)

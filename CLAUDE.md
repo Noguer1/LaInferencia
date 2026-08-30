@@ -74,19 +74,35 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.com
 ## Estructura de carpetas
 
 ```
-CarpetaClaude/
+LaInferencia/
 ├── index.html              # Página única (SPA sin router)
+├── generate-pages.js       # Genera artículos, rutas, guías y sitemaps a partir de datos curados
 ├── css/
 │   └── styles.css          # Todo el CSS — variables, componentes, temas, responsive
 ├── js/
-│   └── main.js             # Lógica principal: tabs, acordeones, progress tracker, temas
+│   ├── main.js             # Lógica principal: tabs, acordeones, progress tracker, temas
+│   ├── buscador.js         # Buscador de contenido
+│   ├── search-index.js     # Índice de búsqueda generado
+│   ├── recomendaciones.js  # Motor de recomendaciones de artículos
+│   ├── rutas.js            # Tracking de progreso en Rutas de Aprendizaje
+│   ├── save-button.js      # Botón de guardar/favoritos por artículo
+│   ├── simulador.js        # Lógica del Simulador de Sesgos
+│   └── seo-overrides.js    # Metadata SEO por artículo, consumido por generate-pages.js (no se sirve al navegador)
+├── articulos/              # Artículos generados, organizados por categoría (alimentacion, economia, salud-mental, ...)
+├── autores/                # Páginas de autor (miguel-noguer)
+├── biblioteca/             # Índice de biblioteca de contenido
+├── guias/                  # Guías temáticas (mejores libros de ...)
+├── rutas/                  # Rutas de Aprendizaje curadas a mano
+├── simulador-de-sesgos/    # Simulador interactivo de sesgos cognitivos
+├── socios/                 # Datos de socios/colaboradores
+├── linkedin/               # Scripts de automatización de LinkedIn (publicar.js, oauth.js, config.js)
 ├── img/                    # Logos, avatares de autores (cara*.png), iconos, favicons
 ├── pdfs/                   # Documentos de referencia (3 PDFs)
 ├── docs/
 │   └── proyecto.md         # Documentación técnica completa
-├── archive/                # Archivos no activos — main.js.bak, contenido_nuevo.js,
+├── archive/                # Archivos no activos, ignorado por git — main.js.bak, contenido_nuevo.js,
 │                           # og-image-generator.html, og-image.svg, install.ps1, skills-lock.json
-└── robots.txt / sitemap.xml
+└── robots.txt / sitemap.xml / sitemap-images.xml
 ```
 
 ---
