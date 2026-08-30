@@ -11166,8 +11166,26 @@ body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340
   .author-ficha-ctas { justify-content: center; }
 }
 @media (max-width: 680px) {
-  .author-stats-bar { flex-direction: column; }
-  .author-stat { border-left: none; border-top: 1px solid var(--card-border); }
+  .author-ficha {
+    grid-template-columns: 58px 1fr;
+    align-items: center;
+    text-align: left;
+    gap: 0.9rem;
+    margin: 0.5rem 0 1.6rem;
+    padding: 1.1rem 1.2rem;
+    border-radius: 16px;
+  }
+  .author-ficha-photo { width: 58px; height: 58px; margin: 0; }
+  .author-ficha-body { text-align: left; }
+  .author-ficha h1 { font-size: 1.2rem; margin-bottom: 0.15rem; }
+  .author-ficha-role { font-size: 0.82rem; margin-bottom: 0.15rem; }
+  .author-ficha-location { font-size: 0.72rem; margin-bottom: 0.75rem; }
+  .author-ficha-ctas { justify-content: flex-start; gap: 0.5rem; }
+  .author-ficha-cta-primary,
+  .author-ficha-cta-secondary { font-size: 0.8rem; padding: 0.48rem 1rem; }
+
+  .author-stats-bar { flex-direction: column; margin-bottom: 2rem; }
+  .author-stat { border-left: none; border-top: 1px solid var(--card-border); padding: 1rem 0; min-width: 0; }
   .author-stat:first-child { border-top: none; }
 }
 .author-ficha-cta-primary {
@@ -11256,7 +11274,6 @@ body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340
   .static-related   { padding: 1.1rem 1.1rem; }
   .cat-article-item a { padding: 0.9rem 1.1rem; }
   .cat-article-item a.cat-article-cta { margin-left: 1.1rem; padding: 0 0 0.9rem; }
-  .author-ficha { padding: 2.2rem 1.3rem 2rem; }
 }
 
 /* ── Buscador ───────────────────────────────────────────────── */
