@@ -5736,7 +5736,7 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
     fullWrap.setAttribute('hidden', '');
     teaserWrap.removeAttribute('hidden');
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    const _homeDesc = 'Psicología basada en evidencia: 47 artículos, 20 mitos científicos y 18 sesgos cognitivos explicados sin jerga. Para curioso, no para psicólogo.';
+    const _homeDesc = 'Divulgación de psicología explicada de forma clara y sencilla, a partir de estudios científicos reales.';
     document.title = 'La Inferencia, Divulgación de Psicología';
     document.querySelector('meta[name="description"]')?.setAttribute('content', _homeDesc);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'La Inferencia, Divulgación de Psicología');
@@ -9987,7 +9987,7 @@ const GLOSARIO = [
     currentCat = cat;
     setModalTitle(cat);
     document.title = 'La Inferencia, Divulgación de Psicología';
-    const _homeDesc = 'Psicología basada en evidencia: 47 artículos, 20 mitos científicos y 18 sesgos cognitivos explicados sin jerga. Para curioso, no para psicólogo.';
+    const _homeDesc = 'Divulgación de psicología explicada de forma clara y sencilla, a partir de estudios científicos reales.';
     document.querySelectorAll('script[data-ld="article"]').forEach(s => s.remove());
     document.querySelector('meta[name="description"]')?.setAttribute('content', _homeDesc);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'La Inferencia, Divulgación de Psicología');
