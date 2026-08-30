@@ -419,212 +419,270 @@ const LIBRARY_ARTICLES = {
     {
       id: 'mod-01',
       title: 'La ropa que llevas decide cómo piensas: el efecto de la cognición investida',
-      summary: 'Ponerse una bata de médico o un traje formal no cambia solo cómo te ven los demás: cambia mediblemente cómo rinde tu cerebro.',
+      summary: 'La misma bata blanca mejora tu atención si te dicen que es de médico y no hace nada si te dicen que es de pintor. Ese es el hallazgo. La parte que casi nadie cuenta es cómo le fue en las réplicas.',
       sourceUrl: 'https://doi.org/10.1016/j.jesp.2012.01.001',
       sourceLabel: 'Adam & Galinsky (2012), Journal of Experimental Social Psychology',
       badge: 'Cognición vestida',
-      author: { name: 'Hajo Adam', university: 'Northwestern University', specialty: 'Psicología Social y Comportamiento Organizacional' },
-      readingTime: '3 min',
+      author: { name: 'Hajo Adam', university: 'Northwestern University', specialty: 'Psicología social y comportamiento organizacional' },
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: 'En 2012, Hajo Adam y Adam Galinsky demostraron en una serie de experimentos controlados que ponerse una bata blanca de laboratorio (idéntica en todos los casos) mejoraba el rendimiento en tareas de atención sostenida únicamente cuando se le decía al participante que era una "bata de médico". Cuando se describía como "bata de pintor", el efecto desaparecía.',
+      intro: 'Te ponen una bata blanca de laboratorio y te sientan delante de una tarea de atención. Si al dártela te han dicho que es la bata de un médico, cometes menos errores. Si te han dicho que es la de un pintor, la misma prenda no cambia nada. Y si la bata está ahí colgada pero no te la pones, tampoco. Ese es el experimento con el que Hajo Adam y Adam Galinsky bautizaron en 2012 la «cognición investida».',
       sections: [
         {
-          subtitle: 'El experimento de Adam y Galinsky',
+          subtitle: 'La bata que solo funciona si es de médico',
           paragraphs: [
-            'El diseño fue quirúrgico. Adam dividió a los participantes en tres condiciones: el primer grupo llevaba una bata blanca que se describía como "bata de médico"; el segundo llevaba la misma bata descrita como "bata de pintor"; el tercero simplemente veía la bata sobre una mesa sin ponérsela. Los tres grupos realizaron el mismo test de atención sostenida, la tarea de Stroop, que mide la capacidad de ignorar información irrelevante.',
-            'Resultado: solo el grupo que vestía la bata de médico mostró una mejora significativa en precisión y menor número de errores. El grupo de la bata de pintor rindió igual que el grupo sin bata. La prenda era idéntica; el significado simbólico asignado era lo que cambiaba el cerebro. Ver la bata sin ponérsela tampoco producía ningún efecto.'
+            'Adam y Galinsky, entonces en la Kellogg School of Management de Northwestern, publicaron tres experimentos en el Journal of Experimental Social Psychology. Primero comprobaron con un grupo aparte que la gente asocia la bata blanca de laboratorio con la atención y el cuidado, no con la creatividad ni con el desorden. Esa asociación era la materia prima del efecto.',
+            'En el experimento clave repartieron a los participantes en tres grupos. Uno se ponía una bata blanca presentada como bata de médico. Otro se ponía exactamente la misma bata, presentada como bata de pintor. El tercero tenía la bata de médico delante, sobre la mesa, y escribía un texto sobre ella sin llegar a vestirla. Después, los tres hacían una tarea de atención sostenida: encontrar las diferencias entre dos imágenes casi idénticas que se mostraban una al lado de la otra.',
+            'Solo el grupo que llevaba puesta la bata de médico mejoró. Detectaron más diferencias que los otros dos, que quedaron igualados entre sí. La prenda era físicamente la misma en las tres condiciones. Lo que cambiaba era la etiqueta y si el cuerpo estaba dentro de ella. Las muestras eran pequeñas, del orden de veinticinco personas por grupo, un detalle que luego pesaría.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'Hace falta llevarla puesta y creer en lo que significa',
           paragraphs: [
-            'Adam acuñó el término enclothed cognition para describir la influencia que la ropa ejerce sobre los procesos psicológicos del que la lleva. El mecanismo requiere dos condiciones simultáneas: el contacto físico con la prenda y la activación del significado simbólico que el sujeto asocia a ella. Ninguna de las dos sola es suficiente.',
-            'Cuando te pones ropa asociada a un rol (la bata del médico, el traje del negociador, el uniforme del deportista) activas en memoria las representaciones cognitivas de ese rol: sus atributos, sus valores, su nivel de alerta. Esas representaciones influyen en cómo procesas la información y cómo tomas decisiones. No es autosugestión vaga: es activación de esquemas cognitivos medible con herramientas de neuroimagen. La ropa es, en términos técnicos, un prime contextual de enorme potencia.'
+            'Adam y Galinsky llamaron enclothed cognition a la influencia sistemática que la ropa ejerce sobre los procesos mentales de quien la lleva, y sostuvieron que necesita dos ingredientes a la vez. Uno es el contacto físico con la prenda. El otro es el significado simbólico que esa prenda tiene para ti. Ninguno solo basta: por eso ver la bata sin ponérsela no hacía nada, y por eso ponerse la «de pintor» tampoco.',
+            'La explicación que ofrecieron encaja con lo que ya se sabía sobre priming. Vestir una prenda ligada a un rol activa en la memoria el paquete de rasgos asociados a ese rol. La bata de médico arrastra ideas de rigor, foco, revisar dos veces. Esas ideas, una vez activas, tiñen la manera de abordar la tarea siguiente. Es el mismo tipo de contagio que hace que la gente ande más despacio después de leer palabras relacionadas con la vejez, solo que aquí el disparador lo llevas puesto toda la mañana en lugar de leerlo una vez.'
+          ]
+        },
+        {
+          subtitle: 'Lo que no aguantó la réplica',
+          paragraphs: [
+            'En 2019, un equipo dirigido por Michael Burns repitió el diseño de la bata con una muestra mucho mayor y diez veces más ensayos por persona, y con el plan de análisis registrado de antemano. No encontró diferencias de errores ni de velocidad entre llevar bata y no llevarla. Las pruebas de equivalencia indicaban que, si había algún efecto, era más pequeño que el que el estudio original podía haber detectado con sus veinticinco personas por grupo.',
+            'La historia no termina en el fracaso. En 2023, Blaine Horton junto con los propios Adam y Galinsky revisó ciento cinco resultados de cuarenta estudios sobre cognición investida, casi cuatro mil participantes en total, con técnicas que estiman si detrás de una literatura hay señal real o solo ruido publicado. Su conclusión fue partida. Los trabajos anteriores a 2015, los de la primera oleada, tienen poco valor probatorio. Los posteriores, hechos ya con muestras más grandes y métodos más estrictos, sí sostienen la idea básica de que la ropa influye en cómo pensamos y actuamos.',
+            'Queda entonces un efecto plausible pero mucho más modesto que el del titular de 2012. La bata de médico no es un potenciador cognitivo. Como mucho, la ropa que asocias a un modo de funcionar te empuja un poco hacia ese modo, y ese empujón se mide con dificultad.'
           ]
         }
       ],
-      blockquote: { text: '«La ropa no solo comunica quiénes somos a los demás. Le dice a nuestro cerebro quiénes debemos ser.»', attribution: 'Hajo Adam' },
-      aplicacion: 'Antes de una tarea que requiera concentración o autoridad, vístete de forma acorde al rol que necesitas desempeñar, aunque estés en casa. No es vanidad: es activar las representaciones mentales asociadas a ese contexto.'
+      blockquote: { text: '«Introducimos el término cognición investida para describir la influencia sistemática que la ropa tiene sobre los procesos psicológicos de quien la lleva.»', attribution: 'Adam & Galinsky (2012)' },
+      aplicacion: 'Si vestirte para el papel que toca (la camisa buena para la reunión difícil, la ropa de correr para salir a correr) te ayuda a entrar en materia, úsalo. Es gratis y el coste de equivocarse es cero. Lo que no conviene es esperar un salto de rendimiento: la evidencia sólida apunta a un empujoncito, no a una palanca.'
     },
     {
       id: 'mod-02',
       title: 'Por qué el lujo visible hace que te fíen menos',
-      summary: 'Mostrar marcas de lujo en contextos competitivos activa en los observadores señales de alerta sobre fiabilidad e integridad.',
-      sourceUrl: 'https://doi.org/10.1016/j.evolhumbehav.2011.03.001',
-      sourceLabel: 'Nelissen & Meijers (2011), Evolution and Human Behavior',
+      summary: 'El mismo hombre con la misma camiseta parece de más estatus si lleva el logo de Gucci. Y, a la vez, parece menos cálido y menos de fiar. El logo cobra un peaje.',
+      sourceUrl: 'https://doi.org/10.1177/0146167218796790',
+      sourceLabel: 'Cannon & Rucker (2019), Personality and Social Psychology Bulletin',
       badge: 'Señalización social',
-      author: { name: 'Rob Nelissen', university: 'Universidad de Tilburg', specialty: 'Psicología Social y Evolución del Comportamiento' },
-      readingTime: '3 min',
+      author: { name: 'Derek D. Rucker', university: 'Northwestern University', specialty: 'Psicología del consumo, poder y persuasión' },
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'Las marcas de lujo visibles (logos grandes, accesorios reconocibles) generan en los observadores inferencias automáticas sobre estatus y recursos. Sin embargo, en contextos donde la confianza importa más que la dominancia, esas mismas señales disparan deducciones negativas sobre la calidez y la fiabilidad de quien las lleva.',
+      intro: 'Coge a una persona, déjala con la misma ropa y el mismo gesto, y añádele un logo grande de marca cara. En una sala de contratación, ese logo juega a favor. Si esa misma persona te para por la calle para pedirte algo que dependa de fiarte de ella, el logo juega en contra, y ninguno de los dos lo dice en voz alta.',
       sections: [
         {
-          subtitle: 'El experimento de Nelissen y Meijers',
+          subtitle: 'El estudio del que sale la idea',
           paragraphs: [
-            'En la Universidad de Tilburg, Rob Nelissen fotografió a actores con dos versiones de la misma vestimenta: una con logos visibles de marcas de lujo reconocidas (Lacoste, Tommy Hilfiger) y otra sin marca o con marcas desconocidas. Los observadores evaluaban a los sujetos en distintos contextos, entrevista de trabajo, recaudador de fondos para ONG, consulta médica.',
-            'En la entrevista de trabajo, el candidato con marcas de lujo era contratado con mayor frecuencia y se le asignaban salarios un 9% más altos. Pero cuando el mismo actor aparecía como recaudador de fondos, los observadores confiaban menos en él, donaban cantidades menores y lo calificaban significativamente por debajo en calidez e integridad. El mismo logo que abría puertas en un contexto las cerraba en el otro.'
+            'Christopher Cannon y Derek Rucker, de la Kellogg School of Management de Northwestern, publicaron en 2019 «El lado oscuro del lujo» en Personality and Social Psychology Bulletin. En uno de los experimentos, los participantes veían a un hombre con una camiseta de Gucci o con una camiseta idéntica sin el logo. Con el logo lo puntuaban más alto en estatus. Con el logo, a la vez, lo veían menos cálido: menos amable, menos de fiar, menos orientado a los demás.',
+            'El patrón se repitió con una mujer y un bolso de Burberry frente al mismo bolso sin marca, y con perfiles de candidatos a un puesto. Ahí apareció el filo práctico. Cuando el trabajo evaluado exigía calidez, por ejemplo un puesto de recursos humanos, mencionar que la persona vestía marcas de lujo le restaba puntos en vez de sumárselos. Para un puesto donde lo que se juzga es la competencia fría, el lujo no penalizaba.',
+            'El mecanismo que encontraron Cannon y Rucker es una atribución de intención. Ver a alguien exhibiendo lujo dispara la lectura de que esa persona está gestionando su imagen, que quiere aparentar. Y de ahí el observador salta a suponer que le importa más quedar por encima que el bienestar de quien tiene delante. No era envidia. Era esa sospecha de motivo lo que bajaba la calidez.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'Por qué el cerebro lo lee como aviso',
           paragraphs: [
-            'La percepción social opera a través de dos dimensiones fundamentales: competencia y calidez. Las marcas de lujo son señales de recursos y éxito, lo que activa inferencias de competencia. Pero en contextos donde la confianza es el capital central (medicina, trabajo social, negociaciones colaborativas) la señal de lujo activa también la sospecha de que quien las lleva prioriza su propio estatus sobre el bienestar colectivo.',
-            'Desde la perspectiva evolutiva, los símbolos de estatus son señales de dominancia. En jerarquías competitivas, la dominancia es deseable. En contextos cooperativos, una señal de dominancia activa la desconfianza: ¿por qué alguien que claramente prioriza su estatus va a sacrificarse por mi bien? El observador no razona explícitamente esto; lo infiere en milisegundos a través de heurísticas automáticas que evolucionaron para detectar si el otro es aliado o competidor.'
+            'La percepción de otra persona se organiza en gran medida sobre dos ejes: si es capaz y si es de fiar. El lujo habla alto en el primer eje, el de los recursos y el éxito. El problema es que una señal cara y ostentosa también dice «invierto en parecer superior», y en cualquier trato donde tú necesitas cooperación esa frase es justo la que no quieres oír.',
+            'La pregunta que el observador se hace sin formularla es sencilla. Si esta persona gasta tanto en marcar distancia, ¿por qué va a remar a mi favor cuando no le convenga? La respuesta por defecto es «no lo hará», y llega antes de cualquier razonamiento. Por eso el mismo logo que en una negociación de poder funciona como credencial, en una consulta, una colecta o una relación de ayuda funciona como bandera roja.'
+          ]
+        },
+        {
+          subtitle: 'El lujo también abre puertas: la otra mitad',
+          paragraphs: [
+            'Años antes, en 2011, Rob Nelissen y Marijn Meijers habían mostrado en Evolution and Human Behavior la cara luminosa de la misma moneda. En siete experimentos, una persona con una camisa que llevaba el cocodrilo de Lacoste o el logo de Tommy Hilfiger, comparada con la misma camisa sin marca, era vista como de más estatus y con más dinero. La gente accedía más a responderle una encuesta, la recomendaba más para un puesto y con mejor sueldo, y en una colecta puerta a puerta le daba más dinero.',
+            'Lo interesante es que en aquel montaje el logo de lujo no bajó la confianza ni el atractivo ni la amabilidad percibidas. Simplemente no movió esas casillas. Junto con el trabajo de Cannon y Rucker, el cuadro que queda es este: el lujo compra trato preferente basado en estatus, y cobra su peaje en calidez solo cuando la calidez es precisamente lo que está en juego. Una replicación ampliada de 2017 con etiquetas de lujo dio apoyo parcial y desigual al efecto de estatus, así que ni siquiera la cara luminosa es automática. Y un matiz más: si quien lleva el lujo deja claro que le apasiona de verdad, y no que posa, parte de la penalización de calidez se disuelve, porque cambia el motivo que el observador le atribuye.'
           ]
         }
       ],
-      blockquote: { text: '«El mismo símbolo de estatus que abre puertas en negociaciones de poder las cierra en contextos donde la confianza es el capital más valioso.»', attribution: 'Rob Nelissen' },
-      aplicacion: 'Antes de una reunión importante, pregúntate qué quieres proyectar: competencia o confianza. Son señales vestimentarias distintas, a menudo incompatibles, y el contexto debe decidir cuál priorizar.'
+      blockquote: { text: '«Quienes exhiben bienes de lujo reciben más estatus, pero pagan un impuesto en calidez.»', attribution: 'Cannon & Rucker (2019)' },
+      aplicacion: 'Antes de una cita que importe, decide qué casilla necesitas que marquen de ti, la de capaz o la de fiable, porque el lujo visible tira de una y afloja la otra. Para pedir un préstamo, negociar de tú a tú o cerrar una venta agresiva, el logo suma. Para una entrevista de un puesto de trato con personas, una reunión de equipo nueva o cualquier situación donde te la juegas a que se fíen de ti, guárdalo.'
     },
     {
       id: 'mod-03',
       title: 'El color de tu ropa altera cómo procesan tu mensaje los demás',
-      summary: 'Los colores activan esquemas cognitivos automáticos que modulan la credibilidad, la agresividad percibida y la atracción interpersonal.',
+      summary: 'En 2008 se publicó que el rojo hace a una mujer más atractiva a ojos de un hombre. Es de los efectos de psicología del color más citados. También de los que peor han pasado por el laboratorio otra vez.',
       sourceUrl: 'https://doi.org/10.1037/0022-3514.95.5.1150',
       sourceLabel: 'Elliot & Niesta (2008), Journal of Personality and Social Psychology',
       badge: 'Psicología del color',
-      author: { name: 'Andrew Elliot', university: 'Universidad de Rochester', specialty: 'Psicología de la Motivación y el Color' },
-      readingTime: '3 min',
+      author: { name: 'Andrew Elliot', university: 'Universidad de Rochester', specialty: 'Psicología de la motivación y el color' },
+      readingTime: '6 min',
       date: '19 de mayo de 2026',
-      intro: 'El rojo no es solo un color. En una serie de seis experimentos, Elliot y Niesta demostraron que las mujeres vestidas de rojo eran valoradas consistentemente como más atractivas por los hombres, y que este efecto desaparecía cuando el color era azul, verde o gris, incluso con fotografías idénticas en todos los demás aspectos.',
+      intro: 'La misma foto de una mujer sobre fondo rojo o sobre fondo blanco. Andrew Elliot y Daniela Niesta publicaron en 2008 que los hombres puntuaban la versión roja como más atractiva, y que el efecto no aparecía con azul, verde o gris. La idea saltó a los medios, a los manuales de citas y a los artículos de moda. Cuando otros equipos la volvieron a montar con más gente y las reglas fijadas por adelantado, casi no quedó nada.',
       sections: [
         {
-          subtitle: 'El experimento de Elliot y Niesta',
+          subtitle: 'El experimento del rojo',
           paragraphs: [
-            'La Universidad de Rochester diseñó seis experimentos con participantes de cinco países distintos (EE.UU., Reino Unido, Alemania, China e India) para descartar que el efecto fuera un artefacto cultural. En todos los casos, mostraron fotografías idénticas de mujeres enmarcadas o vestidas con diferentes colores. Los hombres calificaban consistentemente las fotos con rojo entre 1,2 y 1,5 puntos más altas en una escala de atractivo de 7 puntos que las mismas fotografías con otros colores.',
-            'El efecto era exclusivo del juicio de atractivo: el rojo no influía en valoraciones de amabilidad, inteligencia o competencia. Y era exclusivo de los hombres heterosexuales: las mujeres evaluando a otras mujeres no mostraban el efecto. Esto sugería un mecanismo específico de señalización sexual, no una respuesta estética generalizada.'
+            'Elliot y Niesta, en la Universidad de Rochester, hicieron cinco experimentos con estudiantes varones estadounidenses. Enseñaban la fotografía de una mujer a la que solo cambiaban un detalle: el color del fondo o de la camiseta, rojo frente a blanco, gris, verde o azul. Después pedían valorar en una escala de nueve puntos cuánto atractiva y cuánto deseable les parecía.',
+            'Con rojo, la media subía alrededor de un punto respecto a los otros colores. El efecto se limitaba al atractivo. El rojo no movía las valoraciones de simpatía, inteligencia ni sinceridad de la misma mujer. Tampoco aparecía cuando quienes puntuaban eran mujeres. Y preguntados después, ninguno de los hombres decía haberse fijado en el color ni creía que le hubiera influido.',
+            'La lectura cultural cara al rojo (el vestido de la seductora, los barrios de alterne, san Valentín) existía, pero Elliot y Niesta querían algo más profundo, así que en trabajos posteriores el grupo llevó el diseño a otros países para ver si el patrón se sostenía fuera de Estados Unidos. Los resultados de esas extensiones fueron desiguales desde el principio.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'La explicación evolutiva',
           paragraphs: [
-            'En la mayoría de primates no humanos, el enrojecimiento de la piel durante el período fértil (en la zona genital, el pecho o el rostro) actúa como señal directa de receptividad sexual. Elliot argumenta que esta asociación rojo-señal-sexual está evolutivamente arraigada en el sistema visual humano con suficiente profundidad como para operar de forma automática, antes de cualquier procesamiento consciente.',
-            'Lo más relevante para el comportamiento cotidiano es que el efecto ocurre aunque el observador no sea consciente de él. En los experimentos, ningún participante reportó espontáneamente que el color hubiera influido en su juicio. La inferencia opera por debajo del umbral de introspección. El color rojo en contextos deportivos funciona de forma similar pero en la dimensión de dominancia: equipos con uniforme rojo ganan más frecuentemente en deportes de contacto directo, como documentaron Hill y Barton en 2005 analizando los Juegos Olímpicos de Atenas.'
+            'La hipótesis de Elliot mira a nuestros parientes primates. En muchas especies, la piel se enrojece en la fase fértil, en la cara, el pecho o la zona genital, y funciona como señal de receptividad. Si esa asociación entre rojo y sexo viene de serie en el sistema visual, actuaría de forma automática, antes de que la persona tenga tiempo de pensar nada.',
+            'De ahí que el detalle de que los participantes no notaran el color encajara tan bien con la teoría. La inferencia, decían los autores, ocurre por debajo del umbral de la introspección. El rojo en el deporte se ha explicado por una vía parecida pero en clave de dominancia: Russell Hill y Robert Barton documentaron en Nature en 2005 que en los Juegos de Atenas 2004, en boxeo, taekwondo y lucha, quien vestía de rojo ganó alrededor del 55% de los combates, con más ventaja en los que estaban igualados.'
+          ]
+        },
+        {
+          subtitle: 'Y luego las réplicas',
+          paragraphs: [
+            'En 2016, Leonard Peperkoorn, Craig Roberts y Thomas Pollet montaron tres estudios con 830 hombres en total para repetir el efecto del color de la ropa sobre el atractivo femenino. No encontraron nada. El color de la camiseta no movió las puntuaciones.',
+            'En 2017, un equipo dirigido por Gabrielle Lehmann, con Robert Calin-Jageman, hizo dos réplicas registradas de antemano, una presencial y otra online, con los materiales originales y filtros para descartar a los daltónicos. Para hombres valorando a mujeres, el efecto fue de un tamaño diminuto y no significativo. Para mujeres valorando a hombres, apuntaba levemente en dirección contraria. Un año después, un metaanálisis firmado por Lehmann, el propio Elliot y Calin-Jageman reunió toda la literatura y concluyó que el efecto medio es pequeño y que hay indicios de sesgo de publicación, es decir, que los estudios con resultado llamativo tenían más probabilidad de haberse publicado.',
+            'La ventaja del rojo en los deportes de combate también se ha discutido, porque parte de ella se diluyó al cambiar reglas de arbitraje y al mirar más ediciones. Un metaanálisis de 2024 deja un efecto real pero pequeño. En conjunto, lo prudente hoy es tratar el «poder del rojo» como un fenómeno que, si existe, es mucho más débil y más caprichoso de lo que sugería el artículo de 2008.'
           ]
         }
       ],
-      blockquote: { text: '«El color activa esquemas cognitivos automáticos antes de que ningún proceso consciente tenga tiempo de mediar.»', attribution: 'Andrew Elliot' },
-      aplicacion: 'La próxima vez que elijas qué ponerte para un evento social o profesional, considera el color no como estética sino como señal: ¿qué esquema cognitivo quieres activar en quien te observe?'
+      blockquote: { text: '«En ambos casos hubo poco o ningún efecto del rojo sobre el atractivo percibido.»', attribution: 'Lehmann & Calin-Jageman (2017)' },
+      aplicacion: 'El color de tu camiseta es una palanca floja. No cuentes con que el rojo haga trabajo romántico por ti en una cita, porque los estudios grandes no lo encuentran. Lo que sí sostiene la evidencia sobre vestimenta tiene que ver con el contraste, el cuidado y lo apropiado que resulta la prenda para la ocasión, no con el tono exacto que elijas.'
     },
     {
       id: 'mod-04',
       title: 'El efecto Diderot: por qué comprar una cosa te hace querer cambiarlo todo',
-      summary: 'Adquirir un objeto nuevo genera una presión psicológica en cadena para actualizar todo lo que lo rodea, convirtiendo una compra en un ciclo de consumo difícil de detener.',
+      summary: 'Diderot cambió una bata vieja por una de seda y acabó reemplazando el escritorio, la silla y los cuadros. Dos siglos después, un antropólogo le puso nombre a esa espiral.',
       sourceUrl: 'https://doi.org/10.1086/209631',
-      sourceLabel: 'McCracken (1988), Culture and Consumption · Journal of Consumer Research',
+      sourceLabel: 'McCracken (1988), Culture and Consumption',
       badge: 'Psicología del consumo',
-      author: { name: 'Grant McCracken', university: 'Royal Ontario Museum / MIT Media Lab', specialty: 'Cultura del consumo y antropología económica' },
-      readingTime: '3 min',
+      author: { name: 'Grant McCracken', university: 'Royal Ontario Museum', specialty: 'Antropología del consumo y cultura material' },
+      readingTime: '5 min',
       date: '12 de mayo de 2026',
-      intro: 'En 1769, el filósofo Denis Diderot recibió como regalo una suntuosa bata de seda escarlata. Poco después, escribió un ensayo titulado "Arrepentimiento por mi vieja bata de casa". El problema: la nueva bata hacía que todo lo demás en su estudio (la silla desgastada, el escritorio irregular, las estanterías viejas) pareciera indigno de ella. Fue reemplazando cada objeto uno a uno hasta quedar, según sus palabras, "esclavo de una bata". Dos siglos después, el antropólogo Grant McCracken formalizó este mecanismo y le puso nombre.',
+      intro: 'En 1769, Denis Diderot recibió de regalo una bata de casa de seda escarlata. Poco después escribió un texto breve, «Arrepentimiento por mi vieja bata de casa», para contar lo que vino luego. Al lado de la bata nueva, su butaca de paja parecía miserable. Cambió la butaca. Después el escritorio, después los grabados de las paredes, después las estanterías. Terminó, escribió, «esclavo de una bata» donde antes había sido dueño de la vieja.',
       sections: [
         {
-          subtitle: 'El mecanismo: coherencia simbólica y presión de identidad',
+          subtitle: 'Qué vio McCracken dos siglos después',
           paragraphs: [
-            'McCracken identificó que los objetos no son solo útiles: son marcadores de identidad y de pertenencia cultural. Cada persona construye lo que McCracken llama un "conjunto de complementariedad Diderot": una colección de objetos que comparten un sistema simbólico coherente y que comunican una identidad unificada. Cuando un objeto nuevo rompe esa coherencia (porque es demasiado bueno, demasiado distinto o demasiado nuevo) genera tensión. El cerebro necesita restaurar la coherencia.',
-            'El efecto se activa especialmente con adquisiciones de estatus (un coche nuevo, un bolso de diseño, un apartamento reformado): la nueva referencia simbólica eleva el estándar implícito del resto. Lo que antes parecía suficiente ahora parece desajustado. La compra no cierra un deseo; abre una cadena de necesidades percibidas que pueden ser ilimitadas.'
+            'El antropólogo Grant McCracken retomó la anécdota en su libro «Culture and Consumption», de 1988, y la convirtió en un concepto con dos piezas. La primera son las «unidades Diderot»: los objetos que una persona posee no andan sueltos, forman grupos que comparten un tono, un estilo, un nivel. La ropa, los muebles, el coche y hasta las vacaciones de alguien suelen contar la misma historia sobre quién es.',
+            'La segunda pieza es el efecto. Mientras las compras nuevas encajan en la unidad, no pasa nada. Pero cuando entra un objeto que rompe la coherencia, porque es más caro, más nuevo o de otro registro, aparece una incomodidad. La bata de seda no convivía con la butaca de paja. A partir de ahí, o el objeto raro se va, o el resto sube para alcanzarlo. Diderot eligió lo segundo, mueble a mueble.',
+            'McCracken lo enmarcó en su teoría más amplia sobre cómo los bienes de consumo cargan significado cultural. Un objeto de estatus no es solo caro: reajusta hacia arriba el listón implícito de todo lo que tiene alrededor. Lo que antes bastaba, después de la compra parece desajustado.'
           ]
         },
         {
-          subtitle: 'Por qué los marketers lo conocen y nosotros no',
+          subtitle: 'Por qué la industria lo cuenta y tú no',
           paragraphs: [
-            'La industria del consumo explota el efecto Diderot de forma sistemática. Los fabricantes de cocinas de lujo saben que quien compra una encimera de mármol actualizará los electrodomésticos, la iluminación y probablemente el suelo. Los vendedores de coches premium calculan cuántos años tarda el comprador en sentir que su garaje, su ropa y sus vacaciones necesitan "alcanzar" al coche. La venta del objeto ancla es solo el primer dominó.',
-            'El efecto tiene mayor intensidad en las "compras aspiracionales" (aquellas que el comprador hace para señalar a quién quiere ser) que en las compras funcionales. Una aspiración satisfecha no se asienta: eleva el estándar del entorno inmediato, que ahora parece no estar a la altura. El resultado es lo que los economistas del bienestar llaman "adaptación hedónica asimétrica": el placer del objeto nuevo se desvanece rápido, pero la presión de actualizar lo que lo rodea persiste.'
+            'La lógica de la unidad Diderot describe bien cómo se diseñan muchas líneas de venta. Quien pone una encimera de piedra en la cocina siente antes o después que los electrodomésticos viejos desentonan, y detrás la iluminación, y detrás el suelo. Quien se compra un coche por encima de su gama anterior tarda un tiempo en mirar su ropa, su reloj o su portal con otros ojos. El objeto ancla no cierra el gasto, lo abre.',
+            'El efecto pega más fuerte en las compras que McCracken llamaría aspiracionales, las que se hacen para señalar a quién quiere parecerse uno, que en las puramente funcionales. Un cargador de móvil no arrastra nada. Un bolso que representa una versión mejor de tu vida sí, porque su presencia deja al resto de tu armario un escalón por debajo. A esto se le suele sumar la adaptación hedónica: el placer del objeto nuevo se apaga rápido, pero la sensación de que lo de alrededor se ha quedado corto tarda mucho más en irse.'
+          ]
+        },
+        {
+          subtitle: 'Buena anécdota, pocos experimentos',
+          paragraphs: [
+            'Conviene decir qué tipo de cosa es el efecto Diderot. No es un hallazgo de laboratorio con grupo de control y cifras. Es un concepto antropológico, ilustrado con un ensayo del siglo XVIII y con observación de la cultura de consumo. Se ha usado y citado mucho, pero se ha puesto a prueba de forma directa poco.',
+            'Lo que sí tiene respaldo empírico es su entorno. Que la gente organiza sus posesiones en conjuntos coherentes de estilo está documentado en investigación de consumo con el nombre de «constelaciones de consumo». Que el placer de comprar se desvanece deprisa y empuja a comprar otra vez es la adaptación hedónica, medida muchas veces. Que la referencia sube cuando entra algo mejor es un efecto de comparación bien conocido. El efecto Diderot es el nombre bonito para la suma de esas piezas, no una ley aparte comprobada por sí misma.',
+            'Eso no lo invalida como herramienta para mirarte. Solo conviene saber que su fuerza viene de que reconoces el patrón en tu casa, no de un ensayo clínico.'
           ]
         }
       ],
-      blockquote: { text: '«Los objetos no son solo posesiones: son declaraciones sobre quiénes somos, y la coherencia entre ellos es una presión silenciosa pero constante.»', attribution: 'Grant McCracken' },
-      aplicacion: 'Antes de una compra importante, hazte esta pregunta: "¿Qué más me hará sentir que necesito reemplazar?" Si la respuesta incluye más de dos cosas que ya tienes, el efecto Diderot ya está activo. El coste real de la compra es la suma de todos los objetos que te hará sentir que necesitas cambiar después.'
+      blockquote: { text: '«Los bienes que posee una persona guardan entre sí una coherencia de estilo, y esa coherencia tiende a mantener el consumo dentro de unos límites o a empujarlo hacia un nivel nuevo.»', attribution: 'McCracken (1988)' },
+      aplicacion: 'Antes de una compra grande, haz la lista de lo que esa compra te va a hacer ver viejo. Si salen más de dos cosas que ahora mismo te valen, el efecto ya está en marcha y el precio real no es el de la etiqueta, es el de toda la cadena. Una defensa sencilla: mete el objeto nuevo en un entorno que ya tienes y vívelo una semana antes de seguir cambiando nada.'
     },
     {
       id: 'mod-05',
-      title: 'El uniforme de los que deciden mucho: por qué Einstein, Obama y Zuckerberg visten siempre lo mismo',
-      summary: 'Eliminar las decisiones triviales del día preserva la capacidad cognitiva para las que realmente importan. La ropa es el laboratorio más visible de este principio.',
-      sourceUrl: 'https://doi.org/10.1111/j.1467-9280.2008.02250.x',
-      sourceLabel: 'Baumeister et al. (2008), Psychological Science · Muraven & Baumeister (2000)',
+      title: 'Obama vestía siempre igual para decidir mejor, y la ciencia detrás ya no se sostiene',
+      summary: 'La idea de que cada elección trivial gasta un depósito de fuerza de voluntad que hay que proteger es famosa, intuitiva y, cuando la pusieron a prueba en serio, no se sostuvo.',
+      sourceUrl: 'https://doi.org/10.1037/0022-3514.94.5.883',
+      sourceLabel: 'Vohs et al. (2008), Journal of Personality and Social Psychology',
       badge: 'Autorregulación cognitiva',
-      author: { name: 'Roy Baumeister', university: 'University of Queensland / Florida State University', specialty: 'Autocontrol, fuerza de voluntad y toma de decisiones' },
-      readingTime: '3 min',
+      author: { name: 'Kathleen D. Vohs', university: 'Universidad de Minnesota', specialty: 'Autocontrol, toma de decisiones y psicología del consumo' },
+      readingTime: '6 min',
       date: '5 de mayo de 2026',
-      intro: 'Barack Obama tomaba miles de decisiones al día como presidente. Por eso tomó una menos: dejó de decidir qué ponerse. "Solo visto trajes grises o azules (explicó en 2012). Intento reducir las decisiones. No quiero tomar decisiones sobre lo que como o lo que llevo porque tengo demasiadas otras decisiones que tomar." Einstein, Steve Jobs y Mark Zuckerberg practicaron variantes del mismo principio. No es excentricidad: es neurociencia aplicada.',
+      intro: 'En un perfil de Vanity Fair de 2012, Barack Obama explicó por qué solo llevaba trajes grises o azules. «Intento reducir el número de decisiones. No quiero decidir sobre lo que como o lo que visto, porque tengo demasiadas otras decisiones que tomar.» La frase encajaba con una idea muy repetida de la psicología: decidir gasta un recurso limitado, y protegerlo de las tonterías te deja más para lo importante. La idea tiene un problema.',
       sections: [
         {
-          subtitle: 'La fatiga de decisión: el recurso que se agota con cada elección',
+          subtitle: 'De dónde sale',
           paragraphs: [
-            'Roy Baumeister y sus colegas documentaron a lo largo de múltiples estudios un fenómeno que denominaron "ego depletion" o agotamiento del yo: la capacidad de tomar decisiones de calidad es un recurso finito que se gasta con cada elección realizada, desde lo trivial a lo crucial. En el estudio más conocido, participantes que tomaban muchas decisiones de consumo previas tomaban después decisiones financieras peor que grupos de control, pedían préstamos más irracionales, aceptaban condiciones menos favorables.',
-            'El mecanismo biológico involucra glucosa y actividad en la corteza prefrontal: tomar decisiones consume recursos metabólicos reales. El juez que falla a las 3 de la tarde tiene el mismo cociente intelectual que a las 10 de la mañana, pero su corteza prefrontal (la región de la deliberación consciente) está más agotada. Cada "¿qué me pongo hoy?" usa exactamente el mismo recurso que "¿contrato a este candidato?"'
+            'En 2008, Kathleen Vohs y sus colegas publicaron en el Journal of Personality and Social Psychology un trabajo con cuatro experimentos de laboratorio y un estudio de campo. En los de laboratorio, una parte de los participantes tomaba muchas decisiones de consumo seguidas, elegir entre este bolígrafo y aquel, entre esta asignatura y aquella, mientras que otra parte solo miraba las mismas opciones sin elegir. Después, los que habían elegido aguantaban menos con la mano en agua helada, se rendían antes ante problemas difíciles, procrastinaban más y resolvían peor una tanda de cálculo aritmético.',
+            'El estudio de campo fue en un centro comercial: los compradores que decían haber tomado más decisiones activas ese día rendían peor en la prueba de aritmética. Todo esto se apoyaba en la teoría del «agotamiento del yo» de Roy Baumeister y Mark Muraven, de 2000, según la cual el autocontrol funciona como un músculo que se fatiga. Una versión posterior, de Baumeister con Matthew Gailliot en 2007, proponía que el combustible concreto era la glucosa en sangre.'
           ]
         },
         {
-          subtitle: 'El uniforme como estrategia, no como pereza',
+          subtitle: 'Lo que pasó al ponerlo a prueba en serio',
           paragraphs: [
-            'La investigación de Baumeister sobre "decision ecology" muestra que el entorno de decisiones importa tanto como la calidad del decisor. Simplificar los dominios de baja importancia no es delegación ni pereza intelectual: es una estrategia de gestión de recursos cognitivos con evidencia sólida. El cerebro no distingue la complejidad cualitativa de una decisión; solo registra el coste de procesarla.',
-            'Los "uniformes" cognitivos no se limitan a la ropa. La misma lógica aplica a fijar un menú semanal (Obama también lo hacía), a tener una rutina matutina inamovible, a usar plantillas para decisiones recurrentes. Cada automatismo libera capacidad para la deliberación en dominios donde la calidad de la decisión realmente importa. El diseño del entorno cotidiano es, en este sentido, la forma más infrautilizada de gestión del rendimiento.'
+            'En 2016, un consorcio coordinado por Martin Hagger repitió el experimento clásico del agotamiento del yo en veintitrés laboratorios a la vez, con más de dos mil participantes y el protocolo registrado antes de recoger un solo dato. El efecto combinado fue de un tamaño de 0,04, indistinguible de cero. La pieza central de la teoría no apareció.',
+            'La versión de la glucosa había caído antes. Robert Kurzban mostró en 2010 que las tareas de autocontrol no bajan de forma apreciable el azúcar en sangre, que el cerebro consume glucosa a un ritmo bastante estable haga lo que haga, y que unos minutos de esfuerzo mental suponen del orden de 0,2 calorías. Un metaanálisis de 2016 revisó las tres predicciones del modelo de la glucosa y no encontró apoyo para ninguna.',
+            'El estudio que popularizó la etiqueta «fatiga de decisión», el de los jueces israelíes de libertad condicional de 2011, también está discutido: buena parte de su patrón podría explicarse por el orden en que se colocan los casos en la agenda, no por el hambre del juez. Con lo cual la base empírica de la frase de Obama es, hoy, bastante endeble.'
+          ]
+        },
+        {
+          subtitle: 'Qué se salva',
+          paragraphs: [
+            'Que la teoría del depósito no cuadre no significa que dé lo mismo encadenar cien decisiones. La lectura que va ganando terreno es la del coste de oportunidad, defendida entre otros por el propio Kurzban. Según ella, el esfuerzo mantenido no vacía ningún tanque: lo que ocurre es que la tarea se vuelve subjetivamente más costosa y la atención empieza a tirar hacia otras cosas que podrías estar haciendo. La sensación de «no puedo más» es una señal motivacional, no la lectura de un indicador de gasolina.',
+            'Y la práctica de recortar decisiones menores sigue teniendo sentido por otras vías más aburridas. Cada microelección resuelta de antemano te ahorra tiempo y te evita interrupciones de foco al empezar el día. Eso es real y medible aunque la fuerza de voluntad no funcione como una batería. El uniforme de Obama probablemente le servía. Solo que no por la razón que él daba.'
           ]
         }
       ],
-      blockquote: { text: '«La fuerza de voluntad no es un rasgo de carácter: es un recurso biológico que se agota. Gestionarla bien es la diferencia entre decidir y solo reaccionar.»', attribution: 'Roy Baumeister' },
-      aplicacion: 'Identifica las tres decisiones triviales que repites cada mañana (qué desayunar, qué ponerte, con qué empezar el día de trabajo) y automatízalas esta semana. Fija una respuesta estándar y no la cuestionas. Observa si la calidad de tus decisiones importantes mejora en las horas siguientes.'
+      blockquote: { text: '«Tomar decisiones redujo el autocontrol posterior: menos aguante físico, menos persistencia ante el fracaso y peores cálculos.»', attribution: 'Vohs et al. (2008)' },
+      aplicacion: 'Fijar de antemano el desayuno, la ropa y por dónde empezar a trabajar es barato y te quita fricción al arrancar, así que hazlo si te ordena la mañana. Lo que no funciona es contar con que se te recargue un depósito: si llevas horas decidiendo y notas que rindes peor, la respuesta útil es parar de verdad un rato o aplazar lo gordo para mañana, no un café azucarado ni apretar los dientes.'
     },
     {
       id: 'mod-06',
       title: 'El uniforme que hace obedecer: por qué un guardia de seguridad consigue lo que un civil no',
-      summary: 'La misma petición absurda en la calle se obedece casi tres veces más cuando quien la hace lleva uniforme de guardia, aunque nadie haya comprobado si tiene autoridad real para pedirla.',
+      summary: 'La misma orden sin sentido en la calle se obedece hasta tres veces más si quien la da lleva uniforme de guardia, aunque nadie compruebe si tiene autoridad para darla.',
       sourceUrl: 'https://doi.org/10.1111/j.1559-1816.1974.tb02599.x',
       sourceLabel: 'Bickman (1974), Journal of Applied Social Psychology',
       badge: 'Psicología de la autoridad',
       author: { name: 'Leonard Bickman', university: 'Loyola University Chicago', specialty: 'Psicología social de la obediencia y la autoridad' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Leonard Bickman quería saber cuánto de la obediencia a la autoridad depende de la persona y cuánto depende, simplemente, de la ropa que lleva puesta. Para comprobarlo, mandó a varios ayudantes a la calle en Brooklyn vestidos de tres formas distintas: como guardia de seguridad, como repartidor de leche o sin ningún uniforme, y les hizo pedir a 153 peatones al azar cosas que no tenían ninguna obligación de hacer.',
+      intro: 'Leonard Bickman, que había sido alumno de Stanley Milgram, quería separar dos cosas que suelen ir juntas: cuánto de la obediencia a una orden depende de quién la da y cuánto depende solo de la ropa que lleva. Para averiguarlo mandó a varios ayudantes a la calle en Brooklyn vestidos de tres maneras, guardia de seguridad, repartidor de leche o ropa de calle, a pedir a 153 peatones cosas que no tenían ninguna obligación de hacer.',
       sections: [
         {
-          subtitle: 'El experimento: la misma petición, tres uniformes distintos',
+          subtitle: 'La misma petición, tres uniformes',
           paragraphs: [
-            'A cada peatón se le pedía una de estas cosas: recoger una bolsa de papel tirada en el suelo, prestarle una moneda a un desconocido que aparentemente no tenía para el parquímetro, o apartarse de una parada de autobús donde, según el ayudante, "no se podía esperar". Ninguna de las tres peticiones tenía relación real con la autoridad de un guardia de seguridad: recoger basura, prestar dinero o moverse de sitio no son competencia de nadie en particular.',
-            'Aun así, el uniforme cambió el resultado de forma drástica. En la petición de apartarse del parquímetro, obedeció el 89% de los peatones cuando quien lo pedía iba de guardia, frente al 57% con el repartidor de leche y el 33% sin uniforme. En la petición de recoger la bolsa, la obediencia fue del 38% con el guardia, del 19% con el civil y del 14% con el repartidor. El patrón se repitió en las tres tareas: uniforme de autoridad, más obediencia, incluso en peticiones que ese uniforme no tenía por qué respaldar.'
+            'A cada peatón le tocaba una de tres órdenes. Recoger una bolsa de papel tirada en la acera. Darle una moneda a un desconocido que, según decía, no tenía para el parquímetro. O apartarse de una parada de autobús porque allí, afirmaba el ayudante, no se podía esperar. Ninguna de las tres tiene que ver con lo que puede exigir un guardia de seguridad privado: ni la basura, ni el dinero ajeno, ni dónde se coloca la gente en la calle son asunto suyo.',
+            'El uniforme cambió el resultado igualmente. En la orden de apartarse del parquímetro obedeció el 89% cuando quien la daba iba de guardia, frente al 57% con el repartidor y el 33% de paisano. En la de recoger la bolsa, obedeció el 38% con el guardia, el 19% de paisano y el 14% con el repartidor. La dirección se repitió en las tres tareas: cuanto más se parecía la ropa a la de una figura con potestad para sancionar, más gente hacía lo que se le pedía.',
+            'El detalle del repartidor de leche importa. Su uniforme era tan llamativo y tan poco habitual como el del guardia, pero no comunicaba autoridad, y su tasa de obediencia se quedó cerca de la del hombre de calle. No era «llevar uniforme» lo que movía a la gente. Era llevar ese uniforme concreto.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la ropa como atajo cognitivo para la autoridad',
+          subtitle: 'La ropa como atajo para la autoridad',
           paragraphs: [
-            'Bickman explicó el resultado con un atajo mental muy simple: el cerebro no evalúa caso por caso si quien pide algo tiene de verdad potestad para pedirlo. Usa señales visuales rápidas (el uniforme, la placa, el tono) como sustituto de esa evaluación, porque comprobar la autoridad real de cada persona que se cruza en la calle sería, en términos cognitivos, insostenible. La consecuencia es que la señal (el uniforme) puede activar obediencia aunque esté completamente desconectada de la autoridad real que representa.',
-            'Es la misma lógica que opera, décadas después, en los estudios sobre suplantación de personal médico, técnico o de seguridad: un uniforme convincente basta para que la mayoría de la gente no cuestione ni la identidad ni la legitimidad de quien lo lleva. La ropa no otorga autoridad. Simplemente hace mucho más caro, cognitivamente, dudar de ella.'
+            'Bickman lo explicó con un atajo mental. Nadie va por la calle comprobando caso por caso si quien le habla tiene de verdad derecho a pedirle algo, porque hacerlo sería agotador. En su lugar, el cerebro usa señales rápidas, el uniforme, la placa, el tono de mando, como sustituto de esa comprobación. El problema es que la señal puede dispararse sola, desconectada de cualquier autoridad real detrás.',
+            'Es la misma grieta que explotan, décadas después, los casos de suplantación: alguien con una bata, un chaleco reflectante o un cordón de identificación convincente cruza puertas que no debería cruzar, porque a casi nadie le sale pararlo y pedir explicaciones. La ropa no otorga poder. Lo que hace es encarecer mucho, en esfuerzo y en incomodidad social, el gesto de dudar.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega el efecto',
+          paragraphs: [
+            'El estudio de Bickman tiene casi medio siglo, se hizo en una sola ciudad y con este diseño exacto no se ha repetido a lo grande, así que conviene no estirarlo. Sus propios números marcan el techo: ni siquiera el guardia logró que la mayoría recogiera la bolsa, solo un 38%. El uniforme inclina la balanza, no la vuelca.',
+            'También hay que contar con lo obvio: los ayudantes no elegían al azar puro a quién abordar, y una persona parada en mitad de la acera por alguien con pinta de autoridad puede obedecer para quitárselo de encima más que por respeto. Lo que sí ha aguantado bien el paso del tiempo, apoyado en otros trabajos sobre símbolos de autoridad, es la idea de fondo: una prenda que connota mando aumenta el cumplimiento incluso cuando esa prenda no respalda lo que se está pidiendo.'
           ]
         }
       ],
-      blockquote: { text: '«Basta con la ropa para sugerir autoridad, y cuando la gente cree que alguien tiene potestad para sancionarla, obedece.»', attribution: 'Leonard Bickman' },
-      aplicacion: 'La próxima vez que obedezcas automáticamente a alguien por su aspecto (un chaleco, una placa, una bata), date un segundo para preguntarte si esa persona tiene relación real con lo que te está pidiendo. El estudio de Bickman no dice que desconfíes de todo uniforme, dice que el uniforme por sí solo no es prueba de nada.'
+      blockquote: { text: '«La ropa que connota autoridad aumentó la obediencia, incluso en peticiones que esa autoridad no respaldaba.»', attribution: 'Bickman (1974)' },
+      aplicacion: 'Cuando te veas obedeciendo en el acto a alguien por su aspecto, un chaleco, una placa, una bata, párate un segundo a comprobar si esa persona tiene algo que ver con lo que te pide. El estudio no dice que desconfíes de todo uniforme. Dice que el uniforme, solo, no prueba nada, y que dudar cuesta más de lo que parece.'
     },
     {
       id: 'mod-07',
       title: 'El efecto zapatillas rojas: por qué saltarte las normas de vestir te hace parecer más competente',
-      summary: 'Llevar ropa deportiva en una boutique de lujo o zapatillas rojas en una reunión formal no penaliza la imagen de quien lo hace: la mejora, siempre que quede claro que conocía la norma y decidió romperla.',
+      summary: 'Ir en chándal a una boutique de lujo o con zapatillas rojas a una reunión formal puede sumar en vez de restar, pero solo si queda claro que conocías la norma y decidiste romperla.',
       sourceUrl: 'https://doi.org/10.1086/674870',
       sourceLabel: 'Bellezza, Gino & Keinan (2014), Journal of Consumer Research',
       badge: 'Señalización social',
       author: { name: 'Silvia Bellezza', university: 'Harvard Business School / Columbia Business School', specialty: 'Comportamiento del consumidor y señalización de estatus' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '28 de julio de 2026',
-      intro: 'Silvia Bellezza, Francesca Gino y Anat Keinan partieron de una observación cotidiana: en muchos entornos de prestigio (universidades de élite, sectores creativos, alta dirección) quien más se sale del código de vestimenta suele ser, precisamente, quien más estatus tiene. Diseñaron una serie de estudios para comprobar si esa asociación es real y, sobre todo, por qué existe.',
+      intro: 'Silvia Bellezza, Francesca Gino y Anat Keinan partieron de algo que se ve en universidades de élite, despachos de dirección y sectores creativos: quien más se salta el código de vestir suele ser quien más estatus tiene. La propia Keinan daba clase en Harvard con unas Converse rojas. Montaron una serie de estudios para ver si esa asociación es real y por qué.',
       sections: [
         {
-          subtitle: 'El experimento: chándal en una boutique de lujo',
+          subtitle: 'Chándal en una boutique de lujo',
           paragraphs: [
-            'En uno de los estudios, se pedía a los participantes que evaluaran a un vendedor de una tienda de lujo descrito como vestido con ropa de gimnasio en vez de traje, o a un profesor que entraba a dar una charla en zapatillas rojas en vez de con zapato formal. En ambos casos, los observadores no penalizaron a la figura no conformista: le atribuyeron más estatus y más competencia que a la versión vestida de forma convencional, siempre que el contexto dejara claro que esa persona conocía la norma social y aun así decidió no seguirla.',
-            'El matiz importa: cuando el mismo comportamiento se presentaba como un despiste (la persona no sabía vestirse de otra forma, o no conocía el entorno), el efecto desaparecía por completo. No era la ropa distinta lo que generaba la impresión positiva. Era la ropa distinta interpretada como una elección deliberada.'
+            'En uno de los estudios de campo, dependientes de tiendas de lujo de Milán valoraban a una mujer descrita con ropa de gimnasio o con vestido y abrigo de piel. Con la ropa de deporte la consideraban con más probabilidad de ser alguien importante, una clienta de peso o una famosa, no menos. En un experimento paralelo, los participantes atribuían más estatus y más competencia a un profesor que entraba a dar una charla con zapatillas rojas que al mismo profesor con zapato formal.',
+            'La condición decisiva era el contexto. El efecto positivo aparecía cuando quedaba claro que la persona conocía la norma y aun así elegía saltársela. Cuando el mismo detalle se presentaba como un descuido, alguien que no sabía vestirse para la ocasión o que desconocía el sitio, la ventaja se esfumaba. No era la ropa distinta. Era la ropa distinta leída como decisión.'
           ]
         },
         {
-          subtitle: 'El mecanismo: romper la norma como prueba de autonomía',
+          subtitle: 'Romper la norma como prueba de autonomía',
           paragraphs: [
-            'Bellezza, Gino y Keinan encontraron que el efecto estaba mediado por la percepción de autonomía: quien se salta una norma sabiendo que existe transmite que no necesita la aprobación ajena para sentirse seguro, y esa independencia se interpreta como una señal indirecta de competencia real. La lógica implícita del observador es que solo alguien que de verdad domina su terreno puede permitirse ignorar sus convenciones sin pagar el precio social.',
-            'El propio estudio marca los límites: el efecto se diluye cuando el observador no conoce bien las normas del entorno (no puede detectar que se ha roto nada) y se invierte cuando la no conformidad se atribuye a ignorancia en vez de a elección consciente. Saltarse una norma no da estatus por sí solo. Lo da hacerlo de una forma que deje claro que se podía haber cumplido.'
+            'Bellezza, Gino y Keinan encontraron que lo que mediaba el efecto era la percepción de autonomía. Quien incumple una regla sabiendo que existe transmite que no necesita la aprobación de la sala para estar tranquilo, y esa independencia se lee como indicio de que domina su terreno. El razonamiento implícito del observador: si puede permitirse ignorar la convención sin que le pase nada, será porque su posición se lo aguanta.',
+            'El mismo artículo pone los límites, y son estrechos. El efecto se diluye si el observador no conoce bien las normas del entorno, porque entonces no detecta que se haya roto ninguna. Se invierte si la ruptura se atribuye a ignorancia. Y depende de quién mire: las personas con más necesidad de sentirse únicas premian más la no conformidad que el resto. Fuera de ese cuadro, saltarse el código no da estatus.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el estudio no cubre',
+          paragraphs: [
+            'La mayor parte de la evidencia son escenarios y viñetas, situaciones que los participantes imaginan más que viven, con un par de estudios de campo acotados como el de las boutiques de Milán y el entorno de una escuela de negocios. Eso limita cuánto se puede generalizar a una oficina normal o a un pueblo.',
+            'Este efecto no ha pasado por una réplica multi-laboratorio grande como sí han pasado otros de psicología social, así que su tamaño exacto está menos asentado de lo que su fama sugiere. Y hay evidencia en la dirección contraria: fuera de contextos de prestigio con códigos claros, romper la norma de vestir tiende a penalizar. El propio artículo lo dice: hace falta un público que conozca la regla y un entorno donde el estatus esté en juego. Sin esas dos condiciones, las zapatillas rojas son solo unas zapatillas fuera de lugar.'
           ]
         }
       ],
-      blockquote: { text: '«Las señales de no conformidad llevan a los observadores a inferir estatus y competencia, siempre que se perciban como una elección deliberada.»', attribution: 'Silvia Bellezza' },
-      aplicacion: 'Si vas a romper un código de vestimenta en un entorno profesional, la clave según este estudio no es el gesto en sí, sino que quede claro que lo conocías. Cumple visiblemente el resto de las convenciones del contexto y rompe solo una, de forma evidente: esa combinación es la que el estudio asocia con más estatus, no la ruptura indiscriminada.'
+      blockquote: { text: '«Las señales de no conformidad llevan a inferir estatus y competencia, siempre que se perciban como una elección deliberada.»', attribution: 'Bellezza, Gino & Keinan (2014)' },
+      aplicacion: 'Si vas a romper un código de vestir en el trabajo, lo que decide no es el gesto, es que se note que lo conocías. Cumple a la vista el resto de las convenciones del sitio y rompe solo una, de forma clara. Y calcula el público: si nadie alrededor sabe cuál era la norma, no vas a proyectar seguridad, vas a proyectar despiste.'
     }
   ],
 
@@ -981,212 +1039,272 @@ const LIBRARY_ARTICLES = {
     {
       id: 'dep-01',
       title: 'El ritual antes de tirar el penalti que aumenta la precisión un 17%',
-      summary: 'Los rituales pre-rendimiento no son superstición: reducen la ansiedad cognitiva y estabilizan el control motor en situaciones de alta presión.',
+      summary: 'Un estudio de 2010 dijo que creerte afortunado mejora la puntería. Una réplica con el triple de golfistas no encontró el efecto por ninguna parte.',
       sourceUrl: 'https://doi.org/10.1177/0956797610372631',
       sourceLabel: 'Damisch et al. (2010), Psychological Science',
       badge: 'Psicología del deporte',
       author: { name: 'Lysann Damisch', university: 'Universidad de Colonia', specialty: 'Psicología Social y Rendimiento' },
-      readingTime: '3 min',
+      readingTime: '4 min',
       date: '2 de junio de 2026',
-      intro: 'En 2010, Lysann Damisch y sus colegas de la Universidad de Colonia demostraron en una serie de experimentos que activar la superstición de un participante (diciéndole "buena suerte" o devolviéndole su "pelota de la suerte") mejoraba su rendimiento motor en un 17% de media. El mecanismo no era la magia: era la autoeficacia.',
+      intro: 'Le dices a alguien que la pelota de golf que tiene en la mano ha dado suerte hasta ahora. Mete el 65% de los putts cortos. A otra persona le das la misma pelota sin ese comentario y mete el 48%. Ese salto, diecisiete puntos por creer en un amuleto, viene de un estudio alemán de 2010 que dio la vuelta al mundo. Lo que casi nunca se cuenta es qué pasó cuando otros investigadores intentaron repetirlo.',
       sections: [
         {
-          subtitle: 'El experimento de la bola de la suerte',
+          subtitle: 'La pelota que "daba suerte"',
           paragraphs: [
-            'El equipo de Lysann Damisch no se limitó a la teoría. Pusieron a prueba a un grupo de participantes en una tarea de precisión motora (golf). A la mitad se les dijo simplemente: "Aquí tienes la bola". A la otra mitad se les entregó diciendo: "Esta ha sido la bola de la suerte hasta ahora". El simple hecho de creer que contaban con un factor a favor hizo que este segundo grupo metiera un 17% más de lanzamientos.',
-            'En un segundo experimento, los participantes podían traer su propio amuleto personal. A la mitad se le devolvió el objeto al inicio de la prueba; a la otra mitad se lo retiraron con una excusa. El grupo que tenía su amuleto consigo no solo rindió mejor en la tarea motora, sino que reportó una percepción de autoeficacia significativamente más alta antes de comenzar. La confianza era el puente entre el objeto y el rendimiento.'
+            'Lysann Damisch, Barbara Stoberock y Thomas Mussweiler, de la Universidad de Colonia, publicaron cuatro experimentos en Psychological Science. En el primero, 28 estudiantes tenían que meter una pelota en un hoyo desde un metro, diez intentos. A la mitad les entregaban la pelota diciendo "hasta ahora ha resultado ser una pelota de la suerte". A la otra mitad, "es la pelota que ha usado todo el mundo". El grupo de la pelota con suerte metió 6,4 de 10. El grupo de control, 4,8.',
+            'Los otros experimentos cambiaban la tarea. En uno, una frase de ánimo con carga supersticiosa ("cruzo los dedos por ti") antes de una prueba de destreza manual. En los dos últimos, los participantes traían de casa su propio amuleto y a la mitad se lo retiraban con la excusa de hacerle una foto. Con el amuleto delante, la gente rendía más en tareas de memoria y de anagramas, se marcaba metas más altas y aguantaba más tiempo antes de rendirse. Los autores medían la autoeficacia, el concepto de Bandura para la confianza en la propia capacidad de ejecutar algo, y salía más alta en el grupo con amuleto. Esa confianza explicaba estadísticamente la diferencia de rendimiento.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'Qué se supone que ocurre por dentro',
           paragraphs: [
-            'La clave no es la magia, es la autoeficacia. El concepto, acuñado por Albert Bandura, describe la creencia de una persona en su propia capacidad para ejecutar con éxito un comportamiento específico. Cuando crees que tienes un factor a favor (un ritual, un amuleto, una frase) tu cerebro reduce la actividad en las áreas prefrontales asociadas a la vigilancia del error y la anticipación del fracaso. Hay menos ruido mental.',
-            'Con menos interferencia cognitiva, los circuitos motores que almacenan los automatismos (el tiro, el swing, la ejecución técnica) funcionan sin la supervisión consciente que los degrada. Es exactamente el mecanismo inverso al "choke under pressure" de Beilock: donde el exceso de supervisión consciente destruye el rendimiento experto, el ritual lo protege creando un estado mental de confianza que mantiene el Sistema 2 fuera del proceso motor.'
+            'La hipótesis de los autores no tiene nada de mágico. Activar la superstición sube la sensación de control sobre lo que va a pasar. Con más control percibido, la persona se pone objetivos más ambiciosos y persiste más ante la dificultad, y eso, sumado, produce un resultado mejor. En un gesto ya automatizado encaja además con el reverso del bloqueo por presión: menos miedo al fallo, menos vigilancia consciente sobre un movimiento que funciona mejor cuando lo dejas solo.',
+            'La idea se difundió muy deprisa, en parte porque contentaba a todo el mundo. Daba una explicación respetable, la autoeficacia, a algo que los deportistas llevaban toda la vida haciendo. Notas de prensa, charlas, manuales de psicología del deporte. Cuando un resultado encaja tan bien con lo que ya queríamos creer, conviene mirarlo dos veces.'
+          ]
+        },
+        {
+          subtitle: 'Y luego llegó la réplica',
+          paragraphs: [
+            'En 2014, Robert Calin-Jageman y Tracy Caldwell repitieron el experimento del putt para un número especial de réplicas preregistradas de la revista Social Psychology. Usaron más del triple de golfistas y publicaron el diseño entero antes de recoger un solo dato. El grupo de la "pelota de la suerte" metió casi exactamente lo mismo que el de control. Comprobaron que no era por falta de potencia estadística, ni porque su tarea fuese más fácil o más difícil, ni porque sus participantes creyeran menos en la suerte. El efecto, sencillamente, no apareció.',
+            'Un reanálisis del conjunto original, hecho por investigadores dedicados a detectar sesgos de publicación, añadió otra sombra: los cinco resultados de Damisch encajaban entre sí demasiado bien para venir de muestras tan pequeñas, un patrón que suele indicar que algo se quedó en el cajón. Hoy el efecto de la pelota de la suerte está en el grupo de hallazgos vistosos que no han aguantado el examen. Lo que sí sobrevive, con menos brillo, es que llegar a un momento de presión con una rutina estable y siempre igual ayuda a ejecutar mejor, y eso se apoya en la literatura de rutinas previas al rendimiento, no en el amuleto. <!-- verificar: literatura de pre-performance routines (Cotterill; Lonsdale & Tam) -->'
           ]
         }
       ],
-      blockquote: { text: '«Los rituales funcionan porque el cerebro que cree que tiene ventaja ejecuta de forma diferente al cerebro que duda.»', attribution: 'Lysann Damisch' },
-      aplicacion: 'Diseña un ritual de preparación breve y repetible para las situaciones de alta presión en tu vida, antes de una presentación, un examen o una conversación difícil. La consistencia del ritual es la señal que le dice a tu cerebro: este es el modo de rendimiento.'
+      blockquote: { text: '«Las supersticiones ligadas a la buena suerte pueden mejorar el rendimiento reforzando la creencia de la persona en sus propias capacidades.»', attribution: 'Damisch, Stoberock y Mussweiler (2010)' },
+      aplicacion: 'Si te tranquiliza un amuleto, llevarlo encima no te va a quitar puntería, pero tampoco cuentes con que te la mejore: ese efecto no ha resistido las réplicas serias. Lo que sí tiene respaldo es entrar a los momentos de presión con una rutina corta y siempre idéntica. Antes de un penalti, una intervención en público o un examen, decide de antemano los tres o cuatro gestos previos, respirar, colocarte, una frase, y hazlos siempre en el mismo orden. El ancla es la repetición, no el objeto.'
     },
     {
       id: 'dep-02',
       title: 'Por qué los atletas de élite cometen más errores cuando piensan demasiado',
-      summary: 'El fenómeno "choke under pressure" ocurre cuando el pensamiento consciente interfiere con patrones motores automatizados que funcionan mejor sin supervisión.',
+      summary: 'Poner el foco consciente en un gesto que ya dominas lo empeora. Beilock y Carr lo provocaron en golfistas bajo presión y encontraron qué entrenamiento lo previene.',
       sourceUrl: 'https://doi.org/10.1037/0096-3445.130.4.701',
       sourceLabel: 'Beilock & Carr (2001), Journal of Experimental Psychology: General',
       badge: 'Neurociencia del rendimiento',
-      author: { name: 'Sian Beilock', university: 'University of Chicago', specialty: 'Neurociencia Cognitiva y Rendimiento Bajo Presión' },
-      readingTime: '4 min',
+      author: { name: 'Sian Beilock', university: 'Universidad Estatal de Michigan', specialty: 'Neurociencia Cognitiva y Rendimiento Bajo Presión' },
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'Los golfistas expertos cometen más errores cuando se les pide que piensen conscientemente en su swing. Los novatos, en cambio, mejoran con exactamente las mismas instrucciones. La pericia crea automatismos que se destruyen en el momento en que el sistema consciente intenta supervisarlos.',
+      intro: 'Un golfista con años de práctica falla un putt corto justo cuando más atención pone en cómo mueve el palo. Un principiante, con esa misma indicación, mejora. Sian Beilock y Thomas Carr dedicaron cuatro experimentos en la Universidad Estatal de Michigan a entender por qué la atención cuidadosa al propio movimiento ayuda a quien está aprendiendo y sabotea a quien ya sabe.',
       sections: [
         {
-          subtitle: 'El experimento de Beilock y Carr',
+          subtitle: 'Lo que un experto no recuerda de su propio golpe',
           paragraphs: [
-            'En la Universidad de Michigan, Sian Beilock y Thomas Carr dividieron a golfistas en dos grupos según su nivel: expertos (más de cuatro años de práctica regular) y novatos (sin experiencia previa). Ambos grupos puttearon bajo dos condiciones: en la primera, debían concentrarse en un aspecto específico de su técnica, el punto exacto donde el palo contacta la bola, ; en la segunda, realizaban una tarea de escucha paralela (detectar un tono específico entre una secuencia de sonidos) que les distraía del movimiento.',
-            'Los novatos mejoraron cuando se concentraban en la técnica: la instrucción explícita les daba estructura. Los expertos empeoraron. Y cuando se les distraía con la tarea auditiva (liberando sus circuitos de movimiento de la supervisión consciente) los expertos rendían significativamente mejor. La atención consciente sobre el propio movimiento era el problema, no la solución.'
+            'Los dos primeros experimentos no iban de presión, iban de memoria. Beilock y Carr pidieron a golfistas expertos y a novatos que reconstruyeran detalles concretos de putts que acababan de ejecutar: la trayectoria, dónde había contactado el palo, cómo había sido el gesto. Los novatos podían contarlo paso a paso. Los expertos apenas, un recuerdo pobre y borroso de un movimiento que acababan de hacer casi perfecto.',
+            'La lectura de los autores es que en el experto el golpe se ha "proceduralizado". Ha migrado a una forma de memoria que ejecuta sin ir narrando cada tramo. No es que el experto no preste atención mientras juega, es que el control fino de cada segmento del movimiento ha dejado de pasar por la conciencia. Y lo que no está en la conciencia no se puede recordar luego con detalle.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'El experimento de la presión',
           paragraphs: [
-            'La expertise motora implica un proceso de procedurización: las habilidades aprendidas conscientemente migran desde la memoria de trabajo (que es lenta, secuencial y limitada a unos pocos elementos simultáneos) hacia la memoria procedimental, que es rápida, paralela y opera fuera de la conciencia. Un golfista experto no "piensa" en su swing; lo ejecuta. Y ese sistema procedimental funciona mejor sin supervisión.',
-            'El "choke under pressure" ocurre cuando la ansiedad aumenta la autoevaluación: el deportista empieza a monitorizarse, y ese monitoreo reactiva el procesamiento explícito que interfiere con el procedimental. La trampa es que cuanto más rico es el sistema de memoria de trabajo del atleta (es decir, cuanto más inteligente y analítico) más capacidad tiene para interferir en sus propios automatismos. Beilock documentó que los atletas con mayor capacidad de memoria de trabajo son, paradójicamente, los más vulnerables al choke en situaciones de alta presión.'
+            'En los experimentos tercero y cuarto llegó el apretón. Los golfistas expertos putteaban en una situación montada para poner nervioso a cualquiera: un premio en metálico que dependía de mejorar la marca, una cámara grabando y la idea de que un compañero contaba con su resultado. Bajo esa presión, los expertos empeoraron. En una tarea de "aritmética con letras", que nunca llega a automatizarse del todo, la misma presión no producía ese bajón. El bloqueo aparece donde hay un automatismo que interrumpir.',
+            'Después probaron dos formas de vacunar contra el bloqueo. Entrenar durante semanas haciendo a la vez una segunda tarea que distrajera no sirvió de nada: esos golfistas seguían hundiéndose bajo presión. Entrenar acostumbrándose a que te miren, con una cámara encima o con público, sí funcionó. Esos ya no perdían precisión el día de la prueba. Familiarizar al sistema con la mirada ajena le quitaba a esa mirada el poder de desestabilizarlo.'
+          ]
+        },
+        {
+          subtitle: 'Por qué la vigilancia rompe lo que va rodado',
+          paragraphs: [
+            'Piensa en bajar una escalera que conoces de memoria. Lo haces sin mirarte los pies. Ahora intenta bajarla contando cada peldaño y colocando el tobillo a conciencia: vas más lento y tropiezas más. La habilidad experta corre rápida y en paralelo mientras nadie la supervisa. La ansiedad mete un supervisor dentro. Empiezas a monitorizar el codo, la muñeca, el punto de contacto, y ese troceo consciente devuelve el movimiento a un modo lento y secuencial, que es el modo del principiante.',
+            'La explicación que mejor encaja es que la presión no te borra la técnica, te obliga a mirarla mientras la ejecutas. Y mirarla de esa forma es justo lo que la degrada. Por eso la distracción, que en tantos contextos es un lastre, aquí protege: si tu atención está ocupada en un tono o en una palabra, no está fiscalizando tu swing.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega el hallazgo',
+          paragraphs: [
+            'El efecto está bien replicado para gestos motores muy automatizados y en tareas de laboratorio. Es menos claro en deportes abiertos y caóticos, donde leer el juego y decidir pesa tanto como ejecutar. Y hay una segunda versión del bloqueo que este estudio no cubre. Cuando la tarea exige calcular o razonar bajo presión, el problema no es el exceso de supervisión sino la falta de espacio mental, porque la preocupación ocupa la memoria de trabajo que necesitabas para pensar.',
+            'Beilock y Carr documentaron esa otra ruta unos años después, en 2005. Bajo presión en problemas de matemáticas, las personas con más memoria de trabajo, que normalmente es una ventaja, podían rendir peor, porque esa capacidad extra es precisamente la que la ansiedad secuestra. Son dos bloqueos distintos que piden lo contrario: al gesto rodado le sobra vigilancia, y al problema que exige pensar le falta sitio.'
           ]
         }
       ],
-      blockquote: { text: '«La presión hace que los expertos regresen al modo de procesamiento del principiante. Y eso es precisamente lo que los destruye.»', attribution: 'Sian Beilock' },
-      aplicacion: 'En situaciones de alta presión donde eres experto, enfoca tu atención en un punto externo (el resultado, no el proceso) para dejar que los automatismos actúen sin interferencia consciente. El ruido mental es el mayor adversario del rendimiento experto.'
+      blockquote: { text: '«La presión eleva la autoconciencia y la atención al control paso a paso de la ejecución, y eso perjudica a las destrezas que ya funcionan de forma automática.»', attribution: 'Beilock y Carr (2001)' },
+      aplicacion: 'Cuando vayas a hacer algo que dominas y notes los nervios, no te pongas a repasar la técnica por dentro. Lleva la atención a algo externo y con ritmo, el objetivo, una palabra fija, la respiración, y deja que el gesto salga solo. Y si sabes que te van a mirar, ensaya siendo observado antes del día importante: grábate, hazlo delante de alguien. Lo que has practicado con público delante deja de descolocarte cuando hay público.'
     },
     {
       id: 'dep-03',
       title: 'El poder del diálogo interno: cómo la voz en tu cabeza decide el rendimiento',
-      summary: 'El lenguaje que usas contigo mismo durante un esfuerzo (específico, técnico o motivacional según el momento) mejora el rendimiento de forma objetivamente medible.',
+      summary: 'Un metaanálisis de 32 estudios sobre hablarse a uno mismo mientras se compite. El efecto es real y moderado, y aparece sobre todo en tareas nuevas y de precisión.',
       sourceUrl: 'https://doi.org/10.1177/1745691611413136',
       sourceLabel: 'Hatzigeorgiadis et al. (2011), Perspectives on Psychological Science',
       badge: 'Psicología del rendimiento',
       author: { name: 'Antonis Hatzigeorgiadis', university: 'Universidad de Tesalia (Grecia)', specialty: 'Psicología del deporte y autorregulación cognitiva' },
-      readingTime: '3 min',
+      readingTime: '4 min',
       date: '12 de mayo de 2026',
-      intro: 'En 2011, Antonis Hatzigeorgiadis y su equipo publicaron un metaanálisis de 32 estudios controlados sobre self-talk (el diálogo interno durante el rendimiento deportivo) que acumulaba datos de más de 600 participantes. La conclusión fue clara y cuantificable: hablar con uno mismo durante el esfuerzo mejora el rendimiento. Pero con un matiz que lo cambia todo: el tipo de diálogo importa tanto como la cantidad.',
+      intro: '¿Sirve de algo hablarse a uno mismo en mitad del esfuerzo, o es un placebo que se repiten los entrenadores? En 2011, Antonis Hatzigeorgiadis y su equipo de la Universidad de Tesalia reunieron 32 estudios controlados sobre self-talk en el deporte y le pusieron un número a la respuesta.',
       sections: [
         {
-          subtitle: 'Instruccional vs. motivacional: dos funciones distintas para dos situaciones distintas',
+          subtitle: 'Qué midió el metaanálisis',
           paragraphs: [
-            'El metaanálisis de Hatzigeorgiadis distinguió dos categorías de self-talk con efectos diferenciados. El diálogo instruccional (frases técnicas como "dobla las rodillas", "extiende el brazo", "cadencia constante") mejoraba especialmente las tareas de precisión motora fina: tiros libres, golpes de tenis, habilidades técnicas que requieren control detallado. El diálogo motivacional ("¡puedo hacerlo!", "un paso más", "fuerte") era más eficaz en tareas de resistencia y de máximo esfuerzo, donde el factor limitante es psicológico más que técnico.',
-            'El estudio también reveló que la especificidad del diálogo importa más que su positividad. "¡Ánimo!" es menos efectivo que "mantén los codos pegados". El cerebro necesita información procesable, no solo energía emocional. Las frases vagas generan activación; las frases específicas generan dirección. En los estudios donde los participantes diseñaban ellos mismos sus frases (en lugar de usar las que el investigador les asignaba), los efectos eran significativamente mayores.'
+            'De esos 32 estudios salieron 62 comparaciones. El efecto medio del self-talk sobre el rendimiento fue positivo y moderado, algo por debajo de medio punto de desviación típica. Nada espectacular, pero constante. Dos condiciones lo agrandaban. El self-talk ayudaba más en tareas de motricidad fina, puntería y técnica precisa, que en tareas de fuerza bruta o resistencia. Y ayudaba más en tareas nuevas para la persona que en gestos que ya tenía muy aprendidos. Cuanto más queda por afinar, más renta hablarse.'
           ]
         },
         {
-          subtitle: 'El mecanismo: atención, esquemas y autoeficacia',
+          subtitle: 'Instruccional y motivacional, y por qué la frontera es menos limpia de lo que se cuenta',
           paragraphs: [
-            'El self-talk mejora el rendimiento por tres rutas simultáneas. Primero, dirige la atención hacia los aspectos relevantes de la tarea y aleja las distracciones externas e internas. Segundo, activa los esquemas motores correctos: nombrar una acción técnica en voz baja o internamente es un prime que facilita su ejecución. Tercero, incrementa la autoeficacia (la creencia de que puedes ejecutar con éxito), que Bandura demostró que es un predictor independiente del rendimiento.',
-            'Una variante especialmente bien documentada es el self-talk en segunda persona: "tú puedes hacerlo" en lugar de "yo puedo hacerlo". Varios estudios muestran que hablarse en segunda o tercera persona reduce la activación del circuito de autocrítica y de amenaza al ego, produciendo un estado más estable y menos cargado emocionalmente durante el esfuerzo. Es la misma lógica que hace más fácil dar buenos consejos a un amigo que aplicarlos a uno mismo.'
+            'Hay dos tipos de self-talk. El instruccional son señales técnicas, "codo alto", "sigue la pelota". El motivacional es ánimo, "puedo con esto", "una más". La idea que circula en los vestuarios es que cada tipo sirve para lo suyo, lo técnico para la precisión y lo motivacional para aguantar. El metaanálisis no confirmó esa correspondencia con claridad. Los dos tipos funcionaban en un abanico amplio de tareas, y en varias de precisión el motivacional rendía igual de bien.',
+            'Lo que sí aguanta es que la instrucción concreta gana a la vaga. "Muñeca firme" orienta el movimiento, "¡vamos!" solo enciende. Y en los estudios donde los deportistas elegían sus propias frases, en lugar de repetir las del investigador, el efecto era mayor. Una frase prestada motiva menos que una que has ajustado tú.'
+          ]
+        },
+        {
+          subtitle: 'Por dónde actúa',
+          paragraphs: [
+            'Tres vías plausibles, y probablemente actúan a la vez. La frase dirige la atención a lo que importa y tapa el ruido de fuera y el de dentro. Nombrar un gesto por lo bajo lo prepara, hace de pistoletazo del patrón motor correcto. Y sube la autoeficacia, esa creencia de "esto lo puedo hacer" que Bandura ligó al rendimiento por su cuenta.',
+            'Se estudia aparte una variante: hablarse en segunda o tercera persona, "tú puedes", "venga, [tu nombre]", en lugar de "yo puedo". El grupo de Ethan Kross ha mostrado que ese cambio mínimo de pronombre baja la carga emocional de la autocrítica y deja la cabeza más fría antes del momento difícil. Es más fácil dar un buen consejo a un amigo que a uno mismo, y el "tú" te acerca un poco a esa distancia.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el metaanálisis no cierra',
+          paragraphs: [
+            'Casi todos los estudios eran de laboratorio o de tareas deportivas cerradas, con la medición justo después de entrenar la frase. Se sabe poco de si el efecto aguanta en competición de verdad, meses más tarde, o si se apaga cuando la frase deja de ser nueva. El propio patrón de "más efecto en tareas nuevas" da una pista incómoda: parte de la ganancia puede ser el impulso de aprender algo con una muleta atencional, no una mejora estable en quien ya domina el gesto. El self-talk tiene evidencia decente y techo modesto.'
           ]
         }
       ],
-      blockquote: { text: '«El diálogo interno no es superstición deportiva: es un sistema de regulación cognitiva con mecanismos neurológicos precisos y efectos medibles.»', attribution: 'Antonis Hatzigeorgiadis' },
-      aplicacion: 'Para tu próxima situación de rendimiento (deportiva, profesional o social), diseña dos frases específicas antes de empezar: una técnica (algo concreto sobre cómo ejecutar) y una motivacional (algo sobre por qué puedes). Escríbelas. Practícalas. Úsalas en los 30 segundos previos al momento de máxima exigencia, no después de que ya hayas fallado.'
+      blockquote: { text: '«El efecto del self-talk sobre el rendimiento deportivo fue positivo y de magnitud moderada, y mayor en tareas de precisión y en tareas no aprendidas previamente.»', attribution: 'Hatzigeorgiadis et al. (2011)' },
+      aplicacion: 'Para tu próximo momento de exigencia, prepara antes una frase y que sea concreta. No "tú puedes", sino algo que se pueda ejecutar: "hombros abajo", "habla despacio", "primero la pausa". Escríbela y pruébala en los entrenamientos o los ensayos, no la estrenes en el momento. Si te machaca la autocrítica, dátela en segunda persona, como se la darías a otro. Y trátala como un margen que sumas, no como el plan entero, porque el efecto es real pero pequeño.'
     },
     {
       id: 'dep-04',
       title: 'La visualización mental: el entrenamiento que ocurre solo en tu cabeza',
-      summary: 'Ensayar mentalmente un movimiento activa los mismos circuitos neurales que ejecutarlo físicamente. Un metaanálisis cuantifica en qué porcentaje mejora el rendimiento sin tocar nada.',
+      summary: 'Ensayar un movimiento solo con la cabeza mejora el rendimiento de forma medible. Un metaanálisis de 35 estudios midió cuánto y para qué tipo de tareas funciona mejor.',
       sourceUrl: 'https://doi.org/10.1037/0021-9010.79.4.481',
       sourceLabel: 'Driskell, Copper & Moran (1994), Journal of Applied Psychology',
       badge: 'Neurociencia del rendimiento',
       author: { name: 'James Driskell', university: 'Florida Maxima Corp / Naval Air Warfare Center', specialty: 'Psicología del rendimiento y entrenamiento cognitivo' },
-      readingTime: '3 min',
+      readingTime: '4 min',
       date: '5 de mayo de 2026',
-      intro: 'Los pianistas que practican mentalmente (sin tocar el teclado) activan las mismas regiones motoras que los que practican físicamente. Los cirujanos que visualizan un procedimiento antes de operar cometen menos errores. Los atletas olímpicos que más tiempo dedican a la visualización son, consistentemente, los que mejor rinden bajo presión. Driskell y sus colegas cuantificaron este fenómeno en un metaanálisis de 35 estudios: la práctica mental sola produce dos tercios de los beneficios de la práctica física, sin mover un músculo.',
+      intro: 'Un pianista repasa una pieza sin tocar el teclado y, al sentarse a tocarla de verdad, le sale mejor que si no hubiera hecho nada. En 1994, James Driskell, Carolyn Copper y Aidan Moran reunieron 35 estudios sobre esa clase de ensayo mental. El efecto es real, y a la vez más pequeño y más caprichoso de lo que promete la palabra "visualización".',
       sections: [
         {
-          subtitle: 'El metaanálisis: números que sorprenden',
+          subtitle: 'Los números del metaanálisis',
           paragraphs: [
-            'Driskell, Copper y Moran analizaron 35 estudios controlados con más de 3.000 participantes que practicaban tareas motoras, cognitivas o de rendimiento bajo alguna modalidad de práctica mental. Los resultados cuantificaron el efecto: comparado con ninguna práctica, la práctica mental sola mejoraba el rendimiento en un 66% de lo que lograba la práctica física. La combinación de ambas era la mejor condición, pero la práctica mental por sí sola producía ganancias reales y estadísticamente significativas en comparación con grupos de control sin práctica.',
-            'El metaanálisis también identificó los moderadores: la visualización es más efectiva para tareas cognitivamente complejas que para las puramente físicas y de fuerza. Funciona mejor en expertos que en principiantes (porque tienen una representación mental más precisa del movimiento correcto). Y los beneficios son mayores cuando la visualización se realiza en tiempo real (no acelerada) y en primera persona (vista desde los propios ojos, no como espectador).'
+            'Driskell, Copper y Moran juntaron 35 estudios controlados que comparaban practicar una tarea solo con la imaginación frente a no practicarla. El efecto medio fue sólido, de algo más de medio punto de desviación típica, ni marginal ni espectacular. El moderador más claro fue el tipo de tarea. Cuanto más pensamiento exigía, comparar, ordenar, decidir, generar opciones, más ayudaba el ensayo mental. En tareas puramente físicas o de fuerza el beneficio era menor.',
+            'La combinación de práctica mental y física ganaba siempre a cualquiera de las dos por separado. Y el efecto tenía fecha de caducidad, se debilitaba cuanto más tiempo pasaba entre el ensayo mental y la prueba real. Por eso los autores recomendaban repasos cortos y frecuentes en lugar de una única sesión larga. También rendía más en quien ya tenía algo de experiencia en la tarea, porque su imagen mental del gesto correcto era más precisa.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la realidad funcional de lo imaginado',
+          subtitle: 'Por qué el cerebro saca algo de un movimiento que no ocurre',
           paragraphs: [
-            'El cerebro no puede distinguir perfectamente entre una acción imaginada con alta fidelidad y una acción ejecutada realmente. Los estudios de neuroimagen muestran que la visualización motora activa la corteza premotora, el área motora suplementaria y el cerebelo (exactamente las mismas áreas que se activan durante el movimiento físico). La diferencia está en la intensidad de activación, no en los circuitos implicados. La imaginación motora es una ejecución atenuada.',
-            'Desde esta perspectiva, cada repetición mental fortalece las conexiones sinápticas involucradas en el movimiento, aunque el músculo no se mueva. Por eso los experimentos con pacientes en rehabilitación muestran que la visualización activa preserva la representación cortical del movimiento durante períodos de inmovilización. El cerebro práctica aunque el cuerpo no pueda. Y esas prácticas se acumulan.'
+            'Cuando imaginas un movimiento con detalle se activa buena parte de la maquinaria que lo ejecutaría, la corteza premotora, el área motora suplementaria, el cerebelo, con menos intensidad y sin llegar a mover el músculo. <!-- verificar cita neuroimagen: literatura de imaginería motora, Jeannerod --> Cada repetición imaginada refuerza un poco el mismo circuito que usarías de verdad. En rehabilitación se aprovecha esto para que el mapa cortical del movimiento no se degrade durante semanas de escayola: el cuerpo está parado, el circuito no del todo.'
+          ]
+        },
+        {
+          subtitle: 'Lo que 35 estudios de 1994 no pueden zanjar',
+          paragraphs: [
+            'En 2020, un equipo dirigido por Nicholas Toth rehízo el metaanálisis con los estudios de las tres décadas siguientes. La conclusión de fondo aguantó, el ensayo mental ayuda, pero con reparos. Muchos estudios antiguos no controlaban bien qué hacía el grupo "mental" durante ese rato, y es probable que algunos participantes practicaran también en físico a escondidas. Hay sesgo de publicación, los resultados nulos se publican menos y eso empuja la media hacia arriba.',
+            'El efecto es además más frágil en gente sin experiencia previa, que es justo la que tiene una imagen mental más pobre del gesto que quiere aprender. Como herramienta, la visualización le sirve más a quien ya sabe algo y quiere pulirlo que a quien parte de cero. No sustituye al entrenamiento, lo complementa.'
           ]
         }
       ],
-      blockquote: { text: '«La mente puede practicar lo que el cuerpo aún no puede ejecutar. Eso no es una metáfora: es neurofisiología.»', attribution: 'James Driskell' },
-      aplicacion: 'Antes de una situación de rendimiento importante, dedica 10 minutos a una visualización en primera persona y en tiempo real: ve todo lo que verías, siente las sensaciones físicas, imagina los sonidos del entorno. Incluye también cómo gestionas un contratiempo y te recuperas. La visualización que solo imagina el éxito es menos efectiva que la que también entrena la respuesta al error.'
+      blockquote: { text: '«La práctica mental tiene un efecto positivo y significativo sobre el rendimiento, y es más eficaz cuanto mayor es el componente cognitivo de la tarea.»', attribution: 'Driskell, Copper y Moran (1994)' },
+      aplicacion: 'Antes de algo que ya sabes hacer y quieres que salga fino, dedica cinco o diez minutos a recorrerlo por dentro en primera persona y a ritmo real: lo que ves, lo que notas en las manos, el sonido del sitio. Mete también un contratiempo y cómo lo resuelves, porque ensayar solo el final feliz ayuda menos. Repártelo en sesiones cortas los días previos en vez de un atracón la víspera, que el efecto se enfría con el tiempo.'
     },
     {
       id: 'dep-05',
       title: 'Por qué los competidores de rojo ganan más combates olímpicos que los de azul',
-      summary: 'En cuatro deportes de combate de los Juegos Olímpicos de Atenas 2004, el color del uniforme, asignado al azar, predijo quién ganaba el combate con más fuerza cuanto más igualados estaban los rivales.',
+      summary: 'En cuatro deportes de combate de Atenas 2004, quien vestía de rojo, color echado a suertes, ganó el 55% de los asaltos. Veinte años después, un metaanálisis dejó esa ventaja en nada.',
       sourceUrl: 'https://doi.org/10.1038/435293a',
       sourceLabel: 'Hill & Barton (2005), Nature',
       badge: 'Psicología del deporte',
       author: { name: 'Russell Hill', university: 'Durham University', specialty: 'Ecología del comportamiento y señales biológicas' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Russell Hill y Robert Barton partieron de una observación del reino animal: en muchas especies, el color rojo funciona como señal de dominancia y se asocia a niveles más altos de testosterona. Se preguntaron si ese mismo color, cuando se lleva puesto en vez de mostrarse en la piel, podía influir también en el resultado de un enfrentamiento humano. Los Juegos Olímpicos de Atenas 2004 les dieron el escenario perfecto: en boxeo, taekwondo y las dos modalidades de lucha, el color del uniforme (rojo o azul) se asigna a los competidores de forma aleatoria antes de cada combate.',
+      intro: 'En boxeo, taekwondo y las dos modalidades de lucha olímpica, a cada competidor se le asigna rojo o azul por sorteo antes del asalto. Ni el deportista ni el entrenador eligen. Russell Hill y Robert Barton se dieron cuenta de que eso convertía los Juegos de Atenas 2004 en un experimento hecho: si el color no dependía de nada, cualquier relación con el marcador tenía que venir del color mismo.',
       sections: [
         {
-          subtitle: 'El experimento natural: un color asignado por sorteo',
+          subtitle: 'Un color echado a suertes que predecía el marcador',
           paragraphs: [
-            'Como el color no depende de ninguna decisión del deportista ni del entrenador, sino de un sorteo administrativo, Hill y Barton pudieron tratar el color del uniforme como una variable verdaderamente aleatoria y analizar si predecía el resultado en los combates ya disputados en Atenas. El resultado global fue claro: el 55% de todos los combates de las cuatro disciplinas los ganó el competidor vestido de rojo, un porcentaje que por sí solo ya se aleja del 50% esperable por azar.',
-            'El dato más revelador apareció al aislar los combates entre rivales de nivel más parejo, donde no hay una diferencia de habilidad grande que pueda explicar el resultado por sí sola: ahí, el rojo ganó más del 60% de los combates. Cuanto más equilibrado el enfrentamiento, más peso parecía tener el color, justo el patrón que cabría esperar si el color actúa como un empujón psicológico que solo se nota cuando todo lo demás está igualado.'
+            'Hill y Barton repasaron todos los combates de esas cuatro disciplinas en Atenas. El competidor de rojo ganó el 55% de los asaltos, un desvío del 50% esperable por azar que era estadísticamente significativo con esa cantidad de combates. Como el color se sorteaba, no había forma de explicarlo por que los mejores deportistas eligieran rojo.',
+            'El dato que más llamó la atención salió al mirar solo los combates entre rivales de nivel parejo, esos en los que una diferencia grande de habilidad no puede decidir el resultado. Ahí el rojo ganaba más del 60%. Cuanto más igualado el duelo, más pesaba el color, justo lo que cabría esperar de un empujón pequeño que solo se nota cuando lo demás está empatado. En el mismo artículo, los autores añadieron que en la Eurocopa de 2004 los equipos rendían algo mejor con la camiseta roja que con su segunda equipación.'
           ]
         },
         {
-          subtitle: 'El mecanismo: una señal biológica heredada, no una superstición',
+          subtitle: 'La hipótesis: una señal heredada, no una manía',
           paragraphs: [
-            'Hill y Barton proponen que el rojo no funciona como una superstición cultural aprendida, sino como un residuo de un mecanismo biológico más antiguo: en primates y otras especies, la coloración roja de la piel se asocia a dominancia y capacidad competitiva, y los humanos podríamos conservar una sensibilidad perceptiva similar. Ver rojo en un rival podría elevar, de forma automática, la percepción de su amenaza; llevarlo puesto podría, en la misma lógica, aumentar la propia sensación de dominancia de quien lo lleva.',
-            'Estudios posteriores han matizado este hallazgo (el efecto se ha debilitado o desaparecido en algunas disciplinas tras cambios de reglamento y una mayor consciencia del sesgo entre árbitros), lo que sugiere que parte del efecto original podría deberse también a un sesgo de percepción arbitral, no solo a la psicología del competidor. Aun así, el hallazgo original sigue siendo uno de los ejemplos mejor documentados de cómo una señal tan superficial como un color puede desplazar el resultado de una competición de alto nivel.'
+            'La explicación que propusieron no es cultural. En muchos primates la piel enrojecida señala dominancia y va asociada a más testosterona, y los humanos podríamos conservar esa sensibilidad. Ver rojo en el rival elevaría de forma automática cuánto se le percibe como amenaza; llevarlo puesto, por la misma lógica, subiría un poco la propia sensación de estar por encima.',
+            'Es una hipótesis elegante y encaja con otros trabajos sobre el rojo y la percepción de estatus. El problema no estaba en la teoría, sino en si el efecto de Atenas era tan sólido como parecía.'
+          ]
+        },
+        {
+          subtitle: 'Lo que vino después: árbitros que ven rojo',
+          paragraphs: [
+            'La primera réplica llegó rápido y por otro lado. En 2008, Hagemann y su equipo enseñaron los mismos combates de taekwondo a árbitros con experiencia, pero con el color de los petos cambiado por ordenador en la mitad de los vídeos. Los mismos golpes puntuaban más cuando el que los daba iba de rojo. Al menos parte de la "ventaja del rojo" no estaba en la cabeza del que competía, sino en la del que puntuaba. Ya en 2005, una respuesta en Nature había apuntado a algo más prosaico: el azul y el rojo no se ven igual de bien, y eso podía sesgar la percepción del combate.',
+            'El golpe definitivo es reciente. Un metaanálisis de 2024 juntó muchos más torneos que el estudio original y encontró que el rojo gana el 50,5% de los combates, indistinguible del azar. En los duelos ajustados, donde el efecto debía ser mayor, sube al 51,5%, que tampoco es significativo. El propio grupo de Hill firmó en 2025 que la ventaja del rojo ya no se sostiene en los deportes de combate olímpicos. Queda como caso de manual de otra cosa: un hallazgo llamativo, publicado en una gran revista, que dos décadas de datos han ido borrando.'
           ]
         }
       ],
-      blockquote: { text: '«El rojo se asocia a dominancia en muchas especies, y nuestros datos sugieren que también puede desempeñar ese papel en el deporte humano de contacto.»', attribution: 'Russell Hill' },
-      aplicacion: 'Si compites o compara resultados en un deporte donde el color de equipación se elige de antemano, este estudio no te dice que ganar dependa del color, sino que en enfrentamientos muy igualados hasta señales mínimas y aparentemente irrelevantes pueden inclinar la balanza. Vale la pena buscar, en cualquier margen pequeño, ventajas igual de pequeñas y controlables antes de asumir que el resultado se debe solo al talento.'
+      blockquote: { text: '«El rojo se asocia a dominancia en muchas especies, y nuestros datos sugieren que también puede influir en el deporte humano de contacto.»', attribution: 'Hill y Barton (2005)' },
+      aplicacion: 'Sirve menos como consejo de vestuario que como recordatorio de cómo envejecen los hallazgos. Un resultado basado en un solo torneo, por limpio que sea el diseño, es una foto, no una ley. Antes de fiarte de un dato de psicología deportiva, mira si alguien lo ha vuelto a medir con más casos y qué salió. Muchas veces, como aquí, el efecto se encoge.'
     },
     {
       id: 'dep-06',
       title: 'La racha caliente que no existía: por qué el 91% de los aficionados cree en algo que los datos no confirman',
-      summary: 'Un 91% de los aficionados al baloncesto está convencido de que un jugador tiene más probabilidad de encestar tras una racha de aciertos. Al analizar miles de tiros reales, esa racha resultó estadísticamente indistinguible del azar.',
+      summary: 'El 91% de los aficionados al baloncesto cree que un jugador encesta más tras una racha de aciertos. En 1985 los datos no lo confirmaron. En 2018 se descubrió que aquel análisis tenía un fallo, y la racha reaparece, aunque pequeña.',
       sourceUrl: 'https://doi.org/10.1016/0010-0285(85)90010-6',
       sourceLabel: 'Gilovich, Vallone & Tversky (1985), Cognitive Psychology',
       badge: 'Psicología del deporte',
       author: { name: 'Thomas Gilovich', university: 'Cornell University', specialty: 'Psicología del juicio y las creencias erróneas' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '24 de julio de 2026',
-      intro: 'Thomas Gilovich, Robert Vallone y Amos Tversky partieron de una creencia casi universal entre jugadores, entrenadores y aficionados al baloncesto: que un jugador que ha encestado sus últimos lanzamientos tiene más probabilidades de encestar el siguiente, la llamada "mano caliente". Antes de analizar un solo dato, encuestaron a aficionados: el 91% estuvo de acuerdo en que un jugador tiene más probabilidades de acertar después de haber encestado sus dos o tres tiros anteriores que después de haberlos fallado.',
+      intro: 'Pregunta a cualquier aficionado al baloncesto si un jugador que lleva tres canastas seguidas tiene más opciones de meter la cuarta. El 91% dice que sí. Es la "mano caliente", y en 1985 tres psicólogos, Thomas Gilovich, Robert Vallone y Amos Tversky, decidieron comprobar si estaba en los datos o solo en la cabeza de la grada.',
       sections: [
         {
-          subtitle: 'El experimento: temporadas enteras de tiros bajo el microscopio',
+          subtitle: 'Rachas indistinguibles de una moneda',
           paragraphs: [
-            'El equipo analizó los datos de tiros de campo de los Philadelphia 76ers durante una temporada, los tiros libres de los Boston Celtics, y organizó además un experimento controlado con jugadores universitarios de Cornell, que lanzaron 100 tiros cada uno en condiciones idénticas, sin defensa ni presión de partido, para eliminar cualquier explicación alternativa relacionada con la selección de tiro o la presión del rival.',
-            'En los tres conjuntos de datos, la secuencia de aciertos y fallos resultó estadísticamente indistinguible de una secuencia generada por lanzar una moneda al aire de forma repetida: la probabilidad de encestar tras una racha de aciertos no era mayor que la probabilidad de encestar tras una racha de fallos. La racha caliente que el 91% de los aficionados daba por hecha no aparecía en los números.'
+            'Reunieron tres fuentes. Los tiros de campo de los Philadelphia 76ers durante una temporada entera. Los tiros libres de los Boston Celtics, que se lanzan sin defensa. Y un experimento propio con jugadores y jugadoras del equipo universitario de Cornell, cien lanzamientos cada uno, sin rival y sin marcador, para que nadie pudiera alegar que el defensa aprieta más al que está enchufado.',
+            'En los tres casos, la sucesión de aciertos y fallos se parecía a tirar una moneda muchas veces. Encestar después de una racha de canastas no era más probable que encestar después de una racha de fallos. La mano caliente que casi todo el mundo daba por segura no aparecía en los números.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el cerebro detecta patrones incluso donde no los hay',
+          subtitle: 'El cerebro ve rachas donde solo hay azar',
           paragraphs: [
-            'Gilovich, Vallone y Tversky explicaron la discrepancia con un sesgo de percepción de la aleatoriedad: la mente humana subestima sistemáticamente cuántas rachas largas produce el puro azar, y por eso interpreta las rachas normales de una secuencia aleatoria como si fueran una señal de un estado interno cambiante del jugador, en vez de una fluctuación estadística esperable. Ver cuatro aciertos seguidos "parece" significar algo, aunque cuatro aciertos seguidos ocurran con normalidad en cualquier secuencia suficientemente larga de sucesos con la misma probabilidad.',
-            'Conviene añadir un matiz honesto: el debate no se cerró en 1985. Análisis estadísticos posteriores, en particular de Joshua Miller y Adam Sanjurjo (2018), identificaron un sesgo metodológico sutil en cómo se calculaban las probabilidades condicionadas del estudio original, y al corregirlo reaparece una pequeña pero real tendencia hacia la mano caliente en algunos conjuntos de datos. La conclusión más prudente hoy no es "la mano caliente es un mito" sino que, si existe, es mucho más débil de lo que la intuición del 91% de los aficionados sugiere.'
+            'La explicación que dieron es un error de intuición sobre lo que produce el azar. La gente subestima cuántas rachas largas salen solas al repetir un suceso con probabilidad fija. Cuatro canastas seguidas parecen significar algo, un estado, una confianza, un ritmo, cuando en una secuencia lo bastante larga cuatro seguidas ocurren sin más. Vemos un patrón y le buscamos causa, aunque la causa sea solo la estadística haciendo su trabajo.',
+            'Ese sesgo explica de paso la falacia del jugador, la contraria: creer que después de varios rojos en la ruleta "toca" negro. La misma mente que espera que el azar se corrija a corto plazo espera que el acierto se encadene. Ninguna de las dos cosas está en los datos de una moneda.'
+          ]
+        },
+        {
+          subtitle: 'El giro estadístico de 2018',
+          paragraphs: [
+            'El debate no se cerró ahí. En 2018, Joshua Miller y Adam Sanjurjo publicaron en Econometrica que el propio método de 1985 tenía un sesgo escondido. Si en una secuencia finita seleccionas los momentos que vienen justo después de tres aciertos y miras el tiro siguiente, la media de esa submuestra está por debajo del 50% aunque los tiros sean independientes. Es un artefacto de contar así. Al corregirlo, los datos de tiro de Cornell muestran una mano caliente de unos once puntos porcentuales, que estaba ahí desde el principio, tapada por el error.',
+            'Con datos masivos de seguimiento de la NBA, otros equipos han encontrado también un efecto real, pero pequeño, de uno o dos puntos. Así que la lectura de hoy no es que la mano caliente sea un mito ni que la grada tenga razón. Existe, es leve, y el 91% de los aficionados la vive como si fuera enorme. El error de percepción original sigue en pie, solo que apuntaba en la dirección equivocada.'
           ]
         }
       ],
-      blockquote: { text: '«La gente detecta patrones en secuencias aleatorias con la misma facilidad con la que los detecta en secuencias que sí contienen un patrón real.»', attribution: 'Thomas Gilovich' },
-      aplicacion: 'La próxima vez que sientas que algo (un jugador, una inversión, una máquina) está "en racha", pregúntate cuántas rachas de esa longitud esperarías ver solo por azar en una secuencia tan larga como la que estás observando. Casi siempre son más de las que la intuición calcula, y eso no significa que las rachas no existan nunca: significa que hace falta más que una racha corta para probarlo.'
+      blockquote: { text: '«La gente detecta patrones en secuencias aleatorias con la misma facilidad con la que los detecta en secuencias que sí contienen un patrón real.»', attribution: 'Gilovich, Vallone y Tversky (1985)' },
+      aplicacion: 'Cuando sientas que algo está "en racha", un jugador, un fondo, una máquina, calcula cuántas rachas de esa longitud verías solo por azar en una serie tan larga como la que observas. Suelen ser más de las que la intuición cuenta. Eso no prueba que las rachas no existan, la historia de esta misma investigación lo demuestra: prueba que una racha corta no basta para afirmar nada.'
     },
     {
       id: 'dep-07',
       title: 'El primer experimento de psicología social: niños que enrollaban un carrete más rápido si tenían compañía',
-      summary: 'Norman Triplett quiso comprobar en laboratorio por qué los ciclistas competían más rápido acompañados que contra el reloj, y encontró que 20 de 40 niños enrollaban un carrete de pesca más deprisa junto a otro niño.',
+      summary: 'Norman Triplett vio que los ciclistas corrían más rápido codo con codo que contra el reloj y lo llevó al laboratorio con niños y carretes de pesca. Un reanálisis de 2005 mostró que sus propios datos no eran significativos.',
       sourceUrl: 'https://doi.org/10.2307/1412188',
       sourceLabel: 'Triplett (1898), American Journal of Psychology',
       badge: 'Psicología del deporte',
       author: { name: 'Norman Triplett', university: 'Indiana University', specialty: 'Psicología de la competición y facilitación social' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Norman Triplett llevaba tiempo fijándose en los registros de carreras ciclistas y había notado algo que le pareció digno de estudio: los ciclistas marcaban tiempos más rápidos cuando competían codo con codo contra otro corredor que cuando pedaleaban en solitario contra el cronómetro. Quiso saber si ese efecto de la compañía sobre el rendimiento se podía reproducir, de forma controlada, con una tarea completamente distinta al ciclismo.',
+      intro: 'Norman Triplett revisaba en 1898 los registros de carreras ciclistas y le llamó la atención un patrón: los corredores marcaban mejores tiempos cuando peleaban rueda con rueda que cuando iban solos contra el cronómetro. Quiso ver si esa pequeña ayuda de la compañía se podía reproducir en una tarea que no tuviera nada que ver con una bicicleta.',
       sections: [
         {
-          subtitle: 'El experimento: un carrete de pesca, en vez de una bicicleta',
+          subtitle: 'De los ciclistas a un carrete de pesca',
           paragraphs: [
-            'Triplett construyó un aparato con dos carretes de pesca montados en un armazón de madera, conectados mediante hilo de pescar y poleas a unas pequeñas banderas que marcaban el avance. Reclutó a 40 niños de entre 8 y 17 años y les pidió que enrollaran el hilo lo más rápido posible, unas veces en solitario y otras junto a otro niño haciendo la misma tarea al mismo tiempo, en un aparato paralelo.',
-            'De los 40 niños, 20 enrollaron el hilo más rápido cuando tenían compañía. Diez fueron más lentos con compañía que en solitario, y los diez restantes no mostraron un cambio claro en ningún sentido, algunos incluso parecían sobreexcitarse hasta el punto de perder ritmo. El patrón, aunque no era universal, era demasiado marcado en una dirección como para deberse solo al azar.'
+            'Montó en un armazón de madera dos carretes de pesca conectados por hilo y poleas a unas banderitas que marcaban el avance. Reunió a unos cuarenta niños de entre 8 y 17 años y les pidió enrollar el hilo lo más rápido posible, unas veces solos y otras al lado de otro niño haciendo lo mismo en el carrete gemelo. Sin premio, sin público, sin nada en juego más que ir más deprisa que el de al lado.',
+            'Al comparar los tiempos, Triplett clasificó a los niños en tres grupos. Una veintena giró más rápido acompañada. Una decena fue más lenta. El resto no cambió de forma clara, y algunos parecían tan revueltos por la presencia del otro que perdían el ritmo. La dirección dominante le pareció suficiente para hablar de un efecto.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la mera presencia de otro cambia el esfuerzo, para bien o para mal',
+          subtitle: 'La chispa de la copresencia',
           paragraphs: [
-            'Triplett llamó a este efecto "factores dinamogénicos": la sola presencia de otra persona haciendo la misma tarea parecía liberar energía competitiva adicional en la mayoría de los niños, incluso en una tarea tan mecánica como enrollar un hilo. No hacía falta que hubiera premio, público ni consecuencia alguna, bastaba con la copresencia de otro competidor.',
-            'Este experimento se considera hoy el primero documentado de la psicología social experimental, y sentó las bases de lo que más tarde se formalizaría como facilitación social: la presencia de otros mejora el rendimiento en tareas simples o bien aprendidas, pero puede empeorarlo en tareas complejas o poco dominadas, justo el matiz que explica por qué una minoría de los niños de Triplett rindió peor, no mejor, con compañía.'
+            'Triplett lo atribuyó a lo que llamó "factores dinamogénicos": tener a otra persona haciendo tu misma tarea al lado libera una energía competitiva que en solitario no se activa, incluso en algo tan mecánico como enrollar un sedal. El experimento pasó a los manuales como el primero de la psicología social experimental y como el germen de la idea de facilitación social, que Robert Zajonc afinaría décadas después: la presencia de otros mejora lo que ya dominas y estorba lo que aún no, lo que encajaría con esa minoría de niños que fue a peor.',
+            'Buena historia y buena genealogía. El problema es lo que había realmente en los cuadernos de Triplett.'
+          ]
+        },
+        {
+          subtitle: 'Lo que Triplett encontró de verdad',
+          paragraphs: [
+            'En 2005, Michael Strube volvió a los datos originales y les aplicó estadística moderna, que en 1898 no existía. La comparación entre el grupo que competía y el que trabajaba solo no era significativa. La comparación de cada niño consigo mismo daba, como mucho, un resultado en el límite, con una mejora media inferior al 2% del tiempo. Su conclusión fue seca: los números de Triplett apenas sostienen la facilitación social de esa tarea.',
+            'Unos años más tarde, Wolfgang Stroebe tituló un artículo "La verdad sobre Triplett (1898), pero a nadie parece importarle": los manuales siguen citándolo como demostración limpia de algo que nunca demostró con limpieza. La facilitación social existe, se ha replicado mucho y tiene metaanálisis a favor. El experimento fundacional, en cambio, es más un mito de origen que una prueba.'
           ]
         }
       ],
-      blockquote: { text: '«La presencia de un segundo competidor produce una energía dinamogénica no disponible en condiciones ordinarias.»', attribution: 'Norman Triplett' },
-      aplicacion: 'Si entrenas o practicas una habilidad ya dominada, buscar compañía o competencia directa puede darte un empujón de rendimiento real, tal y como sugería Triplett hace más de un siglo. Si en cambio estás aprendiendo algo nuevo y complejo, ese mismo público o esa misma compañía puede jugar en tu contra: vale la pena practicar lo difícil a solas y reservar la compañía para cuando ya domines la tarea.'
+      blockquote: { text: '«La presencia de un segundo competidor produce una energía dinamogénica no disponible en condiciones ordinarias.»', attribution: 'Triplett (1898)' },
+      aplicacion: 'Si practicas algo que ya dominas, entrenar con alguien al lado o compitiendo de tú a tú puede darte un empujón real, aunque el estudio que lo hizo famoso no lo probara bien. Si estás aprendiendo algo nuevo y difícil, esa misma compañía puede ponerte nervioso y hacerte ir a peor. Reserva el público para cuando la tarea te salga sola.'
     }
   ],
 
@@ -1373,92 +1491,114 @@ const LIBRARY_ARTICLES = {
     {
       id: 'art-05',
       title: 'Por qué acabas queriendo la canción que odiabas la primera vez que la oíste',
-      summary: 'Repetir la exposición a una imagen, una palabra o una melodía basta para que empiece a gustar más, sin que la persona sea consciente de por qué. El hallazgo se replicó en más de 200 estudios posteriores.',
+      summary: 'Ver algo varias veces, sin premio ni explicación, basta para que empiece a gustar más. El efecto es de los más replicados de la psicología, con un metaanálisis de 208 estudios, pero se agota y hasta se invierte si insistes demasiado.',
       sourceUrl: 'https://doi.org/10.1037/h0025848',
       sourceLabel: 'Zajonc (1968), Journal of Personality and Social Psychology Monograph Supplement',
       badge: 'Neuroestética',
       author: { name: 'Robert Zajonc', university: 'University of Michigan', specialty: 'Psicología social de las emociones y la cognición' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '20 de julio de 2026',
-      intro: 'Robert Zajonc quería comprobar algo que hasta entonces solo era una intuición dispersa: que basta con ver algo varias veces, sin ningún premio ni castigo asociado, para empezar a valorarlo mejor. Para probarlo diseñó una serie de experimentos con estímulos que los participantes no habían visto nunca antes: palabras sin sentido, ideogramas chinos y fotografías de rostros desconocidos.',
+      intro: 'La canción que odiabas en la radio y ahora tarareas. La tipografía rara de una marca que al principio chirriaba y ya te parece normal. Robert Zajonc sostuvo en 1968 que detrás de eso no hay ningún cambio en la canción ni en la tipografía, solo el número de veces que te han pasado por delante.',
       sections: [
         {
-          subtitle: 'El experimento: exponer sin explicar, y medir el gusto',
+          subtitle: 'Palabras inventadas y caras de desconocidos',
           paragraphs: [
-            'A los participantes se les mostraban estos estímulos un número distinto de veces (algunos ni una sola vez, otros hasta veinticinco veces) y después se les pedía que valoraran cuánto les gustaba cada uno, sin decirles en ningún momento qué significaban ni por qué se les mostraban. No había ninguna recompensa asociada a ningún estímulo: solo exposición repetida, sin refuerzo de ningún tipo.',
-            'El patrón se repitió en los tres tipos de estímulo: cuantas más veces habían visto un ideograma, una palabra sin sentido o un rostro, mejor lo valoraban, incluso cuando no podían explicar por qué les resultaba más agradable ni recordaban conscientemente haberlo visto antes. El efecto era más fuerte en las primeras repeticiones y se iba suavizando con cada exposición adicional, una curva que crecía rápido al principio y luego se aplanaba.'
+            'Zajonc usó estímulos que nadie podía haber visto antes: palabras de aspecto turco sin significado, caracteres de aspecto chino y fotos de rostros de un anuario. Los mostraba un número distinto de veces, desde ninguna hasta veinticinco, y luego pedía valorar cuánto gustaba cada uno o cuánto "bien" parecía significar. Sin decir qué eran, sin recompensa, sin nada. Solo repetición.',
+            'En los tres tipos de material salió la misma curva. Cuantas más veces se había visto algo, mejor se valoraba, aunque la persona no supiera decir por qué ni recordara haberlo visto. La subida era pronunciada en las primeras exposiciones y luego se iba aplanando. Zajonc añadió un dato de archivo que apuntaba en la misma dirección: en inglés, las palabras más frecuentes tienden a tener connotaciones más positivas que sus sinónimos raros.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la familiaridad como señal de seguridad',
+          subtitle: 'Lo familiar se lee como seguro',
           paragraphs: [
-            'Zajonc propuso que este "efecto de mera exposición" no depende del procesamiento consciente ni racional del estímulo: opera incluso cuando la persona no reconoce haberlo visto antes, lo que sugiere un mecanismo más primitivo que el razonamiento deliberado. Su hipótesis fue que lo familiar se procesa, de entrada, como más seguro que lo desconocido, un atajo evolutivamente razonable en un entorno donde lo nuevo podía representar una amenaza real.',
-            'La revisión posterior de más de 200 estudios (metaanálisis de Bornstein, 1989) confirmó el patrón general con matices: el efecto es más fuerte cuando el estímulo se presenta muy brevemente, cuando la persona no es consciente de la repetición y en las primeras exposiciones. Es la explicación que hay detrás de por qué una canción, una obra o incluso una cara desconocida al principio "crece" con el tiempo sin que nada objetivo en el estímulo haya cambiado. Lo único que cambió fue cuántas veces la habías visto.'
+            'Su hipótesis fue que lo conocido se procesa de entrada como menos peligroso que lo nuevo, un atajo que tiene sentido en un entorno donde lo desconocido podía morderte. No hace falta pensar en el estímulo para que funcione. De hecho, trabajos posteriores encontraron que la exposición por debajo del umbral de la conciencia, imágenes que aparecen tan rápido que no se llegan a ver, produce un efecto incluso mayor que la exposición consciente. Cuando reconoces la repetición, entra en juego el juicio deliberado y el empujón se diluye.',
+            'Eso explica por qué una obra, una voz o una cara "crecen" con el tiempo sin que cambie nada medible en ellas. Lo único que cambió es la cuenta de encuentros.'
+          ]
+        },
+        {
+          subtitle: 'Hasta que empalaga',
+          paragraphs: [
+            'El metaanálisis de Robert Bornstein (1989) reunió 208 estudios y confirmó el efecto, con un tamaño moderado. También dibujó sus fronteras. Funciona mejor con exposiciones breves, con estímulos nuevos o complejos, y cuando entre la exposición y la valoración pasa un rato. Y tiene forma de U invertida: pasado un punto, cada nueva repetición ya no suma agrado, lo resta. La saturación y el aburrimiento se comen la ganancia.',
+            'Hay más límites. Con algo que te disgusta de verdad de entrada, repetirlo no lo rescata. Y en contextos de tensión entre grupos el efecto puede darse la vuelta: exponer una y otra vez a alguien a un grupo que percibe como amenaza tiende a aumentar el rechazo, no a limarlo. La mera exposición mueve preferencias tibias sobre cosas neutras. No es un disolvente universal de antipatías.'
           ]
         }
       ],
-      blockquote: { text: '«La exposición repetida y no reforzada a un estímulo es suficiente para mejorar la actitud hacia él.»', attribution: 'Robert Zajonc' },
-      aplicacion: 'Si una obra, una canción o incluso una idea te generó rechazo la primera vez, dale una segunda y una tercera oportunidad antes de descartarla del todo: parte de ese rechazo inicial puede ser, simplemente, la novedad hablando, no un juicio estético definitivo. Y a la inversa: si algo te gusta mucho de inmediato, pregúntate cuánto de ese gusto viene de lo familiar que ya te resultaba.'
+      blockquote: { text: '«La exposición repetida y no reforzada a un estímulo es suficiente para mejorar la actitud hacia él.»', attribution: 'Zajonc (1968)' },
+      aplicacion: 'Si algo te chirrió a la primera, una canción, una idea, un diseño, dale dos o tres pases más antes de sentenciarlo: parte del rechazo inicial es la novedad, no un veredicto. Al revés también sirve. Si algo te encanta de inmediato, pregúntate cuánto de ese flechazo es que ya te sonaba de antes. Y no cuentes con que repetir arregle lo que te desagrada de raíz: ahí la insistencia suele cansar más que convencer.'
     },
     {
       id: 'art-06',
       title: 'Cuarenta y cinco minutos de pintar bajaron el cortisol en el 75% de un grupo de adultos',
-      summary: 'No hace falta saber dibujar para que hacer arte reduzca la hormona del estrés: en un estudio con 39 adultos, tres de cada cuatro mostraron menos cortisol tras 45 minutos de creación libre, sin ninguna instrucción técnica.',
+      summary: 'En un estudio con 39 adultos, tres de cada cuatro mostraron menos cortisol tras 45 minutos de crear libremente, y la caída no dependía de la mano que tuvieran. No había grupo de control y el cortisol ya baja solo a lo largo del día.',
       sourceUrl: 'https://doi.org/10.1080/07421656.2016.1166832',
       sourceLabel: 'Kaimal, Ray & Muniz (2016), Art Therapy',
       badge: 'Neuroestética',
       author: { name: 'Girija Kaimal', university: 'Drexel University', specialty: 'Arteterapia y neurociencia de la creatividad' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '13 de julio de 2026',
-      intro: 'Girija Kaimal, Kendra Ray y Juan Muniz querían separar dos preguntas que suelen mezclarse cuando se habla de arte y bienestar: si hacer arte reduce el estrés de verdad, medido en el cuerpo y no solo en cuestionarios, y si hace falta tener habilidad artística para conseguirlo. Reunieron a 39 adultos sanos, de entre 18 y 59 años, con niveles de experiencia artística muy distintos entre sí.',
+      intro: 'La frase se repite en talleres y folletos: hacer arte relaja, no hace falta saber dibujar. Girija Kaimal, Kendra Ray y Juan Muniz, de la Universidad Drexel, quisieron ponerle un número al cuerpo. Reunieron a 39 adultos sanos, de 18 a 59 años, y midieron una hormona del estrés antes y después de dejarles crear a su aire durante tres cuartos de hora.',
       sections: [
         {
-          subtitle: 'El experimento: pintar, moldear o recortar durante 45 minutos',
+          subtitle: 'Rotuladores, arcilla y collage durante tres cuartos de hora',
           paragraphs: [
-            'A cada participante se le dio acceso a rotuladores y papel, arcilla de modelar y materiales de collage, sin ninguna instrucción sobre qué crear ni cómo hacerlo: cada persona decidía libremente qué obra quería producir. Antes y después de los 45 minutos de creación, se tomaron muestras de saliva para medir de forma objetiva el nivel de cortisol, la hormona asociada a la respuesta de estrés del organismo.',
-            'El resultado fue una bajada estadísticamente significativa del cortisol en el conjunto del grupo, con casi un 75% de los participantes mostrando niveles más bajos al terminar que al empezar. La reducción no dependía de la experiencia artística previa: quienes nunca habían pintado ni modelado nada mostraron beneficios comparables a quienes tenían formación artística formal.'
+            'Cada participante entraba en un estudio abierto con rotuladores y papel, arcilla de modelar y material de collage. Ninguna consigna sobre qué hacer ni cómo. Cuarenta y cinco minutos después, dejaba la obra y escribía una o dos líneas sobre cómo había sido la experiencia. Antes y al terminar se recogía una muestra de saliva para medir el cortisol, y quien la analizaba en el laboratorio no sabía si era la de antes o la de después.',
+            'La media del grupo bajó de forma clara, de unos 18 a unos 15 nanogramos por mililitro. Alrededor del 75% de los participantes, treinta de treinta y nueve, terminó con menos cortisol que al empezar. El detalle que suele caerse del titular: el 25% restante acabó igual o con la hormona un poco más alta. Para nueve personas, la sesión no relajó, o incluso activó.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la creación como regulación, no como talento',
+          subtitle: 'La mano que tengas da igual',
           paragraphs: [
-            'Kaimal y su equipo interpretan el hallazgo como evidencia de que el efecto reductor de estrés del arte no depende de la calidad del resultado ni de la técnica empleada, sino del propio proceso de creación: la atención sostenida en una tarea manual y abierta, sin evaluación externa ni objetivo de rendimiento, parece activar un estado de regulación fisiológica similar al que producen otras prácticas de atención plena.',
-            'Esto tiene una implicación práctica que contradice una creencia muy extendida: la barrera de entrada para beneficiarse del arte como herramienta de regulación emocional no es "saber hacerlo bien". El estudio no midió la calidad estética de las obras producidas, solo el cambio hormonal de quien las hizo, y ese cambio apareció con independencia del nivel de destreza de partida.'
+            'Aquí está el hallazgo que aguanta. La bajada de cortisol no se relacionó con la experiencia artística previa, ni con el tipo de material elegido, ni con el sexo, ni con la etnia. Con la edad había una correlación muy débil, los más jóvenes bajaban algo más, pero tan floja que los propios autores piden tomarla con pinzas. Quien no había cogido un pincel en su vida se beneficiaba tanto como quien tenía formación.',
+            'La lectura del equipo es que el efecto, si lo hay, no viene de la destreza ni del resultado, sino del rato en sí: atención sostenida en una tarea manual y abierta, sin nadie evaluando y sin objetivo de rendimiento, algo parecido a lo que buscan las prácticas de atención plena. El estudio no puntuó la calidad de ninguna obra, solo el cambio hormonal de quien la hizo.'
+          ]
+        },
+        {
+          subtitle: 'Sin grupo de control, con una hormona que ya baja sola',
+          paragraphs: [
+            'El propio artículo es franco con sus límites, y son grandes. No hubo grupo de control. Sin él es imposible separar qué parte de la bajada la puso el arte y qué parte la puso sentarse cuarenta y cinco minutos en una sala tranquila charlando con un investigador. El cortisol tiene además un ritmo circadiano: es más alto por la mañana y va cayendo a lo largo del día por sí solo. En el estudio, cuanto más tarde se hacía la sesión, menos bajaba, justo lo que cabría esperar si parte del descenso es ese goteo natural y no el efecto de pintar.',
+            'La muestra tampoco ayuda a generalizar: el 85% eran mujeres y cerca del 80% ya tenía experiencia media o alta con el arte. Es un estudio piloto, el primero que midió cortisol tras una sesión con este formato, y la literatura de la que forma parte todavía es corta. Que hacer algo con las manos siente bien es fácil de creer. Que baje una hormona por encima de lo que bajaría de todos modos esa tarde es lo que este trabajo, solo, no puede demostrar.'
           ]
         }
       ],
-      blockquote: { text: '«La reducción de cortisol tras hacer arte se observó en todos los niveles de habilidad, lo que sugiere que el efecto no depende de la experiencia artística previa.»', attribution: 'Girija Kaimal' },
-      aplicacion: 'Si buscas una forma de bajar el estrés acumulado de un día concreto, este estudio sugiere que 45 minutos de crear algo con las manos (sin exigirte que quede bien, sin foto para nadie) puede tener un efecto fisiológico medible, exactamente igual de válido si nunca has pintado nada que si llevas años haciéndolo.'
+      blockquote: { text: '«Hacer arte puede reducir el cortisol con independencia de la experiencia previa, el tipo de material o el perfil de quien lo hace.»', attribution: 'Kaimal, Ray y Muniz (2016)' },
+      aplicacion: 'Como plan para descargar la tensión de un día, cuarenta y cinco minutos de crear algo con las manos, sin exigirte que quede bien y sin foto para nadie, es barato y rara vez hace daño. No cuentes con una bajada hormonal garantizada: a una de cada cuatro personas del estudio no le pasó, y parte del efecto medio pudo ser el cortisol cayendo solo. El motivo para hacerlo es que suele apetecer, no el análisis de saliva.'
     },
     {
       id: 'art-07',
       title: 'Los escalofríos que te da una canción activan en el cerebro las mismas zonas que la comida, el sexo o las drogas',
-      summary: 'Un escáner cerebral a diez músicos mientras escuchaban la pieza que de forma fiable les erizaba la piel mostró que esos escalofríos activan el circuito de recompensa, la misma red que responde a los estímulos biológicos más básicos.',
+      summary: 'Un PET a diez músicos escuchando la pieza que les eriza la piel mostró que ese escalofrío activa el circuito de recompensa, el que responde a la comida o las drogas. La muestra era pequeña, pero estudios posteriores han apuntalado el vínculo.',
       sourceUrl: 'https://doi.org/10.1073/pnas.191355898',
       sourceLabel: 'Blood & Zatorre (2001), Proceedings of the National Academy of Sciences (PNAS)',
       badge: 'Neurociencia de la música',
       author: { name: 'Anne J. Blood', university: 'McGill University', specialty: 'Neurociencia de la emoción musical' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Anne Blood y Robert Zatorre, del Instituto Neurológico de Montreal en la Universidad McGill, querían saber qué ocurre exactamente en el cerebro durante uno de los momentos más intensos que puede producir la música: el escalofrío que recorre la espalda cuando una pieza toca el punto adecuado. Para estudiarlo con precisión, en vez de usar música genérica para todos, pidieron a cada participante que llevara la suya propia.',
+      intro: 'Hay un instante en algunas canciones, cuando entra la voz, cuando revienta el clímax, en que un escalofrío te recorre la espalda y se te eriza la piel. Anne Blood y Robert Zatorre, en Montreal, quisieron ver qué hace el cerebro en ese segundo exacto. En vez de poner la misma música a todo el mundo, cada participante trajo la suya.',
       sections: [
         {
-          subtitle: 'El experimento: diez músicos, su pieza favorita y un escáner de tomografía',
+          subtitle: 'Diez músicos con su propia grabación',
           paragraphs: [
-            'Los participantes fueron seleccionados específicamente porque reportaban escalofríos fiables y reproducibles ante piezas musicales concretas, todas instrumentales y sin letra, para evitar que el efecto se debiera al significado de una letra en vez de a la música en sí. Cada uno llevó su propia grabación al laboratorio y la escuchó dentro de un escáner de tomografía por emisión de positrones (PET), que mide cambios en el flujo sanguíneo cerebral.',
-            'Mientras escuchaban, los participantes indicaban en tiempo real, con un dispositivo manual, la intensidad del escalofrío que sentían en cada momento de la pieza. Blood y Zatorre compararon después los instantes de escalofrío más intenso con los de menor intensidad dentro de la misma grabación, y encontraron que esa intensidad subjetiva predecía cambios de actividad en regiones cerebrales muy concretas.'
+            'Reclutaron a diez personas que sentían escalofríos de forma fiable y repetible ante piezas concretas, todas instrumentales, sin letra, para que el efecto no viniera del significado de unas palabras. Cada una escuchó su grabación dentro de un escáner de tomografía por emisión de positrones, que sigue los cambios de flujo sanguíneo en el cerebro. Como comparación, cada participante escuchaba también la música elegida por otro, que a él o ella no le producía nada, además de ruido y silencio.',
+            'Mientras escuchaban, marcaban con la mano la intensidad del escalofrío momento a momento. El escalofrío venía acompañado de cambios medibles en el ritmo cardíaco, la respiración y la tensión muscular, así que no era solo una sensación declarada. Blood y Zatorre cruzaron esos picos con la actividad cerebral.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el mismo circuito que responde a la comida, el sexo o las drogas',
+          subtitle: 'El circuito de la recompensa se enciende',
           paragraphs: [
-            'Cuanto más intenso era el escalofrío, más cambiaba la actividad en el estriado ventral, el mesencéfalo, la amígdala y la corteza orbitofrontal y prefrontal ventromedial, un conjunto de estructuras conocido como circuito de recompensa. Es la misma red que se activa ante estímulos con valor biológico directo para la supervivencia y la reproducción: comida, sexo y también sustancias adictivas.',
-            'Lo llamativo es que la música no alimenta a nadie ni tiene ninguna función reproductiva. Es un patrón sonoro abstracto y, sin embargo, es capaz de secuestrar un circuito de recompensa que evolucionó para reforzar comportamientos con valor directo de supervivencia. El hallazgo sugiere que ese circuito responde a la intensidad emocional del estímulo, no solo a su utilidad biológica inmediata.'
+            'Cuanto más fuerte era el escalofrío, más subía la actividad en el estriado ventral, el mesencéfalo, la ínsula anterior y la corteza orbitofrontal, y más bajaba en la amígdala y el hipocampo anterior. El bloque que se activa es el circuito de recompensa, y los autores lo dijeron con todas las letras: son las mismas regiones que responden a la comida, el sexo y las drogas de abuso.',
+            'Lo raro del asunto es que la música no alimenta, no reproduce y no tiene ningún valor de supervivencia. Es un patrón de sonido y ya está. Que sea capaz de mover el sistema que la evolución montó para premiar comer y aparearse sugiere que ese sistema responde a la intensidad emocional en sí, no solo a lo que sirve para seguir vivo.'
+          ]
+        },
+        {
+          subtitle: 'Qué aguanta de la comparación con la cocaína',
+          paragraphs: [
+            'La frase "las mismas zonas que la droga" hay que cogerla con cuidado. El estriado ventral se activa con cientos de cosas distintas, del dinero a un chiste, así que ver la misma región encendida no prueba que el mecanismo sea el mismo. Es el problema clásico de deducir la función a partir del mapa. Y la muestra era de diez personas, con una técnica, el PET, más borrosa que la resonancia actual.',
+            'Lo que ha reforzado el vínculo son los estudios de después, no este. En 2011, el equipo de Valorie Salimpoor midió liberación real de dopamina durante los picos de placer musical, con un reparto temporal: una zona se activa anticipando el momento y otra en el momento. En 2013 encontraron que la actividad del núcleo accumbens predecía cuánto pagaba la gente por canciones que no había oído. Y en 2019, Ferreri y su equipo subieron y bajaron el placer y los escalofríos dándole a los participantes fármacos que aumentan o bloquean la dopamina, que es lo más cerca de una prueba causal que hay.',
+            'En el otro extremo, alrededor de una de cada veinte personas tiene anhedonia musical: no disfruta la música por mucho que lo intente, pese a emocionarse con el dinero o con otras cosas y a oír bien. Que se pueda perder solo esa vía indica que el enganche musical al circuito de recompensa es específico, no un efecto genérico de "cualquier cosa agradable".'
           ]
         }
       ],
-      blockquote: { text: '«Las regiones cerebrales activadas por los escalofríos musicales son las mismas que responden a otros estímulos generadores de euforia, como la comida, el sexo o las drogas.»', attribution: 'Anne J. Blood & Robert J. Zatorre' },
-      aplicacion: 'Si tienes canciones que te provocan escalofríos de forma constante, este estudio sugiere que no es una simple expresión, es una activación medible del mismo circuito cerebral que responde a tus recompensas más básicas. Tener a mano esa lista concreta de piezas (no música genérica "relajante", sino las que de verdad te erizan la piel) es una herramienta de regulación emocional con respaldo neurobiológico directo.'
+      blockquote: { text: '«Las regiones que se activan con los escalofríos musicales son las mismas que responden a la comida, el sexo o las drogas de abuso.»', attribution: 'Blood y Zatorre (2001)' },
+      aplicacion: 'Si tienes canciones que te erizan la piel de forma constante, tenlas identificadas y a mano. No la lista genérica de "música para relajarse", sino las cuatro o cinco piezas que a ti, en concreto, te disparan el escalofrío. Son un recurso de regulación emocional con más respaldo del que parece, y el efecto es tuyo y no traslada: la que a ti te atraviesa a otro puede dejarle indiferente.'
     }
   ],
 
@@ -1466,122 +1606,165 @@ const LIBRARY_ARTICLES = {
     {
       id: 'tec-01',
       title: 'Por qué el scroll infinito está diseñado para secuestrar tu dopamina',
-      summary: 'El diseño de refuerzo variable en redes sociales replica el mismo mecanismo neurológico de las máquinas tragaperras para maximizar el tiempo de uso.',
-      sourceUrl: 'https://doi.org/10.1177/1461444819876980',
-      sourceLabel: 'Panova & Carbonell (2018), New Media & Society · Skinner (1938)',
+      summary: 'El feed sin fondo usa el mismo programa de recompensa que una tragaperras: premio impredecible y ningún punto de parada natural.',
+      sourceUrl: 'https://doi.org/10.3390/ijerph16142612',
+      sourceLabel: 'Montag, Lachmann, Herrlich & Zweig (2019), Int. J. Environmental Research and Public Health · Ferster & Skinner (1957)',
       badge: 'Psicología del diseño',
-      author: { name: 'Tristan Harris', university: 'Stanford University (Persuasive Tech Lab)', specialty: 'Diseño Persuasivo y Ética Tecnológica' },
-      readingTime: '4 min',
+      author: { name: 'Christian Montag', university: 'Universidad de Ulm', specialty: 'Psicología de la personalidad y neurociencia de la tecnología' },
+      readingTime: '6 min',
       date: '2 de junio de 2026',
-      intro: 'El feed de Instagram no tiene fondo. El de TikTok tampoco. Eso no es un accidente técnico: es una decisión de diseño deliberada basada en la psicología del refuerzo variable de B.F. Skinner. La incertidumbre de si el próximo contenido será relevante o no es el mecanismo exacto que hace que las palomas de Skinner sigan picando sin parar.',
+      intro: 'El feed de Instagram no tiene fondo. Deslizas, carga más contenido, vuelves a deslizar y siempre hay algo debajo. Eso no es un límite técnico que los ingenieros no hayan sabido resolver. Es la función. El diseño que hace que no encuentres el final es pariente directo del que mantenía a las palomas de las cajas de Skinner picando una palanca hasta caer rendidas.',
       sections: [
         {
-          subtitle: 'El experimento de Skinner aplicado al diseño digital',
+          subtitle: 'Una palanca que a veces da comida y a veces no',
           paragraphs: [
-            'En los años 50, B.F. Skinner colocó palomas en cajas con una palanca. Cuando la palanca daba comida en cada quinta pulsación (refuerzo de ratio fijo), las palomas pulsaban de forma regular y paraban cuando estaban saciadas. Cuando la palanca daba comida de forma aleatoria (a veces a la tercera pulsación, a veces a la décima, a veces a la vigésima) las palomas no paraban nunca. Seguían pulsando obsesivamente incluso cuando habían comido. La incertidumbre sobre cuándo llegaría la recompensa era más poderosa que la recompensa misma.',
-            'Tristan Harris, ex diseñador de Google y fundador del Center for Humane Technology, documentó cómo el equipo de Instagram restructuró deliberadamente su algoritmo en 2012 para abandonar el feed cronológico (que era predecible) y adoptar un feed curado algorítmicamente, que es impredecible. El gesto de deslizar el dedo hacia abajo en la pantalla y esperar a que cargue el contenido es, en términos conductuales, exactamente el mismo que el de la paloma pulsando la palanca.'
+            'B.F. Skinner se pasó buena parte de su carrera metiendo ratas y palomas en cajas con una palanca conectada a un dispensador de comida. Lo que le interesaba no era si el animal aprendía a pulsar, eso lo pillaba en minutos, sino qué patrón de premios lo mantenía pulsando más tiempo. Probó varios. Cuando la comida caía cada cinco pulsaciones exactas, el animal trabajaba a ritmo constante y paraba en cuanto estaba saciado. Cuando la comida caía cada cierto número de pulsaciones, pero ese número cambiaba sin aviso (a veces a la tercera, a veces a la vigésima), pasaba algo distinto.',
+            'El animal no paraba. Seguía pulsando a un ritmo alto y sostenido, y cuando Skinner cortaba del todo el suministro, tardaba muchísimo en rendirse. A ese esquema lo llamó refuerzo de razón variable, y en las décadas siguientes se confirmó como el que produce las respuestas más frecuentes y más difíciles de apagar de todos los que se han estudiado. La incertidumbre sobre cuándo llega el premio resultó ser mejor motor que el premio en sí.',
+            'Una tragaperras es una máquina de razón variable con luces. Y un feed que se recarga al tirar del dedo hacia abajo también.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'La dopamina no premia, anticipa',
           paragraphs: [
-            'Los programas de refuerzo de ratio variable producen las tasas de respuesta más altas y más resistentes a la extinción de todos los esquemas de condicionamiento conocidos. La razón es neurobiológica: la dopamina no se libera principalmente ante la recompensa, sino ante la anticipación incierta de la recompensa. Los estudios de Schultz (1997) con primates demostraron que las neuronas dopaminérgicas responden con más intensidad a la señal que predice una recompensa posible que a la recompensa misma cuando ya es segura.',
-            'El scroll infinito explota esto de dos formas simultáneas: elimina el punto de parada natural (no hay página siguiente, no hay fin visible) y mantiene la incertidumbre sobre qué aparecerá a continuación. Cada deslizamiento es una tirada de tragaperras. El "like" inesperado, el comentario sorpresivo, el vídeo que resulta ser exactamente lo que buscabas: son los pellets de Skinner. Y como en las máquinas tragaperras, el sistema está diseñado para que el intervalo entre recompensas sea suficientemente variable para mantener la conducta sin ser tan largo como para provocar abandono.'
+            'En 1997, Wolfram Schultz y su equipo publicaron en Science los registros de neuronas dopaminérgicas en el cerebro de monos mientras recibían zumo. Al principio, las neuronas se activaban cuando llegaba el zumo. Pero en cuanto el mono aprendía que una luz anunciaba el zumo, la activación se adelantaba: saltaba con la luz, con la señal que predecía la recompensa, y ya no con la recompensa misma. Si el zumo era seguro, la neurona apenas reaccionaba a que llegara. Si era incierto, se disparaba con la expectativa.',
+            'Ese es el detalle que explota el scroll. Cada deslizamiento es una señal de recompensa posible, no segura. El siguiente vídeo puede ser justo lo que buscabas o una tontería que olvidas en un segundo. El "me gusta" inesperado, el comentario que no veías venir, la publicación que te reconcilia con la app: funcionan como la luz del experimento de Schultz. El cerebro responde con más fuerza a la apuesta que a lo que se gana en la apuesta.'
+          ]
+        },
+        {
+          subtitle: 'De la caja de Skinner al diseño de producto',
+          paragraphs: [
+            'Christian Montag y su equipo de la Universidad de Ulm revisaron en 2019 qué mecanismos de las redes sociales y los juegos gratuitos encajan con las teorías del condicionamiento y de la economía del comportamiento. Su lista es reconocible para cualquiera que tenga el móvil cerca. Los "me gusta" y los mensajes no llegan a intervalos fijos, llegan a rachas impredecibles. Las notificaciones agrupan varias novedades para que abrir la app siempre tenga algo. Y el scroll infinito elimina la señal de parada: no hay última página, no hay pie, no hay momento en que la pantalla te diga que has terminado.',
+            'El gesto de tirar hacia abajo para recargar lo diseñó Loren Brichter en 2009 para una app de Twitter, y hoy está en casi todas. Es, punto por punto, la palanca de Skinner: una acción breve, una espera de medio segundo, un resultado que unas veces trae algo y otras no. Cuando Instagram abandonó en 2016 el orden cronológico por un feed ordenado por algoritmo, el cambio no fue solo de relevancia. El orden cronológico era previsible. El algorítmico es incierto por definición, y la incertidumbre es la parte que engancha. Tristan Harris, que fue especialista en ética del diseño en Google, lo resumió con una imagen que se hizo famosa: llevamos una tragaperras en el bolsillo.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega la analogía',
+          paragraphs: [
+            'La comparación con la tragaperras es un modelo, y conviene no estirarlo más de lo que aguanta. Que el scroll use un esquema de refuerzo variable no demuestra que genere una adicción en sentido clínico. Si la "adicción a las redes" es una adicción de verdad o más bien un uso problemático que se le parece sigue siendo objeto de discusión entre investigadores como Panova y Carbonell, que han pedido prudencia con la etiqueta. La dopamina, además, no es la molécula del placer: interviene en el aprendizaje, en el movimiento y en la motivación, y reducir todo esto a "chute de dopamina" es un atajo periodístico, no una descripción fina.',
+            'Tampoco todo el mundo responde igual. La mayoría de las personas que pasan muchas horas en redes no cumpliría criterios de trastorno, y el mismo diseño que atrapa a unas apenas roza a otras, según rasgos de personalidad y momento vital. El diseño empuja en una dirección. No obliga a ir.'
           ]
         }
       ],
-      blockquote: { text: '«No estamos compitiendo con otras apps. Estamos compitiendo con el sueño, la intimidad y la conversación en persona.»', attribution: 'Tristan Harris' },
-      aplicacion: 'Desactiva el scroll infinito donde puedas (algunas plataformas lo permiten en configuración). Cuando no puedas, pon un temporizador antes de abrir la app. El simple acto de marcar un límite temporal activa el control ejecutivo prefrontal y reduce el consumo pasivo.'
+      blockquote: { text: '«Cuando sacamos el móvil del bolsillo, estamos jugando a una tragaperras para ver qué notificaciones nos han llegado.»', attribution: 'Tristan Harris, "How Technology is Hijacking Your Mind" (2016)' },
+      aplicacion: 'Donde puedas, desactiva el scroll infinito y los contadores de notificaciones en rojo: son la señal que convierte abrir la app en una apuesta. Cuando no se pueda, pon un temporizador antes de entrar, porque fijar el límite por adelantado se apoya en el control prefrontal y no en la fuerza de voluntad del momento, que a esas horas ya viene tocada. Nada de esto elimina el tirón. El diseño sigue ahí. Pero cambia quién decide cuándo parar.'
     },
     {
       id: 'tec-02',
       title: 'Cómo las notificaciones fragmentan tu concentración durante 23 minutos por interrupción',
-      summary: 'Una sola notificación, aunque no se atienda, rompe el estado de flujo cognitivo y requiere una media de 23 minutos para recuperarlo completamente.',
+      summary: 'Interrumpir a alguien es gratis y dura un segundo. Volver a la tarea cuesta minutos, más errores por descuido y bastante más estrés.',
       sourceUrl: 'https://dl.acm.org/doi/10.1145/1357054.1357072',
-      sourceLabel: 'Mark, Gudith & Klocke (2008), CHI Conference on Human Factors',
+      sourceLabel: 'Mark, Gudith & Klocke (2008), CHI Conference on Human Factors · Mark, González & Harris (2005)',
       badge: 'Cognición y tecnología',
-      author: { name: 'Gloria Mark', university: 'UC Irvine', specialty: 'Informática y Comportamiento Humano' },
-      readingTime: '3 min',
+      author: { name: 'Gloria Mark', university: 'UC Irvine', specialty: 'Informática y comportamiento humano' },
+      readingTime: '6 min',
       date: '26 de mayo de 2026',
-      intro: 'Gloria Mark y su equipo de la Universidad de California Irvine cronometraron durante años el comportamiento real de trabajadores de oficina. Su hallazgo más citado: después de una interrupción, el trabajador necesita una media de 23 minutos y 15 segundos para recuperar el nivel de concentración previo. Y recibe una media de 87 interrupciones al día.',
+      intro: 'La cifra que se repite en artículos y charlas es contundente: 23 minutos y 15 segundos para volver a concentrarte después de una interrupción. Viene del trabajo de campo de Gloria Mark, que se pasó años cronometrando oficinas de verdad. La cifra exacta es más resbaladiza de lo que parece. Lo que sí está bien medido, y en un experimento controlado, es lo que la interrupción te deja hecho por dentro cuando por fin retomas.',
       sections: [
         {
-          subtitle: 'El experimento de Gloria Mark',
+          subtitle: 'De dónde sale el número de los 23 minutos',
           paragraphs: [
-            'El equipo de UC Irvine siguió a 36 trabajadores de oficina durante más de 1.000 horas a lo largo de varios años, registrando cada interrupción mediante observación directa y registros de actividad en ordenador. Cada interrupción fue catalogada por tipo (iniciada por tecnología, por colegas o por el propio trabajador) y se midió el tiempo exacto hasta que el trabajador regresaba a la tarea original. El resultado fue 23 minutos y 15 segundos de media.',
-            'Un hallazgo secundario fue igual de relevante: los trabajadores que eran interrumpidos frecuentemente no tardaban más en completar su trabajo (compensaban trabajando más rápido) pero reportaban niveles significativamente más altos de estrés, frustración y carga mental percibida. En estudios posteriores, Mark utilizó sensores de conductancia galvánica de la piel para medir el estrés fisiológico en tiempo real, y documentó que los picos de estrés coincidían exactamente con los momentos de revisión del correo electrónico.'
+            'En 2005, Mark y sus colegas Victor González y Justin Harris publicaron un estudio de observación directa en dos empresas: 24 trabajadores de la información (analistas, programadores y gestores), seguidos de cerca durante más de 700 horas, con un cronómetro y una libreta anotando cada gesto al segundo. El retrato que salió es el de una jornada troceada. La gente pasaba de media unos 11 minutos en un "ámbito de trabajo" (un proyecto, un problema, una conversación) antes de cambiar a otra cosa o ser interrumpida, y el 57% de esos tramos quedaban cortados por el medio.',
+            'Cuando alguien retomaba ese mismo día la tarea interrumpida, tardaba de media unos 25 minutos en volver a ella, y por el camino se metía en poco más de dos tareas distintas antes de recuperar la original. El "23 minutos y 15 segundos" concreto circula desde entonces atribuido a la fase de campo de Mark, pero no es fácil rastrear el análisis exacto del que sale ese dato al segundo. El orden de magnitud sí es sólido: la vuelta se mide en minutos, no en segundos, y casi nunca es directa.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'El experimento: 48 personas, un buzón de correo y un supervisor pesado',
           paragraphs: [
-            'La investigadora Sophie Leroy acuñó el concepto de residuo atencional para explicar por qué la recuperación no es instantánea: cuando cambias de tarea, una parte de los recursos cognitivos continúa procesando la tarea anterior durante un período que puede durar entre 3 y 25 minutos, dependiendo de la complejidad y del grado de completitud de la tarea interrumpida. Durante ese tiempo, la nueva tarea se ejecuta con menos recursos disponibles.',
-            'Para tareas de alta complejidad cognitiva (escritura, programación, análisis, diseño) el coste es especialmente alto porque estas tareas requieren mantener activo en memoria de trabajo un modelo contextual complejo: qué se está haciendo, por qué, qué se ha decidido ya y qué queda por resolver. Construir ese modelo lleva tiempo. Destruirlo (mediante una interrupción) es instantáneo. Las notificaciones de las apps explotan exactamente esta asimetría: interrumpir es gratuito para quien interrumpe; reconstruir la concentración tiene un coste real y medible para quien es interrumpido.'
+            'El estudio que da fuente a este artículo es de 2008, y es de laboratorio. Gloria Mark, Daniela Gudith y Ulrich Klocke montaron una oficina simulada donde 48 participantes hacían de responsable de recursos humanos de una empresa y tenían que contestar tandas de doce correos lo más rápido, correctas y educadas posible. En unas condiciones los dejaban trabajar tranquilos. En otras, un "supervisor" los interrumpía cada dos minutos con preguntas que debían atender al momento, unas veces sobre el mismo asunto de los correos y otras sobre temas sin relación.',
+            'El primer resultado sorprendió a los propios autores: el contexto de la interrupción no cambiaba nada, y las tareas interrumpidas se terminaban antes, no después. Sin interrupciones, la tanda llevaba 22,8 minutos de media; con interrupciones, unos 20. La gente compensaba acelerando y escribiendo correos más cortos. Pero esa velocidad se pagaba. En la escala de carga de trabajo, quienes habían sido interrumpidos marcaban más estrés (de 6,9 a más de 9 sobre 20), más frustración, más presión de tiempo y más esfuerzo. Con veinte minutos de trabajo interrumpido bastaba para que esas medidas subieran de forma clara.'
+          ]
+        },
+        {
+          subtitle: 'Por qué reconstruir la concentración cuesta tanto',
+          paragraphs: [
+            'La psicóloga Sophie Leroy propuso en 2009 el concepto de residuo atencional para explicar por qué la vuelta no es instantánea. Cuando cambias de tarea, parte de tu atención se queda enganchada a la anterior, sobre todo si la dejaste a medias, y la tarea nueva funciona un rato con menos recursos de los que crees tener puestos en ella.',
+            'En trabajos que exigen pensar (escribir, programar, analizar, diseñar) el coste es mayor porque hay que sostener en la cabeza un mapa entero: qué estoy haciendo, por qué, qué he decidido ya, qué me queda. Montar ese mapa lleva minutos. Tirarlo abajo con una notificación es inmediato. Ahí está la asimetría que explotan las apps: interrumpir no le cuesta nada a quien interrumpe, y reconstruir tiene un precio real para quien recibe el aviso.'
+          ]
+        },
+        {
+          subtitle: 'Lo que este estudio no demuestra',
+          paragraphs: [
+            'El experimento de 2008 se hizo con estudiantes universitarios, con una tarea de correo simulada y una interrupción actuada por el equipo de investigación. Es un montaje limpio para aislar el efecto, no una oficina real, y su muestra es pequeña. El famoso "23:15" pertenece a otro estudio, de observación, con solo 24 personas, y el número al segundo hay que cogerlo con pinzas: el tiempo de recuperación varía muchísimo según la tarea, quién interrumpe y en qué punto te pillan.',
+            'Tampoco toda interrupción es un desastre. En el trabajo de campo, los propios participantes describían algunas interrupciones sobre su tarea actual como útiles, y las autointerrupciones a veces sirven para desatascar un problema dejándolo reposar. Lo que el conjunto de la evidencia sostiene con firmeza no es una cifra mágica, sino la dirección: interrumpir sale barato, volver sale caro, y el coste no se ve en el reloj del proyecto sino en el desgaste de quien lo lleva.'
           ]
         }
       ],
-      blockquote: { text: '«El mayor coste de las notificaciones no es el tiempo que tardas en leerlas. Es el tiempo que tarda tu cerebro en volver a donde estaba.»', attribution: 'Gloria Mark' },
-      aplicacion: 'Activa el modo "No molestar" en bloques de 90 minutos durante tu trabajo más importante. No como disciplina personal, sino como corrección de una asimetría de diseño: las apps están optimizadas para interrumpirte; tú debes optimizarte para resistirlo.'
+      blockquote: { text: '«El trabajo interrumpido se hace más rápido, pero a un precio: más estrés, más frustración, más presión de tiempo y más esfuerzo.»', attribution: 'Mark, Gudith y Klocke (2008)' },
+      aplicacion: 'Trabaja tu tarea más exigente en bloques con el "No molestar" puesto y agrupa la revisión de correo y mensajes en dos o tres momentos fijos del día, no como disciplina de hierro sino para corregir un reparto injusto: las apps están montadas para cortarte cuando les conviene. No vas a llegar a cero interrupciones, ni te interesa, pero cada aviso que apagas es un mapa mental que no tienes que reconstruir luego.'
     },
     {
       id: 'tec-03',
       title: 'El efecto de desinhibición online: por qué la gente dice en internet lo que nunca diría en persona',
-      summary: 'La pantalla elimina las señales sociales que regulan el comportamiento en persona, produciendo conductas más extremas en ambos sentidos: más apertura y más agresividad.',
+      summary: 'La pantalla quita las señales que frenan lo que decimos cara a cara. Y sin freno, la conducta se va a los extremos: más confesión y más crueldad.',
       sourceUrl: 'https://doi.org/10.1089/1094931041291295',
       sourceLabel: 'Suler (2004), CyberPsychology & Behavior',
       badge: 'Psicología digital',
       author: { name: 'John Suler', university: 'Rider University', specialty: 'Psicología del ciberespacio y comportamiento online' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '12 de mayo de 2026',
-      intro: 'Internet libera algo en las personas. Algunas comparten sus miedos más profundos con extraños en foros de salud mental con una franqueza que nunca tendrían con su médico en persona. Otras insultan, amenazan o humillan a desconocidos con una crueldad que jamás mostrarían cara a cara. En ambos casos, el mecanismo es el mismo: la pantalla desactiva los inhibidores del comportamiento que evolucionaron para el entorno social presencial. John Suler fue el primero en articularlo sistemáticamente.',
+      intro: 'Hay gente que cuenta en un foro de salud mental cosas que nunca le ha dicho a su médico. Y hay gente que escribe a un desconocido una barbaridad que jamás le soltaría en la cola del supermercado. Parecen dos fenómenos opuestos, pero John Suler, psicólogo clínico de la Universidad de Rider, sostiene que salen del mismo sitio: la pantalla afloja los frenos que regulan lo que decimos delante de otra persona. En 2004 puso nombre a ese aflojamiento y desmontó sus piezas.',
       sections: [
         {
-          subtitle: 'Los seis factores que producen la desinhibición',
+          subtitle: 'Seis piezas que sueltan el freno',
           paragraphs: [
-            'Suler identificó seis condiciones que, en distintas combinaciones, producen la desinhibición online. El anonimato disociativo: online puedes ser "nadie" o "alguien diferente", y tu nombre real no está en juego. La invisibilidad: no ves la cara del receptor de tus palabras, no ves su reacción de dolor, sorpresa o alegría. La comunicación asincrónica: no tienes que esperar la respuesta inmediata, lo que elimina la presión del tiempo real. La minimización de la autoridad: online, la jerarquía social del mundo físico se aplana o desaparece.',
-            'A estas cuatro se añaden la disociación del yo (la sensación de que "el yo online" es un personaje diferente al yo real, lo que reduce la responsabilidad percibida) y la solipsismo fantaseado: el receptor online existe como una proyección en tu mente, no como una persona completa con vida interior. Hablarle es, cognitivamente, hablarle a una imagen, no a un ser humano tridimensional. Eso hace que la crueldad sea fácil y la empatía difícil.'
+            'Suler no hizo un experimento. Ordenó años de observación de foros, chats y correos en un artículo que se ha citado miles de veces, y describió seis factores que, combinados, producen lo que llamó efecto de desinhibición online. El anonimato disociativo: mi nombre real no está en juego, así que lo que haga aquí no me salpica del todo. La invisibilidad: no veo tu cara, no veo si lo que escribo te hace daño, y tú tampoco ves mis titubeos. La asincronía: no tengo que sostener tu reacción en directo, suelto el mensaje y me voy.',
+            'Los otros tres son más sutiles. La introyección solipsista: al leer tus mensajes sin voz ni cara, les pongo una voz mental que acaba siendo la mía, y hablar contigo se parece más a hablar conmigo mismo. La imaginación disociativa: internet se siente como un espacio aparte, medio de mentira, donde las reglas y las consecuencias del mundo real no aplican igual. Y la minimización de la autoridad: sin despacho, sin traje, sin tono de voz, la jerarquía que fuera me haría medir mis palabras aquí se aplana. Cuantas más piezas se juntan, más se suelta el freno.'
           ]
         },
         {
-          subtitle: 'La desinhibición benigna y la tóxica: las dos caras del mismo fenómeno',
+          subtitle: 'La misma llave abre la confesión y el insulto',
           paragraphs: [
-            'Suler subraya que la desinhibición no es inherentemente negativa. La desinhibición benigna lleva a personas a compartir emociones vulnerables, pedir ayuda para problemas que nunca llevarían a un médico, explorar identidades alternativas de forma segura, o ser más honestas en sus evaluaciones de trabajo. Muchos estudios muestran que los pacientes comunican síntomas más honestamente en formularios digitales que en consulta presencial. La misma pantalla que produce trolls produce también una confesión médica más precisa.',
-            'La diferencia entre ambas formas de desinhibición depende de la personalidad preexistente y del contexto de la plataforma, no de la tecnología en sí. Las plataformas que combinan anonimato, audiencia masiva y sistemas de "likes" están diseñadas (aunque no intencionalmente en muchos casos) para maximizar la desinhibición tóxica. El aplauso de muchos anónimos ante un comentario agresivo refuerza la conducta con la misma lógica del refuerzo variable de Skinner.'
+            'Suler distingue dos caras. La desinhibición benigna empuja a compartir emociones difíciles, a pedir ayuda con algo que daría vergüenza contar en persona, a probar formas de ser que uno no se atreve a ensayar en el trabajo o en casa. Hay bastantes datos de que los pacientes marcan síntomas incómodos con más sinceridad en un cuestionario digital que en la consulta, mirando al médico a la cara. La misma pantalla que fabrica trolls también saca historiales clínicos más honestos.',
+            'La desinhibición tóxica es la otra cara: la del comentario que humilla, la amenaza fácil, la crueldad que se enfría en cuanto cierras la pestaña. Suler insiste en que cuál de las dos aparece depende más de la persona y del sitio que de la tecnología en abstracto. Las plataformas que juntan anonimato, público enorme y un marcador de "me gusta" están montadas, muchas veces sin proponérselo, para premiar la versión tóxica: el aplauso de doscientos desconocidos ante una salida agresiva refuerza la conducta con la misma lógica de recompensa impredecible que engancha en el resto de la app.'
+          ]
+        },
+        {
+          subtitle: 'Qué le falta a este modelo',
+          paragraphs: [
+            'El texto de Suler es una taxonomía nacida de la observación clínica, no una medición. Los seis factores no se cuantificaron en el artículo original, y cuando después se ha intentado medirlos con escalas, no se separan tan limpiamente como sugiere la lista: tienden a solaparse. El propio Suler avisa de algo que suele perderse cuando se cita de pasada: la desinhibición no destapa un "yo verdadero" que estaba escondido, sino que activa otra configuración del yo, con emociones y necesidades distintas de las de la vida presencial. La persona cruel online no es "la real" más que la amable.',
+            'Hay además explicaciones rivales. La investigación sobre desindividuación, que viene de los experimentos de Zimbardo y del modelo SIDE de Postmes y Spears, atribuye el efecto no a la pérdida de frenos individuales sino a que, en grupo y sin rasgos personales visibles, la gente se pliega a la norma del grupo, sea agresiva o solidaria. Y el anonimato no lo explica todo: en plataformas donde cada cual publica con su nombre y su foto también sobra hostilidad. El modelo de Suler describe bien el terreno; no lo cierra.'
           ]
         }
       ],
-      blockquote: { text: '«En el ciberespacio, la ausencia de señales físicas convierte al receptor en una proyección de la mente del emisor. Y con proyecciones no se tiene empatía.»', attribution: 'John Suler' },
-      aplicacion: 'Antes de publicar algo que sientes con intensidad (un comentario crítico, una respuesta enfadada, una valoración negativa), aplica el "test del tiempo real": imagina que lo dices en voz alta en una sala con la persona delante y con testigos. Si el escenario te incomoda, la desinhibición está hablando por ti. El texto permanece. La emoción que lo generó, no.'
+      blockquote: { text: '«En lugar de entender la desinhibición como la aparición de un yo verdadero subyacente, conviene verla como un desplazamiento a otra constelación del yo, con conjuntos de afecto y cognición distintos de los de la interacción presencial.»', attribution: 'Suler (2004)' },
+      aplicacion: 'Antes de publicar algo que sientes con fuerza (una crítica, una respuesta caliente, una reseña de una estrella) imagina que lo dices en voz alta, con esa persona delante y con testigos. Si la escena te incomoda, es la desinhibición hablando por ti. El comentario se queda escrito para siempre. El pico de rabia que lo generó dura veinte minutos.'
     },
     {
       id: 'tec-04',
       title: 'La burbuja de filtros: cómo el algoritmo te convence de que el mundo piensa como tú',
-      summary: 'Los sistemas de recomendación reducen sistemáticamente tu exposición a ideas contrarias, creando una ilusión de consenso que distorsiona la percepción de la realidad social.',
+      summary: 'El feed te enseña sobre todo lo que ya piensas. El efecto no es tanto volverte radical como hacerte creer que casi todo el mundo te da la razón.',
       sourceUrl: 'https://doi.org/10.1126/science.aaa1160',
       sourceLabel: 'Bakshy, Messing & Adamic (2015), Science · Pariser (2011)',
       badge: 'Psicología de las redes sociales',
       author: { name: 'Eli Pariser', university: 'MoveOn.org / Upworthy', specialty: 'Ética algorítmica y sesgos en plataformas digitales' },
-      readingTime: '4 min',
+      readingTime: '6 min',
       date: '5 de mayo de 2026',
-      intro: 'En 2011, Eli Pariser observó algo desconcertante en su feed de Facebook: sus amigos conservadores habían desaparecido. No los había bloqueado. No habían dejado de publicar. Simplemente, el algoritmo había decidido (basándose en sus patrones de interacción) que sus publicaciones no le interesaban y había dejado de mostrárselas. Pariser llamó a este fenómeno "filter bubble" y alertó sobre una consecuencia que entonces parecía hipotética: si cada persona vive en un entorno de información que confirma lo que ya cree, la democracia deliberativa se convierte en una ilusión.',
+      intro: 'Hacia 2010, el activista Eli Pariser notó que sus amigos conservadores se habían esfumado de su muro de Facebook. No los había bloqueado ni habían dejado de publicar. El algoritmo, viendo que él pinchaba más en enlaces progresistas, había ido bajando el volumen de los otros hasta callarlos. Pariser lo llamó "burbuja de filtros" y lanzó una advertencia que entonces sonaba a ciencia ficción: si cada uno vive rodeado de información que le da la razón, el debate público se vuelve un decorado.',
       sections: [
         {
-          subtitle: 'Los datos: cuánto sesga el algoritmo y cuánto nos sesgamos nosotros',
+          subtitle: 'El estudio grande, hecho por los de dentro',
           paragraphs: [
-            'En 2015, un equipo de Facebook publicó en la revista Science el estudio más grande realizado hasta entonces sobre burbujas de filtros: analizó los feeds de 10 millones de usuarios con información política diversa. El resultado fue matizado pero importante: el algoritmo de Facebook reducía la exposición a contenido ideológicamente contrario en un 8% para los conservadores y un 5% para los liberales. Pero la selección individual (qué contenido elige hacer clic cada usuario entre lo que sí aparece en el feed) añadía una reducción adicional del 26-36%.',
-            'El mensaje es incómodo para ambos lados del debate sobre las redes sociales: el algoritmo sesga, pero tú también. La autopropaganda no requiere un sistema activamente manipulador; basta con que el sistema muestre lo que genera más clics, y lo que genera más clics es lo que confirma lo que ya creemos y lo que nos indigna. El sesgo de confirmación y la heurística de disponibilidad hacen el resto: lo que aparece más en el feed parece más representativo de la realidad.'
+            'En 2015, tres científicos de datos de Facebook (Eytan Bakshy, Solomon Messing y Lada Adamic) publicaron en Science el análisis más ambicioso hasta la fecha sobre el asunto: 10,1 millones de usuarios estadounidenses que declaraban su ideología en el perfil. Midieron por capas cuánto se reducía la exposición a noticias del "otro lado" en cada paso del embudo.',
+            'La primera criba la ponen las amistades: tu círculo ya se parece a ti, así que el material que podría llegarte del bando contrario es limitado de salida. Sobre eso, el algoritmo de ordenación recortaba el contenido ideológicamente cruzado un 8% para los usuarios de izquierda y un 5% para los de derecha. Y encima de eso, la decisión de en qué pinchas tú restaba otro 6% para la izquierda y un 17% para la derecha. Aun así, quedaba paso: el 24% de las noticias que veía un usuario de izquierda se inclinaban a la derecha, y el 38% de las que veía uno de derecha se inclinaban a la izquierda. La conclusión que subrayaron los autores fue que tus propios clics filtran más que el algoritmo.'
           ]
         },
         {
-          subtitle: 'El efecto sobre la percepción de la realidad social',
+          subtitle: 'Lo que de verdad deforma es el cálculo de cuántos piensan como tú',
           paragraphs: [
-            'La consecuencia más documentada de las burbujas de filtros no es el extremismo (que es compleja y discutida), sino la distorsión en la percepción de la prevalencia de opiniones. Estudios de ciencia política muestran sistemáticamente que personas en entornos de alta homofilia digital sobreestiman cuántos ciudadanos comparten su posición y subestiman cuántos sostienen la contraria. Esto tiene efectos políticos concretos: reduce la disposición a buscar compromiso, incrementa la certeza de que "la mayoría" está de tu lado, y hace más probable interpretar el disenso como error o mala fe en lugar de diferencia legítima.',
-            'El mecanismo psicológico subyacente es la "espiral del silencio" de Elisabeth Noelle-Neumann: si crees que tu opinión es mayoritaria (porque tu feed la confirma constantemente), la expresas con más confianza; si crees que es minoritaria, la silencias. El feed crea percepciones sesgadas de mayoría; esas percepciones cambian la disposición a hablar; los que callan desaparecen del feed; la percepción de mayoría se consolida. El ciclo es autorreferente.'
+            'El efecto mejor documentado de vivir en un entorno informativo homogéneo no es volverse extremista, que es un asunto discutido, sino perder la cuenta. Quien pasa mucho tiempo en espacios digitales donde casi todos opinan igual tiende a sobreestimar cuánta gente comparte su postura y a subestimar a los que sostienen la contraria. Y eso tiene consecuencias prácticas: baja las ganas de negociar, sube la certeza de que "la mayoría" está de tu lado y hace más fácil leer el desacuerdo como mala fe en vez de como una diferencia legítima.',
+            'Debajo hay un mecanismo que la socióloga Elisabeth Noelle-Neumann describió en los años setenta y llamó la espiral del silencio. Si crees que tu opinión es mayoritaria, la dices con soltura; si la crees minoritaria, te callas. Un feed que te confirma sin parar te convence de estar en el bando grande. Los que se sienten en el pequeño hablan menos. Al hablar menos, aparecen menos. Y la impresión de mayoría se refuerza sola.'
+          ]
+        },
+        {
+          subtitle: 'Por qué este estudio no zanja el debate',
+          paragraphs: [
+            'El trabajo de 2015 lo firmaron empleados de Facebook con acceso a datos internos que nadie de fuera puede replicar, y eso pesa. La muestra tampoco es la población general: solo entra el pequeño porcentaje de usuarios estadounidenses que declara su ideología en el perfil y además está activo. Varios investigadores, entre ellos Zeynep Tufekci y Christian Sandvig, objetaron además que separar "lo que hace el algoritmo" de "lo que haces tú" es un falso dilema: la queja original de Pariser era justo que ambas cosas se retroalimentan, y el estudio mide la elección personal sobre un feed que el algoritmo ya había podado.',
+            'La evidencia posterior tampoco cierra el caso en el otro sentido. En los experimentos a gran escala sobre las elecciones de EE. UU. de 2020, reducir la personalización algorítmica del feed durante meses apenas movió la polarización política de los participantes. La lectura honesta hoy no es "la burbuja lo explica todo" ni "la burbuja no existe", sino que el efecto es real, más pequeño de lo que sugería la metáfora y muy dependiente de qué se mida.'
           ]
         }
       ],
-      blockquote: { text: '«La web nos está mostrando un universo personalizado para cada uno de nosotros, y ese universo tiene muy poca ventana hacia lo que piensa el resto.»', attribution: 'Eli Pariser' },
-      aplicacion: 'Dedica 10 minutos a la semana a buscar activamente tres fuentes informativas con las que generalmente no estás de acuerdo (no extremistas, sino voces serias que razonan desde otras premisas). No para cambiar de opinión, sino para calibrar: si solo consumes lo que confirma lo que ya crees, tu modelo de la realidad social es tan distorsionado como el de quien hace lo opuesto.'
+      blockquote: { text: '«Un mundo construido a partir de lo familiar es un mundo en el que no hay nada que aprender.»', attribution: 'Eli Pariser, charla TED (2011)' },
+      aplicacion: 'Una vez a la semana, dedica diez minutos a leer tres fuentes serias con las que sueles discrepar, no las más estridentes, sino las que razonan bien desde otras premisas. No es para cambiar de bando. Es para recalibrar el cálculo de cuánta gente piensa distinto, que es la parte que el feed te desajusta sin que lo notes.'
     },
     {
       id: 'tec-05',
@@ -1591,7 +1774,7 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Przybylski & Weinstein (2013), Journal of Social and Personal Relationships',
       badge: 'Cognición y tecnología',
       author: { name: 'Andrew Przybylski', university: 'University of Essex / University of Oxford', specialty: 'Psicología de la tecnología y las relaciones interpersonales' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '3 de agosto de 2026',
       intro: 'Andrew Przybylski y Netta Weinstein querían aislar un efecto muy concreto: no el de usar el móvil durante una conversación, que ya se sabía que la deteriora, sino el de su mera presencia visible sobre la mesa, sin que nadie lo tocara. Diseñaron dos experimentos con parejas de desconocidos conversando durante diez minutos.',
       sections: [
@@ -1608,40 +1791,54 @@ const LIBRARY_ARTICLES = {
             'Przybylski y Weinstein explican el efecto por lo que el móvil representa incluso apagado o silenciado sobre la mesa: una red completa de personas y conversaciones alternativas, siempre disponible en potencia. Esa disponibilidad latente basta para captar una fracción de la atención que, de otro modo, iría entera a la persona que tienes delante, sin que haga falta consultarlo ni una sola vez para que el efecto aparezca.',
             'El resultado más incómodo del estudio es justamente ese: el daño no depende de mirar el teléfono. Depende de que esté ahí, visible, como una posibilidad constante de fuga hacia otra parte. La atención no se reparte solo cuando se actúa sobre el móvil, se reparte ya por el simple hecho de que el móvil esté presente en el campo visual de ambas personas.'
           ]
+        },
+        {
+          subtitle: 'El problema: casi nadie lo ha vuelto a encontrar',
+          paragraphs: [
+            'La idea es tan redonda que se ha citado miles de veces y ha dado nombre propio al fenómeno, el "efecto iPhone". El estudio original, sin embargo, es pequeño: 34 y 68 parejas en cada experimento, con efectos de tamaño moderado. Cuando otros equipos han intentado reproducirlo con muestras mayores, el resultado se ha desinflado.',
+            'En 2018, Crowley y sus colegas repitieron el diseño y no encontraron que la sola presencia del móvil moviera ni la calidad de la relación ni la empatía percibida. En 2021, un equipo publicó en PLOS ONE dos réplicas más, también con muestras grandes, y de nuevo sin efecto sobre la cercanía, con el añadido de que tampoco aparecía sobre la creatividad. La conclusión conjunta de esas réplicas no es que el móvil sobre la mesa dé igual, sino que, si hay un efecto por su mera presencia, es más pequeño y más escurridizo de lo que sugería el estudio de 2013. Usar el teléfono durante una conversación sí la deteriora de forma consistente. Que estorbe con solo estar a la vista está mucho menos claro.'
+          ]
         }
       ],
-      blockquote: { text: '«La mera presencia de un móvil, sin que nadie lo use, puede reducir la calidad de una conversación cara a cara y la sensación de conexión entre las personas.»', attribution: 'Andrew Przybylski' },
-      aplicacion: 'Antes de una conversación que te importe de verdad, guarda el móvil fuera de la vista de ambos, no solo en silencio sobre la mesa. Según este estudio, la diferencia no está en si lo consultas, está en si sigue ahí, visible, recordándoos a los dos que existe un mundo alternativo de conversaciones esperando.'
+      blockquote: { text: '«La mera presencia de un móvil, sin que nadie lo use, puede reducir la calidad de una conversación cara a cara y la sensación de conexión entre las personas.»', attribution: 'Przybylski y Weinstein (2013)' },
+      aplicacion: 'Antes de una conversación que te importe, deja el móvil fuera de la vista de los dos. Lo que sí está bien establecido es que consultarlo a media charla la estropea, y un teléfono que no ves es un teléfono que no vas a coger. Que estorbe solo por estar sobre la mesa es más dudoso, pero guardarlo no cuesta nada y elimina la duda.'
     },
     {
       id: 'tec-06',
       title: 'Por qué recuerdas dónde buscarlo en Google mejor de lo que recuerdas el dato en sí',
-      summary: 'Cuando sabemos que una información va a quedar guardada y disponible más tarde, el cerebro reduce el esfuerzo de memorizarla y en su lugar prioriza recordar dónde encontrarla, no qué dice.',
+      summary: 'Al escribir datos en un ordenador que decía que los guardaría, la gente los recordó peor y recordó mejor en qué carpeta estaban. La idea de un cerebro que delega tiene respaldo, aunque el experimento estrella del artículo no se ha replicado.',
       sourceUrl: 'https://doi.org/10.1126/science.1207745',
       sourceLabel: 'Sparrow, Liu & Wegner (2011), Science',
       badge: 'Cognición y tecnología',
       author: { name: 'Betsy Sparrow', university: 'Columbia University', specialty: 'Psicología cognitiva de la memoria transactiva' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '6 de julio de 2026',
-      intro: 'Betsy Sparrow, Jenny Liu y Daniel Wegner querían comprobar si el acceso constante a buscadores como Google está cambiando algo más profundo que el hábito de consulta: si está cambiando qué tipo de información decide memorizar el propio cerebro, ahora que sabe que gran parte de ella está siempre a un clic de distancia.',
+      intro: 'Sabes que la capital de Mongolia la tienes a un clic, así que no la retienes. Betsy Sparrow, Jenny Liu y Daniel Wegner quisieron ver si eso, tener un buscador siempre a mano, cambia qué decide guardar la memoria y qué deja fuera a propósito.',
       sections: [
         {
-          subtitle: 'El experimento: escribir datos que se guardarán, o no',
+          subtitle: 'Datos que se guardan y datos que se borran',
           paragraphs: [
-            'En uno de los cuatro experimentos, los participantes escribían una serie de afirmaciones triviales en un ordenador, y se les decía que el texto se guardaría automáticamente en una de cinco carpetas genéricas del sistema. A un grupo se le decía que la información quedaría guardada y accesible después; a otro, que se borraría en cuanto terminaran. Después se les pedía recordar tanto el contenido de las afirmaciones como el nombre de la carpeta donde creían que se habían guardado.',
-            'Quienes creían que la información seguiría disponible más tarde recordaron peor el contenido de las afirmaciones que quienes creían que se borraría, y en cambio recordaron mejor en qué carpeta la habían guardado que el propio contenido. El patrón se repitió en los cuatro experimentos: la expectativa de acceso futuro cambiaba qué se memorizaba, priorizando la ruta hacia la información por encima de la información misma.'
+            'En uno de los cuatro experimentos, los participantes tecleaban una lista de frases con datos curiosos. A la mitad se le decía que el ordenador guardaría lo escrito; a la otra mitad, que se borraría al terminar. Luego se les pedía reproducir esas frases de memoria. Quienes creían que el texto quedaba guardado recordaron menos frases que quienes creían que se perdía. Saber que algo va a estar disponible bastaba para no molestarse en retenerlo.',
+            'En otros dos experimentos, cada frase se guardaba en una carpeta con nombre. Después, los participantes recordaban mejor en qué carpeta estaba una frase que el contenido de la frase misma. La memoria se quedaba con la ruta, no con el destino.'
           ]
         },
         {
-          subtitle: 'El mecanismo: internet como memoria transactiva compartida',
+          subtitle: 'Internet como socio de memoria',
           paragraphs: [
-            'Sparrow y su equipo interpretan el hallazgo dentro de la teoría de la memoria transactiva, formulada originalmente para explicar cómo las parejas y los equipos de trabajo se reparten qué recuerda cada miembro, confiando en que el otro recordará el resto. Internet, según esta lectura, ha pasado a funcionar como un miembro más de ese sistema compartido: no hace falta memorizar un dato si el sistema externo (el buscador) lo va a recordar por ti con total fiabilidad.',
-            'Esto no es necesariamente un empobrecimiento cognitivo, según los propios autores: es una redistribución eficiente de un recurso limitado. El cerebro deja de gastar esfuerzo en almacenar información que un sistema externo confiable ya conserva, y en su lugar invierte ese esfuerzo en recordar cómo y dónde recuperarla, una estrategia razonable siempre que el acceso a ese sistema externo esté garantizado.'
+            'Sparrow y su equipo lo encuadraron en la teoría de la memoria transactiva de Wegner, pensada para parejas y equipos: cada uno retiene una parte y confía en que el otro guarda el resto, y entre todos recuerdan más de lo que recordaría cualquiera solo. El buscador, según esta lectura, se ha convertido en uno de esos "otros". No hace falta almacenar un dato si un sistema externo fiable lo va a conservar por ti.',
+            'Visto así no es una pérdida, es un reparto. El cerebro deja de gastar en guardar lo que ya está guardado fuera y usa ese hueco para recordar cómo llegar hasta ello. Razonable, mientras el acceso a ese sistema externo no falle.'
+          ]
+        },
+        {
+          subtitle: 'Lo que resistió la réplica y lo que no',
+          paragraphs: [
+            'El artículo tenía un experimento más llamativo que los demás: después de contestar preguntas difíciles de cultura general, la gente tardaba más en nombrar el color de palabras como "Google" o "pantalla", señal de que tenía el ordenador rondándole la cabeza. Ese es el que se puso a prueba a lo grande. En 2018, el Social Sciences Replication Project lo repitió con más participantes y no encontró el efecto. Otro equipo lo intentó en 2020 y tampoco. La pata de "buscar algo activa el concepto de Google" no se sostiene.',
+            'Los experimentos de las carpetas no han tenido una réplica directa de ese calibre, pero encajan con una línea de trabajo más amplia sobre descarga cognitiva: cuando delegamos información en una libreta, un móvil o un compañero, la recordamos peor y recordamos mejor dónde está. Con un matiz incómodo: si te quitan de golpe ese apoyo externo, tu memoria rinde peor que si nunca lo hubieras usado. Y conviene saber que "amnesia digital", el término que circula, lo acuñó una empresa de antivirus en un informe de marketing, no un laboratorio.'
           ]
         }
       ],
-      blockquote: { text: '«Cuando esperamos tener acceso futuro a la información, recordamos menos el contenido en sí y más dónde encontrarlo.»', attribution: 'Betsy Sparrow' },
-      aplicacion: 'Si notas que cada vez recuerdas menos datos concretos y más "dónde los tenía guardados", no es necesariamente un fallo de memoria: es el mismo patrón que documenta este estudio. La pregunta útil no es cómo memorizar más en un mundo con buscadores, sino qué información sí merece la pena memorizar de verdad porque no vas a tener acceso inmediato a ella cuando la necesites.'
+      blockquote: { text: '«Cuando esperamos tener acceso futuro a una información, la recordamos peor y recordamos mejor dónde encontrarla.»', attribution: 'Sparrow, Liu y Wegner (2011)' },
+      aplicacion: 'Que retengas menos datos concretos y más "dónde lo tenía" no tiene por qué preocuparte: es tu memoria trabajando de índice de un archivo externo. Sale a cuenta mientras el archivo esté a mano. La pregunta útil es qué información quieres tener por dentro de todas formas, la que vas a necesitar justo cuando se caiga la cobertura o te dejes el móvil en casa.'
     },
     {
       id: 'tec-07',
@@ -1651,7 +1848,7 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Ophir, Nass & Wagner (2009), PNAS',
       badge: 'Cognición y tecnología',
       author: { name: 'Eyal Ophir', university: 'Stanford University', specialty: 'Cognición y multitarea mediática' },
-      readingTime: '4 min',
+      readingTime: '6 min',
       date: '4 de agosto de 2026',
       intro: 'Eyal Ophir, Clifford Nass y Anthony Wagner partieron de una hipótesis que sonaba razonable: si alguien practica constantemente hacer varias cosas digitales a la vez (chatear, ver vídeos, navegar y escuchar música al mismo tiempo), debería volverse mejor gestionando esa carga mental. Doscientos sesenta y dos estudiantes de Stanford respondieron un cuestionario detallado sobre su consumo de medios, lo que permitió calcular un índice de multitarea mediática y dividirlos en dos grupos: los que compaginaban más medios de forma habitual y los que compaginaban menos.',
       sections: [
@@ -1668,10 +1865,17 @@ const LIBRARY_ARTICLES = {
             'Ophir y su equipo interpretan el patrón como una diferencia en el estilo de procesamiento, no solo en la capacidad bruta: quienes compaginan más medios parecen tener más dificultad para restringir voluntariamente su atención a lo relevante y bloquear el resto, tanto si esa distracción viene del entorno (los rectángulos azules) como de la propia memoria (letras que aparecieron antes pero ya no son objetivo).',
             'La implicación es contraintuitiva: la práctica constante de hacer varias cosas a la vez no entrena la capacidad de cambiar el foco con eficacia, entrena para atender a más fuentes de información simultáneamente, lo que en tareas que exigen concentrarse en una sola cosa y descartar el resto termina jugando en contra. Los propios autores subrayan que el estudio no puede determinar si la multitarea intensa causa esta dificultad o si las personas con esa predisposición cognitiva tienden a multitarea más, una pregunta que dejaron abierta para investigación futura.'
           ]
+        },
+        {
+          subtitle: 'El hallazgo no se ha sostenido bien',
+          paragraphs: [
+            'El estudio de 2009 se hizo famoso deprisa: charlas, titulares, libros de divulgación. La replicación llegó más tarde y fue tibia. En 2017, Wiradhany y Nieuwenstein rehicieron las pruebas de filtrado de distracciones con dos muestras nuevas y potencia estadística de sobra. De catorce contrastes, solo cinco salieron en la dirección esperada. Al juntar en un metaanálisis casi cuarenta medidas de una docena de estudios, la asociación entre compaginar medios y distraerse más quedaba en algo minúsculo, y la diferencia en el cambio de tarea, que era el resultado estrella del artículo original, no reaparecía.',
+            'Un metaanálisis posterior, publicado en 2021 con diez años de perspectiva, llegó a un veredicto parecido: la relación existe sobre el papel pero es tan pequeña que apenas se distingue del ruido, y algún estudio incluso encontró a los multitareas intensos algo más rápidos, no más lentos, cambiando de tarea. El diseño correlacional que los propios Ophir, Nass y Wagner reconocieron como límite pesa aquí doble: ni sabemos si la multitarea deteriora la atención, ni tenemos claro que el efecto de laboratorio sea real. Lo honesto hoy es tratarlo como una hipótesis influyente y mal confirmada, no como un hecho.'
+          ]
         }
       ],
-      blockquote: { text: '«Los multitareas mediáticos intensos rindieron peor en una prueba de capacidad de cambio de tarea, probablemente debido a una menor capacidad para filtrar la interferencia de la tarea irrelevante.»', attribution: 'Eyal Ophir' },
-      aplicacion: 'Si notas que te cuesta concentrarte en una sola cosa después de días con muchas pestañas, chats y pantallas abiertas a la vez, este estudio sugiere que el problema no es solo cansancio: es un patrón de atención entrenado en la dirección contraria a la que necesitas para una tarea de foco único. Antes de un trabajo que exija concentración sostenida, cerrar el resto de fuentes de información, no solo silenciarlas, puede importar más de lo que parece.'
+      blockquote: { text: '«Los multitareas mediáticos intensos rindieron peor en una prueba de capacidad de cambio de tarea, probablemente por una menor capacidad para filtrar la interferencia de lo irrelevante.»', attribution: 'Ophir, Nass y Wagner (2009)' },
+      aplicacion: 'La idea de que compaginar pantallas te "entrena" para distraerte es sugerente pero está poco confirmada, así que no la conviertas en una teoría sobre tu cerebro. Lo que sí aguanta es más simple: mientras haces una tarea de foco único, cada fuente abierta al lado es una invitación a saltar. Antes de un trabajo que exija concentración, cierra el resto en vez de solo silenciarlo. El efecto inmediato lo notas aunque el de largo plazo esté en duda.'
     }
   ],
 
@@ -1950,188 +2154,281 @@ const LIBRARY_ARTICLES = {
     {
       id: 'sm-02',
       title: 'La ilusión de control: por qué creer que mandas sobre lo que no controlas te mantiene más sano',
-      summary: 'Percibir que tienes control sobre tu entorno (aunque esa percepción sea parcialmente ilusoria) tiene efectos biológicos reales y medibles sobre la salud y la longevidad.',
-      sourceUrl: 'https://doi.org/10.1037/0022-3514.32.2.311',
+      summary: 'En una residencia de ancianos, los que decidían sobre cosas pequeñas y cuidaban su propia planta murieron a la mitad de ritmo que los que tenían todo resuelto por el personal.',
+      sourceUrl: 'https://doi.org/10.1037/0022-3514.34.2.191',
       sourceLabel: 'Langer & Rodin (1976), Journal of Personality and Social Psychology',
       badge: 'Psicología del control',
       author: { name: 'Ellen Langer', university: 'Universidad de Harvard', specialty: 'Mindfulness, control percibido y psicología de la salud' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'En 1976, Ellen Langer y Judith Rodin realizaron un experimento en una residencia de ancianos de Connecticut que cambiaría la gerontología y la psicología de la salud. Dividieron a los residentes en dos grupos que recibían exactamente el mismo nivel de atención médica y el mismo entorno físico. La única diferencia: un grupo podía tomar pequeñas decisiones sobre su habitación y su rutina, y tenía una planta que ellos mismos cuidaban. El otro grupo tenía la planta, pero la cuidaba el personal. Dieciocho meses después, los datos eran tan claros que perturbaron al equipo.',
+      intro: 'En 1976, en una residencia de ancianos de Connecticut, Ellen Langer y Judith Rodin repartieron plantas de interior entre los residentes de dos plantas del edificio. A los de un piso les dijeron que la planta era suya, que eligieran dónde ponerla y que la regaran ellos. A los del otro les dieron la misma planta y les explicaron que el personal se encargaría de cuidarla. Año y medio después volvieron a mirar quién seguía vivo en cada piso.',
       sections: [
         {
-          subtitle: 'El experimento: cómo una planta puede extender la vida',
+          subtitle: 'Dos plantas del mismo edificio, dos discursos distintos',
           paragraphs: [
-            'Los residentes con autonomía para tomar pequeñas decisiones (qué mueble mover, qué película ver el martes, cómo distribuir la habitación) y con la responsabilidad de cuidar una planta viva reportaron mayor bienestar subjetivo, mayor nivel de actividad y mayor nivel de alerta que el grupo de control a los 18 meses de seguimiento. Pero el dato que nadie esperaba fue este: la tasa de mortalidad en el grupo de control duplicaba la del grupo con autonomía. El control percibido sobre pequeñas cosas había reducido a la mitad la mortalidad.',
-            'Langer ha replicado el principio en múltiples formas a lo largo de décadas. En un estudio posterior, trabajadores de una empresa de limpieza que eran informados de que sus tareas equivalían a ejercicio físico moderado mostraron mejoras en presión arterial, peso e índice de masa corporal en comparación con un grupo de control con el mismo trabajo pero sin esa información. La percepción había cambiado la biología.'
+            'El edificio era Arden House y participaron casi cien residentes, repartidos por piso. El administrador dio a cada grupo una charla breve. A los de un piso les insistió en todo lo que su vida todavía tenía de decidible: los muebles, cómo repartir el tiempo, las visitas, qué noche bajar a ver la película, y les ofreció escoger una planta y ocuparse de ella. A los del otro piso les dio una charla igual de amable, pero el mensaje era que el personal estaba allí para resolverles las cosas, y la planta venía con la enfermera que la regaría. Mismo edificio, misma comida, misma atención médica, misma planta. La única diferencia real era quién mandaba sobre lo pequeño.',
+            'Tres semanas después de los discursos, los del piso con autonomía se movían más, hablaban más con otros residentes y participaban más en las actividades comunes. El personal de enfermería, que los valoraba sin saber la hipótesis, apreció mejoría en la mayor parte de ese grupo y un deterioro medio en el otro. Cuando el edificio organizó un concurso para adivinar cuántas gominolas había en un frasco, se apuntaron muchos más residentes del piso con autonomía.',
+            'La parte que inquietó al equipo llegó en un seguimiento publicado en 1977. Año y medio después de la intervención, habían muerto 7 de los 47 residentes del piso con autonomía, un 15%. En el otro piso habían muerto 13 de 44, un 30%. El doble. Una diferencia de esa magnitud a partir de un cambio tan pequeño no era lo que nadie esperaba encontrar.'
           ]
         },
         {
-          subtitle: 'El mecanismo: control, estrés y biología',
+          subtitle: 'Por qué mandar sobre una regadera cambia algo',
           paragraphs: [
-            'La psicología del control tiene un sustrato biológico bien documentado. La percepción de incontrolabilidad activa el eje hipotalámico-pituitario-adrenal (HPA) y produce una liberación crónica de cortisol, que a largo plazo suprime el sistema inmune, deteriora la memoria del hipocampo y acelera el envejecimiento celular. La percepción de control actúa como buffer: reduce la respuesta de estrés ante eventos negativos, porque el cerebro interpreta que existe alguna vía de acción posible.',
-            'Lo que Langer subraya (y que tiene consecuencias éticas importantes en el diseño de instituciones) es que el control no tiene que ser real para tener efectos biológicos reales. La percepción de control sobre cualquier dominio, por pequeño que sea, generaliza sus efectos protectores más allá de ese dominio. Un residente que decide qué flor regar está tomando una decisión biológicamente equivalente a "tengo agencia en mi vida". El cerebro no hace la distinción.'
+            'La percepción de control amortigua el estrés. Cuando lees una situación como "aquí no hay nada que yo pueda hacer", el cuerpo pone en marcha una respuesta que no se apaga sola: el eje que conecta hipotálamo, hipófisis y glándulas suprarrenales suelta cortisol de forma sostenida, y meses de eso desgastan el sistema inmune y la memoria del hipocampo. Cuando la lees como "algo puedo mover", aunque sea poco, esa misma respuesta es más corta y menos honda.',
+            'El reverso tiene nombre y autor. Martin Seligman lo llamó indefensión aprendida: animales, y luego personas, que dejan de intentarlo en cuanto han aprendido que lo que hacen no cambia nada. Una residencia que te lo da todo hecho es, sin pretenderlo, una máquina de enseñar esa lección.',
+            'La apuesta de Langer, que repitió durante décadas, es que ese control no tiene que recaer sobre nada importante. Elegir qué planta regar y dónde ponerla manda la misma señal que una decisión mayor, y el cuerpo no parece puntuarla por relevancia. En un estudio de 2007 con 84 limpiadoras de hotel, a la mitad les explicaron que su trabajo diario ya cubría de sobra el ejercicio que recomienda un médico. Cuatro semanas más tarde, ese grupo había bajado peso, tensión y grasa corporal sin cambiar lo que hacía. El mismo trabajo, leído de otra manera.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el estudio no aguanta y lo que sí',
+          paragraphs: [
+            'Los reparos son serios. Fueron unos noventa participantes, agrupados por piso y no uno a uno, así que cualquier peculiaridad de una planta del edificio viaja pegada al resultado. La mortalidad es una variable rara de medir en un experimento de psicología de ese tamaño, y el artículo nunca detalla la cadena biológica que llevaría de una maceta a una tasa de defunciones.',
+            'James Coyne, que lleva años revisando este tipo de trabajos, lo dice sin rodeos: muchos clásicos de la psicología social de los setenta se montaron para enseñar una idea de la forma más vistosa posible, no para superar el escrutinio que aplicaríamos hoy. El estudio de la planta, sostiene, es uno de ellos. El de las limpiadoras también es pequeño y sus réplicas son irregulares.',
+            'Lo que se mantiene fuera de este experimento concreto es la línea de estudios largos sobre control y salud. Los seguimientos de funcionarios británicos, entre otros, encuentran una y otra vez que quienes tienen poco margen de decisión sobre su jornada enferman más y mueren antes que quienes tienen más, a igual sueldo. Y la lección práctica se adoptó igualmente: residencias, hospitales y oficinas montan hoy pequeñas decisiones a propósito, porque ofrecerlas cuesta poco y el inconveniente no aparece por ningún lado.'
           ]
         }
       ],
-      blockquote: { text: '«La sensación de control no es un lujo psicológico: es una necesidad biológica con efectos medibles sobre la salud y la longevidad.»', attribution: 'Ellen Langer' },
-      aplicacion: 'Cuando te sientas abrumado por una situación que percibas como incontrolable, no intentes controlar lo grande (probablemente no puedas). Identifica el elemento más pequeño y concreto sobre el que sí tienes agencia y ejecútalo. El efecto protector del control se generaliza: el cerebro no requiere que el dominio controlado sea importante, solo que sea real.'
+      blockquote: { text: '«Se puede animar a las personas mayores a tomar decisiones y a responsabilizarse de algo, con efectos beneficiosos sobre su estado de alerta, su actividad y su sensación de bienestar general.»', attribution: 'Langer & Rodin (1976)' },
+      aplicacion: 'Cuando una situación te venga grande y no puedas con el conjunto, baja el foco hasta dar con la parte más pequeña sobre la que sí decides tú, y hazla. No porque vaya a resolver lo importante, que casi nunca lo hace, sino porque tener una jugada disponible acorta la respuesta de estrés que dispara sentirse sin ninguna. Y si te toca organizar el día de otra persona que depende de ti, alguien mayor o enfermo a tu cargo, deja decisiones sobre la mesa aunque sea más rápido tomarlas tú.'
     },
     {
       id: 'sm-03',
       title: 'El ejercicio como antidepresivo: por qué caminar 30 minutos rivaliza con la medicación',
-      summary: 'Un estudio controlado de Duke University demostró que el ejercicio aeróbico produce los mismos efectos sobre la depresión mayor que la medicación, con tasas de recaída significativamente menores a los 10 meses.',
-      sourceUrl: 'https://doi.org/10.1001/archpsyc.56.10.980',
-      sourceLabel: 'Blumenthal et al. (1999), Archives of General Psychiatry',
+      summary: 'En un ensayo de Duke, salir a caminar y trotar igualó a la sertralina contra la depresión mayor. A los diez meses, el grupo que solo hizo ejercicio recaía mucho menos.',
+      sourceUrl: 'https://doi.org/10.1001/archinte.159.19.2349',
+      sourceLabel: 'Blumenthal et al. (1999), Archives of Internal Medicine',
       badge: 'Neurociencia clínica',
       author: { name: 'James Blumenthal', university: 'Universidad de Duke', specialty: 'Psicología de la salud y neurociencia cardiovascular' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '19 de mayo de 2026',
-      intro: 'En 1999, James Blumenthal y su equipo de Duke publicaron un estudio que desafió la jerarquía terapéutica en el tratamiento de la depresión. Durante 16 semanas, asignaron aleatoriamente a 156 adultos con depresión mayor a tres condiciones: medicación sola (sertralina, un ISRS), ejercicio aeróbico solo (30 minutos tres veces por semana), o combinación de ambos. Al final del período de tratamiento, los tres grupos habían mejorado de forma comparable. El ejercicio solo había producido exactamente lo mismo que el fármaco.',
+      intro: 'En 1999, un equipo de la Universidad de Duke reunió a 156 personas mayores de 50 años con depresión mayor diagnosticada y las repartió al azar en tres grupos. Uno tomaría sertralina, un antidepresivo corriente. Otro haría ejercicio aeróbico supervisado, media hora tres veces por semana. El tercero, las dos cosas a la vez. Dieciséis semanas después, los tres grupos habían mejorado casi por igual. El que solo había salido a caminar y trotar estaba tan recuperado como el que tomaba pastillas.',
       sections: [
         {
-          subtitle: 'El seguimiento: donde el ejercicio gana claramente',
+          subtitle: 'Un ensayo con tres ramas y un empate incómodo',
           paragraphs: [
-            'La diferencia real entre los grupos no apareció durante el tratamiento, sino en el seguimiento a los 10 meses. El equipo de Blumenthal contactó a los participantes que habían entrado en remisión para evaluar la tasa de recaída. Los resultados fueron sorprendentes: el grupo que solo había tomado medicación tenía una tasa de recaída del 38%. El grupo de medicación más ejercicio, del 31%. El grupo de solo ejercicio: del 8%. El tratamiento objetivamente menos intervencionista producía la mayor protección a largo plazo.',
-            'El mecanismo de la ventaja no era simplista. Blumenthal argumenta que el ejercicio no solo produce cambios bioquímicos; también desarrolla lo que él llama "autoeficacia conductual": la experiencia repetida de comprometerse con una conducta difícil y mantenerla produce una creencia genuina en la propia capacidad de regulación. Las personas que habían entrenado durante 16 semanas habían aprendido algo sobre sí mismas que el fármaco no enseña.'
+            'James Blumenthal dirigía el estudio, bautizado SMILE. Los del grupo de ejercicio hacían diez minutos de calentamiento, treinta de caminar o correr a un ritmo exigente pero sostenible, entre el 70 y el 85% de su frecuencia cardíaca de reserva, y un enfriamiento, en sesiones vigiladas, tres días por semana. Los del grupo de fármaco tomaban sertralina en la dosis que les ajustaba un psiquiatra. A las 16 semanas, entre el 60 y el 70% de cada grupo ya no cumplía criterios de depresión mayor. La única diferencia clara durante el tratamiento fue de velocidad: la medicación hacía efecto antes.',
+            'El dato que dio la vuelta al estudio llegó después. Michael Babyak y el mismo equipo volvieron a evaluar a los participantes seis meses después de terminar el tratamiento, a los diez meses del inicio, para ver cuántos de los que se habían recuperado habían vuelto a caer. En el grupo de solo medicación había recaído el 38%. En el de medicación más ejercicio, el 31%. En el de solo ejercicio, el 8%.',
+            'El orden sorprende dos veces. Sorprende que la caminata aguante mejor que el fármaco, y sorprende que sumarle el fármaco al ejercicio empeore el resultado del ejercicio a secas. Blumenthal propuso una explicación para lo segundo. Quien se recupera entrenando atribuye la mejora a algo que ha hecho él. Quien además toma una pastilla puede acabar dándole el mérito a la pastilla, y ese detalle de a quién le cuelgas el logro cambia lo que haces cuando el tratamiento se acaba. En el seguimiento, seguir moviéndose por cuenta propia era el mejor predictor de no recaer.'
           ]
         },
         {
-          subtitle: 'El mecanismo biológico: más que endorfinas',
+          subtitle: 'Qué le hace el ejercicio a un cerebro deprimido',
           paragraphs: [
-            'La narrativa popular sobre el ejercicio y el estado de ánimo se centra en las endorfinas. La neurociencia contemporánea apunta a un mecanismo más complejo y más robusto. El ejercicio aeróbico aumenta la expresión de BDNF (Factor Neurotrófico Derivado del Cerebro), una proteína que promueve la supervivencia de neuronas existentes y el crecimiento de nuevas conexiones, especialmente en el hipocampo, la región cerebral cuyo volumen está reducido en la depresión y que es central para la regulación del estado de ánimo y la memoria.',
-            'Al mismo tiempo, el ejercicio regular reduce los niveles basales de cortisol (la hormona del estrés), aumenta la sensibilidad de los receptores de serotonina y dopamina, y activa la neuroplasticidad. Estos efectos no son agudos (no ocurren después de una sesión) sino acumulativos: se desarrollan con semanas de práctica consistente y son parcialmente reversibles si se deja de practicar. La regularidad es el medicamento activo, no el esfuerzo máximo de una sesión aislada.'
+            'La versión de calle habla de endorfinas. La que sostiene mejor la evidencia habla sobre todo del BDNF, una proteína que mantiene vivas las neuronas que ya tienes y ayuda a que broten conexiones nuevas, y que abunda de forma especial en el hipocampo, una zona que aparece encogida en la depresión y que gestiona memoria y estado de ánimo. El ejercicio aeróbico regular sube el BDNF.',
+            'A la vez baja el cortisol de base, esa hormona del estrés que en exceso y de forma continua desgasta ese mismo hipocampo, y afina la respuesta a la serotonina y la dopamina. Nada de esto pasa en una sesión. Se construye con semanas de repetición y se deshace en parte si lo dejas. La dosis activa es la constancia, no la paliza de un día suelto.',
+            'Y hay una capa que no es química. Comprometerse con algo difícil tres veces por semana durante cuatro meses y cumplirlo enseña algo sobre uno mismo que un comprimido no puede enseñar. Blumenthal lo llamaba autoeficacia: la prueba, repetida, de que puedes influir en cómo te sientes.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega el "camina y verás"',
+          paragraphs: [
+            'El SMILE de 1999 no tenía grupo placebo. En 2007, el mismo equipo repitió el diseño con 202 personas y esta vez sí metió una rama de pastilla inactiva. El ejercicio volvió a igualar a la sertralina, pero el placebo quedó más cerca de los tratamientos de lo que cabría esperar, y el fármaco apenas se despegó de él.',
+            'Cuando la Colaboración Cochrane juntó los ensayos de ejercicio y depresión y se quedó solo con los mejor hechos, con evaluadores que no sabían quién había entrenado, el efecto seguía ahí pero se encogía a pequeño e incierto. El "8% de recaída" viene de un único estudio de tamaño medio, muy citado, que nadie ha clavado de forma independiente.',
+            'Importa además a quién se le probó. Adultos de más de 50 años, con depresión de intensidad moderada, en un programa vigilado con alguien pendiente de que fueran. No es lo mismo que decirle a una persona hundida en un episodio grave que salga a andar. El ejercicio es un tratamiento con respaldo, no una salida que uno deba decidir por su cuenta si ya está medicado.'
           ]
         }
       ],
-      blockquote: { text: '«El ejercicio no es un complemento al tratamiento de la depresión: es un tratamiento en sí mismo, con un perfil de eficacia comparable a la medicación y un perfil de efectos secundarios radicalmente mejor.»', attribution: 'James Blumenthal' },
-      aplicacion: 'El protocolo con evidencia más sólida es: 30 minutos de ejercicio aeróbico moderado (caminar rápido, nadar, bicicleta) tres veces por semana durante al menos 8 semanas. Este no es un consejo de bienestar general: es un protocolo clínico con estudios de eficacia controlada. Si empezar con 30 minutos parece imposible, empieza con 10: los beneficios neurobiológicos comienzan antes de alcanzar la dosis óptima.'
+      blockquote: { text: '«Un programa de ejercicio aeróbico puede ser tan eficaz como la sertralina para tratar la depresión mayor en pacientes mayores.»', attribution: 'Blumenthal et al. (1999)' },
+      aplicacion: 'El protocolo que se probó es concreto: 30 minutos de aeróbico moderado, del que te deja hablar con frases cortas pero no cantar, tres veces por semana, sostenido durante al menos ocho semanas. Si media hora hoy te parece inalcanzable, diez minutos ya empiezan a mover la química. Y si estás en tratamiento por depresión, esto entra como una pieza más que sumas hablándolo con quien te trata, no como una puerta para dejar la medicación.'
     },
     {
       id: 'sm-04',
       title: 'El estado de flujo: la ciencia de cuando el tiempo desaparece y el yo también',
-      summary: 'Csikszentmihalyi identificó las condiciones precisas bajo las que el cerebro alcanza su rendimiento y bienestar máximos simultáneamente, y demostró que ese estado puede diseñarse.',
-      sourceUrl: 'https://doi.org/10.1037/0003-066X.55.1.5',
-      sourceLabel: 'Csikszentmihalyi (2000), American Psychologist',
+      summary: 'Con buscapersonas que sonaban a horas al azar, Csikszentmihalyi cazó el momento en que una tarea absorbe tanto que el reloj y el yo se apagan. Y encontró una paradoja sobre el trabajo.',
+      sourceUrl: 'https://doi.org/10.1037/0022-3514.56.5.815',
+      sourceLabel: 'Csikszentmihalyi & LeFevre (1989), Journal of Personality and Social Psychology',
       badge: 'Psicología positiva',
       author: { name: 'Mihaly Csikszentmihalyi', university: 'Universidad de Chicago / Claremont Graduate University', specialty: 'Psicología de la experiencia óptima y el bienestar' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: '¿Por qué un cirujano de fama mundial opera voluntariamente sin cobrar en hospitales de países pobres? ¿Por qué un escalador arriesga su vida en una pared de hielo sin ninguna recompensa externa? Mihaly Csikszentmihalyi pasó décadas investigando esas preguntas y encontró que estas personas no estaban persiguiendo placer ni evitando dolor: estaban persiguiendo un estado psicológico específico que describían con vocabulario casi idéntico, independientemente de su cultura o actividad. Lo llamó flujo.',
+      intro: 'Un cirujano con prestigio de sobra opera gratis los fines de semana. Un escalador se juega la vida en una pared de hielo sin premio, sin público y sin foto. Mihaly Csikszentmihalyi se pasó años preguntando a gente así qué buscaban, y todos describían lo mismo con palabras casi calcadas: un rato en el que la tarea los absorbía tanto que desaparecían el reloj y ellos mismos. Lo llamó flujo, y quiso medir cuándo aparece en un día cualquiera.',
       sections: [
-        { subtitle: 'La investigación: el muestreo de experiencias a escala', paragraphs: ['Para ir más allá de las entrevistas, Csikszentmihalyi desarrolló el método de muestreo de experiencias (ESM): daba bippers a participantes de diferentes culturas, edades y profesiones que sonaban a horas aleatorias durante semanas. Al sonar, los participantes anotaban qué hacían, cómo se sentían y cuánto se concentraban. Tras analizar decenas de miles de registros, el patrón emergió con consistencia: los estados de mayor bienestar y mayor rendimiento coincidían con situaciones específicas y predecibles.', 'Las características del flujo eran transculturalmente consistentes: concentración intensa y sin esfuerzo consciente, fusión entre la acción y la conciencia del que actúa, pérdida de la noción del tiempo, desaparición de la autoconsciencia, sensación de control sin esfuerzo, y motivación completamente intrínseca, la actividad se convierte en un fin en sí misma, no un medio. Csikszentmihalyi encontró el flujo en cirujanos, jugadores de ajedrez, bailarines de ballet, trabajadores de cadenas de montaje y madres cuidando a sus hijos: la actividad era irrelevante; las condiciones eran universales.'] },
-        { subtitle: 'La neurociencia del flujo: hipofrontalidad y sistema de recompensa', paragraphs: ['La investigación con neuroimagen ha identificado el sustrato cerebral del flujo. El estado se asocia con una reducción de actividad en la corteza prefrontal ventromedial y el cíngulo anterior, regiones involucradas en la autoconsciencia, la evaluación crítica y la supervisión del rendimiento. Esta "hipofrontalidad transitoria" explica la característica más desconcertante del flujo: la desaparición del yo.', 'Al mismo tiempo, el flujo activa el núcleo accumbens y la vía dopaminérgica mesolímbica, junto con la liberación de norepinefrina, anandamida y serotonina. El resultado neuroquímico es una experiencia que el cerebro codifica como extraordinariamente valiosa, lo que explica por qué las personas en flujo buscan repetir el estado y por qué el trabajo en flujo genera más satisfacción que el trabajo igualmente completado sin ese estado.'] }
+        {
+          subtitle: 'Un buscapersonas que sonaba a horas aleatorias',
+          paragraphs: [
+            'Las entrevistas daban una imagen pero no un recuento. Csikszentmihalyi montó el método de muestreo de experiencias: repartía buscapersonas que pitaban a horas al azar durante una semana, y al pitido el participante anotaba qué hacía, cómo se sentía, cuánto se concentraba y cómo de difícil le resultaba lo que tenía entre manos frente a lo bueno que era haciéndolo.',
+            'En 1989, con Judith LeFevre, aplicó esto a 78 trabajadores de empresas de la zona de Chicago durante una semana, unas 4.800 respuestas. Definieron el flujo de forma operativa: los momentos en que la persona valoraba el reto y su propia destreza por encima de su media de esa semana. En esos momentos la gente decía estar más concentrada, más creativa, de mejor humor y más satisfecha, diera igual si estaba en la oficina o en el sofá.',
+            'El giro llegó al cruzar dos preguntas. Los participantes entraban en flujo mucho más en el trabajo, algo más de la mitad del tiempo laboral, que en el ocio, menos de una quinta parte. Y aun así, estando en flujo en el trabajo, muchos seguían diciendo que preferirían estar haciendo otra cosa. La motivación tiraba hacia el ocio aunque la experiencia fuera peor allí. Csikszentmihalyi lo llamó la paradoja del trabajo.'
+          ]
+        },
+        {
+          subtitle: 'El canal entre el aburrimiento y la angustia',
+          paragraphs: [
+            'El modelo que salió de ahí es un mapa con dos ejes, reto y habilidad. Si lo que haces está muy por debajo de lo que sabes hacer, te aburres o te desenganchas. Si te desborda, aparece la ansiedad. El flujo vive en la franja estrecha donde un reto que te obliga a estirarte se encuentra con una destreza que casi da la talla. Por eso el mismo videojuego que te enganchaba a los doce años te aburre a los treinta: la habilidad subió y el reto se quedó fijo.',
+            'Sobre lo que pasa en el cerebro hay una hipótesis, la de la hipofrontalidad transitoria, propuesta por Arne Dietrich. La idea es que durante el flujo baja la actividad de la corteza prefrontal, sobre todo la parte medial, la que se encarga de vigilarte, evaluarte y hablarte por dentro. Si esa voz se apaga un rato, encajan de golpe dos rarezas del flujo: que se esfume la autoconciencia y que la ejecución salga más suelta justo cuando dejas de supervisarla. A la vez se encienden los circuitos de recompensa con dopamina, y el cerebro archiva la experiencia como algo que merece repetirse.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el flujo no es',
+          paragraphs: [
+            'Casi todo lo que sabemos del flujo viene de que la gente lo cuente, en cuestionarios que se rellenan después y que los propios investigadores del campo han criticado por poco finos. El mapa de reto y habilidad funciona como intuición, pero cuando se manipula en el laboratorio los resultados van en varias direcciones, y a veces pesa más tener mucha habilidad, o mucho reto, que el equilibrio entre ambos.',
+            'La hipofrontalidad tiene algún apoyo en neuroimagen, con caídas de actividad en la corteza prefrontal medial, pero meter a alguien en flujo dentro de un escáner es difícil y las muestras son pequeñas. Un metaanálisis reciente encuentra que la relación entre estar en flujo y rendir mejor existe, aunque es modesta, lejos de la que sugiere el entusiasmo divulgativo.',
+            'Y la paradoja del trabajo desactiva el consejo fácil de "organiza tu vida alrededor del flujo". Aquellos trabajadores entraban en flujo sobre todo trabajando y aun así querían estar en otro sitio. El estado se siente bien mientras dura y no garantiza que quieras más de él.'
+          ]
+        }
       ],
-      blockquote: { text: '«La felicidad no es algo que ocurre. No resulta de la buena fortuna o el azar. No se puede comprar con dinero ni coercionar con poder. Depende de cómo filtramos e interpretamos las experiencias cotidianas.»', attribution: 'Mihaly Csikszentmihalyi' },
-      aplicacion: 'Para inducir flujo de forma deliberada se necesitan tres condiciones simultáneas: un objetivo claro y concreto para la sesión (no "trabajar en X" sino "completar la sección Y hasta Z"), ausencia total de interrupciones durante al menos 90 minutos, y una tarea cuyo desafío supere ligeramente (pero no desborde) tu nivel de habilidad actual. Si la tarea es demasiado fácil, auméntala; si genera ansiedad paralizante, divídela en subtareas manejables.'
+      blockquote: { text: '«La felicidad no es algo que ocurre. No resulta de la buena fortuna ni del azar. No se puede comprar con dinero ni imponer con poder. Depende de cómo interpretamos las experiencias cotidianas.»', attribution: 'Mihaly Csikszentmihalyi, «Flow» (1990)' },
+      aplicacion: 'Para tener más papeletas de entrar en flujo puedes preparar el terreno: fija antes de empezar un objetivo concreto para el rato (no "avanzar el informe", sino "dejar cerrado el apartado tal"), quítate de encima las interrupciones durante un bloque largo, y elige una tarea que te quede un punto por encima de lo que ya dominas. Lo que no puedes es invocarlo a voluntad ni contar con que aparezca cada vez. Y si llega mientras trabajas, no te extrañe que una parte de ti siga queriendo estar en la calle.'
     },
     {
       id: 'sm-05',
       title: 'La autocompasión no es autoindulgencia: la investigación que desmonta el mito',
-      summary: 'Kristin Neff demostró que tratarse a uno mismo con amabilidad ante el fracaso predice mejor el bienestar, la resiliencia y el rendimiento que la autoestima alta, y sin sus efectos secundarios.',
+      summary: 'La idea de que uno mejora fustigándose no tiene respaldo empírico. Cuando se induce en el laboratorio, tratarse con menos saña ante un fallo sube las ganas de arreglarlo, no las baja.',
       sourceUrl: 'https://doi.org/10.1023/B:SELF.0000009865.37384.9b',
       sourceLabel: 'Neff (2003), Self and Identity',
       badge: 'Psicología positiva',
       author: { name: 'Kristin Neff', university: 'Universidad de Texas en Austin', specialty: 'Autocompasión, bienestar psicológico y regulación emocional' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: 'La cultura occidental asocia la autoevaluación negativa con la mejora: si no te exiges duramente, si no te criticas con rigor, si no sientes vergüenza ante el fracaso, no te esforzarás por hacerlo mejor. Kristin Neff pasó dos décadas investigando si esa asunción tiene base empírica. Encontró que no solo carece de ella: los datos apuntan exactamente en la dirección opuesta.',
+      intro: 'La idea de fondo de media cultura occidental es que uno mejora a base de exigirse: si no te fustigas cuando fallas, si no sientes vergüenza, te acomodarás. Kristin Neff se pasó dos décadas comprobando si esa idea tiene algún respaldo en los datos. No lo tiene. Y en varios estudios pasa justo lo contrario de lo que predice.',
       sections: [
-        { subtitle: 'Autocompasión vs. autoestima: dos constructos muy distintos', paragraphs: ['Neff operacionalizó la autocompasión en tres componentes que se miden de forma independiente: amabilidad hacia uno mismo (tratarse con comprensión en lugar de juicio severo ante el fracaso), humanidad compartida (reconocer que el sufrimiento y la imperfección son parte de la experiencia humana universal, no un fracaso personal) y mindfulness (observar los pensamientos y sentimientos dolorosos sin sobreidentificarse con ellos ni suprimirlos). En más de 80 estudios publicados hasta 2020, la autocompasión predecía consistentemente mayor bienestar emocional, menor ansiedad, menor depresión, mayor motivación para el aprendizaje y mayor resiliencia ante el fracaso.', 'La diferencia crítica con la autoestima es que la autoestima alta está condicionada al éxito: se infla cuando las cosas van bien y colapsa cuando van mal, lo que la convierte en un regulador emocional inestable. La autocompasión, en cambio, es más estable porque no depende de los resultados. Neff encontró que personas con alta autocompasión y autoestima moderada tenían mejores indicadores de bienestar que personas con autoestima muy alta pero baja autocompasión.'] },
-        { subtitle: 'El mito de la autoindulgencia: por qué la autocompasión mejora el rendimiento', paragraphs: ['La objeción más común a la autocompasión es que suaviza la motivación. Neff diseñó estudios específicos para responder a esta pregunta. En uno de los más citados, expuso a los participantes a situaciones de fracaso y midió su disposición a intentarlo de nuevo. Las personas con mayor autocompasión mostraron mayor motivación para corregir sus errores y mayor disposición a afrontar tareas difíciles, no menor. La razón: la autocrítica severa activa el sistema de amenaza del cerebro (amígdala, cortisol), que no es un buen ambiente cognitivo para el aprendizaje. La autocompasión activa el sistema de calma y afiliación (oxitocina, serotonina), que sí lo es.', 'En un estudio sobre el fracaso académico, los estudiantes con mayor autocompasión respondían al suspenso con más motivación de estudio, más análisis de sus errores y menor probabilidad de rendirse, en comparación con los de baja autocompasión y alta autocrítica. El mecanismo es contraintuitivo: castigarse por el error no genera más compromiso; genera más evitación del dominio donde el error ocurrió.'] }
+        {
+          subtitle: 'Tres piezas que no son lo mismo que quererse mucho',
+          paragraphs: [
+            'En 2003 Neff definió la autocompasión con tres componentes que se miden por separado: tratarte con la misma comprensión que tendrías con otra persona cuando metes la pata, en vez de con el juez de dentro; ver el fallo y el sufrimiento como parte del paquete de ser humano y no como una tara tuya en particular; y sostener el pensamiento que duele sin agrandarlo ni taparlo. Ese mismo año publicó la escala de 26 ítems que se sigue usando para medirlo.',
+            'La autoestima es otra cosa, y más frágil. Sube cuando las cosas salen bien y se hunde cuando salen mal, porque está atada al resultado y a compararte con los demás. En su versión inflada se asocia con narcisismo y con ponerse a la defensiva ante cualquier crítica. La autocompasión no depende de haber ganado, así que aguanta mejor los días malos. Cuando se juntan las pruebas de decenas de muestras, se asocia con más bienestar, menos ansiedad y menos síntomas depresivos.'
+          ]
+        },
+        {
+          subtitle: 'El experimento que responde a la objeción de siempre',
+          paragraphs: [
+            'La pega habitual es que tratarse con suavidad ablanda las ganas de mejorar. Juliana Breines y Serena Chen la pusieron a prueba de forma directa. A unos participantes que acababan de recordar un defecto propio, un fracaso o algo de lo que se avergonzaban, les pidieron que se escribieran unas líneas desde la autocompasión. Otros escribían defendiendo sus cualidades, o sobre un tema cualquiera.',
+            'Los del grupo de autocompasión declararon después más intención de cambiar lo que estaba mal, más ganas de reparar el daño hecho a un tercero y, cuando habían fallado un test, más tiempo estudiando para el siguiente. No menos. En un estudio sobre suspensos universitarios, los estudiantes con más autocompasión respondían al fallo estudiando más y examinando el error, no rindiéndose.',
+            'La lectura que propone Neff parte del modelo de Paul Gilbert sobre regulación de emociones. La autocrítica dura enciende el sistema de amenaza, el de la amígdala y el cortisol, que sirve para huir de un peligro y es pésimo para aprender de un error. Tratarte con menos saña deja funcionar al sistema de calma, y es ahí donde uno revisa lo que hizo mal sin necesitar salir corriendo del asunto.'
+          ]
+        },
+        {
+          subtitle: 'Dónde la evidencia se pone blanda',
+          paragraphs: [
+            'Casi todo esto es correlacional y se mide preguntando a la gente por sí misma con la escala de Neff. Y esa escala tiene una discusión abierta. En 2017, Peter Muris y Nicola Petrocchi mostraron que sus ítems en negativo, los que hablan de juzgarte, aislarte y engancharte al pensamiento doloroso, cargan con buena parte de la relación con la depresión y la ansiedad, y solapan tanto con el neuroticismo que cuesta separarlos. Si eso es así, parte de "la autocompasión protege de la depresión" sería "tener poco neuroticismo protege de la depresión" dicho de otra forma. Neff ha respondido defendiendo que la escala mide un único rasgo general.',
+            'Los cursos estructurados de autocompasión, tipo Mindful Self-Compassion, dan mejoras reales pero de tamaño medio, y algunos participantes describen un efecto rebote: la amabilidad hacia uno mismo destapa dolor viejo antes de aliviarlo.',
+            'Lo que sí se sostiene con firmeza es lo del experimento de Breines y Chen. Inducir una mirada compasiva sobre un fallo propio sube la motivación de arreglarlo, no la baja. La acusación de que es una excusa para no esforzarse es, al menos ahí, falsa.'
+          ]
+        }
       ],
-      blockquote: { text: '«Cuando te dices cosas a ti mismo que nunca le dirías a un amigo que está sufriendo, no te estás motivando: te estás dañando con la ilusión de que el daño es productivo.»', attribution: 'Kristin Neff' },
-      aplicacion: 'La próxima vez que cometas un error importante, aplica el test del amigo: ¿qué le dirías a un amigo cercano que hubiera cometido exactamente ese mismo error? Escríbelo. Luego compáralo con lo que te estás diciendo a ti mismo. La diferencia entre ambos textos es la medida exacta de la dureza con que te tratas, y el primero es el tono que produce mejor motivación y aprendizaje.'
+      blockquote: { text: '«La autocompasión consiste en tratarse con amabilidad ante el fracaso o el sufrimiento, reconocer que la imperfección forma parte de la experiencia humana compartida y sostener los pensamientos dolorosos sin exagerar su alcance.»', attribution: 'Neff (2003)' },
+      aplicacion: 'La próxima vez que la cagues en algo que te importa, prueba el test del amigo: escribe lo que le dirías a alguien cercano que hubiera cometido ese error exacto, y al lado lo que te estás diciendo a ti. La distancia entre los dos textos es la medida de la dureza con que te tratas, y el primero es el tono con el que la gente aprende más del fallo. Si al intentarlo te sube más malestar en vez de menos, es una reacción ya descrita, no una señal de que lo hagas mal.'
     },
     {
       id: 'sm-06',
       title: 'Anotar cada semana lo que agradeces cambió más que el ánimo, según este experimento',
-      summary: 'Personas asignadas al azar a llevar un registro semanal de cosas por las que se sentían agradecidas mostraron mejor ánimo, más optimismo y hasta más horas de ejercicio que quienes registraron contrariedades o simplemente hechos neutros de la semana.',
+      summary: 'Personas asignadas al azar a llevar un registro semanal de cosas que agradecían mostraron mejor ánimo, más optimismo y más horas de ejercicio que quienes anotaban contrariedades. Frente a un grupo neutro, la ventaja se encogía.',
       sourceUrl: 'https://doi.org/10.1037/0022-3514.84.2.377',
       sourceLabel: 'Emmons & McCullough (2003), Journal of Personality and Social Psychology',
       badge: 'Psicología positiva',
       author: { name: 'Robert A. Emmons', university: 'University of California, Davis', specialty: 'Psicología de la gratitud y el bienestar' },
-      readingTime: '3 min',
+      readingTime: '6 min',
       date: '4 de agosto de 2026',
-      intro: 'Robert Emmons y Michael McCullough querían comprobar si la gratitud, más allá de ser un sentimiento agradable puntual, produce efectos medibles sobre el bienestar cuando se practica de forma deliberada y sostenida. Para eso diseñaron tres estudios distintos, asignando al azar a los participantes a llevar un registro periódico centrado en agradecimientos, en contrariedades, o en hechos neutros de su semana.',
+      intro: 'Apunta tres cosas que agradeces cada semana. La instrucción cabe en un pósit y arrastra una promesa grande: más optimismo, mejor humor, dormir mejor, hasta hacer más deporte. Casi toda esa promesa procede de un solo trabajo, publicado en 2003 por Robert Emmons y Michael McCullough. El trabajo original es bastante más prudente que la industria de libros que salió de él.',
       sections: [
         {
-          subtitle: 'El experimento: tres grupos, un mismo cuaderno semanal',
+          subtitle: 'Tres cuadernos, tres poblaciones distintas',
           paragraphs: [
-            'En el primer estudio, con estudiantes universitarios, un grupo anotaba semanalmente hasta cinco cosas por las que se sentía agradecido, otro anotaba cinco contrariedades o molestias de la semana, y un tercero anotaba simplemente cinco sucesos que le hubieran afectado, sin indicación de signo positivo o negativo. Todos llevaron el registro durante diez semanas seguidas.',
-            'El grupo de gratitud reportó, semana tras semana, mayor bienestar general, más optimismo sobre la semana siguiente y menos síntomas físicos que los otros dos grupos. En un segundo estudio con registro diario en vez de semanal, el grupo de gratitud llegó a reportar casi 1,5 horas más de ejercicio a la semana que el grupo de contrariedades, un efecto conductual que va más allá del simple estado de ánimo declarado.'
+            'No fue un experimento, fueron tres. En el primero, 201 estudiantes de una asignatura de psicología de la salud (192 llegaron al final) se repartieron al azar en tres grupos. Uno anotaba cada semana hasta cinco cosas por las que se sentía agradecido. Otro anotaba cinco fastidios o irritaciones. El tercero anotaba cinco sucesos que le hubieran afectado, sin indicarle si en positivo o en negativo. Cada participante entregó diez informes semanales y se analizaron nueve.',
+            'El grupo de gratitud valoró su vida en conjunto un poco por encima de los otros dos, se declaró más optimista sobre la semana que venía y refirió menos molestias físicas. Apareció además una diferencia de conducta que nadie esperaba: dedicó cerca de hora y media más de ejercicio a la semana que el grupo de los fastidios. Lo que no se movió fue el afecto positivo y negativo global, medido aparte. La ventaja estaba en cómo juzgaban su vida, no en cómo se sentían minuto a minuto.'
           ]
         },
         {
-          subtitle: 'El mecanismo: agradecer reorganiza qué información notas primero',
+          subtitle: 'Lo que replicó y lo que no, dentro del mismo artículo',
           paragraphs: [
-            'Emmons explica el efecto por un cambio en el foco atencional. Llevar un registro de gratitud obliga, semana tras semana, a escanear la propia vida buscando específicamente lo que ha ido bien, un ejercicio que compite directamente con el sesgo de negatividad natural del cerebro, que por defecto pesa y recuerda más lo malo que lo bueno.',
-            'El tercer estudio, con personas con enfermedad neuromuscular, una población con motivos objetivos para centrarse en lo negativo, replicó el patrón: quienes llevaron el registro de gratitud durante tres semanas mostraron mayor satisfacción con la vida y mayor optimismo que el grupo de control, pese a que su situación médica no había cambiado en absoluto. El bienestar se movió sin que se moviera la circunstancia.'
+            'El segundo estudio cambió a 166 estudiantes, registro diario durante trece días y un tercer grupo que hacía comparaciones hacia abajo, pensar en gente que está peor. El grupo de gratitud volvió a puntuar más alto en afecto positivo, más atento, más decidido, con más energía, y fue más propenso a haber ofrecido apoyo emocional a alguien esa semana. Pero la diferencia de ejercicio del primer estudio se esfumó. En dos semanas no hubo cambios en deporte, sueño ni síntomas. Los propios autores lo achacan a que dos semanas es poco para mover un hábito.',
+            'El tercer estudio salió del campus. Sesenta y cinco adultos con una enfermedad neuromuscular, congénita o de aparición adulta, reclutados en una clínica de la Universidad de California en Davis, de 22 a 77 años. Tres semanas de registro diario, gratitud frente a un control que solo rellenaba las escalas de bienestar. Aquí el contraste fue el más fuerte de los tres: más afecto positivo, menos afecto negativo, más satisfacción con la vida, más sensación de estar conectado con otros y hasta media hora más de sueño por noche. Sus parejas, que puntuaron a ciegas, también los vieron con mejor ánimo. La enfermedad seguía igual.'
+          ]
+        },
+        {
+          subtitle: 'Casi todo depende de contra qué se compara',
+          paragraphs: [
+            'La lectura honesta empieza por una pregunta: ¿con quién se compara al grupo de gratitud? En los tres estudios la ventaja es amplia frente a "apuntar fastidios" y bastante más corta frente a "apuntar sucesos neutros". La diferencia en cuánta gratitud sentía cada grupo era casi el doble contra los fastidios (d = 0,56) que contra los sucesos neutros (d = 0,28). Llevar la cuenta de las quejas cada semana empeora el ánimo más o menos tanto como agradecer lo mejora, así que parte del efecto es el suelo del grupo de control, no el techo del de gratitud.',
+            'Dos metaanálisis posteriores lo dejan claro. El equipo de Don Davis (2016) reunió los ensayos y separó los controles: frente a una lista de espera que no hacía nada, la gratitud daba un efecto medio (d = 0,31); frente a un control que hacía otra actividad de bienestar cualquiera, caía a d = 0,17, casi ruido. Cregg y Cheavens (2021) juntaron 27 ensayos y 3.675 personas para medir síntomas de depresión y ansiedad, encontraron efectos modestos y recomiendan que quien quiera aliviar una depresión use métodos con respaldo más firme.',
+            'Emmons y McCullough ya lo avisaban en la primera página de 2003. Esta relación, escribieron, no es inevitable ni inequívoca. Su intervención era mínima, no sabían cuánto duraba el efecto ni si se sostenía en el tiempo, y varios resultados no cuadraron entre un estudio y el siguiente. El hábito de moda es más rotundo que la evidencia de la que salió.'
           ]
         }
       ],
-      blockquote: { text: '«Un enfoque deliberado en las bendiciones puede tener beneficios emocionales y sociales, quizá porque una persona agradecida transforma activamente cómo interpreta su experiencia cotidiana.»', attribution: 'Robert A. Emmons' },
-      aplicacion: 'El protocolo con el que se probó el efecto es simple de replicar: una vez por semana, anota entre tres y cinco cosas concretas por las que te sientas agradecido en ese momento, no en abstracto. La clave según este estudio no es sentir gratitud de forma pasiva, sino el acto activo de buscarla y ponerla por escrito con regularidad.'
+      blockquote: { text: '«Un foco consciente en lo que uno agradece puede tener beneficios emocionales e interpersonales.»', attribution: 'Emmons y McCullough (2003)' },
+      aplicacion: 'Si lo pruebas, el formato que se ensayó es semanal, no diario, y con cosas concretas de esa semana, no principios generales. La frecuencia importa: en el estudio con registro diario el efecto se diluyó, probablemente por saturación. Funciona mejor como sostén de un ánimo que ya va tirando que como tratamiento de nada. Y lo que casi seguro ayuda, con o sin cuaderno de gratitud, es dejar de llevar el registro mental de los agravios.'
     },
     {
       id: 'sm-07',
       title: 'El vídeo de un cachorro después del susto hizo que el corazón volviera a la calma mucho más rápido',
-      summary: 'En un experimento con mujeres universitarias, ver un breve vídeo de contento o diversión tras pasar miedo aceleró la recuperación cardiovascular mucho más que ver un vídeo neutro, y mucho más que ver uno triste.',
+      summary: 'En un experimento con mujeres universitarias, ver un breve vídeo de contento o diversión tras pasar miedo aceleró la recuperación cardiovascular más que ver uno neutro, y bastante más que ver uno triste. Réplicas posteriores lo dejan en el aire.',
       sourceUrl: 'https://doi.org/10.1080/026999398379718',
       sourceLabel: 'Fredrickson & Levenson (1998), Cognition & Emotion',
       badge: 'Psicología positiva',
       author: { name: 'Barbara L. Fredrickson', university: 'Universidad de Michigan', specialty: 'Psicología de las emociones positivas' },
-      readingTime: '3 min',
+      readingTime: '6 min',
       date: '4 de agosto de 2026',
-      intro: 'Barbara Fredrickson y Robert Levenson partieron de una pregunta muy concreta sobre el cuerpo, no solo sobre el estado de ánimo: si el miedo deja al corazón acelerado y en alerta, ¿puede una emoción positiva breve devolverlo a su ritmo normal más rápido que, simplemente, dejar pasar el tiempo?',
+      intro: 'El miedo deja al corazón acelerado un rato después de que haya pasado el peligro. La pregunta de Barbara Fredrickson y Robert Levenson en 1998 era sobre el cuerpo, no sobre el ánimo: si a ese susto le sigues de inmediato una emoción positiva breve, ¿vuelve el pulso a su sitio antes que si dejas pasar el tiempo sin más?',
       sections: [
         {
-          subtitle: 'El experimento: un susto real, seguido de cuatro finales distintos',
+          subtitle: 'Un susto real y cuatro finales repartidos al azar',
           paragraphs: [
-            'Sesenta estudiantes de la Universidad de California en Berkeley vieron primero el mismo vídeo, "Ledge": un hombre camina pegado a la fachada de un rascacielos, pierde el equilibrio y queda colgando sobre el vacío. El clip elevó de forma medible el ritmo cardíaco y la activación fisiológica de todas las participantes, con informes de miedo muy por encima del resto de emociones.',
-            'Justo después, cada participante veía al azar uno de cuatro vídeos cortos: "Puppy" (un cachorro jugando, diversión), "Waves" (olas rompiendo en la orilla, contento), "Sticks" (un vídeo neutro sin carga emocional) o "Cry" (un funeral, tristeza). A partir de ahí, Fredrickson y Levenson midieron cuántos segundos tardaba el sistema cardiovascular de cada participante en volver a los niveles previos al susto.'
+            'Sesenta estudiantes, todas mujeres, de una asignatura de introducción a la psicología en la Universidad de California en Berkeley, vieron primero el mismo clip: "Ledge", un hombre que avanza pegado a la fachada de un rascacielos, resbala y queda colgando sobre el tráfico. Dura 83 segundos y va con sonido. Elevó de forma medible el ritmo cardíaco y la vasoconstricción de todas, con informes de miedo muy por encima de cualquier otra emoción.',
+            'Inmediatamente después, cada participante veía al azar uno de cuatro clips de 100 segundos, ya sin sonido: "Waves", olas rompiendo en la orilla, que da contento; "Puppy", un cachorro jugando, que da diversión; "Sticks", una animación abstracta sin carga emocional; o "Cry", el niño de la película The Champ llorando junto a su padre muerto, que da tristeza. Fredrickson y Levenson cronometraron cuántos segundos tardaba cada una en volver, y quedarse, dentro de su franja cardiovascular previa al susto, en cuatro medidas a la vez.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la emoción positiva "deshace" la activación de la negativa',
+          subtitle: 'El efecto deshacer',
           paragraphs: [
-            'El grupo que vio el vídeo del cachorro y el de las olas recuperó su ritmo cardíaco basal de forma significativamente más rápida que el grupo del vídeo neutro, y mucho más rápida que el grupo del funeral. El análisis estadístico global confirmó que el tipo de vídeo visto después del susto predecía con fuerza cuánto tardaba el cuerpo en calmarse, con una diferencia altamente significativa frente al vídeo triste (p < .001).',
-            'Fredrickson llamó a esto el "efecto deshacer": ciertas emociones positivas no se limitan a sentirse bien, funcionan como un antídoto fisiológico específico para la activación que ha dejado una emoción negativa reciente. No es solo distracción, el vídeo neutro también distraía y su recuperación fue más lenta: es la cualidad positiva concreta de la emoción, no la simple ausencia de la amenaza, la que acelera el retorno a la calma.'
+            'La recuperación media fue de 33,6 segundos. Quienes vieron las olas o el cachorro volvieron a su línea de base antes que quienes vieron la animación neutra, y bastante antes que quienes vieron al niño llorando. El contraste global era claro (F de 8,37 con p por debajo de 0,001) y las comparaciones una a una lo sostenían: contento frente a neutro, diversión frente a neutro, y las dos frente a tristeza.',
+            'Fredrickson lo llamó "efecto deshacer". Ciertas emociones positivas no solo se sienten bien, actúan como un contrapeso fisiológico para la activación que acaba de dejar una emoción negativa. La distracción no lo explica: el clip neutro también distraía y su recuperación fue más lenta, y cuando midieron el interés que despertaba cada clip no había diferencias entre grupos. Lo que aceleraba el regreso a la calma era la cualidad positiva concreta, no el simple hecho de que la amenaza ya no estuviera en pantalla.'
+          ]
+        },
+        {
+          subtitle: 'Qué dice y qué no dice el hallazgo',
+          paragraphs: [
+            'El segundo estudio del mismo artículo probó el efecto sin manipular nada. Setenta y dos adultos del área de San Francisco vieron un clip triste, un funeral de la película Steel Magnolias, y los investigadores anotaron quién sonreía de forma espontánea. Los que sonreían recuperaron el pulso antes que los que no. El susto de laboratorio no hacía falta para ver el patrón, bastaba una sonrisa genuina en mitad de la pena.',
+            'Los propios autores acotaron el alcance. El efecto deshacer describe una función psicofisiológica concreta de algunas emociones positivas, no todas, y solo cuando siguen de cerca a una emoción negativa. No dice que estar de buen humor proteja el corazón en abstracto, ni que sonreír a la fuerza sirva de algo.'
+          ]
+        },
+        {
+          subtitle: 'Lo que las réplicas han hecho con esto',
+          paragraphs: [
+            'Las muestras originales eran pequeñas, 60 mujeres y 72 adultos, un único montaje de laboratorio con clips de cine. Un estudio posterior del propio equipo quitó el susto inicial: al ver solo uno de los cuatro clips, sin miedo previo, únicamente el triste elevaba la activación y entre el positivo y el neutro no aparecía diferencia. El efecto parece depender de haber pasado antes por el estrés, no de las emociones positivas por sí solas.',
+            'En 2023, Behnke y su equipo reunieron dieciséis estudios sobre el tema, más de mil doscientas personas. En la mayoría de las medidas fisiológicas por separado, las emociones positivas no aceleraban la recuperación frente a una condición neutra; el efecto solo reaparecía al combinar varias medidas cardiovasculares en un índice único. Una revisión crítica de 2018 fue más seca: no hay pruebas suficientes para afirmar que sentir algo positivo acelere la recuperación fisiológica.',
+            'Conviene además situar la marca. La cifra más citada del programa de Fredrickson, el "ratio de positividad" de 2,9013 que supuestamente separaba a quien florece de quien se marchita, la firmó con Marcial Losada en 2005. Brown, Sokal y Friedman la desmontaron en 2013 en American Psychologist: las ecuaciones de dinámica de fluidos que usaban no venían a cuento y no se cumplían las condiciones para aplicarlas. Fredrickson retiró esa parte del modelo. No toca al experimento de 1998, pero explica por qué a la línea de trabajo se la mira con lupa.'
           ]
         }
       ],
-      blockquote: { text: '«Ciertas emociones positivas pueden servir para deshacer los efectos cardiovasculares persistentes de las emociones negativas.»', attribution: 'Barbara L. Fredrickson' },
-      aplicacion: 'Si sales de una situación que te ha disparado el pulso (una discusión, un susto, una mala noticia), este estudio sugiere que buscar algo que te haga sentir contento o te divierta de verdad ayuda a que el cuerpo se calme más rápido que simplemente esperar o distraerte con algo neutro. No hace falta que dure mucho: en el experimento, un clip de menos de un minuto ya marcó la diferencia.'
+      blockquote: { text: '«Ciertas emociones positivas pueden servir para deshacer los efectos cardiovasculares persistentes de las emociones negativas.»', attribution: 'Fredrickson y Levenson (1998)' },
+      aplicacion: 'Si sales de algo que te ha disparado el pulso, una discusión, un frenazo, una mala noticia, buscar algo que te divierta o te apacigüe de verdad puede ayudar a que el cuerpo baje antes que si te quedas dándole vueltas o te distraes con cualquier cosa. El clip que marcó la diferencia duraba menos de dos minutos. Aun así, el efecto es pequeño y no siempre aparece cuando se intenta reproducir, así que cuenta con ello como un empujón, no como un botón de apagado.'
     },
     {
       id: 'sm-08',
       title: 'Escribir quince minutos al día sobre lo que más te ha dolido redujo a la mitad las visitas al médico',
-      summary: 'Estudiantes que escribieron durante quince minutos, cuatro días seguidos, sobre el suceso más traumático de su vida acudieron después a la enfermería universitaria aproximadamente la mitad de veces que quienes escribieron sobre temas triviales.',
+      summary: 'Estudiantes que escribieron quince minutos, cuatro días seguidos, sobre el suceso más traumático de su vida acudieron después a la enfermería la mitad de veces que quienes escribieron sobre temas triviales. Fue un estudio pequeño y los metaanálisis rebajan mucho la cifra.',
       sourceUrl: 'https://doi.org/10.1037/0021-843X.95.3.274',
       sourceLabel: 'Pennebaker & Beall (1986), Journal of Abnormal Psychology',
       badge: 'Escritura expresiva',
       author: { name: 'James W. Pennebaker', university: 'University of Texas at Austin', specialty: 'Psicología de la escritura expresiva y la salud' },
-      readingTime: '3 min',
+      readingTime: '6 min',
       date: '4 de agosto de 2026',
-      intro: 'James Pennebaker y Sandra Beall querían poner a prueba algo más concreto que la idea popular de "desahogarte por escrito": si confrontar activamente un suceso traumático, tanto los hechos como las emociones que lo acompañaron, produce efectos medibles sobre la salud física a medio plazo, y no solo un alivio emocional pasajero.',
+      intro: 'La idea de desahogarse por escrito es tan vieja como los diarios. Lo que James Pennebaker y Sandra Beall probaron en 1986 era algo más medible: si sentarte cuatro noches a escribir sobre lo peor que te ha pasado deja una huella en la salud del cuerpo meses después, no solo un alivio de esa tarde.',
       sections: [
         {
-          subtitle: 'El experimento: cuatro días, quince minutos, un suceso traumático',
+          subtitle: 'Cuatro noches, quince minutos, el peor recuerdo',
           paragraphs: [
-            'Cuarenta y seis estudiantes universitarios sanos fueron asignados al azar a escribir durante 15 minutos, en cuatro días consecutivos, sobre el suceso más traumático o perturbador de toda su vida, o bien sobre un tema trivial y superficial (su habitación, sus zapatos) como grupo de control. Dentro del grupo de trauma, unos escribían solo sobre los hechos, otros solo sobre las emociones, y otros sobre ambos a la vez.',
-            'Justo después de cada sesión de escritura, quienes habían escrito sobre el trauma reportaban peor estado de ánimo y mostraban una presión arterial más alta que el grupo de control: no era una experiencia agradable en el momento. Pero al revisar los registros de la enfermería universitaria durante los seis meses siguientes, el patrón se invirtió por completo: el grupo que había escrito sobre hechos y emociones a la vez acudió al centro de salud aproximadamente la mitad de veces que el grupo de control.'
+            'Cuarenta y seis estudiantes sanos se repartieron al azar en cuatro grupos. Tres escribían durante quince minutos, cuatro días seguidos, sobre el suceso más traumático o perturbador de su vida: uno solo sobre los hechos, otro solo sobre las emociones, otro sobre las dos cosas a la vez. El cuarto grupo, el de control, escribía sobre algo anodino, su habitación o sus zapatos.',
+            'En caliente, escribir sobre el trauma no sentaba bien. Al terminar cada sesión, esos participantes referían peor humor y marcaban una presión arterial más alta que los del grupo de control. El giro llegó en los registros de la enfermería universitaria de los seis meses siguientes. El grupo que había escrito sobre los hechos y las emociones a la vez pasó por el centro de salud cerca de la mitad de veces que el de control.'
           ]
         },
         {
-          subtitle: 'El mecanismo: reprimir un secreto tiene un coste fisiológico continuo',
+          subtitle: 'La hipótesis de la inhibición',
           paragraphs: [
-            'Pennebaker explica el efecto con un modelo de inhibición: contener de forma activa los pensamientos y emociones sobre un suceso perturbador exige un esfuerzo fisiológico sostenido, una especie de trabajo de bajo grado y continuo sobre el cuerpo. Ese esfuerzo de contención, más que el propio suceso traumático, es lo que desgasta al organismo con el tiempo.',
-            'Escribir obliga a procesar el suceso en palabras, a ordenarlo, a completar un proceso emocional que había quedado abierto. El malestar inmediato tras escribir no es una señal de que el ejercicio falla, es parte del mecanismo: solo funcionó cuando el texto incluía a la vez los hechos y las emociones, no cuando se limitaba a uno de los dos por separado.'
+            'La explicación que propuso Pennebaker es que callar cuesta. Contener de forma activa los pensamientos y las emociones sobre algo que te removió es un esfuerzo físico continuo, de bajo grado pero sin pausa, y ese esfuerzo de contención, más que el suceso en sí, es lo que va desgastando al organismo con los años.',
+            'Escribir rompe esa contención. Obliga a poner el episodio en palabras, a ordenarlo, a cerrar algo que había quedado abierto. Por eso el malestar de las primeras sesiones no se lee como un fallo, sino como parte del proceso. Y por eso, en el estudio, solo funcionó la versión que juntaba hechos y emociones: contar lo que pasó sin lo que sentiste, o al revés, no bastaba.'
+          ]
+        },
+        {
+          subtitle: 'Lo que queda cuando se suman todos los estudios',
+          paragraphs: [
+            'El de 1986 fue un estudio pequeño, con 46 personas, una muestra de estudiantes que se apuntaron voluntarios y un indicador ruidoso, las visitas a un centro de salud, que dependen de mil cosas ajenas a la escritura. Sobre esa base creció una literatura enorme, y la literatura ha moderado la cifra.',
+            'El metaanálisis más amplio, el de Joshua Frattaroli en 2006, reunió 146 experimentos con asignación al azar. El efecto medio sobre la salud física, la psicológica y el funcionamiento general fue real pero pequeño, equivalente a una d en torno a 0,15, con una variabilidad grande entre estudios. Un año antes, Meads y Nouwen habían revisado 61 estudios y no hallaron un efecto significativo sobre la salud física frente a los grupos de control, ni en gente sana ni en pacientes. Varias revisiones posteriores han llegado a conclusiones igual de tibias.',
+            'La escritura expresiva sobrevive, entonces, como un recurso barato con un efecto modesto y desigual, no como la intervención que reduce a la mitad las visitas al médico. Ese titular es el mejor resultado de un primer estudio, no lo que suele pasar cuando se repite.'
           ]
         }
       ],
-      blockquote: { text: '«Confrontar activamente un suceso perturbador reduce a largo plazo el trabajo de inhibición que exige reprimirlo, aunque a corto plazo resulte doloroso.»', attribution: 'James W. Pennebaker' },
-      aplicacion: 'Este estudio fundó lo que hoy se conoce como escritura expresiva, todavía usada en terapia. La versión práctica: escribe a mano durante 15 minutos, varios días seguidos, sobre algo doloroso que no hayas terminado de procesar, sin preocuparte por la gramática ni el orden, incluyendo tanto lo que pasó como lo que sentiste. Espera sentirte peor antes de notar cualquier beneficio.'
+      blockquote: { text: '«Confrontar un suceso perturbador puede reducir a largo plazo el trabajo de inhibición que exige contenerlo, aunque a corto plazo resulte doloroso.»', attribution: 'Pennebaker y Beall (1986)' },
+      aplicacion: 'Sigue usándose en terapia, y como herramienta doméstica cuesta poco probarla: quince minutos a mano, varios días seguidos, sobre algo que te removió y no has terminado de digerir, sin mirar la ortografía ni el orden, contando lo que pasó y lo que sentiste. Cuenta con sentirte peor las primeras veces. Y si lo que arrastras es serio, esto acompaña a una terapia, no la sustituye.'
     }
   ],
 
@@ -2139,128 +2436,176 @@ const LIBRARY_ARTICLES = {
     {
       id: 'edu-01',
       title: 'Cómo las notas destruyen el amor por aprender: la investigación que pone en cuestión la evaluación escolar',
-      summary: 'Un metaanálisis de 128 estudios demuestra que las recompensas externas contingentes al rendimiento reducen sistemáticamente la motivación intrínseca por la actividad recompensada.',
+      summary: 'Un metaanálisis de 128 experimentos halló que pagar o puntuar una tarea que ya gustaba baja las ganas de repetirla en cuanto el premio desaparece.',
       sourceUrl: 'https://doi.org/10.1037/0033-2909.125.6.627',
       sourceLabel: 'Deci, Koestner & Ryan (1999), Psychological Bulletin',
       badge: 'Psicología educativa',
       author: { name: 'Edward Deci', university: 'Universidad de Rochester', specialty: 'Teoría de la Autodeterminación y motivación intrínseca' },
-      readingTime: '4 min',
+      readingTime: '6 min',
       date: '2 de junio de 2026',
-      intro: 'En los años 70, Edward Deci realizó un experimento que los sistemas educativos de todo el mundo todavía prefieren ignorar. Reclutó a estudiantes universitarios para resolver puzzles interesantes (sin recompensa) y midió cuánto tiempo dedicaban a ellos libremente cuando el experimentador salía de la sala. En la segunda sesión, a la mitad del grupo les empezó a pagar por resolver los mismos puzzles. En la tercera sesión, les retiró el pago. El resultado fue claro: el grupo que había recibido dinero dedicaba menos tiempo libre a los puzzles que antes de que les pagaran. El pago había reducido la motivación que ya existía.',
+      intro: 'En 1971, Edward Deci dejó a un estudiante solo en una sala con un cubo Soma, siete piezas que encajan en cientos de figuras distintas, y varias revistas encima de la mesa. Le había dicho que el experimento sobre resolución de problemas ya había terminado y que esperase unos minutos. En realidad lo cronometraba desde detrás de un espejo para ver una sola cosa, cuántos de esos minutos libres seguía jugando con el cubo en lugar de coger una revista. La sorpresa vino al comparar dos grupos que habían hecho exactamente los mismos puzzles, con una única diferencia entre ellos.',
       sections: [
         {
-          subtitle: 'El metaanálisis: 128 estudios y una conclusión incómoda',
+          subtitle: 'El cubo Soma y los primeros billetes',
           paragraphs: [
-            'En 1999, Deci, Koestner y Ryan publicaron el metaanálisis más exhaustivo sobre este tema: 128 estudios controlados, con resultados consistentes. Las recompensas externas tangibles contingentes al rendimiento (exactamente las que produce el sistema de notas) reducen la motivación intrínseca de forma estadísticamente significativa y replicable. El efecto es especialmente pronunciado cuando la recompensa está condicionada a la ejecución: "te doy X si haces Y bien." Cuando la recompensa es un reconocimiento no esperado ("hiciste algo excelente"), el efecto negativo es menor.',
-            'El mecanismo que proponen Deci y Ryan desde la Teoría de la Autodeterminación es el cambio en el "locus de causalidad percibido": cuando una recompensa externa controla el comportamiento, la persona desplaza internamente la causa de su acción de "lo hago porque me interesa" a "lo hago por la nota". La actividad deja de ser un fin y se convierte en un medio. Y los medios no sostienen el comportamiento cuando la recompensa desaparece.'
+            'El estudio tenía tres sesiones en días distintos. En todas, los participantes montaban figuras con el cubo Soma, una tarea que a la mayoría le resultaba entretenida por sí misma. En la segunda sesión Deci cambió una cosa para la mitad del grupo: a partir de ahí les pagaba un dólar por cada figura que resolvieran dentro del tiempo. La otra mitad siguió jugando gratis, como siempre.',
+            'En la tercera sesión retiró el pago sin avisar. Y entonces medía el rato libre, esos minutos en que el experimentador salía con una excusa y el participante podía hacer lo que quisiera. Los que nunca habían cobrado seguían cogiendo el cubo. Los que habían cobrado y ahora ya no lo hacían menos que antes de que apareciera el dinero. El pago no había sumado motivación para después volver al punto de partida. La había dejado por debajo.',
+            'Deci lo describió como comprar la motivación que ya existía. El dinero funcionaba mientras estaba, pero al marcharse se llevaba consigo algo que antes se sostenía solo. El experimento fundó el paradigma de la libre elección, que durante décadas fue la forma estándar de medir el interés intrínseco en el laboratorio.'
           ]
         },
         {
-          subtitle: 'La distinción crítica: informar vs. controlar',
+          subtitle: 'Veintiocho años y 128 experimentos después',
           paragraphs: [
-            'El matiz más importante del trabajo de Deci es la distinción entre feedback informativo y feedback controlador. El feedback que te dice algo sobre tu competencia ("resolviste el problema de forma especialmente elegante porque usaste la propiedad X de forma inesperada") puede aumentar la motivación intrínseca o mantenerla. El feedback que establece juicios de valor sobre tu persona ("tienes un 8") tiene el efecto contrario. La diferencia está en si el feedback te da información sobre tu capacidad o si establece control sobre tu comportamiento.',
-            'Esta distinción tiene implicaciones directas para el diseño educativo: el problema no es la evaluación en sí, sino el tipo de evaluación. Los sistemas de evaluación que priorizan la descripción de competencias y el progreso sobre el proceso tienen mejores resultados en motivación a largo plazo que los sistemas de calificación numérica pura. Y el elogio específico (centrado en el proceso, no en el resultado) produce más motivación sostenida que el elogio genérico sobre la inteligencia o el talento.'
+            'En 1999, Deci, Richard Koestner y Richard Ryan reunieron 128 experimentos con el mismo diseño y los analizaron juntos. El patrón se repetía con una constancia incómoda. Las recompensas materiales que se esperan de antemano y dependen de la tarea reducían la motivación intrínseca medida en tiempo libre, con un tamaño del efecto de 0,40 cuando se pagaba por participar, de 0,36 por completar la actividad y de 0,28 por hacerla bien. También bajaba el interés declarado en los cuestionarios.',
+            'Había una excepción clara. El elogio verbal y el reconocimiento no anunciado tiraban en sentido contrario, con un efecto positivo de 0,33 sobre el tiempo libre dedicado a la tarea. Y había una diferencia de edad: en los niños, la recompensa material hacía más daño que en los universitarios, y el elogio les ayudaba menos.',
+            'La explicación que Deci y Ryan defienden desde la Teoría de la Autodeterminación tiene que ver con dónde sitúa uno la causa de lo que hace. Mientras la tarea es un fin en sí misma, la persona la vive como suya. Cuando aparece un premio que la controla, el motivo se desplaza hacia fuera. Ya no monto el cubo porque me enganche, lo monto por el dólar. El problema llega al quitar el dólar, porque el motivo de fuera se va con él y el de dentro ya no está donde estaba.'
+          ]
+        },
+        {
+          subtitle: 'El feedback que informa y el que controla',
+          paragraphs: [
+            'El matiz más útil del trabajo de Deci separa dos tipos de respuesta a lo que alguien hace. Una le dice algo sobre su competencia: qué le ha salido bien, dónde ha usado una idea que no era obvia, qué le falta para el siguiente paso. Esa información puede mantener o aumentar las ganas de seguir. La otra emite un veredicto sobre la persona y su rendimiento, y un número en lo alto de un examen es justo eso.',
+            'Por eso el debate que abre este estudio no es evaluar sí o evaluar no. Es qué tipo de evaluación. Los sistemas que describen lo que el alumno sabe hacer y cómo ha progresado dejan mejor la motivación a medio plazo que la calificación numérica a secas. Y el elogio concreto sobre el proceso aguanta más que el elogio genérico sobre lo listo que es alguien, que enseña justo lo contrario, que la capacidad es algo que se tiene y no algo que se construye.'
+          ]
+        },
+        {
+          subtitle: 'La pelea que esto desató',
+          paragraphs: [
+            'La conclusión de Deci no se aceptó sin resistencia. En 1994, Judy Cameron y David Pierce publicaron su propio metaanálisis, con 96 estudios, y llegaron casi al revés: el efecto negativo de las recompensas era pequeño, se daba solo en condiciones concretas y se podía evitar con facilidad en un aula. Eisenberger y Cameron llegaron a titular un artículo preguntando si el daño de los premios era real o un mito. Lepper, Ryan, Deci y Alfie Kohn respondieron que habían dejado fuera estudios clave y mezclado categorías que no eran comparables. La discusión se alargó años.',
+            'Lo que queda en pie después de todo ese ruido es más estrecho que el titular. El efecto de socavar la motivación es real, pero se concentra en tareas que ya resultaban interesantes de partida. En una tarea rutinaria y aburrida, que no genera ningún interés que perder, un incentivo no hace ese daño y puede subir la cantidad de trabajo. El elogio verbal ayuda de forma bastante fiable. Y un metaanálisis de Cerasoli y sus colegas, en 2014, encontró que la motivación intrínseca y los incentivos predicen el rendimiento a la vez, y que el incentivo desplaza al interés sobre todo cuando se ata muy fuerte a la calidad de un trabajo que ya gustaba. "Las notas matan el amor por aprender" recoge una parte verdadera del fenómeno y la estira más de lo que el conjunto de la evidencia sostiene.'
           ]
         }
       ],
-      blockquote: { text: '«Cuando se paga a las personas por hacer lo que ya hacían por placer, se convierten en trabajadores que necesitan que se les pague para seguir haciéndolo.»', attribution: 'Edward Deci' },
-      aplicacion: 'Si quieres que alguien (o tú mismo) mantenga el interés por una actividad a largo plazo, prioriza el feedback que informa sobre competencia específica ("lo que hiciste aquí fue…") sobre el feedback que evalúa y clasifica ("esto vale un 7"). Y si introduces incentivos externos en actividades que ya generan motivación intrínseca, hazlo con cautela: puedes estar destruyendo algo más valioso de lo que ofreces a cambio.'
+      blockquote: { text: '«Las recompensas materiales que se esperan de antemano y se condicionan a la tarea redujeron de forma sistemática la motivación intrínseca medida en el tiempo de libre elección.»', attribution: 'Deci, Koestner y Ryan (1999)' },
+      aplicacion: 'Fíjate en cuándo empiezas a llevar la cuenta de una afición con números: rachas, marcas, "me gusta", palabras al día. Es el mismo gesto que poner nota, y puede cambiar por qué haces la actividad sin que lo notes hasta que los números dejan de subir. Si vas a premiar a alguien por algo que ya le gustaba, que sea después y por sorpresa, no un trato del tipo "si haces esto, te doy aquello".'
     },
     {
       id: 'edu-02',
       title: 'Los errores deseables: por qué aprender a duras penas es aprender mejor',
-      summary: 'Las condiciones de aprendizaje que lo hacen más lento y más difícil en el corto plazo producen retención y transferencia significativamente superiores a largo plazo.',
+      summary: 'Las condiciones que hacen el estudio más lento y torpe hoy son las que mejor se recuerdan dentro de un mes. La fluidez engaña.',
       sourceUrl: 'https://doi.org/10.1006/ceps.1994.1009',
       sourceLabel: 'Bjork (1994), Learning, Remembering, and Believing · Bjork & Bjork (2011)',
       badge: 'Ciencia del aprendizaje',
       author: { name: 'Robert Bjork', university: 'UCLA', specialty: 'Memoria, aprendizaje y dificultades deseables' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'Robert Bjork lleva décadas documentando una paradoja que contradice la intuición sobre el aprendizaje: las condiciones que hacen que el aprendizaje se sienta más fluido y fácil producen, sistemáticamente, peor retención a largo plazo. Y las condiciones que lo hacen más lento, más frustrante y más cargado de errores producen una retención y una transferencia significativamente mejores. Bjork las llama "dificultades deseables", y el catálogo de evidencias que las respalda es uno de los hallazgos más robustos de la psicología cognitiva aplicada.',
+      intro: 'Relees un capítulo, lo entiendes todo a la primera, cierras el libro con la sensación de haberlo dominado. Una semana después no queda casi nada. Robert Bjork lleva desde los años setenta documentando esa trampa, y su conclusión va en contra de lo que dice el sentido común sobre estudiar. Las condiciones que hacen que aprender se sienta fácil y fluido son, de forma sistemática, las que peor se retienen a largo plazo. Las que lo hacen lento y frustrante retienen mejor. Bjork las llama dificultades deseables.',
       sections: [
         {
-          subtitle: 'Las tres dificultades mejor documentadas: espaciado, intercalado y recuperación',
+          subtitle: 'La fluidez es una mala consejera',
           paragraphs: [
-            'La primera dificultad deseable es el espaciado: estudiar el mismo material en varias sesiones separadas por tiempo produce mucho mejor retención que estudiarlo todo seguido, aunque en el momento la sesión concentrada se sienta más productiva. La segunda es el intercalado: mezclar diferentes tipos de problemas o materias en una misma sesión de estudio es más frustrante que trabajar todos los problemas del mismo tipo juntos, pero produce mejor transferencia (capacidad de aplicar lo aprendido a situaciones nuevas). La tercera es la práctica de recuperación: intentar recordar información sin mirar las notas es más difícil que releer, pero produce entre 2 y 5 veces más retención.',
-            'El patrón común a las tres es que dificultan la fluidez inmediata del aprendizaje (hacen que cometer errores sea más probable, que el progreso sea más lento, que la sensación de competencia durante el estudio sea menor). Y es exactamente esa dificultad la que activa los mecanismos de consolidación mnémica más profundos. El esfuerzo de recuperación, por ejemplo, fortalece la huella de memoria en mayor medida que la mera reexposición porque fuerza al cerebro a procesar el material con mayor profundidad.'
+            'El problema de fondo es que confundimos dos cosas distintas: lo fácil que resulta procesar algo en el momento y lo bien que lo vamos a recordar después. El cerebro usa la primera como pista de la segunda, y la pista falla. Un texto que se lee sin tropezar se da por sabido. Una clase que se sigue sin esfuerzo se archiva como aprendida. Y luego el examen, o la vida, piden recuperar eso semanas más tarde, cuando la sensación de fluidez ya se ha evaporado y debajo no había gran cosa.',
+            'Bjork le dio la vuelta a la idea. Si la facilidad engaña, quizá la dificultad del tipo adecuado sea la que consolida. No cualquier obstáculo. Uno que obligue al sistema de memoria a trabajar más en el momento de codificar, a cambio de una huella que aguanta.'
           ]
         },
         {
-          subtitle: 'El problema del feedback inmediato: cuándo ayuda y cuándo destruye',
+          subtitle: 'Tres dificultades con nombre propio',
           paragraphs: [
-            'Bjork también documenta que el feedback inmediato y constante (que parece maximizar el aprendizaje porque permite corregir errores en el acto) puede paradójicamente reducir la retención a largo plazo si se proporciona antes de que el aprendiz haya tenido oportunidad de intentar la solución por sí mismo. El mecanismo es similar: el feedback inmediato elimina el esfuerzo de búsqueda que es precisamente el proceso que consolida la memoria.',
-            'El "efecto de generación" ilustra esto con claridad: recordamos mejor las palabras que hemos tenido que completar (ca___) que las palabras que hemos leído enteras (cama), aunque en el momento de estudio la condición de lectura se sienta más productiva. El cerebro procesa más profundamente lo que construye que lo que simplemente registra. La dificultad de construir es el mecanismo del aprendizaje, no un obstáculo para él.'
+            'La primera es el espaciado. Repartir el estudio de un tema en varias sesiones separadas por días retiene mucho más que meterlo todo seguido en una tarde, aunque la sesión maratón se sienta más productiva mientras dura. La segunda es el intercalado: mezclar tipos de problema o de contenido en la misma sesión en lugar de agrupar cada uno por su lado. Cuesta más y salen más errores, pero mejora la capacidad de aplicar lo aprendido a una situación nueva.',
+            'La tercera es la práctica de recuperación: cerrar los apuntes e intentar decir lo que había, en vez de releerlo. Es más incómoda que la relectura y se falla más. También es la que más diferencia marca semanas después. Un metaanálisis de 2017 sobre más de un centenar de comparaciones situó el efecto de autoexaminarse frente a reestudiar en torno a 0,6 de tamaño, uno de los hallazgos más sólidos de la psicología cognitiva aplicada.',
+            'Las tres comparten la misma forma. Hacen el estudio menos fluido hoy, y esa fricción es la que dispara los procesos de consolidación. El esfuerzo de buscar en la memoria, por ejemplo, refuerza el recuerdo más que volver a verlo escrito, porque fuerza a reconstruirlo en lugar de solo reconocerlo.'
+          ]
+        },
+        {
+          subtitle: 'Por qué construir deja más huella que registrar',
+          paragraphs: [
+            'El llamado efecto de generación lo enseña en pequeño. Recordamos mejor una palabra que hemos tenido que completar a partir de una pista, "ca__", que la misma palabra leída entera, "cama", aunque en el momento del estudio la versión leída se sienta más cómoda y rápida. Lo que el cerebro produce se procesa a más profundidad que lo que se limita a recibir.',
+            'Bjork insiste en que el feedback inmediato y constante, que parece lo ideal porque corrige el error al instante, puede reducir la retención si llega antes de que la persona haya intentado resolver por su cuenta. La razón es la misma. Adelantar la respuesta elimina el esfuerzo de búsqueda, que era el proceso que fijaba el recuerdo. La dificultad de construir no es el obstáculo del aprendizaje. Es su mecanismo.'
+          ]
+        },
+        {
+          subtitle: 'Deseable no significa siempre',
+          paragraphs: [
+            'El propio Bjork pone un límite que las versiones divulgativas suelen saltarse. La dificultad tiene que ser una que el estudiante pueda superar con lo que ya sabe. Si le queda demasiado grande, deja de ser deseable y pasa a ser solo un muro. Un principiante sin ninguna base no gana nada intercalando problemas que todavía no sabe resolver de uno en uno.',
+            'Además, dificultades deseables es un paraguas, no una receta única, y no todas las que se han propuesto aguantan igual. El espaciado y la práctica de recuperación tienen detrás cientos de estudios y metaanálisis. Otras son más frágiles. El caso más citado es la disfluencia tipográfica, la idea de que una letra fea y difícil de leer se recuerda mejor: encajaba de maravilla en el marco de Bjork, se hizo famosa, y una tanda de réplicas a partir de 2016 no encontró el efecto por ninguna parte. Que una traba concreta suene coherente con la teoría no garantiza que funcione.'
           ]
         }
       ],
-      blockquote: { text: '«La fluidez del aprendizaje es una ilusión seductora. Lo que se siente fácil al estudiar se olvida pronto. Lo que se siente difícil se recuerda.»', attribution: 'Robert Bjork' },
-      aplicacion: 'La próxima vez que necesites aprender algo de forma duradera, cierra el libro o las notas e intenta recordar todo lo que puedas sin mirar. Escríbelo. Comprueba luego qué faltó. El proceso de intentar recordar (aunque falles, especialmente si fallas) es el aprendizaje real. La relectura es reconocimiento; la recuperación es aprendizaje.'
+      blockquote: { text: '«Las condiciones de práctica más lentas y difíciles, las que a menudo parecen menos eficaces mientras se estudia, suelen producir un aprendizaje más duradero y más flexible.»', attribution: 'Robert A. Bjork y Elizabeth L. Bjork (2011)' },
+      aplicacion: 'La próxima vez que quieras aprender algo para que dure, cierra el material y escribe de memoria todo lo que recuerdes antes de volver a mirarlo, aunque falles y te sientas torpe. Repasa hoy y otra vez dentro de tres días en lugar de dos horas del tirón. Alterna asignaturas o tipos de problema en la misma sesión. Todo eso empeora la sensación mientras lo haces, y esa es justo la parte que funciona. Si algo se te resiste demasiado y no tienes ninguna base, primero constrúyela; la dificultad solo ayuda cuando puedes con ella.'
     },
     {
       id: 'edu-03',
       title: 'El efecto protégé: enseñar para aprender',
-      summary: 'Los estudiantes que saben que tendrán que explicar el material a otros aprenden más y mejor que los que estudian para un examen, incluso cuando nunca llegan a enseñar a nadie.',
+      summary: 'A un grupo le dijeron que se examinaría del texto. Al otro, que tendría que explicarlo. Nadie llegó a explicar nada y aun así el segundo grupo entendió más.',
       sourceUrl: 'https://doi.org/10.3758/s13421-014-0416-z',
       sourceLabel: 'Nestojko, Bui, Kornell & Bjork (2014), Memory & Cognition',
       badge: 'Metacognición',
       author: { name: 'John Nestojko', university: 'Washington University en St. Louis', specialty: 'Memoria, metacognición y estrategias de aprendizaje' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '12 de mayo de 2026',
-      intro: 'En 2014, John Nestojko y sus colegas de Washington University realizaron un experimento sencillo pero con implicaciones profundas. Pidieron a dos grupos de estudiantes que leyeran un pasaje largo sobre un tema que desconocían. A un grupo se le dijo que después se les haría un examen. Al otro se le dijo que después tendrían que explicar el material a otros estudiantes. En realidad, ambos grupos acabaron haciendo el mismo examen de comprensión. El grupo que había estudiado para enseñar puntuó significativamente más alto, con mejor comprensión de la estructura del material y mejor capacidad de conectar ideas.',
+      intro: 'En 2014, el equipo de John Nestojko dio a dos grupos de universitarios el mismo texto largo sobre un tema que no conocían. A unos les dijeron que después harían un examen. A otros, que tendrían que enseñar el contenido a otro estudiante, que sería quien se examinara. Luego cambiaron el plan sin avisar. Todos hicieron el mismo examen y nadie enseñó a nadie. El grupo que había estudiado para enseñar sacó mejor nota, sobre todo en las preguntas sobre las ideas centrales del texto.',
       sections: [
         {
-          subtitle: 'El experimento: la expectativa de enseñar cambia cómo se aprende',
+          subtitle: 'Dos formas de abrir el mismo texto',
           paragraphs: [
-            'Los resultados de Nestojko fueron especialmente marcados en las preguntas que requerían inferencia y comprensión estructural (no solo memorización de hechos). Los estudiantes que habían leído para enseñar identificaban mejor las ideas principales, construían representaciones más organizadas del material y eran más capaces de responder preguntas sobre relaciones implícitas entre conceptos que no estaban explícitamente en el texto. La expectativa de tener que transmitir el conocimiento había activado una forma de procesamiento cualitativamente distinta.',
-            'El efecto es tan robusto que persiste incluso cuando los estudiantes nunca llegan a enseñar nada. La simple expectativa ("voy a tener que explicar esto") produce los beneficios de aprendizaje sin necesidad de que la enseñanza ocurra. Esto indica que el mecanismo no está en el acto de explicar, sino en la estrategia de estudio que se activa cuando la persona anticipa esa obligación.'
+            'El montaje era casi idéntico para los dos grupos. Mismo pasaje expositivo, mismo tiempo para leerlo, misma prueba final de comprensión y de recuerdo libre. La única diferencia estaba en la frase que oían antes de empezar. Un grupo leía con un examen en el horizonte. El otro, con la tarea de tener que transmitir aquello a alguien que partía de cero.',
+            'Cuando llegó el examen, que todos hicieron por igual, el grupo de enseñar recordaba el texto de forma más completa y mejor organizada, y acertaba más preguntas, con la ventaja concentrada en las que pedían captar la estructura y las ideas principales, no el detalle suelto. La expectativa, por sí sola, había puesto en marcha una forma distinta de leer.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la organización para transmitir activa el procesamiento profundo',
+          subtitle: 'La expectativa basta, aunque la clase no ocurra',
           paragraphs: [
-            'Cuando estudias para un examen, tu objetivo implícito es retener información. Cuando estudias para enseñar, tu objetivo implícito es organizar y articular información de forma que otro pueda entenderla. Esto activa estrategias de procesamiento profundo de forma automática: búsqueda de la lógica interna del material, identificación de analogías y ejemplos, jerarquización de lo esencial frente a lo secundario, anticipación de las preguntas que alguien podría hacerte.',
-            'El "efecto de explicación" (la mejora del aprendizaje cuando se explica el material a otro) está bien documentado en investigación sobre aprendizaje colaborativo. Lo novedoso de Nestojko es demostrar que la mera anticipación de explicar (sin que la explicación ocurra) activa los mismos beneficios. El cerebro prepara para transmitir, y esa preparación produce comprensión más profunda que la preparación para acumular. Es la diferencia entre aprender para saber y aprender para hacer saber.'
+            'El dato que llamó la atención es que el efecto aparecía sin que nadie llegara a enseñar. No hacía falta el acto de explicar, ni un alumno de verdad enfrente, ni una cámara grabando. Bastaba con haber estudiado creyendo que eso iba a pasar. El mecanismo, por tanto, no estaba en la enseñanza sino en la estrategia de estudio que se activa cuando la persona la da por segura.',
+            'Nestojko y sus colegas lo presentaron como una intervención barata y fácil de aplicar en casa o en clase, porque cambia la instrucción y no el material ni el tiempo. Un profesor puede pedir a sus alumnos que preparen un tema como si fueran a explicárselo a un compañero que faltó, sin que esa explicación tenga que producirse nunca.'
+          ]
+        },
+        {
+          subtitle: 'Por qué preparar para contar organiza mejor',
+          paragraphs: [
+            'Cuando estudias para un examen, el objetivo implícito es retener. Cuando estudias para enseñar, el objetivo implícito es ordenar el material de modo que otro lo entienda, y eso arrastra un puñado de operaciones distintas: buscar la lógica que une las partes, encontrar el ejemplo que lo aclara, decidir qué es esencial y qué es secundario, adelantarse a la pregunta que haría alguien perdido.',
+            'Ese trabajo de jerarquizar y conectar es lo que la investigación sobre aprendizaje llama procesamiento profundo, y produce una comprensión más estructurada que la de acumular datos para devolverlos. Preparar para contar y preparar para guardar no dejan la misma huella.'
+          ]
+        },
+        {
+          subtitle: 'El truco de la expectativa es más frágil que enseñar de verdad',
+          paragraphs: [
+            'Conviene separar dos hallazgos que se suelen mezclar. Que explicar un tema a otra persona mejora lo que uno mismo aprende está bien documentado, con metaanálisis sobre aprendizaje entre iguales que le dan un efecto de mediano a grande, y parte de ese beneficio es, en el fondo, práctica de recuperación disfrazada, porque para explicar hay que sacar la información de la memoria.',
+            'Más endeble es la versión de este estudio, la de que la mera expectativa, sin enseñanza, ya produzca la ganancia. Intentos posteriores de reproducirlo han dado resultados mixtos, con mejoras que aparecen a corto plazo y se difuminan a la semana, o que directamente no salen. La lectura prudente hoy es que estudiar para enseñar orienta bien el estudio, pero si quieres el efecto grande y fiable, enseña de verdad: habla, responde preguntas, deja que te interrumpan.'
           ]
         }
       ],
-      blockquote: { text: '«La mejor forma de aprender algo no es estudiarlo pensando en que te van a examinar: es estudiarlo pensando en cómo se lo explicarías a alguien que no sabe nada del tema.»', attribution: 'John Nestojko' },
-      aplicacion: 'Cuando necesites aprender algo que quieras que realmente se quede, escribe una explicación de ese tema como si se la fueras a mandar a alguien que no sabe nada de él. Hazla de verdad: clara, organizada, con ejemplos. Los huecos que aparezcan en esa explicación (los momentos en que no sabes cómo continuar) señalan exactamente qué no has entendido todavía.'
+      blockquote: { text: '«Inculcar la expectativa de enseñar parece una intervención sencilla y barata, con potencial para mejorar el aprendizaje en casa y en el aula.»', attribution: 'Nestojko, Bui, Kornell y Bjork (2014)' },
+      aplicacion: 'Cuando quieras que algo se te quede, escribe una explicación del tema como si se la fueras a mandar a alguien que no sabe nada de él, con sus ejemplos y su orden. Mejor todavía si se la cuentas en voz alta a una persona real y dejas que te pregunte. Los huecos que aparezcan, los puntos donde no sabes cómo seguir, señalan justo lo que aún no has entendido.'
     },
     {
       id: 'edu-04',
       title: 'Mentalidad fija vs. mentalidad de crecimiento: la creencia que decide cuánto aprendes',
-      summary: 'Carol Dweck demostró que la creencia sobre si la inteligencia es fija o maleable (no el CI real) predice el rendimiento académico, la respuesta al fracaso y el desarrollo a largo plazo.',
-      sourceUrl: 'https://doi.org/10.1111/1467-9280.02405',
+      summary: 'Creer que la inteligencia se desarrolla, o que viene dada, predijo la trayectoria de notas de 373 adolescentes mejor que su CI.',
+      sourceUrl: 'https://doi.org/10.1111/j.1467-8624.2007.00995.x',
       sourceLabel: 'Blackwell, Trzesniewski & Dweck (2007), Child Development',
       badge: 'Psicología educativa',
       author: { name: 'Carol S. Dweck', university: 'Universidad de Stanford', specialty: 'Motivación, desarrollo cognitivo y mentalidades implícitas' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: '¿Por qué dos estudiantes con el mismo CI, el mismo entorno familiar y la misma calidad de enseñanza divergen de forma dramática en su desarrollo académico y profesional? Carol Dweck lleva cuatro décadas investigando esa pregunta y ha encontrado una respuesta que contradice la intuición: la diferencia no está en la cantidad de inteligencia, sino en la teoría implícita que cada persona tiene sobre la naturaleza de su inteligencia.',
+      intro: 'Dos estudiantes con el mismo CI, el mismo barrio y los mismos profesores acaban, cinco años después, en sitios muy distintos. Carol Dweck lleva cuatro décadas detrás de esa brecha, y sostiene que buena parte de ella no está en cuánta inteligencia tiene cada uno, sino en la teoría que cada uno maneja, casi siempre sin formularla, sobre qué es la inteligencia y si se puede mover.',
       sections: [
-        { subtitle: 'El estudio longitudinal: dos años que demuestran la divergencia', paragraphs: ['Blackwell, Trzesniewski y Dweck siguieron a 373 estudiantes durante la transición al instituto (uno de los períodos más desafiantes del desarrollo académico) durante dos años. Al inicio midieron sus mentalidades implícitas sobre la inteligencia: ¿crees que la inteligencia es algo fijo que tienes en cierta cantidad, o que puedes desarrollarla con esfuerzo? Al inicio, ambos grupos tenían rendimiento equivalente. Durante los dos años siguientes, sus trayectorias divergieron de forma significativa: los estudiantes con mentalidad de crecimiento mejoraron progresivamente, mientras los de mentalidad fija se estancaron o declinaron.', 'El predictor no fue el CI, el nivel socioeconómico ni el estilo de enseñanza: fue exclusivamente la teoría implícita sobre la inteligencia. Los estudiantes con mentalidad de crecimiento buscaban activamente los desafíos, persistían ante el fracaso y usaban las estrategias de estudio más eficaces. Los de mentalidad fija evitaban los desafíos que podían revelar sus "límites" y se rendían ante la dificultad con mayor rapidez.'] },
-        { subtitle: 'La intervención: cambiar la mentalidad en ocho sesiones', paragraphs: ['La prueba más relevante de la teoría de Dweck es que la mentalidad puede cambiarse y ese cambio tiene efectos medibles. Un subgrupo de estudiantes recibió ocho sesiones de intervención donde aprendían cómo funciona el aprendizaje neuronal: que el cerebro forma nuevas conexiones cuando se enfrenta a desafíos, que la dificultad es la señal de que el cerebro está trabajando, no de que uno no sirve para algo. Comparados con el grupo de control, los estudiantes que recibieron la intervención mostraron mejoras en notas de matemáticas, en disposición a esforzarse y en respuesta al fracaso.', 'Dweck es cuidadosa con no reducir la mentalidad de crecimiento a un eslogan motivacional. El elogio equivocado puede producir mentalidad fija: decir a un niño "eres muy inteligente" tras un éxito le enseña que la inteligencia es algo que se tiene, no algo que se construye. El elogio centrado en el proceso ("estudiaste de una forma muy eficaz", "encontraste una estrategia nueva para resolver esto") refuerza la mentalidad de crecimiento.'] }
+        { subtitle: 'Dos años siguiendo a 373 adolescentes', paragraphs: ['Blackwell, Trzesniewski y Dweck acompañaron a 373 estudiantes durante el paso a la secundaria, uno de los tramos más duros del recorrido escolar, a lo largo de dos años. Al empezar midieron su creencia sobre la inteligencia con preguntas del tipo: ¿es algo que tienes en una cantidad fija o algo que se desarrolla con trabajo? En ese momento los dos grupos sacaban notas equivalentes. Durante los dos cursos siguientes las trayectorias se separaron. Los de mentalidad de crecimiento mejoraron de forma sostenida, los de mentalidad fija se quedaron planos o cayeron.', 'El factor que predecía la divergencia no era el CI, ni el nivel socioeconómico, ni el estilo del profesor. Era la teoría implícita sobre la inteligencia. Los alumnos que la creían maleable buscaban tareas difíciles, insistían después de fallar y usaban mejores métodos de estudio. Los que la creían fija esquivaban los retos que podían dejar en evidencia sus límites y abandonaban antes cuando algo se complicaba.'] },
+        { subtitle: 'Ocho sesiones para mover la creencia', paragraphs: ['En un segundo estudio, con 48 estudiantes distintos, el equipo probó a cambiar la mentalidad a propósito. Un grupo recibió ocho sesiones en las que aprendía cómo funciona el aprendizaje en el cerebro: que las neuronas forman conexiones nuevas al enfrentarse a algo difícil, que la sensación de dificultad es la señal de que el cerebro está trabajando y no de que uno no vale. El grupo de control recibió sesiones sobre memoria, sin el mensaje sobre plasticidad. Los que habían recibido la intervención mejoraron sus notas de matemáticas y su disposición a esforzarse frente al grupo de control.', 'Dweck evita reducir esto a un eslogan de autoayuda. El elogio equivocado empuja hacia la mentalidad fija: decirle a un niño "qué listo eres" después de un acierto le enseña que la inteligencia es una cosa que se posee. Ese matiz sobre el elogio viene de un trabajo anterior suyo con Claudia Mueller, de 1998, donde los niños alabados por su inteligencia, tras un éxito, evitaban luego las tareas difíciles más que los alabados por su esfuerzo.'] },
+        { subtitle: 'Qué pasó cuando la idea se llevó a gran escala', paragraphs: ['El estudio de 1998 y el de 2007 son pequeños y muy citados. Cuando la mentalidad de crecimiento se convirtió en programa educativo de masas, los números se encogieron. Un metaanálisis de Sisk y sus colegas, en 2018, encontró que las intervenciones de mentalidad tienen un efecto medio débil sobre el rendimiento, y solo algo más visible en alumnos en riesgo de fracaso o de entornos desfavorecidos.', 'El contraste más limpio lo dio el National Study of Learning Mindsets, publicado por Yeager y otros en 2019. Una intervención breve, por internet, con unos 12.000 estudiantes de secundaria de Estados Unidos, subió la nota media alrededor de una décima de punto, y el efecto se concentró en los de peor rendimiento previo y en centros donde el clima del aula acompañaba. Otros equipos, como el de Li y Bates, no reprodujeron siquiera el vínculo entre mentalidad y notas en muestras de China. La divergencia enorme de aquellos 373 adolescentes sigue siendo real, pero es mayor que lo que se recupera cuando la intervención se aplica a un país entero.'] }
       ],
-      blockquote: { text: '«La pasión por el esfuerzo, por el aprendizaje y por el enfrentamiento a los desafíos es la base de logros extraordinarios. Y eso puede enseñarse.»', attribution: 'Carol S. Dweck' },
-      aplicacion: 'Observa cómo te explicas tus propios fracasos y dificultades en áreas donde te importa mejorar. ¿Los atribuyes a limitaciones fijas ("no soy bueno en esto", "no tengo esa capacidad") o a proceso y estrategia ("todavía no he encontrado el método correcto", "necesito más práctica deliberada en X")? El lenguaje que usas para explicarte el fracaso es el termómetro más directo de tu mentalidad implícita, y cambiarlo es el primer paso para cambiar la mentalidad.'
+      blockquote: { text: '«Creer que la inteligencia es maleable predijo una trayectoria ascendente de notas a lo largo de dos años; creerla fija predijo una trayectoria plana.»', attribution: 'Blackwell, Trzesniewski y Dweck (2007)' },
+      aplicacion: 'Fíjate en cómo te cuentas tus propios fracasos en algo que te importa mejorar. ¿Lo achacas a un límite fijo ("no se me da", "no tengo cabeza para esto") o al método y la práctica ("todavía no he dado con la forma", "necesito repetir esto más veces")? El lenguaje con el que te explicas un fallo es el termómetro más directo de tu mentalidad. Cambiarlo ayuda, aunque los estudios a gran escala dejan claro que mueve poco si el entorno de alrededor no acompaña.'
     },
     {
       id: 'edu-05',
       title: 'Por qué estudiar un tema hasta dominarlo es peor que mezclar todo a la vez',
-      summary: 'El efecto de intercalado demuestra que mezclar distintos tipos de problemas en una misma sesión es más frustrante pero produce una comprensión y retención hasta tres veces superior al estudio en bloques.',
-      sourceUrl: 'https://doi.org/10.1177/0956797612440753',
-      sourceLabel: 'Rohrer, Dedrick & Burgess (2014), Psychological Science',
+      summary: 'En un curso real de matemáticas, alternar tipos de problema en cada hoja de ejercicios subió la nota del examen sorpresa del 38% al 72%.',
+      sourceUrl: 'https://doi.org/10.3758/s13423-014-0588-3',
+      sourceLabel: 'Rohrer, Dedrick & Burgess (2014), Psychonomic Bulletin & Review',
       badge: 'Ciencia del aprendizaje',
       author: { name: 'Doug Rohrer', university: 'Universidad del Sur de Florida', specialty: 'Memoria, aprendizaje espaciado e intercalado' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: 'Hay una forma de estudiar que se siente productiva pero que produce retención mediocre, y una forma que se siente frustrante pero que produce retención excelente. Doug Rohrer lleva más de una década documentando esta paradoja con experimentos controlados, y sus conclusiones siguen siendo ignoradas por la mayoría de los sistemas educativos del mundo, que diseñan sus libros de texto de la forma demostrativamente peor.',
+      intro: 'Casi todos los libros de texto de matemáticas están montados igual. Cada lección trae una tanda de problemas del tipo que se acaba de explicar. El alumno sabe qué método toca antes de leer el enunciado, porque está en el capítulo de ese método. Doug Rohrer lleva más de una década demostrando que ese orden, el que se siente ordenado y productivo, es el que peor prepara para el examen.',
       sections: [
-        { subtitle: 'El experimento: bloques vs. intercalado en matemáticas', paragraphs: ['Rohrer y sus colegas asignaron a estudiantes de secundaria a dos condiciones de estudio de geometría. El grupo de bloqueo estudiaba todos los problemas de un tipo juntos. El grupo de intercalado mezclaba los distintos tipos de problemas de forma aleatoria a lo largo de la sesión. Durante el estudio, el grupo de bloqueo puntuaba mejor y reportaba mayor sensación de dominio. Una semana después, en un examen de sorpresa, los resultados se invertían: el grupo de intercalado puntuaba significativamente más alto, con diferencias de hasta el 50% en algunos estudios.', 'El patrón se ha replicado en matemáticas, ciencias, vocabulario de idiomas, categorización de obras de arte y diagnóstico médico. La consistencia transcurricular es llamativa: no parece ser un efecto específico de las matemáticas sino una propiedad general del aprendizaje.'] },
-        { subtitle: 'El mecanismo: discriminación y selección de estrategia', paragraphs: ['Robert Bjork explica el mecanismo del intercalado en términos de lo que el cerebro tiene que hacer en cada condición. En el estudio en bloque, el estudiante sabe qué tipo de problema va a encontrar antes de leerlo: está en el bloque de cilindros, así que usará la fórmula del cilindro. El sistema cognitivo no necesita discriminar. En el intercalado, antes de poder resolver el problema, el estudiante debe identificar qué tipo de problema es y seleccionar la estrategia apropiada. Este proceso de discriminación y selección de estrategia es más difícil (y más frustrante), pero es exactamente el proceso que el estudiante necesitará ejecutar en el examen y en la vida real.', 'El intercalado es, en este sentido, una forma de práctica de recuperación aplicada a la estrategia y no solo al contenido. Los libros de texto que agrupan todos los problemas del mismo tipo al final de cada capítulo están optimizados para la sensación de dominio durante el estudio, y contra la retención real.'] }
+        { subtitle: 'Dos formas de hacer los deberes de mates', paragraphs: ['En el estudio en bloques, todos los problemas de un mismo tipo van juntos. Resuelves diez de volumen del cilindro seguidos, aplicando la misma fórmula diez veces. En el intercalado, los tipos de problema se barajan dentro de la hoja, así que antes de resolver cada uno tienes que averiguar de qué va y qué estrategia pide. La primera versión fluye. La segunda atasca.', 'Rohrer sostiene que ese atasco es el punto. En un examen nadie te avisa de qué tipo es cada problema. La parte difícil, la de reconocerlo y elegir el método, es justo la que el estudio en bloques se salta y la que el intercalado entrena.'] },
+        { subtitle: 'Nueve semanas en un instituto de Florida', paragraphs: ['El equipo de Rohrer trabajó con 140 estudiantes de séptimo curso durante nueve semanas. Los dos grupos hicieron exactamente los mismos problemas de geometría y de otros bloques. Lo único que cambió fue el orden. Un grupo los recibió agrupados por tipo, el otro, intercalados a lo largo de las hojas. Mientras duró la práctica, el grupo de bloques puntuaba mejor y decía sentirse más seguro.', 'Dos semanas después de la última sesión llegó un examen sin previo aviso. El grupo que había practicado intercalando acertó de media el 72%. El de bloques, el 38%. El mismo material, la misma cantidad de práctica, casi el doble de aciertos por haber cambiado nada más que la secuencia.'] },
+        { subtitle: 'Por qué cuesta y por qué funciona', paragraphs: ['Robert Bjork lo explica por lo que el cerebro tiene que hacer en cada caso. Con los problemas en bloque, el estudiante ya sabe la respuesta a la pregunta más importante, qué tipo de problema es, antes de leerlo. No necesita discriminar. Con los problemas intercalados, esa discriminación es el primer paso obligatorio, más lento y más frustrante. También es el que hará falta en el examen y fuera de él.', 'Visto así, el intercalado es práctica de recuperación aplicada a la elección de estrategia, no solo al contenido. Los libros que amontonan todos los problemas iguales al final del capítulo están optimizados para la sensación de dominio durante el estudio, y en contra de la nota real.'] },
+        { subtitle: 'Lo que se sabe ahora y no se sabía en 2014', paragraphs: ['El mismo grupo repitió el experimento a lo grande. En un ensayo controlado publicado en 2020, con 787 alumnos en 54 aulas de un distrito escolar, la versión con más dosis de intercalado sacó un 61% frente al 38% del formato habitual en un examen a un mes vista, con un tamaño del efecto de 0,83. El hallazgo aguanta fuera del laboratorio.', 'Con dos condiciones. En ese ensayo el intercalado iba pegado al espaciado, es decir, los problemas de cada concepto no solo se mezclaban con otros, sino que se repartían por todas las hojas del curso, así que una parte de la ganancia es del espaciado. Y el efecto necesita tipos de problema que el alumno pueda confundir entre sí. Mezclar material de verdad dispar, un tema de historia con uno de química, no produce el mismo beneficio y puede estorbar. El intercalado no es "cuanto más revuelto, mejor".'] }
       ],
-      blockquote: { text: '«El estudio en bloques es la forma más popular de practicar. Y también es la menos eficaz. Porque lo que hace fácil el estudio es, con frecuencia, exactamente lo que hace malo el aprendizaje.»', attribution: 'Doug Rohrer & Robert Bjork' },
-      aplicacion: 'La próxima vez que prepares un examen o necesites aprender varias categorías de contenido, resiste la tentación de dominar un tema antes de pasar al siguiente. Mezcla los tipos de problemas o contenidos desde el principio, aunque la sesión se sienta más lenta y con más errores. La frustración que sientes al no saber inmediatamente qué estrategia aplicar es exactamente la señal de que el aprendizaje profundo está ocurriendo.'
+      blockquote: { text: '«Reordenar las hojas de ejercicios para que incluyan problemas de distintos tipos en orden alterno obliga al alumno a elegir la estrategia a partir del propio problema, y eleva la nota en un examen posterior sin previo aviso.»', attribution: 'Rohrer, Dedrick y Burgess (2014)' },
+      aplicacion: 'Cuando prepares un examen con varios tipos de problema o de contenido, no domines uno antes de pasar al siguiente. Mézclalos desde el principio, aunque la sesión vaya más lenta, con más errores y con peor sensación. Esa incomodidad de no saber de entrada qué método aplicar es la señal de que estás entrenando lo que el examen te va a pedir. Solo sirve con temas que se puedan confundir entre sí; mezclar asignaturas sin relación no aporta.'
     },
     {
       id: 'edu-06',
@@ -2304,32 +2649,39 @@ const LIBRARY_ARTICLES = {
     {
       id: 'edu-07',
       title: 'Leer un texto cuatro veces seguidas fue peor, una semana después, que leerlo una vez y examinarte tres veces sobre él',
-      summary: '180 universitarios que solo releyeron un texto recordaban más a los cinco minutos que quienes se habían examinado sobre él, pero una semana después el patrón se invirtió por completo: examinarse ganó a releer.',
+      summary: '180 universitarios: quienes solo releyeron ganaban a los cinco minutos y perdían a la semana. Examinarse sin corrección retuvo más que cualquier relectura.',
       sourceUrl: 'https://doi.org/10.1111/j.1467-9280.2006.01693.x',
       sourceLabel: 'Roediger & Karpicke (2006), Psychological Science',
       badge: 'Ciencia del aprendizaje',
       author: { name: 'Henry L. Roediger III', university: 'Washington University en San Luis', specialty: 'Memoria humana y ciencia del aprendizaje' },
-      readingTime: '3 min',
+      readingTime: '4 min',
       date: '4 de agosto de 2026',
-      intro: 'Henry Roediger y Jeffrey Karpicke querían comprobar el efecto de examinarse en condiciones parecidas a las de un aula real, con textos y recuerdo libre en vez de listas de palabras, y separar un factor concreto: si examinarse ayuda solo porque supone otra exposición al material, o si el propio acto de recuperar información de la memoria aporta algo más.',
+      intro: 'Henry Roediger y Jeffrey Karpicke querían separar una duda concreta sobre el efecto de examinarse: si ayuda solo porque es una exposición más al material, como una relectura encubierta, o si el acto de sacar la información de la memoria aporta algo por su cuenta. Para verlo montaron una prueba parecida a la de un aula real, con textos de divulgación y recuerdo libre en lugar de listas de palabras.',
       sections: [
         {
-          subtitle: 'El experimento: leer cuatro veces, leer y examinarse, o examinarse tres veces',
+          subtitle: 'Leer cuatro veces, leer y examinarse, o examinarse tres veces',
           paragraphs: [
-            'Ciento ochenta estudiantes de Washington University en San Luis leyeron textos breves de divulgación científica bajo una de tres condiciones: leerlo cuatro veces seguidas, leerlo tres veces y examinarse una, o leerlo una sola vez y examinarse tres veces, siempre recordando por escrito todo lo posible sin recibir corrección ni respuestas. Después, unos hicieron el examen final a los cinco minutos y otros una semana más tarde.',
-            'A los cinco minutos, el patrón favorecía la relectura: quienes habían leído cuatro veces recordaban el 83% del texto, frente al 78% de quienes habían leído tres veces y se habían examinado una, y el 71% de quienes solo habían leído una vez y se habían examinado tres. Una semana después, el orden se invirtió por completo: el grupo que más se había examinado recordaba el 61%, el intermedio el 56%, y el que solo había releído había caído al 40%.'
+            'Ciento ochenta estudiantes de Washington University en San Luis leyeron textos breves de divulgación científica en una de tres condiciones: leerlo cuatro veces seguidas, leerlo tres veces y examinarse una, o leerlo una sola vez y examinarse tres. Los exámenes consistían en escribir de memoria todo lo posible, sin corrección ni respuestas de vuelta. Después, unos hicieron la prueba final a los cinco minutos y otros una semana más tarde.',
+            'A los cinco minutos ganaba la relectura. Quienes habían leído cuatro veces recordaban el 83% del texto, frente al 78% de quienes leyeron tres y se examinaron una, y el 71% de quienes solo leyeron una vez y se examinaron tres. Una semana después el orden se dio la vuelta entero. El grupo que más se había examinado retenía el 61%, el intermedio el 56% y el que solo había releído se había desplomado al 40%.'
           ]
         },
         {
-          subtitle: 'El mecanismo: recuperar información de la memoria la refuerza más que volver a leerla',
+          subtitle: 'Por qué recuperar fija más que releer',
           paragraphs: [
-            'El acto de intentar recordar algo, con esfuerzo y sin ayuda del texto delante, fortalece la huella de memoria de un modo que la simple relectura no consigue, aunque la relectura dé mejores resultados inmediatos porque el material está fresco. Examinarse no es solo una forma de comprobar lo aprendido, es en sí mismo un episodio de aprendizaje más potente que releer.',
-            'El dato más incómodo del estudio apareció en un cuestionario posterior: los estudiantes que solo habían releído se mostraban más seguros de que recordarían bien el texto una semana después que los que se habían examinado repetidamente, justo al revés de lo que ocurrió. La fluidez de releer genera una falsa sensación de dominio que no se corresponde con la retención real a largo plazo.'
+            'Intentar recordar algo con esfuerzo y sin el texto delante refuerza la huella de memoria de un modo que la relectura no consigue, aunque la relectura rinda más en el momento porque el material está fresco. Examinarse hace más que comprobar lo aprendido: es en sí mismo un episodio de aprendizaje, y más potente que volver a pasar los ojos por la página.',
+            'El dato más incómodo salió de un cuestionario posterior. Los que solo habían releído estaban más convencidos de que recordarían bien el texto a la semana que los que se habían examinado varias veces. Ocurrió justo al revés. La fluidez de releer genera una sensación de dominio que no se corresponde con lo que queda luego.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega y dónde se resiste',
+          paragraphs: [
+            'El efecto de examinarse es de los más sólidos de la ciencia del aprendizaje. Un metaanálisis de 2017 sobre más de un centenar de comparaciones lo situó por encima de reestudiar, con un tamaño del efecto en torno a 0,6. Aparece en textos, en vídeo, en vocabulario y en material de clase.',
+            'Los límites están en otro sitio. La ventaja de recuperar crece cuanto más separada está la prueba del estudio, y a los pocos minutos, como en este experimento, la relectura todavía puede ganar. Si al examinarte fallas mucho y nadie te da luego la respuesta correcta, el beneficio se reduce, porque consolidas huecos. La práctica de recuperación rinde más cuando el intento tiene una tasa de acierto decente o va seguido de feedback. Y funciona mejor con recuerdo de hechos e ideas que con la comprensión de material muy complejo, donde las diferencias se estrechan.'
           ]
         }
       ],
-      blockquote: { text: '«Examinarse no es solo un modo de evaluar lo que sabes, es en sí mismo una manera poderosa de aprenderlo.»', attribution: 'Henry L. Roediger III' },
-      aplicacion: 'Antes de un examen, en vez de releer los apuntes una vez más, cierra el material e intenta escribir de memoria todo lo que recuerdes, aunque nadie vaya a corregirlo. Según este estudio, esa recuperación activa sin retroalimentación ya produce mejor retención a largo plazo que cualquier número de relecturas adicionales, aunque en el momento se sienta menos fluida y más incómoda.'
+      blockquote: { text: '«En las pruebas demoradas, haberse examinado antes produjo bastante más retención que haber vuelto a estudiar durante el mismo tiempo.»', attribution: 'Roediger y Karpicke (2006)' },
+      aplicacion: 'Antes de un examen, en vez de releer los apuntes una vez más, cierra el material e intenta escribir de memoria todo lo que recuerdes, aunque nadie vaya a corregirlo. Luego comprueba qué faltó y vuelve sobre esos puntos. Esa recuperación con repaso posterior retiene más a largo plazo que cualquier número de relecturas, aunque en el momento se sienta menos fluida.'
     }
   ],
 
@@ -2337,32 +2689,39 @@ const LIBRARY_ARTICLES = {
     {
       id: 'tra-01',
       title: 'El principio del progreso: el único motivador que realmente importa en el trabajo',
-      summary: 'Un análisis de 12.000 entradas de diario de trabajadores del conocimiento reveló que el predictor más potente del bienestar y la motivación diarios no era el reconocimiento ni los incentivos: era hacer avanzar un trabajo con sentido.',
+      summary: 'A 669 directivos les pidieron ordenar qué mueve a un equipo. Pusieron "avanzar en el trabajo" en último lugar. Luego llegaron 12.000 diarios y el orden se dio la vuelta.',
       sourceUrl: 'https://hbr.org/2011/05/the-power-of-small-wins',
       sourceLabel: 'Amabile & Kramer (2011), Harvard Business Review · "The Progress Principle"',
       badge: 'Psicología organizacional',
       author: { name: 'Teresa Amabile', university: 'Harvard Business School', specialty: 'Creatividad, motivación y bienestar en el trabajo' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: 'Teresa Amabile y Steven Kramer pasaron años recogiendo datos de una manera que pocos investigadores han tenido la paciencia de sostener: pedían a trabajadores del conocimiento de distintas industrias que escribieran cada día, durante meses, una entrada de diario describiendo lo mejor y lo peor del día laboral. Al final, tenían 12.000 entradas. Cuando analizaron qué predecía los días de mayor motivación, creatividad y bienestar, encontraron algo que los propios directivos de las empresas no habían adivinado cuando se les preguntó: no era el reconocimiento, no era el salario, no era la relación con los compañeros. Era el progreso.',
+      intro: 'Amabile y Kramer pidieron a 669 directivos que ordenaran cinco cosas según cuánto mueven a un equipo: reconocimiento, incentivos, apoyo entre compañeros, objetivos claros y avanzar en el trabajo. "Avanzar" quedó el último. Solo un 5% lo puso en primer lugar. Después, los dos investigadores leyeron casi 12.000 entradas de diario escritas por 238 personas de siete empresas, un párrafo por trabajador y por día durante meses, y el orden se invirtió. El mejor pronóstico de un buen día en la oficina era haber empujado algo que importaba, aunque el empujón fuera mínimo.',
       sections: [
         {
-          subtitle: 'Los datos: los directivos no saben qué motiva a sus equipos',
+          subtitle: 'Lo que dicen 12.000 diarios',
           paragraphs: [
-            'Antes de analizar los diarios, Amabile y Kramer encuestaron a 669 directivos de distintas industrias y les preguntaron cuáles eran, en su opinión, los factores que más influían en la motivación y el estado emocional de sus equipos. Los directivos colocaron el "progreso en el trabajo" en el quinto y último lugar de la lista, por detrás del reconocimiento, los incentivos, el apoyo interpersonal y los objetivos claros. El análisis de los 12.000 diarios lo colocaba en el primero. Con diferencia.',
-            'El 76% de los días que los trabajadores describían como sus mejores días reportaban haber avanzado en un trabajo con sentido, aunque ese avance fuera pequeño. La correlación entre "hoy avancé" y "hoy me sentí bien en el trabajo" era la más alta del conjunto de variables analizadas. Y lo contrario también era cierto: los días más desmotivadores, con mayor bloqueo emocional y menor creatividad, eran los días en que el progreso se había frenado o revertido, no necesariamente por causas dramáticas, sino por pequeños obstáculos, cambios de prioridad o ausencia de recursos.'
+            'Amabile y Kramer pidieron a trabajadores del conocimiento de siete compañías de tres sectores que, al terminar cada jornada, mandaran una entrada confidencial: lo mejor del día, lo peor y una valoración de su ánimo, su motivación y cómo veían al equipo y a la empresa. Al cerrar los proyectos tenían cerca de 12.000 entradas de 238 personas. Cruzaron los días marcados como mejores con lo que había pasado en ellos. En el 76% aparecía un avance concreto en el trabajo. Ninguna otra categoría se acercaba, ni el reconocimiento, ni la ayuda de un compañero, ni un buen rato con el equipo.',
+            'Lo que más llama la atención es el tamaño del empujón. Muchos de esos avances eran pasos menudos: cerrar un apartado, desatascar un archivo, arreglar un fallo tonto que llevaba dos días fastidiando. El 28% de los episodios que apenas movían el proyecto tenían un efecto grande sobre cómo se sentía la persona esa tarde. El reverso también se cumplía. Los peores días, los de más bloqueo y peor humor, eran días de retroceso o de trabajo frenado, y casi nunca por una catástrofe. Bastaba un cambio de prioridad a media mañana, una herramienta que no llegaba, una reunión que partía el día en trozos.'
           ]
         },
         {
-          subtitle: 'El catalítico del progreso: el papel de los gestores y el entorno',
+          subtitle: 'Quitar piedras del camino',
           paragraphs: [
-            'Amabile y Kramer identificaron los factores que facilitan o bloquean el progreso diario. Los catalizadores: objetivos claros, autonomía, recursos suficientes y protección del tiempo de trabajo concentrado. Los inhibidores: cambios frecuentes de prioridades, burocracia que ralentiza sin añadir valor, reuniones que fragmentan el tiempo sin producir decisiones, y feedback que evalúa sin dar dirección. La distinción más importante: los gestores que generan mayor bienestar en sus equipos no son necesariamente los más empáticos o los más carismáticos, sino los que más consistentemente eliminan obstáculos y protegen el trabajo enfocado.',
-            'La implicación para las organizaciones es estructural más que interpersonal: el bienestar en el trabajo no se gestiona principalmente con beneficios o con reconocimiento; se gestiona con el diseño del entorno de trabajo. Un entorno que permite avanzar en algo con sentido cada día produce motivación y bienestar de forma consistente. Un entorno que fragmenta constantemente el trabajo (con reuniones, cambios de prioridad e interrupciones) los destruye aunque el salario y el reconocimiento sean excelentes.'
+            'Los autores separaron lo que alimenta el avance diario de lo que lo ahoga. Ayudan las metas claras, tener margen para decidir cómo se hace el trabajo, los recursos a mano y un rato largo sin cortes. Lo frenan los cambios de rumbo constantes, la burocracia que no añade nada, las reuniones que trocean la mañana sin cerrar ninguna decisión y el feedback que juzga pero no orienta. De ahí sale un retrato de buen jefe menos lucido que el del líder carismático. Es, sobre todo, alguien que de forma constante aparta obstáculos y protege el tiempo de trabajo concentrado de su gente.',
+            'La lectura para una empresa es más de diseño que de trato personal. El bienestar en el trabajo no se arregla sobre todo con fruta en la cocina ni con un correo de felicitación. Se juega en cómo está montada la jornada. Un entorno donde cada día puedes empujar algo con sentido produce motivación de forma sostenida. Uno que fragmenta el trabajo a todas horas la destruye, por bueno que sea el sueldo.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega el dato',
+          paragraphs: [
+            'Conviene recordar de dónde salen estas cifras. Son diarios, o sea correlación. En un día bueno resulta más fácil registrar el avance y contarlo bien, así que parte del efecto puede ir de la emoción al recuerdo y no solo al revés. La muestra son trabajadores del conocimiento metidos en proyectos creativos de unas pocas empresas, y no está claro que el mismo patrón mande en una cadena de montaje o en un mostrador de atención al público saturado. La encuesta de los 669 directivos funciona como recurso para marcar el contraste, no como medida fina de lo que hacen los jefes.',
+            'Con esos límites, la parte sólida aguanta. Cuando se pregunta a la gente cada día, y no de memoria a fin de año, el avance en algo que le importa aparece una y otra vez pegado a los buenos días. Encaja además con lo que otras líneas de investigación sobre motivación intrínseca vienen mostrando desde hace décadas.'
           ]
         }
       ],
-      blockquote: { text: '«De todas las cosas que pueden impulsar las emociones, la motivación y las percepciones durante la jornada laboral, la más importante es progresar en un trabajo con sentido.»', attribution: 'Teresa Amabile & Steven Kramer' },
-      aplicacion: 'Al final de cada día de trabajo, escribe una sola frase que describa el avance más concreto que hiciste hoy. No "trabajé en X" sino "completé la sección Y" o "resolví el bloqueo Z". Ese acto de nombrar el progreso específico activa el circuito de recompensa y construye la inercia motivacional para mañana. Si no puedes escribir nada, es una señal valiosa: algo en el entorno o en el diseño del día estaba bloqueando el progreso.'
+      blockquote: { text: '«De todo lo que puede mover las emociones, la motivación y la percepción durante una jornada de trabajo, lo más importante es avanzar en un trabajo con sentido.»', attribution: 'Amabile & Kramer (2011)' },
+      aplicacion: 'Al cerrar el día, escribe una frase con el avance más concreto que hiciste. No "estuve con el informe", sino "terminé el apartado de resultados" o "quité el error que bloqueaba el envío". Nombrar el paso exacto te deja mañana con inercia en lugar de con niebla. Si algún día no puedes escribir nada, eso también es información: mira qué te frenó, porque casi siempre está en la agenda y no en ti.'
     },
     {
       id: 'tra-02',
@@ -2372,57 +2731,71 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Wrzesniewski & Dutton (2001), Academy of Management Review',
       badge: 'Psicología del trabajo',
       author: { name: 'Amy Wrzesniewski', university: 'Universidad de Yale', specialty: 'Sentido del trabajo, identidad profesional y job crafting' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'Amy Wrzesniewski y Jane Dutton pasaron tiempo en un hospital observando y entrevistando al personal de limpieza. En teoría, este era uno de los roles más delimitados y menos autónomos del hospital: el puesto estaba completamente definido, las tareas eran fijas, el margen de decisión era mínimo. Sin embargo, algunos limpiadores describían su trabajo como una "vocación" y reportaban niveles de satisfacción y sentido comparables a los del personal médico. Cuando Wrzesniewski indagó en qué hacían diferente, encontró que habían rediseñado su trabajo sin que nadie se lo pidiera ni les autorizara.',
+      intro: 'En un hospital del Medio Oeste de Estados Unidos, Amy Wrzesniewski y Jane Dutton entrevistaron a 28 personas del servicio de limpieza. El puesto era idéntico para todas: mismas tareas, mismo turno, cero margen oficial de decisión. Aun así, unas describían su trabajo como una carga y otras como una vocación, y hablaban de él como los médicos hablaban del suyo. La diferencia no estaba en el contrato. Estaba en lo que cada una había hecho con el puesto sin pedir permiso.',
       sections: [
         {
-          subtitle: 'El job crafting en acción: tres dimensiones de rediseño',
+          subtitle: 'Tres maneras de rehacer un puesto por dentro',
           paragraphs: [
-            'Wrzesniewski y Dutton identificaron que los limpiadores con alta satisfacción habían realizado modificaciones autónomas en tres dimensiones. En las tareas: coordinaban con las enfermeras para limpiar las habitaciones de los pacientes en el momento más conveniente para su recuperación, elegían el orden de las limpiezas basándose en qué pacientes parecían más solos o más necesitados de un contacto humano, memorizaban los medicamentos de los pacientes para poder hablar con ellos de forma más informada. En las relaciones: habían construido vínculos con el personal médico que iban más allá de lo funcional. En el significado: se describían a sí mismos no como limpiadores sino como parte del equipo terapéutico del hospital.',
-            'Ninguna de estas modificaciones requería autorización formal ni un cambio de posición. Eran reencuadres y expansiones informales del rol existente. Wrzesniewski llama a este proceso "job crafting" (artesanía del trabajo) para capturar la idea de que el trabajo no es un objeto fijo que se recibe, sino un material con el que uno trabaja activamente. Dentro de casi cualquier posición, existe margen para moldear las tareas, las relaciones y el sentido de formas que lo hagan más acorde a las propias fortalezas e intereses.'
+            'Las limpiadoras satisfechas habían cambiado su trabajo en tres frentes. Con las tareas: se coordinaban con las enfermeras para limpiar cada habitación en el momento que menos entorpecía la recuperación del paciente, ordenaban la ronda según quién parecía más solo o más asustado, se aprendían la medicación de algunos enfermos para hablar con ellos con algo de criterio. Con las relaciones, habían tejido vínculos con médicos y familias que iban más allá de lo que el puesto pedía. Y habían cambiado el relato: no se veían como personal de limpieza, sino como parte del equipo que cuidaba al paciente.',
+            'Nada de eso requería un cambio de categoría ni una autorización. Eran ajustes informales dentro del hueco que deja cualquier puesto. Wrzesniewski y Dutton lo llamaron job crafting, artesanía del propio trabajo, para dejar claro que el puesto no es un bloque cerrado que se recibe, sino un material con el que se trabaja. En casi cualquier rol hay margen para estirar unas tareas, encoger otras y decidir con quién te relacionas y para qué.'
           ]
         },
         {
-          subtitle: 'Por qué el sentido importa más que el cargo',
+          subtitle: 'Empleo, carrera o vocación',
           paragraphs: [
-            'En una investigación paralela, Wrzesniewski encontró que la distinción más predictiva del bienestar en el trabajo no era el salario ni el cargo ni el nivel de autonomía formal: era la orientación de la persona hacia su trabajo. Identificó tres orientaciones distintas. Las personas que ven su trabajo como un "empleo" lo valoran principalmente como fuente de sustento; su satisfacción personal es externa al trabajo en sí. Las que lo ven como una "carrera" valoran el ascenso, el estatus y el avance. Las que lo ven como una "vocación" encuentran satisfacción intrínseca en las actividades del trabajo mismo y lo describirían como parte de lo que las define.',
-            'La clave del hallazgo es que la orientación hacia la vocación no correlaciona con el tipo de trabajo ni con su estatus social: se encontraba tanto entre limpiadores de hospital como entre directivos, tanto entre trabajos manuales como intelectuales. Es una relación activamente construida con el trabajo, no una propiedad objetiva del puesto. Y el job crafting es el mecanismo concreto a través del cual las personas que reportan mayor sentido construyen esa relación.'
+            'En un estudio anterior, de 1997, Wrzesniewski y sus colegas habían preguntado a 196 trabajadores de oficios muy distintos cómo veían su trabajo. Salieron tres relaciones. Para unos es un empleo, una fuente de ingresos, y la vida de verdad empieza al fichar de salida. Para otros es una carrera, y lo que cuenta es ascender, ganar estatus, llegar más lejos. Para otros es una vocación: el trabajo en sí les engancha y forma parte de quiénes son. La muestra se repartió casi en tercios.',
+            'El dato que rompe la intuición es que esa proporción se mantenía dentro de un mismo oficio. Había vocación entre administrativos y desencanto entre profesionales con carreras lucidas. La orientación no venía pegada al puesto ni a su prestigio, era una relación que cada persona construía. Y el job crafting es la palanca concreta con la que quienes encuentran sentido lo van fabricando.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el entusiasmo por la idea se salta',
+          paragraphs: [
+            'El artículo de 2001 es teórico. Propone el concepto y lo ilustra con las limpiadoras; no es un ensayo con grupo de control que demuestre que rediseñar el puesto cause más bienestar. Esa parte llegó después, y con reparos. El job crafting también puede ir hacia abajo: alguien que recorta tareas y contactos para protegerse suele acabar más quemado, no menos. Y hay trabajos con tan poco margen, tan vigilados o tan precarios, que pedirle al trabajador que "le dé sentido" roza el traslado de la culpa. El problema estaba en el diseño del puesto y en la carga, no en su actitud.',
+            'Con esos avisos, la observación de fondo se sostiene y tiene apoyo posterior. Dentro del mismo puesto, dos personas pueden vivir experiencias muy distintas según cómo moldean sus tareas, con quién se relacionan y qué se cuentan sobre lo que hacen.'
           ]
         }
       ],
-      blockquote: { text: '«Los trabajadores no son recipientes pasivos del trabajo que se les asigna: son artesanos activos que modelan sus trabajos para que tengan sentido.»', attribution: 'Amy Wrzesniewski & Jane Dutton' },
-      aplicacion: 'Identifica en tu trabajo actual: (1) una tarea que podrías añadir de forma informal porque te interesa y te da más sentido, (2) una que podrías delegar o reducir porque no conecta con lo que haces mejor, y (3) una relación profesional que podrías cultivar más porque te aporta o porque tu contribución es valiosa para esa persona. Estos tres cambios, hechos esta semana sin pedir permiso, constituyen un job craft mínimo pero real.'
+      blockquote: { text: '«Los empleados moldean su puesto cambiando los límites de sus tareas y de sus relaciones para dar forma a cómo se vinculan con el trabajo y con los demás.»', attribution: 'Wrzesniewski & Dutton (2001)' },
+      aplicacion: 'Elige esta semana tres movimientos pequeños y sin permiso. Una tarea que sumas porque te interesa y te da sentido. Una que reduces o pasas a otra persona porque no es donde aportas. Y una relación de trabajo que cultivas más, porque te aporta o porque lo que tú haces le sirve a esa persona. No arregla un puesto mal diseñado, pero en uno con algo de margen cambia bastante cómo se vive.'
     },
     {
       id: 'tra-03',
       title: 'Las reuniones destruyen el pensamiento: la evidencia sobre fragmentación cognitiva en el trabajo',
-      summary: 'El trabajo creativo y cognitivamente exigente requiere bloques de atención sostenida que la cultura de reuniones y open offices sistemáticamente imposibilita.',
+      summary: 'En muchas empresas, la gente pasa cerca del 80% de la jornada en reuniones o atendiendo peticiones. El trabajo que pide silencio y cabeza queda para el rato que sobra, y llega en trozos.',
       sourceUrl: 'https://hbr.org/2016/01/collaborative-overload',
       sourceLabel: 'Cross, Rebele & Grant (2016), Harvard Business Review · Bernstein & Turban (2018), Phil. Trans.',
       badge: 'Neurociencia organizacional',
       author: { name: 'Rob Cross', university: 'Babson College', specialty: 'Redes organizacionales y colaboración' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '12 de mayo de 2026',
-      intro: 'En 1999, el 20% del tiempo productivo de los trabajadores del conocimiento se consumía en reuniones y solicitudes de colaboración. En 2016, esa cifra había alcanzado el 80%. Rob Cross y sus colegas de Babson College documentaron este incremento en un estudio longitudinal de 300 organizaciones y lo denominaron "collaborative overload" (sobrecarga colaborativa). La paradoja: en nombre de la colaboración, las organizaciones habían creado entornos donde era estructuralmente imposible hacer el trabajo que requiere colaboración.',
+      intro: 'En muchas empresas, los trabajadores del conocimiento pasan cerca del 80% de la jornada en reuniones o respondiendo peticiones de compañeros. Queda un 20% para el trabajo que exige cabeza y silencio, y ese resto llega troceado. Rob Cross y sus colegas de Babson College han documentado el fenómeno en más de 300 organizaciones y lo llaman sobrecarga de colaboración. La paradoja es que, en nombre de colaborar, se han montado oficinas donde es casi imposible hacer el trabajo que luego se colabora.',
       sections: [
         {
-          subtitle: 'Los datos: cuánto tiempo hay disponible para pensar',
+          subtitle: 'Cuánto rato queda para pensar',
           paragraphs: [
-            'Cross y sus colegas encontraron que los trabajadores que más tiempo dedicaban a colaborar, reunirse y responder solicitudes de ayuda eran también los que reportaban mayor agotamiento, menor satisfacción y peor rendimiento en las métricas más exigentes. La colaboración excesiva no producía más output creativo: producía más ocupación y menos producción real. Y el efecto se intensificaba en los perfiles más capaces: los trabajadores con más expertise eran los que más solicitudes de colaboración recibían y, por tanto, los que menos tiempo tenían para hacer el trabajo que hacía valioso su expertise.',
-            'El análisis de Gloria Mark (UC Irvine) añade la dimensión del tiempo de recuperación: una interrupción (aunque sea responder un mensaje de 30 segundos) requiere una media de 23 minutos para recuperar el estado de concentración previo. En un día de trabajo estándar con reuniones, notificaciones y peticiones distribuidas a lo largo de la jornada, los "bloques de atención sostenida" (fragmentos de más de 90 minutos sin interrupción) prácticamente no existen. Y es en esos bloques donde ocurre el pensamiento que no puede ocurrir en ninguna reunión.'
+            'Cross y su equipo calculan que el tiempo dedicado a colaborar, reunirse y atender consultas ha crecido un 50% o más en dos décadas. Los que más colaboran no son los que más producen. Son los que más agotamiento y menos satisfacción reportan, y los que peor rinden en las tareas difíciles. El efecto se ceba con los mejores. A quien tiene más experiencia le llegan más peticiones, así que es quien menos tiempo tiene para usar aquello que lo hacía valioso. Entre el 20% y el 35% de las colaboraciones que aportan valor salen de un 3% a 5% de la plantilla.',
+            'A eso se suma el coste de recuperar la concentración tras un corte. En el trabajo de campo de Gloria Mark, en la Universidad de California, una tarea interrumpida se retomaba de media a los 23 minutos, y por el camino la persona tocaba otras dos cosas antes de volver a la original. Su experimento publicado añade un giro incómodo: cuando interrumpes a alguien, termina la tarea igual de rápido o más, pero a costa de más estrés, más prisa y más esfuerzo. En una jornada normal, con reuniones y avisos repartidos, los tramos de más de 90 minutos seguidos sin cortar casi no existen. Y ahí es donde ocurre el pensamiento que ninguna reunión produce.'
           ]
         },
         {
-          subtitle: 'La oficina abierta: el entorno diseñado para la interrupción',
+          subtitle: 'La oficina diáfana hizo lo contrario de lo prometido',
           paragraphs: [
-            'Ethan Bernstein y Stephen Turban estudiaron en 2018 qué ocurrió con la interacción real en empresas que eliminaron las paredes para instalar espacios abiertos. La paradoja fue completa: la interacción cara a cara (que las open offices pretendían promover) cayó un 70% tras la transición. La interacción digital (mensajes, emails) se incrementó en la misma proporción. Las personas habían respondido al exceso de exposición social con una retirada cognitiva: se pusieron auriculares, bajaron la mirada, crearon barreras invisibles. La arquitectura diseñada para fomentar la colaboración había conseguido exactamente lo contrario.',
-            'El problema no es la colaboración en sí (que es esencial para el trabajo complejo) sino la distinción entre colaboración de alta calidad (reuniones con propósito específico, bien preparadas, con decisiones concretas al final) y colaboración de baja calidad (interrupciones, presencia por visibilidad, reuniones sin agenda). Las organizaciones que han mejorado tanto la colaboración como el trabajo individual tienen algo en común: han normalizado los bloques de tiempo protegido como un derecho, no como un lujo o una señal de antisocialidad.'
+            'Ethan Bernstein y Stephen Turban siguieron en 2018 a dos sedes de empresas grandes que tiraron las paredes para montar espacios abiertos. Midieron la interacción real con sensores de contacto y con los registros de correo y mensajería. El trato cara a cara, justo lo que el diseño quería fomentar, cayó alrededor de un 70%. El correo y la mensajería subieron para compensar: en una de las empresas, un 56% más de emails y un 67% más de mensajes instantáneos. La gente respondió al exceso de exposición retirándose hacia dentro, con auriculares, la mirada baja y barreras invisibles.',
+            'Colaborar no es el problema, porque es imprescindible en cualquier trabajo complejo. El lío viene de meter dos cosas distintas bajo la misma palabra. Una reunión con un propósito claro, preparada y con decisiones al final es colaboración de la buena. La interrupción, la presencia por dejarse ver y la convocatoria sin orden del día son otra cosa. Las empresas que han mejorado a la vez el trabajo en común y el individual comparten un rasgo: han convertido los bloques de tiempo protegido en un derecho, y no en un lujo ni en un gesto de mala educación.'
+          ]
+        },
+        {
+          subtitle: 'Con qué cuidado leer estos números',
+          paragraphs: [
+            'Casi todo esto viene de artículos de divulgación de gestión y de consultoría, no de estudios revisados por pares, y conviene tratarlo como indicios. El famoso "23 minutos y 15 segundos" nació en una entrevista de 2006, no en un paper, y se ha repetido tanto que parece más firme de lo que es. El estudio de las oficinas abiertas siguió a dos sedes concretas durante ventanas cortas antes y después de la mudanza, con voluntarios que llevaban sensores encima. Otras investigaciones sobre espacios diáfanos dan resultados mezclados.',
+            'Lo que sí aguanta es el núcleo. Encadenar interrupciones y reuniones degrada el trabajo que pide concentración larga, y ninguna arquitectura de oficina fuerza por sí sola la buena colaboración. Cuánto exactamente, y en qué tipo de puesto, sigue abierto.'
           ]
         }
       ],
-      blockquote: { text: '«Las organizaciones han confundido la ocupación con la productividad, la presencia con la contribución, y la colaboración constante con el trabajo colaborativo de calidad.»', attribution: 'Rob Cross & Adam Grant' },
-      aplicacion: 'Protege al menos un bloque de 90 minutos cada día donde no hay reuniones posibles y las notificaciones están desactivadas. No como productividad personal: como la condición mínima para hacer el tipo de trabajo que no puede hacerse en ninguna reunión. Si tu organización no te lo permite, negocia esa protección como parte de tus condiciones de trabajo. Lo que no se nombra no se defiende.'
+      blockquote: { text: '«En muchas empresas, los empleados dedican cerca del 80% de su tiempo a reuniones o a atender peticiones de compañeros, y les queda poco para el trabajo que tienen que sacar solos.»', attribution: 'Cross, Rebele & Grant (2016)' },
+      aplicacion: 'Protege cada día al menos un bloque de 90 minutos sin reuniones posibles y con los avisos apagados. No como truco de productividad, sino como la condición mínima para el trabajo que no cabe en ninguna reunión. Si tu empresa no lo permite de serie, negócialo como parte de tus condiciones. Lo que no se nombra no se defiende.'
     },
     {
       id: 'tra-04',
@@ -2432,15 +2805,34 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Maslach, Schaufeli & Leiter (2001), Annual Review of Psychology',
       badge: 'Psicología organizacional',
       author: { name: 'Christina Maslach', university: 'Universidad de California, Berkeley', specialty: 'Burnout, bienestar laboral y psicología organizacional' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: 'El burnout se menciona constantemente pero se entiende poco. No es estrés crónico, ni agotamiento puntual, ni la simple consecuencia de trabajar mucho. Christina Maslach lleva cuarenta años estudiando el fenómeno y ha llegado a una conclusión que incomoda a muchas organizaciones: el burnout no es un problema del individuo que no aguanta. Es el síntoma de un entorno de trabajo que tiene demandas que ningún ser humano puede sostener indefinidamente.',
+      intro: 'El burnout se nombra a todas horas y se entiende poco. No es el cansancio de una semana dura ni la consecuencia mecánica de trabajar mucho. Christina Maslach lleva cuarenta años midiéndolo y ha llegado a una conclusión que incomoda a muchas empresas: cuando alguien se quema, el fallo rara vez está en que esa persona no aguante. Está en un entorno con exigencias que ningún ser humano sostiene de forma indefinida.',
       sections: [
-        { subtitle: 'El MBI y las tres dimensiones: agotamiento, cinismo, ineficacia', paragraphs: ['Maslach desarrolló el Maslach Burnout Inventory (MBI) en 1981 como el primer instrumento psicométrico validado para medir el burnout. El modelo describe tres dimensiones que no son simplemente síntomas, sino aspectos de una transformación progresiva en la relación de la persona con su trabajo. El agotamiento emocional es la dimensión central: la sensación de estar vaciado, de no tener más recursos emocionales que dar. La despersonalización (el cinismo) es la respuesta defensiva al agotamiento: distanciarse emocionalmente del trabajo y de las personas involucradas. La reducción de la eficacia personal es el colapso de la sensación de competencia y logro.', 'El burnout no es un estado discreto sino un continuo. Su opuesto en el MBI es el engagement: energía en lugar de agotamiento, dedicación en lugar de cinismo, eficacia en lugar de ineficacia. Y lo que Maslach documenta con datos es que el paso de uno al otro no depende primariamente de la cantidad de trabajo, sino de seis dimensiones del entorno laboral: la carga de trabajo, el control, la recompensa, la comunidad, la equidad y los valores.'] },
-        { subtitle: 'El error del "individuo quemado": burnout como problema sistémico', paragraphs: ['La consecuencia más importante (y más ignorada) de la investigación de Maslach es que el burnout es fundamentalmente un problema del contexto, no del carácter. Sus estudios comparativos entre organizaciones muestran que las tasas de burnout varían de forma dramática entre equipos que realizan trabajos similares en la misma empresa, dependiendo del liderazgo, la cultura y el diseño del trabajo.', 'Las intervenciones puramente individuales (mindfulness corporativo, resiliencia, técnicas de gestión del estrés) tienen eficacia limitada y a veces contraproducente: ofrecen al individuo herramientas para adaptarse a un entorno que sigue siendo dañino, lo que puede retrasar el reconocimiento del problema organizacional y culpabilizar implícitamente al trabajador por no "gestionarlo mejor". Maslach argumenta que la única intervención duradera es cambiar las condiciones que generan el desajuste.'] }
+        {
+          subtitle: 'Agotamiento, cinismo y sensación de inutilidad',
+          paragraphs: [
+            'Maslach construyó en 1981 el Maslach Burnout Inventory, el primer cuestionario validado para medir el fenómeno. Describe tres piezas que no son síntomas sueltos, sino fases de cómo se deteriora la relación de una persona con su trabajo. El agotamiento emocional es el núcleo, la sensación de estar vaciado y sin más que dar. El cinismo es la defensa que aparece después, poner distancia con el trabajo y con la gente que hay dentro de él. Y la caída de la eficacia personal es dejar de sentirse competente, ver el propio esfuerzo como estéril.',
+            'No es un interruptor de encendido y apagado, sino un recorrido. En el otro extremo del mismo eje está el engagement: energía en vez de agotamiento, implicación en vez de cinismo, eficacia en vez de impotencia. Lo que Maslach documenta con datos es que pasar de un lado al otro depende menos de la cantidad de horas que de seis condiciones del entorno: la carga de trabajo, el control sobre cómo lo haces, el reconocimiento, la comunidad, la sensación de que hay justicia y el encaje entre tus valores y los del sitio.'
+          ]
+        },
+        {
+          subtitle: 'El error de mirar solo al que se quema',
+          paragraphs: [
+            'La consecuencia más ignorada de esta línea de trabajo es que el burnout es sobre todo un problema de contexto, no de carácter. Los estudios que comparan equipos muestran diferencias enormes en las tasas de quemados entre grupos que hacen tareas parecidas en la misma empresa, según cómo se dirige y cómo está diseñado el trabajo. Cambia el jefe y la cifra se mueve.',
+            'Por eso las intervenciones que solo tocan al individuo, los talleres de mindfulness, de resiliencia, de gestión del estrés, tienen efecto corto y a veces salen mal. Le dan a la persona herramientas para adaptarse a un sitio que sigue siendo dañino, y de paso trasladan el mensaje de que, si no lo lleva bien, es culpa suya. Maslach sostiene que lo único que arregla el problema de raíz es cambiar las condiciones que generan el desajuste.'
+          ]
+        },
+        {
+          subtitle: 'Qué es y qué no es, según quién lo mire',
+          paragraphs: [
+            'El burnout no figura como enfermedad. La OMS lo incluyó en 2019 en su clasificación como "fenómeno ocupacional", algo que afecta a la salud pero que no es un diagnóstico clínico. Sigue abierto cuánto se solapa con la depresión, y parte de la investigación sostiene que el agotamiento del burnout y ciertos cuadros depresivos son difíciles de separar con las escalas actuales. El propio inventario de Maslach es un instrumento propietario, lo que ha complicado que otros grupos lo comparen y lo pongan a prueba con libertad.',
+            'Lo que casi nadie discute es la parte central. Cuando muchas personas de un mismo equipo se queman a la vez, mirar solo su fortaleza individual es mirar al sitio equivocado.'
+          ]
+        }
       ],
-      blockquote: { text: '«No se trata de que las personas fallen en el trabajo: se trata de que el trabajo está fallando en las personas. El burnout es la señal de ese fallo.»', attribution: 'Christina Maslach' },
-      aplicacion: 'Si sospechas que estás en un proceso de burnout, evalúa las seis dimensiones de Maslach en tu trabajo actual: ¿Es la carga manejable? ¿Tienes control sobre cómo realizas tu trabajo? ¿El reconocimiento es proporcional al esfuerzo? ¿Hay un sentido genuino de comunidad? ¿Percibes equidad? ¿Los valores del lugar coinciden con los tuyos? Más de dos "no" sostenidos en el tiempo es el perfil de entorno que genera burnout en la mayoría de las personas, independientemente de su resiliencia personal.'
+      blockquote: { text: '«El burnout no es un problema de las personas, sino del entorno social en el que trabajan.»', attribution: 'Christina Maslach' },
+      aplicacion: 'Si sospechas que estás entrando en un proceso de burnout, repasa las seis condiciones de Maslach en tu trabajo de ahora. ¿La carga es asumible? ¿Decides tú cómo haces las cosas? ¿El reconocimiento va con el esfuerzo? ¿Hay algo parecido a una comunidad? ¿Percibes que se te trata con justicia? ¿Encajan tus valores con los del sitio? Más de dos "no" sostenidos en el tiempo describe un entorno que quema a la mayoría de la gente, por mucha resiliencia que traiga de casa.'
     },
     {
       id: 'tra-05',
@@ -2450,45 +2842,71 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Deci, Koestner & Ryan (1999), Psychological Bulletin',
       badge: 'Psicología del trabajo',
       author: { name: 'Edward Deci', university: 'Universidad de Rochester', specialty: 'Teoría de la Autodeterminación, motivación intrínseca y bienestar' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: 'La gestión empresarial lleva más de un siglo construida sobre un axioma que parece de sentido común: las personas trabajan más si se les paga más. Sin embargo, desde los años 70, la psicología ha acumulado evidencia que pone en cuestión ese axioma de forma sistemática, no para todas las tareas, no en todos los contextos, pero con suficiente consistencia como para que ignorarla sea una decisión cara.',
+      intro: 'La gestión de empresas lleva más de un siglo apoyada en un axioma de sentido común: la gente rinde más si le pagas más. Desde los años setenta, la psicología ha ido apilando pruebas de que eso falla en un caso concreto y bastante común, el de las tareas que ya interesan por sí solas. En esas, meter dinero por medio desplaza el interés que ya movía a la persona.',
       sections: [
-        { subtitle: 'El experimento fundacional y el metaanálisis de 128 estudios', paragraphs: ['En 1971, Edward Deci reclutó a estudiantes universitarios para resolver puzzles interesantes, sin ningún tipo de recompensa. En la segunda sesión, pagó a la mitad por cada puzzle resuelto. En la tercera sesión, retiró el pago para todos. El grupo que había sido pagado pasó significativamente menos tiempo con los puzzles que antes de que existiera la recompensa. El pago no había añadido motivación: había sustituido la motivación interna por una externa, y al retirarla, la motivación no regresó a su nivel original.', 'En 1999, Deci, Koestner y Ryan publicaron el metaanálisis más exhaustivo sobre el tema: 128 estudios controlados, con más de 15.000 participantes. La conclusión fue robusta: las recompensas externas tangibles contingentes al rendimiento reducen la motivación intrínseca de forma estadísticamente significativa y replicable. El efecto es más pronunciado en tareas que implican interés, creatividad o comprensión profunda, exactamente las que importan en el trabajo del conocimiento.'] },
-        { subtitle: 'Las necesidades psicológicas básicas y el entorno que las satisface', paragraphs: ['La Teoría de la Autodeterminación (SDT) de Deci y Ryan propone que los seres humanos tienen tres necesidades psicológicas básicas cuya satisfacción predice la motivación intrínseca: autonomía (sentir que uno es el origen de sus acciones), competencia (sentir que mejora y es eficaz) y vinculación (sentir conexión genuina con las personas con quienes trabaja). Cuando las tres están satisfechas, la motivación intrínseca florece.', 'El diseño de puestos de trabajo óptimo, desde la SDT, no consiste en añadir incentivos económicos: consiste en diseñar condiciones que nutran las tres necesidades básicas. Dar autonomía en cómo se ejecuta el trabajo, crear oportunidades reales de desarrollo de competencia, y cultivar relaciones de trabajo donde las personas se sienten valoradas como personas y no solo como recursos. Este diseño predice mejor el rendimiento a largo plazo que los sistemas de incentivos económicos más elaborados.'] }
+        {
+          subtitle: 'El puzle que dejó de tener gracia al pagar por él',
+          paragraphs: [
+            'En 1971, Edward Deci puso a estudiantes universitarios a resolver un puzle de piezas que solía engancharlos, sin recompensa. En la segunda sesión pagó a la mitad un dólar por cada figura resuelta. En la tercera retiró el pago a todos y midió qué hacían en un rato libre, con revistas a mano y el puzle sobre la mesa. Los que habían cobrado dedicaron menos tiempo al puzle que antes de que existiera el dinero. El pago no había añadido ganas. Había cambiado el motivo, y al retirarlo ese motivo no volvió a su sitio.',
+            'En 1999, Deci, Koestner y Ryan reunieron 128 experimentos sobre el asunto en un metaanálisis. La conclusión fue firme: las recompensas materiales atadas al rendimiento reducen de forma sistemática la motivación intrínseca, y el efecto es mayor justo en las tareas que piden interés, creatividad o entender algo a fondo. Un matiz importante del mismo trabajo: el elogio y el reconocimiento verbal no la hunden, la refuerzan.'
+          ]
+        },
+        {
+          subtitle: 'Autonomía, competencia y vínculo',
+          paragraphs: [
+            'La teoría de la autodeterminación, de Deci y Ryan, propone tres necesidades psicológicas cuya satisfacción predice esa motivación de dentro. La autonomía es sentir que lo que haces sale de ti y no de una orden. La competencia es notar que mejoras y que lo que haces sirve para algo. El vínculo es tener relaciones de verdad con la gente con la que trabajas. Cuando las tres están cubiertas, la motivación intrínseca se sostiene sola.',
+            'Desde ahí, diseñar un buen puesto no consiste en apilar incentivos económicos, sino en montar condiciones que alimenten esas tres necesidades. Dar margen en el cómo. Crear ocasiones reales de aprender y de hacerlo bien. Cuidar que la gente se sienta tratada como gente y no como recurso. Ese diseño predice el rendimiento a largo plazo mejor que el sistema de bonus más elaborado.'
+          ]
+        },
+        {
+          subtitle: 'Por qué esto no significa que los incentivos nunca sirvan',
+          paragraphs: [
+            'El titular fácil, "los bonus no funcionan", va demasiado lejos. Para tareas simples, mecánicas o aburridas, pagar por cantidad sí suele subir la producción, y ahí no hay una motivación interna que dañar. En 1994, un metaanálisis de Cameron y Pierce llegó a conclusiones casi opuestas a las de Deci y desató una pelea académica de años; el trabajo de 1999 fue en parte la respuesta. El punto de acuerdo al que se llegó es más fino: lo que erosiona la motivación no es cualquier recompensa, sino la que la persona vive como un control sobre su conducta.',
+            'Para el trabajo del conocimiento, donde casi todo pide criterio e interés, la lectura práctica se mantiene. Un bonus previsible por resultado es un instrumento tosco, y a menudo caro, para mover a alguien que ya quería hacerlo bien.'
+          ]
+        }
       ],
-      blockquote: { text: '«Si quieres que alguien deje de disfrutar algo que ya le gusta, págale por hacerlo. El dinero convierte la actividad en trabajo, y el trabajo requiere pago para continuarse.»', attribution: 'Edward Deci' },
-      aplicacion: 'Si eres responsable de personas, revisa tu sistema de incentivos: ¿estás pagando por tareas donde ya existe motivación intrínseca? El reconocimiento no esperado (específico y centrado en el proceso, no en el resultado) preserva la motivación intrínseca mejor que el bonus predecible. Y dar más autonomía en el cómo suele mejorar el rendimiento más que cualquier incentivo económico equivalente.'
+      blockquote: { text: '«Las recompensas materiales tienden a tener un efecto sustancialmente negativo sobre la motivación intrínseca.»', attribution: 'Deci, Koestner & Ryan (1999)' },
+      aplicacion: 'Si diriges a otras personas, mira tu sistema de incentivos y pregúntate dónde estás pagando por algo que ya movía a la gente sola. El reconocimiento no anunciado, concreto y puesto en el proceso y no solo en el resultado, conserva mejor esa motivación que el bonus previsible. Y dar más autonomía en el cómo suele rendir más que un incentivo económico equivalente.'
     },
     {
       id: 'tra-06',
       title: 'El CV idéntico que recibía un 50% menos de llamadas, solo por el nombre',
-      summary: 'Casi 5.000 CVs enviados a empleos reales mostraron que los nombres percibidos como afroamericanos recibían un 50% menos de respuestas que nombres anglosajones, con méritos idénticos.',
+      summary: 'Bertrand y Mullainathan mandaron 4.870 currículums iguales a ofertas reales. Lo único que cambiaba era el nombre del candidato. Los de nombre afroamericano necesitaban un 50% más de envíos para una sola llamada.',
       sourceUrl: 'https://doi.org/10.1257/0002828042002561',
       sourceLabel: 'Bertrand & Mullainathan (2004), American Economic Review',
       badge: 'Psicología organizacional',
       author: { name: 'Marianne Bertrand', university: 'Universidad de Chicago Booth School of Business', specialty: 'Economía laboral y discriminación' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '18 de junio de 2026',
-      intro: 'En 2001, Marianne Bertrand de la Universidad de Chicago y Sendhil Mullainathan del MIT diseñaron un experimento de una sencillez engañosa: enviarían CVs idénticos a empleos reales anunciados en periódicos de Boston y Chicago, y esperarían a ver quién recibía una llamada. La única variable que cambiarían sería el nombre del candidato. Enviaron 4.870 currículums.',
+      intro: 'En 2001, Marianne Bertrand, de la Universidad de Chicago, y Sendhil Mullainathan, entonces en el MIT, mandaron 4.870 currículums a ofertas de empleo reales publicadas en periódicos de Boston y Chicago. Los CV eran los mismos. Lo único que cambiaba de un envío a otro era el nombre del candidato. Luego contaron quién recibía una llamada.',
       sections: [
         {
-          subtitle: 'El experimento: 4.870 CVs y un único cambio',
+          subtitle: '4.870 currículums y un solo cambio',
           paragraphs: [
-            'Los investigadores construyeron currículums ficticios de alta y baja calidad (con distintos niveles de experiencia, logros y formación) y los asignaron a nombres de pila con asociaciones étnicas claras. Los nombres "anglosajones" incluían Emily, Anne, Greg y Brad. Los "afroamericanos" incluían Lakisha, Tamika, Jamal y Tyrone. El mismo CV podía firmarse con cualquiera de ellos.',
-            'Los resultados fueron robustos. Un CV con nombre anglosajón necesitaba de media diez solicitudes para recibir una llamada de respuesta. El mismo CV firmado con un nombre afroamericano necesitaba quince, un 50% más de solicitudes para el mismo resultado. El gap era consistente en los dos niveles de calidad del CV, en los dos sectores analizados y en las dos ciudades. Mejorar la calidad del CV ayudaba más a los candidatos con nombres anglosajones: la brecha era más pronunciada en los CVs de alta calidad, no en los de baja.'
+            'Los investigadores prepararon currículums ficticios de dos niveles, unos más flojos y otros con más experiencia, cursos y méritos, y los firmaron con nombres de fuerte carga racial en Estados Unidos. Del lado "blanco", Emily, Anne, Greg, Brad. Del lado "afroamericano", Lakisha, Tamika, Jamal, Tyrone. El mismo CV podía salir con cualquiera de ellos.',
+            'Un currículum con nombre blanco necesitaba de media diez envíos para conseguir una llamada. El mismo currículum con nombre afroamericano necesitaba quince, un 50% más de intentos para el mismo resultado. La brecha se repetía en los dos niveles de calidad del CV, en los dos sectores y en las dos ciudades. Y mejorar el currículum ayudaba sobre todo a los candidatos con nombre blanco: entre los CV buenos la distancia era mayor. Añadir méritos apenas movía la aguja para los nombres afroamericanos.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el sesgo implícito y sus consecuencias reales',
+          subtitle: 'Un sesgo que no se nota por dentro',
           paragraphs: [
-            'Los reclutadores que aplicaban el sesgo no podían detectarlo en sí mismos porque no tenía expresión consciente. Un nombre activa en décimas de segundo una red de asociaciones automáticas (estatus socioeconómico percibido, nivel educativo esperado, compatibilidad cultural anticipada) que inclina la evaluación antes de que el reclutador lea la primera línea del currículum. No es un proceso deliberado. No requiere prejuicio consciente. El sesgo opera en la capa de procesamiento automático que actúa antes de que el pensamiento racional tenga oportunidad de intervenir.',
-            'El hallazgo más perturbador del estudio es este: los empleadores con declaraciones explícitas de no discriminación en su anuncio mostraban el mismo gap que los que no las incluían. La declaración de intención no modificaba el comportamiento. El sesgo implícito no es hipocresía: es un mecanismo cognitivo que opera por debajo de la conciencia y cuya corrección requiere intervenciones estructurales, no solo voluntad individual.'
+            'Quien descartaba esos CV no lo percibía en sí mismo porque no pasaba por la parte consciente. Un nombre dispara en décimas de segundo una red de asociaciones (nivel social que se le supone, estudios que se le esperan, encaje cultural que se anticipa) y esa red inclina la valoración antes de leer la primera línea. No hace falta prejuicio deliberado. El proceso ocurre en la capa automática, por debajo del punto donde el pensamiento racional podría entrar.',
+            'El dato más difícil de encajar del estudio es otro. Los anuncios que incluían una declaración explícita de "empleador que no discrimina" mostraban la misma brecha que los que no decían nada. La buena intención por escrito no cambiaba la conducta.'
+          ]
+        },
+        {
+          subtitle: 'Qué mide y qué no mide una llamada',
+          paragraphs: [
+            'El experimento mide llamadas para entrevista, no contrataciones ni sueldos. Un economista podría objetar que, si solo unas pocas empresas discriminan y el candidato acaba fichando en otra, el efecto sobre su carrera es menor que la brecha de llamadas. La réplica llegó con los años. Un metaanálisis de estudios de campo publicado en 2017 no encontró ninguna caída de la discriminación en la contratación de personas negras en Estados Unidos desde finales de los ochenta. El patrón que Bertrand y Mullainathan capturaron en 2001 seguía ahí veinte años después.',
+            'Con eso presente, el hallazgo se sostiene y es de los más replicados en su campo. Cambiar un nombre en la cabecera, sin tocar nada más, cambia de forma medible la probabilidad de que alguien te llame.'
           ]
         }
       ],
-      blockquote: { text: '«El nombre en la parte superior del currículum es información que el cerebro procesa antes que cualquier otra, y el sesgo que activa opera antes de que ningún criterio racional entre en juego.»', attribution: 'Marianne Bertrand & Sendhil Mullainathan' },
-      aplicacion: 'Los procesos de selección que minimizan el contacto con información irrelevante para el puesto (evaluaciones ciegas al nombre, al género y al origen antes de la primera entrevista) reducen el impacto del sesgo implícito de forma demostrada. Si participas en procesos de selección, proponer estas medidas no es solo ética: es ciencia aplicada al diseño de sistemas más precisos en la identificación del talento real.'
+      blockquote: { text: '«Los currículums con nombres asociados a personas blancas reciben un 50% más de llamadas para entrevista que los mismos currículums con nombres afroamericanos.»', attribution: 'Bertrand & Mullainathan (2004)' },
+      aplicacion: 'Los procesos que esconden el nombre, el género y el origen hasta después de la primera criba reducen de forma demostrada el peso de este sesgo. Si participas en selección, proponerlo afina la puntería del proceso: hace que se fije en lo que de verdad predice el desempeño y no en el ruido.'
     },
     {
       id: 'tra-07',
@@ -2498,27 +2916,34 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Edmondson (1999), Administrative Science Quarterly',
       badge: 'Psicología organizacional',
       author: { name: 'Amy C. Edmondson', university: 'Harvard University', specialty: 'Seguridad psicológica y aprendizaje en equipos' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Amy Edmondson había observado, en un estudio previo con equipos de enfermería, algo que le llamó la atención: en unos equipos del mismo hospital, con las mismas normas oficiales, una enfermera decía sin rodeos que los errores con la medicación se contaban siempre porque eran demasiado serios como para no hacerlo, mientras que en otro equipo, otra enfermera describía justo lo contrario, que a quien comete un error lo señalan y lo juzgan. Edmondson quiso comprobar si esa diferencia de clima, y no solo la estructura del equipo, predecía cuánto aprendían realmente los equipos de su propio trabajo.',
+      intro: 'Amy Edmondson había visto algo raro en un estudio anterior con equipos de enfermería. En unas plantas del mismo hospital, con las mismas normas escritas, una enfermera contaba que los errores de medicación se comentaban siempre porque eran demasiado serios para callarlos. En otra planta, otra enfermera describía lo contrario, que al que se equivoca lo señalan. Edmondson quiso comprobar si esa diferencia de clima, y no solo la estructura del equipo, predecía cuánto aprendía de verdad un grupo de su propio trabajo.',
       sections: [
         {
-          subtitle: 'El estudio: 51 equipos, la misma empresa, climas internos muy distintos',
+          subtitle: '51 equipos, una sola empresa, climas muy distintos',
           paragraphs: [
-            'Edmondson estudió 51 equipos de trabajo dentro de una misma empresa manufacturera, combinando cuestionarios, entrevistas y observación directa. Midió la seguridad psicológica de cada equipo (la creencia compartida de que se puede pedir ayuda, admitir un error o plantear una duda sin ser castigado ni quedar mal por ello), la confianza del equipo en su propia capacidad para hacer bien el trabajo (eficacia de equipo), y la frecuencia real con la que sus miembros pedían feedback, compartían información o hablaban de fallos abiertamente (comportamiento de aprendizaje).',
-            'El resultado principal fue claro: la seguridad psicológica predecía el comportamiento de aprendizaje del equipo con fuerza estadística, incluso controlando la eficacia del equipo. La eficacia de equipo, en cambio, dejaba de predecir el aprendizaje una vez que se tenía en cuenta la seguridad psicológica. No bastaba con que un equipo se sintiera capaz, hacía falta además que sintiera que era seguro exponer una duda o un error frente a los demás.'
+            'Edmondson estudió 51 equipos de un fabricante de mobiliario de oficina, con encuestas, entrevistas y observación directa. Midió tres cosas. La seguridad psicológica del equipo, es decir, la creencia compartida de que puedes pedir ayuda, admitir un fallo o plantear una duda sin quedar mal ni pagarlo. La confianza del equipo en su propia capacidad para hacer bien el trabajo. Y con qué frecuencia sus miembros pedían feedback, compartían información o hablaban de errores abiertamente.',
+            'El resultado principal fue nítido. La seguridad psicológica predecía ese comportamiento de aprendizaje con fuerza, incluso descontando la confianza en la propia capacidad. La confianza en la capacidad, en cambio, dejaba de predecir el aprendizaje una vez metida en la ecuación la seguridad psicológica. No bastaba con que un equipo se sintiera capaz. Hacía falta además que exponerse delante de los demás no saliera caro.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el aprendizaje exige un riesgo interpersonal que no todos los equipos permiten',
+          subtitle: 'Aprender obliga a arriesgarse delante de los demás',
           paragraphs: [
-            'Pedir ayuda, admitir un error o cuestionar cómo se está haciendo algo son, según Edmondson, actos que implican un riesgo social real: exponen a quien los hace a parecer menos competente ante sus compañeros. En un equipo con baja seguridad psicológica, ese riesgo pesa más que el beneficio de aprender, así que las personas prefieren callar y seguir como si nada. En un equipo con alta seguridad psicológica, ese mismo riesgo se percibe como aceptable, porque existe la confianza compartida de que nadie será avergonzado ni penalizado por hablar.',
-            'El análisis de Edmondson también mostró que el aprendizaje del equipo actuaba como puente entre la seguridad psicológica y el rendimiento final: los equipos con más seguridad psicológica no rendían mejor porque sí, rendían mejor porque esa seguridad les permitía aprender más de sus propios procesos y corregir el rumbo antes y con más información.'
+            'Pedir ayuda, reconocer un error o cuestionar cómo se hace algo son actos con un coste social real, porque exponen a quien los hace a parecer menos competente ante los compañeros. En un equipo con poca seguridad psicológica, ese riesgo pesa más que lo que se ganaría aprendiendo, así que la gente calla y tira para adelante. En uno con mucha, el mismo riesgo se asume, porque hay confianza compartida en que nadie va a humillarte por hablar.',
+            'El análisis de Edmondson mostró además que ese aprendizaje era el puente entre la seguridad psicológica y el rendimiento final. Los equipos más seguros no rendían más porque sí, rendían más porque podían examinar sus propios procesos, detectar fallos antes y corregir con más información encima de la mesa.'
+          ]
+        },
+        {
+          subtitle: 'Lo que la popularidad de la idea ha desdibujado',
+          paragraphs: [
+            'El estudio es de una sola empresa y de un momento concreto, sin seguimiento en el tiempo, así que la dirección de la flecha no queda cerrada del todo: los equipos que ya van bien pueden generar más seguridad, y no solo al revés. La idea se hizo famosa en 2015, cuando Google la puso en el centro de su proyecto Aristóteles sobre qué hace funcionar a un equipo, y en el camino se ha aplanado. Seguridad psicológica no es un clima blando donde no se exige nada. La propia Edmondson insiste en que, sin estándares altos al lado, se queda en zona de confort.',
+            'Con esas cautelas, la observación básica ha aguantado bien la última década. En igualdad de condiciones, los equipos donde se puede decir "me he equivocado" en voz alta aprenden más de lo que hacen.'
           ]
         }
       ],
-      blockquote: { text: '«La seguridad psicológica de equipo no es indulgencia ni ausencia de exigencia: es la confianza compartida de que el equipo no avergonzará, rechazará ni castigará a alguien por hablar.»', attribution: 'Amy C. Edmondson' },
-      aplicacion: 'Si lideras un equipo, fíjate en qué ocurre la próxima vez que alguien admita un error en una reunión. Si la respuesta es curiosidad y ayuda para corregirlo, estás reforzando la seguridad psicológica. Si es búsqueda de culpables, la estás erosionando, aunque nunca lo digas en voz alta. Según este estudio, esa reacción concreta pesa más en el aprendizaje real del equipo que cualquier política escrita sobre cultura de empresa.'
+      blockquote: { text: '«La seguridad psicológica de equipo es la creencia compartida de que el equipo es un lugar seguro para asumir riesgos entre personas.»', attribution: 'Edmondson (1999)' },
+      aplicacion: 'Si llevas un equipo, fíjate en qué pasa la próxima vez que alguien admita un error en una reunión. Si la reacción es curiosidad y ayuda para arreglarlo, estás reforzando la seguridad psicológica. Si es buscar un culpable, la estás gastando, aunque nunca lo digas en voz alta. Según este estudio, esa reacción concreta pesa más en lo que el equipo aprende que cualquier documento sobre cultura de empresa.'
     }
   ],
 
@@ -2526,212 +2951,271 @@ const LIBRARY_ARTICLES = {
     {
       id: 'pol-01',
       title: 'Por qué tus emociones votan antes que tú',
-      summary: 'Haidt demostró que los juicios morales y políticos no se forman razonando: el cerebro decide por intuición primero, y los argumentos se fabrican después para justificarlo.',
+      summary: 'Primero sientes que algo está mal. El argumento que lo justifica lo montas después, y a veces ni te sale. Haidt construyó media teoría moral sobre ese desfase.',
       sourceUrl: 'https://doi.org/10.1037/0033-295X.108.4.814',
       sourceLabel: 'Haidt (2001), Psychological Review',
       badge: 'Intuicionismo moral',
       author: { name: 'Jonathan Haidt', university: 'New York University Stern School of Business', specialty: 'Psicología Moral y Social' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: 'En 1999, Jonathan Haidt presentó a cientos de estudiantes universitarios una serie de escenarios diseñados para provocar repulsión moral sin que hubiera daño real. En uno de ellos, dos hermanos adultos que viajan solos deciden tener sexo una sola vez, de mutuo acuerdo, usando anticonceptivos, y nunca se lo cuentan a nadie. Ambos lo recuerdan como una experiencia que los unió. La pregunta era simple: ¿hicieron algo malo? La gran mayoría respondió que sí, de forma inmediata y con convicción. Cuando se les pedía que explicaran por qué, llegaban a un punto en el que se les habían agotado los argumentos, pero seguían tan convencidos como antes. A ese fenómeno Haidt lo llamó "perplejidad moral": saber que algo está mal sin poder decir por qué.',
+      intro: 'Julie y Mark son hermanos. Están de viaje por Francia, una noche se quedan solos en una cabaña y deciden acostarse juntos una vez. Ella toma la píldora, él usa preservativo. Lo disfrutan, no se lo cuentan a nadie y ninguno de los dos lo lamenta. ¿Hicieron algo malo? Casi todo el mundo responde que sí de inmediato. Y casi todo el mundo, cuando le pides que explique por qué, se queda sin munición en medio minuto: no hubo daño, no hubo víctima, nadie se enteró. El entrevistado lo admite. Y aun así no se mueve, sigue igual de seguro de que estuvo mal. Jonathan Haidt llamó a ese estado "perplejidad moral" y lo usó para discutirle el terreno a dos mil años de filosofía.',
       sections: [
         {
-          subtitle: 'El experimento del tabú inocuo y la perplejidad moral',
+          subtitle: 'El interrogatorio que se quedaba sin respuestas',
           paragraphs: [
-            'Haidt diseñó varios escenarios de "tabú inocuo": situaciones que generaban respuesta moral negativa aunque no implicaran ningún daño verificable. Además del incesto consentido, presentó otro en el que una familia cocinaba y comía a su perro tras haberle atropellado un coche, o un hombre que usaba una bandera nacional como paño de limpieza en su casa y completamente en privado. En todos los casos, los participantes emitían un juicio moral de forma casi instantánea ("esto está mal") y con alta certeza.',
-            'Lo revelador llegaba en el interrogatorio posterior. Cuando los investigadores refutaban sistemáticamente cada argumento del participante ("pero no hay víctima", "nadie lo sabe", "no hay consecuencias") los sujetos reconocían que sus argumentos eran inválidos, pero no cambiaban su juicio. Se quedaban "moralmente perplejos": sin argumentos válidos que esgrimir, pero aún completamente seguros de que el acto era moralmente reprobable. Haidt interpretó esto como evidencia de que el juicio no había surgido del razonamiento (porque el razonamiento se acababa antes) sino de una intuición emocional previa a cualquier deliberación.'
+            'La escena de Julie y Mark viene de un estudio que Haidt hizo con Fredrik Björklund y Scott Murphy alrededor del año 2000, con unos treinta estudiantes de la Universidad de Virginia. Junto al incesto sin consecuencias, usaron otra historia parecida: una mujer que corta en trozos un cadáver ya destinado a incineración y se lo cocina, sin que nadie salga perjudicado. Como control, un dilema clásico con un conflicto real de por medio, el de Heinz y la medicina que no puede pagar. La diferencia entre unos y otros era el patrón que buscaban.',
+            'Con las historias de tabú sin daño, el juicio salía rápido y no se movía. El entrevistador iba desarmando cada razón que ofrecía el participante, una por una, hasta que no quedaba ninguna en pie, y el participante seguía diciendo que aquello estaba mal. Cerca del ochenta por ciento mantenía la condena de Julie y Mark sin un solo argumento que sostuviera. A eso se referían con quedarse "moralmente perplejo": sin razones y sin dudas a la vez.',
+            'El patrón no era nuevo. En 1993, Haidt ya lo había visto con Silvia Koller y Maria Dias en un estudio a caballo entre Filadelfia y dos ciudades de Brasil, con adultos y niños de distintas clases sociales. Allí las historias eran otras: una familia que se come a su perro después de que lo atropelle un coche, alguien que usa una vieja bandera nacional cortada en trapos para limpiar el baño. La reacción de asco venía primero. Las razones llegaban después, corriendo detrás.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el perro emocional y su cola racional',
+          subtitle: 'El perro y la cola',
           paragraphs: [
-            'El modelo que Haidt propuso en 2001 invirtió el orden asumido por dos milenios de filosofía moral. La visión dominante (desde Platón hasta Kohlberg) sostenía que los juicios morales son el producto del razonamiento: primero se valoran los hechos, luego se aplican principios, y el resultado es el juicio. Haidt argumentó que el proceso es el inverso: una respuesta intuitiva rápida (emocional, automática, inconsciente) genera el juicio; el razonamiento llega después con el único propósito de justificarlo ante los demás.',
-            'La metáfora que acuñó es tan precisa que se convirtió en el título del artículo: "el perro emocional y su cola racional". El perro (la intuición) va delante y marca la dirección. La cola (el razonamiento) sigue detrás, agitándose para aparentar que conduce. El razonamiento moral, en este modelo, cumple una función primariamente social: no nos ayuda a descubrir qué es correcto, sino a convencer a los demás de que nuestra posición ya formada es correcta. Esto tiene una consecuencia directa para el debate político: si ambas partes llegan a la conversación con intuiciones ya formadas y razonamientos diseñados para defenderlas, el debate rara vez cambia opiniones. Solo lo hacen las experiencias que alteran la intuición subyacente.'
+            'El modelo que Haidt publicó en 2001 le da la vuelta a lo que se daba por hecho desde Platón hasta Kohlberg: que el juicio moral es lo que sale de razonar. Primero valoras los hechos, luego aplicas principios, y al final tienes un veredicto. Haidt sostiene que el orden real es el contrario. Una reacción intuitiva y emocional, rápida y automática, produce el veredicto. El razonamiento aparece luego, y su trabajo es sobre todo social: justificar ante los demás lo que ya has decidido.',
+            'La metáfora dio título al artículo. El perro emocional y su cola racional. El perro va delante y marca la dirección. La cola se agita detrás aparentando que conduce. Nadie conduce con la cola.',
+            'Para una discusión política esto tiene una lectura incómoda. Si las dos partes llegan con la intuición ya formada y los argumentos montados para defenderla, intercambiar argumentos casi nunca mueve a nadie. Lo que mueve es otra cosa: una experiencia que cambie cómo se siente el asunto por dentro, una relación personal que obligue a mirar distinto, un encuadre nuevo que descoloque la reacción de partida. El dato, solo, rebota.'
+          ]
+        },
+        {
+          subtitle: 'Lo que la crítica le discute',
+          paragraphs: [
+            'El estudio del interrogatorio, el que puso la palabra "dumbfounding" en circulación, nunca se publicó formalmente. Lleva más de veinte años citándose como manuscrito, con una muestra pequeña. No es un detalle menor cuando es la pata empírica más famosa del modelo.',
+            'En 2015, Edward Royzman y su equipo volvieron sobre Julie y Mark y encontraron una grieta. La mayoría de los participantes no se creía de verdad la letra pequeña de la historia. Aunque el texto dijera que no hubo consecuencias, seguían pensando por dentro que el riesgo estaba ahí: para la relación, de embarazo, de algo. Cuando se les daba una versión que sí aceptaban como inofensiva de principio a fin, buena parte de la perplejidad se deshacía. La ausencia de razones puede ser, en parte, razones que la persona tiene pero que el escenario no le deja usar, o que no sabe poner en palabras.',
+            'Un trabajo posterior de Matthew Stanley y otros, con 636 participantes, apunta en la misma dirección: cuando se hacían visibles los posibles daños, la valoración de "esto está mal" subía. Encaja mejor con un cálculo de riesgo que con pura emoción. Lo que aguanta bien es la parte del calendario, que la intuición suele llegar antes. La versión fuerte, que el razonamiento no pinta nada, está más floja. El propio Haidt admite que razonar puede cambiar un juicio, solo que poco y casi siempre a través de otras personas.'
           ]
         }
       ],
-      blockquote: { text: '«El razonamiento moral no nos lleva a conclusiones. Nos ayuda a defender las que ya habíamos alcanzado por otro camino.»', attribution: 'Jonathan Haidt' },
-      aplicacion: 'La próxima vez que debatas política, hazte esta pregunta antes de hablar: ¿sabía ya lo que iba a concluir antes de escuchar los argumentos? Si la respuesta es sí, puede que estés racionalizando una intuición, no razonando desde premisas. Los debates que sí cambian mentes no presentan mejores argumentos: presentan experiencias o perspectivas que reencuadran la intuición original.'
+      blockquote: { text: '«El razonamiento moral suele ser una construcción posterior, generada después de haber alcanzado el juicio.»', attribution: 'Haidt (2001)' },
+      aplicacion: 'En la próxima discusión política, fíjate en el orden real de tu cabeza: ¿la conclusión ya estaba antes de oír el primer argumento? Si es así, lo que viene después es defensa, no análisis. No hace falta fingir una neutralidad que no tienes, pero sí ayuda saber que el argumento del otro rara vez es lo que te va a mover, y que el tuyo rara vez le moverá a él. Lo que mueve es que cambie cómo se siente el asunto, y eso casi nunca pasa dentro de una discusión.'
     },
     {
       id: 'pol-02',
       title: 'Por qué los argumentos contrarios te convencen menos si ya tienes opinión',
-      summary: 'Las personas con mayor conocimiento político son más (no menos) resistentes a la información que contradice sus creencias. La sofisticación amplifica el sesgo, no lo reduce.',
+      summary: 'Cuanto más sabe alguien de política, mejor rebate lo que le contradice. El conocimiento no apaga el sesgo, le da herramientas más finas.',
       sourceUrl: 'https://doi.org/10.1111/j.1540-5907.2006.00214.x',
       sourceLabel: 'Taber & Lodge (2006), American Journal of Political Science',
       badge: 'Razonamiento motivado',
       author: { name: 'Charles S. Taber', university: 'Stony Brook University', specialty: 'Psicología Política y Cognición Social' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'Durante décadas, la teoría democrática asumió que el problema de la polarización política se resolvería con más educación: ciudadanos mejor informados tomarían decisiones más racionales y se mostrarían más abiertos a la evidencia. En 2006, Charles Taber y Milton Lodge demostraron en un experimento controlado que lo opuesto es cierto: cuanto más sofisticado políticamente es alguien, más eficaz es su cerebro para rechazar la información que amenaza sus creencias. El conocimiento no reduce el sesgo; le proporciona munición.',
+      intro: 'Durante décadas se dio por hecho que la polarización se cura con información. Ciudadanos mejor informados, decisiones más frías, más apertura a la evidencia. En 2006, Charles Taber y Milton Lodge pusieron esa idea en el laboratorio y encontraron lo contrario. Cuanto más sabía de política un participante, más eficaz era su cabeza rechazando lo que amenazaba sus creencias. El conocimiento no apagaba el sesgo. Lo armaba.',
       sections: [
         {
-          subtitle: 'El experimento: cómo procesa la información política el cerebro comprometido',
+          subtitle: 'Dos temas calientes y un cronómetro',
           paragraphs: [
-            'Taber y Lodge reclutaron 130 participantes con distintos niveles de conocimiento político y diferentes posiciones sobre acción afirmativa y control de armas, dos temas con fuerte carga ideológica en el contexto estadounidense. Se les presentaron argumentos reales a favor y en contra de cada posición, y debían leerlos y evaluarlos mientras los investigadores registraban el tiempo de lectura y las notas de valoración de cada argumento.',
-            'Los resultados mostraron dos sesgos sistemáticos. El primero fue el "efecto de actitud previa": antes de leer cualquier argumento, la mera mención del tema político activaba automáticamente una respuesta afectiva (positiva o negativa) que condicionaba la evaluación subsiguiente. El segundo, y más sorprendente, fue el "sesgo de desconfirmación": los participantes dedicaban significativamente más tiempo a leer los argumentos que contradecían su posición, no para asimilarlos, sino para encontrar sus fallos. Y cuanto mayor era el conocimiento político del participante, más eficaz era en esa búsqueda de defectos. El efecto se invirtió respecto a lo esperado: la sofisticación amplificaba el sesgo.'
+            'En dos experimentos con estudiantes de la Universidad de Stony Brook, Taber y Lodge trabajaron con dos asuntos de fuerte carga ideológica en Estados Unidos: la discriminación positiva y el control de armas. Cada participante declaraba primero su postura, luego leía una tanda de argumentos reales a favor y en contra, y puntuaba la solidez de cada uno. Mientras tanto, el ordenador registraba cuánto tiempo pasaba en cada argumento.',
+            'Aparecieron dos sesgos limpios. El primero, el efecto de actitud previa: con solo nombrar el tema, antes de leer nada, se disparaba una reacción afectiva que teñía todo lo que venía después. Los argumentos afines se puntuaban como más sólidos, los contrarios como más flojos. El segundo, más llamativo: el sesgo de desconfirmación. Los participantes dedicaban bastante más tiempo a los argumentos que les contradecían, y no para asimilarlos, sino para desmontarlos. Cuanto más sabía de política el participante, mejor encontraba los fallos.',
+            'El resultado neto es el que no se esperaba. Tras leer una tanda equilibrada de argumentos a favor y en contra, las actitudes no se acercaban al centro: se volvían más extremas. Y el desplazamiento era mayor justo en quienes llegaban con las convicciones más firmes y más bagaje político.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el cerebro político como abogado defensor',
+          subtitle: 'El ciudadano informado, de juez a abogado',
           paragraphs: [
-            'Taber y Lodge distinguen dos componentes del razonamiento motivado aplicado a la política. El primero es el sesgo de confirmación: tendemos activamente a buscar información que confirme lo que ya creemos. El segundo es el sesgo de desconfirmación: cuando nos exponemos a información contraria, la escrutamos con un estándar más exigente, buscamos inconsistencias internas, cuestionamos la fiabilidad de las fuentes, y generamos contraargumentos de forma automática. La persona con más conocimiento político dispone de un arsenal más rico de contraargumentos, lo que la hace más hábil en desestimar evidencia incómoda.',
-            'La paradoja del ciudadano informado, como la llaman los autores, tiene consecuencias relevantes para el debate público: aumentar la disponibilidad de información política no produce, por sí solo, ciudadanos más racionales ni debates más productivos. Los mecanismos de búsqueda de información están contaminados desde el origen por las actitudes previas. El antídoto que la investigación sugiere no es "más información", sino desarrollar conciencia metacognitiva sobre cuándo uno está actuando como juez (buscando la verdad) y cuándo como abogado (buscando argumentos para una causa ya elegida). Esa distinción, aunque simple, rara vez se enseña.'
+            'Taber y Lodge separan dos piezas del razonamiento motivado. Una es el sesgo de confirmación: buscar activamente lo que da la razón a lo que ya se piensa. La otra es el de desconfirmación: cuando llega información contraria, se la somete a un examen más duro, se rastrean incoherencias, se pone en duda la fuente, se generan contraargumentos casi sin querer. Quien más sabe de política tiene un arsenal más grande de contraargumentos, así que es más hábil descartando lo que le incomoda.',
+            'De ahí la paradoja del ciudadano informado. Poner más información encima de la mesa no produce por sí solo ciudadanos más templados ni debates más útiles, porque la manera de buscar y filtrar esa información ya viene contaminada de origen. Lo que los autores sugieren no es leer más, sino algo más raro de enseñar: notar cuándo estás actuando como juez, buscando qué es verdad, y cuándo como abogado, buscando munición para una causa que ya elegiste.'
+          ]
+        },
+        {
+          subtitle: 'Cuánto de esto ha aguantado',
+          paragraphs: [
+            'El estudio son dos temas, un país y una tarea de laboratorio con universitarios. Generalizar tiene límites. Y la afirmación más fuerte del artículo, que exponerse a argumentos contrarios puede empujar la actitud hacia el extremo, ha envejecido regular.',
+            'En 2019, Thomas Wood y Ethan Porter publicaron cinco experimentos con más de diez mil participantes, corrigiendo bulos políticos de todo tipo. No encontraron el famoso "efecto tiro por la culata": la gente, en su mayoría, ajustaba su creencia hacia el dato, incluso cuando el dato le incomodaba. El hallazgo original que popularizó la idea de que corregir refuerza el error no se sostuvo a gran escala.',
+            'Lo que sí replica bien es la parte central de Taber y Lodge: el efecto de actitud previa y el examen asimétrico, mirar con lupa lo contrario y de refilón lo afín. La pieza en duda es si esa asimetría te vuelve más extremo de forma habitual o si solo frena lo rápido que cambias de opinión.'
           ]
         }
       ],
-      blockquote: { text: '«El conocimiento político no hace a las personas más abiertas a la evidencia contraria. Les da mejores herramientas para descartarla.»', attribution: 'Charles S. Taber' },
-      aplicacion: 'Antes de rechazar un argumento político con el que no estás de acuerdo, hazte esta pregunta: ¿buscarías los mismos defectos si el argumento apoyara tu posición? Si la respuesta es no, estás aplicando un estándar doble. La heurística más eficaz contra el razonamiento motivado no es leer más: es intentar formular la versión más sólida posible del argumento contrario antes de refutarlo.'
+      blockquote: { text: '«Los sesgos de confirmación y desconfirmación conducen a la polarización de actitudes, sobre todo entre quienes tienen las convicciones más firmes y mayor sofisticación política.»', attribution: 'Taber & Lodge (2006)' },
+      aplicacion: 'Antes de tumbar un argumento político que no te gusta, prueba esto: ¿buscarías los mismos fallos si defendiera tu postura? Si la respuesta es no, estás usando dos varas de medir, y la distancia entre ambas es el tamaño de tu sesgo en ese tema. La táctica útil no es leer más, es obligarte a formular la versión más fuerte posible del argumento contrario antes de responder. Cuesta y no apetece, por eso casi nadie lo hace.'
     },
     {
       id: 'pol-03',
       title: 'La polarización que no es ideológica: por qué nos caemos mal aunque pensemos parecido',
-      summary: 'Stanford midió 40 años de datos electorales y encontró que la antipatía entre partidos creció mucho más que las diferencias ideológicas reales. La guerra política es más tribal que doctrinal.',
+      summary: 'Iyengar juntó tres décadas de encuestas y encontró que la antipatía entre partidos creció el doble que la distancia real entre sus ideas.',
       sourceUrl: 'https://doi.org/10.1093/poq/nfs038',
       sourceLabel: 'Iyengar, Sood & Lelkes (2012), Public Opinion Quarterly',
       badge: 'Polarización afectiva',
       author: { name: 'Shanto Iyengar', university: 'Stanford University', specialty: 'Psicología Política y Comunicación' },
-      readingTime: '4 min',
+      readingTime: '6 min',
       date: '19 de mayo de 2026',
-      intro: 'Si le preguntas a un demócrata típico cuántos republicanos son "extremistas", te dirá que alrededor del 70%. Si le preguntas a un republicano lo mismo sobre los demócratas, obtendrás una cifra similar. La realidad, medida en encuestas con muestras representativas, es que esos extremistas no llegan al 30% en ninguno de los dos grupos. Pero la percepción distorsionada importa tanto como la realidad: cuando crees que el otro bando es más radical de lo que es, tu hostilidad hacia él se calibra sobre esa percepción, no sobre los hechos. Iyengar y sus colegas de Stanford pasaron cuatro décadas midiendo cómo esta hostilidad (independientemente de su justificación ideológica) no ha parado de crecer.',
+      intro: 'Pregunta a un votante demócrata qué siente por el Partido Republicano, y a uno republicano qué siente por el Demócrata. Desde finales de los años setenta, la Encuesta Electoral Nacional de Estados Unidos hace exactamente eso con un termómetro de 0 a 100. Shanto Iyengar y dos colegas de Stanford juntaron esas respuestas a lo largo de tres décadas y encontraron un patrón que no se ha detenido: los estadounidenses no discrepan mucho más que antes en política, pero se caen bastante peor.',
       sections: [
         {
-          subtitle: 'Cuarenta años de termómetro afectivo: los datos de Stanford',
+          subtitle: 'Tres décadas de termómetro',
           paragraphs: [
-            'Iyengar, Sood y Lelkes analizaron datos de los American National Election Studies desde 1972 hasta 2012, una fuente que incluye miles de entrevistas representativas cada dos años. Utilizaron una medida clásica de psicología política llamada "termómetro de sentimientos": se pide al encuestado que evalúe su temperatura emocional hacia distintos grupos políticos en una escala de 0 (hostilidad máxima) a 100 (máxima simpatía). La diferencia entre la temperatura promedio que los demócratas asignan a otros demócratas y la que asignan a los republicanos (y viceversa) mide la "polarización afectiva".',
-            'El resultado fue llamativo. Durante los años 70, la diferencia promedio entre in-group y out-group era de unos 23 puntos. Para 2012, había crecido hasta 40 puntos. En paralelo, el análisis de las posiciones declaradas sobre políticas concretas (impuestos, sanidad, inmigración) mostró un crecimiento mucho más modesto en la distancia ideológica real. El gap emocional entre partidos creció casi el doble que el gap de posiciones. La conclusión central del estudio: los americanos no se han vuelto más polarizados en sus ideas; se han vuelto más polarizados en su antipatía mutua.'
+            'La medida es sencilla. Al encuestado se le pide que ponga su "temperatura" emocional hacia un grupo político en una escala de 0, frío y hostil, a 100, cálido y favorable. La distancia entre la nota que alguien le pone a su propio partido y la que le pone al contrario es lo que Iyengar y sus colegas llaman polarización afectiva. Analizaron esa diferencia desde finales de los setenta hasta 2008, con miles de entrevistas representativas cada dos años.',
+            'A finales de los setenta, la brecha media rondaba los veinte puntos. Para 2008 se acercaba a los cuarenta. En paralelo, midieron la distancia en posiciones declaradas sobre asuntos concretos, impuestos, sanidad, inmigración, y ahí el crecimiento fue mucho más modesto. El hueco emocional entre partidos se ensanchó casi al doble de velocidad que el hueco de ideas. La lectura de los autores: los estadounidenses no se han vuelto tan distintos en lo que piensan, se han vuelto mucho más hostiles con quien piensa distinto.'
           ]
         },
         {
-          subtitle: 'El mecanismo: cuando el partido se convierte en identidad social',
+          subtitle: 'Cuando el partido pasa a ser identidad',
           paragraphs: [
-            'Iyengar y sus colegas interpretaron este patrón desde la teoría de la identidad social de Tajfel y Turner: las personas definen parte de su autoconcepto a través de los grupos a los que pertenecen, y esa pertenencia activa automáticamente el favoritismo hacia el in-group y la desconfianza hacia el out-group, independientemente de los contenidos ideológicos del grupo. Cuando la afiliación partidista se convierte en una identidad central (comparable en importancia a la religión o la etnia en generaciones anteriores) la hostilidad hacia el otro partido deja de necesitar justificación ideológica: es simplemente la respuesta natural a quienes no son "como nosotros".',
-            'Las consecuencias prácticas son profundas. Los autores documentaron que la afiliación política afecta cada vez más la elección de barrio, de pareja, de amistades y de empleados: en 2010, el 49% de los republicanos y el 33% de los demócratas declararían sentirse "disgustados" si su hijo se casara con alguien del partido contrario, frente a valores inferiores al 10% medidos en 1960. La polarización no es solo una cuestión de qué pensamos sobre políticas: es una reconfiguración de a quién consideramos "nuestros".'
+            'Iyengar interpreta el patrón con la teoría de la identidad social de Tajfel y Turner. Definimos parte de quiénes somos a través de los grupos a los que pertenecemos, y esa pertenencia enciende sola el favoritismo hacia los de dentro y la desconfianza hacia los de fuera, casi sin importar en qué se distinga el grupo. Cuando ser de un partido se vuelve una identidad central, comparable a la religión o al origen en otras generaciones, la antipatía hacia el otro partido deja de necesitar coartada ideológica. Es la reacción por defecto ante quien no es de los nuestros.',
+            'El desbordamiento se ve fuera de la política. La afiliación pesa cada vez más en con quién te juntas, dónde vives, a quién contratas y con quién se casan tus hijos. En 1960, menos del 5% de republicanos y demócratas decía que le disgustaría que su hijo se casara con alguien del partido rival. En 2010, la cifra era del 49% entre republicanos y del 33% entre demócratas. En un trabajo posterior, Iyengar y Westwood (2015) midieron que el sesgo implícito y en la conducta a favor del propio partido igualaba o superaba al medido por raza en varias tareas.'
+          ]
+        },
+        {
+          subtitle: 'La otra lectura',
+          paragraphs: [
+            'No todo el mundo acepta la mitad de "las ideas no se han movido". Alan Abramowitz y otros sostienen que los partidos sí se han separado ideológicamente desde los setenta, que los votantes se han ordenado, los liberales en uno, los conservadores en otro, y que entre la gente más implicada en política las posiciones sí divergen de verdad. Polarización afectiva e ideológica podrían estar alimentándose la una a la otra en vez de competir.',
+            'El patrón, además, es más nítido en un sistema de dos partidos. En democracias con muchos partidos aparece más débil o más enredado. Y hay discusión sobre qué mide el termómetro exactamente: rechazo real, o solo la disposición a poner un número bajo a una etiqueta que cae mal.',
+            'Lo que aguanta por encima de la disputa es esto: por casi cualquier medida, los estadounidenses declaran mucha más hostilidad hacia el otro bando que hace cuarenta años, y esa hostilidad se ha colado en decisiones que no tienen nada que ver con la política.'
           ]
         }
       ],
-      blockquote: { text: '«Los americanos no se han vuelto más distintos en sus ideas políticas. Se han vuelto más distintos en cuánto se desagradan mutuamente.»', attribution: 'Shanto Iyengar' },
-      aplicacion: 'Cuando sientas rechazo hacia alguien por su posición política, hazte esta pregunta: ¿estás reaccionando a sus ideas concretas o a la señal de tribu que representan? La distinción importa porque solo la primera tiene solución a través del diálogo. Reducir el contacto con el "termómetro afectivo" propio (qué tan caliente o frío te sientes hacia el grupo contrario) es el primer paso para evitar que la identidad tribal reemplace al juicio.'
+      blockquote: { text: '«La distancia entre los partidarios de cada partido es más afectiva que ideológica.»', attribution: 'Iyengar, Sood & Lelkes (2012)' },
+      aplicacion: 'Cuando notes rechazo hacia alguien por su política, separa dos cosas: ¿reaccionas a lo que defiende, punto por punto, o a la etiqueta de bando que lleva encima? Solo la primera tiene arreglo hablando. La segunda es identidad de tribu, y ahí el diálogo no llega. Fijarte en cuál de las dos se te ha activado es lo más parecido a un freno que tienes a mano.'
     },
     {
       id: 'pol-04',
       title: 'Tu personalidad predice tu voto mejor que tus argumentos',
-      summary: 'La apertura a la experiencia y la escrupulosidad del modelo de los Cinco Grandes predicen la orientación política de forma robusta, incluso a través de diferentes culturas e idiomas.',
+      summary: 'Evaluadores que solo vieron los dormitorios de unos estudiantes, sin hablar con ellos, acertaron su orientación política por encima del azar. El orden y los libros hablaban.',
       sourceUrl: 'https://doi.org/10.1111/j.1467-9221.2008.00668.x',
       sourceLabel: 'Carney, Jost, Gosling & Potter (2008), Political Psychology',
       badge: 'Personalidad y política',
       author: { name: 'John T. Jost', university: 'New York University', specialty: 'Psicología Social y Política' },
-      readingTime: '3 min',
+      readingTime: '6 min',
       date: '12 de mayo de 2026',
-      intro: 'Si entras en el dormitorio de alguien sin saber nada sobre sus opiniones políticas, puedes predecir su orientación ideológica con una precisión significativamente mejor que el azar solo mirando sus estanterías, el orden de su espacio y los objetos que ha elegido exponer. Eso es lo que Dana Carney, John Jost y sus colegas demostraron en 2008, y lo que hace del estudio uno de los más citados de la psicología política de las dos últimas décadas: la política no empieza en los argumentos; empieza en la personalidad.',
+      intro: 'Entra en el cuarto de alguien a quien no conoces. Sin preguntarle nada, solo mirando las estanterías, cómo tiene ordenado el espacio y qué ha elegido dejar a la vista, puedes acertar si vota a la izquierda o a la derecha por encima de lo que daría el azar. Es lo que midieron Dana Carney, John Jost, Samuel Gosling y Jeff Potter en 2008, y de ahí sale una idea que el estudio deja bastante clara: buena parte de la política no empieza en los argumentos, empieza en el carácter.',
       sections: [
         {
-          subtitle: 'El experimento: qué revela tu habitación sobre tu voto',
+          subtitle: 'Qué había en 76 dormitorios',
           paragraphs: [
-            'Carney y su equipo reclutaron a estudiantes universitarios en Estados Unidos y Canadá. Primero midieron su orientación política con escalas estándar y sus rasgos de personalidad con el NEO-PI-R, el cuestionario más validado del modelo de los Cinco Grandes. Después, enviaron evaluadores que inspeccionaban los dormitorios de los participantes sin saber nada de su política y registraban sistemáticamente qué objetos contenían: libros y su variedad temática, música, fotografías, artículos de limpieza y organización, decoración, artículos deportivos, elementos identitarios como banderas.',
-            'Los patrones fueron claros y replicables. Los espacios de los participantes con orientación liberal contenían más libros (y de mayor variedad temática), más obras de arte, más artículos vinculados a viajes y otras culturas, y un mayor nivel de desorden funcional. Los espacios de los conservadores estaban más organizados, contenían más material de limpieza, más artículos deportivos y más elementos identitarios. Más relevante aún: estas diferencias espaciales correlacionaban directamente con los rasgos de personalidad. Apertura a la experiencia predecía orientación liberal con un coeficiente de correlación de en torno a .40. Escrupulosidad (en especial la subfaceta de orden) predecía orientación conservadora con fuerza comparable.'
+            'El artículo reúne seis muestras, casi todas estadounidenses: estudiantes de la Universidad de Texas y una gran muestra por internet del proyecto de Gosling y Potter. La personalidad se midió con varios cuestionarios del modelo de los Cinco Grandes, desde el NEO-PI-R largo hasta versiones más breves. La orientación política, con escalas estándar de autoubicación.',
+            'La parte más citada es un estudio con 76 dormitorios y 68 despachos. Evaluadores que no sabían nada de la política de cada persona recorrían el espacio con una plantilla y anotaban qué había: variedad de libros, música, mapas, entradas de cine, material de arte, calendarios de eventos, artículos de limpieza, plancha, decoración deportiva, banderas. Los espacios de la gente más de izquierdas tenían más libros y más variados, más objetos ligados a viajes y otras culturas, más material artístico y un desorden más funcional. Los de la gente más de derechas estaban más ordenados y limpios, con más calendarios, plancha, símbolos deportivos y elementos identitarios.',
+            'Esas diferencias en las cosas encajaban con las diferencias de personalidad. En el conjunto de las seis muestras, la apertura a la experiencia se asociaba a la orientación de izquierdas con una correlación en torno a 0,25. La escrupulosidad se asociaba a la de derechas de forma más débil, alrededor de 0,07, y no siempre significativa. El vínculo era más fuerte en los temas sociales y culturales que en los económicos.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la ideología como función psicológica',
+          subtitle: 'La ideología como algo que encaja con el carácter',
           paragraphs: [
-            'Jost ha articulado durante dos décadas una teoría que denomina "cognición social motivada": las personas adoptan ideologías políticas que satisfacen necesidades psicológicas básicas. La apertura a la experiencia (comodidad con la ambigüedad, la novedad y la complejidad) hace a las personas más receptivas a cambios sociales, diversidad y políticas que amplían el espacio de lo posible. La escrupulosidad y la necesidad de orden hacen a las personas más receptivas a instituciones estables, normas claras y políticas que preservan estructuras conocidas. En ambos casos, la ideología no es solo un conjunto de posiciones sobre temas concretos: es un sistema coherente con la arquitectura de la personalidad.',
-            'Esto no implica determinismo ni superioridad de ninguna orientación. La apertura y la escrupulosidad son rasgos adaptativos en distintos contextos, y la distribución de orientaciones en una sociedad puede interpretarse como una división funcional del trabajo entre personas que valoran el cambio y personas que valoran la estabilidad. Lo que sí implica, con fuerza, es que cambiar la opinión política de alguien mediante argumentos tiene un límite: los argumentos operan en la superficie de creencias que están enraizadas en la personalidad. La persuasión política eficaz no ataca las posiciones; reencuadra los valores subyacentes.'
+            'Jost lleva dos décadas defendiendo una idea que llama cognición social motivada: adoptamos posiciones políticas que resuelven necesidades psicológicas. La apertura a la experiencia, que es comodidad con lo ambiguo, lo nuevo y lo complejo, empuja a mirar con mejores ojos el cambio social, la diversidad y las políticas que amplían lo posible. La escrupulosidad y la preferencia por el orden empujan hacia instituciones estables, normas claras y lo conocido. En ese marco, la ideología no es solo una lista de posturas sobre asuntos concretos, es algo coherente con cómo está montada la persona.',
+            'Esto no dice que una orientación sea mejor que otra ni que el voto esté escrito en los genes. Apertura y escrupulosidad son rasgos útiles en contextos distintos. Lo que sí sugiere es que convencer a alguien solo con argumentos tiene un techo: el argumento se mueve en la superficie de creencias que tienen raíz en el carácter. La persuasión que funciona no ataca la postura, mueve el valor que hay debajo.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega el dato',
+          paragraphs: [
+            'El efecto es real y se ha repetido en muchas muestras y en varios países, pero es modesto. Una correlación de 0,25 explica una parte pequeña de la varianza. Sirve para acertar por encima del azar mirando una habitación, no para adivinar el voto de una persona concreta. El título de este artículo exagera un punto: la personalidad no aplasta a los argumentos, los precede.',
+            'La dirección de la causa tampoco está cerrada. Los estudios con gemelos apuntan a factores heredados compartidos que empujan a la vez rasgo e ideología. Los seguimientos a lo largo de años sugieren que la personalidad es bastante estable y suele ir por delante de las actitudes políticas, con algún efecto de vuelta: el ambiente político y ciertas experiencias también moldean un poco el rasgo.',
+            'Y el modelo de Jost, el que liga el conservadurismo a la sensibilidad ante la amenaza y la incertidumbre, ha recibido críticas serias. Fuera de Estados Unidos y en el terreno del conservadurismo económico, las asociaciones aparecen más flojas y más dependientes del contexto de lo que daba a entender la primera oleada de estudios.'
           ]
         }
       ],
-      blockquote: { text: '«La ideología política es, en gran medida, la personalidad aplicada a la organización de la sociedad.»', attribution: 'John T. Jost' },
-      aplicacion: 'Si quieres entender por qué alguien tiene las opiniones políticas que tiene (incluidas las tuyas), pregúntate primero qué necesidades psicológicas satisfacen esas opiniones: ¿necesidad de orden y predictibilidad, o de apertura y cambio? Esa pregunta llega más lejos que analizar los argumentos, porque los argumentos son la punta del iceberg.'
+      blockquote: { text: '«Dos rasgos, la apertura a la experiencia y la escrupulosidad, resumen buena parte de las diferencias individuales asociadas a la orientación política.»', attribution: 'Carney, Jost, Gosling & Potter (2008)' },
+      aplicacion: 'Para entender por qué alguien piensa como piensa en política, incluido tú, prueba a mirar antes qué necesidad cubre esa postura: ¿orden y cosas predecibles, o novedad y cambio? Esa pregunta llega más lejos que rebatir los argumentos uno a uno. Y como el rasgo es una tendencia, no una condena, tampoco explica a la persona entera: hay gente muy ordenada de izquierdas y gente muy abierta de derechas, solo que menos.'
     },
     {
       id: 'pol-05',
       title: 'El problema de matemáticas que la gente fallaba solo cuando la respuesta no le convenía',
-      summary: 'Ante el mismo problema estadístico, las personas con más habilidad numérica lo resolvían mejor si trataba sobre una crema para la piel, y peor si trataba sobre control de armas y el resultado correcto contradecía su ideología.',
+      summary: 'La misma tabla de números. Con la etiqueta de una crema, los más hábiles con las cifras acertaban. Con la etiqueta de control de armas, fallaban si el resultado les incomodaba.',
       sourceUrl: 'https://doi.org/10.1017/bpp.2016.2',
       sourceLabel: 'Kahan, Peters, Dawson & Slovic (2013/2017), Behavioural Public Policy',
       badge: 'Cognición motivada',
       author: { name: 'Dan M. Kahan', university: 'Yale University', specialty: 'Cognición cultural y percepción de riesgo' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Dan Kahan y su equipo querían responder a una pregunta incómoda: cuando alguien interpreta mal un dato político, ¿es porque no sabe suficiente matemática, o porque sabe la matemática perfectamente pero la aplica de forma distinta según lo que ese dato implica para sus creencias? Para separar ambas hipótesis, diseñaron un problema estadístico idéntico en su estructura numérica pero con dos versiones de contenido.',
+      intro: 'Cuando alguien interpreta mal un dato político, la explicación fácil es que le faltan matemáticas. Dan Kahan y su equipo sospechaban otra cosa: que la persona sabe la matemática de sobra y la aplica distinto según lo que el resultado signifique para sus creencias. Para separar las dos hipótesis, montaron un problema estadístico con la misma estructura numérica y dos disfraces.',
       sections: [
         {
-          subtitle: 'El experimento: la misma tabla de números, dos etiquetas distintas',
+          subtitle: 'La misma tabla, dos etiquetas',
           paragraphs: [
-            'A los participantes se les presentaba una tabla de resultados de un supuesto estudio, con datos numéricos deliberadamente ambiguos que requerían un razonamiento estadístico algo más sofisticado que la simple comparación de totales. En una versión, la tabla describía la eficacia de una crema para el sarpullido cutáneo, un tema sin ninguna carga política. En otra versión, con exactamente los mismos números reorganizados, la tabla describía si prohibir portar armas de fuego en público reducía o aumentaba la delincuencia.',
-            'Con la crema para la piel, cuanta más habilidad numérica tenía el participante, mejor resolvía el problema, sin relación con su ideología. Con las armas, el patrón cambió por completo: los participantes con más habilidad numérica resolvían mejor el problema solo cuando el resultado correcto coincidía con lo que su ideología política predecía, y peor cuando el resultado correcto la contradecía. La habilidad numérica, en vez de corregir el sesgo, lo amplificaba.'
+            'Participaron 1.111 adultos estadounidenses. A cada uno se le daba una tabla de resultados de un supuesto estudio, con cuatro casillas de números elegidas para que la comparación intuitiva, mirar solo qué cifra es mayor, diera la respuesta equivocada. Para acertar había que comparar proporciones, no totales. En una versión, la tabla iba sobre una crema para un sarpullido: mejora o empeora. En otra, con los mismos números recolocados, iba sobre si prohibir llevar armas en público subía o bajaba la delincuencia. Y esa segunda tenía dos variantes repartidas al azar: en una, la respuesta correcta era que la prohibición reduce el crimen; en la otra, que lo aumenta.',
+            'Con la crema, el patrón fue el esperado: cuanta más soltura numérica, más aciertos, sin que la ideología pintara nada. Entre los mejores con los números, acertaba en torno a tres de cada cuatro. Con las armas, todo se torció. Los aciertos bajaban y se repartían según la conveniencia: cada bando resolvía mejor la variante cuya respuesta correcta le daba la razón y peor la que se la quitaba. Y la distancia entre bandos no se estrechaba entre los más hábiles con las cifras. Se ensanchaba.'
           ]
         },
         {
-          subtitle: 'El mecanismo: usar la inteligencia para defender, no para descubrir',
+          subtitle: 'Usar la cabeza para defender, no para averiguar',
           paragraphs: [
-            'Kahan llama a este fenómeno "numeracidad motivada": la misma capacidad analítica que debería servir para interpretar datos con más precisión se pone, en contextos con carga identitaria, al servicio de defender la conclusión que ya se prefería de antemano. No es que las personas más hábiles con los números dejen de razonar bien. Es que razonan igual de bien en ambas direcciones, según convenga, y solo se detienen a escrutar con rigor los datos que amenazan su posición.',
-            'La implicación es incómoda para cualquier estrategia de comunicación basada solo en "explicar mejor los datos": si el problema no es la falta de capacidad analítica, más gráficos y más estadísticas no van a resolverlo por sí solos. El sesgo no vive en la falta de herramientas cognitivas. Vive en para qué se usan esas herramientas cuando la conclusión ya importa desde antes de mirar los números.'
+            'Kahan lo llama numeracidad motivada. La misma capacidad que debería afinar la lectura de los datos se pone, cuando el tema toca la identidad, al servicio de la conclusión que ya se prefería. No es que la gente lista con los números deje de razonar bien. Razona bien en las dos direcciones, según convenga, y solo frena a mirar con lupa los datos que le molestan.',
+            'La consecuencia incomoda a cualquier plan de comunicación que se resuma en "expliquemos mejor las cifras". Si el problema no fuera la falta de capacidad analítica, más gráficos y más estadística no lo arreglan solos. El sesgo no vive en la falta de herramientas. Vive en para qué se usan cuando la conclusión ya pesa antes de mirar la tabla.'
+          ]
+        },
+        {
+          subtitle: 'Qué se le discute',
+          paragraphs: [
+            'El patrón básico se ha repetido, también con otros temas cargados. Lo que sigue en debate es la lectura. Kahan lo cuenta como protección de la identidad, pero hay quien lo explica de forma menos dramática: cada persona llega con creencias previas distintas sobre las armas y razona a partir de ellas, lo cual, visto de cerca, se parece bastante a actualizar de forma normal, no a una avería mental.',
+            'La tarea, además, es artificial. Una tabla falsa, sin nada en juego, con una trampa conocida donde la respuesta intuitiva es la mala. Puede exagerar cada cuánto pasa esto con datos reales presentados sin truco. Y "informar mejor no sirve" no se sostiene entero: corregir bulos con datos sí mueve a la gente en otros experimentos.',
+            'Lo que aguanta es la parte concreta: en asuntos que tocan la pertenencia, tener más soltura numérica no garantiza una lectura menos sesgada de los datos, y a veces la sesga más.'
           ]
         }
       ],
-      blockquote: { text: '«Las personas no usan su capacidad de razonamiento cuantitativo para llegar a la verdad. La usan para llegar a la conclusión que su grupo espera de ellas.»', attribution: 'Dan M. Kahan' },
-      aplicacion: 'Antes de aceptar o rechazar un dato estadístico sobre un tema políticamente cargado, pregúntate cómo lo evaluarías si el mismo número apoyara la posición contraria a la tuya. Si notas que aplicarías un estándar de rigor distinto, esa diferencia es la medida exacta de cuánto está pesando la conveniencia ideológica sobre el análisis real de los datos.'
+      blockquote: { text: '«Los sujetos con más soltura numérica usaron su capacidad de razonamiento cuantitativo de forma selectiva, para ajustar la interpretación de los datos al resultado más afín a su posición política.»', attribution: 'Kahan, Peters, Dawson & Slovic (2017)' },
+      aplicacion: 'Ante un dato estadístico sobre un tema político, prueba a preguntarte cómo lo mirarías si el mismo número apoyara la postura contraria a la tuya. Si notas que le pedirías más pruebas, o que buscarías el fallo con más ganas, esa diferencia es la medida de cuánto pesa la conveniencia en tu lectura. No se quita del todo, pero notarla ya cambia algo.'
     },
     {
       id: 'pol-06',
       title: 'Por qué debatir solo con quien piensa como tú te vuelve más extremo, no más moderado',
-      summary: 'Grupos de estudiantes con actitudes raciales parecidas discutieron entre sí y, después de hablar, la distancia entre los grupos más prejuiciosos y los menos prejuiciosos había aumentado, no disminuido.',
+      summary: 'Estudiantes con actitudes parecidas discutieron entre ellos. Al terminar, la distancia entre el grupo más prejuicioso y el menos prejuicioso había crecido, no menguado.',
       sourceUrl: 'https://doi.org/10.1126/science.169.3947.778',
       sourceLabel: 'Myers & Bishop (1970), Science',
       badge: 'Polarización de grupo',
       author: { name: 'David G. Myers', university: 'Hope College', specialty: 'Psicología social y dinámica de grupos' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'David Myers y George Bishop querían comprobar una intuición extendida sobre el debate: que hablar con otros suaviza las posturas y acerca a las personas hacia un término medio razonable. Para comprobarlo, formaron grupos de estudiantes de instituto con actitudes raciales previamente medidas y agruparon a cada estudiante solo con otros de opiniones similares a las suyas, ya fueran de alto o de bajo prejuicio.',
+      intro: 'Hay una idea muy extendida sobre el debate: que hablar las cosas lima las posturas y acerca a la gente a un punto medio sensato. David Myers y George Bishop la pusieron a prueba en 1970 con estudiantes de instituto. Midieron sus actitudes raciales, los ordenaron por prejuicio alto, medio o bajo, y montaron grupos en los que cada uno discutía solo con otros que pensaban parecido.',
       sections: [
         {
-          subtitle: 'El experimento: hablar solo con los que ya piensan como tú',
+          subtitle: 'Hablar solo con los que ya piensan como tú',
           paragraphs: [
-            'Antes de la discusión, cada estudiante respondía individualmente a una serie de afirmaciones sobre actitudes raciales. Después, los grupos (compuestos únicamente por personas con actitudes similares entre sí) discutían esas mismas afirmaciones durante un tiempo. Al terminar, cada estudiante volvía a responder individualmente al mismo cuestionario. Un grupo de control discutía temas sin ninguna relación con actitudes raciales antes de repetir la medición.',
-            'El resultado fue claro: la discusión entre personas de actitudes parecidas amplió la distancia entre el grupo de mayor prejuicio y el de menor prejuicio. Los estudiantes de alto prejuicio terminaron la discusión con actitudes más extremas que al empezar, y lo mismo ocurrió, en sentido contrario, con los de bajo prejuicio. El grupo de control, que había discutido temas neutrales, no mostró ese mismo desplazamiento.'
+            'Cada estudiante respondía primero, a solas, a una serie de afirmaciones sobre raza. Luego el grupo, formado solo con gente de actitud similar, discutía esas mismas frases un rato. Al acabar, cada uno volvía a responder por su cuenta. Un grupo de control hacía lo mismo pero discutiendo temas sin relación con el asunto.',
+            'La discusión entre parecidos separó los extremos en vez de juntarlos. Los estudiantes de prejuicio alto salieron con actitudes más duras que al entrar. Los de prejuicio bajo salieron más igualitarios que al entrar. El grupo de control, que había hablado de otra cosa, no se movió. Hablar del tema con los tuyos no te llevó al centro: te empujó un poco más lejos en la dirección que ya traías.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la discusión homogénea amplifica la posición dominante',
+          subtitle: 'Por qué el grupo homogéneo empuja hacia fuera',
           paragraphs: [
-            'Myers y Bishop documentaron uno de los primeros ejemplos experimentales claros de lo que hoy se conoce como polarización de grupo: cuando personas con una inclinación previa similar discuten entre sí, la tendencia inicial del grupo se refuerza en vez de moderarse. Escuchar argumentos nuevos que apoyan la propia posición (algo que ocurre casi automáticamente en un grupo homogéneo) proporciona munición adicional que no existía antes de la conversación, y compararse con otros del mismo grupo genera presión para no parecer menos comprometido que la media.',
-            'El hallazgo tiene una lectura directa para cualquier entorno donde la gente solo discute con quienes ya piensan parecido: foros, comunidades online filtradas por afinidad, grupos de mensajería homogéneos. La conversación en esos espacios no funciona como un contrapeso moderador. Funciona como un amplificador de la posición que el grupo ya tenía antes de empezar a hablar.'
+            'Este es uno de los primeros retratos experimentales de lo que hoy se llama polarización de grupo. Cuando gente que se inclina hacia el mismo lado lo discute entre sí, la inclinación de partida se refuerza. Hay dos motores conocidos. Uno son los argumentos: en un grupo homogéneo casi solo oyes razones nuevas para el lado al que ya tirabas, y eso es munición que antes no tenías. El otro es la comparación: te miras en los demás del grupo y ajustas tu postura para no parecer el menos comprometido, a veces pasándote de frenada.',
+            'La lectura para foros, comunidades filtradas por afinidad y grupos de mensajería homogéneos es directa. Esa conversación no hace de contrapeso. Hace de amplificador de lo que el grupo ya pensaba antes de abrir la boca.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el estudio sí sostiene y lo que no',
+          paragraphs: [
+            'El experimento en sí es viejo, pequeño, con estudiantes de instituto y una medida de actitud racial tosca para el estándar de hoy. Pero el fenómeno que retrata es de los más replicados de la psicología social. Un metaanálisis de 1986 con más de doscientos estudios confirmó que la discusión entre personas de inclinación similar desplaza al grupo hacia el extremo de esa inclinación, en asuntos que van del riesgo financiero a los juicios morales.',
+            'Lo que no está tan claro es el salto a "las redes sociales han vuelto a todo el mundo extremo". Ahí la evidencia es más enredada. Los estudios de dietas informativas reales encuentran que la mayoría de la gente consume fuentes más variadas de lo que dice el tópico de la burbuja. Y forzar la exposición al otro bando no siempre modera: en un experimento de campo en Twitter de 2018, seguir cuentas del lado contrario endureció a los participantes republicanos en lugar de ablandarlos. El grupo homogéneo polariza, pero romperlo a la fuerza tampoco es la cura automática.'
           ]
         }
       ],
-      blockquote: { text: '«La discusión con personas de opinión similar no modera las posturas: las intensifica en la dirección en la que el grupo ya se inclinaba.»', attribution: 'David G. Myers' },
-      aplicacion: 'Si notas que tus opiniones sobre un tema se han vuelto más extremas con el tiempo, revisa con quién sueles discutir ese tema. Si es casi siempre con personas que ya piensan como tú, es probable que el cambio no venga de nueva evidencia, sino del simple efecto de haber hablado repetidamente solo con tu propio bando.'
+      blockquote: { text: '«La discusión de los enunciados sobre actitudes raciales entre personas de actitud similar aumentó la distancia entre los grupos.»', attribution: 'Myers & Bishop (1970)' },
+      aplicacion: 'Si notas que tu postura sobre algo se ha endurecido con los meses, mira con quién sueles hablar de ese tema. Si es casi siempre con gente que ya piensa como tú, parte del cambio no viene de evidencia nueva, viene de repetir la conversación en circuito cerrado. Buscar el argumento contrario mejor hecho, no el peor, es más útil que buscar a alguien del otro bando para discutir.'
     },
     {
       id: 'pol-07',
       title: 'El mismo titular, con solo cambiar el logo de la fuente, hizo que la gente quisiera leerlo o evitarlo',
-      summary: 'Shanto Iyengar y Kyu Hahn mostraron las mismas noticias etiquetadas al azar con el logo de Fox, CNN, NPR o la BBC. Conservadores y liberales eligieron leerlas o evitarlas según la fuente, incluso en temas tan poco polémicos como viajes o sucesos.',
+      summary: 'Iyengar y Hahn pusieron el logo de Fox, CNN, NPR o la BBC al azar sobre los mismos titulares. Cada bando elegía o esquivaba según el logo, hasta en noticias de viajes.',
       sourceUrl: 'https://doi.org/10.1111/j.1460-2466.2008.01402.x',
       sourceLabel: 'Iyengar & Hahn (2009), Journal of Communication',
       badge: 'Exposición selectiva',
       author: { name: 'Shanto Iyengar', university: 'Stanford University', specialty: 'Comunicación política y polarización mediática' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Shanto Iyengar y Kyu S. Hahn querían separar dos posibles causas de la polarización en el consumo de noticias: si la gente evita ciertas fuentes de información porque su contenido real es distinto, o si evita esas fuentes simplemente por la etiqueta, por lo que esa fuente representa, con independencia de lo que la noticia diga en realidad.',
+      intro: 'Cuando alguien esquiva un medio, ¿es por lo que ese medio cuenta o por lo que ese medio representa? Shanto Iyengar y Kyu Hahn montaron un experimento para separar las dos cosas: dejar el contenido exactamente igual y cambiar solo la marca que lo firma.',
       sections: [
         {
-          subtitle: 'El experimento: mismo titular, cuatro logos distintos, asignados al azar',
+          subtitle: 'Mismo titular, cuatro logos, sorteo',
           paragraphs: [
-            'Sobre una muestra representativa de 1.023 votantes registrados en Estados Unidos, los investigadores diseñaron un portal de noticias experimental. A cada participante se le mostraban titulares idénticos procedentes de la misma agencia de noticias, pero cada titular aparecía asociado, de forma aleatoria, al logo de Fox News, CNN, NPR o la BBC. Los participantes debían elegir cuál de las noticias mostradas en pantalla querían leer, repitiendo la elección para seis temas distintos: tres políticamente sensibles (relaciones entre el presidente y el Congreso, la guerra de Irak, las relaciones raciales) y tres considerados "blandos" o poco polémicos (sucesos, viajes, deporte).',
-            'El patrón fue nítido: los participantes conservadores y republicanos prefirieron de forma sistemática las noticias etiquetadas como Fox News y evitaron las etiquetadas como CNN o NPR. Los participantes liberales y demócratas mostraron el patrón exactamente contrario, repartiendo su atención entre CNN y NPR mientras evitaban Fox News. Ninguna de las cuatro fuentes tenía en realidad un contenido distinto, la única variable que cambiaba era el logo.'
+            'Con 1.023 votantes registrados en Estados Unidos, los investigadores armaron un portal de noticias de mentira. Cada participante veía titulares idénticos, sacados de una misma agencia, pero cada titular aparecía firmado al azar con el logo de Fox News, CNN, NPR o la BBC. El participante elegía cuál quería leer. La elección se repetía en seis temas: tres calientes (la relación entre el presidente y el Congreso, la guerra de Irak, las relaciones raciales) y tres blandos (sucesos, viajes, deporte).',
+            'El patrón salió limpio. Conservadores y republicanos preferían de forma sistemática lo etiquetado como Fox y esquivaban lo de CNN y NPR. Liberales y demócratas hacían lo contrario, repartiéndose entre CNN y NPR y evitando Fox. Como el contenido era el mismo en las cuatro, lo único que movía la elección era el logo.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la etiqueta de la fuente se procesa antes que el contenido de la noticia',
+          subtitle: 'La marca se procesa antes que la noticia',
           paragraphs: [
-            'Lo más revelador del estudio es que esta selectividad no se limitó a los temas más cargados ideológicamente. El mismo patrón de preferencia y evitación por fuente apareció también, con menor intensidad pero de forma clara, en temas tan poco polarizados como los viajes o los sucesos. Iyengar y Hahn interpretan esto como evidencia de que la fuente funciona como una señal identitaria en sí misma, no solo como un canal de contenido, así que la decisión de leer o no leer algo se toma en parte antes de saber de qué trata realmente la noticia.',
-            'El hallazgo también mostró que este efecto se intensificaba entre los participantes más comprometidos políticamente: cuanto más implicada estaba una persona con su ideología, más fuerte era su tendencia a acercarse a la fuente afín y evitar la contraria, incluso a costa de dejar de leer información que podría serle relevante o precisa.'
+            'Lo más revelador es que la selección por fuente no se quedó en los temas ideológicos. El mismo sesgo, más flojo pero claro, apareció también en viajes y en sucesos. Iyengar y Hahn lo leen así: la marca del medio funciona como una señal de identidad por sí misma, no solo como un envoltorio del contenido. La decisión de entrar o no entrar se toma en parte antes de saber de qué va la noticia.',
+            'El efecto se agudizaba en los más implicados en política. Cuanto más peso tenía la ideología en la vida de alguien, más fuerte era su tendencia a acercarse al medio afín y a evitar el contrario, aunque eso le dejara fuera información que podía serle útil o exacta.'
+          ]
+        },
+        {
+          subtitle: 'De un portal de laboratorio a la vida real',
+          paragraphs: [
+            'Conviene recordar qué mide y qué no mide esto. Es una elección forzada, en un portal construido para el experimento, entre cuatro opciones. Dice qué prefiere la gente en esas condiciones, no cuánto se aísla de verdad.',
+            'Cuando se mira el consumo real de noticias, la segregación es menor de lo que sugiere el laboratorio. Trabajos de economía de los medios encontraron que la separación ideológica del consumo de noticias online era baja, más baja que la de los barrios o la de los círculos de amistad. Estudios posteriores sobre dietas informativas describen a la mayoría de la gente con un consumo bastante moderado, y a las burbujas partidistas duras como una minoría.',
+            'Dicho eso, la etiqueta pesa, y desde 2009 el terreno ha empujado a favor del efecto: más cable partidista, más feeds que ordenan por afinidad, menos marcas percibidas como neutrales. Y algo del estudio se sostiene bien: evitar la fuente del otro bando es más constante que buscar activamente la propia.'
           ]
         }
       ],
-      blockquote: { text: '«La demanda de noticias varía con la afinidad percibida entre la organización informativa y las preferencias políticas del consumidor.»', attribution: 'Shanto Iyengar' },
-      aplicacion: 'La próxima vez que decidas no leer o no escuchar algo solo por saber de qué medio viene, antes incluso de conocer el contenido, este estudio describe exactamente ese mecanismo. No implica que todas las fuentes sean igual de fiables, pero sí que vale la pena notar cuándo la decisión de informarse, o de no hacerlo, está más guiada por la etiqueta que por lo que realmente se está contando.'
+      blockquote: { text: '«La demanda de noticias varía con la afinidad percibida entre la organización informativa y las preferencias políticas del consumidor.»', attribution: 'Iyengar & Hahn (2009)' },
+      aplicacion: 'Cuando descartes leer o escuchar algo solo por saber de qué medio viene, antes de conocer el contenido, ese es el mecanismo del estudio en directo. No significa que todas las fuentes valgan lo mismo ni que haya que tragarse cualquier cosa. Significa que vale la pena notar cuándo el filtro que estás aplicando es el logo y no lo que se está contando.'
     }
   ],
 
@@ -2894,336 +3378,456 @@ const LIBRARY_ARTICLES = {
     {
       id: 'ali-05',
       title: 'Cuántas veces hace falta probar una verdura nueva antes de que empiece a gustarte',
-      summary: 'Niños de dos años que probaron un alimento nuevo hasta veinte veces terminaron prefiriéndolo, aunque lo hubieran rechazado en las primeras pruebas. La mayor parte del cambio ocurría en las primeras ocho o diez exposiciones.',
+      summary: 'Niños de dos años prefirieron un alimento nuevo tras probarlo ocho o diez veces, aunque lo rechazaran al principio. Fue un estudio con catorce niños, y trabajos posteriores suben la cuenta a diez o quince pases.',
       sourceUrl: 'https://doi.org/10.1016/s0195-6663(82)80053-6',
       sourceLabel: 'Birch & Marlin (1982), Appetite',
       badge: 'Preferencias alimentarias',
       author: { name: 'Leann L. Birch', university: 'University of Illinois at Urbana-Champaign', specialty: 'Desarrollo de las preferencias alimentarias infantiles' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Leann Birch y Diane Marlin se enfrentaban a una contradicción habitual en cualquier casa con niños pequeños: un niño rechaza un alimento que nunca ha probado, y ese rechazo se interpreta como una preferencia estable e inamovible, cuando en realidad no hay ninguna experiencia real detrás de esa opinión. Diseñaron un experimento para medir si la simple exposición repetida, sin ninguna recompensa asociada, podía cambiar esa preferencia inicial.',
+      intro: 'Un niño de dos años prueba una cucharada de algo verde, pone cara de asco y sentencia que no le gusta. Los padres lo apuntan como un no definitivo. Leann Birch y Diane Marlin quisieron comprobar cuánto dura ese no si el alimento vuelve a aparecer, sin premios ni discusiones, un día tras otro.',
       sections: [
         {
-          subtitle: 'El experimento: quesos y frutas desconocidas, expuestas una y otra vez',
+          subtitle: 'Cinco quesos nuevos, una y otra vez',
           paragraphs: [
-            'A niños de alrededor de dos años se les ofrecieron alimentos que no habían probado antes, con sabores y texturas poco familiares. Distintos grupos de niños fueron expuestos al mismo alimento 0, 5, 10 o 20 veces, en sesiones separadas y sin ninguna recompensa por comerlo ni presión para hacerlo. Antes y después del periodo de exposición, se midió cuánto preferían ese alimento frente a otros alimentos ya conocidos.',
-            'La preferencia por el alimento nuevo aumentó de forma clara con el número de exposiciones, pero no de manera lineal: la mayor parte de la ganancia en preferencia ocurría en las primeras ocho a diez exposiciones, y a partir de ahí el efecto se aplanaba. Muchos de los niños que en la primera prueba habían rechazado el alimento abiertamente terminaron, tras las exposiciones repetidas, prefiriéndolo por encima de alimentos que ya conocían desde antes.'
+            'Fueron dos experimentos cortos. En el primero, seis niños de unos dos años probaron cinco quesos que no conocían, cada uno un número distinto de veces a lo largo de 26 días: uno veinte veces, otro quince, otro diez, otro cinco, otro solo dos. En el segundo, ocho niños hicieron lo mismo con cinco frutas nuevas, con un grupo que ni las probaba. Cada encuentro era mirar y probar, sin recompensa por comer y sin presión.',
+            'Antes y después, los investigadores medían el orden de preferencia entre esos alimentos nuevos. La preferencia subía con el número de pruebas, pero no en línea recta: casi toda la ganancia se concentraba en las primeras ocho a diez exposiciones y luego la curva se aplanaba. Con dos o cinco pruebas no bastaba. Alimentos rechazados de entrada acababan por delante de los que se habían probado menos veces.'
           ]
         },
         {
-          subtitle: 'El mecanismo: rechazar lo desconocido antes de haberlo probado',
+          subtitle: 'No me gusta, nunca lo he probado',
           paragraphs: [
-            'Birch y Marlin titularon su estudio con una frase que los propios niños decían literalmente sobre alimentos que nunca habían tocado: "no me gusta, nunca lo he probado". Ese rechazo anticipado, conocido en la literatura como neofobia alimentaria, es una respuesta evolutivamente sensata en una especie omnívora: probar algo desconocido conlleva un riesgo real de intoxicación, así que el cerebro infantil trata lo nuevo con cautela por defecto, antes de tener ninguna evidencia sensorial sobre si es seguro o agradable.',
-            'La exposición repetida resuelve ese problema sin necesidad de persuasión ni de premios: cada vez que el alimento se prueba sin consecuencias negativas, la cautela inicial pierde una razón de ser. El gusto no cambia porque el niño haya sido convencido de que le gusta; cambia porque la familiaridad, por sí sola, reduce la amenaza percibida de lo desconocido. Es el mismo principio que opera en la mera exposición de Zajonc, aplicado al paladar en vez de a la vista.'
+            'El título del estudio es una frase que los niños decían tal cual sobre comida que no habían tocado. Ese rechazo por adelantado se llama neofobia alimentaria y tiene sentido en un animal omnívoro: meterse en la boca algo desconocido puede salir caro, así que la respuesta por defecto ante lo nuevo es la cautela, antes de tener ninguna información sobre su sabor.',
+            'La exposición repetida desactiva esa alarma sin convencer a nadie de nada. Cada vez que el alimento entra y no pasa nada malo, la desconfianza pierde motivo. El niño no aprende a que le gusta, deja de tratarlo como amenaza. Es la mera exposición de Zajonc trasladada del ojo al paladar.'
+          ]
+        },
+        {
+          subtitle: 'Cuántas veces, de verdad',
+          paragraphs: [
+            'La cifra de "ocho a diez" hay que cogerla con la muestra que la produjo: seis niños y ocho niños, un solo laboratorio, y una medida de orden de preferencia entre alimentos nuevos, no de cuánto comían ni de si superaban a sus platos de siempre. Es un punto de partida, no una constante.',
+            'Lo que vino después la ha matizado. Estudios con más niños, como el de Wardle y su equipo en 2003, ofrecieron una verdura a diario durante un par de semanas y consiguieron más aceptación, pero situando el umbral útil más bien en diez o quince pruebas, con mucha variación entre críos. La exposición sola funciona, aunque para algunos niños rinde más combinada con ver a un adulto comerlo o con un premio pequeño. Y lo ganado se pierde si el alimento desaparece de la mesa una temporada. La neofobia, además, aprieta sobre todo entre los dos y los seis años y luego cede.'
           ]
         }
       ],
-      blockquote: { text: '«No me gusta, nunca lo he probado: así describían los propios niños su rechazo a alimentos que ni siquiera habían llegado a tocar.»', attribution: 'Leann L. Birch' },
-      aplicacion: 'Si un niño (o tú mismo) rechaza un alimento nuevo a la primera, no lo interpretes como una preferencia definitiva. La investigación de Birch sugiere ofrecerlo de nuevo, sin presión ni negociación, en al menos ocho o diez ocasiones separadas antes de concluir que de verdad no gusta. El rechazo inicial suele ser cautela ante lo desconocido, no una valoración real del sabor.'
+      blockquote: { text: '«No me gusta, nunca lo he probado: así describían los niños su rechazo a alimentos que ni siquiera habían tocado.»', attribution: 'Birch y Marlin (1982)' },
+      aplicacion: 'Si un niño rechaza algo nuevo a la primera, no lo cierres. Vuelve a ponerlo en el plato, sin negociar ni premiarlo, en diez o quince ocasiones repartidas antes de darlo por perdido. Ayuda que te vea a ti comerlo con normalidad. Y si un mes después dejas de ofrecerlo, cuenta con volver casi a empezar.'
     },
     {
       id: 'ali-06',
       title: 'La sopa que combate la soledad: por qué la comida reconfortante funciona incluso sin hambre',
-      summary: 'Pensar en comida reconfortante activa automáticamente conceptos relacionados con las propias relaciones cercanas, y comerla ayuda a sentirse menos solo después de un rechazo social, pero solo en personas con vínculos afectivos seguros.',
+      summary: 'Pensar en una comida reconfortante activa conceptos ligados a las relaciones cercanas, y comerla amortiguó la soledad tras un desaire, pero solo en personas con apego seguro. Al repetir el estudio fuera de EE. UU., el efecto no siempre apareció.',
       sourceUrl: 'https://doi.org/10.1177/0956797611407931',
       sourceLabel: 'Troisi & Gabriel (2011), Psychological Science',
       badge: 'Alimentación y vínculo social',
       author: { name: 'Shira Gabriel', university: 'University at Buffalo', specialty: 'Psicología social, comida y sentido de pertenencia' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Jordan Troisi y Shira Gabriel partieron de una pregunta que rara vez se investiga con rigor experimental: cuando alguien dice que un plato le "reconforta", ¿es solo una forma de hablar, o esa comida está activando de verdad algo relacionado con vínculos sociales, no solo con el sabor o la nutrición?',
+      intro: 'Cuando alguien dice que un plato le "reconforta", ¿está hablando del sabor o de otra cosa? Jordan Troisi y Shira Gabriel sospechaban que la comida reconfortante lo es porque tira de un hilo social, no nutricional, y montaron un experimento para ver si ese hilo se podía medir.',
       sections: [
         {
-          subtitle: 'El experimento: la sopa de pollo y las palabras que vienen a la mente',
+          subtitle: 'La sopa de pollo y las palabras que acuden a la mente',
           paragraphs: [
-            'En un primer experimento, pidieron a los participantes que pensaran en una comida reconfortante o en una comida neutral y familiar, y después midieron con tareas de completar palabras cuánto se activaban conceptos relacionados con relaciones cercanas (amigo, familia, cariño) frente a conceptos sin relación con vínculos. Pensar en comida reconfortante activó esos conceptos relacionales con más fuerza que pensar en cualquier otra comida igual de familiar.',
-            'En un segundo experimento, indujeron en los participantes un sentimiento de exclusión social pidiéndoles que escribieran sobre un momento en que se habían sentido rechazados. Después medían su nivel de soledad, en algunos casos tras haber comido o pensado en su comida reconfortante habitual. El efecto protector solo apareció con claridad en personas con un estilo de apego seguro en sus relaciones cercanas: para ellas, la comida reconfortante amortiguó el aumento de soledad tras el rechazo. En personas con apego inseguro, ese efecto amortiguador no se replicó del mismo modo.'
+            'En el primer experimento, unos participantes escribían sobre comer una comida que consideraban reconfortante y otros sobre comer algo nuevo. Justo después completaban palabras a las que faltaban letras. Quienes habían escrito sobre su comida reconfortante formaban más palabras relacionadas con vínculos, amigo, familia, querer, que el resto. El plato había traído consigo el vocabulario de las relaciones.',
+            'El segundo experimento provocaba primero una pequeña herida de pertenencia, pidiendo escribir sobre una pelea con alguien cercano, y luego medía la soledad. Comer o evocar la comida reconfortante amortiguaba ese golpe, pero no en todo el mundo: el efecto aparecía con claridad en personas con un apego seguro en sus relaciones y se difuminaba en quienes tenían un apego más inseguro.'
           ]
         },
         {
-          subtitle: 'El mecanismo: comida asociada a relaciones, no solo a nutrientes',
+          subtitle: 'Comida pegada a personas, no solo a nutrientes',
           paragraphs: [
-            'Troisi y Gabriel proponen que muchas comidas reconfortantes lo son porque se asociaron, durante la infancia o en momentos significativos, a la presencia de personas cercanas que las prepararon o compartieron. Esa asociación queda codificada de forma parecida a cómo se codifica el recuerdo de una relación: comer ese plato reactiva, en parte, la sensación de estar acompañado, incluso cuando se come completamente solo.',
-            'La condición del apego seguro es clave para entender por qué el efecto no es universal: si la historia de relaciones cercanas de una persona ha sido en general fiable y protectora, la comida asociada a esas relaciones puede evocar de forma efectiva esa sensación de seguridad. Si la historia relacional ha sido más inestable, la misma comida no tiene el mismo material afectivo positivo del que tirar.'
+            'La idea de Troisi y Gabriel es que ciertas comidas quedaron asociadas, en la infancia o en momentos que marcaron, a la gente que las cocinaba o las compartía. Esa asociación se guarda parecido a como se guarda el recuerdo de una relación, así que comer el plato reactiva un poco la sensación de estar acompañado aunque estés solo en la cocina.',
+            'El apego seguro funciona como condición porque determina de qué se tira. Si tu historia de vínculos cercanos ha sido fiable, la comida ligada a ellos evoca esa seguridad. Si ha sido inestable, el mismo plato no tiene el mismo poso afectivo del que echar mano.'
+          ]
+        },
+        {
+          subtitle: 'Lo que pasó al repetirlo fuera de EE. UU.',
+          paragraphs: [
+            'En 2015, el equipo de Ong, IJzerman y Leung repitió el segundo experimento con muestras grandes en tres sitios: Estados Unidos, Países Bajos y Singapur, cerca de 650 personas en total. El efecto amortiguador reapareció en la muestra estadounidense, pero no en la neerlandesa ni en la singapurense. La conclusión razonable es que el consuelo de la comida reconfortante depende bastante de la cultura alimentaria en la que uno creció, y no viaja solo.',
+            'A la vez, un trabajo posterior de los propios autores encontró que, bajo una amenaza a la pertenencia, las personas con apego seguro prefieren más la comida reconfortante, lo que sostiene esa parte del modelo. Queda un efecto real y acotado: depende del apego, depende del entorno, y las muestras originales eran pequeñas y de estudiantes. La sopa de pollo no cura la soledad de nadie, y menos si el caldo no forma parte de tus recuerdos.'
           ]
         }
       ],
-      blockquote: { text: '«La comida reconfortante no calma solo el estómago. Activa el mismo sistema psicológico que se activa cuando estamos rodeados de las personas que nos importan.»', attribution: 'Shira Gabriel' },
-      aplicacion: 'Si recurres a una comida reconfortante en un momento de soledad, vale la pena notar de qué relación concreta viene ese plato (quién te lo preparaba, con quién lo compartías) en vez de comerlo de forma automática. Nombrar esa asociación puede ser tan importante para el efecto como la comida misma, y además abre la puerta a buscar esa conexión de forma más directa, no solo a través del plato.'
+      blockquote: { text: '«Para las personas con un apego seguro, la comida reconfortante puede mitigar los sentimientos de soledad.»', attribution: 'Troisi y Gabriel (2011)' },
+      aplicacion: 'Si tiras de una comida reconfortante en un mal momento, fíjate en de quién viene ese plato, quién lo hacía, con quién lo comías, en vez de comerlo en piloto automático. Poner nombre a esa relación puede pesar tanto como la comida, y sobre todo apunta a lo que de verdad falta, que es la persona, no el plato.'
     },
     {
       id: 'ali-07',
       title: 'Cortar los pretzels por la mitad hizo que la gente comiera más, no menos, del mismo local',
-      summary: 'Al ofrecer el doble de unidades de pretzel (cortadas a la mitad, con el mismo peso total disponible), los vecinos de un edificio comieron un 69% más en peso. Lo mismo ocurrió al usar una cuchara más grande para servirse M&M\'s.',
+      summary: 'En el portal de un edificio, dejar pretzels enteros en vez de cortados por la mitad hizo que los vecinos comieran un 69% más de masa. Con una cuchara grande para los M&M\'s, lo mismo. El tamaño de la unidad que te ofrecen fija cuánto comes.',
       sourceUrl: 'https://doi.org/10.1111/j.1467-9280.2006.01738.x',
       sourceLabel: 'Geier, Rozin & Doros (2006), Psychological Science',
       badge: 'Sesgos de porción',
       author: { name: 'Paul Rozin', university: 'University of Pennsylvania', specialty: 'Psicología del comportamiento alimentario' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Andrew Geier, Paul Rozin y Gheorghe Doros sospechaban que buena parte de cuánto comemos no depende del hambre ni del peso real de la comida disponible, sino de algo más simple: cuántas unidades separadas de esa comida tenemos delante. Para comprobarlo, diseñaron tres estudios de campo con comida real, ofrecida gratis, en situaciones cotidianas.',
+      intro: 'Un yogur individual pesa 125 gramos en Francia y 227 en Estados Unidos, y los franceses no se comen dos para compensar: se comen uno y paran. Andrew Geier, Paul Rozin y Gheorghe Doros usaron esa observación como punto de partida para probar una idea sencilla en el portal de un edificio de Filadelfia.',
       sections: [
         {
-          subtitle: 'El experimento: los mismos pretzels, cortados o enteros, semana sí y semana no',
+          subtitle: 'Los mismos pretzels, enteros o partidos, semana sí y semana no',
           paragraphs: [
-            'En el portal de un edificio de apartamentos, dejaban regularmente pretzels grandes a disposición de los vecinos, tres días por semana durante doce semanas. En unas semanas, los pretzels se servían enteros, unos 85 gramos cada uno; en otras, exactamente los mismos pretzels se cortaban por la mitad antes de servirse, duplicando el número de piezas disponibles pero sin cambiar la cantidad total de masa puesta en el mostrador cada día.',
-            'Los vecinos comieron sistemáticamente más peso de pretzel en las semanas en que estaban cortados por la mitad que en las semanas en que estaban enteros, con una proporción media de ingesta un 69% mayor. Un experimento paralelo con un bol de M&M\'s a la entrada del mismo edificio, servido con una cuchara pequeña o con una cuchara cuatro veces más grande, mostró el mismo patrón: con la cuchara grande, la gente se servía y comía significativamente más chocolate que con la pequeña, aunque ambas cucharas estaban disponibles sin límite de repeticiones.'
+            'La gestión del edificio dejaba pretzels grandes para los vecinos en un hueco del vestíbulo, lunes, miércoles y viernes. Durante doce semanas, Geier y su equipo alternaron: una semana ponían 60 pretzels enteros de unos 85 gramos, la siguiente ponían los mismos pretzels cortados por la mitad, 120 mitades, con la misma masa total en el mostrador cada día. Contaban lo que sobraba a las cuatro de la tarde.',
+            'Los vecinos se comieron bastante más pretzel, en peso, las semanas de pretzel entero. La proporción media fue de 1,69 a favor de la unidad grande, es decir, alrededor de un 69% más. Partir la pieza por la mitad no hizo que cogieran el doble de mitades para igualar, hizo que comieran menos. En paralelo, un bol de M&M\'s en la recepción con una cuchara normal o con otra cuatro veces mayor dio el mismo resultado: con la cuchara grande, más chocolate. Y lo mismo con un bol de Tootsie Rolls grandes frente a pequeños.'
           ]
         },
         {
-          subtitle: 'El mecanismo: una unidad se percibe como "la ración correcta", sea del tamaño que sea',
+          subtitle: 'Una unidad se lee como "la cantidad correcta"',
           paragraphs: [
-            'Geier, Rozin y Doros llamaron a este patrón "sesgo de unidad": la mente tiende a tratar una unidad discreta de un alimento (un pretzel entero, una cucharada) como si fuera, por definición, la cantidad apropiada para consumir de una vez, sin relación con su tamaño real. Cuando el pretzel se corta por la mitad, cada mitad sigue leyéndose como "una unidad más" que resulta razonable comer, así que la gente termina tomando más unidades pequeñas de las que habría tomado unidades grandes.',
-            'La implicación es prácticamente la contraria de la intuición habitual sobre raciones más pequeñas: trocear la comida no reduce automáticamente lo que se come, puede aumentarlo, porque multiplica el número de raciones aparentemente correctas disponibles. El efecto no dependía del hambre ni de cuánta gente pasaba por el edificio cada día, se repitió de forma consistente en los tres alimentos probados.'
+            'Los autores lo llamaron sesgo de unidad. La mente trata una unidad de comida, un pretzel, una cucharada, una barrita, como la cantidad que toca comer de una vez, casi con independencia de lo que pese esa unidad. Detrás hay una norma aprendida, la de terminar lo que te sirven, y la sensación de que dejar media pieza en el plato es tirar comida o parecer un glotón si coges otra.',
+            'Por eso las raciones pequeñas funcionan para comer menos. No porque uno se conforme con poco por voluntad, sino porque la mayoría no vuelve a por una segunda unidad con la misma facilidad con la que se acaba la primera. La unidad que te ponen delante hace de tope.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el estudio midió y lo que no',
+          paragraphs: [
+            'Lo que Geier y su equipo contaron fue lo que la gente cogía, no lo que se comía. Dan por hecho que casi todo se consumía, y es plausible con snacks que no se pueden guardar en el bolsillo sin pringarlo todo, pero es un supuesto. Son tres demostraciones de campo en un solo edificio, con quien pasara por allí, sin control de quién era cada día.',
+            'Hay un matiz que los propios autores subrayan y que suele perderse: el aumento con la unidad grande se quedó muy por debajo de lo que predeciría un sesgo de unidad puro. Con pretzel doble de grande no se comió el doble, sino un 69% más. Las calorías y el volumen siguen contando, el tamaño de la unidad solo inclina la balanza. Dicho eso, que raciones más grandes hacen comer más es de lo más replicado en nutrición, con metaanálisis y una revisión Cochrane detrás. Este experimento es una de sus estampas en la vida real, no una rareza aislada.'
           ]
         }
       ],
-      blockquote: { text: '«La cantidad de comida que la gente selecciona aumenta cuando aumenta el tamaño de la unidad, pero trocear una unidad grande en varias pequeñas no reduce la ingesta: puede incluso aumentarla.»', attribution: 'Paul Rozin' },
-      aplicacion: 'Si intentas comer menos de algo trocéandolo en piezas más pequeñas, este estudio sugiere revisar esa estrategia: lo que de verdad reduce la ingesta es limitar cuántas unidades tienes accesibles a la vez, no el tamaño de cada una. Servir una sola ración predefinida y guardar el resto fuera de la vista funciona mejor que dejar disponible un montón de piezas pequeñas, por pequeñas que sean.'
+      blockquote: { text: '«La cantidad de comida que la gente elige aumenta cuando aumenta el tamaño de la unidad que se le presenta.»', attribution: 'Geier, Rozin y Doros (2006)' },
+      aplicacion: 'Sirve una ración definida en el plato y guarda el resto fuera de la vista, porque la primera unidad la terminas casi seguro y la segunda ya te la piensas. Compra los formatos pequeños de lo que se te va de las manos: la bolsa individual acaba en menos que la familiar aunque te digas que solo vas a picar. Y si tienes delante algo grande, partirlo antes de empezar juega a tu favor, no en contra.'
     }
   ],
   marketing: [
     {
       id: 'mkt-01',
       title: 'El efecto escasez: por qué un tarro casi vacío de galletas vale más que uno lleno',
-      summary: 'Las mismas galletas se perciben como más valiosas y más sabrosas en cuanto quedan pocas, sobre todo si antes había muchas y la escasez la ha causado la demanda de otros.',
+      summary: 'Las mismas galletas saben mejor y valen más cuando quedan pocas, y todavía más si se han acabado porque otros se las llevaban.',
       sourceUrl: 'https://doi.org/10.1037/0022-3514.32.5.906',
       sourceLabel: 'Worchel, Lee & Adewole (1975), Journal of Personality and Social Psychology',
       badge: 'Persuasión',
-      author: { name: 'Stephen Worchel', university: 'University of Hawaii', specialty: 'Psicología Social de la Persuasión' },
-      readingTime: '3 min',
+      author: { name: 'Stephen Worchel', university: 'University of Virginia', specialty: 'Psicología social de la persuasión' },
+      readingTime: '5 min',
       date: '21 de julio de 2026',
-      intro: 'En 1975, Stephen Worchel, Jerry Lee y Akanbi Adewole sentaron a 200 mujeres frente a un tarro de galletas de chocolate y les pidieron que las valorasen. El tarro no era el mismo para todas: unas veces tenía diez galletas, otras solo dos. Las galletas, en cambio, eran idénticas. La única variable que cambiaba era cuántas quedaban, y esa sola variable bastó para mover el juicio de valor, de atractivo y hasta de sabor de un producto que ninguna de las participantes había podido probar.',
+      intro: 'Dos tarros de cristal en una mesa. Uno con diez galletas de chocolate, el otro con dos. Salieron del mismo horno el mismo día y saben igual. Cuando en 1975 tres psicólogos pidieron a cerca de doscientos estudiantes que las puntuaran, las del tarro casi vacío ganaron en todo: más buenas, más caras, más apetecibles. Ninguno había probado una sola.',
       sections: [
         {
-          subtitle: 'El experimento del tarro que se vacía',
+          subtitle: 'El experimento de los dos tarros',
           paragraphs: [
-            'Worchel diseñó dos experimentos con condiciones distintas. En el primero, unas participantes veían un tarro con diez galletas y otras un tarro con solo dos, sin más explicación. En el segundo, la escasez ya no era fija desde el principio: a un grupo se le mostraba un tarro que empezaba con diez galletas y terminaba con dos, y se le decía que la reducción se debía a un simple error de reparto o, en otra condición, a que otras personas se las habían llevado por lo populares que eran.',
-            'El patrón fue consistente en ambos experimentos: las galletas del tarro casi vacío se valoraron como más deseables y de mayor calidad que las del tarro lleno, aunque procedieran del mismo paquete. Pero el hallazgo más interesante apareció en el segundo experimento: las galletas que habían pasado de ser abundantes a escasas por la demanda de otras personas recibieron las valoraciones más altas de todo el estudio, por encima incluso de las que habían sido escasas desde el principio. No bastaba con que quedaran pocas: importaba, y mucho, por qué quedaban pocas.'
+            'Stephen Worchel, Jerry Lee y Akanbi Adewole partieron el estudio en dos. En la primera parte, cada participante veía un solo tarro, de diez galletas o de dos, y respondía tres cosas: cuánto le apetecía comerse una, cuánto pagaría por ellas y cómo de buenas esperaba que estuvieran. Las del tarro de dos salieron mejor paradas en las tres preguntas, con un contenido idéntico al del tarro lleno.',
+            'La segunda parte es la que importa. El tarro empezaba con diez galletas y, delante del participante, alguien lo cambiaba por otro de dos. A una parte se le decía que había sido un error, que se habían llevado el tarro equivocado. A la otra, que quedaban pocas porque el resto de participantes había cogido más de la cuenta. Las galletas que escaseaban por culpa de la demanda ajena se llevaron las notas más altas de todo el estudio, por encima de las que habían sido escasas desde el principio. La escasez inclinaba el juicio. El motivo de la escasez lo inclinaba todavía más.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la escasez como atajo de valor y la amenaza a la libertad de elegir',
+          subtitle: 'Dos motivos que se suman',
           paragraphs: [
-            'Worchel explicó el resultado con dos mecanismos que se refuerzan entre sí. El primero es un atajo cognitivo básico: en ausencia de más información, la escasez de un recurso funciona como indicio indirecto de su calidad, porque en la mayoría de contextos reales lo escaso lo es porque otros ya lo han valorado y consumido. El cerebro no necesita probar la galleta para inferir que debe de ser buena si a otros se les están acabando.',
-            'El segundo mecanismo procede de la teoría de la reactancia psicológica de Jack Brehm: cuando algo que antes estaba disponible empieza a restringirse, no solo se activa el primer atajo, también se percibe una amenaza a la libertad de poder tenerlo si se quiere. Esa amenaza genera una motivación extra por recuperar el acceso, independiente del valor real del objeto. Es la razón por la que la escasez causada por la demanda de otros (el tarro que se vacía "porque a la gente le encantan") pesa más que la escasez simplemente accidental: no solo informa de que el producto es bueno, además convierte el hecho de conseguirlo en una pequeña victoria sobre la competencia por un recurso limitado.'
+            'El primero es un atajo de sentido común. Fuera del laboratorio, cuando algo se agota suele ser porque mucha gente lo quería. El cerebro le da la vuelta a esa regla: si queda poco, por algo será. Es una inferencia sensata casi siempre y un flanco explotable el resto, porque salta igual cuando el estante está vacío por éxito real que cuando la tienda solo puso tres unidades a la venta.',
+            'El segundo motivo viene de la teoría de la reactancia de Jack Brehm. Cuando una opción disponible empieza a cerrarse, aparece una resistencia a perderla, y esa resistencia se nota como un tirón hacia el objeto al margen de lo que el objeto valga. Ahí está la diferencia entre el tarro que se vacía por un despiste y el que se vacía porque a todo el mundo le gusta. El segundo no solo dice que la galleta es buena. Dice que cogerla es ganarle la mano a alguien.'
+          ]
+        },
+        {
+          subtitle: 'La cuenta atrás de la pantalla',
+          paragraphs: [
+            'El hallazgo lleva medio siglo trabajando en las tiendas. "Quedan 2 a este precio", "otras 14 personas están viendo este alojamiento", el cronómetro que consume los minutos de una oferta, la serie limitada que vuelve cada temporada con otro nombre. Todo apunta al mismo sitio, convertir la disponibilidad en una pista de calidad y la demora en una pérdida.',
+            'La versión más pulida imita el segundo experimento. No avisa solo de que queda poco, aclara que queda poco porque otros lo están comprando ahora. Es la distancia que va de "stock limitado" a "23 vendidas en la última hora". Marcas enteras se construyen sobre ese matiz: una firma de zapatillas saca mil pares, los vende en once minutos y publica el dato como si fuera un parte de guerra. El mensaje no es "tenemos poco", es "se está acabando en tus narices porque otros llegaron antes". La reventa posterior a triple precio confirma la señal.'
+          ]
+        },
+        {
+          subtitle: 'Qué aguanta y qué no',
+          paragraphs: [
+            'El estudio original medía puntuaciones sobre una mesa, no compras, y cada condición tenía entre diez y dieciséis personas. Al llevar el efecto a decisiones de compra reales, el mapa se vuelve más irregular. Un metaanálisis de 2023 que reunió decenas de estudios de escasez encontró que la escasez por exceso de demanda sube la intención de compra de forma fiable, igual que vio Worchel, mientras que la escasez por urgencia, el "solo hoy" y el "últimas unidades", apenas se sostiene cuando se la separa del resto de reclamos de una campaña.',
+            'Y hay desgaste. La misma revisión apunta que los compradores más jóvenes son los que menos escasez perciben ante un "quedan pocas unidades", seguramente de tanto verlo. Cuando el aviso se lee como fabricado, se da la vuelta: lo que buscaba prisa acaba dando recelo, y el recelo no vende.'
           ]
         }
       ],
-      blockquote: { text: '«Creemos que algo vale más justo en el momento en que empieza a escasear.»', attribution: 'Stephen Worchel' },
-      aplicacion: 'La próxima vez que un aviso de "quedan 2 unidades" o una cuenta atrás dispare tu urgencia por comprar, pregúntate si tu interés por el producto era el mismo antes de ver ese aviso. Si la respuesta es no, la escasez (real o fabricada) está haciendo el trabajo que debería hacer la calidad del producto.'
+      blockquote: { text: '«Un objeto se valora más cuando su disponibilidad pasa de abundante a escasa que cuando ha sido escaso desde el principio.»', attribution: 'Worchel, Lee y Adewole (1975)' },
+      aplicacion: 'Cuando un "quedan 2" o una cuenta atrás te metan prisa, prueba a recordar cuánto querías eso mismo diez minutos antes de ver el aviso. Si la respuesta es "poco", la escasez está haciendo el trabajo que le tocaba al producto. El reflejo no se apaga, pero se le puede ganar tiempo: casi ninguna oferta que de verdad te conviene se esfuma por dormir una noche.'
     },
     {
       id: 'mkt-02',
       title: 'El efecto señuelo: la tercera opción que existe solo para que elijas la segunda',
-      summary: 'Añadir a un catálogo una alternativa deliberadamente peor es una técnica de venta documentada que desplaza la elección hacia la opción que interesa vender, y funciona en coches, cervezas, cines y televisores por igual.',
+      summary: 'Meter en un catálogo una opción que nadie va a elegir cambia, de forma previsible, cuál de las otras dos se lleva la venta.',
       sourceUrl: 'https://doi.org/10.1086/208899',
       sourceLabel: 'Huber, Payne & Puto (1982), Journal of Consumer Research',
       badge: 'Sesgos de decisión',
-      author: { name: 'Joel Huber', university: 'Duke University', specialty: 'Marketing y Arquitectura de Decisiones' },
-      readingTime: '4 min',
+      author: { name: 'Joel Huber', university: 'Duke University', specialty: 'Marketing y arquitectura de decisiones' },
+      readingTime: '5 min',
       date: '14 de julio de 2026',
-      intro: 'En 1982, Joel Huber, John Payne y Christopher Puto, de la Universidad de Duke, pidieron a estudiantes que eligieran entre pares de opciones (coches, cervezas, restaurantes, boletos de lotería, películas y televisores) definidas por dos atributos enfrentados, como precio y calidad. Después repitieron la elección añadiendo una tercera opción que nadie racional debería elegir nunca: una alternativa peor que una de las otras dos en todos los sentidos. Esa opción, que llamaron "asimétricamente dominada", no estaba ahí para ganar. Estaba ahí para cambiar el resultado sin ser elegida jamás.',
+      intro: 'Dos restaurantes. Uno cocina mejor pero está a veinticinco minutos en coche. El otro es más del montón y lo tienes a cinco minutos. Elegir cuesta, porque lo que ganas por un lado lo pierdes por el otro. Ahora aparece un tercero en la lista: cocina algo peor que el primero y encima está a treinta y cinco minutos. Nadie va a ir ahí. Y aun así, con ese tercero sobre la mesa, más gente se decide por el restaurante lejano y bueno. En 1982, tres investigadores de Duke montaron esa trampa con seis tipos de producto distintos y el resultado se repitió en todos.',
       sections: [
         {
-          subtitle: 'El experimento: seis productos, un mismo patrón',
+          subtitle: 'Seis productos, la misma trampa',
           paragraphs: [
-            'Huber, Payne y Puto probaron el mecanismo en seis categorías de producto distintas y encontraron el mismo patrón en todas: al añadir la alternativa dominada, la cuota de elección de la opción que la dominaba (el "objetivo") aumentaba de media 9,2 puntos porcentuales, siempre a costa de la otra opción del par original. El efecto violaba de forma sistemática el principio de regularidad de la teoría de la elección racional, que exige que añadir una opción nunca pueda aumentar la probabilidad de elegir una de las ya existentes.',
-            'El equipo también comparó distintas formas de construir el señuelo. Cuando el señuelo ampliaba el rango de valores presentes en el catálogo (por ejemplo, siendo peor en el atributo donde el objetivo ya destacaba) el aumento llegaba a 13 puntos. Cuando combinaba rango y frecuencia relativa, rondaba los 8 puntos, y en su versión más débil, apoyada solo en la frecuencia, se quedaba en 4. El efecto era además más del doble de fuerte cuando cada persona veía un único conjunto de opciones que cuando comparaba varios conjuntos seguidos, lo que apunta a que la comparación deliberada y prolongada atenúa parcialmente el sesgo.'
+            'Joel Huber, John Payne y Christopher Puto pidieron a un grupo de estudiantes que eligieran dentro de parejas de opciones enfrentadas en dos características, del tipo más barato pero peor frente a más caro pero mejor. Coches, cervezas, restaurantes, apuestas, películas y televisores. Luego repetían la elección con una tercera opción añadida, peor que una de las dos originales en todo y mejor en nada. La llamaron alternativa asimétricamente dominada, porque una opción del catálogo la supera por completo y la otra no.',
+            'Al meter esa opción de relleno, la cuota de elección de la que sí la superaba subía de media 9,2 puntos porcentuales, y siempre a costa de la otra opción del par. El dato tiene más miga de la que parece. La teoría de la elección racional da por sentado que añadir alternativas a un menú nunca puede subir la probabilidad de elegir una de las que ya estaban. Aquí pasaba justo eso, de forma sistemática y en las seis categorías.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la dificultad de comparar en abstracto',
+          subtitle: 'Tres formas de montar el cebo',
           paragraphs: [
-            'Elegir entre dos opciones que compiten en dos atributos distintos (más barato pero peor, más caro pero mejor) exige un juicio de compensación entre dimensiones que no se pueden sumar de forma natural: no hay un tipo de cambio evidente entre precio y calidad. Ese juicio es difícil, y la mente evita la dificultad buscando atajos relacionales en vez de evaluaciones absolutas.',
-            'El señuelo asimétricamente dominado resuelve ese atajo por la vía fácil: frente a él, una de las dos opciones originales es objetivamente mejor en todo, así que compararla con el señuelo no cuesta ningún esfuerzo. Ese contraste de comparación fácil "contamina" la evaluación del conjunto completo, y la opción que gana esa comparación trivial hereda una sensación de superioridad que se traslada, sin base lógica, a la comparación difícil que en realidad importaba. Esta es la lógica detrás de menús con tres niveles de precio o planes de suscripción con una opción intermedia deliberadamente poco atractiva: no están ahí para venderse a sí mismos, están ahí para hacer fácil una comparación que interesa que gane la opción de al lado.'
+            'El equipo probó varias maneras de construir el señuelo y no todas rendían igual. Cuando la opción de relleno estiraba el rango de precios o de calidad del catálogo, empeorando justo en aquello donde la opción objetivo ya brillaba, el empujón llegaba a 13 puntos. Cuando jugaba a la vez con el rango y con lo cerca que quedaba de la opción objetivo, rondaba los 8. Y cuando solo se apoyaba en esa cercanía, se quedaba en 4.',
+            'Otro contraste resultó revelador. El efecto era unas tres veces mayor cuando cada persona veía un solo conjunto de opciones que cuando comparaba varios conjuntos seguidos. Mirar varias veces, con calma, comparando, desactiva parte del sesgo. La compra impulsiva de un único vistazo es su terreno.'
+          ]
+        },
+        {
+          subtitle: 'Por qué una comparación fácil contamina una difícil',
+          paragraphs: [
+            'Decidir entre barato y peor o caro y mejor obliga a un cambio mental que nadie sabe hacer bien: cuántos euros vale un punto más de calidad. No hay tipo de cambio. Ese cálculo incomoda, y la mente lo esquiva buscando comparaciones que sí pueda resolver de un vistazo.',
+            'El señuelo le sirve una en bandeja. Frente a él, una de las dos opciones de verdad es mejor en todo, así que esa comparación se gana sin pensar. La sensación de haber ganado algo se pega a esa opción y se cuela en la decisión que de verdad estaba en juego, la difícil, donde no tenía nada que hacer. Ganar una carrera contra un rival de pega deja, aun así, sensación de victoria.'
+          ]
+        },
+        {
+          subtitle: 'Menús de tres precios y suscripciones raras',
+          paragraphs: [
+            'La versión comercial más repetida es la carta de tres niveles. El plan intermedio, el que casi nadie contrata, no está para venderse, está para que el plan caro parezca un chollo al lado. El caso de manual es una revista que ofrecía suscripción solo web a un precio, solo papel a un precio bastante más alto, y web más papel al mismo precio que solo papel. La opción de solo papel no la quería nadie. Su función era hacer que web más papel pareciera regalado.',
+            'El bote de palomitas mediano carísimo del cine cumple el mismo papel respecto al grande. Y el fabricante de móviles que coloca un modelo con poca memoria a un precio casi igual que el siguiente escalón empuja hacia arriba sin decir una palabra.'
+          ]
+        },
+        {
+          subtitle: 'El matiz: casi solo funciona con números',
+          paragraphs: [
+            'El experimento original usaba opciones descritas con dos cifras limpias sobre papel. Cuando el efecto se ha vuelto a probar con estímulos más parecidos a una compra real, se ha ido encogiendo. Frederick, Lee y Baskin (2014) y Yang y Lynn (2014) lo montaron con productos descritos en palabras, con fotos y con más de dos atributos, y el desplazamiento hacia la opción dominante casi desaparecía. A veces incluso se daba la vuelta, con la gente huyendo de la opción rodeada de un cebo.',
+            'La lectura razonable no es que el señuelo sea un mito, sino que su territorio natural es estrecho: pocas alternativas, resumidas en dos números, decididas de un vistazo. Una pricing page cuadriculada encaja de lleno. Un supermercado con cientos de referencias descritas a medias, mucho menos.'
           ]
         }
       ],
-      blockquote: { text: '«Añadir una alternativa que nadie va a elegir puede cambiar, de forma predecible, cuál de las otras dos se elige.»', attribution: 'Joel Huber' },
-      aplicacion: 'Cuando un catálogo tenga exactamente tres opciones y una de ellas parezca claramente peor en todo, ignórala por completo y compara solo las otras dos como si la tercera no existiera. Si es posible, compara además con un producto de otro catálogo o marca: salir del conjunto diseñado es la forma más simple de neutralizar el señuelo.'
+      blockquote: { text: '«Añadir al conjunto una alternativa asimétricamente dominada puede aumentar la probabilidad de elegir la opción que la domina.»', attribution: 'Huber, Payne y Puto (1982)' },
+      aplicacion: 'Si un catálogo tiene tres opciones y una parece claramente peor en todo, táchala y decide solo entre las otras dos, como si nunca hubiera estado. Cuando puedas, saca una cuarta referencia de otra marca o de otra web: salir del conjunto que alguien ha diseñado para ti es la forma más simple de romper la comparación tramposa.'
     },
     {
       id: 'mkt-03',
       title: 'El efecto cero: por qué "gratis" pesa más en tu decisión que cualquier descuento',
-      summary: 'Bajar un céntimo el precio de un producto barato no debería cambiar casi nada, salvo que ese céntimo lo convierta en gratis: entonces la demanda se dispara muy por encima de lo que explica el ahorro real.',
+      summary: 'Bajar un céntimo el precio de una chocolatina no debería cambiar nada. Salvo que ese céntimo la deje en cero: ahí la demanda se dispara.',
       sourceUrl: 'https://doi.org/10.1287/mksc.1060.0254',
       sourceLabel: 'Shampanier, Mazar & Ariely (2007), Marketing Science',
       badge: 'Precio y valor',
-      author: { name: 'Dan Ariely', university: 'Duke University', specialty: 'Economía Conductual' },
-      readingTime: '3 min',
+      author: { name: 'Dan Ariely', university: 'Massachusetts Institute of Technology', specialty: 'Economía conductual' },
+      readingTime: '5 min',
       date: '7 de julio de 2026',
-      intro: 'Kristina Shampanier, Nina Mazar y Dan Ariely montaron un puesto con dos chocolatinas: un bombón Hershey’s Kiss, barato y sencillo, y una trufa Lindt, más cara y de mayor calidad percibida. Fueron variando los precios de ambas mientras mantenían siempre la misma diferencia entre ellas. La teoría económica estándar predice que, si el ahorro relativo no cambia, las proporciones de compra tampoco deberían cambiar demasiado. No fue lo que ocurrió.',
+      intro: 'Un puesto en el vestíbulo de un edificio con dos chocolatinas a la venta. Un bombón Hershey’s Kiss, corriente. Una trufa Lindt, más fina y bastante más cara. Kristina Shampanier, Nina Mazar y Dan Ariely fueron moviendo los precios de las dos, pero manteniendo siempre la misma distancia entre ellas. Según el manual de economía, si el ahorro relativo no cambia, la proporción de gente que elige una u otra tampoco debería moverse mucho. Se movió del todo.',
       sections: [
         {
-          subtitle: 'El experimento: un céntimo que lo cambia todo',
+          subtitle: 'El céntimo que le dio la vuelta a todo',
           paragraphs: [
-            'Con el Kiss a un céntimo y la trufa a quince, el 73 % de los clientes eligió la trufa Lindt y el 27 % el Kiss: la diferencia de catorce céntimos les parecía una inversión razonable por un producto mejor. Shampanier, Mazar y Ariely bajaron entonces ambos precios exactamente un céntimo: el Kiss pasó a costar cero y la trufa quedó en catorce céntimos. La diferencia entre ambos productos seguía siendo la misma que antes, catorce céntimos, así que un comprador racional debería haber mantenido más o menos las mismas proporciones de elección.',
-            'En vez de eso, la proporción se invirtió por completo: la mayoría de los clientes dejó de elegir la trufa Lindt y pasó a preferir el Kiss, ahora gratuito, aunque seguía siendo objetivamente el producto de menor calidad y el ahorro real respecto a la trufa no había variado ni un céntimo. El precio cero no se comportó como "un poco más barato". Se comportó como una categoría de decisión completamente distinta.'
+            'Con el Kiss a un céntimo y la trufa Lindt a quince, el 73% de los casi cuatrocientos clientes eligió la trufa y el 27% el Kiss. Pagar catorce céntimos más por algo claramente mejor les parecía sensato. Entonces los investigadores bajaron los dos precios exactamente un céntimo. El Kiss quedó en cero, la trufa en catorce. La diferencia entre las dos seguía siendo catorce céntimos, la misma de antes.',
+            'La proporción se invirtió. El 69% se llevó el Kiss gratis y solo el 31% la trufa, aunque el Kiss seguía siendo el producto peor y el ahorro respecto a la trufa no había cambiado ni un céntimo. Cero no funcionó como un precio bajo. Funcionó como otra cosa. En una versión con elección hipotética entre un Kiss y un Ferrero Rocher, con sesenta personas, el patrón se repitió.'
           ]
         },
         {
-          subtitle: 'El mecanismo: por qué cero elimina el riesgo de la decisión',
+          subtitle: 'Gratis no se calcula, se siente',
           paragraphs: [
-            'Ariely y sus colegas propusieron que el precio cero no se procesa mediante el mismo cálculo racional de coste y beneficio que cualquier otro precio positivo. Cuando algo cuesta dinero, por poco que sea, existe la posibilidad de arrepentirse de la compra: de sentir que no mereció la pena. El precio cero elimina esa posibilidad por completo, porque no hay nada que perder si el producto decepciona. Los autores lo describen como un beneficio afectivo añadido, no solo un ahorro: gratis se siente bien de una forma que ningún descuento parcial replica, por generoso que sea en términos objetivos.',
-            'Esa asimetría explica por qué "2x1" y "envío gratis a partir de X euros" son palancas de marketing tan potentes: no compiten con el resto de descuentos en la misma escala, compiten en una categoría emocional aparte donde el análisis de coste-beneficio se relaja. Los propios autores señalaron que la explicación más plausible, entre las que evaluaron (normas sociales, dificultad de comparar el valor, y el componente afectivo), era esta última: el afecto positivo asociado a lo gratuito, no un simple error de cálculo aritmético.'
+            'Cualquier precio positivo, por ridículo que sea, abre la puerta a arrepentirse. Pagas un céntimo, la chocolatina te decepciona y notas que no valía la pena. El precio cero cierra esa puerta. No hay nada que perder, así que no hay decepción posible que doler.',
+            'Shampanier, Mazar y Ariely pusieron sobre la mesa tres explicaciones y se quedaron con una. No era que la gente no supiera hacer la resta, ni que estuviera siguiendo alguna norma social sobre lo gratuito. Era el tirón emocional: lo gratis produce un pequeño golpe de placer que ningún descuento, por grande que sea, consigue igualar. Ese golpe se suma al valor del producto en lugar de restar de su precio.'
+          ]
+        },
+        {
+          subtitle: 'El "envío gratis" y otros parientes',
+          paragraphs: [
+            'El comercio online vive de esto. "Envío gratis a partir de 30 euros" empuja a añadir un cuarto producto que no necesitabas para no pagar cuatro euros de portes, y muchos compradores gastan de más con tal de que una parte de la factura sea cero. El 2x1, el regalo con la compra, la muestra que llega en la caja, el mes de prueba sin coste de casi cualquier suscripción. Todos apuntan al mismo resorte.',
+            'La palabra hace parte del trabajo ella sola. "Segunda unidad gratis" vende más que "50% en las dos", aunque el bolsillo note lo mismo. El cerebro no las archiva en el mismo cajón.'
+          ]
+        },
+        {
+          subtitle: 'Dónde se dobla el efecto',
+          paragraphs: [
+            'El hallazgo se ha vuelto a ver en otros laboratorios y mercados, así que aquí no hay un problema de replicación como en otros clásicos del marketing. Lo que sí tiene son bordes. El empujón de lo gratuito es más fuerte con productos de capricho, un bombón, un postre, un detalle, que con productos utilitarios como pilas o folios, donde la cabeza vuelve antes a la calculadora.',
+            'Y hay un coste escondido. Lo que se recibe gratis se valora menos después, y un regalo pegado a un producto de pago puede bajar lo que la gente está dispuesta a pagar por el producto principal, que de pronto parece "el que viene con el regalo". Regalar para atraer y regalar para devaluar están a un paso.'
           ]
         }
       ],
-      blockquote: { text: '«Para la mente, lo gratuito trae consigo un beneficio propio, no solo un coste menor.»', attribution: 'Dan Ariely' },
-      aplicacion: 'Ante una oferta con la palabra "gratis", resta mentalmente un céntimo del "premio" y súmaselo al resto de opciones para ver si seguirías prefiriéndolo con esa diferencia mínima restaurada. Si tu elección cambia solo porque una opción pasó a costar exactamente cero, no estás comparando valor: estás respondiendo a la palabra.'
+      blockquote: { text: '«Al evaluar un producto gratuito, las personas no restan el coste del beneficio: perciben el beneficio del producto como mayor de lo que es.»', attribution: 'Shampanier, Mazar y Ariely (2007)' },
+      aplicacion: 'Ante una oferta con la palabra "gratis", devuélvele mentalmente un céntimo al producto regalado y quítaselo a las demás opciones. Si con esa diferencia mínima restaurada seguirías eligiéndolo, adelante. Si tu preferencia se cae en cuanto deja de ser exactamente cero, no estabas comparando valor, estabas respondiendo a la palabra.'
     },
     {
       id: 'mkt-04',
       title: 'El efecto reciprocidad: una Coca-Cola gratis duplicó la venta de boletos de una rifa',
-      summary: 'Recibir un favor pequeño y no solicitado (una lata de refresco) duplicó cuántos boletos de rifa compraba después la gente al mismo desconocido, incluso cuando ese desconocido les caía mal.',
+      summary: 'Un refresco no pedido duplicó cuántos boletos de rifa compraba después la gente al mismo desconocido, aunque ese desconocido acabara de portarse fatal.',
       sourceUrl: 'https://doi.org/10.1016/0022-1031(71)90025-4',
       sourceLabel: 'Regan (1971), Journal of Experimental Social Psychology',
       badge: 'Reciprocidad',
       author: { name: 'Dennis T. Regan', university: 'Cornell University', specialty: 'Psicología social de la persuasión y la reciprocidad' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Dennis Regan quería separar dos explicaciones que suelen confundirse cuando alguien nos convence de algo tras hacernos un favor: ¿compramos porque nos cae mejor esa persona, o porque sentimos la obligación de devolver el favor, nos caiga bien o no? Diseñó un experimento con un cómplice que unas veces se comportaba de forma agradable y otras de forma bastante desagradable durante una tarea compartida de valorar cuadros.',
+      intro: 'Cuando alguien nos hace un favor y luego nos pide algo, solemos decir que sí. La duda es por qué. ¿Porque el favor nos cayó bien y la persona con él, o porque una vez que has recibido algo te sientes en deuda, te caiga bien quien te lo dio o no? En 1971, Dennis Regan montó un experimento en Stanford para separar las dos cosas, con un cómplice que a veces se comportaba de maravilla y a veces como un cretino.',
       sections: [
         {
-          subtitle: 'El experimento: una lata de refresco y un cómplice antipático',
+          subtitle: 'Un refresco y un cómplice desagradable',
           paragraphs: [
-            'A mitad de la tarea, el cómplice salía de la sala unos minutos. En una condición, volvía con dos refrescos, le daba uno al participante ("le pregunté al investigador si podía traer uno para mí, y me dejó traer otro para ti") y no pedía nada a cambio. En otra condición, volvía con las manos vacías. Antes de eso, los participantes habían escuchado por accidente una llamada del cómplice al teléfono en la que sonaba, según la condición asignada, o bien amable, o bien grosero y desagradable con la persona al otro lado de la línea.',
-            'Al terminar la tarea, el cómplice pedía un favor real: comprar boletos de una rifa de coche a 25 centavos cada uno, con una comisión para él si vendía suficientes. Quienes habían recibido el refresco compraron de media el doble de boletos que quienes no lo habían recibido. Y el dato central del estudio es que esa diferencia se mantuvo casi idéntica tanto si el cómplice les había caído bien como si les había caído mal por la llamada. El favor pesaba más que la simpatía.'
+            'Setenta y siete estudiantes varones creían estar en un estudio sobre valoración de obras de arte. Cada uno hacía la tarea junto a otro chico que era, en realidad, ayudante del investigador. Antes de empezar, el participante oía sin querer una llamada de teléfono de ese compañero con la secretaria del departamento. En una versión, el compañero era educado. En la otra, colgaba de malos modos, cortante y borde.',
+            'A mitad de la sesión había una pausa y el cómplice salía un par de minutos. En una condición volvía con dos Coca-Colas, le pasaba una al participante ("le pregunté al de la bata si podía ir a por una para mí y me dijo que vale, así que te he traído otra") y no aceptaba que se la pagaran. En otra condición volvía con las manos vacías. Y en una tercera, quien traía el refresco al participante era el propio investigador, no el compañero.',
+            'Al final, el cómplice sacaba una hoja de su cuaderno y escribía una nota. Vendía boletos para una rifa a 25 centavos cada uno, con la que su antiguo instituto quería construir un gimnasio. El premio para el comprador era un coche. Para él había una recompensa de cincuenta dólares si era el que más vendía. Quien había recibido el refresco de manos del cómplice compró de media casi el doble de boletos que quien no había recibido nada, 1,73 frente a 0,92. Partiendo a la gente en dos grupos, los que compraban dos boletos o más pasaban del 25% al 58%.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la norma de reciprocidad no pregunta si te cae bien quien la activa',
+          subtitle: 'La deuda no pregunta si te cae bien',
           paragraphs: [
-            'El sociólogo Alvin Gouldner había descrito años antes la norma de reciprocidad como una de las reglas sociales más universales documentadas en antropología: recibir algo genera una obligación de devolver algo de valor comparable, y esa obligación se siente incluso cuando el favor no se pidió. Regan confirmó experimentalmente que esa obligación opera de forma bastante independiente del afecto hacia quien la activó. No hacía falta que el cómplice cayera bien para que el mecanismo funcionara: bastaba con que hubiera dado algo primero.',
-            'La implicación para cualquier estrategia de venta es directa. Una muestra gratis en el supermercado, una copa de cortesía, un informe gratuito antes de una propuesta comercial: todos activan la misma obligación silenciosa, sin que haga falta simpatía de por medio. El regalo no busca gustar. Busca generar deuda.'
+            'El sociólogo Alvin Gouldner había descrito la norma de reciprocidad como una de las reglas sociales más extendidas que se conocen: si recibes algo, debes devolver algo de valor parecido, y el tirón aparece aunque no hubieras pedido nada. Regan lo llevó al laboratorio y vio que ese tirón funcionaba casi igual con el cómplice simpático y con el borde. La simpatía apenas movió la cifra de boletos. El favor, mucho.',
+            'El detalle de la tercera condición cierra el argumento. Cuando el refresco lo traía el investigador y no el compañero, la compra de boletos no subía. La deuda no se reparte entre los presentes, apunta a quien te dio algo. Por eso la muestra gratis del supermercado, la copa de bienvenida, el informe sin coste antes de la propuesta o el bolígrafo de la ONG en el sobre funcionan: no buscan gustar, buscan que quien recibe quede en desventaja y quiera saldarla.'
+          ]
+        },
+        {
+          subtitle: 'Qué queda en pie',
+          paragraphs: [
+            'El estudio tenía entre diez y dieciséis personas por condición, todas hombres, universitarios, en 1971. Poca base para cerrar el asunto. El propio Regan avisó de que su manipulación de simpatía había salido floja, así que de aquí no se puede concluir que caer bien nunca influya en que te compren.',
+            'Con esas reservas, la reciprocidad es de los efectos que mejor han envejecido. Se ve en el registro etnográfico de casi cualquier cultura y en estudios de campo, como el de los caramelos que el camarero deja con la cuenta y que suben la propina. Pero tiene un límite claro: si el regalo se lee como un anzuelo o como un soborno, en lugar de deuda genera rechazo, y el gesto se vuelve en contra de quien lo hace.'
           ]
         }
       ],
-      blockquote: { text: '«El favor genera una obligación de devolver algo de valor comparable, y esa obligación pesa más que la simpatía hacia quien lo hizo.»', attribution: 'Dennis T. Regan' },
-      aplicacion: 'Cuando alguien te ofrezca algo gratis antes de pedirte algo (una muestra, una copa, un informe sin coste), separa mentalmente ambos momentos como si fueran de dos personas distintas. Pregúntate si comprarías o aceptarías la petición posterior sin ese regalo previo. Si la respuesta es no, la reciprocidad, no el valor de la oferta, es lo que te está moviendo.'
+      blockquote: { text: '«La relación entre el favor y el cumplimiento no está mediada por la simpatía hacia quien lo hace, sino por la presión normativa a devolverlo.»', attribution: 'Regan (1971)' },
+      aplicacion: 'Cuando alguien te dé algo gratis justo antes de pedirte algo (una muestra, una copa, un informe, una atención inesperada), trata los dos momentos como si vinieran de personas distintas. Pregúntate si dirías que sí a la petición sin ese regalo por delante. Si la respuesta es no, lo que te mueve es la deuda, no el trato.'
     },
     {
       id: 'mkt-05',
       title: 'El cartel de hotel que multiplicó la reutilización de toallas sin pedir nada a cambio',
-      summary: 'Decirle a un huésped que "la mayoría de huéspedes reutiliza su toalla" funcionó mejor que apelar a la protección del medio ambiente, y funcionó todavía mejor si el cartel especificaba que esos otros huéspedes se habían alojado en esa misma habitación.',
+      summary: 'Contar al huésped que "la mayoría reutiliza la toalla" venció al cartel de siempre sobre el medio ambiente. Y decir "la mayoría, en esta misma habitación" lo venció todavía más.',
       sourceUrl: 'https://doi.org/10.1086/586910',
       sourceLabel: 'Goldstein, Cialdini & Griskevicius (2008), Journal of Consumer Research',
       badge: 'Normas sociales',
       author: { name: 'Robert Cialdini', university: 'Arizona State University', specialty: 'Psicología de la persuasión y las normas sociales' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Casi todos los hoteles del mundo tienen un cartel en el baño pidiendo reutilizar las toallas para "proteger el medio ambiente". Noah Goldstein, Robert Cialdini y Vladas Griskevicius sospechaban que ese mensaje, centrado en un valor abstracto, era menos eficaz que uno que apelara a lo que de verdad mueve el comportamiento cotidiano: lo que hacen los demás.',
+      intro: 'El cartel del baño de casi cualquier hotel pide reutilizar la toalla "para proteger el medio ambiente", con un dibujo de una hoja o un delfín. Noah Goldstein, Robert Cialdini y Vladas Griskevicius apostaron a que ese mensaje, apoyado en un valor abstracto, rendía menos que otro más terrenal: lo que hace el resto de la gente que ha dormido en esa cama.',
       sections: [
         {
-          subtitle: 'El experimento: dos carteles, un mismo baño de hotel',
+          subtitle: 'Dos carteles en el mismo toallero',
           paragraphs: [
-            'En un hotel real, colocaron distintos carteles en las habitaciones sin que los huéspedes supieran que participaban en un experimento. Un grupo recibió el mensaje estándar de conservación ambiental. Otro recibió un mensaje de norma social descriptiva: "el 75% de los huéspedes que se alojaron en este hotel reutilizaron su toalla en algún momento de su estancia". El comportamiento real de reutilización se midió al día siguiente por el personal de limpieza, sin que nadie lo supiera de antemano.',
-            'El cartel de norma social incrementó la reutilización un 26% frente al mensaje ambiental estándar. Pero el hallazgo más fino llegó al afinar la norma: cuando el cartel decía que ese 75% se refería específicamente a huéspedes de esa misma habitación (una "norma provincial", más cercana y específica que la norma general del hotel entero), la reutilización subió todavía más. Cuanto más se parecía el grupo de referencia a la propia situación del huésped, más fuerte era el efecto.'
+            'Trabajaron con un hotel de verdad y repartieron distintos carteles por las habitaciones sin que los huéspedes supieran que había un experimento en marcha. Unos leían el mensaje ecológico habitual. Otros, una frase con un dato: "el 75% de los huéspedes de este hotel reutiliza la toalla en algún momento de su estancia". Al día siguiente, el personal de limpieza anotaba, sin saber qué cartel había en cada cuarto, si la toalla estaba colgada para volver a usarla o tirada para lavar.',
+            'Sobre algo más de mil habitaciones, el cartel con el dato social movió la reutilización desde alrededor del 35% hasta cerca del 44%, un 26% más que el mensaje ecológico. En un segundo estudio afinaron la frase. Cuando el cartel decía que ese 75% eran huéspedes "de esta misma habitación", la reutilización trepó por encima del 49%, más que con cualquier otro grupo de referencia probado: los huéspedes del hotel en general, los ciudadanos concienciados, los hombres y mujeres. Cuanto más se parecía el grupo del cartel a la situación exacta de quien lo leía, más apretaba.'
           ]
         },
         {
-          subtitle: 'El mecanismo: hacemos lo que creemos que hace la gente como nosotros',
+          subtitle: 'Hacemos lo que creemos que hace la gente como nosotros',
           paragraphs: [
-            'Cialdini lleva décadas documentando que las normas sociales descriptivas (lo que la mayoría de gente realmente hace, no lo que debería hacer) son uno de los predictores más fuertes de conducta, incluso por delante de apelaciones morales o medioambientales bien argumentadas. El mensaje "los demás lo hacen" resuelve una pregunta que el cerebro se hace constantemente sin saberlo: ¿cuál es la conducta correcta en esta situación concreta?',
-            'El refinamiento de la norma provincial (huéspedes de esta misma habitación, no del hotel en general) funciona porque acorta la distancia psicológica entre quien lee el cartel y el grupo de referencia. Cuanto más se parece ese grupo a uno mismo, más relevante se percibe su comportamiento como guía. La conservación ambiental, en este caso, no cambió de argumento moral: cambió de mensajero, y ese cambio bastó para mover el comportamiento más que el argumento en sí.'
+            'Cialdini lleva décadas midiendo que la norma descriptiva, lo que la mayoría hace de hecho, predice la conducta mejor que las apelaciones morales, incluso mejor que un argumento medioambiental bien construido. "Los demás lo hacen" responde sin ruido a una pregunta que la cabeza se hace todo el rato: aquí y ahora, ¿qué es lo normal?',
+            'La versión "en esta misma habitación" pega más fuerte porque recorta la distancia entre quien lee y el grupo que le sirve de espejo. El argumento ecológico no cambió ni una coma entre un cartel y otro. Cambió quién aparecía haciéndolo, y con eso bastó para mover más toallas que el propio argumento.'
+          ]
+        },
+        {
+          subtitle: 'El mismo truco fuera del baño',
+          paragraphs: [
+            'La compañía eléctrica que imprime en la factura "tus vecinos consumen un 20% menos que tú" trabaja con esta palanca. También el "cientos de personas en tu zona ya se han cambiado", el contador de descargas de una app, el "9 de cada 10 dentistas" y el aviso de Hacienda que recuerda que la mayoría de contribuyentes ya ha presentado la declaración a tiempo. Todos sustituyen el "deberías" por un "esto es lo que hace la gente".',
+            'Y todos comparten el mismo riesgo. Si la norma real es mala y se publica igualmente, "aquí casi nadie recicla", el mensaje empuja hacia abajo a quien lo estaba haciendo bien. La norma descriptiva solo ayuda cuando lo que hace la mayoría es lo que quieres fomentar.'
+          ]
+        },
+        {
+          subtitle: 'El matiz: en otro país no salió',
+          paragraphs: [
+            'En 2014, Gerd Bohner y Lena Schlüter repitieron el estudio en hoteles alemanes, con el método original. No encontraron la ventaja de la norma cercana. En uno de sus experimentos, el cartel de "esta misma habitación" funcionó peor que el de "los huéspedes del hotel", justo al revés que en el estudio de Arizona, y el mensaje ecológico de siempre igualó o superó al del dato social.',
+            'La reutilización de partida en Alemania rondaba el 70% al 90%, muy por encima del 35% al 50% de Estados Unidos. Con casi todo el mundo reutilizando ya, hay poco margen que empujar, y los autores sugieren que un público más habituado a lo ambiental hace menos caso a pistas laterales como "los demás lo hacen". El efecto es real, pero depende del terreno: cuánta gente cumple ya, en qué país, con qué costumbre previa.'
           ]
         }
       ],
-      blockquote: { text: '«Decirle a la gente lo que hacen los demás es, con frecuencia, una palanca de cambio de comportamiento más potente que explicarles por qué deberían cambiar.»', attribution: 'Robert Cialdini' },
-      aplicacion: 'La próxima vez que quieras cambiar un hábito propio poco sostenible (energético, de consumo, de salud), busca datos reales sobre cuánta gente parecida a ti ya lo ha cambiado, en vez de repasar solo las razones abstractas para hacerlo. Saber que "la mayoría como tú ya lo hace" activa un mecanismo de conformidad más fuerte que cualquier argumento moral aislado.'
+      blockquote: { text: '«Los mensajes normativos son más eficaces cuando describen la conducta de un grupo que coincide con las circunstancias inmediatas del individuo.»', attribution: 'Goldstein, Cialdini y Griskevicius (2008)' },
+      aplicacion: 'Si quieres cambiar un hábito tuyo poco sostenible, busca el dato de cuánta gente parecida a ti ya lo ha cambiado, no solo la lista de razones para hacerlo. Y si te toca a ti convencer a otros, di lo que hace la mayoría solo cuando esa mayoría hace lo correcto: publicar una norma mala la refuerza.'
     },
     {
       id: 'mkt-06',
       title: 'El cartel gigante y feo que el 76% aceptó poner en su jardín, pero solo si antes dijeron sí a algo pequeño',
-      summary: 'Pedir directamente a vecinos de California que instalaran un cartel enorme y poco estético en su jardín obtuvo un 17% de aceptación. Pedir primero un favor mínimo y, dos semanas después, el cartel grande, disparó la aceptación al 76%.',
+      summary: 'Pedir de entrada un cartel enorme y feo en el jardín: 17% acepta. Pedir antes un favor mínimo y volver dos semanas después: 76%.',
       sourceUrl: 'https://doi.org/10.1037/h0023552',
       sourceLabel: 'Freedman & Fraser (1966), Journal of Personality and Social Psychology',
       badge: 'Persuasión',
       author: { name: 'Jonathan L. Freedman', university: 'Stanford University', specialty: 'Psicología social de la persuasión y el conformismo' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Jonathan Freedman y Scott Fraser querían entender por qué, a veces, una persona accede a peticiones que en cualquier otro contexto rechazaría sin dudar. Para probarlo eligieron una petición deliberadamente poco atractiva: colocar en el jardín de casa un cartel grande y mal diseñado que decía "conduce con cuidado", el tipo de objeto que la mayoría de propietarios rechaza de entrada.',
+      intro: 'Un desconocido llama a tu puerta y te pide permiso para plantar en tu jardín un cartel enorme, con las letras torcidas, que dice "conduce con cuidado". Casi nadie dice que sí a eso. Jonathan Freedman y Scott Fraser, de Stanford, encontraron en 1966 la forma de que la mayoría lo aceptara, y el truco era no empezar por ahí.',
       sections: [
         {
-          subtitle: 'El experimento: pedir un poco antes de pedir mucho',
+          subtitle: 'Pedir poco antes de pedir mucho',
           paragraphs: [
-            'A un grupo de vecinos de California se les pidió directamente que instalaran el cartel grande. Solo el 17% aceptó. A otro grupo se le pidió, dos semanas antes, un favor mínimo y fácil de aceptar: colocar en la ventana una pegatina pequeña con el mismo mensaje de conducción segura, o firmar una petición relacionada. Cuando, dos semanas después, se les pedía el cartel grande, el 76% aceptó.',
-            'El efecto se sostuvo incluso cuando el primer favor y la petición grande no estaban relacionados temáticamente entre sí, lo que descartaba que el resultado se debiera solo a un compromiso previo con la causa concreta de la seguridad vial. Lo decisivo no era el contenido del primer favor, sino el simple hecho de haber accedido a algo.'
+            'En un barrio de Palo Alto, a un grupo de vecinos les pidieron directamente el cartel grande. Aceptó el 17%. A otro grupo lo habían visitado dos semanas antes con una petición diminuta: pegar en la ventana una pegatina pequeña a favor de la conducción segura, o firmar una hoja sobre el tema. Casi todos accedieron, claro, no costaba nada. Cuando ese mismo grupo recibió después la petición del cartelón, dijo que sí el 76%.',
+            'En una variante posterior, el primer encargo ni siquiera iba de coches. A unos les pidieron firmar por mantener California limpia y, semanas más tarde, el cartel de seguridad vial. Seguía funcionando. También aguantaba cuando quien hacía la segunda visita no era la misma persona que la primera. Lo que contaba no era el tema ni la cara, era haber dicho que sí una vez.'
           ]
         },
         {
-          subtitle: 'El mecanismo: acceder a lo pequeño cambia cómo te ves a ti mismo',
+          subtitle: 'El primer sí te cambia la etiqueta',
           paragraphs: [
-            'Freedman y Fraser proponen que aceptar una primera petición pequeña no cambia solo la relación con quien pide, cambia la autopercepción de quien acepta. Al decir que sí a algo, por mínimo que sea, la persona empieza a verse a sí misma como alguien que colabora con ese tipo de causas, y esa nueva autoimagen hace más coherente aceptar después una petición mayor del mismo tipo.',
-            'La técnica se conoce hoy como pie en la puerta y aparece constantemente fuera del laboratorio: la muestra gratuita antes de la compra grande, la prueba de 7 días antes de la suscripción anual, la firma de una petición online antes de pedir una donación. En todos los casos, el primer paso pequeño no busca el compromiso en sí, busca cambiar cómo se ve a sí misma la persona que lo da.'
+            'Freedman y Fraser lo explican con la idea de que uno se conoce mirándose actuar. Al aceptar el favor pequeño, la persona se coloca a sí misma una etiqueta nueva: soy de los que colaboran con estas cosas, de los que se implican. La segunda petición, más gorda, ya no choca con esa imagen, encaja con ella. Decir que no sería lo raro.',
+            'La técnica se llama pie en la puerta y está por todas partes. La muestra gratis antes de la compra grande. El registro con el correo antes de pedir la tarjeta. La semana de prueba antes de la suscripción anual. La microdonación que abre la puerta a la cuota mensual. El primer paso no se pide por lo que vale, se pide por lo que hace con la idea que tienes de ti.'
+          ]
+        },
+        {
+          subtitle: 'El matiz: funciona, pero poco y con condiciones',
+          paragraphs: [
+            'Cuando Jerry Burger revisó en 1999 decenas de estudios de pie en la puerta, el efecto aparecía de forma fiable pero pequeño. Y solo cuajaba bajo ciertas condiciones. El primer favor tiene que ser lo bastante real como para dejar poso, pero no tanto que la gente lo rechace. No puede haber pago ni premio por ese primer sí, porque entonces la persona lo atribuye a la recompensa y no a "soy así", y la etiqueta no se pega.',
+            'Ayuda que las dos peticiones se parezcan y que no pase demasiado tiempo entre ellas, aunque el estudio original demostró que ninguna de las dos cosas es imprescindible. Con un primer favor trivial o con dinero de por medio, el efecto se cae. No es una llave maestra, es una palanca modesta que necesita su punto de apoyo.'
           ]
         }
       ],
-      blockquote: { text: '«Una vez que alguien ha accedido a una petición pequeña, cambia su autopercepción de un modo que hace más probable que acceda después a una petición mayor.»', attribution: 'Jonathan L. Freedman' },
-      aplicacion: 'Antes de pedir algo grande (una donación, una venta, un compromiso serio), considera si existe una versión mínima de esa misma petición que la otra persona pueda aceptar sin esfuerzo. Según este estudio, ese primer sí, aunque parezca irrelevante en sí mismo, es lo que más predice el segundo.'
+      blockquote: { text: '«Después de haber accedido a una petición pequeña, la persona tiende a verse de otro modo y se vuelve más propensa a acceder a una petición mayor.»', attribution: 'Freedman y Fraser (1966)' },
+      aplicacion: 'Antes de pedir algo grande, mira si hay una versión mínima que la otra persona pueda aceptar casi sin pensar, y que no lleve premio de por medio. Ese primer sí, aunque parezca irrelevante, es lo que más predice el segundo. Y al revés: cuando notes que alguien te ha pedido antes "solo una firma" o "solo el correo", cuenta con que la petición de verdad viene detrás.'
     },
     {
       id: 'mkt-07',
       title: 'Pedir un favor imposible antes del favor real triplicó cuánta gente decía que sí',
-      summary: 'Pedir directamente a estudiantes que fueran tutores voluntarios de menores durante dos años obtuvo un 16,7% de aceptación. Pedir antes un favor extremo, dejar que lo rechazaran y solo entonces pedir el favor real disparó la aceptación al 50%.',
+      summary: 'Pedir a un estudiante dos horas de voluntariado: acepta el 17%. Pedirle antes dos años, dejar que diga que no y entonces pedirle las dos horas: 50%.',
       sourceUrl: 'https://doi.org/10.1037/h0036627',
       sourceLabel: 'Cialdini, Vincent, Lewis, Catalan, Wheeler & Darby (1975), Journal of Personality and Social Psychology',
       badge: 'Persuasión',
       author: { name: 'Robert B. Cialdini', university: 'Arizona State University', specialty: 'Psicología social de la persuasión y la influencia' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Robert Cialdini y su equipo se preguntaron qué pasaría si, en vez de empezar por un favor pequeño para luego pedir uno grande (la técnica de pie en la puerta), se hacía justo lo contrario: empezar por una petición extrema, destinada a ser rechazada, y retirarse después a la petición real, mucho más modesta.',
+      intro: 'El pie en la puerta empieza pidiendo poco para acabar pidiendo mucho. Robert Cialdini y su equipo probaron lo contrario. Abordar a alguien con una petición desmesurada, contar con que la rechace y, sin pausa, bajar a lo que de verdad querías. Lo llamaron el portazo en la cara, y en 1975 lo pusieron a prueba en los pasillos de una universidad.',
       sections: [
         {
-          subtitle: 'El experimento: pedir dos años de voluntariado, para acabar pidiendo dos horas',
+          subtitle: 'De dos años de voluntariado a una tarde en el zoo',
           paragraphs: [
-            'Setenta y dos personas fueron abordadas individualmente por un estudiante en los pasillos de una universidad. A un grupo se le pedía directamente ser tutor voluntario de menores delincuentes durante un mínimo de dos años, una petición extrema que nadie aceptó. Justo después de que la rechazaran, se les pedía el favor real: acompañar dos horas, una tarde, a un grupo de esos mismos menores en una excursión al zoo.',
-            'Ese grupo aceptó el favor real el 50% de las veces. Dos grupos de control mostraron cifras mucho más bajas: quienes solo escuchaban la petición pequeña sin la extrema previa aceptaron el 16,7% de las veces, y quienes conocían ambas peticiones pero podían elegir cuál hacer, sin la secuencia de rechazo, aceptaron el 25%. La diferencia no venía de conocer la opción grande, venía de haberla rechazado primero.'
+            'Setenta y dos estudiantes, abordados de uno en uno mientras cruzaban el campus. A un tercio se le pedía algo enorme: hacer de tutor voluntario, sin cobrar, de menores de un centro de internamiento, dos horas por semana durante dos años como mínimo. Nadie aceptó. En cuanto decían que no, el encuestador aflojaba: "bueno, entonces quizá te interese esto otro", y pedía acompañar durante una tarde, dos horas, a un grupo de esos mismos chavales en una excursión al zoo.',
+            'La mitad de ese grupo aceptó la excursión. Entre quienes solo escuchaban la petición del zoo, sin el dos años por delante, aceptaba el 16,7%. Y entre quienes oían las dos peticiones descritas pero elegían libremente, sin la secuencia de rechazo, un 25%. Conocer la opción grande no bastaba. Había que haberla rechazado.'
           ]
         },
         {
-          subtitle: 'El mecanismo: cuando alguien cede, sientes la presión de ceder tú también',
+          subtitle: 'Tú cedes, yo cedo',
           paragraphs: [
-            'Cialdini explica el efecto con una norma de reciprocidad aplicada no a favores sino a concesiones: cuando quien pide reduce su petición inicial, la otra persona percibe ese gesto como una cesión por su parte, y siente una presión social implícita para responder con una cesión propia, aceptando la petición más pequeña.',
-            'Un detalle confirmado en experimentos posteriores del mismo estudio resulta clave: si era una persona distinta quien hacía la segunda petición, el efecto desaparecía casi por completo. Solo funciona cuando el mismo interlocutor parece haber cedido personalmente, lo que confirma que el mecanismo es la percepción de concesión, no la simple exposición a dos peticiones seguidas.'
+            'La explicación de Cialdini es la reciprocidad, pero no de favores, sino de concesiones. Quien pide baja de una petición gorda a una pequeña, y ese descenso se lee como un paso que da hacia ti. La regla social dice que a un paso se responde con otro paso, así que la otra persona cede a su vez y acepta lo que en frío habría rechazado.',
+            'El equipo lo apuntaló con dos controles. Cuando la segunda petición la hacía otra persona distinta, el efecto se desplomaba: sin nadie que "hubiera cedido" delante de ti, no hay a quién devolver el gesto. Y cuando la primera petición era del mismo tamaño que la segunda, en vez de mucho mayor, tampoco subía nada. No es pedir dos veces lo que funciona, es el retroceso visible entre una y otra.'
+          ]
+        },
+        {
+          subtitle: 'Dónde aparece',
+          paragraphs: [
+            'El regateo de toda la vida es esto. El vendedor parte de un precio inflado, tú te resistes, él "hace un esfuerzo" y baja, y ese descenso te empuja a cerrar en un número que de haber sido el primero te habría parecido caro. La ONG que pide 50 euros al mes y, ante la negativa, se conforma con 10. La versión premium carísima que te presentan primero para que la de gama media parezca sensata. El plazo imposible que un jefe propone para acabar "cediendo" al que quería desde el principio.'
+          ]
+        },
+        {
+          subtitle: 'El matiz: sólido para el sí de boquilla, flojo para el hecho',
+          paragraphs: [
+            'Un metaanálisis de 2012 con decenas de estudios encontró que el portazo en la cara aumenta de forma fiable la aceptación cuando lo que se mide es lo que la gente dice que hará. Cuando se mide lo que de verdad acaba haciendo, el efecto se queda pequeño y deja de ser estadísticamente claro. Prometer no cuesta, aparecer el sábado sí.',
+            'Aun así, el hallazgo ha resistido mejor que muchos clásicos. En 2021, un equipo alemán repitió el experimento original con casi cuatrocientas personas, cinco veces la muestra de Cialdini, y obtuvo prácticamente el mismo patrón medio siglo después. Con la letra pequeña de siempre: las dos peticiones las tiene que hacer la misma persona, con poco tiempo entre medias, y la primera tiene que ser grande pero no tan absurda como para parecer una tomadura de pelo.'
           ]
         }
       ],
-      blockquote: { text: '«Solo cuando la propuesta del segundo favor puede considerarse una concesión por parte de quien pide, aumenta el cumplimiento.»', attribution: 'Robert B. Cialdini' },
-      aplicacion: 'En una negociación (un salario, un plazo, un precio) plantear primero una petición deliberadamente alta que esperas que se rechace, para retirarte después a lo que de verdad querías, activa esta misma presión de reciprocidad. Funciona mejor cuanto más grande sea el contraste entre la primera petición y la segunda, y solo si eres tú, la misma persona, quien hace ambas.'
+      blockquote: { text: '«El cumplimiento solo aumenta cuando el paso a la segunda petición puede interpretarse como una concesión de quien la formula.»', attribution: 'Cialdini et al. (1975)' },
+      aplicacion: 'Cuando negocies un precio, un plazo o unas condiciones, y la otra parte arranque muy alto y luego "haga un esfuerzo" para bajar, fíjate en si el nuevo número es bueno para ti o solo mejor que el disparate inicial. La sensación de que te han hecho un favor viene del contraste, no del trato. Tómate unos segundos y valora la oferta rebajada como si fuera la primera que oyes.'
     }
   ],
   viajes: [
     {
       id: 'via-01',
       title: 'El efecto del asombro: por qué un monumento te hace sentir que tienes más tiempo',
-      summary: 'Sentir asombro ante algo grande, como la vista desde lo alto de un monumento, hace que el tiempo se perciba como más abundante y aumenta la paciencia y la generosidad, incluso minutos después.',
+      summary: 'Sentir asombro ante algo inmenso ensancha la percepción del tiempo disponible, y con ella la paciencia y las ganas de ayudar a un desconocido.',
       sourceUrl: 'https://doi.org/10.1177/0956797612438731',
       sourceLabel: 'Rudd, Vohs & Aaker (2012), Psychological Science',
       badge: 'Asombro y bienestar',
       author: { name: 'Melanie Rudd', university: 'University of Houston', specialty: 'Psicología del Consumidor y las Emociones' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '23 de julio de 2026',
-      intro: 'Melanie Rudd, Kathleen Vohs y Jennifer Aaker querían saber si una emoción concreta, el asombro, cambia algo tan básico como la sensación de cuánto tiempo tenemos disponible. Lo pusieron a prueba en tres experimentos distintos, cambiando cada vez el estímulo que provocaba asombro: anuncios, recuerdos escritos y, en el más revelador de los tres, un relato ambientado en lo alto de la Torre Eiffel.',
+      intro: 'El asombro no añade horas al día. Lo que hace es cambiar cuántas te parece que tienes. En 2012, Melanie Rudd, Kathleen Vohs y Jennifer Aaker publicaron en Psychological Science tres experimentos con una idea incómoda de fondo: que la emoción que sientes al mirar algo que desborda tu escala habitual altera la sensación de disponer de tiempo, y que esa sensación arrastra consigo la paciencia y la generosidad.',
       sections: [
         {
-          subtitle: 'Tres formas de sentir asombro, un mismo resultado',
+          subtitle: 'Un anuncio, un recuerdo y una torre',
           paragraphs: [
-            'En el primer experimento, 63 estudiantes vieron uno de dos anuncios de un minuto: uno mostraba imágenes que suelen provocar asombro (cascadas, ballenas, el espacio exterior), el otro mostraba a gente feliz en un desfile con confeti. Quienes vieron el anuncio asombroso estuvieron más de acuerdo con frases como "tengo mucho tiempo para hacer las cosas que quiero hacer". En el segundo, 86 estudiantes escribieron sobre un recuerdo personal de asombro o de felicidad: quienes escribieron sobre asombro se declararon después menos impacientes y más dispuestos a ofrecer su tiempo como voluntarios, aunque no a donar más dinero.',
-            'El tercer experimento fue el que conectó el hallazgo directamente con los viajes: los participantes leían una de dos historias sobre subir a una torre. Una describía la subida a la Torre Eiffel y la vista de París desde arriba, diseñada para provocar asombro; la otra describía una torre sin nombre con un paisaje genérico, sin ese componente. Después, elegían entre regalos materiales o experienciales (un reloj o una entrada de teatro, una calculadora o un masaje). El grupo de la Torre Eiffel no solo declaró sentir más tiempo disponible: también prefirió las experiencias sobre los objetos con más frecuencia que el grupo de la torre neutra.'
+            'En el primer experimento, 63 estudiantes vieron uno de dos anuncios de sesenta segundos. Uno mostraba cascadas, ballenas y el espacio exterior. El otro, a gente feliz cruzándose con un desfile que lanzaba confeti. Quienes vieron el de las ballenas se mostraron después más de acuerdo con frases como "tengo tiempo de sobra para hacer lo que quiero".',
+            'El segundo experimento cambió el estímulo por un ejercicio de escritura: recordar por escrito un momento de asombro o un momento de felicidad. Los del grupo de asombro se declararon luego menos impacientes y más dispuestos a ceder su tiempo como voluntarios. No a dar más dinero. Ese matiz es el que sostiene la tesis del estudio: el asombro te hace sentir rico en horas, no en euros.',
+            'El tercero es el que toca de lleno el terreno del viaje. Los participantes leían uno de dos relatos sobre subir a una torre. Uno describía la subida a la Torre Eiffel y la vista de París desde arriba. El otro, una torre sin nombre sobre un paisaje cualquiera. Después elegían entre pares de regalos, uno material y otro experiencial: un reloj o una entrada de teatro, una calculadora o un masaje. El grupo de la Torre Eiffel dijo sentir más tiempo por delante, eligió experiencias con más frecuencia y puntuó más alto en satisfacción con su vida.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el asombro te ancla al presente',
+          subtitle: 'Por qué el asombro te ancla al presente',
           paragraphs: [
-            'Rudd, Vohs y Aaker explican el efecto por la forma en que el asombro reorganiza la atención. Ante algo que desborda lo habitual (una vista panorámica, una escala que no encaja con lo cotidiano) el foco se desplaza del pasado y del futuro hacia el momento presente, y ese presente se experimenta con mayor amplitud e intensidad. Sus análisis de mediación confirmaron que el cambio en la percepción del tiempo era, precisamente, lo que explicaba tanto la menor impaciencia como la mayor disposición a ceder tiempo a otros.',
-            'Esto ayuda a entender por qué el recuerdo de pararse frente a algo enorme durante un viaje (una vista, una catedral, un cañón) suele durar más que la simple satisfacción estética del momento: durante unos minutos alteró la forma en que el propio cerebro contaba el tiempo disponible, con efectos medibles en paciencia y generosidad que se mantuvieron después de que la vista hubiera desaparecido.'
+            'La explicación que dan los autores tiene que ver con la atención. Ante algo que no encaja con lo cotidiano, el foco se va del pasado y del futuro al momento presente, y ese presente se vive más ancho y más intenso. Los análisis de mediación apuntaron a que el cambio en la percepción del tiempo era lo que explicaba tanto la menor impaciencia como las ganas de ayudar a otros.',
+            'Sirve para entender por qué pararse ante un cañón o dentro de una catedral se recuerda más que la foto que se hizo allí. Durante unos minutos, el cerebro contó el tiempo de otra manera, y el efecto sobre la paciencia y la generosidad siguió ahí un rato después de que la vista desapareciera.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el estudio no demuestra',
+          paragraphs: [
+            'Los tres experimentos se hicieron con estudiantes universitarios, y el más relevante para los viajes, el de la torre, no usa una torre real: es un texto, y buena parte del efecto pasa por la imaginación de quien lo lee. Medir "cuánto tiempo sientes que tienes" es preguntarlo en una escala, no cronometrar nada.',
+            'El asombro, además, es un cajón ancho. Una montaña, una cifra astronómica, un nacimiento y una pieza de música disparan cosas parecidas pero no idénticas, y no todas mueven la conducta igual. El efecto se ha reproducido con estímulos distintos, casi siempre en laboratorio y con medidas de autoinforme. Cuánto dura fuera de allí, y cuánto aguanta un mal día, es más difícil de afirmar.'
           ]
         }
       ],
-      blockquote: { text: '«El asombro expande la percepción del tiempo, y esa expansión es lo que te hace más paciente y más generoso.»', attribution: 'Melanie Rudd' },
-      aplicacion: 'Al planificar un viaje, incluye deliberadamente al menos un momento diseñado para provocar asombro: un mirador, una vista abierta, algo a una escala que no ves en tu día a día. Según este estudio, ese momento cambia durante un rato cómo sientes el tiempo que tienes, con efectos que se notan incluso después de bajar de la torre.'
+      blockquote: { text: '«Las experiencias de asombro traen a la persona al momento presente, y estar en el presente es lo que da al asombro su capacidad de ajustar la percepción del tiempo, influir en las decisiones y hacer que la vida resulte más satisfactoria.»', attribution: 'Rudd, Vohs & Aaker (2012)' },
+      aplicacion: 'Al montar un viaje, reserva un hueco para algo a una escala que no ves en tu barrio: un mirador amplio, una cima, una sala enorme, un cielo sin farolas. Según estos datos, ese rato cambia un poco cómo sientes el tiempo que tienes, y el efecto dura algo más que la vista. No es una técnica de productividad. Es casi lo contrario: funciona porque te saca del reloj un momento.'
     },
     {
       id: 'via-02',
@@ -3233,27 +3837,34 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'de Bloom et al. (2010), Work & Stress',
       badge: 'La paradoja del descanso',
       author: { name: 'Jessica de Bloom', university: 'University of Groningen', specialty: 'Psicología Organizacional y Recuperación del Estrés' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '16 de julio de 2026',
-      intro: 'Jessica de Bloom y su equipo siguieron a 96 trabajadores holandeses durante siete semanas seguidas: dos antes de sus vacaciones de esquí, un tramo durante el viaje, y hasta cuatro semanas después de volver al trabajo. En cada punto midieron siete indicadores de salud y bienestar. El objetivo no era solo comprobar si las vacaciones sientan bien (eso ya se sabía), sino averiguar cuánto dura ese efecto una vez se reincorpora la rutina.',
+      intro: 'Las vacaciones funcionan. El problema es lo poco que tardan en dejar de funcionar. En 2010, Jessica de Bloom y su equipo publicaron un seguimiento de siete semanas a 96 trabajadores holandeses alrededor de un viaje de deportes de invierno. No querían comprobar si descansar sienta bien, eso ya se sabía. Querían medir cuánto dura ese bien una vez se ficha otra vez en la oficina.',
       sections: [
         {
-          subtitle: 'El experimento: siete semanas de seguimiento real',
+          subtitle: 'Siete semanas, seis medidas',
           paragraphs: [
-            'Durante el propio viaje, cinco de los siete indicadores mejoraron de forma medible: el estado de salud general, el ánimo, el nivel de tensión, la energía percibida y la satisfacción con la vida. Eso confirmaba lo esperable: las vacaciones funcionan mientras duran, y no de forma marginal.',
-            'Lo inesperado llegó después. Al comparar los niveles de bienestar de la primera semana de vuelta al trabajo con los de las dos semanas previas al viaje, la mejora había desaparecido en la práctica totalidad de los indicadores. El bienestar no se había erosionado poco a poco a lo largo del mes siguiente: se había desvanecido ya en los primeros días de reincorporación, mucho antes de lo que la mayoría de la gente asume cuando planea "recargar pilas" con un único viaje largo al año.'
+            'A los 96 participantes se les preguntó por su estado dos semanas antes de salir, durante el viaje, y una, dos y cuatro semanas después de volver. Seis indicadores en cada punto: estado de salud, ánimo, fatiga, tensión, energía y satisfacción. El viaje medio duró nueve días, con un rango de siete a diecinueve, y la mayoría fue a los Alpes austríacos.',
+            'Durante las vacaciones mejoraron cinco de los seis indicadores: salud general, ánimo, tensión, energía y satisfacción con la vida. La fatiga fue la única que no se movió de forma clara. Nada de esto era marginal, la gente volvía objetivamente mejor de como se había ido.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el bienestar depende del contexto, no solo de lo vivido',
+          subtitle: 'La caída, y lo rápida que fue',
           paragraphs: [
-            'La explicación de fondo es que buena parte de la mejora durante las vacaciones no procede solo de lo que se hace, sino del contraste con lo que se deja atrás: las exigencias laborales, los correos, los horarios. En cuanto la persona regresa a ese mismo entorno, el propio entorno reinstala rápidamente la carga psicológica que las vacaciones habían suspendido temporalmente. El bienestar no se pierde por sí solo: se pierde porque el contexto que lo generaba (la ausencia de la rutina) también se ha perdido.',
-            'De Bloom y su equipo remarcan que esto no significa que las vacaciones no sirvan para nada, sino que su función real es la de un reinicio temporal más que la de una reserva acumulable de bienestar para el resto del año. Investigaciones posteriores del mismo grupo confirmaron el patrón con vacaciones de duración distinta, y el resultado se repite: la duración del viaje influye poco en la rapidez con la que el efecto se diluye al volver.'
+            'Al comparar la primera semana de vuelta al trabajo con las dos semanas previas al viaje, la mejora se había esfumado en casi todos los indicadores. No se fue erosionando a lo largo del mes siguiente. Se fue en los primeros días de reincorporación, mucho antes de lo que asume quien planea "recargar pilas" con un único viaje largo en verano.',
+            'La explicación de fondo es que buena parte de la mejora no venía de lo que se hacía en la nieve, sino del contraste con lo que se dejaba atrás: los correos, los horarios, los plazos. Al volver a ese entorno, el entorno reinstala en cuestión de días la carga que las vacaciones habían dejado en pausa. El bienestar no se pierde solo, se pierde porque desaparece lo que lo sostenía.'
+          ]
+        },
+        {
+          subtitle: 'A quién le duró y a quién no',
+          paragraphs: [
+            'El promedio esconde bastante variación. Un 60% de la muestra tuvo una mejora sustancial durante y después del viaje. Un 23% no notó nada. Y un 17% salió peor de como entró, con vacaciones que sumaron estrés en vez de restarlo.',
+            'El estudio no dice que las vacaciones no sirvan. Dice que sirven como un reinicio, no como una despensa que se llena una vez al año y da de comer doce meses. Trabajo posterior del mismo grupo con viajes más cortos encontró el mismo patrón: la duración influye poco en la velocidad a la que el efecto se diluye al volver.'
           ]
         }
       ],
-      blockquote: { text: '«Las vacaciones nos hacen mucho bien mientras duran. El problema es cuánto tardamos en devolver ese bien al volver.»', attribution: 'Jessica de Bloom' },
-      aplicacion: 'Si la duración del viaje apenas cambia la velocidad con la que el bienestar se diluye al volver, la implicación práctica es repartir el descanso en varios viajes cortos a lo largo del año en vez de concentrarlo todo en unas vacaciones largas anuales. Cada reinicio, aunque breve, vuelve a generar el contraste que produce el efecto.'
+      blockquote: { text: '«La salud y el bienestar mejoran durante las vacaciones, pero estos efectos positivos se desvanecen durante la primera semana de vuelta al trabajo.»', attribution: 'de Bloom et al. (2010)' },
+      aplicacion: 'Si la duración apenas cambia la velocidad a la que se diluye el efecto, repartir el descanso en varias escapadas cortas a lo largo del año rinde más que concentrarlo todo en un viaje largo anual. Cada corte, aunque sea de cuatro días, vuelve a crear el contraste que produce la mejora. Y proteger la primera semana de vuelta, con agenda ligera y sin reuniones a primera hora, salva parte de lo que si no se evapora en dos días.'
     },
     {
       id: 'via-03',
@@ -3263,27 +3874,40 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Kumar, Killingsworth & Gilovich (2014), Psychological Science',
       badge: 'La antesala del viaje',
       author: { name: 'Thomas Gilovich', university: 'Cornell University', specialty: 'Psicología de la Felicidad y la Toma de Decisiones' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '9 de julio de 2026',
-      intro: 'Amit Kumar, Matthew Killingsworth y Thomas Gilovich partieron de una pregunta sencilla: si comprar experiencias (un viaje, un concierto) hace más felices que comprar objetos, como ya habían demostrado estudios anteriores del propio Gilovich, ¿ocurre lo mismo mientras todavía se está esperando poder disfrutarlos, antes incluso de que la experiencia o el objeto lleguen?',
+      intro: 'Una parte del disfrute de un viaje se cobra antes de hacer la maleta. Amit Kumar, Matthew Killingsworth y Thomas Gilovich lo midieron en 2014, partiendo de algo que la investigación de Gilovich ya había establecido: gastar en experiencias hace más feliz que gastar en cosas. La pregunta nueva era si esa ventaja aparece ya durante la espera, antes de que la experiencia o el objeto lleguen siquiera.',
       sections: [
         {
-          subtitle: 'El experimento: la espera como parte de la compra',
+          subtitle: 'La espera como parte de la compra',
           paragraphs: [
-            'Los investigadores compararon el estado de ánimo de personas que estaban esperando una compra experiencial (un pase de esquí, entradas de concierto) con el de personas esperando una compra material. Quienes esperaban la experiencia reportaron niveles más altos de felicidad durante esa espera. Para comprobar si esto se reflejaba también fuera del laboratorio, el equipo analizó noticias de prensa sobre colas multitudinarias: gente esperando toda la noche para comprar el último modelo de un producto electrónico frente a gente esperando para entradas de un espectáculo o partido.',
-            'El patrón coincidió con lo hallado en los cuestionarios: las personas que hacían cola para conseguir una experiencia estaban de mejor humor y se comportaban mejor entre ellas que las que hacían cola para conseguir un objeto material, entre las que los incidentes de mal comportamiento (empujones, discusiones, situaciones que llegaban a las noticias por su gravedad) eran mucho más frecuentes.'
+            'El equipo comparó el ánimo de gente que esperaba una compra experiencial ya reservada, un pase de esquí o entradas de concierto, con el de gente que esperaba una compra material, un móvil o un mueble. Quienes esperaban la experiencia describían una espera más agradable y con más ilusión. La del objeto venía más teñida de impaciencia. Un estudio de muestreo de experiencias a gran escala, con avisos aleatorios a lo largo del día, encontró el mismo patrón en la vida cotidiana.'
           ]
         },
         {
-          subtitle: 'El mecanismo: lo material invita a comparar, lo experiencial invita a imaginar',
+          subtitle: 'Las colas que salen en las noticias',
           paragraphs: [
-            'Kumar, Killingsworth y Gilovich lo atribuyen a que esperar un objeto material activa el pensamiento comparativo: ¿habrá una versión mejor pronto?, ¿lo estaré pagando de más?, ¿me arrepentiré de la elección? Esa clase de dudas erosiona la espera de un placer anticipado y la convierte, en parte, en una fuente de ansiedad. Esperar una experiencia, en cambio, es más difícil de comparar con alternativas concretas y suele estar cargada de un componente social e imaginativo (con quién iré, qué voy a ver) que resulta agradable en sí mismo, sin necesidad de que la experiencia haya empezado siquiera.',
-            'La implicación es que gran parte del valor emocional total de un viaje no se cobra únicamente durante el viaje ni solo en el recuerdo posterior: una porción significativa se cobra durante la espera, en las semanas o meses entre reservarlo y subirse al avión, un tramo que casi nadie contabiliza como parte de la experiencia cuando calcula si mereció la pena.'
+            'Después vino la parte más llamativa. Los investigadores rastrearon crónicas de prensa sobre gente haciendo cola, buscando términos como "cola" y "esperar", y separaron las colas por una experiencia (un concierto, un partido, un estreno) de las colas por un objeto (el lanzamiento de un aparato electrónico, unas rebajas).',
+            'Las noticias de colas por objetos recogían más empujones, peleas, colados y hasta detenciones. Las de colas por experiencias describían un ambiente más cordial, con desconocidos que hacían turnos para ir al baño o compartían comida. Coincidía con lo que decían los cuestionarios.'
+          ]
+        },
+        {
+          subtitle: 'Por qué el objeto impacienta',
+          paragraphs: [
+            'Esperar un objeto invita a comparar. ¿Saldrá pronto una versión mejor? ¿Lo estoy pagando de más? ¿Habré elegido mal? Esa duda va carcomiendo la espera. Esperar una experiencia es más difícil de comparar con alternativas concretas y viene cargada de un componente social e imaginativo, con quién iré y qué voy a ver, que ya es agradable de por sí, sin que la experiencia haya empezado.',
+            'La consecuencia práctica es que una porción del valor emocional de un viaje se cobra en las semanas entre reservarlo y embarcar, un tramo que casi nadie apunta en la cuenta cuando calcula si el viaje mereció la pena.'
+          ]
+        },
+        {
+          subtitle: 'Los límites del hallazgo',
+          paragraphs: [
+            'El análisis de prensa es una medida indirecta, y lo codificó gente que conocía la hipótesis. Una cola violenta es más noticia que una cola tranquila, así que puede haber un sesgo en qué historias llegan a publicarse.',
+            'Y la frontera entre "experiencia" y "objeto" es más borrosa de lo que parece. Un móvil nuevo también se estrena y se disfruta, un viaje también deja fotos y recuerdos materiales. El resultado es de promedio, una tendencia, no una ley que se cumpla en cada cola.'
           ]
         }
       ],
-      blockquote: { text: '«Esperar una experiencia es, en sí mismo, una experiencia agradable. Esperar un objeto rara vez lo es.»', attribution: 'Thomas Gilovich' },
-      aplicacion: 'Si el presupuesto obliga a elegir entre reservar un viaje con mucha antelación o hacerlo en el último momento, este estudio sugiere adelantar la reserva siempre que sea posible: la espera forma parte del disfrute total que el viaje va a proporcionar, tanto como el viaje mismo.'
+      blockquote: { text: '«La espera de una compra experiencial resulta más placentera y estimulante que la espera de una compra material, que tiende a estar más teñida de impaciencia.»', attribution: 'Kumar, Killingsworth & Gilovich (2014)' },
+      aplicacion: 'Si puedes elegir entre reservar el viaje con meses de antelación o dejarlo para última hora, adelántalo. La espera no es tiempo muerto previo al viaje, es parte del viaje, y de las baratas. Y si te descubres refrescando la web por si baja el precio del billete que ya compraste, es la lógica del objeto colándose donde no le toca.'
     },
     {
       id: 'via-04',
@@ -3293,27 +3917,34 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Van Boven & Gilovich (2003), Journal of Personality and Social Psychology',
       badge: 'Psicología del gasto',
       author: { name: 'Leaf Van Boven', university: 'University of Colorado Boulder', specialty: 'Psicología del consumo y la felicidad' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '30 de junio de 2026',
-      intro: 'Leaf Van Boven y Thomas Gilovich se propusieron poner a prueba, con datos y no solo con intuición, una pregunta que atraviesa cualquier decisión de gasto discrecional: si el dinero sobrante de un mes conviene gastarlo en algo material que se queda contigo, o en una experiencia que se termina, como un viaje o un concierto.',
+      intro: 'El dinero que sobra a final de mes se puede convertir en algo que se queda contigo o en algo que se acaba. Leaf Van Boven y Thomas Gilovich pusieron esa disyuntiva a prueba en 2003, con encuestas y experimentos en lugar de intuición. El resultado ha aguantado bien dos décadas: por encima de cierto nivel de renta, la experiencia que termina deja más poso que el objeto que permanece.',
       sections: [
         {
-          subtitle: 'El experimento: encuestas, recuerdos y compras imaginadas',
+          subtitle: 'Encuestas, recuerdos y una compra imaginada',
           paragraphs: [
-            'En dos encuestas con participantes de perfiles demográficos distintos, la mayoría identificó, al recordar sus propias compras pasadas, que las compras experienciales (viajes, salidas, entradas a espectáculos) les habían hecho más felices que las compras materiales de coste comparable. En un experimento de laboratorio posterior, se pidió a los participantes que pensaran en una compra experiencial reciente o en una compra material reciente antes de valorar su estado de ánimo: quienes habían pensado en la experiencia reportaron sentimientos más positivos que quienes habían pensado en el objeto.',
-            'Un experimento adicional añadió un matiz temporal: la ventaja de las experiencias sobre los objetos en cuanto a felicidad anticipada era más marcada cuando la persona se proyectaba a un futuro lejano que cuando pensaba en la compra desde una perspectiva cercana en el tiempo, lo que sugiere que parte del beneficio de las experiencias tiene que ver con cómo se transforman en la memoria y en la imaginación con el paso del tiempo.'
+            'En dos encuestas con muestras de perfil distinto, una de ellas amplia y variada en edad e ingresos, la mayoría de la gente señaló, al repasar sus propias compras, que las experienciales (viajes, salidas, entradas) les habían hecho más felices que las materiales de coste parecido. En un experimento de laboratorio, quienes dedicaban unos minutos a pensar en una compra experiencial reciente quedaban de mejor humor que quienes pensaban en una material.',
+            'Otro experimento añadió un matiz temporal: la ventaja de la experiencia en felicidad anticipada crecía cuando la persona se proyectaba a un futuro lejano, y se encogía al pensar la compra en corto. Señal de que parte del beneficio está en cómo la compra se transforma en la memoria y en la imaginación, no en el momento de estrenarla.'
           ]
         },
         {
-          subtitle: 'El mecanismo: lo que se compra no compite contigo, se convierte en ti',
+          subtitle: 'Lo que compras no compite contigo, se vuelve tú',
           paragraphs: [
-            'Van Boven y Gilovich proponen tres razones por las que las experiencias generan más felicidad sostenida que los objetos. Primero, son más fáciles de reinterpretar de forma positiva con el tiempo (un viaje con contratiempos acaba convirtiéndose en una buena anécdota, un objeto defectuoso rara vez mejora en el recuerdo). Segundo, se comparan peor con las experiencias de otras personas, porque son menos directamente equiparables que dos objetos del mismo tipo. Tercero, tienden a vivirse en compañía, lo que las conecta con relaciones sociales que por sí solas ya predicen bienestar.',
-            'La diferencia de fondo es que un objeto material permanece separado de la identidad de quien lo compra, mientras que una experiencia se integra en la propia biografía: no tienes un viaje, en cierto sentido te conviertes, en parte, en la persona que hizo ese viaje. Esa integración con la identidad es, según los autores, el hilo común que explica por qué el mismo dinero rinde más felicidad cuando se convierte en experiencia que cuando se convierte en posesión.'
+            'Los autores dan tres razones. Una, la experiencia se reinterpreta mejor con los años: un viaje con contratiempos acaba de anécdota, un móvil que falla no mejora en el recuerdo. Dos, se compara peor con la de los demás, porque dos experiencias son menos equiparables que dos objetos del mismo tipo. Tres, se suele vivir acompañado, y eso la enreda con relaciones que por sí solas ya predicen bienestar.',
+            'El fondo del asunto es que el objeto queda fuera de ti y la experiencia entra en tu biografía. No tienes un viaje, te vuelves en parte la persona que lo hizo. Esa integración con la identidad es, según Van Boven y Gilovich, el hilo que explica por qué el mismo dinero rinde más felicidad como experiencia que como posesión.'
+          ]
+        },
+        {
+          subtitle: 'Cuándo gana el objeto',
+          paragraphs: [
+            'La ventaja tiene una condición. Nicolao, Irwin y Goodman mostraron en 2009, en el Journal of Consumer Research, que las experiencias solo ganan cuando salen bien. Ante una compra que sale mal, un objeto decepcionante puede envejecer mejor que una experiencia decepcionante, porque el mal viaje se recuerda entero y el objeto se puede guardar en un cajón y olvidar.',
+            'Además, la etiqueta no siempre está clara. Una bici, un instrumento o una consola son objetos que existen para vivir experiencias. Y el efecto se ha medido sobre todo en países ricos y con gente que ya tiene lo básico cubierto. No dice nada de quien elige entre una lavadora nueva y un fin de semana fuera.'
           ]
         }
       ],
-      blockquote: { text: '«Las experiencias hacen más felices a las personas, en parte, porque se convierten en parte de quiénes somos de una forma en que los objetos rara vez lo hacen.»', attribution: 'Thomas Gilovich' },
-      aplicacion: 'Ante una decisión de gasto discrecional entre un objeto y una experiencia de coste similar, este estudio sugiere inclinarte por la experiencia si tu objetivo es maximizar felicidad a medio plazo, no solo satisfacción inmediata. No porque los objetos no sirvan para nada, sino porque tienden a integrarse peor en la historia que te cuentas sobre tu propia vida.'
+      blockquote: { text: '«Las compras experienciales, las que se hacen con la intención principal de vivir una experiencia, hacen más felices a las personas que las compras materiales de coste comparable.»', attribution: 'Van Boven & Gilovich (2003)' },
+      aplicacion: 'Ante un objeto y una experiencia de precio parecido, si buscas felicidad a medio plazo y no solo el subidón de estrenar, tira por la experiencia. Con la salvedad que deja claro el propio matiz del estudio: cuando la experiencia tiene bastantes papeletas de salir mal, mal tiempo casi asegurado, compañía difícil, el cálculo cambia y el objeto deja de ser la peor opción.'
     },
     {
       id: 'via-05',
@@ -3323,27 +3954,34 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Zimmermann & Neyer (2013), Journal of Personality and Social Psychology',
       badge: 'Desarrollo de la personalidad',
       author: { name: 'Julia Zimmermann', university: 'FernUniversität in Hagen', specialty: 'Desarrollo de la personalidad y experiencias de movilidad internacional' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Julia Zimmermann y Franz Neyer, en la Universidad de Jena, aprovecharon una oportunidad natural poco frecuente en la investigación de personalidad: cientos de estudiantes alemanes que ya tenían planeado irse de intercambio, y cientos más que se quedaban en su universidad de origen, lo que permitía comparar el cambio de personalidad de ambos grupos sin necesidad de asignar a nadie al azar.',
+      intro: 'Julia Zimmermann y Franz Neyer, en la Universidad de Jena, aprovecharon algo que la investigación de personalidad rara vez tiene a mano: cientos de estudiantes alemanes que ya habían decidido irse de intercambio, y cientos más que se quedaban. Podían comparar cómo cambiaba la personalidad de unos y otros sin asignar a nadie al azar, y sin depender de que nadie recordara cómo era antes.',
       sections: [
         {
-          subtitle: 'El experimento: más de 1.000 estudiantes, medidos antes y después del intercambio',
+          subtitle: 'Más de mil estudiantes, dos fotos de personalidad',
           paragraphs: [
-            'Reclutaron a más de 1.000 estudiantes de unas 200 universidades alemanas: unos con planes firmes de pasar un semestre o un año en el extranjero, otros sin intención de moverse, usados como grupo de comparación. Ambos grupos completaron cuestionarios estandarizados de personalidad al inicio del estudio y de nuevo después del periodo que los estudiantes de intercambio pasaron fuera.',
-            'Quienes habían estudiado en el extranjero mostraron aumentos medibles en apertura a la experiencia, estabilidad emocional y amabilidad, comparados con el grupo que se había quedado en Alemania. El cambio no era simplemente cuestión de maduración por el paso del tiempo: el grupo de control, de edad y trayectoria vital comparable, no mostró los mismos aumentos en ese mismo periodo.'
+            'Reclutaron a 527 estudiantes con plan firme de pasar un semestre o un año fuera y a 607 sin intención de moverse, como grupo de comparación. Todos rellenaron cuestionarios estandarizados de los cinco grandes rasgos al empezar el curso y de nuevo al terminarlo.',
+            'Quienes se fueron subieron en apertura a la experiencia y en amabilidad, y bajaron en neuroticismo, es decir, ganaron estabilidad emocional. Y lo hicieron por encima de lo que se movió el grupo que se quedó. La edad y el momento vital eran parecidos en los dos grupos, así que no era simple maduración por el paso de los meses.'
           ]
         },
         {
-          subtitle: 'El mecanismo: nuevas relaciones, no solo nuevos paisajes',
+          subtitle: 'Relaciones nuevas, no paisajes nuevos',
           paragraphs: [
-            'Zimmermann y Neyer atribuyen el cambio, en buena parte, a la reorganización de la red social que provoca un intercambio: construir relaciones nuevas desde cero, en un entorno donde el propio rol social todavía no está fijado, obliga a poner en práctica rasgos como la iniciativa social, la tolerancia a la incertidumbre o la curiosidad, de un modo que la vida rutinaria en el entorno conocido rara vez exige.',
-            'El hallazgo encaja con un principio más amplio de la psicología de la personalidad: los rasgos no son fijos de por vida, cambian en respuesta a experiencias sostenidas que exigen actuar de forma distinta a como se actuaba antes. Un viaje corto de vacaciones difícilmente produce ese efecto. Meses viviendo y relacionándote de una forma nueva, sí.'
+            'El análisis apuntaba a la red social. Los que hacían amigos nuevos en el destino y se apoyaban en ellos eran los que más cambiaban. Construir relaciones desde cero, en un sitio donde tu papel todavía no está fijado, obliga a tirar de iniciativa, aguantar la incertidumbre y mantener la curiosidad de una forma que la rutina en casa no pide.',
+            'Encaja con un principio de la psicología de la personalidad: los rasgos se mueven cuando la vida te obliga de forma sostenida a actuar distinto a como actuabas. Un puente de vacaciones no basta. Meses viviendo de otra manera, sí.'
+          ]
+        },
+        {
+          subtitle: 'Cambio real, pero con letra pequeña',
+          paragraphs: [
+            'No es un experimento con asignación al azar. Quien se va de Erasmus ya se distingue de entrada, y de hecho una extraversión y una apertura más altas predecían marcharse. Los autores lo modelan estadísticamente, no lo eliminan.',
+            'Los rasgos se midieron por autoinforme, y verse a uno mismo "más abierto" después de una experiencia que se supone que abre puede inflar el efecto. El tamaño del cambio, además, es modesto, no una transformación de la persona. Un seguimiento del mismo equipo a cinco años vista encontró que parte del cambio persistía y parte se diluía al volver a la vida de siempre.'
           ]
         }
       ],
-      blockquote: { text: '«Las experiencias de movilidad internacional no son solo un episodio biográfico: dejan una huella medible en el desarrollo de la personalidad.»', attribution: 'Julia Zimmermann' },
-      aplicacion: 'Si buscas un cambio real en rasgos como la apertura o la tolerancia a la incertidumbre, este estudio sugiere que la variable decisiva no es la distancia del viaje ni lo exótico del destino, sino el tiempo sostenido construyendo relaciones nuevas en un contexto donde tu rol social todavía no está definido, algo que un viaje corto rara vez permite.'
+      blockquote: { text: '«Ambas formas de estancia en el extranjero se asociaron a aumentos en apertura y amabilidad y a un descenso en neuroticismo, más allá de la autoselección; la creación de nuevas relaciones de apoyo internacionales explicaba en buena parte ese efecto.»', attribution: 'Zimmermann & Neyer (2013)' },
+      aplicacion: 'Si lo que buscas es moverte en rasgos como la apertura o la tolerancia a la incertidumbre, la variable que predice el cambio no es lo lejos que vayas ni lo exótico del sitio, sino el tiempo sostenido haciendo vínculos nuevos donde nadie te tiene aún clasificado. Un intercambio de un semestre lo permite. Una semana de turismo, por intensa que sea, no.'
     },
     {
       id: 'via-06',
@@ -3353,27 +3991,34 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Piff, Dietze, Feinberg, Stancato & Keltner (2015), Journal of Personality and Social Psychology',
       badge: 'Emociones y comportamiento prosocial',
       author: { name: 'Paul K. Piff', university: 'University of California, Irvine', specialty: 'Psicología social de la desigualdad y las emociones morales' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Paul Piff y su equipo querían aislar qué le hace exactamente el asombro (esa mezcla de sorpresa y pequeñez que provoca ver algo que desborda tu marco habitual de referencia, como un paisaje inmenso o un cielo estrellado) al comportamiento hacia otras personas, más allá de hacer sentir bien a quien lo experimenta.',
+      intro: 'Paul Piff y su equipo querían saber qué le hace exactamente el asombro al trato con los demás. No solo si sienta bien, sino si cambia la conducta hacia otras personas. En 2015 lo probaron en cinco estudios con más de 2.000 participantes, y el más citado se hizo en un bosquecillo de la Universidad de California en Berkeley.',
       sections: [
         {
-          subtitle: 'El experimento: un minuto mirando eucaliptos de 60 metros',
+          subtitle: 'Un minuto mirando eucaliptos de 60 metros',
           paragraphs: [
-            'En uno de los cinco estudios de la investigación, transeúntes en un campus universitario fueron dirigidos a mirar, durante un minuto, hacia un grupo de eucaliptos gigantes de más de 60 metros de altura, o hacia un edificio de ciencias corriente de altura similar, como condición de control. Justo después, un colaborador de los investigadores, fingiendo un tropiezo, dejaba caer un puñado de bolígrafos delante de cada participante.',
-            'Quienes habían mirado los árboles ayudaron a recoger los bolígrafos con más frecuencia y más rapidez que quienes habían mirado el edificio. En otro estudio del mismo trabajo, con una muestra representativa a nivel nacional de más de 1.500 personas, la tendencia disposicional a experimentar asombro con frecuencia predijo mayor generosidad en un juego económico real, por encima de otras emociones positivas como la compasión o el orgullo.'
+            'Noventa estudiantes fueron llevados a un grupo de eucaliptos de Tasmania de más de 60 metros de altura. La mitad pasó un minuto mirando hacia arriba, hacia las copas. La otra mitad pasó el mismo minuto mirando un edificio alto contiguo. Justo después, un colaborador de los investigadores que fingía tropezar dejaba caer una caja con once bolígrafos delante de cada participante.',
+            'Quienes habían mirado los árboles recogieron más bolígrafos, y en cuestionarios posteriores marcaron un menor sentido de merecer un trato especial. En otro de los cinco estudios, con una muestra representativa de Estados Unidos de más de 1.500 personas, la tendencia habitual a sentir asombro predijo más generosidad en un juego económico con dinero real, por encima de otras emociones positivas como la compasión.'
           ]
         },
         {
-          subtitle: 'El mecanismo: sentirse pequeño te hace pensar menos en ti',
+          subtitle: 'Sentirse pequeño y pensar menos en uno',
           paragraphs: [
-            'Los autores documentan que el asombro produce lo que llaman "pequeño yo": una sensación transitoria de que el propio individuo, sus preocupaciones y su estatus, ocupan un lugar diminuto frente a algo mucho más grande que uno mismo. Estadísticamente, ese sentimiento de pequeñez explicaba buena parte del efecto del asombro sobre la generosidad y la ayuda posterior.',
-            'La lectura no es que el asombro haga a la gente más generosa porque se sienten mejor: los autores comprobaron que el efecto no se explicaba solo por estar de mejor humor. Se explicaba específicamente por sentirse una parte pequeña de algo más grande, un desplazamiento momentáneo de atención lejos del propio ego que deja más espacio mental para notar y responder a las necesidades de otros.'
+            'Los autores lo llaman "pequeño yo": la sensación pasajera de que tú, tus preocupaciones y tu estatus ocupáis un lugar diminuto frente a algo mucho más grande. Esa sensación explicaba estadísticamente buena parte del efecto sobre la ayuda y la generosidad.',
+            'No era simplemente estar de buen humor. Los investigadores comprobaron que el buen ánimo por sí solo no daba cuenta del efecto. Lo que lo explicaba era sentirse una parte pequeña de algo enorme, un desvío momentáneo de la atención lejos del propio ego que deja sitio para fijarse en lo que necesita el de al lado.'
+          ]
+        },
+        {
+          subtitle: 'Un efecto real y a la vez frágil',
+          paragraphs: [
+            'La pieza central son 90 personas en un campus, mirando árboles durante un minuto. El efecto es pequeño y sensible al montaje, y basta cambiar detalles del procedimiento para que se debilite.',
+            '"Asombro" es además una etiqueta ancha. Un bosque, una tormenta, una catedral, una cifra astronómica y una pieza de música disparan cosas parecidas, pero no idénticas, y no todas mueven la conducta por igual. La ola de replicaciones de la última década ha tratado con dureza a los efectos de este tipo, en los que una emoción breve empuja una acción concreta. El vínculo entre asombro y generosidad se sostiene en varios estudios, pero conviene leerlo como una inclinación de la balanza, no como un interruptor.'
           ]
         }
       ],
-      blockquote: { text: '«El asombro puede llevar a las personas a centrarse menos en sus propias necesidades individuales y a sentirse parte de algo más grande que ellas mismas.»', attribution: 'Paul K. Piff' },
-      aplicacion: 'Si buscas ese efecto fuera del laboratorio, no hace falta un viaje largo: un mirador, un cielo despejado de noche lejos de la ciudad o cualquier paisaje que te haga sentir pequeño durante un minuto parece bastar, según estos datos, para inclinar levemente la balanza hacia notar y ayudar a quien tienes cerca.'
+      blockquote: { text: '«El asombro provoca una disminución del yo individual y de sus preocupaciones, y esa sensación de pequeñez es lo que, en parte, explica su efecto sobre la conducta prosocial.»', attribution: 'Piff et al. (2015)' },
+      aplicacion: 'Para buscar ese efecto no hace falta un viaje largo. Un mirador, un cielo estrellado lejos de la ciudad o cualquier vista que te haga sentir pequeño durante un minuto parece bastar, según estos datos, para inclinar un poco la balanza hacia fijarte en quien tienes al lado y echarle una mano. Es un empujón leve y de corta duración, no un cambio de carácter.'
     },
     {
       id: 'via-07',
@@ -3383,239 +4028,320 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Maddux & Galinsky (2009), Journal of Personality and Social Psychology',
       badge: 'Experiencia multicultural',
       author: { name: 'William W. Maddux', university: 'INSEAD', specialty: 'Comportamiento organizacional y creatividad transcultural' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'William Maddux y Adam Galinsky querían poner a prueba con datos una idea sostenida sobre todo por anécdotas (muchos escritores y artistas famosos produjeron sus mejores obras viviendo en el extranjero): ¿vivir en otro país realmente vuelve más creativa a la gente, o simplemente atrae a personas que ya lo eran de partida?',
+      intro: 'Muchos escritores y pintores hicieron su mejor obra viviendo fuera de su país. William Maddux y Adam Galinsky querían saber si eso es causa o coincidencia. ¿Vivir en otro país vuelve más creativa a la gente, o solo atrae a quien ya lo era? En 2009 lo abordaron con cinco estudios, y separaron con cuidado dos cosas que solemos meter en el mismo saco: vivir fuera y viajar.',
       sections: [
         {
-          subtitle: 'El experimento: el problema de la vela y una negociación con solución oculta',
+          subtitle: 'El problema de la vela y una gasolinera que no se vendía',
           paragraphs: [
-            'En el primer estudio, 205 estudiantes de un MBA a tiempo completo intentaron resolver el problema de la vela de Duncker: fijar una vela a una pared usando solo la vela, cerillas y una caja de chinchetas, sin que gotee cera, donde la solución exige darse cuenta de que la propia caja puede servir de soporte. Los investigadores midieron cuánto tiempo había vivido cada participante en el extranjero y cuánto había viajado, por separado.',
-            'Solo el tiempo vivido en el extranjero predijo resolver correctamente el problema, no el tiempo de viaje turístico, incluso controlando edad, género y nacionalidad. Un segundo estudio, con 108 estudiantes en una negociación que solo se resolvía bien encontrando una solución creativa más allá del precio, replicó el mismo patrón controlando además los cinco grandes rasgos de personalidad: de nuevo, solo vivir fuera predijo alcanzar un acuerdo creativo.'
+            'En el primer estudio, estudiantes de un MBA a tiempo completo de la Kellogg School intentaron resolver el problema de la vela de Duncker: sujetar una vela encendida a la pared con solo una vela, una caja de cerillas y una caja de chinchetas, sin que la cera gotee al suelo. La solución exige ver que la caja de chinchetas se puede vaciar y clavar a la pared como repisa. Los investigadores midieron por separado cuánto había vivido cada participante en el extranjero y cuánto había viajado.',
+            'Solo el tiempo vivido fuera predijo dar con la solución. El tiempo de turismo, no, ni siquiera teniendo en cuenta edad, sexo y nacionalidad. Un segundo estudio usó una negociación por la venta de una gasolinera, diseñada para que no hubiera trato posible solo con el precio, porque el mínimo que aceptaba el vendedor superaba el máximo del comprador. Solo cabía un acuerdo creativo que atendiera los intereses de fondo de las dos partes. De nuevo, únicamente haber vivido fuera predijo alcanzarlo, esta vez controlando además los cinco grandes rasgos de personalidad.'
           ]
         },
         {
-          subtitle: 'El mecanismo: adaptarte a una cultura nueva, no solo visitarla, entrena la mente',
+          subtitle: 'Adaptarse, no solo estar',
           paragraphs: [
-            'El factor que explicaba el vínculo no era la simple exposición a un país distinto, sino el grado de adaptación: cuánto había ajustado cada persona su comportamiento y su forma de pensar a la cultura local mientras vivía allí. Vivir fuera obliga a descubrir que un mismo gesto puede significar cosas opuestas según el marco cultural (dejar comida en el plato es cortesía en algunos sitios e insulto en otros), y ese descubrimiento repetido entrena la costumbre de sostener varios marcos de interpretación a la vez.',
-            'En un tercer estudio, los investigadores pidieron a personas que ya habían vivido en el extranjero que recordaran por escrito esa experiencia (frente a recordar un viaje turístico o un día cualquiera en su ciudad natal) antes de hacer una prueba de creatividad. Recordar la experiencia de vivir fuera mejoró temporalmente el rendimiento creativo, y la mejora era mayor cuanto más tiempo había vivido esa persona en el extranjero, algo que solo ocurrió en quienes tenían esa experiencia real detrás.'
+            'Un tercer estudio, con estudiantes de INSEAD, señaló qué parte de la experiencia contaba. No era haber estado en un país distinto, sino cuánto se había adaptado cada persona a la cultura local mientras vivía allí. A más adaptación, mejor rendimiento en el problema de la vela.',
+            'Vivir fuera obliga a descubrir que el mismo gesto significa cosas opuestas según el sitio. Dejar comida en el plato es de buena educación en unos países y un desaire en otros. Repetir ese tipo de descubrimiento entrena la costumbre de sostener varios marcos de interpretación a la vez, que es materia prima de la creatividad.',
+            'En otro estudio pidieron a gente que ya había vivido fuera que recordara por escrito esa etapa, frente a recordar un viaje turístico o un día normal en su ciudad, antes de una prueba creativa. Recordar la vida en el extranjero mejoró el rendimiento, y más cuanto más tiempo se había vivido fuera. En quienes solo habían hecho turismo, ese recuerdo no cambió nada.'
+          ]
+        },
+        {
+          subtitle: 'Correlación con casi todo controlado, pero correlación',
+          paragraphs: [
+            'A nadie se le asignó al azar a mudarse a Tokio. Quien vive fuera se distingue de entrada en recursos, en idiomas y probablemente en apertura. Los autores meten controles, personalidad y nacionalidad incluidas, pero no es un experimento.',
+            'Las muestras son estudiantes de MBA de escuelas de élite, un grupo poco representativo: móvil, acomodado, muy seleccionado. El problema de la vela y una negociación son medidas estrechas de algo tan amplio como "creatividad". Y los estudios de recordar-para-activar son del tipo que en la última década ha costado replicar en muchos laboratorios. Lo más sólido del trabajo son las correlaciones con relación dosis-respuesta. Las derivadas de laboratorio, bastante menos.'
           ]
         }
       ],
-      blockquote: { text: '«No es el tiempo pasado en el extranjero por sí mismo, es el grado de adaptación a una cultura distinta lo que explica el vínculo entre vivir fuera y la creatividad.»', attribution: 'William W. Maddux' },
-      aplicacion: 'Según este estudio, unas vacaciones cortas en el extranjero no parecen suficientes para mejorar tu pensamiento creativo. Lo que predice el efecto es adaptarte de verdad: vivir en un sitio el tiempo suficiente para tener que cambiar cómo interpretas situaciones cotidianas, un tipo de viaje bastante más exigente que el turismo.'
+      blockquote: { text: '«El tiempo vivido en el extranjero, pero no el tiempo viajando por el extranjero, mostró una relación positiva con la creatividad; el grado de adaptación a otras culturas explicaba ese vínculo.»', attribution: 'Maddux & Galinsky (2009)' },
+      aplicacion: 'Unas vacaciones cortas fuera, por muy lejos que quede el destino, no aparecen en estos datos como una vía para pensar de forma más flexible. Lo que predice el efecto es adaptarse: quedarte el tiempo suficiente para tener que cambiar cómo interpretas cosas cotidianas, desde una cena hasta una discusión. Es un tipo de viaje bastante más incómodo que el turismo, y esa incomodidad es justo la parte que entrena.'
     }
   ],
   redesSociales: [
     {
       id: 'rs-01',
       title: 'El uso pasivo de redes: por qué mirar sin interactuar te deja peor de lo que estabas',
-      summary: 'Pasar tiempo desplazándote por publicaciones ajenas sin comentar ni escribir predice caídas reales en el bienestar emocional, mientras que usar la misma red para hablar con gente no produce ese efecto.',
+      summary: 'Diez minutos leyendo el muro sin escribir nada bastaron para que un grupo terminara el día con peor ánimo. Diez minutos hablando con gente en esa misma red, no.',
       sourceUrl: 'https://doi.org/10.1037/xge0000057',
       sourceLabel: 'Verduyn et al. (2015), Journal of Experimental Psychology: General',
       badge: 'Uso pasivo',
       author: { name: 'Ethan Kross', university: 'University of Michigan', specialty: 'Regulación Emocional y Redes Sociales' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '24 de julio de 2026',
-      intro: 'Ethan Kross, Philippe Verduyn y su equipo sospechaban que hablar de "los efectos de las redes sociales" en bloque era demasiado simple, porque en una misma sesión de Facebook caben usos muy distintos: escribir a un amigo, comentar una foto, o simplemente desplazarse por el muro sin interactuar con nada. Diseñaron dos estudios para separar esos usos y medir si afectaban al bienestar de forma distinta.',
+      intro: 'Preguntar si "las redes sociales" hacen daño mete en el mismo saco cosas que no se parecen. Escribir a un amigo, felicitar a alguien y pasar veinte minutos bajando por el muro sin tocar nada son la misma aplicación y tres experiencias distintas. Ethan Kross y Philippe Verduyn montaron dos estudios para separar esos usos y ver cuál movía el ánimo, y en qué dirección.',
       sections: [
         {
-          subtitle: 'El experimento: de laboratorio a la vida real',
+          subtitle: 'Dos maneras de estar en Facebook',
           paragraphs: [
-            'En el primer estudio, asignaron en el laboratorio a distintos grupos a usar Facebook de forma pasiva (solo consultar publicaciones) o de forma activa (publicar, comentar, escribir mensajes), y midieron cómo cambiaba su estado de ánimo. En el segundo, siguieron a personas en su vida diaria durante alrededor de dos semanas, con hasta cinco encuestas breves al día preguntando cómo habían usado la red en las últimas horas y cómo se sentían en ese momento.',
-            'Los dos estudios, uno controlado y otro en condiciones reales, apuntaron en la misma dirección: el uso pasivo predecía caídas en el bienestar afectivo a lo largo del tiempo, mientras que el uso activo (la interacción real con otras personas) no mostraba ese patrón. La red social en sí misma no era el factor decisivo: lo era el tipo concreto de uso que se le daba en cada sesión.'
+            'En el primer estudio llevaron a 84 estudiantes al laboratorio y les dieron diez minutos de Facebook con una consigna asignada al azar. Unos tenían que participar: publicar, comentar, mandar mensajes. Otros solo podían mirar, leer el muro y ver fotos y páginas ajenas sin escribir una sola palabra. Para asegurarse de que cumplían, el equipo grabó la pantalla de cada participante sin avisar. Tras descartar a quienes se salieron del guion o adivinaron de qué iba el experimento, quedaron 67. Esa misma noche, a las nueve, todos respondían una encuesta sobre cómo se sentían.',
+            'Los que habían pasado los diez minutos mirando sin intervenir llegaron a la noche peor de como habían empezado la tarde. Los que habían interactuado, no. El grupo pasivo era además el que más suscribía frases del tipo "mi vida no está a la altura de la de los demás". Un detalle desactiva la lectura más alarmista: los dos grupos, el activo y el pasivo, se sintieron menos solos justo después de usar Facebook. No todo se hundía a la vez.'
           ]
         },
         {
-          subtitle: 'El mecanismo: comparar sin conectar',
+          subtitle: 'La segunda prueba salió del laboratorio',
           paragraphs: [
-            'El análisis estadístico de Verduyn y su equipo identificó la envidia como el mediador principal del efecto: desplazarse por publicaciones ajenas expone a una sucesión de momentos cuidadosamente seleccionados y editados de la vida de otras personas, lo que dispara comparaciones sociales hacia arriba (mi vida frente a lo mejor de la suya) sin que el uso pasivo ofrezca, a cambio, ninguna de las recompensas sociales reales que sí aporta interactuar, como sentirse escuchado o mantener un vínculo.',
-            'Interactuar activamente, en cambio, sustituye parte de esa comparación por conexión genuina, lo que amortigua el efecto. La consecuencia práctica es que la pregunta relevante no es "cuánto tiempo paso en redes sociales" sino "qué estoy haciendo exactamente durante ese tiempo": la misma app, la misma duración de sesión, puede dejarte peor o no dejarte peor en absoluto según el uso que le des.'
+            'El segundo estudio reaprovechó los datos de una investigación anterior del mismo equipo, la de los 82 jóvenes de Ann Arbor que se cuenta aparte en esta biblioteca. Durante seis días, esas personas recibían un mensaje de texto cinco veces al día, de diez de la mañana a medianoche, con enlace a una encuesta de medio minuto: cuánto Facebook habían consumido desde el último aviso, cómo estaban de ánimo, cuánta envidia notaban, cuánto habían tratado con gente en persona.',
+            'El patrón del laboratorio reapareció en la vida diaria. Cuanto más uso pasivo declaraba alguien entre dos mensajes, peor puntuaba su ánimo en el siguiente. El análisis señaló un mediador claro, la envidia. Mirar el resumen editado de la vida de otros dispara la comparación hacia arriba, y esa comparación es la que tira del ánimo hacia abajo. La relación se mantenía al descontar el uso activo de Facebook, el uso de otras redes y las conversaciones cara a cara.'
+          ]
+        },
+        {
+          subtitle: 'Comparar sin recibir nada a cambio',
+          paragraphs: [
+            'Interactuar tiene una contrapartida. Si escribes a alguien o comentas su foto, puede haber respuesta, la sensación de que te leen, un vínculo que sigue vivo. El uso pasivo expone a las mismas vidas ajenas y no devuelve ninguna de esas cosas. Te quedas con la comparación y sin el contacto que la compensaría.',
+            'Eso cambia la pregunta que solemos hacernos. Cuenta menos cuánto rato pasas en una red que qué haces durante ese rato. La misma sesión, con la misma duración exacta, te deja distinto según entres a hablar con una persona concreta o a deslizar el pulgar sin destino.'
+          ]
+        },
+        {
+          subtitle: 'Cuánto de esto ha aguantado',
+          paragraphs: [
+            'La distinción entre uso activo y pasivo se volvió tan popular que conviene mirar cómo ha envejecido. En 2022, Patti Valkenburg y su equipo revisaron cuarenta estudios de encuesta sobre el tema. Solo en torno al 15% encontraba que el uso pasivo se asociara a peor bienestar. En la mayoría, la relación era pequeña o no aparecía. Un estudio que siguió a adolescentes día a día confirmó la hipótesis del uso pasivo en un 20% de los chavales y la descartó en el 80% restante.',
+            'Los trabajos grandes que cruzan tiempo de pantalla y bienestar encuentran efectos diminutos, del orden del medio punto porcentual de la variación entre unas personas y otras. La lectura prudente hoy es que el uso pasivo no sienta igual a todo el mundo. A quien ya arrastra tendencia a compararse le pesa. A mucha otra gente le resbala. El experimento de 2015 describió bien un mecanismo real, la envidia, pero lo pintó más universal de lo que después se ha podido sostener.'
           ]
         }
       ],
-      blockquote: { text: '«Pasar el tiempo en la red mirando sin conectar es lo que erosiona el bienestar.»', attribution: 'Ethan Kross' },
-      aplicacion: 'Antes de abrir una red social, decide en ese momento si vas a interactuar con alguien concreto (responder, comentar, escribir) o si solo vas a "echar un vistazo". Si es lo segundo, ese es exactamente el tipo de uso que este estudio relaciona con el deterioro del ánimo, así que vale la pena poner un límite de tiempo más corto a esa sesión en concreto.'
+      blockquote: { text: '«El uso pasivo de Facebook socava el bienestar emocional al aumentar la envidia, y la relación se mantiene al controlar el uso activo, el de otras redes y la interacción social directa.»', attribution: 'Verduyn et al. (2015)' },
+      aplicacion: 'Antes de abrir una red, decide si vas a hablar con alguien concreto o solo a echar un vistazo. Si es lo segundo, ponle un límite corto a esa sesión, porque es justo el uso que peor sienta si además tiendes a compararte. Y si sales de la app con la sensación de que tu vida va por detrás de la de los demás, esa es la señal de que estabas comparándote en vez de hablar con nadie.'
     },
     {
       id: 'rs-02',
       title: 'Por qué Instagram golpea tu autoestima más que una revista (y no es por los famosos)',
-      summary: 'Diez minutos viendo el Facebook propio empeoran el estado de ánimo más que el mismo tiempo en una revista de moda, y el motivo no son las celebridades: son las comparaciones con la gente que conoces de verdad.',
+      summary: 'Diez minutos en el Facebook propio dejaron a un grupo de mujeres con peor humor que diez minutos en una web neutra. Y quien más se comparaba salía viéndose más defectos en la cara.',
       sourceUrl: 'https://doi.org/10.1016/j.bodyim.2014.12.002',
       sourceLabel: 'Fardouly, Diedrichs, Vartanian & Halliwell (2015), Body Image',
       badge: 'Comparación social',
       author: { name: 'Jasmine Fardouly', university: 'University of New South Wales', specialty: 'Psicología de la Imagen Corporal' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '17 de julio de 2026',
-      intro: 'Jasmine Fardouly y su equipo querían saber si Facebook afecta al estado de ánimo y a la imagen corporal de un modo distinto al de otros medios que también exponen a estándares de apariencia, como una revista de moda. Para comprobarlo asignaron a 112 mujeres a uno de tres grupos: diez minutos navegando en su propio Facebook, diez minutos en una web de moda, o diez minutos en una web de control sin contenido relacionado con la apariencia.',
+      intro: 'Jasmine Fardouly quería una comparación limpia. ¿Le hace Facebook algo distinto al ánimo y a la imagen del propio cuerpo de lo que ya hace hojear una revista de moda? Reunió a 112 mujeres jóvenes y las repartió al azar en tres grupos: diez minutos en su propio Facebook, diez minutos en la web de una revista de moda, o diez minutos en una web neutra sin nada que tuviera que ver con el aspecto físico. El estudio original es sobre Facebook, aunque el patrón que describe se ha visto luego también en Instagram.',
       sections: [
         {
-          subtitle: 'El experimento: el mismo tiempo, resultados distintos',
+          subtitle: 'El mismo reloj, tres pantallas',
           paragraphs: [
-            'Después de los diez minutos, todas las participantes completaron medidas de estado de ánimo, insatisfacción corporal y discrepancia percibida en distintos rasgos de apariencia (peso, cara, pelo, piel). Quienes habían pasado ese tiempo en Facebook mostraron un estado de ánimo más negativo que quienes habían estado en la web de control, un patrón que no apareció con la misma claridad en el grupo de la revista de moda.',
-            'En una segunda parte del estudio, con una muestra más amplia, Fardouly encontró que un mayor uso habitual de Facebook se asociaba a mayor insatisfacción corporal, y que esa relación se explicaba, estadísticamente, por la tendencia a hacer comparaciones de apariencia, en concreto comparaciones con la gente conocida que aparece en el propio muro, no con modelos ni famosos.'
+            'Al terminar, todas respondieron a escalas de estado de ánimo, insatisfacción con el cuerpo y desajuste percibido en rasgos concretos: el peso, la cara, el pelo, la piel. Las que venían de Facebook salieron con peor humor que las de la web neutra. Con la revista de moda esa diferencia no quedó tan clara.',
+            'Sobre la insatisfacción corporal en general no hubo efecto. Quienes venían de Facebook no se puntuaban peor que quienes venían de la web de control. El daño apareció en un sitio más fino. Entre las mujeres con tendencia alta a compararse por el aspecto, pasar por Facebook dejó más desajuste percibido en la cara, el pelo y la piel que pasar por la web neutra. En las que no suelen compararse, nada.'
           ]
         },
         {
-          subtitle: 'El mecanismo: comparar con tus iguales pesa más que comparar con famosos',
+          subtitle: 'Por qué una conocida pesa más que una modelo',
           paragraphs: [
-            'La razón por la que Facebook golpea distinto que una revista es precisamente esa: una modelo profesional se percibe como una categoría aparte, fácil de descartar como referencia poco realista. Una compañera de universidad o una prima con la que se comparte contexto real se percibe como un estándar comparable, alcanzable, y por tanto más relevante para juzgarse a uno mismo. Esa cercanía es justo lo que hace que la comparación duela más, no menos.',
-            'Ese estándar comparable llega, encima, en forma de fotos ya seleccionadas y editadas por la propia persona antes de publicarlas, de modo que la comparación es, en realidad, con la versión de sí misma que esa persona ha decidido mostrar, no con su vida real. El resultado es una comparación sistemáticamente desfavorable: una versión no editada de una misma frente a la versión más favorecida de alguien que, además, se percibe como un igual.'
+            'Un segundo trabajo del mismo grupo, este con 227 universitarias y de tipo correlacional, fue a buscar con quién se comparan exactamente las mujeres en Facebook. La respuesta fue: con sus iguales. Las comparaciones con amigas y con conocidas lejanas explicaban la relación entre usar Facebook y preocuparse más por el cuerpo. Las comparaciones con familiares, con famosas o con una misma en el pasado, no.',
+            'Tiene una lógica incómoda. Una modelo profesional entra en una categoría aparte, fácil de descartar como vara de medir poco realista. Una compañera de clase o una prima comparten contexto contigo, así que funcionan como estándar alcanzable y por eso relevante. La cercanía, lejos de proteger de la comparación, la vuelve más intensa.'
+          ]
+        },
+        {
+          subtitle: 'La foto ya venía retocada',
+          paragraphs: [
+            'Ese estándar aparente llega, además, filtrado. La conocida con la que te mides ha elegido esa foto entre veinte, la ha recortado y a veces la ha retocado antes de subirla. La comparación real es contra la versión que ha decidido enseñar de sí misma, no contra su día a día. Sales perdiendo por diseño: tu cara sin preparar frente al mejor plano de otra persona que, encima, se te parece.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el estudio no demuestra',
+          paragraphs: [
+            'El experimento midió diez minutos y un efecto sobre el humor inmediato. No siguió a nadie durante meses ni prueba que Facebook cause un trastorno de la imagen corporal. El golpe al rostro percibido apareció solo en un subgrupo, el de quienes ya se comparan mucho, y las muestras eran de mujeres jóvenes occidentales, casi todas universitarias. Llevarlo a hombres, a otras edades o a otras plataformas es una apuesta, no un dato.',
+            'Lo que sí ha resistido en la investigación posterior sobre Instagram es la dirección: el contenido de conocidos, y no el de celebridades, es el que se asocia a peor imagen corporal. El mecanismo aguanta. Su tamaño depende mucho de a quién sigues y de cuánto tiendas a mirarte en los demás.'
           ]
         }
       ],
-      blockquote: { text: '«No comparamos nuestra vida con la de los famosos. La comparamos con la versión editada de la vida de nuestros iguales, y eso es lo que más duele.»', attribution: 'Jasmine Fardouly' },
-      aplicacion: 'Si notas que una red social te deja de peor humor con tu propio aspecto, fíjate en si el detonante son cuentas de gente que conoces en persona más que de influencers o famosos. Silenciar o dejar de seguir a celebridades apenas toca este mecanismo concreto; ajustar la exposición al contenido de conocidos y compañeros es, según este estudio, donde está la palanca real.'
+      blockquote: { text: '«Las mujeres que pasaron diez minutos en Facebook salieron con peor estado de ánimo que las que estuvieron en una web neutra, y las más propensas a compararse percibieron más defectos en su cara, su pelo y su piel.»', attribution: 'Fardouly et al. (2015)' },
+      aplicacion: 'Si una red te deja peor con tu propio aspecto, mira quién te lo provoca. Si son sobre todo cuentas de gente que conoces en persona, dejar de seguir a famosos apenas cambia nada. La palanca está en ajustar la exposición al contenido de conocidas y compañeras, que es con quien de verdad te comparas. Y en recordar, cada vez que una foto te hunda un poco, que la subió alguien que la eligió entre muchas.'
     },
     {
       id: 'rs-03',
       title: 'FOMO: el miedo a perderte algo, medido en 2.079 personas',
-      summary: 'El miedo a perderte lo que otros están viviendo tiene un nombre científico, una escala validada y una paradoja incómoda: cuanto más lo sientes, más usas las redes que lo alimentan, sin que eso lo reduzca.',
+      summary: 'El miedo a perderte lo que viven los demás tiene una escala de diez preguntas y una paradoja: cuanto más lo sientes, más miras el móvil, y mirar el móvil no lo baja.',
       sourceUrl: 'https://doi.org/10.1016/j.chb.2013.02.014',
       sourceLabel: 'Przybylski, Murayama, DeHaan & Gladwell (2013), Computers in Human Behavior',
       badge: 'FOMO',
       author: { name: 'Andrew Przybylski', university: 'University of Oxford', specialty: 'Psicología de la Tecnología y el Bienestar' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '10 de julio de 2026',
-      intro: 'Andrew Przybylski y su equipo le pusieron nombre y medida a algo que hasta 2013 se mencionaba de forma coloquial pero no se había estudiado con rigor: el miedo a perderte algo, o FOMO (fear of missing out), la sensación incómoda de que otros están viviendo experiencias gratificantes de las que tú estás fuera. Construyeron una escala de diez preguntas para medirlo y la aplicaron a una muestra representativa de 2.079 adultos del Reino Unido, en edad de trabajar, de entre 22 y 65 años, encuestados a lo largo de dos semanas.',
+      intro: 'Hasta 2013, el miedo a perderse algo era una expresión de conversación, no una variable. Andrew Przybylski y su equipo le pusieron una escala de diez preguntas y la soltaron sobre una muestra representativa del Reino Unido: 2.079 adultos en edad de trabajar, de 22 a 65 años. Querían saber qué tipo de persona puntúa alto y qué hace después con el teléfono.',
       sections: [
         {
-          subtitle: 'El experimento: una escala y una muestra nacional',
+          subtitle: 'Una carencia disfrazada de ansiedad',
           paragraphs: [
-            'Con esa muestra, el equipo encontró que puntuar alto en FOMO se asociaba a una menor satisfacción de necesidades psicológicas básicas (sentirse competente, autónomo y conectado con otros, según la teoría de la autodeterminación), a peor estado de ánimo y a menor satisfacción con la vida en general. Hasta aquí, un patrón esperable de malestar psicológico.',
-            'Lo llamativo llegó al cruzar el FOMO con el comportamiento real: quienes puntuaban más alto no usaban menos las redes sociales para aliviar esa ansiedad, las usaban más. El FOMO se asoció con claridad a un mayor uso de redes sociales inmediatamente después de despertarse, antes de dormir, durante las comidas, e incluso a comportamientos con riesgo objetivo, como consultar el móvil conduciendo o durante clases y reuniones.'
+            'En esa muestra nacional, quienes puntuaban alto en FOMO tenían menos cubiertas las tres necesidades psicológicas que describe la teoría de la autodeterminación: sentirse capaz, sentirse dueño de las propias decisiones y sentirse conectado con otros. También declaraban peor estado de ánimo y menos satisfacción con su vida. Hasta ahí, un retrato de malestar corriente.',
+            'El giro llegó al mirar la conducta. La gente con más FOMO no usaba menos las redes para calmarse. Las usaba más, y en momentos muy concretos: en los primeros quince minutos después de despertarse, justo antes de dormir, durante el desayuno, la comida y la cena. El propio análisis situó el FOMO como el eslabón que une la carencia de fondo con ese uso intensivo del móvil.'
           ]
         },
         {
-          subtitle: 'El mecanismo: revisar el móvil sin resolver la necesidad de fondo',
+          subtitle: 'Los 87 estudiantes que conducían mirando el móvil',
           paragraphs: [
-            'Przybylski interpreta el FOMO como una señal de necesidades no cubiertas: cuando faltan autonomía, competencia o conexión real en la vida de alguien, aparece una inquietud difusa por quedarse fuera de lo que sí parece estar dándole esas cosas a los demás. Revisar el móvil es la respuesta más inmediata y accesible a esa inquietud, precisamente porque promete una solución rápida.',
-            'El problema es que consultar el feed ofrece, como mucho, una simulación de conexión (ver lo que otros hacen) sin resolver la carencia real de autonomía o competencia que generó la ansiedad en primer lugar. Por eso el ciclo no se cierra solo: cuanta más FOMO siente alguien, más motivo tiene para seguir mirando, y mirar más no cubre la necesidad de fondo, así que el FOMO no baja. Es una respuesta que se autoalimenta en lugar de resolverse.'
+            'Un tercer estudio del mismo trabajo, este con 87 universitarios de primer año, fue a por comportamientos con consecuencias. Los que puntuaban alto en FOMO entraban más en Facebook durante las clases y decían sentir hacia la red una mezcla de atracción y rechazo, las dos cosas a la vez. Y entre los que conducían de forma habitual, siete de cada diez de la muestra, los de más FOMO reconocían con más frecuencia escribir y leer mensajes al volante. El mismo mecanismo, llevado a un sitio donde despistarse se paga caro.'
+          ]
+        },
+        {
+          subtitle: 'Por qué el móvil no cierra el círculo',
+          paragraphs: [
+            'Przybylski lee el FOMO como una señal, no como el problema en sí. Cuando a alguien le falta autonomía, competencia o vínculos reales, aparece una inquietud difusa por quedarse fuera de lo que sí parece estar dándoselo a los demás. Coger el móvil es la respuesta más rápida y a mano.',
+            'El fallo está en que el feed ofrece, como mucho, una imitación de conexión. Ver lo que hacen otros no repara la falta de autonomía ni de competencia que encendió la ansiedad. Por eso el ciclo se realimenta: más FOMO, más motivo para mirar, y mirar no cubre nada, así que el FOMO sigue. La respuesta parece que alivia y en realidad mantiene el fuego encendido.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el estudio no puede decir',
+          paragraphs: [
+            'Todo esto son fotografías de un momento. Los datos salieron de encuestas de una sola pasada, así que no distinguen si la carencia genera FOMO o si el FOMO va desgastando la vida de quien lo sufre. Los propios autores lo reconocen y piden estudios experimentales. Las correlaciones, además, son moderadas: el FOMO explica una parte pequeña de las diferencias de ánimo entre unas personas y otras.',
+            'Lo que el trabajo dejó bien atado es el perfil de riesgo. Más joven, más hombre, con menos necesidades psicológicas cubiertas, más FOMO. Y una consecuencia práctica que sí resiste: quien más lo sufre tiende a llevarse el móvil a sitios donde no debería, desde la cama hasta el asiento del conductor.'
           ]
         }
       ],
-      blockquote: { text: '«Cuanto más miedo tienes a perderte algo, más usas las redes que alimentan ese miedo. No es una solución: es el propio problema repitiéndose.»', attribution: 'Andrew Przybylski' },
-      aplicacion: 'Si te sorprendes revisando el móvil por una inquietud vaga de estar perdiéndote algo, trata esa sensación como información sobre una necesidad de autonomía, competencia o conexión que no está cubierta en otra parte de tu día, no como una señal de que debas revisar más. El propio estudio muestra que revisar más no resuelve el FOMO: solo lo acompaña.'
+      blockquote: { text: '«El miedo a perderse algo no surge de la nada: quienes tienen menos satisfechas las necesidades de competencia, autonomía y vínculo tienden a puntuar más alto, y ese miedo se asocia a más uso del móvil, quizá a costa del aprendizaje y de la seguridad al volante.»', attribution: 'Przybylski et al. (2013)' },
+      aplicacion: 'Cuando te descubras cogiendo el móvil por una inquietud vaga de estarte perdiendo algo, trátala como información. Te está diciendo que hay una necesidad de autonomía, de competencia o de compañía sin cubrir en otra parte del día, no que debas mirar más. El propio estudio muestra que mirar más no baja el FOMO. Solo lo acompaña.'
     },
     {
       id: 'rs-04',
       title: 'Lo que pasó cuando 143 universitarios limitaron sus redes a 10 minutos al día',
-      summary: 'Tres semanas limitando Facebook, Instagram y Snapchat a diez minutos por plataforma y día redujeron la soledad y la depresión frente a un grupo de control, con el mayor beneficio en quienes partían de más síntomas depresivos.',
+      summary: 'Tres semanas con Facebook, Instagram y Snapchat capados a diez minutos por aplicación bajaron la soledad y la depresión frente a un grupo de control. El mayor beneficio fue para quienes llegaban peor.',
       sourceUrl: 'https://doi.org/10.1521/jscp.2018.37.10.751',
       sourceLabel: 'Hunt, Marx, Lipson & Young (2018), Journal of Social and Clinical Psychology',
-      badge: 'Uso pasivo',
+      badge: 'Bienestar digital',
       author: { name: 'Melissa Hunt', university: 'University of Pennsylvania', specialty: 'Psicología clínica y bienestar digital' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '15 de julio de 2026',
-      intro: 'La mayoría de los estudios sobre redes sociales y bienestar son correlacionales: miden cuánto usa alguien las redes y cuánto malestar declara, sin poder afirmar con certeza qué causa qué. Melissa Hunt y su equipo, de la Universidad de Pensilvania, diseñaron en cambio un experimento real: manipularon de forma activa cuánto usaban las redes 143 estudiantes universitarios y midieron qué cambiaba en su bienestar.',
+      intro: 'Casi todo lo que se sabe sobre redes y bienestar es correlacional: se mide cuánto usa alguien las redes y cuánto malestar declara, y ahí se queda, sin poder decir qué causa qué. Melissa Hunt y su equipo, en la Universidad de Pensilvania, hicieron lo contrario. Cogieron a 143 estudiantes, les cambiaron a la fuerza cuánto tiempo pasaban en las redes y miraron qué se movía.',
       sections: [
         {
-          subtitle: 'El experimento: tres semanas de uso limitado frente a uso normal',
+          subtitle: 'Tres semanas con el cronómetro puesto',
           paragraphs: [
-            'Tras una semana inicial de referencia sin cambios, los participantes fueron asignados al azar a dos grupos durante tres semanas: uno debía limitar el uso de Facebook, Instagram y Snapchat a 10 minutos por plataforma y día (30 minutos en total), verificado con capturas de pantalla del tiempo de uso; el otro seguía usando las redes con normalidad, sin restricción alguna.',
-            'El grupo de uso limitado mostró reducciones significativas en soledad y en síntomas depresivos al cabo de las tres semanas, frente al grupo de control. El efecto fue especialmente marcado entre quienes habían empezado el estudio con más síntomas depresivos: en ese subgrupo, la puntuación media de depresión bajó de 23 puntos en la semana inicial a 14,5 puntos en la cuarta semana, dentro del grupo de uso limitado. Entre quienes partían de niveles bajos de depresión, el cambio fue mínimo (de 5,1 a 4,1 puntos), lo que indica que el beneficio se concentró en quienes más lo necesitaban.'
+            'Tras una semana inicial sin tocar nada, para tener un punto de partida, repartieron a los participantes al azar en dos grupos durante tres semanas. Uno tenía que limitar Facebook, Instagram y Snapchat a diez minutos por aplicación y día, unos treinta minutos en total, y lo comprobaban con las capturas de uso que registra el iPhone. El otro seguía con su vida digital de siempre, sin restricción. Siete cuestionarios medían soledad, depresión, ansiedad, miedo a perderse algo, apoyo social, autoestima y autonomía.',
+            'Al cabo de las tres semanas, el grupo con el uso recortado había bajado en soledad y en síntomas de depresión respecto al grupo de control. La mejora en depresión fue bastante más marcada en quienes habían entrado al estudio con más síntomas. En quienes partían de niveles bajos, el cambio fue pequeño. El beneficio se concentró donde más falta hacía.'
           ]
         },
         {
-          subtitle: 'El mecanismo: menos comparación social, menos munición para el malestar',
+          subtitle: 'Por qué el simple hecho de fijarse ya hizo algo',
           paragraphs: [
-            'Hunt y su equipo lo explican por la reducción de la exposición a la comparación social ascendente que sostiene buena parte del uso pasivo de redes: al limitar drásticamente el tiempo disponible en cada plataforma, se limita también el número de publicaciones ajenas cuidadosamente seleccionadas con las que medir la propia vida, un mecanismo que otros estudios (como el de Verduyn y su equipo) ya habían señalado como el motor principal del malestar asociado al uso pasivo.',
-            'El hallazgo es importante porque es experimental, no solo correlacional: al manipular activamente el uso y observar el cambio posterior en el bienestar, el estudio puede afirmar con más fuerza que reducir el uso causa la mejora, y no solo que ambas cosas suelen ir juntas. Además, ambos grupos, el limitado y el de control, mostraron descensos similares en ansiedad y en miedo a perderse algo, lo que los autores atribuyen al efecto de estar simplemente más atento al propio uso durante el estudio.'
+            'Hunt lo atribuye a menos comparación hacia arriba. Al cortar el tiempo disponible en cada plataforma, se corta también el número de publicaciones ajenas, elegidas y pulidas, con las que medir la propia vida. Menos munición para el malestar.',
+            'Hay un detalle que obliga a leer con cuidado. Los dos grupos, el limitado y el de control, bajaron por igual en ansiedad y en miedo a perderse algo. Los autores lo achacan a que participar en el estudio ya te hace estar más pendiente de cuánto usas el móvil. Parte del efecto, por tanto, no viene de usar menos. Viene de mirarse.'
+          ]
+        },
+        {
+          subtitle: 'Lo que este estudio no cierra',
+          paragraphs: [
+            'Es un solo experimento, con estudiantes de una universidad estadounidense, tres semanas y una muestra de 143 personas. El grupo de control no hacía una actividad alternativa equivalente, solo seguía igual, así que una parte de la diferencia puede ser el efecto de sentirse en el grupo que está haciendo algo. Y el cumplimiento se verificaba con capturas que enviaban los propios participantes.',
+            'Puesto al lado de la foto grande, el resultado pide humildad. Los análisis con cientos de miles de adolescentes encuentran que el tiempo de pantalla explica en torno al medio punto porcentual de la variación en bienestar. Este estudio no contradice eso. Sugiere que, en quien ya se siente mal, recortar puede notarse más que en la media.'
           ]
         }
       ],
       blockquote: { text: '«Usar menos redes sociales de lo que harías habitualmente produce una reducción significativa tanto en depresión como en soledad.»', attribution: 'Melissa Hunt' },
-      aplicacion: 'Si notas que tu ánimo empeora cuanto más tiempo pasas en redes, este estudio sugiere una prueba concreta y acotada: limita cada plataforma a 10 minutos al día durante tres semanas y compara cómo te sientes al final frente al inicio. No hace falta eliminar las redes por completo para notar la diferencia, según estos datos basta con reducir drásticamente el tiempo de exposición.'
+      aplicacion: 'Si sospechas que tu ánimo empeora cuanto más tiempo pasas en las redes, este estudio propone una prueba concreta: diez minutos por plataforma y día durante tres semanas, y comparar cómo estás al final con cómo estabas al empezar. No hace falta borrarse. Y si vienes de una racha baja, es probable que el cambio se te note más que a un amigo que estaba bien.'
     },
     {
       id: 'rs-05',
       title: 'Lo que pasó cuando enviaron un mensaje a 82 jóvenes cinco veces al día durante dos semanas',
-      summary: 'Un experimento con mensajes de texto aleatorios mostró que cuanto más usaban Facebook las personas en un momento dado, peor se sentían la próxima vez que se les preguntaba, un patrón que no aparecía con la interacción social directa.',
+      summary: 'Cuanto más Facebook había usado alguien entre dos mensajes de texto, peor decía sentirse en el siguiente. Hablar con gente en persona no traía ese bajón.',
       sourceUrl: 'https://doi.org/10.1371/journal.pone.0069841',
       sourceLabel: 'Kross et al. (2013), PLOS ONE',
       badge: 'Bienestar digital',
       author: { name: 'Ethan Kross', university: 'University of Michigan', specialty: 'Psicología de la autorregulación emocional' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Ethan Kross y su equipo, de la Universidad de Michigan, querían resolver algo que las encuestas retrospectivas no pueden responder bien: si usar Facebook empeora el ánimo momento a momento, o si simplemente la gente que ya está de mal humor usa más Facebook. Para eso reclutaron a 82 jóvenes con smartphone y cuenta de Facebook y los siguieron durante dos semanas, en tiempo real, sin depender de lo que recordaran después.',
+      intro: 'Ethan Kross y su equipo, en la Universidad de Michigan, tenían una pregunta que las encuestas de recuerdo no resuelven bien. ¿Facebook empeora el ánimo momento a momento, o es que la gente que ya está de bajón usa más Facebook? Para separarlo reclutaron a 82 jóvenes con smartphone y cuenta activa, y los siguieron dos semanas en tiempo real, sin fiarse de lo que recordaran al final.',
       sections: [
         {
-          subtitle: 'El experimento: un mensaje de texto cinco veces al día',
+          subtitle: 'Un mensaje de texto, cinco veces al día',
           paragraphs: [
-            'Cinco veces al día, en momentos aleatorios entre las 10 de la mañana y la medianoche, los participantes recibían un mensaje de texto con un enlace a una breve encuesta: cuánto habían usado Facebook desde el último mensaje, cómo se sentían en ese momento, cuánto habían interactuado directamente con otras personas (cara a cara o por teléfono) y cuánto se preocupaban o sentían solos. Al final de las dos semanas también valoraron su satisfacción general con la vida.',
-            'El patrón fue consistente: cuanto más había usado Facebook una persona en el intervalo entre dos mensajes, peor decía sentirse en el mensaje siguiente. Y cuanto más había usado Facebook en conjunto a lo largo de las dos semanas, más había bajado su satisfacción con la vida al final del estudio. El efecto se sostenía después de controlar variables como el tamaño de la red de amistades, el apoyo social percibido o el nivel de depresión de partida.'
+            'Cinco veces al día, en horas aleatorias entre las diez de la mañana y la medianoche, les llegaba un SMS con enlace a una encuesta corta: cuánto Facebook habían usado desde el último aviso, cómo se sentían justo entonces, cuánto habían hablado con gente en persona o por teléfono, cuánto se sentían solos. Al terminar las dos semanas valoraron su satisfacción con la vida. En total, más de 4.500 mediciones sueltas.',
+            'El patrón fue constante. Cuanto más Facebook había usado alguien entre dos avisos, peor decía sentirse en el siguiente. Y cuanto más lo había usado a lo largo de las dos semanas, más había caído su satisfacción con la vida al final. El efecto aguantaba tras descontar el tamaño de la red de amigos, el apoyo percibido, la autoestima y el nivel de depresión de partida.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el problema no es hablar con gente, es mirar sin hablar',
+          subtitle: 'El contacto directo no arrastraba',
           paragraphs: [
-            'El dato que evita la lectura simplista de que las redes sociales son malas por definición es este: interactuar directamente con otras personas, incluida la interacción a través del propio Facebook (mensajes privados, comentarios dirigidos a alguien), no predijo ningún descenso del ánimo. De hecho, la interacción social directa predijo sentirse mejor con el tiempo. El malestar se asoció de forma específica al uso pasivo: desplazarse por publicaciones ajenas sin producir ni responder nada.',
-            'Kross lo interpreta como una forma de comparación social pasiva: consumir el resumen editado de las vidas de otras personas, sin el contrapeso de una interacción real que lo matice, deja a quien mira con una sensación de estar quedándose atrás. La red social no funciona como un sustituto del contacto humano. Funciona peor cuanto más se usa como sustituto en vez de como canal.'
+            'El dato que impide la lectura de brocha gorda es este. Hablar directamente con otras personas, incluido hacerlo por Facebook con mensajes o comentarios dirigidos a alguien, no predijo ningún bajón. Si acaso, el trato directo se asociaba a sentirse algo mejor con el tiempo. El desgaste se pegaba a una forma concreta de usar la red, la de bajar por publicaciones ajenas sin producir ni responder nada.',
+            'Kross lo interpreta como comparación social pasiva. Consumes el resumen editado de otras vidas, sin la interacción que lo matizaría, y te quedas con la sensación de ir por detrás. La red no sustituye al contacto humano, y cuanto más se fuerza a que lo sustituya, peor funciona.'
+          ]
+        },
+        {
+          subtitle: 'Qué queda en pie diez años después',
+          paragraphs: [
+            'Este es el conjunto de datos que el mismo grupo reanalizó en 2015 para aislar el papel de la envidia, el estudio del uso pasivo que aquí se cuenta aparte. Comparten muestra y comparten límite: es correlacional dentro de cada persona. El diseño con desfase temporal ayuda, porque el ánimo se mide después del uso, pero no descarta del todo que un microbajón lleve a coger el móvil.',
+            'La distinción entre uso activo y pasivo se citó tanto que llegó su revisión. En 2022, un repaso de cuarenta encuestas encontró que solo en torno al 15% relacionaba el uso pasivo con peor bienestar. En un estudio que siguió a adolescentes día a día, la idea se cumplía en el 20% y fallaba en el 80% restante. El de 2013 describió un efecto medio real, que no se reparte igual entre todos los que lo leen.'
           ]
         }
       ],
-      blockquote: { text: '«En vez de mejorar el bienestar, tal y como sugiere su enorme popularidad, el uso de Facebook predice el efecto contrario: mina el bienestar momento a momento y con el paso del tiempo.»', attribution: 'Ethan Kross' },
-      aplicacion: 'Si notas que salir de Facebook o Instagram te deja con peor ánimo del que tenías al entrar, este estudio sugiere revisar no cuánto tiempo pasas ahí, sino qué haces mientras tanto: responder a alguien concreto o comentar algo con intención parece no tener el mismo coste que desplazarte sin interactuar durante el mismo rato.'
+      blockquote: { text: '«En lugar de mejorar el bienestar, como haría pensar su popularidad, usar Facebook predice lo contrario: lo va minando momento a momento y a lo largo del tiempo.»', attribution: 'Kross et al. (2013)' },
+      aplicacion: 'Si notas que sales de Facebook o Instagram con peor ánimo del que llevabas al entrar, revisa qué hiciste ahí dentro, no cuánto rato estuviste. Responder a alguien concreto o comentar algo con intención no salió caro en este estudio. Bajar por el muro sin tocar nada durante el mismo rato, sí. La próxima vez que abras la app, elige cuál de las dos cosas vas a hacer antes de empezar.'
     },
     {
       id: 'rs-06',
       title: 'El experimento que demostró que no valoras una foto por lo que muestra, sino por cuántos likes ya tiene',
-      summary: 'Un estudio con resonancia magnética simuló Instagram y descubrió que los adolescentes daban "me gusta" a las fotos con más aprobación previa, incluso cuando mostraban conductas de riesgo, y que ese número activaba las mismas regiones cerebrales de recompensa que el dinero o la comida.',
+      summary: 'Un Instagram falso metido en un escáner de resonancia mostró que los adolescentes daban "me gusta" a las fotos que ya tenían muchos, incluso a las de alcohol o tabaco, y que el contador encendía el circuito de recompensa del cerebro.',
       sourceUrl: 'https://doi.org/10.1177/0956797616645673',
       sourceLabel: 'Sherman, Payton, Hernandez, Greenfield & Dapretto (2016), Psychological Science',
       badge: 'Influencia de pares',
       author: { name: 'Lauren E. Sherman', university: 'University of California, Los Angeles', specialty: 'Neurociencia social del desarrollo adolescente' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Lauren Sherman y su equipo, de la Universidad de California en Los Ángeles, construyeron una versión simulada de Instagram para usar dentro de un escáner de resonancia magnética funcional. Su objetivo era medir, con precisión neuronal y no solo con autoinformes, qué le hace realmente al cerebro adolescente el número de "me gusta" que acompaña a una fotografía.',
+      intro: 'Lauren Sherman y su equipo, en la Universidad de California en Los Ángeles, construyeron un Instagram falso para meterlo dentro de un escáner de resonancia. Querían medir con actividad cerebral, y no solo con lo que dijeran los adolescentes, qué le hace a esa edad el número de likes que acompaña a una foto.',
       sections: [
         {
-          subtitle: 'El experimento: la misma foto, distinto número de likes',
+          subtitle: 'La misma imagen, distinto contador',
           paragraphs: [
-            'A 32 adolescentes de entre 13 y 18 años se les mostraron, dentro del escáner, fotografías (algunas propias, otras neutrales, algunas con contenido de riesgo como alcohol o cigarrillos) que llevaban asignado, sin que los participantes lo supieran, un número alto o bajo de "me gusta" manipulado por los investigadores. Los adolescentes podían decidir si daban like a cada foto o no.',
-            'El resultado conductual fue claro: los adolescentes daban like con mucha más frecuencia a las fotos que ya mostraban muchos likes que a las mismas fotos mostradas con pocos likes, y este patrón se mantenía igual para las fotos con contenido de riesgo. Ver fotos con muchos likes activó regiones cerebrales asociadas al procesamiento de recompensa, las mismas que se activan ante el dinero o la comida, con más intensidad que ver las mismas fotos con pocos likes.'
+            'Metieron a 32 adolescentes de 13 a 18 años en el escáner y les enseñaron 148 fotos. Unas eran neutras, otras tenían contenido de riesgo (alcohol, tabaco, marihuana, ropa provocativa) y 40 eran suyas, entregadas días antes. Cada foto llevaba un número de likes que los investigadores habían falseado: alto o bajo, sin que los participantes lo supieran. Podían dar like a cada una o no.',
+            'La conducta fue nítida. Daban like mucho más a menudo a las fotos que ya tenían muchos likes que a esas mismas fotos con el contador bajo, y lo hacían igual con las de riesgo. Ver una foto popular encendía regiones de recompensa del cerebro, el núcleo accumbens y su vecindario, más que ver la misma foto poco valorada. Con las propias fotos, la respuesta era la más fuerte de todas.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la aprobación de otros redefine lo que parece deseable',
+          subtitle: 'El número reescribe lo que parece aceptable',
           paragraphs: [
-            'El hallazgo no es solo que a los adolescentes les guste recibir aprobación, algo ya sabido. Es que el número de likes cambiaba el propio juicio sobre el contenido: una foto de alcohol con muchos likes se procesaba como más aceptable que la misma foto con pocos, medido tanto en la conducta de dar like como en la actividad de regiones cerebrales implicadas en el control cognitivo, que mostraban menor activación ante contenido de riesgo cuando ese contenido llevaba muchos likes.',
-            'Sherman lo enmarca como una forma moderna y cuantificada de la presión de grupo: antes, la aprobación de los pares era difusa y había que inferirla. Las redes sociales la convierten en un número visible, actualizado en tiempo real, y ese número parece capaz de anular parcialmente el juicio propio sobre qué contenido es o no es aceptable.'
+            'Que a un adolescente le guste la aprobación no es noticia. Lo que añade el estudio es que el contador cambiaba el juicio sobre el contenido. Ante las fotos de riesgo, y comparadas con las neutras, las regiones de control cognitivo, las que frenan un impulso, mostraban menos actividad. La imagen arriesgada se procesaba con menos alarma cuando el entorno de likes la rodeaba de normalidad.',
+            'Sherman lo encuadra como una versión medida de la presión de grupo. Antes, la aprobación de los iguales era difusa y había que adivinarla. Las redes la convierten en una cifra visible que se actualiza sola, y esa cifra parece capaz de mover un poco el criterio propio sobre qué está bien y qué no.'
+          ]
+        },
+        {
+          subtitle: 'Qué pasó cuando lo repitieron',
+          paragraphs: [
+            'En 2018, el mismo grupo repitió el experimento con 61 personas de 13 a 21 años, adolescentes y universitarios. El efecto del contador sobre la conducta y sobre el núcleo accumbens volvió a salir. Pero apareció un matiz de edad. La respuesta de recompensa crecía con los años en los de instituto y no en los universitarios, y la caída del control cognitivo ante el contenido de riesgo se veía en los de instituto, no en los mayores. El pico está en el instituto y se atenúa al llegar a la universidad.'
+          ]
+        },
+        {
+          subtitle: 'Lo que no demuestra',
+          paragraphs: [
+            'Conviene no estirar el resultado. La muestra original eran 32 personas, el Instagram era de mentira y los likes, inventados por el equipo. Decir que los likes "activan el mismo circuito que la cocaína o la comida" es un atajo tramposo, porque casi cualquier cosa gratificante mueve el núcleo accumbens, y de que una zona se ilumine no se deduce sin más qué está sintiendo la persona. Lo que el estudio sí muestra, y la réplica confirma, es que un número al pie de una foto pesa en la decisión de un adolescente, y a veces tanto como lo que la foto enseña.'
           ]
         }
       ],
-      blockquote: { text: '«Un simple número, el recuento de likes, es suficiente para alterar tanto el comportamiento como la respuesta neuronal de los adolescentes ante el contenido que ven.»', attribution: 'Lauren E. Sherman' },
-      aplicacion: 'Si eres madre, padre o educador de un adolescente, este estudio sugiere que hablar solo del contenido que publica ("esa foto no es apropiada") deja fuera la mitad del problema: la métrica social que acompaña a cada publicación pesa, medida en el propio cerebro, tanto o más que el contenido en sí.'
+      blockquote: { text: '«Para los adolescentes, especialmente sensibles a la opinión de sus iguales, esa aprobación social convertida en cifra puede funcionar como un motivador potente.»', attribution: 'Sherman et al. (2016)' },
+      aplicacion: 'Si crías o educas a un adolescente, hablar solo del contenido que sube ("esa foto no es apropiada") se deja fuera la mitad. La métrica que acompaña a cada publicación, los likes, le pesa en la cabeza tanto o más que la foto. Preguntarle qué fotos suyas "funcionan" y por qué cree que es abre una conversación más útil que revisarle el carrete.'
     },
     {
       id: 'rs-07',
       title: 'Usar el móvil en la cama predijo peor sueño que el tiempo total en redes sociales durante el día',
-      summary: 'En 467 adolescentes escoceses, el uso de redes sociales por la noche y en la cama se relacionó con el sueño mucho más que el uso total durante el día, y la conexión emocional con las redes predijo, por sí sola, más ansiedad y depresión.',
+      summary: 'En 467 adolescentes escoceses, la hora a la que se usaban las redes pesó sobre el sueño más que el total de minutos del día. Y lo que más se ligaba a la ansiedad no eran las horas, sino cuánto importaban.',
       sourceUrl: 'https://doi.org/10.1016/j.adolescence.2016.05.008',
       sourceLabel: 'Woods & Scott (2016), Journal of Adolescence',
       badge: 'Sueño y bienestar digital',
       author: { name: 'Heather Cleland Woods', university: 'University of Glasgow', specialty: 'Psicología del desarrollo adolescente y bienestar digital' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Heather Cleland Woods y Holly Scott querían ir más allá de la idea genérica de que "el móvil quita horas de sueño" y precisar qué es exactamente lo que importa: cuánto tiempo total pasa un adolescente en redes sociales, en qué momento del día las usa, o cuánto le afecta emocionalmente no poder acceder a ellas.',
+      intro: 'Heather Cleland Woods y Holly Scott no se conformaban con "el móvil quita horas de sueño". Querían separar tres cosas: cuánto tiempo total pasa un adolescente en redes, en qué momento del día lo hace, y cuánto le remueve por dentro no poder entrar. Encuestaron a 467 estudiantes de secundaria escoceses, de 11 a 17 años, para ver cuál de las tres pesaba más.',
       sections: [
         {
-          subtitle: 'El experimento: 467 adolescentes, tres formas distintas de medir el uso de redes',
+          subtitle: 'Tres formas de medir lo mismo',
           paragraphs: [
-            'Cuatrocientos sesenta y siete alumnos de secundaria escoceses, de entre 11 y 17 años, completaron cuestionarios que medían por separado el uso general de redes sociales, el uso específico nocturno (en la cama, justo antes de dormir, alertas que interrumpen el sueño) y la inversión emocional en redes (sentirse molesto o desconectado cuando no pueden acceder a ellas), junto con escalas validadas de calidad del sueño, ansiedad, depresión y autoestima.',
-            'La calidad del sueño se relacionó con más fuerza con el uso nocturno específico (r = ,34) que con el uso total durante el día (r = ,24). En un modelo estadístico que incluía además ansiedad, depresión y autoestima, el uso nocturno siguió prediciendo peor sueño por sí solo, mientras que el uso total durante el día dejó de ser un predictor significativo.'
+            'Cada alumno rellenó cuestionarios que medían por separado el uso general de redes, el uso nocturno concreto (en la cama, justo antes de dormir, despertarse por una alerta) y la inversión emocional, es decir, sentirse molesto o desconectado cuando no puede acceder. Junto a eso, escalas validadas de calidad de sueño, ansiedad, depresión y autoestima.',
+            'La calidad del sueño se relacionó más con el uso nocturno (una correlación de 0,34) que con el uso total del día (0,24). Y al montar un modelo que metía a la vez ansiedad, depresión y autoestima, el uso nocturno seguía prediciendo peor sueño por sí solo. El uso total del día dejaba de aportar nada.'
           ]
         },
         {
-          subtitle: 'El mecanismo: no es cuánto usas las redes, es cuándo y cuánto te importan',
+          subtitle: 'Dos caminos distintos hacia el mismo cansancio',
           paragraphs: [
-            'Las autoras identifican dos vías distintas y en parte independientes: usar el móvil en la cama desplaza físicamente el sueño y expone a alertas que lo interrumpen, un mecanismo más bien físico. La inversión emocional en redes, en cambio, genera ansiedad a la hora de dormir por miedo a perderse algo, un mecanismo más bien psicológico, y fue precisamente esa inversión emocional (no las horas de uso) la que predijo con más fuerza la ansiedad, la depresión y la baja autoestima.',
-            'Un 35% de la muestra encajaba en el perfil de mal dormidor, un 47% en el de ansiedad clínica y un 21% en el de depresión, según los puntos de corte validados usados en el estudio. El diseño no permite establecer causalidad en ninguna dirección, pero señala dos palancas concretas (el móvil fuera del dormitorio por la noche y la dependencia emocional de las notificaciones) por encima de la simple cantidad de tiempo de pantalla.'
+            'Las autoras describen dos vías. Usar el móvil en la cama desplaza el sueño y te expone a alertas que lo cortan, un mecanismo físico. La inversión emocional genera ansiedad al acostarte por miedo a perderte algo, un mecanismo mental. Esa segunda vía, la emocional, era la que más se relacionaba con la ansiedad, la depresión y la baja autoestima, por encima de las horas de uso.',
+            'En la muestra, un 35% puntuaba como mal dormidor, casi la mitad daba positivo en el cribado de ansiedad de la escala HADS y un 21% en el de depresión, este último casi todo en el rango límite. Números altos para una población de instituto.'
+          ]
+        },
+        {
+          subtitle: 'Por qué no se puede leer como causa',
+          paragraphs: [
+            'El estudio es una foto fija. No sigue a nadie en el tiempo, así que no puede decir si el móvil nocturno estropea el sueño o si el adolescente que ya duerme mal y está ansioso acaba cogiendo el móvil de madrugada. Las dos direcciones encajan con los datos. De hecho, cuando el modelo controlaba ansiedad y depresión, la inversión emocional se quedaba sin fuerza como predictora del sueño: buena parte de lo que parecía efecto suyo era ansiedad por otra vía.',
+            'Lo que sí resiste, aquí y en la literatura posterior, es la parte del horario. Usar pantallas justo antes de dormir aparece de forma bastante consistente ligado a peor sueño, aunque los estudios grandes que cruzan tiempo de pantalla y bienestar general encuentren efectos pequeños. El resto del cuadro es más frágil.'
           ]
         }
       ],
-      blockquote: { text: '«El momento del uso de redes sociales de los adolescentes y la conexión emocional que sienten hacia esos sitios son factores más importantes que la simple frecuencia o duración del uso.»', attribution: 'Heather Cleland Woods & Holly Scott' },
-      aplicacion: 'Si te preocupa el sueño de un adolescente, o el tuyo propio, este estudio sugiere que limitar solo las horas totales de pantalla puede no ser la palanca más eficaz. Los dos factores que más pesaron fueron mantener el móvil fuera del dormitorio por la noche y prestar atención a si consultar las redes se siente como una obligación emocional en vez de una elección.'
+      blockquote: { text: '«El momento en que los adolescentes usan las redes y la conexión emocional que sienten hacia ellas importan más que la simple frecuencia o duración del uso.»', attribution: 'Woods & Scott (2016)' },
+      aplicacion: 'Si te preocupa el sueño de un adolescente, o el tuyo, limitar solo las horas totales de pantalla puede no ser la palanca más útil. Los dos factores que más pesaron aquí fueron sacar el móvil del dormitorio por la noche y detectar si mirar las redes se vive como una obligación, con desazón cuando no se puede, en vez de como una elección. Lo segundo es más difícil de ver y probablemente cuenta más.'
     }
   ]
 };
@@ -4985,12 +5711,12 @@ const QUIZ_BANK = {
     { q: '¿Qué tipo de memoria almacena los automatismos del experto que se deterioran bajo supervisión consciente?', opts: ['Memoria semántica','Memoria episódica','Memoria de trabajo','Memoria procedimental'], correct: 3 }
   ],
   'dep-03': [
-    { q: '¿Qué tipo de diálogo interno es más eficaz para tareas de precisión motora fina?', opts: ['Motivacional ("¡puedo hacerlo!")','Instruccional (técnico y específico)','Ambos son igual de efectivos','El silencio mental'], correct: 1 },
-    { q: '¿Por qué hablar a uno mismo en segunda persona ("tú puedes") puede ser más efectivo que en primera?', opts: ['Activa más el sistema motor','Mejora la memoria de trabajo','Reduce la activación del circuito de autocrítica y amenaza al ego','Aumenta los niveles de dopamina'], correct: 2 }
+    { q: '¿En qué tipo de tareas resultó más eficaz el self-talk, según el metaanálisis de Hatzigeorgiadis?', opts: ['En tareas de fuerza máxima','En tareas de motricidad fina y en tareas nuevas','Solo en deportes de equipo','En gestos ya muy automatizados'], correct: 1 },
+    { q: '¿Por qué hablar a uno mismo en segunda persona ("tú puedes") puede ser más efectivo que en primera?', opts: ['Activa más el sistema motor','Mejora la memoria de trabajo','Reduce la carga emocional de la autocrítica','Aumenta los niveles de dopamina'], correct: 2 }
   ],
   'dep-04': [
-    { q: '¿Qué porcentaje de los beneficios de la práctica física produce la práctica mental sola, según el metaanálisis?', opts: ['El 33%','El 50%','El 66%','El 80%'], correct: 2 },
-    { q: '¿En quiénes es más efectiva la visualización mental, y por qué?', opts: ['En principiantes, porque tienen más que aprender','En expertos, porque tienen una representación mental más precisa del movimiento correcto','En ambos por igual','Solo en atletas de élite'], correct: 1 }
+    { q: '¿Para qué tipo de tareas es más eficaz la práctica mental, según el metaanálisis de Driskell?', opts: ['Tareas de fuerza y resistencia','Tareas con mayor componente cognitivo (comparar, decidir, ordenar)','Tareas totalmente nuevas para la persona','Da igual el tipo de tarea'], correct: 1 },
+    { q: '¿En quiénes es más efectiva la visualización mental, y por qué?', opts: ['En principiantes, porque tienen más que aprender','En quien ya tiene experiencia, porque su representación mental del movimiento es más precisa','En ambos por igual','Solo en atletas de élite'], correct: 1 }
   ],
   /* ARTE */
   'art-01': [
@@ -5129,9 +5855,9 @@ const ARTICLE_STATS = {
   'eco-05': [{ value: '10×', label: 'más ventas', detail: 'con 6 variedades de mermelada frente a 24 opciones' }],
   'der-01': [{ value: '+69%', label: 'de condenas erróneas', detail: 'incluían testimonio ocular como prueba principal' }],
   'der-03': [{ value: '65% → 0%', label: 'libertad concedida', detail: 'justo después de comer vs. justo antes del descanso' }],
-  'dep-01': [{ value: '+17%', label: 'de precisión', detail: 'simplemente creyendo tener una "pelota de la suerte"' }],
-  'dep-04': [{ value: '66%', label: 'de beneficios', detail: 'de la práctica física se obtienen con práctica mental sola' }],
-  'sm-03':  [{ value: '8% vs 38%', label: 'recaída a 10 meses', detail: 'solo ejercicio vs. solo medicación (mismo período de tratamiento)' }],
+  'dep-01': [{ value: '65% vs 48%', label: 'putts metidos', detail: 'grupo "pelota de la suerte" y control en el estudio de 2010, que una réplica preregistrada de 2014 no reprodujo' }],
+  'dep-04': [{ value: 'd = 0,53', label: 'efecto de la práctica mental', detail: 'sobre el rendimiento en el metaanálisis de 35 estudios, mayor en tareas cognitivas' }],
+  'sm-03':  [{ value: '8% vs 38%', label: 'recaída a los 10 meses', detail: 'solo ejercicio frente a solo sertralina, seis meses después de terminar el tratamiento' }],
   'tec-02': [{ value: '23 min', label: 'para recuperar', detail: 'la concentración plena tras una sola interrupción' }],
   'rel-01': [{ value: '69%', label: 'de conflictos de pareja', detail: 'son perpetuos, no tienen solución, solo gestión' }],
   'rel-02': [{ value: '50% vs 12,5%', label: 'la llamaron después', detail: 'puente colgante vs. puente sólido, mismo encuentro, distinta excitación' }],

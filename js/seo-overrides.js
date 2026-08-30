@@ -110,13 +110,13 @@ const SEO_OVERRIDES = {
     ]
   },
   'mod-05': {
-    seoTitle: 'Fatiga de decisión: por qué Einstein y Obama siempre vestían lo mismo | La Inferencia',
-    seoDescription: '¿Por qué Obama usaba siempre el mismo traje? La fatiga de decisión: cada elección agota capacidad cognitiva. La investigación de Baumeister.',
+    seoTitle: 'Fatiga de decisión: por qué Obama vestía siempre igual (y qué falló) | La Inferencia',
+    seoDescription: 'La fatiga de decisión explicaba por qué Obama vestía siempre igual. Una replicación de 23 laboratorios en 2016 no encontró el efecto y el modelo de la glucosa se cayó.',
     faqs: [
-      { q: '¿Qué es la fatiga de decisión?', a: 'El deterioro de la calidad de las decisiones tras tomar muchas seguidas. El autocontrol y la deliberación se agotan como un músculo (Baumeister).' },
-      { q: '¿Por qué Einstein, Obama y Zuckerberg visten siempre lo mismo?', a: 'Para eliminar decisiones triviales y preservar energía cognitiva para las que realmente importan. Es gestión deliberada del agotamiento decisional.' },
-      { q: '¿Cuándo tomamos peores decisiones a lo largo del día?', a: 'Las decisiones empeoran progresivamente. Los jueces dictan más condenas rígidas al final del día. Los cirujanos cometen más errores en operaciones de tarde.' },
-      { q: '¿Cómo combatir la fatiga de decisión?', a: 'Tomar las decisiones importantes al inicio del día, crear rutinas que automaticen decisiones repetitivas, y reducir el número de decisiones triviales.' }
+      { q: '¿Qué es la fatiga de decisión?', a: 'El deterioro de las decisiones tras tomar muchas seguidas. La idea clásica de Baumeister la comparaba con un músculo que se agota, pero una replicación con 23 laboratorios y más de 2.000 personas en 2016 no encontró el efecto.' },
+      { q: '¿Por qué Obama vestía siempre trajes grises o azules?', a: 'Lo explicó en 2012: reducir decisiones triviales para reservar capacidad a las importantes. La práctica ahorra tiempo y fricción, aunque la teoría del depósito de fuerza de voluntad que la justificaba no se ha sostenido.' },
+      { q: '¿Es válido el modelo de la glucosa como combustible de la fuerza de voluntad?', a: 'No. Las tareas de autocontrol no bajan de forma apreciable el azúcar en sangre y una revisión de 2016 no halló apoyo para ninguna de las predicciones del modelo.' },
+      { q: '¿Qué se salva de la fatiga de decisión?', a: 'La explicación por coste de oportunidad: el esfuerzo sostenido hace que la tarea se sienta más costosa y que la atención se disperse hacia otras cosas, sin que se agote ningún recurso físico.' }
     ]
   },
   'der-01': {

@@ -24,8 +24,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="preload" as="style" href="/css/styles.css?v=ac67956e65" />
-  <link rel="stylesheet" href="/css/styles.css?v=ac67956e65" />
+  <link rel="preload" as="style" href="/css/styles.css?v=11ce392c26" />
+  <link rel="stylesheet" href="/css/styles.css?v=11ce392c26" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48x48.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png" />
@@ -37,7 +37,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "La burbuja de filtros: cómo el algoritmo te convence de que el mundo piensa como tú",
-  "description": "Los sistemas de recomendación reducen sistemáticamente tu exposición a ideas contrarias, creando una ilusión de consenso que distorsiona la percepción de la realidad social.",
+  "description": "El feed te enseña sobre todo lo que ya piensas. El efecto no es tanto volverte radical como hacerte creer que casi todo el mundo te da la razón.",
   "author": {
     "@type": "Person",
     "@id": "https://lainferencia.com/autores/miguel-noguer/",
@@ -202,25 +202,29 @@
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
       Índice
     </span>
-    <ol class="toc-list"><li><a class="toc-link" href="#art-sec-0">Los datos: cuánto sesga el algoritmo y cuánto nos sesgamos nosotros</a></li><li><a class="toc-link" href="#art-sec-1">El efecto sobre la percepción de la realidad social</a></li></ol>
+    <ol class="toc-list"><li><a class="toc-link" href="#art-sec-0">El estudio grande, hecho por los de dentro</a></li><li><a class="toc-link" href="#art-sec-1">Lo que de verdad deforma es el cálculo de cuántos piensan como tú</a></li><li><a class="toc-link" href="#art-sec-2">Por qué este estudio no zanja el debate</a></li></ol>
   </nav>
         <div class="article-content">
-          <p class="article-intro">En 2011, Eli Pariser observó algo desconcertante en su feed de Facebook: sus amigos conservadores habían desaparecido. No los había bloqueado. No habían dejado de publicar. Simplemente, el algoritmo había decidido (basándose en sus patrones de interacción) que sus publicaciones no le interesaban y había dejado de mostrárselas. Pariser llamó a este fenómeno "filter bubble" y alertó sobre una consecuencia que entonces parecía hipotética: si cada persona vive en un entorno de información que confirma lo que ya cree, la democracia deliberativa se convierte en una ilusión.</p>
+          <p class="article-intro">Hacia 2010, el activista Eli Pariser notó que sus amigos conservadores se habían esfumado de su muro de Facebook. No los había bloqueado ni habían dejado de publicar. El algoritmo, viendo que él pinchaba más en enlaces progresistas, había ido bajando el volumen de los otros hasta callarlos. Pariser lo llamó "burbuja de filtros" y lanzó una advertencia que entonces sonaba a ciencia ficción: si cada uno vive rodeado de información que le da la razón, el debate público se vuelve un decorado.</p>
           
-    <h2 class="article-subtitle" id="art-sec-0">Los datos: cuánto sesga el algoritmo y cuánto nos sesgamos nosotros</h2>
-      <p>En 2015, un equipo de Facebook publicó en la revista Science el estudio más grande realizado hasta entonces sobre burbujas de filtros: analizó los feeds de 10 millones de usuarios con información política diversa. El resultado fue matizado pero importante: el algoritmo de Facebook reducía la exposición a contenido ideológicamente contrario en un 8% para los conservadores y un 5% para los liberales. Pero la selección individual (qué contenido elige hacer clic cada usuario entre lo que sí aparece en el feed) añadía una reducción adicional del 26-36%.</p>
-      <p>El mensaje es incómodo para ambos lados del debate sobre las redes sociales: el algoritmo sesga, pero tú también. La autopropaganda no requiere un sistema activamente manipulador; basta con que el sistema muestre lo que genera más clics, y lo que genera más clics es lo que confirma lo que ya creemos y lo que nos indigna. El sesgo de confirmación y la heurística de disponibilidad hacen el resto: lo que aparece más en el feed parece más representativo de la realidad.</p>
+    <h2 class="article-subtitle" id="art-sec-0">El estudio grande, hecho por los de dentro</h2>
+      <p>En 2015, tres científicos de datos de Facebook (Eytan Bakshy, Solomon Messing y Lada Adamic) publicaron en Science el análisis más ambicioso hasta la fecha sobre el asunto: 10,1 millones de usuarios estadounidenses que declaraban su ideología en el perfil. Midieron por capas cuánto se reducía la exposición a noticias del "otro lado" en cada paso del embudo.</p>
+      <p>La primera criba la ponen las amistades: tu círculo ya se parece a ti, así que el material que podría llegarte del bando contrario es limitado de salida. Sobre eso, el algoritmo de ordenación recortaba el contenido ideológicamente cruzado un 8% para los usuarios de izquierda y un 5% para los de derecha. Y encima de eso, la decisión de en qué pinchas tú restaba otro 6% para la izquierda y un 17% para la derecha. Aun así, quedaba paso: el 24% de las noticias que veía un usuario de izquierda se inclinaban a la derecha, y el 38% de las que veía uno de derecha se inclinaban a la izquierda. La conclusión que subrayaron los autores fue que tus propios clics filtran más que el algoritmo.</p>
 
-    <h2 class="article-subtitle" id="art-sec-1">El efecto sobre la percepción de la realidad social</h2>
-      <p>La consecuencia más documentada de las burbujas de filtros no es el extremismo (que es compleja y discutida), sino la distorsión en la percepción de la prevalencia de opiniones. Estudios de ciencia política muestran sistemáticamente que personas en entornos de alta homofilia digital sobreestiman cuántos ciudadanos comparten su posición y subestiman cuántos sostienen la contraria. Esto tiene efectos políticos concretos: reduce la disposición a buscar compromiso, incrementa la certeza de que "la mayoría" está de tu lado, y hace más probable interpretar el disenso como error o mala fe en lugar de diferencia legítima.</p>
-      <p>El mecanismo psicológico subyacente es la "espiral del silencio" de Elisabeth Noelle-Neumann: si crees que tu opinión es mayoritaria (porque tu feed la confirma constantemente), la expresas con más confianza; si crees que es minoritaria, la silencias. El feed crea percepciones sesgadas de mayoría; esas percepciones cambian la disposición a hablar; los que callan desaparecen del feed; la percepción de mayoría se consolida. El ciclo es autorreferente.</p>
+    <h2 class="article-subtitle" id="art-sec-1">Lo que de verdad deforma es el cálculo de cuántos piensan como tú</h2>
+      <p>El efecto mejor documentado de vivir en un entorno informativo homogéneo no es volverse extremista, que es un asunto discutido, sino perder la cuenta. Quien pasa mucho tiempo en espacios digitales donde casi todos opinan igual tiende a sobreestimar cuánta gente comparte su postura y a subestimar a los que sostienen la contraria. Y eso tiene consecuencias prácticas: baja las ganas de negociar, sube la certeza de que "la mayoría" está de tu lado y hace más fácil leer el desacuerdo como mala fe en vez de como una diferencia legítima.</p>
+      <p>Debajo hay un mecanismo que la socióloga Elisabeth Noelle-Neumann describió en los años setenta y llamó la espiral del silencio. Si crees que tu opinión es mayoritaria, la dices con soltura; si la crees minoritaria, te callas. Un feed que te confirma sin parar te convence de estar en el bando grande. Los que se sienten en el pequeño hablan menos. Al hablar menos, aparecen menos. Y la impresión de mayoría se refuerza sola.</p>
+
+    <h2 class="article-subtitle" id="art-sec-2">Por qué este estudio no zanja el debate</h2>
+      <p>El trabajo de 2015 lo firmaron empleados de Facebook con acceso a datos internos que nadie de fuera puede replicar, y eso pesa. La muestra tampoco es la población general: solo entra el pequeño porcentaje de usuarios estadounidenses que declara su ideología en el perfil y además está activo. Varios investigadores, entre ellos Zeynep Tufekci y Christian Sandvig, objetaron además que separar "lo que hace el algoritmo" de "lo que haces tú" es un falso dilema: la queja original de Pariser era justo que ambas cosas se retroalimentan, y el estudio mide la elección personal sobre un feed que el algoritmo ya había podado.</p>
+      <p>La evidencia posterior tampoco cierra el caso en el otro sentido. En los experimentos a gran escala sobre las elecciones de EE. UU. de 2020, reducir la personalización algorítmica del feed durante meses apenas movió la polarización política de los participantes. La lectura honesta hoy no es "la burbuja lo explica todo" ni "la burbuja no existe", sino que el efecto es real, más pequeño de lo que sugería la metáfora y muy dependiente de qué se mida.</p>
     <blockquote class="article-blockquote">
-      <p>«La web nos está mostrando un universo personalizado para cada uno de nosotros, y ese universo tiene muy poca ventana hacia lo que piensa el resto.»</p>
-      <cite>Eli Pariser</cite>
+      <p>«Un mundo construido a partir de lo familiar es un mundo en el que no hay nada que aprender.»</p>
+      <cite>Eli Pariser, charla TED (2011)</cite>
     </blockquote>
     <div class="aplicacion-block">
       <div class="aplicacion-header"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><strong>¿Cómo te afecta esto hoy?</strong></div>
-      <p>Dedica 10 minutos a la semana a buscar activamente tres fuentes informativas con las que generalmente no estás de acuerdo (no extremistas, sino voces serias que razonan desde otras premisas). No para cambiar de opinión, sino para calibrar: si solo consumes lo que confirma lo que ya crees, tu modelo de la realidad social es tan distorsionado como el de quien hace lo opuesto.</p>
+      <p>Una vez a la semana, dedica diez minutos a leer tres fuentes serias con las que sueles discrepar, no las más estridentes, sino las que razonan bien desde otras premisas. No es para cambiar de bando. Es para recalibrar el cálculo de cuánta gente piensa distinto, que es la parte que el feed te desajusta sin que lo notes.</p>
     </div>
       <div class="recomendacion-block">
         <p class="recomendacion-label">Si quieres profundizar en esto</p>
@@ -298,7 +302,7 @@
           <a href="https://lainferencia.com/articulos/tecnologia/por-que-recuerdas-donde-buscarlo-en-google-mejor-de-lo-que/" class="static-related-card">
             <span class="static-related-badge">Tecnología</span>
             <strong class="static-related-card-title">Por qué recuerdas dónde buscarlo en Google mejor de lo que recuerdas el dato en sí</strong>
-            <p class="static-related-card-summary">Cuando sabemos que una información va a quedar guardada y disponible más tarde, el cerebro reduce el esfuerzo de memoriz</p>
+            <p class="static-related-card-summary">Al escribir datos en un ordenador que decía que los guardaría, la gente los recordó peor y recordó mejor en qué carpeta </p>
           </a>
           <a href="https://lainferencia.com/articulos/relaciones/el-69-de-los-conflictos-de-pareja-no-tienen-solucion-y-eso-esta/" class="static-related-card">
             <span class="static-related-badge">Relaciones</span>
@@ -372,7 +376,7 @@
 </script>
 <script defer src="/js/save-button.js?v=e19c61de68"></script>
 <script defer src="/js/rutas.js?v=c78b14c723"></script>
-<script src="/js/search-index.js?v=d8e4ef58fd"></script>
+<script src="/js/search-index.js?v=042b309169"></script>
 <script defer src="/js/buscador.js?v=0b8d4e0970"></script>
 </body>
 </html>

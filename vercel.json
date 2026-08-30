@@ -106,7 +106,12 @@
     },
     {
       "source": "/articulos/moda/el-uniforme-de-los-que-deciden-mucho-por-que-einstein-obama-y-zuc/",
-      "destination": "/articulos/moda/el-uniforme-de-los-que-deciden-mucho-por-que-einstein-obama-y/",
+      "destination": "/articulos/moda/obama-vestia-siempre-igual-para-decidir-mejor-y-la-ciencia/",
+      "permanent": true
+    },
+    {
+      "source": "/articulos/moda/el-uniforme-de-los-que-deciden-mucho-por-que-einstein-obama-y/",
+      "destination": "/articulos/moda/obama-vestia-siempre-igual-para-decidir-mejor-y-la-ciencia/",
       "permanent": true
     },
     {
