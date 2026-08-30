@@ -8,15 +8,15 @@
     /* Oro sobre fondo claro: más nodos, más brillo, destellos visibles */
     obsidiana: { N: 152, MAX_D: 170, nodeAlpha: 0.45, lineAlpha: 0.55, lw: 1.1,
                  l: [212, 175, 55], r: [232, 200, 80], depth: true },
-    dark:      { N: 95,  MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
+    dark:      { N: 118, MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
                  l: [96, 165, 250], r: [37, 99, 235], depth: true },
-    default:   { N: 95,  MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
+    default:   { N: 118, MAX_D: 120, nodeAlpha: 0.15, lineAlpha: 0.28, lw: 0.8,
                  l: [16, 185, 129], r: [37, 99, 235], depth: true }
   };
 
   /* En movil se reduce el numero de nodos: el trazado de lineas es O(N^2) */
   const MOBILE = window.innerWidth <= 768;
-  function nCount(cfg) { return MOBILE ? Math.round(cfg.N * 0.5) : cfg.N; }
+  function nCount(cfg) { return MOBILE ? Math.round(cfg.N * 0.62) : cfg.N; }
 
   function getCfg() {
     return CFGS[document.documentElement.getAttribute('data-theme')] || CFGS.default;
