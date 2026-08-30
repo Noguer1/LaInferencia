@@ -879,15 +879,16 @@ const AUTHOR_CREDENTIALS = [
   { value: 'Psicología', label: 'Grado · Universidad de Sevilla' },
   { value: 'Neuropsicología', label: 'Máster en curso · Loyola Andalucía' },
   { value: 'Matrícula de Honor', label: 'TFG en persuasión lingüística' },
-  { value: 'Analista de lenguaje', label: 'Outlier · proyectos de IA, alcance internacional' }
+  { value: 'Analista de lenguaje', label: 'Proyectos internacionales de análisis del lenguaje' }
 ];
 
 const AUTHOR_CONTACT_EMAIL = 'contacto@lainferencia.com';
 
 const AUTHOR_BIO_PARAGRAPHS = [
-  `${AUTHOR_NAME} es psicólogo por la Universidad de Sevilla y fundador de La Inferencia, la plataforma donde investigación revisada por pares se convierte en lectura clara para quien no viene del mundo académico.`,
-  `Su Trabajo de Fin de Grado obtuvo Matrícula de Honor. Es un estudio experimental sobre persuasión encubierta: una réplica conceptual del quinto experimento de Hendricks y colaboradores (2018) que amplió al campo de la ansiedad con dos metáforas nuevas y un análisis psicolingüístico de las respuestas de los participantes. El hallazgo: cambiar una sola metáfora en la descripción de un trastorno mental desplazaba los juicios de los lectores hacia posiciones opuestas, y casi ninguno era consciente de que el lenguaje les había movido. Dirigieron el trabajo Mercedes Cubero Pérez y Samuel Arias Sánchez.`,
-  `Cursa el Doble Máster en Psicología General Sanitaria y Neuropsicología en la Universidad Loyola Andalucía. Publica artículos de análisis en psicolingüística sobre cómo la forma del lenguaje condiciona decisiones y razonamiento, cada uno con DOI en Zenodo. Trabaja además como analista de lenguaje para proyectos internacionales de inteligencia artificial en Outlier, evaluando el uso del lenguaje de modelos de gran escala.`
+  `${AUTHOR_NAME} es psicólogo por la Universidad de Sevilla y fundador de La Inferencia, la plataforma que convierte investigación académica en lectura clara para quien no se mueve en el ámbito de la investigación.`,
+  `Su Trabajo de Fin de Grado, calificado con Matrícula de Honor, es un estudio experimental sobre persuasión encubierta: demostró que cambiar una sola metáfora en la descripción de un trastorno mental desplaza los juicios del lector hacia posiciones opuestas, y que casi nadie se da cuenta de que el lenguaje lo ha empujado.`,
+  `Cursa el Doble Máster en Psicología General Sanitaria y Neuropsicología en la Universidad Loyola Andalucía. Publica análisis de psicolingüística sobre cómo la forma del lenguaje condiciona decisiones y razonamiento, cada uno registrado con DOI en Zenodo.`,
+  `Ha participado en proyectos internacionales de análisis del lenguaje y la comunicación humana, evaluando intención comunicativa, carga emocional y coherencia del discurso.`
 ];
 
 const AUTHOR_FAQS = [
