@@ -4425,7 +4425,7 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .info-modal-card  { padding: 1.3rem 1.1rem; }
 
   /* ── Mobile layout fixes: evitar desborde horizontal ── */
-  .cat-selector     { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .cat-selector     { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
   .cat-btn          { white-space: normal; overflow: hidden; word-break: break-word; padding: 0.7rem 0.5rem; }
   .lib-cards-grid   { grid-template-columns: 1fr; }
   .sidebar-widget   { width: 100%; min-width: 0; box-sizing: border-box; padding: 1rem 0.9rem; }
@@ -4781,8 +4781,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 @media (max-width: 480px) {
-  .cat-selector { grid-template-columns: repeat(2, 1fr); }
-  .cat-btn { font-size: 0.72rem; white-space: normal; word-break: break-word; overflow: hidden; }
+  .cat-selector { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+  .cat-btn { font-size: 0.68rem; white-space: normal; word-break: break-word; overflow: hidden; padding: 0.6rem 0.35rem; }
   .footer-inner--3col { grid-template-columns: 1fr; }
 }
 
