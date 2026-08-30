@@ -879,7 +879,7 @@ const AUTHOR_OWN_WORKS = [
 const AUTHOR_PERSONAL_LINKEDIN = 'https://www.linkedin.com/in/miguelnoguer';
 const AUTHOR_COMPANY_LINKEDIN  = 'https://www.linkedin.com/company/la-inferencia/';
 
-const AUTHOR_ROLE_CHIPS = ['Psicólogo', 'Fundador y CEO de La Inferencia', 'Investigación en psicolingüística'];
+const AUTHOR_ROLE_CHIPS = ['Psicólogo', 'Fundador y CEO de La Inferencia', 'Análisis en psicolingüística'];
 
 const AUTHOR_CREDENTIALS = [
   { value: 'Psicología', label: 'Grado · Universidad de Sevilla' },
@@ -893,21 +893,21 @@ const AUTHOR_CONTACT_EMAIL = 'contacto@lainferencia.com';
 const AUTHOR_BIO_PARAGRAPHS = [
   `${AUTHOR_NAME} es psicólogo por la Universidad de Sevilla y fundador de La Inferencia, la plataforma donde investigación revisada por pares se convierte en lectura clara para quien no viene del mundo académico.`,
   `Su Trabajo de Fin de Grado obtuvo Matrícula de Honor. Es un estudio experimental sobre persuasión encubierta: una réplica conceptual del quinto experimento de Hendricks y colaboradores (2018) que amplió al campo de la ansiedad con dos metáforas nuevas y un análisis psicolingüístico de las respuestas de los participantes. El hallazgo: cambiar una sola metáfora en la descripción de un trastorno mental desplazaba los juicios de los lectores hacia posiciones opuestas, y casi ninguno era consciente de que el lenguaje les había movido. Dirigieron el trabajo Mercedes Cubero Pérez y Samuel Arias Sánchez.`,
-  `Cursa el Doble Máster en Psicología General Sanitaria y Neuropsicología en la Universidad Loyola Andalucía. Mantiene tres estudios propios publicados con DOI sobre cómo la forma del lenguaje condiciona decisiones y razonamiento, que constituyen la sección Fuera de Bata de La Inferencia. Trabaja además como analista de lenguaje para proyectos internacionales de inteligencia artificial en Outlier, evaluando el uso del lenguaje de modelos de gran escala.`
+  `Cursa el Doble Máster en Psicología General Sanitaria y Neuropsicología en la Universidad Loyola Andalucía. Publica artículos de análisis en psicolingüística sobre cómo la forma del lenguaje condiciona decisiones y razonamiento, cada uno con DOI en Zenodo. Trabaja además como analista de lenguaje para proyectos internacionales de inteligencia artificial en Outlier, evaluando el uso del lenguaje de modelos de gran escala.`
 ];
 
 const AUTHOR_FAQS = [
   {
     q: '¿Quién es Miguel Noguer Escudero?',
-    a: 'Psicólogo por la Universidad de Sevilla y fundador y CEO de La Inferencia, un proyecto de divulgación que traduce investigación revisada por pares a un lenguaje claro en español. Dirige Fuera de Bata, su sección de investigación original en psicolingüística.'
+    a: 'Psicólogo por la Universidad de Sevilla y fundador y CEO de La Inferencia, un proyecto de divulgación que traduce investigación revisada por pares a un lenguaje claro en español. Es autor de artículos de análisis en psicolingüística sobre cómo el lenguaje condiciona juicios y decisiones.'
   },
   {
     q: '¿Qué formación tiene Miguel Noguer Escudero?',
     a: 'Graduado en Psicología por la Universidad de Sevilla, con un Trabajo de Fin de Grado calificado con Matrícula de Honor sobre persuasión encubierta y lenguaje. Cursa el Doble Máster en Psicología General Sanitaria y Neuropsicología en la Universidad Loyola Andalucía.'
   },
   {
-    q: '¿Dónde se pueden leer sus investigaciones?',
-    a: 'Mantiene tres estudios propios publicados con DOI en Zenodo sobre cómo la forma del lenguaje condiciona decisiones y razonamiento. Están enlazados en esta página, en la sección Fuera de Bata.'
+    q: '¿Dónde se pueden leer sus artículos de psicolingüística?',
+    a: 'Publica artículos de análisis sobre cómo la forma del lenguaje condiciona decisiones y razonamiento, cada uno con DOI en Zenodo. También están en La Inferencia, en la sección Fuera de Bata. Todos enlazados en esta página.'
   },
   {
     q: '¿Qué es La Inferencia?',
@@ -932,7 +932,7 @@ function buildAuthorPage() {
       { '@type': 'CollegeOrUniversity', 'name': 'Universidad de Sevilla' },
       { '@type': 'CollegeOrUniversity', 'name': 'Universidad Loyola Andalucía' }
     ],
-    'description': 'Psicólogo, fundador y CEO de La Inferencia. Investigación propia en psicolingüística sobre cómo el lenguaje moldea juicios y decisiones de forma no consciente.',
+    'description': 'Psicólogo, fundador y CEO de La Inferencia. Autor de artículos de análisis en psicolingüística sobre cómo el lenguaje moldea juicios y decisiones de forma no consciente.',
     'sameAs': [
       AUTHOR_PERSONAL_LINKEDIN,
       AUTHOR_COMPANY_LINKEDIN
@@ -951,7 +951,7 @@ function buildAuthorPage() {
 
   const head = htmlHead({
     title: `${AUTHOR_NAME}, Psicólogo y CEO de La Inferencia`,
-    description: `Psicólogo, fundador y CEO de La Inferencia. Investigación propia en psicolingüística y divulgación de psicología basada en evidencia.`,
+    description: `Psicólogo, fundador y CEO de La Inferencia. Artículos de análisis en psicolingüística y divulgación de psicología basada en evidencia.`,
     canonUrl,
     ldJsonBlocks: [ldJson, faqJsonLd]
   });
@@ -968,10 +968,10 @@ ${AUTHOR_FAQS.map(f => `        <details class="static-faq-item">\n          <su
 
   const worksHTML = AUTHOR_OWN_WORKS.map(w => `        <li class="cat-article-item">
           <a href="${w.url}">
-            <span class="cat-article-badge">Fuera de Bata</span>
+            <span class="cat-article-badge">Psicolingüística</span>
             <h2>${w.title}</h2>
           </a>
-          <a href="${w.doi}" class="cat-article-doi" target="_blank" rel="noopener noreferrer">Estudio con DOI en Zenodo →</a>
+          <a href="${w.doi}" class="cat-article-cta" target="_blank" rel="noopener noreferrer">Ir al artículo →</a>
         </li>`).join('\n');
 
   const roleLine = AUTHOR_ROLE_CHIPS.slice(0, 2).join(' <span class="author-role-sep">·</span> ');
@@ -1017,7 +1017,7 @@ ${credentialsHTML}
 
 ${bioHTML}
 
-      <h2 class="static-author-arts-title">Investigación propia (Fuera de Bata)</h2>
+      <h2 class="static-author-arts-title">Artículos</h2>
       <ul class="cat-article-list">
 ${worksHTML}
       </ul>

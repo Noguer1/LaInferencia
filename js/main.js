@@ -71,62 +71,94 @@ const LIBRARY_ARTICLES = {
     {
       id: 'eco-01',
       title: 'Por qué pagamos más cuando el precio termina en ,99€',
-      summary: 'El efecto ancla y el precio de imagen izquierda distorsionan la percepción de valor en cada decisión de compra.',
-      sourceUrl: 'https://doi.org/10.1086/431213',
+      summary: 'Tu cerebro archiva 3,99 como «tres y pico» antes de terminar de leerlo. El truco solo funciona bajo una condición muy concreta.',
+      sourceUrl: 'https://academic.oup.com/jcr/article-abstract/32/1/54/1796360',
       sourceLabel: 'Thomas & Morwitz (2005), Journal of Consumer Research',
       badge: 'Economía conductual',
       author: { name: 'Manoj Thomas', university: 'Cornell University', specialty: 'Psicología del Consumidor' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: 'El precio de 9,99 € no es 10 € menos un céntimo. Es una trampa cognitiva documentada que explota la forma en que tu cerebro procesa los dígitos de izquierda a derecha.',
+      intro: 'El precio de 9,99 € no es diez euros menos un céntimo. Tu cerebro lo guarda como «nueve y pico» y pasa a otra cosa. Ese atajo, la fracción de lectura que te ahorras, es exactamente lo que el vendedor compra cuando decide no poner 10,00 €. Durante décadas se dio por hecho que los precios acabados en 9 vendían más y nadie sabía bien por qué. En 2005, dos investigadores de Cornell lo llevaron al laboratorio y encontraron algo más raro que un simple «parece más barato».',
       sections: [
         {
-          subtitle: 'El experimento de Thomas y Morwitz',
+          subtitle: 'Qué hace tu cerebro con un 3,99 antes de que termines de leerlo',
           paragraphs: [
-            'En 2005, Manoj Thomas y Vicki Morwitz reclutaron a 540 adultos y les presentaron comparaciones de precios de productos del hogar. A un grupo se le mostraba la diferencia entre 5,00 $ y 4,00 $; al otro, entre 4,99 $ y 3,99 $. El ahorro real era idéntico en ambos casos: exactamente 1 $. Sin embargo, el segundo grupo percibió el descuento como significativamente mayor. No porque los números dijeran algo diferente, sino porque el dígito de la izquierda (el "4" frente al "3") activó la sensación de haber cruzado una frontera de categoría de precio.',
-            'En un segundo experimento con seguimiento ocular, confirmaron que los participantes fijaban la vista en el dígito izquierdo primero y dedicaban un 30% menos de tiempo a procesar el precio completo cuando terminaba en ,99. El cerebro tomaba una decisión antes de terminar de leer el número.'
+            'Leemos los números de izquierda a derecha, igual que las palabras, y empezamos a estimar cuánto valen antes de llegar al final. Cuando ves 3,99, el primer dato que entra es el 3. Para cuando procesas el «,99», tu sensación de magnitud ya se ha anclado en la zona de «los treses». El céntimo que falta para 4,00 llega tarde. La etiqueta mental ya está puesta.',
+            'Manoj Thomas y Vicki Morwitz, de la Universidad de Cornell, lo llamaron efecto de dígito izquierdo. Su punto de partida era sencillo y algo incómodo. No es que calculemos mal. Es que ni siquiera terminamos de leer.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'Cinco experimentos y una condición que lo cambia todo',
           paragraphs: [
-            'El fenómeno se llama efecto de imagen izquierda o left-digit anchoring. El cerebro humano procesa los números de izquierda a derecha y codifica el valor global a partir del primer dígito que encuentra. Un precio de 3,99 € se almacena en memoria en la categoría mental de "los treses", no de "los cuatros", aunque la diferencia con 4,00 € sea de un solo céntimo.',
-            'El efecto es más potente cuando el consumidor está bajo carga cognitiva (estresado, distraído o con prisa) porque el Sistema 1 de Kahneman (el rápido e intuitivo) toma el relevo sin esperar al Sistema 2. Es por eso que los precios ,99 están omnipresentes en supermercados y plataformas online pero rara vez en restaurantes de alta gama, donde la experiencia requiere calma y la señal de calidad se comunica precisamente prescindiendo de ese recurso.'
+            'El trabajo, publicado en el Journal of Consumer Research, reunió cinco experimentos. En ellos se pedía a los participantes juzgar diferencias de precio o de magnitud entre pares de cifras, y se medía tanto la respuesta como el tiempo que tardaban en darla.',
+            'El resultado central es más fino de lo que suele contarse. El efecto no salta cada vez que un precio acaba en 9. Salta solo cuando cambia el dígito de la izquierda. La distancia entre 3,00 y 2,99 se percibe como grande, porque el «3» se convierte en «2». La distancia entre 3,49 y 3,48 no engaña a nadie, porque el primer dígito no se mueve. Por eso los precios de tienda casi nunca son 3,48. Son 2,99, 4,99, 9,99. Siempre justo por debajo del salto.',
+            'Los autores comprobaron además que el fenómeno no es exclusivo de los precios. Con otros números de varias cifras ocurría lo mismo. No es un sesgo del comprador, es un rasgo de cómo la mente convierte símbolos en cantidades.'
+          ]
+        },
+        {
+          subtitle: 'Depende de con qué lo compares',
+          paragraphs: [
+            'La parte que casi ningún resumen recoge es esta. La fuerza del efecto no depende solo del precio que miras, sino del que tienes al lado para comparar.',
+            'Cuando el producto rival está cerca en precio, el dígito izquierdo pesa mucho. Un champú a 2,99 € junto a otro a 3,19 € parece bastante más barato de lo que es, y esos veinte céntimos se sienten como una rebaja de verdad. Cuando el rival está lejos, pongamos a 5,00 €, el mismo 2,99 ya no necesita el truco. La diferencia es tan obvia que el primer dígito deja de hacer trabajo extra.',
+            'En la práctica, el 9 final rinde más en el lineal saturado de opciones parecidas, la leche, el café, el detergente, y rinde menos cuando el producto no tiene competencia directa a la vista.'
+          ]
+        },
+        {
+          subtitle: 'Por qué el Sistema 1 no espera',
+          paragraphs: [
+            'Daniel Kahneman separó el pensamiento en dos velocidades. El Sistema 1 es rápido, automático, funciona a ojo. El Sistema 2 es lento y deliberado, el que usarías para restar 4,00 menos 0,01 si te lo pidieran en serio.',
+            'En una compra normal nadie llama al Sistema 2. Vas con prisa, con la lista a medias, con un niño tirando del carro. El Sistema 1 coge el precio, mira el primer dígito y decide. El efecto se agranda justo cuando estás distraído, cansado o acelerado, porque son las condiciones en las que el sistema lento ni se asoma.',
+            'Ahí está la pista de por qué los 9,99 llenan los supermercados y los descuentos online, pero desaparecen en un restaurante caro. En el supermercado el vendedor quiere que decidas rápido. En el menú de 120 € la señal de calidad se manda precisamente escribiendo 120 y no 119,99.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega el efecto',
+          paragraphs: [
+            'Conviene no exagerarlo. Por unidad, lo que el truco te cuesta son céntimos. El problema no es una compra, es el agregado. Miles de decisiones al año por tu lado, millones de tickets por el del vendedor.',
+            'El efecto se ha replicado y afinado. Un trabajo de 2020 en el Journal of Marketing Research volvió a medir cuándo aparece y cuándo no, y en 2024 otro lo llevó al terreno de la reduflación, los envases que encogen manteniendo el precio. También hay diferencias entre personas. Quien compara el precio por unidad o redondea por costumbre se lo salta con facilidad.',
+            'Y no es irracionalidad en el sentido de fallo. Es lo que pagas por tener un cerebro que estima magnitudes deprisa, algo que casi siempre te conviene. El vendedor solo ha encontrado el hueco.'
           ]
         }
       ],
-      blockquote: { text: '«El primer dígito de un precio ancla la percepción de valor antes de que el cerebro procese el número completo.»', attribution: 'Manoj Thomas & Vicki Morwitz' },
-      aplicacion: 'La próxima vez que veas un precio que termina en ,99 o ,95, escríbelo redondeado en un papel antes de decidir. Ese simple acto activa el procesamiento numérico correcto y neutraliza parcialmente el sesgo.'
+      blockquote: { text: '«Ofrecemos una explicación cognitiva de cuándo y por qué los precios acabados en nueve se perciben como más bajos que un precio un céntimo mayor.»', attribution: 'Thomas & Morwitz (2005)' },
+      aplicacion: 'Cuando un precio acabe en ,99 o ,95, redondéalo hacia arriba en la cabeza antes de decidir. Pasar de «2,99» a «3 euros» reactiva el cálculo real y desarma medio truco. Si dudas entre dos productos parecidos, mira el precio por unidad o por kilo de la etiqueta pequeña, que es donde el dígito izquierdo ya no esconde nada. El efecto se cae solo cuando miras con calma, así que la defensa es no decidir con prisa.'
     },
     {
       id: 'eco-02',
       title: 'El error que comete tu cerebro al evaluar riesgos financieros',
-      summary: 'La teoría prospectiva de Kahneman y Tversky demuestra que el dolor de perder dinero es el doble de intenso que el placer de ganarlo.',
+      summary: 'Perder 500 € y ganarlos no se compensan en tu cabeza. La pérdida pesa alrededor del doble, y de ahí salen los errores más caros del inversor normal.',
       sourceUrl: 'https://doi.org/10.2307/1914185',
       sourceLabel: 'Kahneman & Tversky (1979), Econometrica',
       badge: 'Toma de decisiones',
       author: { name: 'Daniel Kahneman', university: 'Universidad de Princeton', specialty: 'Psicología Cognitiva y Economía Conductual' },
-      readingTime: '4 min',
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'Perder 500 € no duele igual que ganarlos alegra. Duele entre 1,5 y 2,5 veces más. Este asimétrico fundamental explica por qué los inversores venden demasiado pronto las ganancias y aguantan demasiado tiempo las pérdidas.',
+      intro: 'Te ofrezco lanzar una moneda. Si sale cara ganas 110 €, si sale cruz pierdes 100 €. La apuesta es matemáticamente buena y casi nadie la acepta. La razón es que perder 100 € escuece más de lo que alegra ganarlos, en torno al doble. De esa asimetría salen algunos de los errores más caros que comete un inversor normal, y también por qué te cuesta tanto vender algo que ya no usas.',
       sections: [
         {
-          subtitle: 'El experimento de Kahneman y Tversky',
+          subtitle: 'Kahneman y Tversky reescriben la teoría de la decisión',
           paragraphs: [
-            'En 1979, Daniel Kahneman y Amos Tversky presentaron a sus participantes una serie de elecciones entre apuestas con valores esperados matemáticamente idénticos. El hallazgo central: cuando las opciones se enmarcaban en términos de pérdidas, los participantes elegían la apuesta arriesgada para evitar la pérdida segura. Cuando se enmarcaban en términos de ganancias, preferían la ganancia segura. La lógica matemática era irrelevante; lo que mandaba era el marco.',
-            'Para cuantificar la asimetría, construyeron la función de valor en forma de S: su pendiente es más pronunciada en la zona de pérdidas que en la de ganancias. Calcularon que perder 100 € produce un impacto emocional equivalente al que produciría ganar entre 150 € y 250 €. Esta relación de 1,5 a 2,5 es estable entre culturas y niveles de renta.'
+            'En 1979, Daniel Kahneman y Amos Tversky publicaron en Econometrica un artículo que acabaría dando un Nobel de Economía. Habían pasado a sus participantes decenas de elecciones entre apuestas con el mismo valor esperado, cambiando solo cómo estaban planteadas. Cuando la elección se presentaba en forma de pérdidas, la gente se volvía arriesgada con tal de esquivar la pérdida segura. Cuando la misma elección se presentaba en forma de ganancias, la gente se volvía conservadora y agarraba lo seguro. El cálculo era idéntico. Lo que cambiaba la respuesta era el marco.',
+            'Con esos datos dibujaron la función de valor, una curva en forma de S. Sube cuando ganas y baja cuando pierdes, pero baja más empinada de lo que sube. Perder algo se siente aproximadamente el doble de intenso que ganar lo mismo. Ese factor, alrededor de dos, es lo que se conoce como aversión a la pérdida.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'Por qué duele el doble',
           paragraphs: [
-            'La aversión a las pérdidas tiene una base neurobiológica sólida. La amígdala (el sistema de alarma del cerebro) se activa más intensamente ante la posibilidad de perder que ante la de ganar una cantidad equivalente. Esta asimetría es evolutivamente coherente: en entornos de escasez, una pérdida de recursos puede ser fatal; una ganancia equivalente, simplemente cómoda.',
-            'Las consecuencias prácticas son profundas. El efecto dotación explica por qué valoramos más lo que ya poseemos que lo que podríamos obtener: venderlo activa la zona de pérdidas, que duele más de lo que alegra la posibilidad de comprarlo. Los inversores aguantan posiciones perdedoras durante meses esperando recuperar el punto de entrada (lo que los economistas llaman disposition effect) y venden las ganadoras antes de tiempo para "asegurar" la ganancia. En ambos casos, la lógica financiera cede ante la asimetría emocional documentada por Kahneman.'
+            'La amígdala, el sistema de alarma del cerebro, reacciona con más fuerza ante la posibilidad de perder que ante la de ganar una cantidad equivalente. Tiene sentido si piensas de dónde venimos. En un entorno de escasez, perder comida o refugio podía matarte. Ganar lo mismo solo te hacía la vida más cómoda. El cerebro que sobrevivió es el que trataba las pérdidas como una emergencia.',
+            'En dinero, eso se traduce en dos errores muy repetidos. El efecto dotación hace que pidas más por vender algo tuyo de lo que pagarías por comprarlo, porque desprenderte de ello entra por la zona que duele. Y el efecto disposición hace que los inversores aguanten meses una posición en pérdidas, esperando volver al punto de entrada, mientras venden las ganadoras enseguida para asegurar el acierto. Las dos veces, la contabilidad emocional gana a la financiera.'
+          ]
+        },
+        {
+          subtitle: 'Cuánto de esto está en discusión',
+          paragraphs: [
+            'El número exacto se pelea. El clásico «las pérdidas pesan el doble» viene de un puñado de estudios, y trabajos más recientes, en particular una revisión de David Gal y Derek Rucker de 2018, sostienen que la aversión a la pérdida se ha exagerado, que en muchas situaciones la gente decide de forma bastante simétrica y que el punto de referencia desde el que mides importa tanto como la asimetría.',
+            'Lo que casi nadie discute es la pieza gruesa. El marco en que se presenta una decisión cambia la decisión, aunque los números por debajo sean los mismos. Ese hallazgo se ha reproducido cientos de veces y es una de las bases de la economía del comportamiento.'
           ]
         }
       ],
-      blockquote: { text: '«Las pérdidas se sienten más grandes que las ganancias de igual magnitud. Eso no es irracionalidad: es la arquitectura de la mente humana.»', attribution: 'Daniel Kahneman' },
-      aplicacion: 'Antes de revisar tu cartera o tomar una decisión financiera importante, escribe en papel qué perderías y qué ganarías con cada opción. Externalizar los números neutraliza parcialmente el peso emocional asimétrico de las pérdidas.',
+      blockquote: { text: '«En la teoría prospectiva, la función de valor es más pronunciada para las pérdidas que para las ganancias.»', attribution: 'Kahneman & Tversky (1979)' },
+      aplicacion: 'Antes de tocar tu cartera o cerrar una decisión con dinero, escribe en un papel qué ganas y qué pierdes con cada opción. Verlo fuera de tu cabeza rebaja el peso extra que la mente le pone a la pérdida. Para invertir, la defensa más fiable es fijar las reglas antes de entrar, cuándo vendes si sube y cuándo si baja, porque en caliente la asimetría decide por ti.',
       chart: {
         caption: 'Función de valor de la Teoría Prospectiva (Kahneman & Tversky, 1979). La curva desciende más bruscamente en pérdidas que asciende en ganancias de igual magnitud.',
         svg: `<svg viewBox="0 0 340 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Función de valor asimétrica: la pendiente de pérdidas es más pronunciada que la de ganancias">
@@ -161,92 +193,120 @@ const LIBRARY_ARTICLES = {
     {
       id: 'eco-03',
       title: 'Por qué gastas más cuando no ves el dinero físico',
-      summary: 'El dolor de pagar se atenúa drásticamente con tarjeta o pago digital, lo que dispara el gasto impulsivo de forma sistemática.',
+      summary: 'Paga lo mismo con billetes o con el móvil y la compra no se siente igual. Sin el pinchazo de soltar el efectivo, gastas más.',
       sourceUrl: 'https://doi.org/10.1023/A:1008196717017',
       sourceLabel: 'Prelec & Simester (2001), Marketing Letters',
       badge: 'Neuroeconomía',
       author: { name: 'Drazen Prelec', university: 'MIT Sloan School of Management', specialty: 'Neuroeconomía y Comportamiento del Consumidor' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '19 de mayo de 2026',
-      intro: 'Cuando pagas en efectivo, el cerebro activa la ínsula anterior, la región asociada al dolor físico. Con tarjeta, esa activación desaparece casi por completo. El resultado: gastas más, sin sentirlo.',
+      intro: 'Paga lo mismo con billetes o con el teléfono y la compra no se siente igual. Con efectivo, entregar el dinero escuece un poco. Con tarjeta o con el móvil, ese pinchazo casi desaparece, y sin él tiendes a gastar más. No es una impresión, se ha medido en subastas reales y en un escáner cerebral.',
       sections: [
         {
-          subtitle: 'El experimento de Prelec y Simester',
+          subtitle: 'Una subasta en el MIT',
           paragraphs: [
-            'En el MIT, Drazen Prelec y Duncan Simester realizaron una subasta de entradas para partidos de la NBA muy cotizados. Dividieron a los participantes en dos grupos: uno podía pujar solo en efectivo, el otro solo con tarjeta de crédito. El resultado fue contundente: el grupo de tarjeta pujó el doble que el grupo de efectivo por las mismas entradas. La disposición a pagar no dependía del valor del objeto, sino del método de pago.',
-            'En estudios posteriores usando fMRI, el equipo confirmó que el acto de pagar en efectivo activa la ínsula anterior con una intensidad proporcional al importe pagado. El pago con tarjeta, en cambio, no muestra prácticamente activación en esa región. La tarjeta elimina el dolor de pagar eliminando la experiencia sensorial del intercambio.'
+            'Drazen Prelec y Duncan Simester montaron en el MIT subastas de sobre cerrado por entradas agotadas de los Boston Celtics. Los participantes pujaban con dinero de verdad por un premio de verdad. A la mitad se le dijo que solo podría pagar en efectivo, a la otra mitad que solo con tarjeta de crédito.',
+            'Las pujas con tarjeta llegaron a duplicar a las de efectivo por exactamente la misma entrada. El artículo, publicado en Marketing Letters en 2001, se titula «Always Leave Home Without It», y descarta que la diferencia venga de la falta de liquidez. Lo que cambiaba la disposición a pagar no era el valor del objeto ni el dinero disponible. Era la forma de pagar.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'El dolor de pagar deja una firma en el cerebro',
           paragraphs: [
-            'Prelec y Loewenstein lo denominaron desacoplamiento del pago: cuando el momento de consumo y el momento de pago se separan temporalmente (como ocurre con las tarjetas de crédito o las suscripciones mensuales) el cerebro trata el gasto como una abstracción futura y no como un coste real presente. La vigilancia del gasto se desactiva.',
-            'Este mecanismo explica por qué los restaurantes que cobran al inicio (como los cruceros con todo incluido) generan mayor satisfacción en el consumo: el dolor del pago ya quedó atrás y disfrutar no activa ninguna señal de alarma. Las apps de delivery, las plataformas de streaming y los modelos de suscripción explotan este desacoplamiento de forma sistemática. El usuario percibe el servicio como "gratuito" en cada uso individual porque el momento del pago ya pasó, o todavía no ha llegado.'
+            'La expresión «dolor de pagar» es de Drazen Prelec y George Loewenstein, que en 1998 propusieron que soltar dinero produce una molestia real que frena el gasto. En 2007, un equipo con Brian Knutson, Scott Rick y Loewenstein lo llevó al escáner. Metieron a los participantes en una resonancia magnética funcional con dinero real y les fueron mostrando productos con su precio.',
+            'Cuando el precio parecía excesivo se encendía la ínsula anterior, una zona que también responde al dolor físico y a los olores desagradables. Y esa activación predecía que, segundos después, la persona no compraría. Pagar activa de verdad un circuito de rechazo. Todo lo que amortigüe ese circuito, como no ver salir los billetes, afloja el freno.'
+          ]
+        },
+        {
+          subtitle: 'Separar el momento de pagar del momento de disfrutar',
+          paragraphs: [
+            'Prelec y Loewenstein lo llamaron desacoplamiento del pago. Cuando consumes ahora y pagas después, o pagas antes y consumes luego, o pagas una cuota fija y usas el servicio cuando quieres, el gasto deja de sentirse como un coste presente y se convierte en una abstracción. La vigilancia se relaja.',
+            'Por eso un crucero con todo incluido se disfruta más que pagar cada consumición. El pago ya quedó atrás y nada interrumpe el placer. Las apps de comida a domicilio, el streaming y cualquier suscripción viven de lo mismo. Cada uso concreto se siente gratis porque el momento de pagar ya pasó o todavía no ha llegado.'
+          ]
+        },
+        {
+          subtitle: 'Qué tan robusto es',
+          paragraphs: [
+            'El sobreprecio con tarjeta se ha reproducido muchas veces desde 2001, pero su tamaño varía bastante según el producto, la persona y su costumbre de pago. Keith Wilcox y sus colegas mostraron en 2011 que también cuenta cuánto crédito disponible sientes que tienes, no solo el trozo de plástico.',
+            'El pago con móvil y el contactless podrían estar empujando el efecto más lejos todavía, porque hacen la transacción aún menos física. La evidencia sobre eso aún se está acumulando.'
           ]
         }
       ],
-      blockquote: { text: '«El dinero físico hace que el coste psicológico de una compra sea real y presente. El pago digital lo convierte en una abstracción futura.»', attribution: 'Drazen Prelec' },
-      aplicacion: 'Para compras no planificadas, oblígate a pagar en efectivo durante una semana. La incomodidad cognitiva que sientes al entregar los billetes es información valiosa sobre si la compra merece realmente ese coste.'
+      blockquote: { text: '«El efecto de la tarjeta de crédito sobre la disposición a pagar puede ser grande, de hasta el 100%.»', attribution: 'Prelec & Simester (2001)' },
+      aplicacion: 'Para las compras que no tenías planeadas, prueba una semana pagando solo en efectivo. La incomodidad de contar los billetes y entregarlos no es un fastidio, es información sobre si la compra te compensa de verdad. Si el gasto te cuesta cuando lo pagas con dinero físico, seguramente no lo necesitas.'
     },
     {
       id: 'eco-04',
       title: 'El efecto IKEA: por qué valoras más lo que construiste tú',
-      summary: 'Invertir esfuerzo en algo infla artificialmente su valor percibido, incluso cuando el resultado es objetivamente inferior al de un experto.',
+      summary: 'Monta un mueble tú mismo y empezarás a valorarlo como si lo hubiera hecho un ebanista. Los demás no lo ven así, y esa brecha tiene nombre.',
       sourceUrl: 'https://doi.org/10.1016/j.jcps.2011.08.002',
       sourceLabel: 'Norton, Mochon & Ariely (2012), Journal of Consumer Psychology',
       badge: 'Psicología del consumidor',
       author: { name: 'Michael Norton', university: 'Harvard Business School', specialty: 'Comportamiento del consumidor y economía conductual' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '12 de mayo de 2026',
-      intro: 'En 2012, Michael Norton y sus colegas pagaron a participantes para que montaran cajas de IKEA siguiendo las instrucciones. Al terminar, les preguntaron cuánto pagarían por ellas. El resultado fue desconcertante: valoraban sus propias cajas casi al mismo nivel que idénticas montadas por carpinteros expertos, y esperaban que otros hicieran lo mismo. Nadie más lo hizo. Esa asimetría tiene nombre y mecanismo.',
+      intro: 'Michael Norton, Daniel Mochon y Dan Ariely pagaron a un grupo de personas para montar cajas de IKEA siguiendo las instrucciones. Al acabar, les preguntaron cuánto pagarían por quedárselas. La respuesta fue casi la misma cifra que costaba una caja idéntica montada por un profesional. Y daban por hecho que cualquiera pagaría eso. Nadie de fuera lo hizo. Esa diferencia entre lo que ves tú y lo que ven los demás tiene mecanismo.',
       sections: [
         {
-          subtitle: 'Origami, LEGO y cajas: el esfuerzo como distorsionador del valor',
+          subtitle: 'Cajas, origami y LEGO',
           paragraphs: [
-            'Norton replicó el efecto en tres categorías de objetos: cajas de almacenaje, figuras de origami y modelos de LEGO. El patrón fue consistente: quien había construido el objeto pagaba entre tres y cinco veces más por él que los observadores externos. Más revelador aún: cuando los participantes construían objetos manifiestamente mal hechos (origamis torcidos, cajas con piezas que no encajaban bien), los valoraban casi igual que los de calidad. El esfuerzo anulaba el juicio estético.',
-            'En una variante, Norton comparó grupos según cuánto esfuerzo habían invertido: quien completaba el montaje completo valoraba el objeto significativamente más que quien solo hacía la mitad. Y en la condición más sorprendente: cuando las instrucciones eran confusas o incompletas (haciendo el proceso más frustrante), la valoración subía todavía más. El dolor del esfuerzo no disuadía; amplificaba el amor por el resultado.'
+            'Los investigadores repitieron la idea con tres tipos de objeto. Cajas de almacenaje, figuras de papiroflexia y modelos de LEGO. Siempre el mismo patrón. Quien había construido la pieza pagaba entre tres y cinco veces más por ella que un observador que solo la miraba.',
+            'Lo llamativo vino con los detalles. Cuando los participantes hacían objetos claramente mal acabados, papiroflexia torcida, cajas con piezas que no cerraban, los seguían valorando casi como los buenos. El esfuerzo tapaba el juicio estético. Y en la versión más rara, cuando las instrucciones eran confusas y el montaje se volvía frustrante, la valoración subía todavía más. Sufrir un poco montándolo no restaba. Sumaba.'
           ]
         },
         {
-          subtitle: 'El mecanismo: esfuerzo como proxy de valor y extensión del yo',
+          subtitle: 'Por qué el esfuerzo infla el precio',
           paragraphs: [
-            'El efecto opera por dos rutas paralelas. La primera es la justificación cognitiva: haber invertido tiempo y energía genera presión hacia la coherencia. Decir que el objeto no vale mucho equivale a reconocer que el esfuerzo fue en vano, y eso activa disonancia. La segunda ruta es la identidad: cuando construyes algo con tus manos, dejas una huella de ti mismo en él. No lo evalúas como un objeto externo, sino como una extensión tuya.',
-            'Norton identifica el paralelo con lo que denomina "disonancia del creador": artistas, escritores y emprendedores sobrevaloran sistemáticamente sus obras frente a la audiencia objetiva. No es arrogancia: es biología. El cerebro no tiene acceso limpio al valor objetivo de lo que produce; solo tiene acceso al coste que le supuso producirlo, y ese coste se convierte en el proxy del valor.'
+            'Hay dos cosas actuando a la vez. Una es la justificación del esfuerzo. Has metido tiempo y energía, y decir ahora que el objeto no vale gran cosa es admitir que ese rato fue en balde. La mente evita esa contradicción subiendo el valor de lo que has hecho.',
+            'La otra es la identidad. Cuando construyes algo con las manos dejas una parte de ti dentro. Ya no lo miras como un objeto ajeno, sino como una extensión tuya, y a lo tuyo se le pone precio de cariño. Le pasa a cualquiera que crea algo. El escritor, el fundador de una empresa, el que cocina para invitados. Todos sobrevaloran lo suyo frente a quien lo recibe, porque el cerebro no tiene una medida limpia del valor de lo que produce. Lo que sí tiene es la factura de lo que le costó hacerlo, y usa esa factura como sustituto.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde se sostiene',
+          paragraphs: [
+            'El efecto se ha vuelto a encontrar en réplicas posteriores, aunque no siempre con la misma fuerza. Un trabajo de Abigail Marsh y colegas en 2018 lo reprodujo y afinó una condición. El montaje tiene que completarse con éxito. Si te rindes a medias, el apego extra no aparece.',
+            'Visto de lejos, el efecto IKEA es un caso particular de algo más viejo y muy sólido, el efecto dotación. Valoramos más las cosas por el simple hecho de que ya son nuestras. Construirlas tú mismo solo aprieta más ese tornillo.'
           ]
         }
       ],
-      blockquote: { text: '«El esfuerzo no es solo el coste de crear algo: es la causa de que lo ames.»', attribution: 'Michael Norton' },
-      aplicacion: 'Cuando evalúes un proyecto, idea o producto que tú mismo hayas desarrollado, busca deliberadamente el feedback de alguien que no haya participado en su creación. No para validarte, sino para calibrar: la diferencia entre lo que tú valoras y lo que ellos ven es la medida exacta del efecto IKEA distorsionando tu juicio.'
+      blockquote: { text: '«El trabajo lleva al afecto: cuando las personas construyen un producto ellas mismas, lo valoran más.»', attribution: 'Norton, Mochon & Ariely (2012)' },
+      aplicacion: 'Cuando tengas que juzgar algo que has hecho tú, un proyecto, una idea, un producto, busca a propósito la opinión de alguien que no haya tocado nada. No para que te dé la razón, sino para medir. La distancia entre lo que tú valoras y lo que ve esa persona es el tamaño exacto del efecto IKEA torciéndote el juicio.'
     },
     {
       id: 'eco-05',
       title: 'La paradoja de la elección: por qué más opciones te hacen decidir peor',
-      summary: 'Multiplicar las alternativas no mejora las decisiones: las paraliza, aumenta el arrepentimiento y reduce la satisfacción, aunque elijas objetivamente bien.',
+      summary: 'Un expositor con 24 mermeladas atrae a más gente que uno con 6, pero el de 6 vende diez veces más. Ese dato del año 2000 es de los que peor han envejecido.',
       sourceUrl: 'https://doi.org/10.1037/0022-3514.79.6.995',
       sourceLabel: 'Iyengar & Lepper (2000), Journal of Personality and Social Psychology',
       badge: 'Economía conductual',
       author: { name: 'Barry Schwartz', university: 'Swarthmore College', specialty: 'Psicología de la decisión y bienestar subjetivo' },
-      readingTime: '3 min',
+      readingTime: '6 min',
       date: '5 de mayo de 2026',
-      intro: 'En 2000, Sheena Iyengar y Mark Lepper montaron en un supermercado de California dos expositores de mermeladas artesanales: uno con 24 variedades, otro con 6. El de 24 atrajo a más curiosos (era visualmente más imponente). Pero el de 6 vendió diez veces más. Esa asimetría entre atracción y conversión es uno de los hallazgos más citados en la psicología del comportamiento económico, y tiene consecuencias en casi todas las decisiones de tu vida.',
+      intro: 'Un expositor con 24 mermeladas atrae a más gente que uno con 6. Pero el de 6 vende diez veces más. Ese dato, de un supermercado de California en el año 2000, se convirtió en una de las ideas más repetidas de la psicología del consumo. También en una de las que peor han envejecido.',
       sections: [
         {
-          subtitle: 'La mermelada, el chocolate y el coste oculto de la abundancia',
+          subtitle: 'El experimento de las mermeladas',
           paragraphs: [
-            'Iyengar y Lepper alternaron los expositores en distintos sábados para controlar el efecto de localización. El 60% de los clientes se detenía ante el de 24 variedades, pero solo el 3% compraba. Del de 6, se detenía el 40% (menos tráfico), pero compraba el 30%. La diferencia en ventas fue de diez a uno. En economía estándar, más opciones deberían ser siempre mejor o neutro: nunca deberían perjudicar. Pero perjudicaban.',
-            'En un experimento de laboratorio complementario, participantes que elegían un chocolate entre 6 reportaron mayor satisfacción que quienes elegían entre 30, aunque el chocolate seleccionado fuera el mismo. Los del grupo de 30 mostraron mayor arrepentimiento post-decisional, mayor probabilidad de desear haber elegido otro, y menor probabilidad de volver a comprar. Disfrutaban menos lo que habían elegido porque no podían dejar de pensar en lo que no habían elegido.'
+            'Sheena Iyengar y Mark Lepper montaron en un supermercado un puesto de degustación que unos días ofrecía 24 mermeladas artesanales y otros días solo 6. El 60% de los clientes se paraba ante el de 24, pero solo el 3% acababa comprando. Ante el de 6 se paraba menos gente, el 40%, y compraba el 30%. Diez a uno en ventas a favor de la mesa pequeña.',
+            'En un experimento de laboratorio que acompañaba al de la tienda, quienes elegían un bombón entre 6 quedaban más satisfechos que quienes elegían entre 30, aunque el bombón fuera el mismo. Los del grupo de 30 se arrepentían más y decían con más frecuencia que ojalá hubieran cogido otro. La explicación que se popularizó fue que demasiadas opciones agobian, paralizan y dejan mal sabor de boca.'
           ]
         },
         {
-          subtitle: 'Maximizadores y satisficers: dos formas de relacionarse con las opciones',
+          subtitle: 'La teoría, coste de oportunidad y arrepentimiento',
           paragraphs: [
-            'Barry Schwartz formalizó el mecanismo en "The Paradox of Choice" (2004). La raíz del problema es el coste de oportunidad: cuando tienes 6 opciones, al elegir una renuncias a 5. Cuando tienes 24, renuncias a 23, y el cerebro no puede ignorar todas esas rutas no tomadas. La elección entre 24 alternativas requiere el doble de esfuerzo cognitivo y produce el doble de arrepentimiento, independientemente de la calidad del resultado.',
-            'Schwartz introduce la distinción clave entre "maximizadores" (quienes buscan la mejor opción posible) y "satisficers" (quienes buscan una opción suficientemente buena). Los maximizadores sufren más con la abundancia: cuantas más opciones tienen, más probable es que se pregunten si eligieron la mejor. Los satisficers deciden antes, se arrepienten menos y reportan mayor bienestar, aunque sus elecciones objetivas sean a veces inferiores. El problema no es la inteligencia ni el criterio: es la estrategia de decisión.'
+            'Barry Schwartz recogió la idea en su libro «The Paradox of Choice», de 2004. El argumento es el coste de oportunidad. Si eliges entre 6, renuncias a 5. Si eliges entre 24, renuncias a 23, y la mente no ignora todos esos caminos que no tomaste. Cada uno es un pequeño motivo de duda después.',
+            'Schwartz separa a la gente en dos tipos. Los maximizadores, que quieren la mejor opción posible, y los satisfacientes, que se conforman con una lo bastante buena. Los maximizadores lo pasan peor cuanta más oferta hay, porque siempre les queda la sospecha de que había algo mejor un estante más allá.'
+          ]
+        },
+        {
+          subtitle: 'Y luego no se replicó',
+          paragraphs: [
+            'En 2010, Benjamin Scheibehenne, Rainer Greifeneder y Peter Todd reunieron 50 experimentos sobre el tema, más de 5.000 personas, en un metaanálisis publicado en el Journal of Consumer Research. El efecto medio de tener más opciones sobre la satisfacción con la decisión fue, en la práctica, cero. Algunos estudios encontraban la parálisis por exceso de opciones. Otros encontraban lo contrario. La mayoría, nada.',
+            'La lectura razonable hoy no es que la paradoja de la elección sea un mito completo, sino que solo aparece bajo condiciones concretas. Cuando las alternativas se parecen mucho entre sí, cuando la decisión te importa de verdad, cuando no tienes un criterio propio para ordenar y cuando no hay una opción por defecto que te sirva de ancla. Fuera de ese cuadro, añadir opciones no hunde a nadie.'
           ]
         }
       ],
-      blockquote: { text: '«Aprender a elegir es difícil. Aprender a elegir bien es más difícil. Y aprender a elegir bien en un mundo de opciones ilimitadas es lo más difícil de todo.»', attribution: 'Barry Schwartz' },
-      aplicacion: 'La próxima vez que enfrentes una decisión con muchas alternativas (plataformas, proveedores, candidatos, restaurantes), impón deliberadamente una restricción previa: trabaja solo con un máximo de tres finalistas. Descartar primero, decidir después. La pérdida de calidad óptima es estadísticamente mínima; la ganancia en satisfacción y velocidad de decisión es significativa.',
+      blockquote: { text: '«El efecto medio del tamaño del surtido sobre la satisfacción con la elección fue prácticamente nulo.»', attribution: 'Scheibehenne, Greifeneder & Todd (2010)' },
+      aplicacion: 'Cuando una decisión te importe y las alternativas se parezcan entre sí, córtate tú antes. Quédate con tres finalistas y decide solo entre esos tres. Primero descartar, luego elegir. En cambio, si la decisión es menor o ya tienes criterio para ordenar las opciones, no te compliques buscando la fórmula perfecta, más oferta ahí no te va a pasar factura.',
       chart: {
         caption: 'Experimento de Iyengar & Lepper (2000). El expositor de 24 mermeladas atraía más visitantes, pero el de 6 convertía diez veces más en ventas.',
         svg: `<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparativa: 24 opciones atraen más visitantes pero venden 10 veces menos que 6 opciones">
@@ -282,62 +342,76 @@ const LIBRARY_ARTICLES = {
     {
       id: 'eco-06',
       title: 'El vino de 90€ que costaba 5€: cómo el precio cambia la experiencia real',
-      summary: 'Cuando los participantes creían beber vino caro, su cerebro lo experimentaba como mejor. El precio no solo cambiaba la opinión: cambiaba la activación neuronal real.',
+      summary: 'Dale a alguien el mismo vino diciéndole que cuesta 90 dólares y luego que cuesta 5. No solo dirá que el caro le gusta más. Su cerebro lo disfrutará más de verdad.',
       sourceUrl: 'https://doi.org/10.1073/pnas.0706929105',
       sourceLabel: 'Plassmann et al. (2008), PNAS',
       badge: 'Neuroeconomía',
       author: { name: 'Hilke Plassmann', university: 'INSEAD / California Institute of Technology', specialty: 'Neuroeconomía y comportamiento del consumidor' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '9 de junio de 2026',
-      intro: 'En 2008, Hilke Plassmann y su equipo del California Institute of Technology pusieron a varios participantes dentro de un escáner de resonancia magnética funcional y los hicieron probar vino. Lo que encontraron no era que el vino más caro sabía mejor. Era que la misma botella sabía mejor cuando los participantes creían que era cara.',
+      intro: 'Dale a alguien el mismo vino dos veces, una diciéndole que cuesta 90 dólares y otra que cuesta 5, y no solo dirá que el caro le gusta más. Su cerebro, medido en un escáner, lo disfrutará más de verdad. El precio no cambia solo la opinión que se declara después. Cambia la experiencia mientras ocurre.',
       sections: [
         {
-          subtitle: 'El experimento: mismo vino, distinto precio, distinto cerebro',
+          subtitle: 'Cinco copas, tres vinos',
           paragraphs: [
-            'Los participantes probaron cinco muestras de vino que, según se les dijo, costaban entre 5 y 90 dólares la botella. En realidad, solo había tres vinos diferentes: dos de ellos aparecían dos veces, con precios distintos. El vino de 5 dólares aparecía también como el de 45; el de 90 dólares era en realidad el de 10. Mientras bebían, el escáner medía la actividad en la corteza orbitofrontal medial, la región que codifica el placer y la recompensa.',
-            'El resultado fue inequívoco: la activación de la corteza orbitofrontal medial era significativamente mayor cuando los participantes creían estar bebiendo el vino caro. Y esa activación correlacionaba directamente con el placer reportado: los participantes no solo decían que sabía mejor, sino que su cerebro lo procesaba como mejor. La expectativa había modificado la experiencia sensorial real, no solo la evaluación posterior.'
+            'Hilke Plassmann y su equipo del California Institute of Technology metieron a los participantes en una resonancia magnética funcional y les dieron a probar cinco muestras de vino con precios de entre 5 y 90 dólares. La trampa es que solo había tres vinos. El de 5 dólares volvía a aparecer etiquetado como el de 45. El de 90 era en realidad el de 10.',
+            'Mientras bebían, el escáner medía la corteza orbitofrontal medial, una zona que se enciende con el placer y la recompensa. Se activaba más cuando la persona creía estar bebiendo el vino caro, y esa activación acompañaba al placer que declaraba sentir. No es que dijeran que sabía mejor para quedar bien. El circuito del disfrute funcionaba más fuerte.'
           ]
         },
         {
-          subtitle: 'El mecanismo: marketing placebo',
+          subtitle: 'Marketing placebo',
           paragraphs: [
-            'Plassmann llamó a esto marketing placebo: igual que un placebo médico genera efectos fisiológicos reales, las expectativas de precio generan experiencias hedónicas reales. El mecanismo es la modulación descendente: el córtex prefrontal, que almacena las expectativas, envía señales hacia abajo que modulan la respuesta de las áreas sensoriales antes de que la información del sabor llegue a la conciencia. No es que el cerebro reciba el sabor y luego lo evalúe según el precio. Es que el precio llega primero y prepara el sistema sensorial para lo que va a recibir.',
-            'El hallazgo tiene consecuencias incómodas. No existe una experiencia "pura" del sabor, el sonido o la estética separada de lo que esperamos encontrar. Toda percepción llega filtrada por el contexto (el precio, el envase, el lugar, la marca) que el cerebro usa para generar predicciones. Y esas predicciones son parte de la experiencia misma, no una capa interpretativa posterior.'
+            'Plassmann lo llamó marketing placebo. Igual que una pastilla sin principio activo produce efectos fisiológicos reales cuando crees que es medicina, la expectativa de un precio alto produce placer real cuando crees que estás bebiendo algo bueno.',
+            'El mecanismo es de arriba abajo. La parte del cerebro que guarda lo que esperas manda señales hacia las áreas sensoriales antes de que el sabor llegue a la conciencia. No pruebas el vino y luego le aplicas el precio. El precio entra primero y prepara el paladar para lo que va a recibir. De ahí se sigue algo incómodo. No hay un sabor puro, ni un sonido puro, ni una experiencia estética pura, separados de lo que esperabas encontrar.'
+          ]
+        },
+        {
+          subtitle: 'Qué tan lejos llega',
+          paragraphs: [
+            'El efecto se ha vuelto a comprobar con muestras más grandes y aguanta, pero es moderado. No convierte un vinagre en un gran reserva. Sube el disfrute de algo que ya era bebible.',
+            'Y depende de quién prueba. Los catadores entrenados, que tienen en la cabeza un anclaje propio del sabor, se dejan arrastrar bastante menos por la etiqueta del precio. Cuanto más criterio propio tienes sobre algo, menos manda lo que te cuenten que vale.'
           ]
         }
       ],
-      blockquote: { text: '«El precio no es solo información económica: es un estímulo que modifica la experiencia sensorial antes de que ocurra.»', attribution: 'Hilke Plassmann' },
-      aplicacion: 'Si buscas evaluar un producto o servicio sin el sesgo del precio, cúbrelo o no lo consultes antes de usarlo. Decidir el valor antes de conocer el coste no elimina el sesgo, pero reduce la distorsión que el precio introduce en la experiencia real.'
+      blockquote: { text: '«Cambiar el precio de un vino modifica la actividad de las regiones cerebrales que codifican la experiencia placentera.»', attribution: 'Plassmann et al. (2008)' },
+      aplicacion: 'Para juzgar algo sin que el precio te condicione, tápalo o no lo mires hasta después de haberte formado una opinión. Prueba el vino, escucha el altavoz, usa la herramienta, y solo entonces mira lo que cuesta. Decidir el valor antes de conocer el coste no borra el sesgo, pero le quita al precio la ventaja de llegar primero.'
     },
     {
       id: 'eco-07',
       title: 'La música que vendía vino sin que nadie lo supiera',
-      summary: 'Cambiar la música de fondo en la sección de vinos triplicó las ventas de la nacionalidad asociada al estilo musical, sin que ningún cliente lo relacionara con la música.',
+      summary: 'Un supermercado británico puso música francesa unos días y alemana otros en la estantería de vinos. Las ventas de cada país se dieron la vuelta según lo que sonaba.',
       sourceUrl: 'https://doi.org/10.1038/44385',
       sourceLabel: 'North, Hargreaves & McKendrick (1999), Nature',
       badge: 'Psicología del consumidor',
       author: { name: 'Adrian North', university: 'Universidad de Leicester', specialty: 'Psicología de la música y comportamiento del consumidor' },
-      readingTime: '3 min',
+      readingTime: '4 min',
       date: '16 de junio de 2026',
-      intro: 'Durante dos semanas, Adrian North y sus colegas de la Universidad de Leicester pusieron un equipo de música discreto en la sección de vinos de un supermercado del Reino Unido. No cambiaron los precios, ni la colocación de las botellas, ni la señalización. Solo cambiaron lo que sonaba. Las ventas cambiaron por completo.',
+      intro: 'Durante dos semanas, un supermercado británico puso música francesa unos días y música alemana otros en la estantería de los vinos. No tocaron los precios, ni la colocación de las botellas, ni los carteles. Solo cambiaron lo que sonaba. Las ventas de vino francés y alemán se dieron la vuelta según la música, y casi ningún cliente creía que tuviera algo que ver.',
       sections: [
         {
-          subtitle: 'El experimento: acordeón francés contra brass alemán',
+          subtitle: 'Acordeón contra charanga',
           paragraphs: [
-            'Los investigadores alternaron dos tipos de música en días distintos: música francesa (chanson, acordeón) y música alemana (brass bands, folk bávaro). El lineal tenía una selección equilibrada de vinos franceses y alemanes a precios comparables. Cuando sonaba música francesa, los clientes compraban tres veces más vino francés que alemán. Cuando sonaba música alemana, la proporción se invertía.',
-            'Al salir del supermercado, los investigadores encuestaban a los compradores sobre por qué habían elegido ese vino. Las respuestas giraban en torno al precio, la etiqueta o haberlo probado antes. Menos del 2% mencionaba la música espontáneamente. Cuando se preguntaba directamente si la música podría haber influido, la gran mayoría decía que no o que "apenas la habían notado". Sus decisiones de compra, sin embargo, la reflejaban con precisión milimétrica.'
+            'Adrian North y su equipo de la Universidad de Leicester alternaron dos bandas sonoras en días distintos. Chanson francesa con acordeón, y bandas de metal alemanas de estilo bávaro. En el lineal había vinos franceses y alemanes a precios parecidos. Con música francesa, los clientes compraban bastante más vino francés que alemán. Con música alemana, la proporción se invertía.',
+            'A la salida, los investigadores preguntaban por qué habían elegido esa botella. La gente hablaba del precio, de la etiqueta, de haberlo probado antes. Menos del 2% mencionaba la música por su cuenta. Y cuando se les preguntaba directamente si la música había influido, casi todos decían que no, o que apenas la habían oído. Sus compras decían otra cosa.'
           ]
         },
         {
-          subtitle: 'El mecanismo: priming ambiental',
+          subtitle: 'Priming ambiental',
           paragraphs: [
-            'North denominó el fenómeno priming ambiental. Un estímulo contextual activa en memoria una red de asociaciones que hace más accesibles ciertos conceptos, categorías y preferencias. La música francesa activaba el concepto de "Francia", que hacía más saliente el vino francés frente al alemán sin que el cliente necesitara razonar conscientemente sobre ello. El efecto es automático, opera por debajo del umbral de atención consciente, y por eso no deja huella en la memoria declarativa.',
-            'Este mecanismo explica por qué los entornos en los que tomamos decisiones importan tanto como los criterios con los que creemos tomarlas. La temperatura de una sala, el olor de un espacio, el tipo de música, el nivel de ruido, todo activa redes de asociación que inclinan las decisiones antes de que el pensamiento deliberado entre en juego. No como una fuerza irresistible, pero sí como un viento constante que empuja sin que lo sintamos.'
+            'North lo llamó priming ambiental. Un estímulo del entorno enciende en la memoria una red de asociaciones y deja a mano ciertas ideas. La música francesa activa el concepto de Francia, y con él el vino francés se vuelve más presente en la cabeza que el alemán, sin que haga falta razonar nada.',
+            'El efecto trabaja por debajo de la atención, y por eso no deja recuerdo. El cliente sale convencido de que ha elegido por su cuenta. La temperatura de una sala, el olor de una tienda, el ritmo de la música, el nivel de ruido, todo eso mueve las decisiones un poco antes de que el pensamiento deliberado se ponga en marcha. No como un empujón que no puedes resistir, más bien como un viento de fondo.'
+          ]
+        },
+        {
+          subtitle: 'Con qué peso tomarlo',
+          paragraphs: [
+            'Es un estudio pequeño. Un solo supermercado, dos semanas, y nunca se ha repetido de forma exacta. Tomado solo, no mide con precisión nada.',
+            'Lo que le da respaldo es que encaja con un cuerpo grande de trabajos de marketing sensorial. Aromas que alargan la estancia, iluminación que cambia lo que parece fresco, música lenta que hace caminar más despacio y gastar más. Todos apuntan en la misma dirección. Este experimento vale como una buena ilustración de un efecto real, no como la cifra definitiva de cuánto vende una canción.'
           ]
         }
       ],
-      blockquote: { text: '«Los consumidores creían que estaban eligiendo libremente. Y lo estaban. Pero el contexto había predispuesto esa libertad en una dirección específica.»', attribution: 'Adrian North' },
-      aplicacion: 'Cuando tomes decisiones de compra importantes en entornos diseñados para influirte, identifica los elementos contextuales antes de decidir: música, aromas, atmósfera. Esos elementos no son decoración, son parte del sistema de decisión que estás usando sin saberlo. Salir físicamente del entorno antes de confirmar la elección es la forma más efectiva de neutralizar el priming ambiental.'
+      blockquote: { text: '«La música puede influir en la elección de producto sin que los compradores sean conscientes de ello.»', attribution: 'North, Hargreaves & McKendrick (1999)' },
+      aplicacion: 'Cuando vayas a comprar algo que te importa en un sitio diseñado para venderte, nombra los elementos del ambiente antes de decidir. Qué suena, a qué huele, cómo es la luz. No son decoración, son parte del sistema con el que estás decidiendo sin saberlo. Salir físicamente del local antes de confirmar una compra grande es la defensa más simple que hay.'
     }
   ],
 
@@ -558,212 +632,348 @@ const LIBRARY_ARTICLES = {
     {
       id: 'der-01',
       title: 'Por qué la memoria de los testigos oculares es la prueba más peligrosa del sistema judicial',
-      summary: 'Más del 70% de las condenas erróneas en EE.UU. demostradas por prueba de ADN incluyeron testimonio ocular como prueba principal.',
+      summary: 'Siete de cada diez condenas que el ADN anuló después se sostenían en un testigo seguro de lo que había visto. Ninguno mentía.',
       sourceUrl: 'https://doi.org/10.1111/j.1745-6924.2006.tb00060.x',
       sourceLabel: 'Wells et al. (2006), Psychological Science in the Public Interest',
       badge: 'Psicología Forense',
       author: { name: 'Elizabeth Loftus', university: 'Universidad de California, Irvine', specialty: 'Psicología Cognitiva y Forense' },
-      readingTime: '4 min',
+      readingTime: '6 min',
       date: '2 de junio de 2026',
-      intro: 'El Innocence Project ha documentado más de 375 condenas erróneas revertidas por prueba de ADN en Estados Unidos desde 1989. En más del 69% de esos casos, el testimonio ocular fue la prueba principal. No porque los testigos mintieran: sino porque la memoria es maleable, reconstructiva y extraordinariamente sensible a la sugestión post-evento.',
+      intro: 'Un testigo señala al acusado desde el estrado y dice que no le queda ninguna duda, que esa cara no se le ha olvidado. El jurado lo cree, y en parte hace bien, porque pocas cosas suenan tan sólidas como alguien que vio el crimen con sus propios ojos. El problema llega después. De las primeras 375 condenas que el Innocence Project logró anular en Estados Unidos con pruebas de ADN, alrededor del 69% se habían apoyado en un testimonio ocular equivocado. No en testigos que mintieran para hundir a nadie. En testigos completamente convencidos de lo que decían.',
       sections: [
         {
-          subtitle: 'El experimento de Loftus: plantar un recuerdo falso en adultos sanos',
+          subtitle: 'Una prueba que convence más de lo que debería',
           paragraphs: [
-            'En 1995, Elizabeth Loftus y Jacqueline Pickrell reclutaron a 24 adultos y les entregaron un cuadernillo con cuatro episodios de su infancia, supuestamente confirmados por sus familias. Tres eran reales. El cuarto era un evento completamente fabricado: haberse perdido en un centro comercial a los cinco años y ser rescatado por un desconocido. Tras dos o tres entrevistas espaciadas en dos semanas, el 25% de los participantes no solo aceptó el recuerdo falso como propio, sino que empezó a añadir detalles que nadie les había dado: el color de la camisa del desconocido, el ruido del centro comercial, la expresión de su madre al encontrarlos.',
-            'Un experimento posterior demostró que bastaba con sugerir que el participante había visto a Bugs Bunny en Disneyland (lo cual es imposible, ya que Bugs Bunny es un personaje de Warner Bros) para que el 36% de los sujetos "recordara" haberlo visto durante una supuesta visita al parque.'
+            'En un juicio, el relato de alguien que estuvo allí pesa más que casi cualquier informe técnico. Es intuitivo, es humano y encaja con cómo creemos que funciona la memoria, como una cámara que graba y luego reproduce. Un jurado que escucha a un testigo describir la escena sin titubear tiende a darla por cerrada.',
+            'La psicología del testimonio lleva medio siglo avisando de que esa confianza está mal puesta. La memoria no graba. Reconstruye. Y en el hueco entre lo que pasó y lo que se recuerda cabe mucho más de lo que nadie sospecha: una pregunta mal formulada, una foto vista en el periódico, un comentario de otro testigo, la propia necesidad de que la historia acabe teniendo sentido.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'El centro comercial en el que nadie se perdió',
           paragraphs: [
-            'La memoria no funciona como una grabación que se reproduce. Es un proceso reconstructivo: cada vez que recordamos algo, reactivamos la huella de memoria y la volvemos a almacenar, pero esta vez incorporando el contexto del presente, las preguntas que nos han hecho, las cosas que hemos leído después, las expectativas de quien nos pregunta. El proceso se llama reconsolidación, y tiene una consecuencia radical: recordar es siempre, en algún grado, reescribir.',
-            'La sugestión post-evento funciona porque la información nueva se integra en la huella mnémica original sin que el sujeto sea capaz de distinguir qué vio realmente y qué le fue introducido después. La certeza subjetiva (la sensación de "yo lo vi con mis propios ojos") no tiene ninguna correlación fiable con la precisión del recuerdo. En entornos judiciales, esta disociación entre confianza del testigo y exactitud del testimonio es particularmente peligrosa, porque los jurados otorgan más credibilidad a los testigos que recuerdan con mayor seguridad.'
+            'En 1995, Elizabeth Loftus y Jacqueline Pickrell reunieron a 24 personas y les dieron un cuadernillo con cuatro episodios de su infancia, supuestamente aportados por un familiar. Tres eran verdad. El cuarto era mentira: haberse perdido en un centro comercial a los cinco años, haber llorado un buen rato y haber vuelto con la familia gracias a una señora mayor. Durante dos semanas se les entrevistó dos o tres veces y se les pidió que recordaran todo lo que pudieran de cada episodio.',
+            'Seis de los 24, la cuarta parte, terminaron dando por suyo el recuerdo inventado. Y no lo aceptaban a medias. Añadían la ropa de la señora, el suelo de la tienda, el susto de su madre, cosas que no estaban en el guion que les habían entregado. El cerebro había rellenado los huecos por su cuenta.',
+            'Años después, el mismo grupo probó algo más difícil. Enseñaron a los participantes un anuncio falso de Disney que evocaba lo bonito que era estrechar la mano de Bugs Bunny en el parque. Es imposible: Bugs Bunny es de Warner y nunca ha pisado Disneyland. Aun así, un 16% dijo después acordarse de haberlo hecho. En una versión posterior con varios anuncios, la cifra trepó hasta cerca de un tercio.'
+          ]
+        },
+        {
+          subtitle: 'Por qué recordar es volver a escribir',
+          paragraphs: [
+            'Cada vez que traes un recuerdo a la cabeza no abres un archivo cerrado. Lo reactivas, lo manoseas y lo vuelves a guardar, y en esa segunda grabación se cuela el presente: lo que te acaban de preguntar, lo que leíste ayer, lo que esperas que sea verdad. El proceso se llama reconsolidación y tiene una consecuencia incómoda. La información que llega después del hecho se integra en el recuerdo original sin una etiqueta que diga "esto lo añadiste tú más tarde".',
+            'De ahí sale la parte más peligrosa para un juicio. La seguridad con la que alguien recuerda algo no guarda una relación fiable con lo acertado que está. Se puede recordar con convicción absoluta un detalle que nunca ocurrió. Y como los jurados premian al testigo que no duda, el que más aplomo transmite es a veces el que más ha reescrito.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega el argumento',
+          paragraphs: [
+            'Conviene no pasarse de frenada. Que un recuerdo se pueda contaminar no significa que todos lo estén. La mayoría de la gente, la mayor parte del tiempo, recuerda de forma razonable lo que vio. El "perdido en el centro comercial" también ha recibido críticas: una parte de esos recuerdos implantados son más bien vagos, aceptaciones de "puede que pasara" antes que escenas nítidas. Una réplica preregistrada de 2023, con cientos de participantes, volvió a encontrar el efecto, aunque discutiendo cuánto de lo que se cuenta como "recuerdo falso" merece de verdad ese nombre.',
+            'Hay además una línea de trabajo, encabezada por John Wixted, que rehabilita en parte la confianza del testigo. Medida justo en la primera identificación, con una rueda de reconocimiento bien montada y antes de que nadie le diga nada, la seguridad del testigo sí predice bastante bien su acierto. El desastre viene luego, cuando esa identificación inicial dudosa se endurece a base de repetirla, de que un agente le diga "buen trabajo" y de llegar al juicio meses más tarde convertida en certeza de hierro.'
+          ]
+        },
+        {
+          subtitle: 'Lo que ha cambiado en las comisarías',
+          paragraphs: [
+            'El informe de Gary Wells y su equipo en 2006, y las recomendaciones que vinieron detrás, empujaron reformas concretas en muchos cuerpos policiales de Estados Unidos y Reino Unido. La rueda de reconocimiento se hace a doble ciego, para que el agente que la dirige no pueda dar pistas sin querer. Se avisa al testigo de que el sospechoso puede no estar entre las fotos. Se anota su nivel de seguridad en el momento, con sus palabras, antes de cualquier comentario. Y la entrevista se hace con preguntas abiertas, sin verbos que sugieran la respuesta.',
+            'Ninguna de esas medidas arregla la memoria. Solo evitan estropearla más de lo que ya viene estropeada de casa.'
           ]
         }
       ],
-      blockquote: { text: '«Un testigo que cree con absoluta certeza estar recordando algo puede estar, sin saberlo, recitando una memoria implantada por las preguntas del investigador.»', attribution: 'Elizabeth Loftus' },
-      aplicacion: 'Cuando alguien te cuente un hecho del pasado con total seguridad, recuerda que la certeza subjetiva no es indicador de precisión. La memoria más vívida puede ser la más modificada.'
+      blockquote: { text: '«Muchas de las condenas por identificación errónea se podrían haber evitado con procedimientos de reconocimiento mejor diseñados.»', attribution: 'Wells et al. (2006)' },
+      aplicacion: 'Cuando alguien te cuente algo del pasado con total seguridad, tú incluido, recuerda que la firmeza del recuerdo no mide su exactitud. Si vas a declarar sobre algo que viste, pide contarlo con tus palabras y desconfía de las preguntas que ya traen la respuesta dentro. Y si tienes que valorar el testimonio de otra persona, pregúntate cuántas veces ha contado ya esa historia y quién le ha ido diciendo por el camino que lo estaba haciendo bien.'
     },
     {
       id: 'der-02',
       title: 'El efecto del lenguaje en los veredictos: cómo las palabras del fiscal deciden la pena',
-      summary: 'La formulación lingüística de los hechos (no solo su contenido) altera sistemáticamente las sentencias que los jurados consideran apropiadas.',
+      summary: 'A unos les preguntaron si los coches "se tocaron" y a otros si se "estrellaron". Una semana después, unos recordaban destrozos que el vídeo no tenía.',
       sourceUrl: 'https://doi.org/10.1016/S0022-5371(74)80011-3',
       sourceLabel: 'Loftus & Palmer (1974), Journal of Verbal Learning and Verbal Behavior',
-      badge: 'Lingüística forense',
+      badge: 'Psicología del testimonio',
       author: { name: 'Elizabeth Loftus', university: 'Universidad de California, Irvine', specialty: 'Psicología Cognitiva y Forense' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'Cuando los participantes de un experimento veían el mismo vídeo de un accidente de coche pero se les preguntaba con el verbo "chocaron" en lugar de "se tocaron", estimaban velocidades más altas, recordaban daños que no existían y asignaban más culpabilidad al conductor. El verbo (no el hecho) decidía el recuerdo.',
+      intro: 'Cuarenta y cinco estudiantes ven siete vídeos cortos de accidentes de tráfico. Después, una pregunta: ¿a qué velocidad iban los coches? A unos les llega con el verbo "se estrellaron"; a otros, con un "se tocaron". Los primeros calculan de media unos 66 kilómetros por hora. Los segundos, 51. El choque era el mismo y el vídeo era el mismo. Lo único que cambió fue una palabra dentro de la pregunta, y con ella cambió lo que la gente creía haber visto.',
       sections: [
         {
-          subtitle: 'El experimento de Loftus y Palmer',
+          subtitle: 'Preguntar por un recuerdo nunca es neutro',
           paragraphs: [
-            'En 1974, Loftus y Palmer mostraron a 45 estudiantes universitarios siete clips de vídeo de accidentes de tráfico reales. Después, les pidieron que estimaran la velocidad de los coches usando cinco verbos distintos distribuidos aleatoriamente entre grupos: "smashed" (chocaron violentamente), "collided" (colisionaron), "bumped" (golpearon), "hit" (impactaron) y "contacted" (se tocaron). Los que oyeron "smashed" estimaron una velocidad media de 40,8 millas por hora. Los que oyeron "contacted" estimaron 31,8 millas. El mismo vídeo, diferencia de 9 millas/hora.',
-            'Una semana después, el equipo llamó a los mismos participantes y les preguntó si recordaban haber visto cristales rotos en el vídeo. No había cristales en ninguno de los clips. El 32% del grupo que oyó "smashed" dijo que sí los había visto. Solo el 14% del grupo con "hit" lo afirmó. El grupo de "contacted": ninguno. Un solo verbo había implantado un detalle falso en la memoria de un tercio de los participantes durante siete días.'
+            'Damos por hecho que una pregunta solo extrae información, que la saca de donde estaba sin tocarla. Con la memoria no funciona así. "¿A qué velocidad iban cuando se estrellaron?" no pregunta lo mismo que "¿a qué velocidad iban cuando chocaron?". El verbo ya está metiendo una idea de violencia, de chapa retorcida, de golpe seco. Y el cerebro la recoge.',
+            'Elizabeth Loftus y John Palmer quisieron medir ese contrabando. Su hipótesis era sencilla y molesta. La forma de la pregunta no solo inclina la respuesta del momento, se queda dentro del recuerdo y lo deforma para lo que venga después.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'Cinco verbos para el mismo golpe',
           paragraphs: [
-            'El verbo no describe solo la acción: activa un esquema cognitivo completo asociado a esa palabra. "Smashed" activa el esquema "accidente grave", que en la memoria semántica va acompañado de cristales rotos, alta velocidad, daños severos. Cuando se le pide al cerebro que reconstruya el recuerdo del vídeo, este esquema compite con la huella mnémica real y, en muchos casos, la contamina retroactivamente.',
-            'Las implicaciones legales son directas. Los protocolos de entrevista policial en Reino Unido, Australia y muchos estados de EE.UU. fueron reformados tras los trabajos de Loftus para eliminar verbos valorativos y preguntas que sugieran la respuesta esperada. La entrevista cognitiva, diseñada con base en estos hallazgos, instruye a los agentes para que usen preguntas abiertas y neutrales, y para que nunca confirmen ni contradigan ningún detalle del testigo, porque cualquier retroalimentación contamina irremediablemente la memoria para interrogatorios posteriores.'
+            'En el primer experimento, publicado en 1974, los 45 estudiantes vieron los siete accidentes y luego respondieron a un cuestionario. La pregunta sobre la velocidad era idéntica para todos salvo por el verbo, repartido en cinco versiones: se estrellaron, colisionaron, chocaron, golpearon y se tocaron.',
+            'Las estimaciones salieron escalonadas, siguiendo la fuerza del verbo. "Se estrellaron" daba una media de 40,8 millas por hora. "Colisionaron", 39,3. "Chocaron", 38,1. "Golpearon", 34. "Se tocaron", 31,8. Entre el verbo más duro y el más suave había casi nueve millas por hora, unos quince kilómetros, sobre exactamente las mismas imágenes.'
+          ]
+        },
+        {
+          subtitle: 'Los cristales que nadie rompió',
+          paragraphs: [
+            'El segundo experimento es el que llevó el hallazgo a los juzgados. Esta vez participaron 150 personas nuevas, repartidas en tres grupos. A uno se le preguntó por la velocidad con "se estrellaron". A otro, con "chocaron". Al tercero no se le preguntó nada sobre la velocidad.',
+            'Una semana después se llamó a los 150 y se les hizo una pregunta trampa: ¿había cristales rotos en el vídeo? No había ni uno. En el grupo del "se estrellaron", el 32% dijo que sí los había visto. En el del "chocaron", el 14%. En el que no había oído ningún verbo, el 12%. Una sola palabra, dicha siete días antes, había plantado un destrozo inexistente en la memoria de casi un tercio de la gente.'
+          ]
+        },
+        {
+          subtitle: 'El verbo abre una carpeta entera',
+          paragraphs: [
+            'Un verbo no describe solo un movimiento. Enciende todo un guion asociado a esa palabra. "Estrellarse" viene acompañado, en la memoria de cualquiera, de velocidad alta, chapa hundida y cristales por el suelo. Cuando el cerebro tiene que reconstruir la escena del vídeo, ese guion se pone a competir con lo que de verdad se grabó, y muchas veces gana. El recuerdo final es una mezcla de lo visto y lo sugerido, sin costura visible entre las dos cosas.',
+            'Loftus dedicó las décadas siguientes a repetir la idea con otros montajes. Semáforos que cambiaban de color en el recuerdo, señales de stop convertidas en ceda el paso, cómplices que "recordaban" a un intruso inexistente. El fenómeno tiene nombre propio, efecto de desinformación, y es de los más replicados de la psicología de la memoria.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el estudio no prueba',
+          paragraphs: [
+            'Hay que ponerle límites. Esto es un vídeo visto en un aula, no un accidente sufrido en la calle con adrenalina de por medio, y parte del efecto puede venir de que el participante intuye lo que se espera de él y tira por ahí. El salto de quince kilómetros por hora es una media de grupo, no lo que le ocurre a cada persona.',
+            'Lo que sí aguanta, con cientos de estudios detrás, es la pieza gruesa. Una pregunta que da por supuesto un detalle puede instalar ese detalle en el recuerdo de quien responde, y esa persona lo defenderá después convencida. Sobre esa base se reformaron los protocolos de interrogatorio en Reino Unido, Australia y buena parte de Estados Unidos. La entrevista cognitiva que usa hoy la policía formada obliga a los agentes a preguntar en abierto, no adelantar ninguna versión y no confirmar ni desmentir nada de lo que diga el testigo, porque cualquier reacción contamina la siguiente ronda.'
           ]
         }
       ],
-      blockquote: { text: '«Una sola palabra puede plantar en la memoria de un testigo un detalle que nunca existió, y ese testigo lo defenderá con convicción absoluta.»', attribution: 'Elizabeth Loftus' },
-      aplicacion: 'Presta atención a cómo está formulada la pregunta cuando alguien (un jefe, un familiar, un medio de comunicación) te pide que recuerdes o evalúes un hecho. El marco lingüístico de la pregunta está pre-construyendo tu respuesta.'
+      blockquote: { text: '«La forma en que se plantea una pregunta sobre un suceso puede alterar el recuerdo que el testigo conserva de él.»', attribution: 'Loftus & Palmer (1974)' },
+      aplicacion: 'Fíjate en cómo viene montada la pregunta cuando alguien te pide recordar o valorar algo, sea un jefe, un periodista o un abogado. Si la pregunta ya trae dentro una versión de los hechos, tu respuesta sale empujada hacia ahí sin que lo notes. Y cuando seas tú quien pregunta, si lo que te interesa es la verdad y no una confirmación, deja la frase lo más abierta posible y no metas el adjetivo antes de que el otro conteste.'
     },
     {
       id: 'der-03',
       title: 'El juez hambriento: cómo el estado físico decide el veredicto',
-      summary: 'Un análisis de 1.112 resoluciones judiciales reveló que los jueces concedían libertad condicional en el 65% de los casos tras comer, y en casi el 0% justo antes del descanso.',
+      summary: 'Ocho jueces, 1.112 vistas de libertad condicional, y el mejor predictor de la decisión resultó ser la hora. Es un estudio famoso y muy discutido, y esa segunda parte casi nunca se cuenta.',
       sourceUrl: 'https://doi.org/10.1073/pnas.1018033108',
       sourceLabel: 'Danziger, Levav & Avnaim-Pesso (2011), PNAS',
       badge: 'Psicología forense',
       author: { name: 'Shai Danziger', university: 'Universidad de Tel Aviv', specialty: 'Toma de decisiones judicial y sesgos cognitivos' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '12 de mayo de 2026',
-      intro: 'Durante diez meses, Shai Danziger y sus colegas siguieron a ocho jueces israelíes que celebraban juntas de libertad condicional para presos. Analizaron 1.112 resoluciones y buscaron el factor que mejor predecía si el preso saldría libre. Esperaban encontrar la gravedad del delito, el historial del recluso o el tipo de crimen. Encontraron otra cosa: la hora del día y cuánto tiempo había pasado desde el último descanso del juez.',
+      intro: 'Ocho jueces israelíes, diez meses, 1.112 vistas de libertad condicional. Cuando los investigadores buscaron qué predecía mejor la decisión, no fue la gravedad del delito ni el historial del preso. Fue la hora. Justo después del desayuno, los jueces concedían la condicional en torno al 65% de las veces. Según se acercaba la pausa, esa cifra se desplomaba casi a cero. Tras el descanso, volvía al 65%. Es uno de los estudios de psicología más citados de la última década. También uno de los más discutidos, y esa segunda parte casi nunca se cuenta.',
       sections: [
         {
-          subtitle: 'Los datos: un patrón que no debería existir',
+          subtitle: 'El estudio que puso una cifra al cansancio del que juzga',
           paragraphs: [
-            'Los resultados fueron estadísticamente inequívocos. Al inicio de la jornada, justo después del desayuno, los jueces concedían libertad condicional en aproximadamente el 65% de los casos. A medida que avanzaba la mañana (sin que el tipo de caso cambiara estadísticamente), la tasa de concesión caía de forma gradual hasta rozar el 0% inmediatamente antes del descanso de media mañana. Después del descanso, la tasa volvía a subir al 65%. El mismo patrón se repetía antes y después del almuerzo. El predictor más potente del resultado no era el expediente del preso: era el reloj.',
-            'Los investigadores descartaron las explicaciones alternativas una a una: los casos no estaban ordenados por gravedad ni por tipo de delito, el orden de presentación era prácticamente aleatorio, y los jueces no compartían casos entre sí de formas que pudieran crear sesgo sistemático. La explicación más parsimoniosa era también la más incómoda: el agotamiento cognitivo lleva al cerebro a elegir la opción más segura, que en una decisión judicial es siempre denegar. Conceder la libertad requiere justificación activa; denegar, no.'
+            'Shai Danziger, Jonathan Levav y Liora Avnaim-Pesso publicaron los datos en PNAS en 2011 con un título sobrio, «Factores ajenos en las decisiones judiciales». Habían seguido a los ocho jueces de juntas de libertad condicional de dos prisiones israelíes. Cada juez veía entre catorce y treinta y cinco casos al día, repartidos en tres tandas separadas por una pausa para comer o para el café.',
+            'El patrón que dibujaron los datos tenía forma de sierra. Cada tanda arrancaba con una tasa alta de concesiones y bajaba según pasaban los minutos. La pausa la reseteaba. Los autores revisaron los sospechosos habituales y los descartaron uno por uno. El orden de los casos no seguía la gravedad del delito. El tipo de crimen se repartía de forma pareja a lo largo del día. La conclusión que ofrecieron fue directa. Un juez agotado tira hacia la opción segura, y en una junta de condicional la opción segura es decir que no.'
           ]
         },
         {
-          subtitle: 'El mecanismo: fatiga cognitiva y default conservador',
+          subtitle: 'Por qué el «no» es el camino de menos resistencia',
           paragraphs: [
-            'La "status quo bias" (la tendencia a favorecer la opción de no cambiar nada) se intensifica con el agotamiento. Cuando el cerebro no tiene suficiente glucosa o capacidad cognitiva disponible para deliberar activamente, colapsa a la opción de menor esfuerzo. En un tribunal de libertad condicional, la opción por defecto es siempre mantener al preso en prisión: no requiere argumentación activa, no produce consecuencias inmediatas para el juez si es equivocada. Conceder la libertad, en cambio, requiere justificación consciente y asume el riesgo de reincidencia.',
-            'El hallazgo tiene consecuencias directas sobre la arquitectura del sistema judicial: el momento del día en que se programa una vista influye en el resultado de formas que el derecho no contempla. Y el problema no es corrupción ni mala fe: es biología. El juez no sabe que está decidiendo peor; subjetivamente, cree que está aplicando criterios objetivos. La fatiga cognitiva es, en este sentido, el sesgo más difícil de detectar porque es invisible para quien lo padece.'
+            'Conceder la libertad exige construir un argumento. Hay que justificar por qué este preso, ahora, merece salir, y cargar con lo que pase si reincide. Denegar no pide nada de eso. Se mantiene todo como estaba y nadie va a pedir explicaciones.',
+            'A eso los psicólogos lo llaman sesgo de statu quo, y se agrava cuando la cabeza está cansada. Sin recursos para deliberar, el cerebro se queda con la opción que no obliga a pensar. Lo inquietante del caso judicial es que el juez no lo nota. Cree que está aplicando el mismo criterio a las nueve de la mañana que a la una menos cuarto.'
+          ]
+        },
+        {
+          subtitle: 'La otra mitad de la historia',
+          paragraphs: [
+            'Meses después, en la misma revista, Keren Weinshall-Margel y John Shapard respondieron. Su objeción iba a la línea de flotación del estudio. El orden de los casos no era aleatorio. En esas juntas, los presos sin abogado suelen quedar para el final de cada tanda, y de entrada reciben menos concesiones. Los casos de una misma prisión se agrupaban seguidos. Si lo que se acumula al final de cada bloque son casos con menos probabilidad de éxito por razones ajenas al hambre, el patrón de sierra aparece sin necesidad de invocar la glucosa. Danziger y su equipo replicaron que la tendencia se mantenía incluso controlando por la presencia de abogado.',
+            'En 2016, Andreas Glöckner apretó más. Con una simulación mostró que el tamaño del efecto publicado es demasiado grande para explicarlo solo con el cansancio. Si un juez evita empezar un caso que no podrá cerrar antes de la pausa, y los casos más largos y peleados son también los que más se deniegan, sale una caída parecida sin que ningún juez tenga hambre. Sería un artefacto de cómo se ordena la agenda, no una ventana al cerebro fatigado.',
+            'Hoy el «efecto del juez hambriento» vive en una zona incómoda. Demasiado citado para ignorarlo, demasiado cuestionado para tratarlo como un hecho cerrado. Lo que sí sostiene la literatura más allá de este estudio concreto es que decidir muchas veces seguidas degrada la calidad de las decisiones. La pieza que sigue en duda es cuánto, y si el reloj del almuerzo es de verdad el culpable.'
           ]
         }
       ],
-      blockquote: { text: '«Los factores extralegales (el hambre, el cansancio, la hora del día) afectan las decisiones judiciales tanto como los factores legales que se supone que deberían ser los únicos relevantes.»', attribution: 'Shai Danziger' },
-      aplicacion: 'Las decisiones importantes (laborales, médicas, legales, económicas) nunca deberían tomarse en los últimos 30 minutos antes de una pausa o al final de una sesión larga. Si eres quien decide, programa los asuntos más complejos en las primeras horas. Si eres quien es evaluado (en una entrevista, una negociación, un examen oral), intenta que te asignen un turno temprano.'
+      blockquote: { text: '«Factores ajenos a la ley influyen en las decisiones judiciales.»', attribution: 'Danziger, Levav & Avnaim-Pesso (2011)' },
+      aplicacion: 'Aunque el estudio de los jueces esté en discusión, la recomendación práctica aguanta por otras vías. No plantees tu asunto más difícil, ni el de la otra parte, en los últimos minutos antes de una pausa o al final de una jornada larga de reuniones. Si decides tú, coloca lo más espinoso a primera hora. Si te evalúan a ti, en una entrevista o un tribunal oral, pide turno temprano. Y si llevas horas encadenando decisiones, la señal honesta es aplazar, no acelerar.'
     },
     {
       id: 'der-04',
       title: 'La confesión falsa: por qué personas inocentes confiesan crímenes que no cometieron',
-      summary: 'Las técnicas de interrogatorio psicológico pueden llevar a personas completamente inocentes a confesar crímenes inventados, y esas confesiones convencen después a los jurados.',
+      summary: 'En un experimento, el 69% firmó haber roto algo que no había tocado. Y una parte, además, se lo llegó a creer.',
       sourceUrl: 'https://doi.org/10.1111/j.1467-9280.1996.tb00344.x',
       sourceLabel: 'Kassin & Kiechel (1996), Psychological Science',
       badge: 'Psicología del interrogatorio',
       author: { name: 'Saul Kassin', university: 'Williams College / John Jay College', specialty: 'Psicología forense y credibilidad del testimonio' },
-      readingTime: '4 min',
+      readingTime: '6 min',
       date: '5 de mayo de 2026',
-      intro: 'El Innocence Project ha documentado más de 375 condenas erróneas revertidas por ADN en Estados Unidos. En el 29% de esos casos, el condenado había firmado una confesión. No porque mintiera estratégicamente: en la mayoría de los casos, la persona genuinamente llegó a creer, aunque fuera momentáneamente, que había cometido el crimen del que se le acusaba. Saul Kassin lleva tres décadas estudiando cómo ocurre esto.',
+      intro: 'El Innocence Project ha anulado en Estados Unidos más de 375 condenas con pruebas de ADN. En torno a un 29% de esas personas había firmado una confesión de un delito que no cometió. Cuesta creerlo desde fuera, porque la intuición dice que nadie se declara culpable de algo así si puede evitarlo. En 1996, Saul Kassin y Katherine Kiechel montaron un experimento para ver cuánto costaba de verdad arrancarle a alguien una confesión falsa. La respuesta fue: alrededor de un minuto.',
       sections: [
         {
-          subtitle: 'El experimento: colapsar en 60 segundos',
+          subtitle: 'Por qué una confesión lo decide casi todo',
           paragraphs: [
-            'En 1996, Kassin y Kiechel montaron un experimento aparentemente sencillo: reclutaron a participantes para una tarea de mecanografía y les advirtieron explícitamente que no pulsaran la tecla Alt, porque causaría un "fallo del sistema" que haría perder todos los datos. Poco después, el ordenador se "bloqueaba" y el experimentador acusaba al participante de haber pulsado la tecla prohibida. Nadie lo había hecho.',
-            'En la condición de alta presión (con un cómplice que "testificaba" haber visto al participante pulsar la tecla), el 69% de los participantes acabó firmando una declaración de culpabilidad. Muchos no solo firmaron: empezaron a elaborar recuerdos de haber pulsado la tecla, añadiendo detalles que no podían existir. En 60 segundos de presión social moderada, la realidad percibida había sido reescrita. En interrogatorios reales, las sesiones duran horas.'
+            'De todas las pruebas que puede escuchar un jurado, la confesión es la que más pesa. Más que un testigo, más que un peritaje. Kassin ha demostrado en otros trabajos que sigue pesando incluso cuando el juez la declara inválida y ordena ignorarla, y aunque contradiga al resto del expediente. Una vez que alguien ha dicho "lo hice", el sistema entero se reordena para encajar con esa frase.',
+            'Por eso importa saber si esa frase se puede obtener de alguien que no hizo nada. Y con qué facilidad.'
           ]
         },
         {
-          subtitle: 'La técnica Reid y la psicología de la capitulación',
+          subtitle: 'El ordenador que se caía y la tecla prohibida',
           paragraphs: [
-            'La técnica de interrogatorio más extendida en EE.UU. (el método Reid) usa estrategias de presión psicológica documentadas: minimización (sugerir que el crimen fue un accidente o que las consecuencias legales serán menores si confiesas), maximización (exagerar la solidez de las pruebas, aunque no existan), y privación de sueño, que es legal en muchos estados. Estas técnicas no están diseñadas para extraer la verdad: están diseñadas para obtener una confesión.',
-            'El problema es que el cerebro humano, bajo presión prolongada, puede llegar a dudar de sus propios recuerdos. Este fenómeno (las "confesiones internalizadas") ocurre cuando el sospechoso no solo firma para escapar de la situación, sino que llega genuinamente a creer que hizo algo que no hizo. Las personas más vulnerables son adolescentes, personas con discapacidad cognitiva, y cualquiera que lleve muchas horas sin dormir. La presión social puede reescribir la memoria con suficiente intensidad.'
+            'El montaje parecía inofensivo. Unos 75 participantes se sentaban ante un ordenador para una tarea de mecanografía al dictado. Se les avisaba de una cosa: que no tocaran la tecla Alt, porque el programa se colgaría y se perderían todos los datos. Al poco rato, el ordenador se "bloqueaba" solo y el experimentador acusaba al participante de haber pulsado esa tecla. Ninguno la había tocado.',
+            'El experimento variaba dos cosas. El ritmo del dictado, lento o rápido, y la presencia de una cómplice que decía haber visto al participante pulsar la tecla. De media, el 69% acabó firmando una nota que reconocía la culpa. Un 28% fue más allá y empezó a creérselo, a hablar en primera persona de un descuido que no había existido. Y un 9% inventaba el detalle de cómo lo había hecho ("le di sin querer con el canto de la mano al alcanzar el otro"). Cuando el ritmo era rápido y la cómplice "confirmaba" lo ocurrido, casi nadie se libraba.'
+          ]
+        },
+        {
+          subtitle: 'Tres maneras distintas de ceder',
+          paragraphs: [
+            'Firmar no siempre significa lo mismo. La forma más común es el puro cálculo: sé que no fui, pero firmo para que esto se acabe ya, y luego lo aclaro. La segunda es la internalización: la persona, sin memoria firme de cada segundo y con alguien de fuera afirmando que lo vio, empieza a pensar que a lo mejor sí, que igual lo hizo y no se dio cuenta. La tercera es la confabulación: además de creérselo, el cerebro fabrica el recuerdo que falta para que la historia cuadre.',
+            'Las dos últimas son las que asustan en un juzgado, porque producen una confesión con textura de recuerdo real, con detalles, con emoción. Nada en ella delata que es falsa.'
+          ]
+        },
+        {
+          subtitle: 'Cómo se llega a dudar de la propia inocencia',
+          paragraphs: [
+            'La clave está en que casi nadie guarda un registro nítido de sus propios movimientos triviales. ¿Rozaste una tecla concreta hace cinco minutos mientras escribías a toda prisa? No lo sabes con certeza. En ese vacío, una fuente que parece fiable y segura de sí misma pesa más que tu recuerdo borroso. Si encima hay prisa, cansancio y una autoridad repitiendo que las pruebas te señalan, la hipótesis de fuera se vuelve más creíble que la de dentro.',
+            'Esto explica quién cae con más facilidad. Los adolescentes, más sugestionables y más pendientes de contentar a un adulto. Las personas con discapacidad intelectual. Y cualquiera que lleve muchas horas sin dormir, encerrado en una sala. En el experimento bastaban 60 segundos de presión suave. Un interrogatorio real dura horas.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el experimento no reproduce',
+          paragraphs: [
+            'Hay una objeción evidente. Aceptar que has estropeado un experimento no cuesta casi nada, no vas a ir a la cárcel por ello. Cuando otros equipos subieron el coste de la falsa confesión o hicieron la acusación menos creíble, las tasas bajaron, y el paradigma ha recibido críticas por ahí. El 69% no se traslada tal cual a una comisaría.',
+            'Lo que sí se traslada es el mecanismo, y ahí los casos reales sobran. Los cinco adolescentes de Central Park que confesaron una violación que no cometieron y pasaron años presos hasta que otro hombre confesó y el ADN lo confirmó. Brendan Dassey, con 16 años y un cociente intelectual bajo, describiendo un crimen a golpe de preguntas que le iban dando la respuesta. Kassin lleva desde los años noventa contando confesiones falsas probadas después por ADN, y ya van decenas. El laboratorio solo puso a la vista, en un minuto, algo que en la vida real tarda una noche entera.'
+          ]
+        },
+        {
+          subtitle: 'Qué se hace hoy con esto',
+          paragraphs: [
+            'La técnica de interrogatorio más extendida en Estados Unidos, el método Reid, se apoya en tres palancas: minimizar el delito para que confesar parezca poca cosa ("fue un accidente, cualquiera lo entendería"), maximizar la fuerza de las pruebas aunque no existan, y aislar y desgastar al sospechoso. No está pensada para averiguar qué pasó, sino para conseguir un "sí".',
+            'Contra eso han empezado a moverse cosas. Varios estados obligan ya a grabar el interrogatorio entero, no solo la confesión final, para que un juez pueda ver cómo se llegó a ella. Algunos han prohibido mentirle sobre las pruebas a un menor. Y el Reino Unido cambió hace décadas a un modelo distinto, el PEACE, que prohíbe engañar al sospechoso y se centra en recoger su versión sin empujarla.'
           ]
         }
       ],
-      blockquote: { text: '«La gente asume que nadie confesaría un crimen que no ha cometido. Esa suposición es el mayor aliado de las confesiones falsas.»', attribution: 'Saul Kassin' },
-      aplicacion: 'Si alguna vez eres interrogado por cualquier autoridad (incluso en un contexto laboral o disciplinario), recuerda que tienes derecho a solicitar asesoramiento antes de responder. El instinto de cooperar para demostrar inocencia es completamente comprensible y psicológicamente natural. También es el mecanismo que más frecuentemente produce confesiones falsas.'
+      blockquote: { text: '«La gente da por hecho que nadie confesaría un crimen que no ha cometido; esa suposición es lo que hace tan peligrosas las confesiones falsas.»', attribution: 'Kassin & Kiechel (1996)' },
+      aplicacion: 'Si alguna vez te interroga una autoridad, también en un marco laboral o disciplinario, recuerda que puedes pedir asesoramiento antes de responder y que hacerlo no te hace parecer culpable. El instinto de colaborar para demostrar que no tienes nada que ocultar es natural, y es justo el que más confesiones falsas produce. Si te dicen que ya tienen pruebas contra ti, pide verlas antes de aceptar nada.'
     },
     {
       id: 'der-05',
       title: 'La belleza que agrava la condena: cuando ser atractivo juega en tu contra ante un jurado',
-      summary: 'Ser atractivo reduce la condena cuando el delito no tiene relación con el físico, pero la aumenta cuando el propio atractivo fue la herramienta del delito, como en una estafa sentimental.',
+      summary: 'Ser guapo rebaja la pena por un robo y la sube por una estafa. La diferencia está en si la cara fue parte del delito.',
       sourceUrl: 'https://doi.org/10.1037/h0076468',
       sourceLabel: 'Sigall & Ostrove (1975), Journal of Personality and Social Psychology',
       badge: 'Psicología forense',
       author: { name: 'Harold Sigall', university: 'University of Maryland', specialty: 'Psicología social de la persuasión y la impresión' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Harold Sigall y David Ostrove sospechaban que el efecto halo (la tendencia a atribuir más cualidades positivas a las personas atractivas) no era tan simple como "belleza igual a indulgencia". Diseñaron un experimento para comprobar si ese efecto podía revertirse según el tipo de delito, y en concreto según si el atractivo físico de la acusada tenía algo que ver con cómo había cometido el crimen.',
+      intro: 'Que a la gente atractiva se le perdona más es de las cosas que la psicología social lleva más tiempo repitiendo. Harold Sigall y David Ostrove sospechaban que la regla tenía una excepción, y que esa excepción saltaba justo cuando la belleza de la persona había sido la herramienta del delito. En 1975 lo llevaron al laboratorio con una sola acusada y dos crímenes distintos.',
       sections: [
         {
-          subtitle: 'El experimento: la misma acusada, dos delitos distintos',
+          subtitle: 'El efecto halo y su punto ciego',
           paragraphs: [
-            '120 participantes recibieron una ficha con la descripción de un delito cometido por una mujer llamada Barbara Helms, junto con una fotografía suya atractiva, una fotografía poco favorecedora, o ninguna fotografía. El delito era, según el grupo, un robo con allanamiento (sin relación con su aspecto) o una estafa sentimental en la que se había ganado la confianza de una víctima para robarle dinero (un delito en el que la capacidad de resultar atractiva y de fiar era, literalmente, el arma del crimen).',
-            'En el robo, la acusada atractiva recibió una condena media de 2,80 años, frente a 5,20 años para la poco atractiva y 5,10 para el grupo sin fotografía: el patrón esperado del efecto halo, belleza como atenuante. En la estafa, el resultado se invirtió: la acusada atractiva recibió una condena media de 5,45 años, más dura que los 4,35 años asignados tanto a la acusada poco atractiva como al grupo sin fotografía. La misma belleza que aligeraba la condena por robo agravaba la condena por estafa.'
+            'La idea de partida era el efecto halo: si alguien tiene una cualidad visible que valoramos, tendemos a darle por hecho el resto. Guapo, luego probablemente listo, honrado y de fiar. Décadas de estudios en salas simuladas habían encontrado que los acusados atractivos salían mejor parados, con veredictos más suaves y penas más cortas.',
+            'Sigall y Ostrove no discutían el efecto. Discutían que fuera automático. Su apuesta era que el jurado, aunque no lo diga en voz alta, hace una segunda pregunta antes de aplicar la indulgencia: ¿este rasgo tuvo algo que ver con lo que hizo?'
           ]
         },
         {
-          subtitle: 'El mecanismo: cuando el atractivo deja de ser un rasgo y pasa a ser un arma',
+          subtitle: 'La misma mujer, dos delitos',
           paragraphs: [
-            'Sigall y Ostrove explicaron el giro con un matiz al efecto halo clásico: los jurados no solo preguntan "¿es una buena persona?" sino, de forma más precisa, "¿es razonable pensar que usó este rasgo para cometer el delito?". Cuando el atractivo es irrelevante para el crimen (un robo se comete igual siendo guapo o no), la belleza actúa como prueba indirecta de buen carácter y suaviza el juicio. Cuando el crimen depende directamente de generar confianza o deseo en la víctima, el mismo atractivo deja de leerse como virtud y pasa a leerse como instrumento.',
-            'La implicación es incómoda para cualquier intuición simple sobre los sesgos de apariencia: no existe un efecto único y estable del atractivo físico en la justicia. Existe una interacción entre lo que la persona parece y lo que se le acusa de haber hecho con ello, y esa interacción puede convertir la misma cualidad en atenuante o en agravante según el caso.'
+            '120 estudiantes, la mitad hombres y la mitad mujeres, leyeron la ficha de un caso protagonizado por una tal Barbara Helm. A un tercio se le adjuntaba una foto favorecedora, a otro tercio una poco favorecedora, y al resto ninguna foto. Después tenían que proponer los años de cárcel.',
+            'El delito cambiaba según el grupo. En una versión era un robo: Helm había conseguido de forma ilegal la llave de un piso y se había llevado 2.200 dólares. Su aspecto no pintaba nada en cómo lo hizo. En la otra versión era una estafa: había engatusado a un hombre para que metiera esos mismos 2.200 dólares en una empresa que no existía. Ahí, gustar y generar confianza era el método.'
+          ]
+        },
+        {
+          subtitle: 'El resultado se da la vuelta',
+          paragraphs: [
+            'En el robo funcionó el guion de siempre. La acusada atractiva se llevó de media 2,80 años. La poco atractiva, 5,20. El grupo sin foto, 5,10. Ser guapa valía casi dos años y medio de rebaja.',
+            'En la estafa el orden se invirtió. La acusada atractiva recibió 5,45 años de media, por encima de los 4,35 que le pusieron tanto al grupo de la foto poco favorecedora como al que no vio ninguna. La misma cara que descontaba condena por el robo la sumaba por la estafa.'
+          ]
+        },
+        {
+          subtitle: 'De rasgo a arma',
+          paragraphs: [
+            'La explicación que dieron Sigall y Ostrove es que el jurado no evalúa la belleza en abstracto. La lee dentro del delito. Si el atractivo es irrelevante para el crimen, un piso se roba igual siendo guapo o no, entonces funciona como prueba indirecta de buen carácter y ablanda el juicio. Si el crimen consistió precisamente en resultar encantador para bajar la guardia de la víctima, ese mismo atractivo pasa a verse como el instrumento, y entonces agrava.',
+            'La lección incómoda es que no hay un efecto único y estable de la apariencia en la justicia. Hay una interacción entre lo que alguien parece y lo que se le acusa de haber hecho con ello, y esa interacción puede convertir la misma cualidad en atenuante o en agravante.'
+          ]
+        },
+        {
+          subtitle: 'Qué queda en pie medio siglo después',
+          paragraphs: [
+            'Es un jurado simulado de estudiantes de los años setenta decidiendo sobre una hoja de papel, sin testigos, sin días de vista, sin deliberación en grupo. Los metaanálisis posteriores, como el de Mazzella y Feingold en 1994, encuentran que el peso del atractivo físico en veredictos y penas es en general pequeño y muy dependiente del tipo de delito. Es decir, más o menos lo que este estudio ya anticipaba.',
+            'Lo que aguanta no es el titular "la belleza condena", sino el matiz: la apariencia no empuja siempre en la misma dirección, y conviene sospechar de la propia intuición cuando el delito y la cara del acusado tienen algo que ver entre sí.'
           ]
         }
       ],
-      blockquote: { text: '«El atractivo físico no beneficia siempre al acusado: beneficia cuando es irrelevante para el delito y perjudica cuando parece haber sido la herramienta.»', attribution: 'Harold Sigall' },
-      aplicacion: 'Antes de asumir que la simpatía o el atractivo de alguien predicen su inocencia, pregúntate si esa misma cualidad podría explicar cómo se cometió lo que se le atribuye. El sesgo de "buena persona, buena cara" no desaparece por conocer este estudio, pero saber que se invierte en ciertos contextos ayuda a notar cuándo tu juicio está siendo arrastrado por el aspecto de alguien en vez de por los hechos.'
+      blockquote: { text: '«El atractivo físico beneficia al acusado cuando no guarda relación con el delito y lo perjudica cuando parece haber sido la herramienta para cometerlo.»', attribution: 'Sigall & Ostrove (1975)' },
+      aplicacion: 'Antes de dar por hecho que alguien simpático o atractivo es inofensivo, pregúntate si ese mismo encanto podría explicar cómo hizo lo que se le atribuye. El sesgo de "buena cara, buena persona" no se apaga por conocer este estudio, pero saber que en algunos casos se invierte ayuda a notar cuándo estás juzgando por el aspecto en vez de por los hechos.'
     },
     {
       id: 'der-06',
       title: 'El dado que decidía la condena: cómo un número al azar influye en la sentencia de un juez experto',
-      summary: 'Jueces con más de quince años de experiencia dieron condenas distintas para el mismo delito según el número que había salido, momentos antes, en una tirada de dados que ellos mismos sabían que era irrelevante.',
-      sourceUrl: 'https://doi.org/10.1111/j.1559-1816.2001.tb02687.x',
-      sourceLabel: 'Englich & Mussweiler (2001), Journal of Applied Social Psychology',
+      summary: 'Unos juristas tiraban un dado trucado y anotaban el número como si fuera la petición fiscal. Con un 9 pedían casi ocho meses; con un 3, poco más de cinco.',
+      sourceUrl: 'https://doi.org/10.1177/0146167205282152',
+      sourceLabel: 'Englich, Mussweiler & Strack (2006), Personality and Social Psychology Bulletin',
       badge: 'Psicología forense',
-      author: { name: 'Birte Englich', university: 'Universidad de Colonia', specialty: 'Psicología del juicio y la toma de decisiones judiciales' },
-      readingTime: '3 min',
+      author: { name: 'Birte Englich', university: 'Universidad de Wurzburgo', specialty: 'Psicología del juicio y la toma de decisiones judiciales' },
+      readingTime: '6 min',
       date: '31 de julio de 2026',
-      intro: 'Birte Englich y Thomas Mussweiler querían llevar el efecto de anclaje (documentado por Kahneman y Tversky en contextos de laboratorio) a un escenario donde la intuición dice que no debería funcionar: una sala de justicia real, con jueces con años de experiencia decidiendo sobre un caso con toda la información delante.',
+      intro: 'El efecto de anclaje, que Kahneman y Tversky documentaron en el laboratorio, dice que el primer número que se te pone delante arrastra tu siguiente estimación aunque no tenga nada que ver con ella. Birte Englich y Thomas Mussweiler querían saber si eso aguantaba en el sitio donde menos debería: una decisión sobre la pena de una persona, tomada por alguien con formación jurídica y el expediente entero encima de la mesa. En 2006, con Fritz Strack, lo probaron con un dado.',
       sections: [
         {
-          subtitle: 'El experimento: tirar un dado antes de dictar sentencia',
+          subtitle: 'Un número que no debería contar para nada',
           paragraphs: [
-            'Jueces con una experiencia media superior a quince años en el cargo leyeron el expediente completo de un caso real de hurto en una tienda. Después, se les pedía que tiraran un par de dados trucados para que solo pudiera salir un 3 o un 9, un número que ellos sabían perfectamente que no tenía ninguna relación con el caso. Antes de fijar la condena, se les preguntaba si su sentencia sería mayor o menor, en meses, que el número que acababa de salir en el dado.',
-            'Los jueces que habían sacado un 9 fijaron una condena media de 8 meses de prisión. Los que habían sacado un 3 fijaron una condena media de 5 meses, para exactamente el mismo expediente. Un número aleatorio, generado por un dado cuya irrelevancia el propio juez reconocía en voz alta, desplazó la sentencia final en torno a un 50%.'
+            'El anclaje se ve bien en un experimento clásico de los años setenta. Se hacía girar una ruleta que paraba en un número al azar y luego se preguntaba qué porcentaje de países africanos formaba parte de la ONU. Quien había visto un número alto en la ruleta daba un porcentaje más alto. La ruleta no sabía nada de geopolítica y aun así movía la respuesta.',
+            'La pregunta de Englich y Mussweiler era si un profesional del derecho, entrenado precisamente para no dejarse llevar por lo irrelevante, quedaba a salvo cuando el número irrelevante aparecía en mitad de una decisión sobre años de cárcel.'
           ]
         },
         {
-          subtitle: 'El mecanismo: el ancla contamina el juicio antes de que el razonamiento pueda corregirlo',
+          subtitle: 'Tirar los dados antes de poner la pena',
           paragraphs: [
-            'Englich y Mussweiler explican el resultado con el mecanismo de anclaje que Kahneman y Tversky habían descrito para el público general: cuando se pide comparar un valor con un número de referencia, la mente no lo descarta después de comparar. Lo usa como punto de partida para el ajuste final, y ese ajuste suele quedarse corto, arrastrando la estimación hacia el ancla original aunque el origen del ancla sea manifiestamente irrelevante.',
-            'Lo relevante del estudio no es que el sesgo de anclaje exista (eso ya se sabía), sino que sobrevive intacto en expertos con años de práctica evaluando exactamente ese tipo de decisión, y que lo hace incluso cuando la fuente del ancla es tan visiblemente arbitraria como un dado trucado delante de sus propios ojos. Saber que un número es irrelevante no impide que el cerebro lo use como referencia.'
+            'En el estudio del dado participaron 52 juristas en formación de posgrado en Espira, en Alemania, de 24 a 33 años, con sus primeras experiencias decidiendo casos. Leían el expediente de un hurto: una mujer sorprendida robando en un supermercado por duodécima vez.',
+            'Antes de fijar la pena, tiraban un par de dados. Estaban trucados. A la mitad de los participantes les salía siempre un 1 y un 2, que sumaban 3. A la otra mitad, un 3 y un 6, que sumaban 9. Anotaban esa suma en el hueco de la petición del fiscal, sabiendo que se había fijado al azar. Luego respondían si su condena sería mayor o menor que ese número, en meses, y por último la fijaban.',
+            'Los del 9 pusieron de media 7,8 meses de prisión. Los del 3, 5,3 meses. El mismo expediente, dos meses y medio de diferencia, alrededor de un 50% más de cárcel según un dado que el propio jurista había lanzado sabiendo que no significaba nada.'
+          ]
+        },
+        {
+          subtitle: 'Por qué el ancla se cuela igual',
+          paragraphs: [
+            'Cuando te piden comparar tu juicio con un número, la mente lo coge como punto de partida y ajusta desde ahí. Y el ajuste casi siempre se queda corto, así que la estimación final acaba cerca del número inicial. Es la parte mecánica.',
+            'La otra parte es lo que Mussweiler y Strack llamaron accesibilidad selectiva. Plantearte "¿la pena será mayor de 9 meses?" te pone a buscar en el expediente todo lo que encaja con una condena alta: que es la duodécima vez, que no mostró arrepentimiento. Esa información se queda a mano y es la que usas para decidir. Con un 3 en la cabeza habrías rebuscado lo contrario.'
+          ]
+        },
+        {
+          subtitle: 'Lo que discute la crítica',
+          paragraphs: [
+            'Estos eran juristas jóvenes, no magistrados con treinta años de oficio, y el caso era de papel, sin sala ni defensa real. Pero en el mismo trabajo el grupo probó otras versiones con profesionales de más de diez años de experiencia y el anclaje seguía apareciendo, tanto si el número lo soltaba un periodista por teléfono como si venía de una petición fiscal presentada como aleatoria.',
+            'La otra objeción es el tamaño. Varios intentos de réplica con muestras grandes encuentran anclajes más pequeños que el original, y es probable que aquella cifra estuviera algo inflada. Lo que resiste es la dirección. Un número irrelevante dicho justo antes empuja la sentencia, y saber que es irrelevante no basta para frenarlo.'
+          ]
+        },
+        {
+          subtitle: 'Dónde aparece esto fuera del juzgado',
+          paragraphs: [
+            'La petición del fiscal es el ancla natural de una sentencia, y por eso se estudia. Pero el mismo tirón lo hace la primera cifra de una negociación de sueldo, el precio de salida de un piso, la tasación que abre una puja o el "suele costar unos X" que suelta un comercial antes de enseñarte nada.',
+            'En todos esos casos, quien pone el primer número está fijando el terreno en el que se va a discutir, aunque ese número se lo haya inventado.'
           ]
         }
       ],
-      blockquote: { text: '«Ni siquiera los expertos con años de experiencia están libres del efecto de anclaje, aunque el ancla sea, de forma evidente, aleatoria e irrelevante.»', attribution: 'Birte Englich' },
-      aplicacion: 'Cualquier número que se mencione justo antes de una decisión (un precio inicial, una cifra ajena al problema, una estimación de otra persona) puede estar anclando tu juicio sin que lo notes. Antes de decidir algo importante, pregúntate qué número viste u oíste en los minutos previos y si tiene alguna relación real con lo que estás valorando.'
+      blockquote: { text: '«Ni siquiera los profesionales del derecho quedan a salvo del anclaje cuando el número de referencia es, a ojos vista, aleatorio.»', attribution: 'Englich, Mussweiler & Strack (2006)' },
+      aplicacion: 'Antes de decidir una cifra que te importe, para y pregúntate qué número has visto u oído en los minutos anteriores y si tiene relación real con lo que estás valorando. Si negocias, intenta poner tú la primera cifra. Y si la pone el otro, tómate un momento para fijar tu propio rango antes de contestar, porque una vez que el número está en el aire ya te está tirando de la manga.'
     },
     {
       id: 'der-07',
       title: 'Ver una pistola en vez de un cheque hizo que los testigos recordaran mucho peor la cara del sospechoso',
-      summary: 'Testigos que vieron una diapositiva con un arma en vez de un cheque en las manos de un hombre identificaron correctamente su cara en la rueda de reconocimiento solo el 11% de las veces, frente al 39% cuando no había arma.',
+      summary: 'Los testigos que vieron un arma en las manos de un hombre acertaron su cara en la rueda de reconocimiento un 11% de las veces. Sin arma, un 39%.',
       sourceUrl: 'https://doi.org/10.1007/BF01044839',
       sourceLabel: 'Loftus, Loftus & Messo (1987), Law and Human Behavior',
       badge: 'Psicología forense',
       author: { name: 'Elizabeth F. Loftus', university: 'Universidad de Washington', specialty: 'Psicología del testimonio y la memoria' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Elizabeth Loftus, Geoffrey Loftus y Jane Messo querían poner a prueba una idea repetida en juzgados: que un testigo que ha visto un arma de cerca debería recordar con más nitidez, no con menos, los detalles de lo ocurrido, incluida la cara de quien la sostenía. Diseñaron un experimento para comprobarlo con precisión, midiendo literalmente hacia dónde miraban los ojos de los testigos.',
+      intro: 'En los juzgados se repetía una idea de sentido común. Si un testigo ha tenido un arma delante, el susto debería grabarle la escena a fuego, la cara de quien la empuñaba incluida. Elizabeth Loftus, Geoffrey Loftus y Jane Messo montaron un experimento para comprobarlo, y lo hicieron midiendo algo que casi nunca se mide: hacia dónde se iban exactamente los ojos de los testigos.',
       sections: [
         {
-          subtitle: 'El experimento: la misma escena, con un cheque o con una pistola',
+          subtitle: 'La intuición que se quería probar',
           paragraphs: [
-            '36 participantes vieron una secuencia de 18 diapositivas que recreaban una escena en un restaurante de comida rápida. En un momento dado, un cliente se acercaba a la caja: en la mitad de los casos le entregaba un cheque al cajero, en la otra mitad le apuntaba con una pistola. El resto de la escena era idéntico en ambas condiciones.',
-            'Con un rastreador de movimientos oculares, los investigadores confirmaron que los participantes fijaban la mirada en el arma una media de 3,7 veces, frente a 2,4 veces cuando el objeto era un cheque, y durante más tiempo en cada fijación. Después, se les pedía identificar al hombre de la escena en una rueda de reconocimiento fotográfica. En el grupo que había visto el cheque, el 39% identificó correctamente al hombre. En el grupo que había visto la pistola, solo lo consiguió el 11%. Un segundo experimento con 80 participantes replicó el patrón: 35% de aciertos con el cheque frente a 15% con el arma.'
+            'La creencia de fondo es que el miedo afila la memoria. Un momento de peligro se recuerda mejor que una tarde cualquiera, y eso, hasta cierto punto, es verdad para el hecho central. La duda de los investigadores estaba en los bordes de la escena. Mientras el testigo clava la vista en la amenaza, ¿qué pasa con todo lo demás?',
+            'Para responder hacía falta separar dos cosas que en un atraco real van juntas: la presencia del arma y la presencia de un objeto cualquiera en las manos de un desconocido.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la atención tiene un límite, y el arma se lo lleva todo',
+          subtitle: 'El mismo hombre, un cheque o una pistola',
           paragraphs: [
-            'Loftus y sus colegas explican el efecto con lo que llamaron la teoría de la fijación: ante un objeto que no encaja con lo esperado en el contexto (una pistola en una fila de comida rápida es, literalmente, fuera de lugar), la atención se concentra ahí de forma automática y deja de repartirse hacia el resto de la escena, incluida la cara de la persona que la sostiene.',
-            'El resultado es incómodo para cualquier intuición sobre testigos presenciales de un atraco o una agresión armada: cuanto más amenazante y llamativo es el objeto del delito, menos fiable tiende a ser el recuerdo de la cara del agresor, justo la información que la investigación policial más necesita. No es que el testigo mienta o exagere, es que su atención, de forma involuntaria, estuvo en otra parte.'
+            '36 personas vieron una secuencia de 18 diapositivas que recreaban una escena en un restaurante de comida rápida. En un momento dado, un cliente se acercaba a la caja. Para la mitad de los testigos, le entregaba un cheque al cajero. Para la otra mitad, le apuntaba con una pistola. El resto de la escena era idéntico.',
+            'El rastreador ocular dejó claro adónde iba la atención. Los testigos hacían una media de 3,7 fijaciones sobre el arma, frente a 2,4 sobre el cheque, y cada una más larga. Luego se les pedía reconocer al hombre en una rueda fotográfica. Con el cheque, acertó el 39%. Con la pistola, el 11%. Un segundo experimento con 80 personas repitió el patrón: 35% frente a 15%.'
+          ]
+        },
+        {
+          subtitle: 'La atención es un presupuesto y el arma se lo gasta',
+          paragraphs: [
+            'La explicación que dieron es lo que llamaron un efecto de fijación. Un objeto que no pinta nada en el contexto, una pistola en una cola de hamburguesas, captura la mirada de forma automática. Y como la atención no es infinita, lo que se va en el arma deja de repartirse por el resto de la escena. La cara del que dispara entra en ese "resto".',
+            'No es que el testigo mienta ni que exagere el trauma. Es que, sin decidirlo, tuvo los ojos en otra parte durante los segundos que habrían servido para memorizar el rostro.'
+          ]
+        },
+        {
+          subtitle: 'Qué se ha matizado después',
+          paragraphs: [
+            'Son diapositivas vistas en un laboratorio, con poca activación emocional real comparada con un atraco. Un metaanálisis de Fawcett y su equipo en 2013, sobre decenas de estudios, confirma que el efecto existe pero es moderado, no arrasa con el recuerdo. Y hay debate sobre qué lo causa: si es la amenaza en sí o simplemente que el objeto resulta raro e inesperado. Cuando en la misma escena se pone algo igual de fuera de lugar pero inofensivo, como un palo de apio, aparece una caída parecida en el recuerdo de la cara.',
+            'La dirección, en cambio, se sostiene bien. Cuanto más llamativo y amenazante es el objeto del delito, menos fiable tiende a ser la identificación del agresor, que es justo lo que más necesita la investigación.'
           ]
         }
       ],
-      blockquote: { text: '«El arma capta y retiene la atención del testigo a expensas de otros detalles de la escena, incluida la cara del portador.»', attribution: 'Elizabeth F. Loftus' },
-      aplicacion: 'Si alguna vez tienes que dar una descripción tras presenciar una situación con un objeto amenazante de por medio, ten en cuenta que tu memoria del rostro puede ser mucho menos fiable de lo que sientes en el momento. Este estudio es también un argumento a favor de dar peso, en cualquier proceso judicial, a otra evidencia además del reconocimiento visual de un testigo cuando hubo un arma presente.'
+      blockquote: { text: '«El arma atrae y retiene la mirada del testigo a costa de otros detalles de la escena, entre ellos la cara de quien la sostiene.»', attribution: 'Loftus, Loftus & Messo (1987)' },
+      aplicacion: 'Si tienes que describir a alguien tras una situación con un objeto amenazante de por medio, cuenta con que tu recuerdo de la cara puede ser bastante peor de lo que sientes en el momento, por muy vívida que te parezca la escena. Y sirve como argumento para no dejar que un proceso judicial descanse solo en el reconocimiento visual de un testigo cuando había un arma presente.'
     }
   ],
 
@@ -984,122 +1194,181 @@ const LIBRARY_ARTICLES = {
     {
       id: 'art-01',
       title: 'La psicología detrás de por qué algunas obras de arte te generan euforia física',
-      summary: 'El síndrome de Stendhal no es metáfora: la exposición a arte de alta densidad emocional activa los mismos circuitos de recompensa que el orgasmo o la música.',
+      summary: 'Un escáner a ocho personas mientras escuchaban su música favorita encontró dopamina en el mismo circuito que activan la comida, el sexo o la cocaína.',
       sourceUrl: 'https://www.nature.com/articles/nn.2726',
       sourceLabel: 'Salimpoor et al. (2011), Nature Neuroscience',
       badge: 'Neuroestética',
       author: { name: 'Valorie Salimpoor', university: 'McGill University', specialty: 'Neurociencia Cognitiva y Respuesta Estética' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '2 de junio de 2026',
-      intro: 'El escalofrío físico ante una obra de arte (o ante el momento cumbre de una pieza musical) tiene un nombre técnico: frisson. Y en 2011, Valorie Salimpoor demostró mediante PET y fMRI que ese escalofrío coincide con la liberación de dopamina en el núcleo accumbens: el mismo circuito activado por la cocaína, el sexo o la comida.',
+      intro: 'Se te eriza la piel con una canción que has oído mil veces. Sabes qué nota viene, sabes dónde está el subidón, y aun así la piel responde. Ese escalofrío tiene un nombre en la literatura científica, frisson, y en 2011 un equipo de Montreal consiguió ver qué pasa dentro del cerebro justo en ese instante. La respuesta corta es que se libera dopamina en el circuito de recompensa, el mismo que se activa al comer con hambre, al ganar dinero o al consumir una droga estimulante. La versión larga es más interesante, porque la dopamina no llega toda de golpe.',
       sections: [
         {
-          subtitle: 'El experimento de Salimpoor',
+          subtitle: 'Un escalofrío que no todo el mundo tiene',
           paragraphs: [
-            'McGill University, 2011. Ocho participantes que reportaban experimentar escalofríos físicos de forma consistente con determinadas piezas musicales fueron sometidos a escáneres de PET y fMRI de forma simultánea mientras escuchaban sus selecciones personales. La combinación de ambas técnicas permitió medir tanto la liberación real de dopamina como el flujo sanguíneo cerebral con resolución temporal alta.',
-            'Durante los momentos de máxima intensidad emocional (los picos que producían el escalofrío) se registró un aumento del 6 al 9% en la liberación de dopamina en el núcleo accumbens y en el caudado. Pero el hallazgo más sorprendente fue que la dopamina se liberaba en dos fases: primero en el caudado, durante la anticipación de los 15 segundos previos al clímax musical; después en el núcleo accumbens, durante el clímax mismo. El cerebro no solo recompensa la experiencia: recompensa también la predicción correcta de que algo intenso está por llegar.'
+            'El frisson no es universal. Según a quién preguntes, entre la mitad y dos tercios de la gente dice sentirlo alguna vez con la música, y solo una minoría lo nota de forma intensa y recurrente. Suele aparecer en un cambio brusco, la entrada inesperada de una voz, un crescendo, un silencio que se rompe. Dura unos segundos y va acompañado de piel de gallina y a veces de un nudo en la garganta.',
+            'Durante décadas se describió en términos casi literarios y poco más. Medirlo en el cuerpo era complicado, porque hace falta pillar el momento exacto del escalofrío y cruzarlo con lo que ocurre dentro del cráneo en esa misma ventana de tiempo. Eso es lo que resolvió el estudio de Valorie Salimpoor y Robert Zatorre.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'Ocho personas, su propia música y dos escáneres',
           paragraphs: [
-            'La música explota el sistema de predicción-recompensa del cerebro de una forma que ningún otro estímulo hace con la misma eficacia. El cerebro construye expectativas sobre qué nota, qué ritmo o qué cambio armónico viene a continuación. Cuando esa expectativa se cumple de una forma inesperadamente satisfactoria (o cuando se viola de una manera que retroactivamente tiene sentido) el sistema dopaminérgico se dispara.',
-            'Lo que distingue al frisson de otras respuestas de recompensa es su naturaleza abstracta. La dopamina ante la comida o el sexo responde a la satisfacción de una necesidad biológica. La dopamina ante la música o el arte responde a la resolución de un patrón puramente cognitivo. Salimpoor argumenta que esto convierte la experiencia estética en una forma de cognición de alto orden: el cerebro se recompensa a sí mismo por procesar con éxito estructuras complejas. No consume el mundo; lo comprende.'
+            'El laboratorio estaba en el Instituto Neurológico de Montreal, en la Universidad McGill. Los ocho voluntarios finales no se eligieron al azar: todos habían pasado un filtro previo para confirmar que sentían escalofríos de forma fiable con piezas concretas, siempre instrumentales, para descartar que el efecto viniera de la letra. Cada uno llevó su propia música. Como control, escuchaban también las selecciones de los demás, que a ellos les resultaban neutras.',
+            'Se usaron dos técnicas a la vez. Una tomografía por emisión de positrones con un marcador, el [11C]raclopride, que se engancha a los mismos receptores que la dopamina y va siendo desplazado cuando el cerebro libera dopamina propia. Cuanto más marcador se desplaza, más dopamina se ha soltado. La otra técnica, la resonancia magnética funcional, no mide dopamina pero tiene mejor resolución temporal, así que sirve para saber cuándo se activa cada zona.',
+            'Mientras escuchaban, los participantes iban marcando en tiempo real la intensidad del escalofrío. La media fue de 3,7 escalofríos por pieza. Al cruzar esos picos con los datos de los escáneres apareció un aumento claro de dopamina en el cuerpo estriado, una región profunda que forma parte del circuito de recompensa. Hasta ahí, lo esperable. El giro estaba en el reparto.'
+          ]
+        },
+        {
+          subtitle: 'El cerebro paga por adelantado',
+          paragraphs: [
+            'La dopamina no se liberaba en un solo sitio ni en un solo momento. En los quince segundos previos al clímax de la pieza, cuando el escalofrío todavía no había llegado pero se veía venir, la actividad se concentraba en el núcleo caudado, la parte del estriado más conectada con la predicción y el aprendizaje. En el instante del escalofrío, el foco se desplazaba al núcleo accumbens, más ligado al placer ya consumado.',
+            'Anticipación en un sitio, recompensa en otro. Es el mismo patrón que se observa con las recompensas biológicas. El cerebro suelta una parte de la dopamina no cuando llega lo bueno, sino cuando calcula que va a llegar, y ese cálculo se basa en todo lo que has escuchado antes en tu vida. Por eso una canción nueva rara vez eriza la piel a la primera. Necesitas un modelo mental de hacia dónde va la música para que el sistema de predicción tenga algo que predecir.',
+            'Salimpoor lo resumió señalando que la música permite observar todas las fases de la recompensa en directo, desde el estado neutro hasta el pico, algo que con la comida o el dinero cuesta más separar. Un patrón de sonido sin valor nutritivo ni utilidad reproductiva termina activando la maquinaria que evolucionó para reforzar justo eso.'
+          ]
+        },
+        {
+          subtitle: 'Lo que el estudio no demuestra',
+          paragraphs: [
+            'Ocho personas es una muestra pequeña, y la tomografía mide la dopamina de forma indirecta, por descarte del marcador. Que se active "el mismo circuito que la cocaína" es cierto y a la vez engañoso, porque la magnitud, la velocidad y las consecuencias no se parecen. La música no genera tolerancia ni síndrome de abstinencia, y nadie arruina su vida por escuchar demasiado a Bach.',
+            'El diseño tampoco dice nada sobre la mayoría de oyentes, porque seleccionó a propósito a quienes sí sienten escalofríos intensos. Si tú nunca los has notado, no es un defecto, es la variabilidad normal.',
+            'Lo que sí se ha sostenido es el papel de la dopamina. En 2019, un equipo dirigido por Laura Ferreri dio a los participantes un precursor de dopamina, un bloqueante o un placebo antes de escuchar música. Con el precursor, el placer y las ganas de volver a oír la pieza subían. Con el bloqueante, bajaban. La química que Salimpoor había fotografiado en 2011 resultó ser causa, no solo acompañante.'
           ]
         }
       ],
-      blockquote: { text: '«El cerebro trata la belleza extrema como una recompensa de supervivencia. El arte que produce escalofríos está explotando la misma maquinaria que nos mantuvo vivos como especie.»', attribution: 'Valorie Salimpoor' },
-      aplicacion: 'La próxima vez que una obra, pieza musical o imagen te provoque una reacción física, presta atención al momento exacto en que ocurre. Ese instante revela algo sobre los patrones de expectativa y resolución que tu cerebro ha construido a lo largo de tu vida.'
+      blockquote: { text: '«La música, una recompensa abstracta, puede provocar la liberación de dopamina en el sistema estriado, y la anticipación del placer recluta una vía anatómica distinta de la del placer máximo en sí.»', attribution: 'Salimpoor et al. (2011)' },
+      aplicacion: 'Si usas música para regular el ánimo, arma una lista corta con las piezas que de verdad te erizan la piel, no con lo que se supone que relaja. Y presta atención a los segundos previos al momento que esperas, porque buena parte del disfrute está ahí, en la anticipación, no solo en el subidón. El efecto se desgasta con la sobreexposición, así que reservar esas canciones para cuando las necesitas las mantiene potentes.'
     },
     {
       id: 'art-02',
       title: 'Por qué el arte ambiguo activa más el cerebro que el arte figurativo',
-      summary: 'La incertidumbre visual fuerza al cerebro a generar múltiples hipótesis simultáneas, lo que maximiza la activación de redes neurales y la experiencia estética.',
-      sourceUrl: 'https://doi.org/10.3389/fnhum.2012.00001',
+      summary: 'Una red cerebral que se apaga cuando miramos algo por fuera se encendía justo con los cuadros que los participantes calificaban de más conmovedores.',
+      sourceUrl: 'https://doi.org/10.3389/fnhum.2012.00066',
       sourceLabel: 'Vessel, Starr & Rubin (2012), Frontiers in Human Neuroscience',
       badge: 'Neuroestética',
-      author: { name: 'Edward Vessel', university: 'Max Planck Institute', specialty: 'Percepción Visual y Respuesta Estética' },
-      readingTime: '3 min',
+      author: { name: 'Edward Vessel', university: 'New York University', specialty: 'Percepción Visual y Respuesta Estética' },
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'Las obras que no se dejan descifrar fácilmente generan mayor activación cerebral que las que se entienden al instante. El cerebro, ante la ambigüedad, no se rinde: multiplica sus hipótesis interpretativas, y ese proceso de búsqueda activa sin resolución es precisamente lo que maximiza la experiencia estética.',
+      intro: 'Hay una diferencia entre pensar "qué cuadro tan bonito" y sentir que un cuadro te está hablando a ti. La primera reacción es un juicio sobre el objeto. La segunda arrastra algo más, y en 2012 un grupo de la Universidad de Nueva York consiguió ver ese algo más en un escáner. Resultó ser una red que, en teoría, debería estar callada mientras miras una imagen.',
       sections: [
         {
-          subtitle: 'El experimento de Vessel, Starr y Rubin',
+          subtitle: 'Una red que se supone que mira hacia dentro',
           paragraphs: [
-            'En el Max Planck Institute de Leipzig, Edward Vessel y sus colegas escanearon a 16 participantes mientras visualizaban 109 obras de arte de estilos y épocas muy distintos. Los participantes evaluaban cada obra en una escala del 1 al 4: desde "no me mueve en absoluto" hasta "me ha afectado profundamente". Los investigadores compararon la activación cerebral en los dos extremos de esa escala.',
-            'Las obras calificadas como "profundamente conmovedoras" activaban una red específica que no se activaba ante las obras meramente "bellas": la red de modo por defecto (DMN), que normalmente se suprime durante tareas cognitivas activas. Esta red se asocia con el pensamiento autorreferencial, la memoria autobiográfica y la cognición social. Las obras que "hablaban" al sujeto eran las que forzaban al cerebro a referenciarse a sí mismo.'
+            'El cerebro tiene una red de modo por defecto, un conjunto de zonas que se activan cuando no estás centrado en nada externo: cuando divagas, recuerdas tu propia vida, piensas en lo que dirá otra persona. En cuanto te pones una tarea delante, mirar, contar, buscar, esa red se apaga y toman el mando las zonas orientadas al exterior. Llevar la atención afuera y tener la red de modo por defecto encendida a la vez es raro.',
+            'Edward Vessel, Gabrielle Starr y Nava Rubin querían saber qué pasaba en esa red durante una experiencia estética fuerte, del tipo que te deja clavado delante de una obra.'
           ]
         },
         {
-          subtitle: 'El mecanismo psicológico',
+          subtitle: 'Dieciséis personas y 109 cuadros',
           paragraphs: [
-            'La diferencia entre "creo que es una obra hermosa" y "esta obra me habla" no es de grado sino de naturaleza neurológica. La primera es una evaluación estética externa; la segunda implica la activación del sistema que el cerebro usa para pensar sobre sí mismo. El arte que resulta profundamente movedor fuerza una comparación activa entre lo que se percibe y la propia historia, los propios valores, las propias memorias.',
-            'La ambigüedad visual o narrativa es el detonador de este proceso porque una obra inmediatamente comprensible no requiere esfuerzo interpretativo: el cerebro la clasifica y pasa adelante. Una obra ambigua mantiene el sistema de generación de hipótesis activo de forma sostenida, y ese estado de indeterminación activa la búsqueda autorreferencial. El espectador pregunta "¿qué significa esto?" y, en el proceso, pregunta también "¿qué significa para mí?" Esa segunda pregunta es la que activa la DMN y produce la experiencia de ser conmovido.'
+            'Metieron a dieciséis participantes en la resonancia, once hombres, con una media de veintiocho años, y les enseñaron 109 obras de épocas y estilos muy distintos, desde retablos hasta pintura contemporánea. Después de cada una, el participante puntuaba del 1 al 4 cuánto le había movido, desde "nada" hasta "me ha afectado profundamente".',
+            'La clave del diseño es que no buscaban un consenso sobre qué obras son buenas. Les interesaba lo contrario, que la misma imagen fuera un 4 para una persona y un 1 para la de al lado. Con eso podían comparar el cerebro de alguien ante su propia obra demoledora y ante otra que le daba igual.',
+            'Dos zonas seguían la puntuación de forma ordenada, subiendo poco a poco del 1 al 4: las áreas sensoriales de la parte de atrás y de los lados de la cabeza, y el estriado, ligado a la recompensa. Nada sorprendente ahí. La red de modo por defecto se comportó distinto.'
+          ]
+        },
+        {
+          subtitle: 'El salto que solo daban los cuadros de un 4',
+          paragraphs: [
+            'En vez de subir de forma gradual, la corteza prefrontal medial, una pieza central de esa red, estuvo por debajo de su nivel de reposo con los cuadros de 1, 2 y 3, como corresponde a una tarea de mirar hacia fuera. Solo con los de 4, y solo con los de 4, esa supresión desaparecía. La red se despertaba de golpe, no un poco más.',
+            'La lectura de los autores es que la obra que de verdad te mueve deja de procesarse como un objeto ahí fuera y pasa a tratarse como algo que va contigo. El sistema que usas para pensar en ti mismo se pone en marcha mientras miras una pintura. La pregunta "qué significa esto" se cuela en la otra pregunta, "qué significa esto para mí", y esa segunda es la que enciende la red.',
+            'Una obra fácil no llega ahí. El cerebro la clasifica y sigue.'
+          ]
+        },
+        {
+          subtitle: 'Lo que este estudio no zanja',
+          paragraphs: [
+            'Son dieciséis personas mirando cuadros en una pantalla dentro de un tubo, sin la escala real, sin la sala, sin el resto de gente alrededor. La experiencia estética de museo es más ancha que eso.',
+            'La red de modo por defecto tampoco es "el centro del arte". Participa en divagar, en recordar, en pensar en los demás. Lo prudente es decir que las obras más conmovedoras reclutaron procesamiento autorreferencial, sin cargarle a esa red una función que no tiene.',
+            'Y una aclaración sobre el encuadre habitual de este hallazgo. La idea de que el arte ambiguo activa más el cerebro que el figurativo viene de otra línea de trabajo, la de la fluidez de procesamiento y el pequeño placer de resolver una imagen que al principio no se entiende. Este estudio no ordenó las obras por ambigüedad ni comparó abstracto contra figurativo. Varias de las piezas que los participantes puntuaron como un 4 eran plenamente figurativas. Lo que predice la reacción no es el estilo, es si la obra te toca una fibra propia.',
+            'El patrón principal sí ha aguantado. En 2019, el mismo grupo lo repitió con caras, paisajes y edificios, y la red de modo por defecto volvía a seguir el atractivo estético en todos los casos.'
           ]
         }
       ],
-      blockquote: { text: '«El arte que más nos afecta es el que mantiene al cerebro en un estado permanente de pregunta sin respuesta definitiva.»', attribution: 'Edward Vessel' },
-      aplicacion: 'Exponte deliberadamente a obras que no entiendas de inmediato. La incomodidad de la ambigüedad no es un defecto de la obra: es la señal de que tu cerebro está trabajando en un modo de alta intensidad cognitiva.'
+      blockquote: { text: '«Durante las experiencias estéticas más conmovedoras, la red de modo por defecto, que suele suprimirse ante la atención al exterior, aparece paradójicamente activa aunque el foco esté fuera del observador, en la obra.»', attribution: 'Vessel, Starr & Rubin (2012)' },
+      aplicacion: 'Dale tiempo a las obras que no se dejan resolver a la primera. Esa incomodidad de no saber qué estás mirando suele ser la señal de que tu propia historia se está metiendo en la interpretación. Ahora bien, no se puede forzar el 4: el estudio deja claro que la misma pieza que a ti te parte por la mitad a otra persona no le dice nada, y eso no lo arregla mirar más rato.'
     },
     {
       id: 'art-03',
       title: 'La regla pico-final: por qué el último acorde importa más que toda la sinfonía',
-      summary: 'Tu cerebro no evalúa una experiencia por su promedio: la juzga por su momento de mayor intensidad y por cómo termina. La duración, sorprendentemente, importa muy poco.',
-      sourceUrl: 'https://doi.org/10.1037/0033-2909.117.1.34',
+      summary: 'Kahneman metió a 32 personas en agua helada dos veces. Una duraba más y dolía más en total, y fue la que eligieron repetir.',
+      sourceUrl: 'https://doi.org/10.1111/j.1467-9280.1993.tb00589.x',
       sourceLabel: 'Kahneman, Fredrickson, Schreiber & Redelmeier (1993), Psychological Science',
       badge: 'Psicología de la experiencia',
       author: { name: 'Daniel Kahneman', university: 'Universidad de Princeton', specialty: 'Psicología Cognitiva y Economía Conductual' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '12 de mayo de 2026',
-      intro: 'En 1993, Kahneman y sus colegas realizaron un experimento que debería obligar a replantear cómo diseñamos cualquier experiencia: los conciertos, las presentaciones, los viajes, las reuniones. Pidieron a pacientes que sometieran su mano al agua fría en dos condiciones diferentes. En una, aguantaban 60 segundos a una temperatura desagradable. En otra, aguantaban esos mismos 60 segundos más 30 adicionales de agua ligeramente menos fría. La segunda condición era objetivamente peor (más tiempo de incomodidad). Pero era la que los pacientes preferían repetir.',
+      intro: 'En 1993, Daniel Kahneman y tres colegas propusieron a 32 personas un trato extraño. Meter una mano en agua a 14 grados durante 60 segundos. O meter la otra mano en agua a 14 grados durante esos mismos 60 segundos y, a continuación, aguantar 30 segundos más mientras el agua subía despacio hasta los 15, un pelín menos dolorosa pero todavía molesta. Luego les dejaban elegir cuál de las dos repetir. Veintidós de los 32 eligieron la larga, la que traía 30 segundos extra de dolor evitable.',
       sections: [
         {
-          subtitle: 'El yo recordador y el yo experiencial: dos sistemas en conflicto',
+          subtitle: 'Veintidós de treinta y dos eligieron sufrir más',
           paragraphs: [
-            'El experimento del agua fría ilustra la distinción que Kahneman consideraba central en su investigación posterior: la diferencia entre el "yo experiencial" (el que vive el momento presente) y el "yo recordador" (el que evalúa la experiencia en retrospectiva y toma decisiones basándose en ese recuerdo). El yo recordador no hace la media: aplica la regla pico-final. Evalúa la experiencia por su intensidad máxima y por cómo terminó. La duración apenas cuenta.',
-            'Esta asimetría tiene consecuencias masivas para el arte y el diseño de experiencias. Un concierto que termina con la canción más emotiva del repertorio se recuerda mejor que uno con un promedio ligeramente superior pero un final discreto. Una exposición de arte que termina en una sala de obras menores produce un recuerdo más negativo que una que termina en la pieza más impactante, aunque el contenido total sea idéntico. El creador que entiende esto no diseña experiencias planas de buena calidad constante: diseña picos y finales.'
+            'El experimento estaba montado para que la segunda opción fuera peor por cualquier medida sensata. Más tiempo con la mano en agua fría. Más dolor total sumado. Y aun así, con siete minutos entre una prueba y otra para que el recuerdo se asentara, la mayoría prefería volver a esa. El orden de las pruebas se cambiaba entre participantes, así que tampoco era un efecto de cuál tocaba primero.',
+            'La diferencia entre las dos estaba en el final. La prueba corta terminaba en el peor momento, con el agua a 14 grados. La larga terminaba un poco mejor, con el agua ya un grado más templada. Ese tramo final más suave bastó para que el recuerdo global saliera menos malo, aunque el episodio entero hubiera sido más largo y más frío.'
           ]
         },
         {
-          subtitle: 'La neglect de duración y el diseño de lo memorable',
+          subtitle: 'El yo que recuerda no hace la media',
           paragraphs: [
-            'La "neglect de duración" (la insensibilidad del yo recordador a cuánto dura una experiencia) tiene implicaciones contraintuitivas. Una conferencia de 45 minutos con un cierre brillante se recuerda mejor que una de 60 minutos con el mismo contenido pero un final mediocre. Un álbum musical que termina con la canción más poderosa construye una memoria más positiva del conjunto. Los directores de teatro clásico intuían esto: la última escena no es una mera conclusión, es la única parte que el público lleva a casa.',
-            'El efecto también explica fenómenos aparentemente irracionales en la experiencia artística: por qué un film con un final sorprendente se recuerda mejor que uno con una narrativa más consistente pero un desenlace predecible; por qué la última nota de un solo de guitarra puede redimir o destruir lo que vino antes. No es capricho estético: es la arquitectura mnemónica del yo recordador aplicada al arte.'
+            'Kahneman desarrolló esto años después con una distinción que se hizo famosa en "Pensar rápido, pensar despacio". Hay un yo que vive el momento, segundo a segundo, y un yo que luego evalúa y decide. El segundo no promedia la experiencia ni cuenta cuánto duró. Se queda con dos datos, el momento de máxima intensidad y cómo terminó. A eso lo llamó regla pico-final, y a la ceguera hacia la duración, negligencia de duración.',
+            'Traducido al arte y al diseño de experiencias, tiene consecuencias incómodas. Un concierto que cierra con la canción más potente se recuerda mejor que otro con un repertorio de media más alta pero un final flojo. Una exposición que acaba en una sala de obras menores deja peor sabor que otra idéntica reordenada para terminar en la pieza fuerte. Quien lo entiende no reparte la calidad de forma pareja, construye un pico y cuida la salida.'
+          ]
+        },
+        {
+          subtitle: 'De la sala de conciertos a la de endoscopias',
+          paragraphs: [
+            'El caso más citado no es artístico. En 2003, Redelmeier, Katz y Kahneman hicieron un ensayo con 682 pacientes de colonoscopia. A la mitad les dejaron el instrumento quieto un par de minutos más al final del procedimiento, sin retirarlo. Molestaba, pero mucho menos que el resto de la exploración. Esos pacientes recordaron la colonoscopia como menos desagradable y volvieron con más frecuencia a la revisión siguiente. Habían pasado más rato incómodos en total y guardaban mejor recuerdo.',
+            'Donde conviene frenar es en dar por hecho que la duración no cuenta nunca. El efecto es fuerte en episodios cortos y contenidos, una mano fría, una prueba médica. No dice que un mal concierto de dos horas se recuerde igual que uno malo de veinte minutos. Y optimizar el recuerdo puede llevarte a elegir experiencias objetivamente peores, como los pacientes que firmaron por más molestia total a cambio de un cierre más amable.',
+            'El recuerdo y la vivencia no siempre están del mismo lado.'
           ]
         }
       ],
-      blockquote: { text: '«Las personas no eligen entre experiencias: eligen entre recuerdos de experiencias. Y el yo recordador ignora la duración de forma casi total.»', attribution: 'Daniel Kahneman' },
-      aplicacion: 'Diseña el final de tus experiencias más importantes (presentaciones, reuniones, citas, proyectos) con la misma atención que dedicas al contenido central. Los últimos tres minutos de cualquier interacción tienen un peso desproporcionado en cómo será recordada. La impresión final no cierra la experiencia: la define.'
+      blockquote: { text: '«La duración desempeña un papel pequeño en la evaluación retrospectiva de las experiencias desagradables; esas evaluaciones suelen estar dominadas por el malestar en el peor momento y en los momentos finales.»', attribution: 'Kahneman, Fredrickson, Schreiber & Redelmeier (1993)' },
+      aplicacion: 'Cuida los últimos minutos de lo que dependa de ti, una presentación, una reunión, una visita. Pesan más en el recuerdo de lo que parece mientras los vives. Si te van a evaluar, pide turno pronto, antes de que quien decide acumule cansancio. Y ten presente que tu memoria de un viaje, un trabajo o una relación se está escribiendo sobre todo por cómo terminó, que no es lo mismo que cómo fue.'
     },
     {
       id: 'art-04',
       title: 'La paradoja de la autenticidad: por qué un Picasso falso e idéntico vale cero',
-      summary: 'Cuando sabemos que algo es una falsificación perfecta, lo valoramos y sentimos de forma radicalmente diferente aunque sea indistinguible del original. El origen importa más que la experiencia.',
-      sourceUrl: 'https://doi.org/10.1017/S0140525X09990409',
-      sourceLabel: 'Bloom (2010), How Pleasure Works · Behavioral and Brain Sciences',
+      summary: 'Ante un original y una copia perfecta que nadie sabría distinguir, seguimos prefiriendo el original. La razón no está en el cuadro.',
+      sourceUrl: 'https://doi.org/10.1037/a0026035',
+      sourceLabel: 'Newman & Bloom (2012), Journal of Experimental Psychology: General',
       badge: 'Psicología del arte y la autenticidad',
       author: { name: 'Paul Bloom', university: 'Yale University / University of Toronto', specialty: 'Psicología cognitiva del placer y la moral' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '5 de mayo de 2026',
-      intro: 'Imagina que tienes delante dos cuadros absolutamente indistinguibles: pigmentos idénticos, técnica idéntica, dimensiones idénticas. Uno es un Picasso original. El otro es una falsificación perfecta realizada por el mejor imitador del mundo. ¿Cuál disfrutas más? La respuesta parece obvia, pero el hecho de que lo sea revela algo profundo y extraño sobre cómo el cerebro procesa el arte, y prácticamente cualquier otra cosa que valore.',
+      intro: 'Dos cuadros delante de ti, imposibles de distinguir. Mismos pigmentos, misma técnica, mismas medidas. Uno lo pintó Picasso. El otro es obra del mejor falsificador vivo, hecho ayer. ¿Cuál prefieres tener? La respuesta sale sola, y el hecho de que salga sola es lo interesante, porque no se apoya en nada que puedas ver.',
       sections: [
         {
-          subtitle: 'El esencialismo psicológico: la historia como parte del objeto',
+          subtitle: 'El falsificador que engañó a los nazis',
           paragraphs: [
-            'Paul Bloom propone que los humanos somos "esencialistas" por defecto: creemos que los objetos contienen algo de la "esencia" de quien los creó, de su historia y de su origen, y que esa esencia invisible pero real forma parte de su valor. No es una creencia consciente ni una posición filosófica: es una inferencia automática que opera antes de que cualquier razonamiento consciente tenga lugar. Por eso el cepillo de dientes de una celebrity se subasta por miles de euros mientras el mismo producto en el supermercado cuesta un euro.',
-            'En experimentos con niños, Bloom y sus colegas demostraron que incluso los preescolares de tres años resisten la idea de que una copia perfecta de su objeto favorito sea idéntica al original. Cuando se les propone hacer una copia exacta de su peluche preferido y destruir el original, los niños rechazan el intercambio aunque la copia sea molecularmente idéntica. La historia del objeto (que fue "el mío") es irreemplazable.'
+            'En 1945, el marchante holandés Han van Meegeren fue detenido por vender un Vermeer a Hermann Göring durante la ocupación. Para librarse de la acusación de colaboracionismo, que se pagaba con la muerte, tuvo que confesar algo peor para su bolsillo: el Vermeer lo había pintado él. Y no solo ese. Varias obras admiradas durante años en museos y colecciones eran suyas.',
+            'Los cuadros no cambiaron de aspecto tras la confesión. Cambió su precio, su lugar en los libros y la emoción con la que se miraban. La misma tela que se contemplaba como un tesoro pasó a ser una curiosidad sobre un estafador. Ese desplome, sin que el objeto se mueva un milímetro, es lo que la psicología intenta explicar.'
           ]
         },
         {
-          subtitle: 'Cómo el origen cambia la experiencia sensorial real',
+          subtitle: 'Dos motivos por los que el original pesa más',
           paragraphs: [
-            'Lo más sorprendente de la investigación de Bloom es que el conocimiento del origen no solo cambia la valoración cognitiva: cambia la experiencia sensorial real. En estudios de neuroimagen, contemplar una obra de arte que el participante cree que es original activa circuitos de recompensa con más intensidad que contemplar la misma obra cuando se le dice que es una copia, aunque visualmente sean indistinguibles. El cerebro no está solo razonando sobre el valor: está procesando la experiencia estética de forma diferente según la historia del objeto.',
-            'Este efecto (que Bloom llama "pensamiento mágico adulto") opera en dominios muy alejados del arte. Explica por qué las réplicas de ropa de lujo no producen la misma satisfacción que los originales aunque nadie pueda distinguirlas. Por qué las casas donde vivieron personajes históricos se valoran más que edificios idénticos. Por qué los autógrafos de músicos fallecidos tienen un valor que los de músicos vivos de igual talento no alcanzan. La autenticidad no es solo una propiedad del objeto: es una propiedad de la relación entre el objeto y su historia.'
+            'George Newman y Paul Bloom pusieron a prueba dos explicaciones en 2012, en cinco experimentos con escenarios donde un objeto original se duplicaba. Cambiaban el tipo de objeto, un cuadro o un mueble, y las circunstancias de la copia.',
+            'El primer motivo lo llamaron desempeño: valoramos el original como el rastro de un acto creativo único e irrepetible. La copia reproduce el resultado, no el momento en que alguien resolvió el problema por primera vez. El segundo lo llamaron contagio: la sensación de que el objeto que tocó el artista guarda algo de él, una especie de esencia que no se transfiere a la réplica por perfecta que sea. Los dos pesaban en los juicios de los participantes.',
+            'La conclusión de fondo es que la diferencia de valor no viene de casos concretos de falsificación ni de un tipo de arte en particular, sino de una teoría intuitiva sobre qué es el arte que la gente aplica sin darse cuenta.'
+          ]
+        },
+        {
+          subtitle: 'Empieza antes de saber leer',
+          paragraphs: [
+            'Esta intuición aparece pronto. Bruce Hood y Paul Bloom montaron para niños de unos cuatro años y medio una máquina que, supuestamente, copiaba objetos átomo a átomo. Cuando la copia era de un juguete cualquiera, los niños la aceptaban sin problema. Cuando era de su objeto de apego, el peluche o la manta con la que dormían, muchos se negaban a cambiarlo por el duplicado idéntico.',
+            'En otra versión, valoraban más una cuchara que decían que había pertenecido a la reina Isabel II que una copia exacta, pero no mostraban esa preferencia con otros objetos valiosos sin historia detrás. No funciona como una postura filosófica razonada, sino como una inferencia automática, y ya está en marcha antes de que nadie te la explique.'
+          ]
+        },
+        {
+          subtitle: 'Hasta dónde llega la evidencia',
+          paragraphs: [
+            'El grueso de estos estudios usa escenarios hipotéticos y preguntas, no salas reales ni dinero de verdad sobre la mesa. Miden lo que la gente dice que valoraría, que no siempre coincide con lo que haría.',
+            'Cuando se ha llevado al escáner, el efecto aparece con matices. En un estudio de Ulrich Kirk, ponerle a un cuadro la etiqueta de "procede de una galería" en lugar de "generado por ordenador" subía tanto la valoración estética como la actividad en la corteza orbitofrontal medial, ligada a la recompensa. En otro, de Mengfei Huang y su equipo con retratos de Rembrandt, la etiqueta de "copia" disparaba zonas del lóbulo frontal asociadas al escrutinio, tanto si el retrato era auténtico como si no.',
+            'Nada de esto prueba que exista una esencia. Prueba que el origen que atribuimos a un objeto cambia cómo lo vemos y cómo lo disfrutamos, y que ese cambio es difícil de apagar a voluntad.'
           ]
         }
       ],
-      blockquote: { text: '«El placer que obtenemos de algo no depende solo de lo que es, sino de lo que creemos que es. El origen invisible de un objeto cambia la experiencia visible que produce.»', attribution: 'Paul Bloom' },
-      aplicacion: 'La próxima vez que evalúes algo (una obra de arte, un producto, una idea, el trabajo de alguien), hazte esta pregunta: "¿Valoraría esto igual si no supiera quién lo hizo?" Si la respuesta es no, parte de tu evaluación está siendo determinada por la historia y el origen, no por las cualidades observables. Puede ser legítimo. Pero merece ser consciente.'
+      blockquote: { text: '«La diferencia de valor entre las obras originales y las copias perfectas procede de las teorías intuitivas que la gente tiene sobre el arte, más que de la asociación con la falsificación o con un tipo concreto de arte.»', attribution: 'Newman & Bloom (2012)' },
+      aplicacion: 'Cuando algo te guste mucho o poco, una obra, un producto, el trabajo de alguien, prueba a separarlo de su procedencia y pregúntate si lo valorarías igual sin saber quién lo hizo. Si la respuesta es no, parte de tu juicio lo está poniendo la historia del objeto, no lo que tienes delante. A veces es legítimo, porque esa historia forma parte de lo que compras. Pero conviene saber qué parte de tu entusiasmo es por la pieza y qué parte es por la firma.'
     },
     {
       id: 'art-05',
@@ -1410,62 +1679,84 @@ const LIBRARY_ARTICLES = {
     {
       id: 'rel-01',
       title: 'El 69% de los conflictos de pareja no tienen solución, y eso está bien',
-      summary: 'Tres décadas de investigación con cientos de parejas revelan que la mayoría de sus conflictos son "perpetuos", enraizados en diferencias de personalidad que nunca desaparecerán.',
-      sourceUrl: 'https://doi.org/10.1207/s15327760jpfr0302_7',
-      sourceLabel: 'Gottman & Levenson (1992), Journal of Personal and Family Relationships',
+      summary: 'Gottman y Levenson siguieron a 79 matrimonios durante cuatro años. Lo que separaba a los que aguantaban no era discutir menos, era cómo discutían lo que no tenía arreglo.',
+      sourceUrl: 'https://doi.org/10.1037/0022-3514.63.2.221',
+      sourceLabel: 'Gottman & Levenson (1992), Journal of Personality and Social Psychology',
       badge: 'Psicología de la pareja',
       author: { name: 'John Gottman', university: 'Universidad de Washington', specialty: 'Psicología de la pareja y predicción del divorcio' },
-      readingTime: '4 min',
+      readingTime: '6 min',
       date: '2 de junio de 2026',
-      intro: 'John Gottman empezó a estudiar parejas en los años 70 con una pregunta aparentemente simple: ¿podemos predecir qué matrimonios durarán? Tras grabar miles de horas de conversación en su "Love Lab" de la Universidad de Washington y hacer seguimiento durante décadas, desarrolló un modelo con una precisión de predicción del divorcio superior al 90%. Lo que encontró en el camino fue más perturbador que la predicción en sí: la mayoría de los problemas de pareja no tienen solución, y las parejas que lo entienden son más felices que las que intentan resolverlos.',
+      intro: 'La mayoría de las discusiones que tendrás con tu pareja no se van a resolver nunca. Ni con paciencia, ni con terapia, ni con los años. John Gottman lleva desde los años setenta grabando a parejas mientras discuten, y una de las cifras que más repite es de las que peor sientan al oírlas: alrededor de dos de cada tres conflictos de una pareja estable son perpetuos. No tienen arreglo. Y las parejas que duran no son las que los solucionan, son las que aprenden a convivir con ellos sin hacerse daño.',
       sections: [
         {
-          subtitle: 'Problemas solucionables vs. problemas perpetuos: la distinción que lo cambia todo',
+          subtitle: 'Setenta y nueve matrimonios y una cámara',
           paragraphs: [
-            'Gottman categoriza los conflictos de pareja en dos tipos. Los problemas solucionables son circunstanciales: quién hace las tareas, cómo gastar las vacaciones, la logística de los hijos. Tienen solución porque son negociables. Los problemas perpetuos son existenciales: diferencias fundamentales en valores, en necesidades de orden o espontaneidad, en la relación con el dinero, en la intensidad emocional que cada persona necesita o puede dar. Estos reflejan quiénes somos, no lo que hacemos.',
-            'El dato que Gottman repite en todas sus obras: el 69% de los conflictos de pareja son perpetuos. Dos personas que comparten una vida compartirán inevitablemente diferencias de carácter que nunca desaparecerán. Las parejas estables no han resuelto esos conflictos: han aprendido a hablar de ellos con humor, afecto y tolerancia. Las parejas que fracasan no tienen más conflictos perpetuos que las estables (la proporción es similar en todos los grupos). La diferencia está en cómo los manejan.'
+            'El estudio que ancla esta idea es de 1992, firmado por Gottman y Robert Levenson. Reclutaron por anuncios en el periódico a setenta y nueve matrimonios de Bloomington, Indiana, y los llevaron al laboratorio. Allí cada pareja hablaba quince minutos sobre un desacuerdo que arrastraban de verdad, mientras unos electrodos les medían el ritmo cardiaco, el sudor y el flujo sanguíneo en los dedos. Cuatro años después, los investigadores volvieron a llamar a las puertas. Setenta y tres de las setenta y nueve parejas siguieron en el estudio.',
+            'Con esos datos dibujaron lo que llamaron un modelo en cascada: la insatisfacción lleva a plantearse una separación, plantearse la separación lleva a plantearse el divorcio, y así hasta el final. Las parejas que ya estaban deslizándose por esa pendiente compartían un estilo concreto durante la conversación grabada. Más crítica, más actitud defensiva, más obstinación y más gente que se cerraba en banda y dejaba de responder. En las mujeres de esas parejas, además, la amplitud del pulso en el dedo era menor, una señal fisiológica de tensión. Lo que marcaba el rumbo no era la cantidad de peleas. Era la forma.'
           ]
         },
         {
-          subtitle: 'Los cuatro jinetes: los predictores reales del divorcio',
+          subtitle: 'Problemas que se arreglan y problemas que solo se gestionan',
           paragraphs: [
-            'Lo que predice el fracaso de una pareja no es la frecuencia de los conflictos sino el estilo de comunicación durante ellos. Gottman identificó cuatro patrones que llama "los cuatro jinetes del apocalipsis relacional": la crítica (atacar el carácter del otro, no el comportamiento), el desprecio (cualquier forma de comunicar superioridad moral), la actitud defensiva (rechazar la responsabilidad convirtiendo toda crítica en un contraataque) y el bloqueo emocional (retirarse de la conversación y dejar de responder).',
-            'De los cuatro, el desprecio es el predictor más potente del divorcio, incluso controlado por todos los demás factores. El desprecio (el sarcasmo, los ojos en blanco, el humor que humilla) comunica algo que el cerebro del receptor registra como una amenaza existencial: que quien le ama le considera inferior. Una pareja puede sobrevivir muchos conflictos intensos si están libres de desprecio. Una pareja con poco conflicto explícito pero con desprecio recurrente tiene pronóstico estadísticamente peor.'
+            'En sus libros posteriores, sobre todo «¿Qué predice el divorcio?» (1994) y «Siete reglas de oro para vivir en pareja» (1999), Gottman separó los conflictos en dos familias. Los solucionables son de circunstancia: a quién le toca fregar, cómo se reparten las vacaciones, la logística de los niños. Se negocian y se cierran. Los perpetuos vienen de más abajo, de diferencias de carácter y de valores. Uno necesita orden y el otro improvisar. Uno quiere hablar del dinero cada semana y el otro no soporta el tema. Uno pide más cercanía de la que el otro puede dar.',
+            'La cifra que se hizo famosa es esta: en torno al 69% de los conflictos de una pareja pertenecen a ese segundo grupo y no van a desaparecer. Y aquí está el hallazgo que de verdad importa. Las parejas felices no tienen menos problemas perpetuos que las infelices, tienen más o menos los mismos. Lo que cambia es que hablan de ellos con humor, con cariño y sin dramatismo, en lugar de quedarse atascadas en el mismo punto muerto una y otra vez.'
+          ]
+        },
+        {
+          subtitle: 'Los cuatro jinetes',
+          paragraphs: [
+            'Del trabajo de Gottman salió una etiqueta que se ha quedado en el lenguaje de la terapia de pareja: los cuatro jinetes. Son cuatro maneras de comunicarse en una discusión que, cuando se vuelven costumbre, anuncian problemas. La crítica, que ataca el carácter de la otra persona en vez de un comportamiento concreto. La actitud defensiva, que devuelve cada reproche con un contraataque. El bloqueo, que consiste en apagarse y dejar de responder. Y el desprecio.',
+            'El desprecio es el más corrosivo de los cuatro. Es el sarcasmo, los ojos en blanco, el chiste que humilla, el tono de superioridad moral. Comunica algo que la otra persona registra casi como una amenaza: quien se supone que te quiere te considera inferior. Una pareja puede pasar por discusiones muy fuertes y salir entera si no hay desprecio. Una pareja tranquila por fuera pero con desprecio de fondo lo tiene peor.'
+          ]
+        },
+        {
+          subtitle: 'El 90% que conviene coger con pinzas',
+          paragraphs: [
+            'Seguro que has oído que Gottman predice el divorcio con más de un 90% de acierto. Esa cifra no sale del estudio de 1992, sino de trabajos posteriores, el más citado con solo sesenta parejas. Y ahí es donde la historia se complica.',
+            'En 2001, Richard Heyman y Amy Slep publicaron en el Journal of Marriage and Family un artículo con un título que ya lo dice todo: «Los peligros de predecir el divorcio sin validación cruzada». Su argumento es estadístico y difícil de rebatir. Si construyes una ecuación a medida de un grupo de parejas concreto, acertará casi siempre con ese mismo grupo, porque está hecha para encajar en sus casualidades. La prueba de fuego es aplicarla a parejas distintas. Cuando Heyman y Slep hicieron eso con datos de archivo, la capacidad de detectar a las parejas que iban a divorciarse se hundió, y cuando el modelo señalaba a una pareja como futura divorciada, acertaba mucho menos de lo anunciado.',
+            'Lo que aguanta bien de todo el trabajo de Gottman es la parte descriptiva. El desprecio desgasta. El estilo de la discusión dice más que su frecuencia. Los conflictos de carácter no se cierran, se administran. La bola de cristal con porcentaje exacto es lo que no hay que comprar.'
           ]
         }
       ],
-      blockquote: { text: '«El objetivo del matrimonio no es eliminar el conflicto, sino construir un sistema de comunicación lo suficientemente robusto como para manejar el conflicto que inevitablemente existirá.»', attribution: 'John Gottman' },
-      aplicacion: 'La próxima vez que estés en una discusión repetida con tu pareja, párate y hazte esta pregunta: ¿es esto un problema que podemos resolver, o es una diferencia de carácter que necesitamos gestionar? Si es lo segundo, el objetivo de la conversación no es ganar ni convencer, sino entender mejor la posición del otro y llegar a un acuerdo de convivencia, aunque el problema de fondo permanezca.'
+      blockquote: { text: '«Comparadas con las parejas reguladas, las no reguladas mostraban más crítica, más actitud defensiva, más obstinación y más retirada de la interacción.»', attribution: 'Gottman & Levenson (1992)' },
+      aplicacion: 'En la próxima discusión que ya hayáis tenido veinte veces, pregúntate antes de entrar: ¿esto se puede resolver o es una diferencia de carácter que vamos a llevar siempre encima? Si es lo segundo, no vas a ganar, y proponértelo solo alarga la pelea. El objetivo pasa a ser un acuerdo de convivencia que los dos podáis sostener. Y la parte que sí está en tu mano hoy: pillarte a ti el sarcasmo y los ojos en blanco antes de soltarlos.'
     },
     {
       id: 'rel-02',
       title: 'El experimento del puente colgante: cuando confundimos el miedo con la atracción',
-      summary: 'Cruzar un puente de altura genera la misma activación fisiológica que la atracción romántica, y el cerebro atribuye ese estado de excitación al estímulo más saliente: una persona atractiva cercana.',
+      summary: 'En Vancouver, los hombres que cruzaban un puente que daba vértigo llamaban después a la entrevistadora cuatro veces más que los que cruzaban uno seguro. El estudio es famoso, y también bastante discutido.',
       sourceUrl: 'https://doi.org/10.1037/h0037031',
       sourceLabel: 'Dutton & Aron (1974), Journal of Personality and Social Psychology',
       badge: 'Atracción interpersonal',
       author: { name: 'Donald Dutton', university: 'Universidad de British Columbia', specialty: 'Psicología social y atracción interpersonal' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '26 de mayo de 2026',
-      intro: 'Vancouver, 1974. Un puente colgante de 70 metros de altura sobre el río Capilano oscila suavemente. Un segundo puente, sólido y a solo tres metros del suelo, cruza el mismo río 100 metros más abajo. Dutton y Aron colocan una investigadora atractiva en el centro de cada puente, que entrega cuestionarios a los hombres que lo cruzan solos y les da su número de teléfono "por si tienen preguntas". La llamada a esa investigadora iba a medir algo que ella no necesitaba saber: qué tan efectivo había sido el puente colgante como afrodisíaco involuntario.',
+      intro: 'El puente colgante del cañón Capilano, en Vancouver, cuelga a setenta metros sobre el río, se mueve con el viento y tiembla a cada paso. Cien metros más abajo hay otro puente, ancho, firme, a poca altura del suelo. En 1974, Donald Dutton y Arthur Aron pusieron a la misma mujer joven en el centro de los dos. Paraba a los hombres que cruzaban solos, les pedía que rellenaran un cuestionario y les daba su teléfono por si querían saber los resultados. Lo que medían de verdad era quién llamaba luego.',
       sections: [
         {
-          subtitle: 'El experimento: miedo que se convierte en deseo',
+          subtitle: 'Nueve de dieciocho frente a dos de dieciséis',
           paragraphs: [
-            'De los hombres que cruzaron el puente colgante y hablaron con la investigadora, el 50% la llamó posteriormente. De los que cruzaron el puente sólido con la misma investigadora, solo lo hizo el 12,5%. Los cuestionarios que completaron mientras estaban en el puente contenían una tarea de escritura proyectiva: quienes estaban en el puente colgante producían textos con significativamente más contenido sexual y romántico. La atracción no era una impresión subjetiva: se medía en conductas concretas y en producción narrativa.',
-            'Dutton y Aron diseñaron variaciones de control para descartar explicaciones alternativas. Cuando la persona en el puente era un hombre, no se producía el efecto. Cuando la investigadora esperaba a los participantes al final del puente (después de que la excitación fisiológica del cruce hubiera disminuido) el efecto también desaparecía. La excitación tenía que ser contemporánea al encuentro para producir la malinterpretación. El timing era tan importante como la persona.'
+            'De los hombres a los que abordó en el puente que se balancea, nueve de dieciocho la llamaron después. En el puente firme, con la misma mujer y el mismo guion, solo llamaron dos de dieciséis. Uno de los apartados del cuestionario pedía inventar una breve historia a partir de un dibujo. Las historias de los hombres del puente alto tenían más contenido sexual y romántico que las de los del puente bajo. No era una impresión que ellos reportaran, era algo que se veía en lo que escribían y en si descolgaban el teléfono.',
+            'Dutton y Aron montaron controles para cerrar puertas. Cuando quien esperaba en el puente era un hombre, la diferencia se esfumaba: dos de veintitrés llamaron desde el puente alto, uno de veintidós desde el bajo. En un tercer experimento, ya en el laboratorio, dijeron a unos estudiantes que iban a recibir una descarga eléctrica dolorosa y a otros que sería apenas un cosquilleo. Los que esperaban la descarga fuerte puntuaron como más atractiva a una compañera que en realidad era parte del montaje. La activación venía de otro sitio, pero acababa sobre ella.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la atribución errónea de la excitación',
+          subtitle: 'Cómo se cuela el miedo en el deseo',
           paragraphs: [
-            'El fenómeno se denomina "misattribution of arousal" (atribución errónea de la excitación). El cerebro detecta un estado de activación fisiológica (pulso elevado, adrenalina, alerta) y necesita explicarlo. En ausencia de una etiqueta clara ("estoy nervioso porque el puente oscila"), atribuye ese estado al estímulo más saliente del entorno: una persona atractiva. La excitación no crea la atracción; la amplifica y puede generarla donde sin ese contexto no existiría.',
-            'El efecto funciona en múltiples sentidos. Puede hacer que personas se sientan más atraídas entre sí en contextos de alta excitación (una primera cita en una montaña rusa, un partido de fútbol, una situación de riesgo compartido). Pero también puede producir lo inverso: la excitación de una discusión intensa puede ser malinterpretada como pasión, creando ciclos de conflicto que se perpetúan porque el conflicto mismo genera la intensidad que la pareja confunde con vitalidad relacional.'
+            'La explicación que propusieron se llama atribución errónea de la activación. El cuerpo entra en estado de alerta, con el pulso alto y adrenalina en circulación, y la mente necesita ponerle una etiqueta. Si no hay una a mano que lo explique bien ("estoy así porque el puente se mueve"), coge la más disponible del entorno. Y si en el entorno hay una persona atractiva, esa activación se lee como atracción. El estado corporal no crea el interés de la nada, pero lo infla y puede encenderlo donde en frío no habría pasado nada.',
+            'El mecanismo va en las dos direcciones. Explica por qué una primera cita en una situación que pone el cuerpo en marcha, una atracción de feria, una peli de miedo, una caminata dura, deja mejor recuerdo que una cena tranquila. Y explica también un patrón menos agradable: la tensión de una discusión fuerte se puede confundir con pasión, y algunas parejas se quedan enganchadas al conflicto porque es lo único que les sube el pulso.'
+          ]
+        },
+        {
+          subtitle: 'Lo que no ha aguantado igual de bien',
+          paragraphs: [
+            'El estudio del puente lleva cincuenta años en los manuales, y también cincuenta años recibiendo objeciones. La primera es de sentido común: los dos puentes no atraen al mismo tipo de persona. Quien cruza solo una pasarela que da pánico, muchas veces de turismo y de buen humor, no es una muestra comparable a quien pasea por un puente seguro. Los propios autores lo vieron venir y por eso añadieron los controles, pero el diseño de campo nunca se quita del todo esa sombra.',
+            'La segunda es que en el laboratorio, con condiciones más limpias, el efecto aparece más pequeño y no siempre. Hay quien propone una lectura alternativa: no es que confundas el miedo con el deseo, es el alivio de dejar atrás algo desagradable justo al lado de alguien atractivo lo que suma puntos. La idea general de que una activación puede desbordarse de una emoción a otra sí tiene apoyo sólido en estudios controlados. La versión romántica de titular, "el peligro compartido enamora", es más frágil y depende mucho del contexto.'
           ]
         }
       ],
-      blockquote: { text: '«El cuerpo no distingue bien entre el miedo y el deseo. Ambos activan el mismo sistema, y la mente busca la causa en el contexto.»', attribution: 'Donald Dutton & Arthur Aron' },
-      aplicacion: 'Las primeras citas en entornos con cierta excitación fisiológica (un espectáculo de teatro, una película de suspense, una actividad física) generan más atracción percibida que las cenas convencionales. No es manipulación: es que las condiciones del entorno facilitan la atribución de la excitación a la persona. Pero también merece preguntarse: ¿cuánta de la intensidad que sentimos en ciertas relaciones viene de la persona y cuánta del contexto?'
+      blockquote: { text: '«Se obtuvo cierta evidencia de una mayor atracción sexual bajo condiciones de ansiedad elevada.»', attribution: 'Dutton & Aron (1974)' },
+      aplicacion: 'Como truco para ligar, el efecto es modesto y poco fiable, así que no cuentes con la montaña rusa. Donde sí sirve saberlo es al revés: cuando notes una intensidad muy fuerte con alguien en pleno viaje, crisis o reconciliación después de una bronca, deja pasar unos días y vuelve a mirarlo en calma. Parte de lo que sentías podía ser del momento, no de la persona.'
     },
     {
       id: 'rel-03',
@@ -1475,26 +1766,33 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Sternberg (1986), Psychological Review',
       badge: 'Psicología del amor',
       author: { name: 'Robert Sternberg', university: 'Universidad de Yale / Universidad de Cornell', specialty: 'Psicología de la inteligencia, la creatividad y el amor' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '19 de mayo de 2026',
-      intro: 'La mayoría de los idiomas tienen una sola palabra para el amor. El griego clásico tenía seis. Robert Sternberg propuso en 1986 que esa insuficiencia lingüística tiene consecuencias psicológicas reales: confundimos bajo la misma etiqueta estados emocionales completamente distintos, con dinámicas distintas y predicciones distintas. Su teoría triangular del amor es el marco más citado en psicología de las relaciones, y ofrece una herramienta para diagnosticar con más precisión qué está ocurriendo en una relación, y qué se puede esperar.',
+      intro: 'El castellano tiene una palabra para el amor. El griego clásico tenía varias, una para el deseo, otra para el cariño entre iguales, otra para el compromiso sereno. Robert Sternberg publicó en 1986 un artículo que retoma esa idea con herramientas de psicología: bajo la misma etiqueta metemos estados que funcionan distinto, cambian a ritmos distintos y llevan a sitios distintos. Su teoría triangular del amor sigue siendo, casi cuarenta años después, el mapa más citado del tema.',
       sections: [
         {
-          subtitle: 'Los tres vértices: pasión, intimidad y compromiso',
+          subtitle: 'Tres vértices: pasión, intimidad y compromiso',
           paragraphs: [
-            'Sternberg propone que el amor completo (lo que llama "amor consumado") requiere la presencia simultánea de tres componentes. La pasión es el componente motivacional: deseo físico, atracción, excitación. Se activa rápido, se habita rápido. La intimidad es el componente emocional: cercanía, conexión, la sensación de ser conocido por alguien. Crece lentamente y de forma más estable. El compromiso es el componente cognitivo: la decisión de amar y mantener esa relación. Puede existir sin ninguno de los otros dos.',
-            'Diferentes combinaciones de estos tres componentes producen tipos de amor cualitativamente distintos. La pasión sin intimidad ni compromiso es "encaprichamiento". La intimidad sin pasión ni compromiso es "amor fraternal" o de amistad profunda. El compromiso sin pasión ni intimidad es "amor vacío", el que queda en algunos matrimonios largos donde ya no queda conexión pero sí costumbre. La combinación de intimidad y compromiso sin pasión es lo que Sternberg llama "amor compañero" (estable, cálido, frecuente en relaciones maduras).'
+            'Sternberg propone que lo que llamamos amor se apoya en tres piezas. La pasión es el empuje: deseo, atracción física, esa sensación de urgencia. Se enciende deprisa y se acostumbra uno a ella deprisa. La intimidad es la cercanía: sentirse conocido por alguien, poder bajar la guardia, la confianza que se construye contando cosas. Sube despacio y aguanta mejor. El compromiso es la decisión: elegir a esta persona y sostener esa elección cuando la pasión no tira y la intimidad pasa por un mal momento.',
+            'Según cómo se combinen las tres, sale un tipo de amor u otro. Solo pasión es el enamoramiento de las primeras semanas, intenso y sin raíces. Solo intimidad, sin deseo ni compromiso, se parece a una amistad muy honda. Solo compromiso es el matrimonio vaciado que sigue por costumbre. Intimidad y compromiso sin pasión es lo que Sternberg llama amor de compañía, y es más común de lo que la cultura reconoce: parejas mayores que se quieren de una manera tranquila y firme. Las tres a la vez serían el pleno, y él mismo admite que dura poco en su forma más alta.'
           ]
         },
         {
-          subtitle: 'Por qué el tiempo cambia el triángulo y cómo interpretarlo',
+          subtitle: 'Por qué el triángulo cambia de forma con los años',
           paragraphs: [
-            'La evolución temporal de los tres componentes no es paralela ni simétrica. La pasión tiene la curva más pronunciada: máxima en los primeros meses o años, decae con la familiaridad y la habitación. Los estudios neurobiológicos de Fisher, Aron y Brown muestran que el sistema dopaminérgico asociado a la pasión romántica se normaliza con el tiempo para la mayoría de las personas. La intimidad, en cambio, crece de forma más gradual y sostenida si la pareja invierte en revelación mutua y experiencias compartidas. El compromiso es relativamente estable y voluntario.',
-            'El error de diagnóstico más común en las relaciones largas es interpretar la disminución de la pasión como evidencia de que "el amor se acabó". Desde la perspectiva de Sternberg, lo que ha cambiado es un componente específico, cuya disminución es estadísticamente normal y neurobiológicamente esperable. Si los otros dos componentes (intimidad y compromiso) han crecido o se han mantenido, la relación puede estar evolucionando correctamente, no deteriorándose. El problema es que la cultura romántica occidental ha sobrerrepresentado la pasión como el marcador del amor verdadero, invisibilizando los otros dos.'
+            'Las tres piezas no evolucionan a la vez. La pasión dibuja la curva más marcada: alta al principio, cede con la familiaridad. Los estudios de Helen Fisher y Arthur Aron con resonancia magnética muestran que el circuito de dopamina asociado al enamoramiento se va calmando con el tiempo en la mayoría de la gente. La intimidad hace lo contrario si la pareja la alimenta, crece de forma lenta y sostenida. El compromiso es el más estable, porque no es un sentimiento que llega, es algo que se decide.',
+            'De ahí sale el error de lectura más frecuente en las relaciones largas: notar que la pasión ha bajado y concluir que el amor se ha terminado. En el marco de Sternberg, lo que ha bajado es un componente concreto, y esa bajada es lo esperable, no una avería. Si la intimidad y el compromiso han crecido, la relación puede estar en un momento sano aunque distinto al del principio. El problema es cultural: nos han vendido la pasión como el único termómetro del amor verdadero, y con ese termómetro casi todas las relaciones estables parecen enfermas.'
+          ]
+        },
+        {
+          subtitle: 'Un mapa elegante, más difícil de medir',
+          paragraphs: [
+            'La teoría triangular es eso, una teoría, un marco para ordenar la experiencia. No nació de un experimento, y cuando se intentó convertir en cuestionario aparecieron grietas. Las tres escalas que miden pasión, intimidad y compromiso se solapan mucho: quien puntúa alto en una tiende a puntuar alto en las otras, así que separarlas con limpieza es más fácil en el papel que en los datos. La lista de "tipos de amor" funciona bien como vocabulario para hablar de lo que a uno le pasa, no como una clasificación cerrada donde cada relación cae en una casilla.',
+            'También conviene recordar de dónde sale. El modelo se construyó con parejas occidentales y con una idea concreta de lo que es una relación de pareja. En culturas donde el matrimonio se pacta entre familias, el orden de los componentes cambia, y el compromiso puede ir por delante de la intimidad y de la pasión en lugar de al revés.'
           ]
         }
       ],
-      blockquote: { text: '«Las relaciones que solo tienen pasión son intensas pero frágiles. Las que tienen los tres componentes son raras pero extraordinariamente resilientes.»', attribution: 'Robert Sternberg' },
+      blockquote: { text: '«La cantidad de amor que se siente depende de la fuerza absoluta de los tres componentes; el tipo de amor depende de su fuerza relativa.»', attribution: 'Sternberg (1986)' },
       aplicacion: 'Evalúa tu relación actual (o la que quieras entender) a través de los tres vértices por separado: ¿Hay pasión? ¿Hay intimidad (sensación de ser conocido y de conocer)? ¿Hay compromiso? Diagnosticar qué componente está bajo te da una dirección mucho más útil que el diagnóstico global de "esto no funciona". Y te protege de confundir el ciclo normal del primer componente con el colapso del conjunto.'
     },
     {
@@ -1505,15 +1803,34 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Hazan & Shaver (1987), Journal of Personality and Social Psychology',
       badge: 'Psicología del apego',
       author: { name: 'Cindy Hazan', university: 'Universidad de Cornell', specialty: 'Apego adulto y relaciones románticas' },
-      readingTime: '4 min',
+      readingTime: '6 min',
       date: '2 de junio de 2026',
-      intro: 'En 1987, Cindy Hazan y Phillip Shaver publicaron un estudio que cambió la psicología de las relaciones adultas: la forma en que los adultos se relacionan románticamente replica, con asombrosa fidelidad, los patrones de apego que desarrollaron con sus cuidadores en la infancia. No como determinismo inescapable, sino como una arquitectura por defecto que opera a menos que haya razones para reconstruirla.',
+      intro: 'En 1987, Cindy Hazan y Phillip Shaver metieron un cuestionario sobre el amor en las páginas de un periódico de Denver. La idea que querían probar sonaba a atajo demasiado fácil: que la manera en que un adulto se acerca, discute y se separa de su pareja repite el vínculo que formó de niño con quien lo cuidaba. No como una condena, sino como el ajuste que viene de fábrica y que solo cambia si algo lo obliga.',
       sections: [
-        { subtitle: 'El estudio: un cuestionario en el periódico que replicó la teoría de Bowlby', paragraphs: ['Hazan y Shaver diseñaron tres párrafos que describían tres estilos relacionales (seguro, ansioso y evitativo) y los publicaron en el periódico local de Denver pidiéndole a los lectores que eligieran cuál les describía mejor. Recogieron más de 600 respuestas y las cruzaron con medidas de historia de apego infantil, calidad de las relaciones románticas actuales y modelos mentales sobre el amor. Los resultados fueron inequívocos: los tres estilos de apego infantil de Ainsworth encontraban su correlato exacto en las relaciones adultas.', 'Las personas con apego seguro (56% de la muestra) describían sus relaciones como de fácil cercanía, confianza mutua y comodidad con la dependencia recíproca. Las personas con apego ansioso-ambivalente (20%) reportaban relaciones intensas pero inestables, con miedo constante al abandono y necesidad de reafirmación continua. Las personas con apego evitativo (24%) evitaban activamente la cercanía, se sentían incómodas con la dependencia y tendían a desconectarse emocionalmente bajo estrés relacional.'] },
-        { subtitle: 'El mecanismo: los modelos internos de trabajo', paragraphs: ['Bowlby propuso que los patrones de respuesta del cuidador crean en el niño "modelos internos de trabajo": representaciones mentales de uno mismo (¿soy alguien digno de ser amado?), del otro (¿son los demás fiables cuando los necesito?) y de la relación (¿es la cercanía segura o peligrosa?). Estas representaciones no son creencias conscientes: son esquemas automáticos que filtran la percepción, organizan la respuesta emocional y guían el comportamiento relacional antes de que ningún razonamiento consciente tenga oportunidad de intervenir.', 'La investigación de Mary Main con el Adult Attachment Interview demostró que los modelos internos de trabajo son sorprendentemente estables a lo largo de la vida, pero no inmutables. Las relaciones con una pareja segura, la psicoterapia orientada al apego y ciertos tipos de experiencias correctoras pueden reorganizar parcialmente esos modelos. La transmisión intergeneracional del apego (el estilo de apego de una madre predice con 75% de precisión el tipo de apego que desarrollará su hijo) no es genética ni inevitable: es aprendizaje que puede interrumpirse con conciencia y apoyo.'] }
+        {
+          subtitle: 'Un test del amor en la sección de local',
+          paragraphs: [
+            'Hazan y Shaver redactaron tres párrafos. Cada uno describía una forma de vivir las relaciones. El primero hablaba de acercarse a los demás sin agobio y confiar en que estarán ahí. El segundo, de querer una cercanía que la otra persona nunca parece dar del todo, con miedo constante a que se vaya. El tercero, de sentirse incómodo con la intimidad y preferir no depender de nadie. El Rocky Mountain News lo publicó y pidió a los lectores que dijeran cuál los describía y respondieran unas preguntas sobre su relación más importante y sobre cómo recordaban a sus padres.',
+            'Analizaron unas seiscientas veinte respuestas. El 56% se reconoció en el primer párrafo, el seguro. El 25% eligió el tercero, el evitativo. El 19% se vio en el segundo, el ansioso. Es casi el mismo reparto que Mary Ainsworth había encontrado años antes observando a bebés de un año con sus madres en el laboratorio. Y los tres grupos contaban su vida amorosa de forma coherente con la etiqueta: los seguros, relaciones más largas y con más confianza; los ansiosos, historias intensas y a la vez inestables, con celos y altibajos; los evitativos, más miedo a la cercanía y más facilidad para desengancharse cuando la cosa se pone seria. Un segundo estudio con un centenar de universitarios repitió el patrón.'
+          ]
+        },
+        {
+          subtitle: 'Modelos que se montan antes de saber hablar',
+          paragraphs: [
+            'La teoría de fondo es de John Bowlby. Según cómo responde el adulto que cuida a un niño cuando este llora, tiene miedo o busca contacto, el niño se va formando lo que Bowlby llamó modelos internos: una idea de sí mismo (¿merezco que me quieran?), una idea de los demás (¿acuden cuando los necesito?) y una idea de la cercanía (¿es un sitio seguro o es un riesgo?). No son opiniones que uno pueda repasar y corregir. Funcionan por debajo, filtrando lo que se percibe y disparando la reacción antes de que el razonamiento llegue.',
+            'Ese aprendizaje tiende a pasar de una generación a la siguiente. El metaanálisis de Marinus van IJzendoorn en 1995 encontró una correspondencia alta entre cómo habla una madre de su propia infancia en una entrevista y el tipo de apego que muestra su bebé. No es genética. Es transmisión de un estilo de trato, y por eso se puede interrumpir. Una pareja segura, una terapia centrada en el apego o simplemente años de una relación distinta reorganizan en parte esos modelos.'
+          ]
+        },
+        {
+          subtitle: 'Tres cajones para algo que no viene en cajones',
+          paragraphs: [
+            'El cuestionario de los tres párrafos fue un buen punto de partida y una herramienta tosca. Obliga a elegir una de tres descripciones cuando casi nadie encaja limpio en una sola. La investigación posterior, sobre todo la de Kim Bartholomew y la de Kelly Brennan, dejó de hablar de tipos y pasó a medir dos variables continuas: cuánta ansiedad te genera el abandono y cuánto evitas la intimidad. Cada persona es un punto en ese plano, no una casilla.',
+            'Hay más asteriscos. Lo que uno recuerda de su infancia a los treinta años es un relato reconstruido, y su relación con lo que de verdad pasó es floja. La estabilidad tampoco es de por vida: alrededor de siete de cada diez personas mantienen su categoría a lo largo de los años, pero el resto cambia, muchas veces después de una relación importante o de una pérdida. Y el estilo no es un único ajuste que llevas a todas partes, cambia algo según con quién estés. En la divulgación de los últimos años, "estilo de apego" se ha estirado para explicarlo todo, y eso es más de lo que el concepto aguanta.'
+          ]
+        }
       ],
-      blockquote: { text: '«El amor romántico adulto es, en sus estructuras más profundas, el mismo sistema de apego que organizó la relación del bebé con su cuidador. Hemos crecido, pero el sistema no ha cambiado.»', attribution: 'Cindy Hazan & Phillip Shaver, 1987' },
-      aplicacion: 'Identificar tu estilo de apego predominante no es un ejercicio de categorización rígida: es un mapa de los patrones que aparecen automáticamente bajo estrés relacional. Si tiendes al evitativo, observa los momentos en que te retiras emocionalmente justo cuando la cercanía aumenta. Si tiendes al ansioso, observa los momentos en que la necesidad de reafirmación intensifica el conflicto. El reconocimiento del patrón es el primer paso para elegir una respuesta distinta.'
+      blockquote: { text: '«El amor romántico se conceptualiza aquí como un proceso de apego, el mismo proceso biosocial que forma el vínculo entre el niño y quien lo cuida.»', attribution: 'Hazan & Shaver (1987)' },
+      aplicacion: 'Saber hacia qué lado tiras sirve como aviso, no como diagnóstico. Si tiendes a evitar, fíjate en el momento exacto en que te entran ganas de poner distancia, que suele ser justo cuando la relación se vuelve más íntima. Si tiendes a la ansiedad, fíjate en cuándo la necesidad de que te tranquilicen convierte una conversación normal en una pelea. Ver el patrón mientras ocurre es lo que abre la puerta a responder de otra manera. La etiqueta en sí no arregla nada.'
     },
     {
       id: 'rel-05',
@@ -1523,15 +1840,34 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Holt-Lunstad, Smith & Layton (2010), PLOS Medicine',
       badge: 'Psicología de la salud',
       author: { name: 'Julianne Holt-Lunstad', university: 'Brigham Young University', specialty: 'Relaciones sociales, salud cardiovascular y longevidad' },
-      readingTime: '4 min',
+      readingTime: '6 min',
       date: '2 de junio de 2026',
-      intro: 'En 2010, Julianne Holt-Lunstad y sus colegas publicaron un metaanálisis que analizaba los datos de 148 estudios longitudinales, con más de 300.000 participantes seguidos durante una media de 7,5 años. La pregunta era directa: ¿cuánto importan las relaciones sociales para la supervivencia? La respuesta fue incómoda para una cultura que trata la soledad como un estado emocional privado y no como un problema de salud pública.',
+      intro: 'Tratamos la soledad como un asunto privado, algo que se lleva por dentro y se resuelve con voluntad. En 2010, Julianne Holt-Lunstad y su equipo juntaron 148 estudios de seguimiento, con 308.849 personas observadas durante una media de siete años y medio, y pusieron un número encima: quien tiene lazos sociales sólidos vive más, y la diferencia es del mismo orden que la de dejar de fumar. La comparación se hizo famosa por incómoda.',
       sections: [
-        { subtitle: 'El metaanálisis: 148 estudios y una conclusión perturbadora', paragraphs: ['Holt-Lunstad y su equipo encontraron que las personas con relaciones sociales adecuadas tenían un 50% más de probabilidades de sobrevivir en el período de seguimiento que las personas con relaciones sociales inadecuadas. La magnitud del efecto era comparable (y en algunos análisis superior) a los factores de riesgo más establecidos en salud pública. Tener pocas conexiones sociales era tan predictivo de mortalidad prematura como fumar hasta 15 cigarrillos al día, y más predictivo que la obesidad, el sedentarismo o el consumo excesivo de alcohol.', 'El estudio distinguía entre aislamiento objetivo (pocos contactos sociales), soledad subjetiva (sentirse solo independientemente del número de contactos) y vivir solo. Las tres variables predicaban mortalidad de forma independiente, pero la soledad subjetiva (el sentimiento de estar desconectado) era el predictor más potente. Esto implica que el problema no es cuántas personas tienes en tu vida, sino si las conexiones que tienes te hacen sentir comprendido y perteneciente.'] },
-        { subtitle: 'El mecanismo: cómo la soledad destruye el cuerpo', paragraphs: ['John Cacioppo, el investigador que más profundamente estudió la neurobiología de la soledad, documentó que el aislamiento social activa el sistema de vigilancia de amenazas del cerebro de forma crónica. Las personas solitarias muestran niveles más altos de cortisol basal, mayor respuesta inflamatoria, peor calidad del sueño, activación aumentada del sistema nervioso simpático y expresión génica alterada en células del sistema inmune. La soledad, en el sentido evolutivo, era una señal de peligro: un humano separado del grupo era un humano vulnerable.', 'El circuito es autorreferente y difícil de interrumpir. La hipervigilancia que genera la soledad produce sesgos atencionales hacia las amenazas sociales, lo que genera conductas de retirada que aumentan el aislamiento, que profundiza la hipervigilancia. Cacioppo llamó a esto el "ciclo de la soledad", y documentó que la soledad predice soledad futura con más fuerza que cualquier otra variable. La intervención más eficaz no es aumentar el número de contactos sino modificar los sesgos cognitivos que hacen percibir las interacciones sociales como más amenazantes de lo que son.'] }
+        {
+          subtitle: 'Ciento cuarenta y ocho estudios apuntando al mismo sitio',
+          paragraphs: [
+            'El resultado central del metaanálisis: las personas con relaciones sociales fuertes tenían un 50% más de probabilidad de seguir vivas al final del periodo de seguimiento que las que estaban peor conectadas. Puesto en la escala de la salud pública, ese efecto se sitúa a la altura de los factores de riesgo clásicos. Holt-Lunstad lo resumió con una imagen que se ha repetido mil veces: estar poco conectado socialmente pesa sobre la mortalidad más o menos como fumar quince cigarrillos al día, y más que la obesidad o el sedentarismo.',
+            'El trabajo separaba tres cosas que solemos mezclar. El aislamiento medible, es decir, tener pocos contactos. Vivir solo. Y la soledad sentida, que es notarse desconectado aunque haya gente alrededor. Las tres predecían mortalidad por su cuenta. La lectura que se ha impuesto después es que el número de personas en tu agenda importa menos que si alguna de esas relaciones te hace sentir entendido y parte de algo.'
+          ]
+        },
+        {
+          subtitle: 'Qué le hace la soledad al cuerpo',
+          paragraphs: [
+            'John Cacioppo dedicó su carrera a la biología de la soledad. Documentó que el aislamiento mantiene encendido el sistema de vigilancia del cerebro, el que busca amenazas. Las personas que se sienten solas de forma crónica presentan más cortisol de base, más inflamación, peor sueño y cambios en la actividad de los genes de las células inmunitarias. En términos evolutivos tiene lógica cruda: un humano suelto, lejos del grupo, era un humano en peligro, y el organismo se prepara para ello.',
+            'Lo peor es que el circuito se alimenta solo. La vigilancia hace que uno interprete las interacciones sociales como más hostiles de lo que son, eso empuja a retirarse, y la retirada aumenta el aislamiento, que sube todavía más la vigilancia. Cacioppo llamó a esto el bucle de la soledad. Por eso sostenía que la intervención más útil no es empujar a la persona a ver más gente, sino trabajar la manera en que lee esos encuentros.'
+          ]
+        },
+        {
+          subtitle: 'Por qué la cifra hay que leerla con cuidado',
+          paragraphs: [
+            'Estos 148 estudios son observacionales, y ahí siempre acecha la causa invertida. Quien ya está enfermo o frágil se relaciona menos, así que parte del vínculo entre soledad y muerte podría ir en la otra dirección: es la mala salud la que aísla. El metaanálisis intentó cubrirse ajustando por el estado de salud inicial, y el efecto seguía ahí, pero con datos de este tipo la puerta no se cierra del todo.',
+            'La comparación con los quince cigarrillos es un recurso de divulgación, no una equivalencia de laboratorio. Y el tamaño del efecto baila mucho según cómo se mida la vida social: los índices que combinan varias señales de integración social dan efectos grandes, mientras que preguntar solo "¿vive usted solo?" da bastante menos. Añade a esto que los programas para reducir la soledad han obtenido hasta ahora resultados modestos y desiguales. Saber que la soledad mata no ha venido acompañado de una palanca fácil para quitarla.'
+          ]
+        }
       ],
-      blockquote: { text: '«La soledad no es un problema de introversión ni de preferencia personal. Es una señal de alarma biológica con consecuencias físicas tan reales como el hambre o el dolor.»', attribution: 'John T. Cacioppo' },
-      aplicacion: 'La calidad de las conexiones importa más que la cantidad. Una conversación real (donde te sientes visto y escuchado) tiene efectos fisiológicos distintos a una interacción social superficial. Identifica una relación en tu vida donde la conexión es genuina pero has dejado que se espacie por inercia, y activa una forma concreta de retomar ese contacto esta semana.'
+      blockquote: { text: '«La influencia de las relaciones sociales sobre el riesgo de mortalidad es comparable a la de factores de riesgo bien establecidos.»', attribution: 'Holt-Lunstad, Smith & Layton (2010)' },
+      aplicacion: 'Vale más una conversación en la que te sientes escuchado que diez saludos de compromiso. Piensa en una relación tuya donde la conexión es real pero se ha ido espaciando sin que nadie lo decidiera, por pura inercia de agenda, y haz algo concreto esta semana para retomarla: una llamada larga, un plan con fecha. No un mensaje de "a ver si nos vemos".'
     },
     {
       id: 'rel-06',
@@ -1541,27 +1877,35 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Williams & Bargh (2008), Science',
       badge: 'Cognición encarnada',
       author: { name: 'Lawrence Williams', university: 'Universidad de Colorado Boulder', specialty: 'Psicología Social y Cognición Encarnada' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '17 de junio de 2026',
-      intro: 'En 2008, Lawrence Williams y John Bargh de la Universidad de Yale publicaron en Science un experimento que cuestionaba un supuesto básico sobre cómo juzgamos a las personas: que ese juicio se forma principalmente a partir de información sobre ellas. Lo que encontraron fue que el estado físico del cuerpo en el momento de conocer a alguien forma parte del juicio, sin que quien juzga lo sepa.',
+      intro: 'Un café caliente en la mano durante diez segundos y ya juzgas distinto a un desconocido. Eso decía un experimento de 2008 firmado por Lawrence Williams y John Bargh, publicado en Science y repetido después en incontables charlas y libros de autoayuda. La historia es redonda. El problema llegó cuando otros equipos intentaron reproducirla con muchas más personas.',
       sections: [
         {
-          subtitle: 'El experimento: la taza de café y el extraño',
+          subtitle: 'La taza en el ascensor',
           paragraphs: [
-            'El procedimiento era aparentemente inocuo. Un experimentador encontraba a cada participante en el vestíbulo del edificio y le pedía que sujetara brevemente su bebida (a unos les tocaba café caliente, a otros café con hielo) mientras él anotaba algo. Una vez en el laboratorio, los participantes leían la descripción de una persona ficticia y evaluaban su personalidad en una serie de rasgos: cálido/frío, generoso/egoísta, sociable/antisocial, entre otros.',
-            'Los que habían sostenido el café caliente describían a la persona ficticia como significativamente más cálida, generosa y sociable que los que habían sostenido el café frío. La diferencia era estadísticamente robusta y los participantes no relacionaban la taza con sus respuestas. En un segundo experimento, los investigadores comprobaron que el efecto se extendía al comportamiento: los participantes que habían sostenido el objeto caliente elegían con más frecuencia un regalo para un amigo en lugar de para ellos mismos, una medida de comportamiento prosocial real.'
+            'El montaje parecía inofensivo. Un ayudante se cruzaba con el participante en el vestíbulo, cargado con carpetas y una taza de café, y le pedía que se la sujetara un momento mientras anotaba su nombre. A la mitad les daba un café caliente, a la otra mitad uno con hielo. Ya en el laboratorio, los cuarenta y un participantes leían un perfil de una persona inventada y la puntuaban en una lista de rasgos.',
+            'Quienes habían aguantado la taza caliente calificaron a esa persona como más generosa y afectuosa que quienes habían sostenido la fría. En los rasgos que no tienen que ver con la calidez, como la honestidad o el atractivo, no había diferencia. Un segundo experimento, con cincuenta y tres personas, cambió la evaluación por una elección: al terminar podían llevarse un premio para ellos o un vale para regalar a un amigo. Los que habían sujetado una compresa caliente elegían el regalo para otro con más frecuencia.'
           ]
         },
         {
-          subtitle: 'El mecanismo: temperatura física y temperatura social',
+          subtitle: 'Calor en las manos, calor en el trato',
           paragraphs: [
-            'Williams y Bargh propusieron una explicación basada en la cognición encarnada: el cerebro usa metáforas físicas para procesar conceptos abstractos, y esas metáforas son estructurales, no decorativas. La "calidez" interpersonal y la temperatura física comparten sustrato neuronal (la ínsula anterior) porque el aprendizaje de los conceptos sociales ocurre en la infancia a través de experiencias físicas: el contacto con el cuerpo de los cuidadores, la temperatura de sus manos, el calor del abrazo. El concepto "calidez social" se construye sobre el andamio sensorial de "temperatura caliente".',
-            'Esto implica que el cuerpo no es un vehículo pasivo que transporta a la mente hacia los lugares donde ocurre el pensamiento. El estado corporal (la temperatura, la postura, la tensión muscular) es parte del sistema cognitivo y afecta activamente qué conceptos se activan y cómo se procesan. La física del momento en que conoces a alguien forma parte del contexto cognitivo con el que lo evalúas, aunque ninguno de los dos lo sepa.'
+            'La explicación que propusieron viene de la cognición encarnada. La idea es que el cerebro entiende lo abstracto apoyándose en lo físico, y que esas conexiones no son adorno del lenguaje sino cableado real. Decimos que alguien es "una persona cálida" porque los primeros conceptos sociales se aprenden de bebé a través del cuerpo: los brazos que sostienen, la temperatura de la piel de quien te cuida. Sobre esa experiencia física se montaría luego el concepto de calidez humana, y tocar algo caliente lo reactivaría de refilón.',
+            'De ahí la afirmación fuerte del artículo: el cuerpo no es un simple medio de transporte de la mente. Su estado en cada momento, la temperatura, la postura, la tensión, formaría parte de lo que la mente calcula, incluido el juicio que te haces de alguien nada más conocerlo.'
+          ]
+        },
+        {
+          subtitle: 'Y las réplicas grandes no lo encontraron',
+          paragraphs: [
+            'Los dos experimentos originales tenían muestras pequeñas, cuarenta y una y cincuenta y tres personas, y resultados que apenas cruzaban el umbral de significación. Esa combinación, efecto grande con muestra diminuta y una p justita, es hoy una señal de alarma para cualquier lector entrenado.',
+            'En 2014, un equipo dirigido por Dermot Lynott repitió el primer experimento con un protocolo registrado de antemano y unas ochocientas sesenta personas, veinte veces la muestra original. No apareció ninguna diferencia entre el grupo del objeto caliente y el del frío. En 2019, Christopher Chabris y sus colegas lo intentaron dos veces más, otra vez con cientos de participantes cada una, bajo el título «Ninguna evidencia de que la calidez física promueva la calidez interpersonal». Tampoco encontraron nada.',
+            'El experimento del café quedó, además, en mal barrio. John Bargh es una de las figuras centrales del terremoto de replicación en psicología social: su estudio más famoso, el de las palabras sobre la vejez que hacían caminar más despacio a la gente, también se cayó al intentar reproducirlo. La cognición encarnada tiene apoyos sólidos en otros frentes. La versión de "una taza caliente te vuelve más amable", hoy por hoy, no se sostiene.'
           ]
         }
       ],
-      blockquote: { text: '«La mente no existe separada del cuerpo. El estado físico del momento forma parte de la cognición, no solo del humor.»', attribution: 'Lawrence Williams & John Bargh' },
-      aplicacion: 'Las primeras impresiones se forman en contextos físicos específicos que las influyen de formas que no detectamos. Si necesitas hacer una evaluación importante de alguien (una entrevista, una negociación, una primera reunión) sé consciente de tu estado físico previo: el cansancio, el frío, la tensión muscular son variables del juicio. Y ofrecer algo caliente a quien vas a conocer no es solo cortesía: tiene efectos documentados sobre cómo te percibe.'
+      blockquote: { text: '«Experimentar calidez física, sin que la persona lo advierta, aumenta la calidez interpersonal hacia los demás.»', attribution: 'Williams & Bargh (2008)' },
+      aplicacion: 'De este estudio no salgas con la idea de servir café caliente para caer mejor, porque eso es justo lo que no se ha podido reproducir. Lo que sí aguanta es la lección de método: cuando leas que un gesto mínimo tiene un efecto psicológico llamativo, mira el tamaño de la muestra y si alguien lo ha repetido. Un dato bonito con cuarenta personas detrás es una hipótesis, no un hecho.'
     },
     {
       id: 'rel-07',
@@ -1571,27 +1915,34 @@ const LIBRARY_ARTICLES = {
       sourceLabel: 'Aron, Melinat, Aron, Vallone & Bator (1997), Personality and Social Psychology Bulletin',
       badge: 'Formación de vínculos',
       author: { name: 'Arthur Aron', university: 'Stony Brook University', specialty: 'Psicología de las relaciones cercanas' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '4 de agosto de 2026',
-      intro: 'Arthur Aron y su equipo querían saber si la cercanía entre dos personas, algo que normalmente tarda meses o años en construirse, podía generarse de forma fiable en un laboratorio, con dos desconocidos, en menos de una hora. No buscaban crear una amistad duradera, sino aislar el proceso de generación de cercanía para poder estudiarlo directamente.',
+      intro: 'La cercanía entre dos personas suele tardar meses en cuajar, a veces años. Arthur Aron quería saber si ese proceso se podía comprimir hasta caber en tres cuartos de hora, en un laboratorio, entre dos desconocidos que acababan de sentarse frente a frente. No pretendía crear parejas ni amistades para toda la vida. Buscaba aislar el mecanismo de la cercanía para poder verlo funcionar de cerca.',
       sections: [
         {
-          subtitle: 'El experimento: tres tandas de preguntas cada vez más personales',
+          subtitle: 'Tres bloques de preguntas, cada uno más incómodo que el anterior',
           paragraphs: [
-            'Parejas de estudiantes que no se conocían se sentaron cara a cara durante 45 minutos y fueron respondiendo, por turnos, un total de 36 preguntas divididas en tres bloques de 12, con un nivel de intimidad creciente: del bloque inicial ("¿A quién invitarías a cenar si pudieras invitar a cualquier persona del mundo?") al último, mucho más vulnerable ("Comparte algo que consideres un defecto tuyo"). Un grupo de control realizó una tarea de estructura idéntica pero con conversación trivial, sin escalada de intimidad.',
-            'Justo después de la tarea, cada participante completó por separado una escala de cercanía (círculos que se solapan en distinto grado según cuánto sientes que la otra persona forma parte de ti). Las parejas del grupo de autorrevelación creciente puntuaron una cercanía significativamente mayor que las del grupo de charla trivial, pese a haber sido completos desconocidos 45 minutos antes.'
+            'A cada pareja de estudiantes que no se conocían le daban una lista de treinta y seis preguntas repartidas en tres bloques de doce, y cuarenta y cinco minutos para ir respondiéndolas por turnos. El primer bloque es ligero: a quién invitarías a cenar si pudiera ser cualquier persona del mundo, cuándo cantaste por última vez para ti solo. El último ya pincha hueso: cuenta un problema personal y pregunta a la otra persona cómo lo resolvería ella, di cuándo lloraste por última vez delante de alguien. Un grupo de control hacía una tarea con la misma estructura, mismos turnos y mismo tiempo, pero con preguntas de charla intrascendente.',
+            'Al acabar, cada participante rellenaba a solas una escala de cercanía, esos dos círculos que se solapan más o menos según cuánto sientes que la otra persona forma parte de ti. Las parejas que habían escalado en intimidad puntuaron bastante más cerca que las de la charla trivial. Aron señaló que un tercio de los participantes de la condición íntima valoró a su pareja de laboratorio como más cercana que la relación más cercana de su vida. Cuarenta y cinco minutos antes no se habían visto nunca.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la vulnerabilidad recíproca y progresiva genera cercanía',
+          subtitle: 'La clave está en los turnos, no en los temas',
           paragraphs: [
-            'El diseño no consiste en simplemente "hablar de cosas íntimas", sino en una reciprocidad estructurada: cada persona se abre un poco más solo después de que la otra lo haya hecho, y ese turno alternado crea una sensación de vulnerabilidad compartida que, en la vida normal, tardaría mucho más en construirse porque nadie se atreve a dar el primer paso.',
-            'Aron fue explícito en un matiz importante: el procedimiento genera cercanía real y medible en ese momento, pero no garantiza que se convierta en una relación duradera. Investigación posterior que ha replicado este diseño encontró que la cercanía generada así tiende a desvanecerse en las semanas siguientes si la pareja no mantiene el contacto por su cuenta.'
+            'El ingrediente activo no es hablar de cosas profundas sin más. Es la reciprocidad ordenada: cada persona se abre un poco más solo después de que la otra lo haya hecho, y ese ida y vuelta va generando una sensación de vulnerabilidad compartida. En la vida normal ese proceso es lento porque casi nadie quiere ser el primero en enseñar una carta delicada. La lista quita esa fricción: los dos saben que la siguiente pregunta va a pedir lo mismo a ambos.',
+            'Aron fue claro con lo que el estudio no demostraba. La cercanía que se genera es real y se puede medir en ese momento, pero el procedimiento no se diseñó para fabricar relaciones que duren, y las parejas no fueron seguidas después. El título del artículo lo dice sin adornos: "un procedimiento y algunos hallazgos preliminares".'
+          ]
+        },
+        {
+          subtitle: 'De estudio de laboratorio a mito romántico',
+          paragraphs: [
+            'En 2015, un ensayo en el New York Times contó la experiencia de aplicar la lista en una cita y la tituló "Para enamorarte de cualquiera, haz esto". Se hizo viral, y desde entonces las treinta y seis preguntas circulan como una receta para enamorar. El propio Aron suele contar que dos personas de uno de sus primeros estudios acabaron casándose, pero eso es una anécdota, no un resultado.',
+            'Lo que el experimento sostiene es más modesto y más útil: la intimidad entre dos personas se puede acelerar con una estructura que reparta el riesgo de abrirse. No garantiza deseo, no garantiza continuidad, y la mayoría de esas parejas de laboratorio no volvieron a verse. Sirve para empezar antes, no para saltarse el resto.'
           ]
         }
       ],
-      blockquote: { text: '«Es posible generar una cercanía experiencial considerable entre prácticamente cualquier par de personas mediante una tarea estructurada.»', attribution: 'Arthur Aron' },
-      aplicacion: 'La lista completa de las 36 preguntas es pública y puedes usarla con una pareja, un amigo o alguien que acabas de conocer. Este estudio sugiere que el ingrediente activo no es hablar de temas profundos sin más, es la escalada recíproca y por turnos: cada persona se abre un poco más solo después de que la otra lo haya hecho primero.'
+      blockquote: { text: '«La tarea genera un sentimiento temporal de cercanía entre los participantes.»', attribution: 'Aron et al. (1997)' },
+      aplicacion: 'La lista completa está publicada y la puedes usar con una pareja, un amigo con quien te has quedado en la superficie o alguien a quien acabas de conocer. Respeta lo que la hace funcionar: por turnos, respondiendo los dos a cada pregunta, sin saltarte las del final por vergüenza. Y no esperes que encienda nada por sí sola. Lo que hace es ahorrarte las primeras semanas de tanteo.'
     }
   ],
 
@@ -1914,32 +2265,41 @@ const LIBRARY_ARTICLES = {
     {
       id: 'edu-06',
       title: 'Los estudiantes que recibieron los apuntes en Comic Sans los retuvieron mejor',
-      summary: 'Diemand-Yauman, Oppenheimer y Vaughan demostraron que presentar material en fuentes difíciles de leer mejora la retención, tanto en laboratorio como en institutos reales de Ohio.',
+      summary: 'Un equipo de Princeton lo midió en un instituto real y los primeros datos apoyaron la idea. Lo que vino después la dejó en el aire.',
       sourceUrl: 'https://doi.org/10.1016/j.cognition.2010.09.012',
       sourceLabel: 'Diemand-Yauman, Oppenheimer & Vaughan (2011), Cognition',
       badge: 'Ciencia del aprendizaje',
       author: { name: 'Daniel Oppenheimer', university: 'Universidad de Princeton', specialty: 'Cognición, toma de decisiones y psicología del juicio' },
-      readingTime: '3 min',
+      readingTime: '5 min',
       date: '30 de junio de 2026',
-      intro: 'En 2011, un equipo de Princeton publicó en Cognition un hallazgo que contradice la lógica de casi todo el diseño educativo moderno: el material presentado en fuentes difíciles de leer (incluyendo Comic Sans en cursiva) producía mejor retención que el mismo material en Arial o Times New Roman. No en un laboratorio aislado: también en institutos reales, con alumnos reales, evaluados con exámenes reales.',
+      intro: 'En 2010, seis clases de un instituto de Ohio recibieron sus apuntes en Comic Sans. No era una broma del profesor. Era un experimento de Princeton, y la hipótesis es de las que suenan mal a primera vista. Cuanto más incómoda es la tipografía, mejor se recuerda lo que pone. Los primeros datos apoyaron la idea. Lo que vino después la dejó en el aire.',
       sections: [
         {
-          subtitle: 'El experimento: del laboratorio al aula',
+          subtitle: 'Fortune favors the bold, and the italicized',
           paragraphs: [
-            'En la fase de laboratorio, Diemand-Yauman y sus colegas presentaron a los participantes información sobre especies de alienígenas ficticias con distintas características. Un grupo recibió el material en fuentes fáciles de leer (Arial 16pt, Lucida Console). El otro grupo lo recibió en fuentes con disfluencia tipográfica (Comic Sans MT en cursiva a 12pt, Haettenschweiler) más pequeñas y con menor contraste. Tras 15 minutos de interferencia, el grupo con fuentes difíciles recordaba significativamente más atributos correctos.',
-            'Para comprobar si el efecto se mantenía en condiciones reales, los investigadores intervinieron en seis clases de un instituto de Ohio. En cada clase, la misma asignatura utilizaba materiales en formato normal o con fuentes disfluentes durante varias semanas. Al evaluar con los exámenes habituales de la asignatura, los alumnos con materiales en fuentes difíciles obtuvieron puntuaciones significativamente más altas en biología, química, historia y literatura inglesa. El efecto se generalizó a través de asignaturas y tipos de contenido.'
+            'El estudio, firmado por Connor Diemand-Yauman, Daniel Oppenheimer y Erikka Vaughan, se publicó en Cognition con ese título. Tenía dos partes.',
+            'En el laboratorio, los participantes estudiaban fichas sobre especies de extraterrestres inventadas. Un grupo las leía en Arial limpio. El otro, en Comic Sans en cursiva o en Haettenschweiler, más pequeñas y con menos contraste. Tras un rato de distracción, el segundo grupo recordaba más rasgos correctos.',
+            'En la parte de campo, los investigadores cambiaron durante varias semanas la tipografía de los materiales reales de seis clases de un instituto de Chesterland, Ohio. Química, física, historia, inglés. Los alumnos que habían recibido los apuntes en fuentes difíciles sacaron mejores notas en los exámenes normales de la asignatura.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la fricción como señal de procesamiento',
+          subtitle: 'La idea de fondo, la fricción como aviso',
           paragraphs: [
-            'El fenómeno se encuadra dentro de lo que Robert Bjork denominó dificultades deseables: condiciones de aprendizaje que ralentizan la adquisición inicial pero mejoran la retención y la transferencia a largo plazo. Cuando el texto fluye con demasiada facilidad, el cerebro lo procesa de forma superficial, con menos recursos cognitivos, menos elaboración, menos conexiones con lo ya almacenado en memoria. La facilidad de lectura se interpreta inconscientemente como una señal de que el contenido ya ha sido procesado suficientemente.',
-            'Una fuente difícil de leer interrumpe ese atajo. La dificultad tipográfica obliga a un procesamiento más lento y deliberado: el cerebro dedica más recursos, genera más elaboración semántica y construye representaciones más ricas y duraderas. La fricción no es ruido que interfiere con el aprendizaje, es la señal de que el aprendizaje profundo está ocurriendo. La ironía es que los sistemas educativos han optimizado sus materiales hacia la legibilidad máxima, que es precisamente la condición que favorece el olvido rápido.'
+            'La explicación se apoya en un concepto de Robert Bjork, las dificultades deseables. Son condiciones de estudio que hacen el aprendizaje más lento y más molesto al principio, y que a cambio mejoran lo que queda semanas después.',
+            'Cuando un texto se lee sin esfuerzo, el cerebro tiende a darlo por sabido y pasar página. La facilidad se confunde con dominio. Una fuente rara rompe ese automatismo. Obliga a ir más despacio, a releer, a masticar cada frase. Esa lentitud forzada deja más huella. La legibilidad perfecta, según esta lógica, es justo lo que favorece el olvido rápido.'
+          ]
+        },
+        {
+          subtitle: 'Y luego no se replicó',
+          paragraphs: [
+            'El hallazgo se hizo famoso deprisa. Salió en charlas TED, en blogs de diseño, en manuales de estudio. El problema llegó cuando otros equipos intentaron repetirlo.',
+            'En 2016, Ralph Rummer y sus colegas hicieron tres réplicas cercanas del experimento de laboratorio original. Ninguna de las tres encontró el efecto. En 2018, un metaanálisis reunió los estudios sobre disfluencia tipográfica y aprendizaje con texto y concluyó que el efecto medio era, en la práctica, cero. Cuando ese mismo año se diseñó una fuente pensada para esto, Sans Forgetica, presentada como «la tipografía que ayuda a recordar», las pruebas posteriores tampoco le encontraron ninguna ventaja.',
+            'La lectura razonable a día de hoy es que la parte de la tipografía no aguanta. Lo que sí aguanta, y con mucha evidencia detrás, es el marco más amplio de Bjork. Espaciar los repasos en el tiempo, autoevaluarse en lugar de releer, mezclar temas en vez de estudiarlos en bloques. Esas dificultades sí mejoran la retención. Cambiar la fuente a Comic Sans, casi con seguridad, no.'
           ]
         }
       ],
-      blockquote: { text: '«Lo que hace fácil de leer un texto es, con frecuencia, exactamente lo que hace fácil de olvidar su contenido.»', attribution: 'Daniel Oppenheimer' },
-      aplicacion: 'Si necesitas retener algo con profundidad (un concepto, un argumento, un procedimiento) evita el formato más cómodo para leerlo. Imprímelo en una fuente menos habitual, escríbelo a mano, o cópialo en un tamaño que requiera atención. La incomodidad tipográfica no es un obstáculo al aprendizaje: es parte del proceso. El mismo principio aplica cuando tomas notas: escribir a mano, más lento e incómodo que teclear, produce mejor retención porque fuerza la elaboración en lugar de la transcripción.'
+      blockquote: { text: '«La disfluencia lleva a procesar la información con más cuidado, más elaboración y más atención.»', attribution: 'Diemand-Yauman, Oppenheimer & Vaughan (2011)' },
+      aplicacion: 'No pierdas el tiempo pasando tus apuntes a Comic Sans. La evidencia que queda en pie no está en la tipografía, sino en cómo repartes el estudio. Cierra el material y oblígate a recordar lo que ponía antes de volver a mirarlo. Repasa un tema hoy y otra vez dentro de tres días, no dos horas seguidas. Alterna asignaturas en la misma sesión. Todo eso hace el estudio más incómodo mientras lo haces, y esa es la parte que funciona.'
     },
     {
       id: 'edu-07',
@@ -2379,122 +2739,157 @@ const LIBRARY_ARTICLES = {
     {
       id: 'ali-01',
       title: 'Por qué comes casi el doble cuando estás en compañía',
-      summary: 'El número de personas en la mesa predice la ingesta calórica mejor que el hambre. Con seis o más comensales, comemos de media un 76 % más que en solitario.',
+      summary: 'Con siete o más personas en la mesa comes casi un 96% más que a solas. Y el efecto casi desaparece si esas personas son desconocidos.',
       sourceUrl: 'https://doi.org/10.1016/0031-9384(94)90286-0',
       sourceLabel: 'de Castro (1994), Physiology & Behavior',
       badge: 'Facilitación social',
       author: { name: 'John M. de Castro', university: 'Sam Houston State University', specialty: 'Psicobiología de la Alimentación' },
-      readingTime: '3 min',
+      readingTime: '4 min',
       date: '2 de junio de 2026',
-      intro: 'Hay una variable que predice cuánto vas a comer en tu próxima comida mejor que tu nivel de hambre, que el tipo de alimento y que la hora del día. Esa variable es cuántas personas se sientan contigo a la mesa. John de Castro lo midió durante años en condiciones de vida real, con miles de episodios de ingesta documentados con precisión de diario, y encontró que el efecto social sobre la cantidad comida es uno de los más robustos y sistemáticamente infravalorados de toda la psicología de la alimentación.',
+      intro: 'Cuentas las calorías del plato, vigilas con qué hambre llegas, eliges bien el menú. Y luego te sientas a cenar con seis amigos y repites sin pensarlo. John de Castro se pasó años anotando lo que comían cientos de personas en su vida normal, comida a comida, y encontró que el mejor indicador de cuánto acababa en el plato no era el hambre con la que empezaban. Era cuánta gente había sentada alrededor.',
       sections: [
         {
-          subtitle: 'El experimento: 365 días de diarios alimentarios en condiciones reales',
+          subtitle: 'Cientos de diarios de comidas, siete días seguidos',
           paragraphs: [
-            'De Castro diseñó una metodología que resolvía uno de los problemas crónicos de la investigación nutricional: el laboratorio artificial. En lugar de llevar a participantes a un contexto controlado, les entregó diarios estructurados y les pidió que registraran durante siete días consecutivos cada episodio de ingesta: qué comieron, cuándo, dónde, cuánta hambre tenían antes de empezar, cómo estaba su estado de ánimo, y (la variable clave) cuántas personas estaban presentes. El análisis acumuló más de 2.600 episodios de comida a lo largo de varios estudios.',
-            'Los resultados fueron consistentes y de gran magnitud. Comer con una persona adicional aumentaba la ingesta media un 33 % respecto a comer solo. Con dos comensales más, el incremento llegaba al 47 %. Con cuatro, al 58 %. Con seis o más personas en la mesa, el efecto alcanzaba el 76 %. El análisis estadístico confirmó que el número de comensales predecía la ingesta mejor que el nivel de hambre autoreportado, mejor que el tipo de comida y mejor que el momento del día. Y crucialmente: los participantes no percibían que estaban comiendo más. El exceso de ingesta ocurría por debajo del umbral de conciencia.'
+            'De Castro pagó a 515 adultos para que llevaran un diario durante una semana. En él apuntaban todo lo que comían y bebían, la hora, cuánta hambre, ansiedad y alegría sentían antes de empezar, cuántas personas había presentes y qué relación tenían con ellas. Nada de laboratorio: comidas reales, en casa, en el trabajo, en restaurantes.',
+            'El patrón salió limpio. Las comidas en compañía eran más grandes y más largas que las comidas a solas, y daba igual que fuera el desayuno, el almuerzo o la cena. Con la pareja y la familia, además de más grandes, se comían más rápido. Con los amigos, más grandes y más lentas. Un detalle curioso: la presencia de hombres aumentaba lo que comían las mujeres, pero la presencia de mujeres no cambiaba lo que comían los hombres.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la duración de la comida y el contagio de normas sociales',
+          subtitle: 'Una persona más, un tercio más de comida',
           paragraphs: [
-            'De Castro identificó dos mecanismos que operan en paralelo. El primero es mecánico: las comidas en compañía duran más, porque la conversación dilata el tiempo en la mesa. Y más tiempo en la mesa equivale a más oportunidades de servirse, de picar o de aceptar lo que ofrecen. El segundo mecanismo es social: comemos ajustándonos inconscientemente al ritmo y la cantidad de nuestros comensales. Cuando todos toman postre, el umbral cognitivo para tomarlo uno mismo baja; cuando alguien repite, el permiso implícito de repetir aumenta. Estas normas no se negocian explícitamente: se contagian.',
-            'El efecto era mayor con familia y amigos que con extraños, porque la relajación en contextos de confianza reduce la vigilancia sobre la propia ingesta. Con familiares cercanos, el comer se convierte en un acto de pertenencia y afecto, no solo de nutrición, lo que desacopla la señal de hambre de la señal de parar. Desde una perspectiva evolutiva, compartir comida con aliados de confianza era (y sigue siendo) una de las señales más potentes de vínculo social, lo que hace plausible que el cerebro haya "aprendido" a extender la duración de esas comidas más allá de lo que dictan las necesidades calóricas.'
+            'Dos años antes, de Castro y Brewer habían puesto números a la escalada. Con 153 personas y más de 3.800 comidas ordenadas según cuánta gente había en la mesa, el aumento respecto a comer solo era del 33% con un acompañante, del 47% con dos, del 58% con tres, y seguía subiendo. Con siete o más comensales llegaba al 96%. La curva encajaba con una función de potencia, y en los grupos grandes las comidas superaban de media en más de un 75% a las que esas mismas personas hacían a solas.',
+            'Lo que ninguno de los participantes reportaba era haber comido de más. El exceso pasaba por debajo del radar.'
+          ]
+        },
+        {
+          subtitle: 'La comida dura más y las normas se contagian',
+          paragraphs: [
+            'De Castro veía dos cosas ocurriendo a la vez. Una es de reloj: la conversación alarga el rato en la mesa, y más minutos sentado son más ocasiones de servirte, de picar, de aceptar lo que te pasan. Su propia lectura era esa, que la compañía estira la duración de la comida.',
+            'La otra es de imitación. Te acompasas a la mesa sin acordarlo con nadie. Si todos piden postre, el listón para pedirlo tú baja. Si alguien repite, repetir queda permitido. Y el efecto era mayor con la familia y los amigos que con conocidos o extraños, algo que de Castro atribuía a la relajación: en confianza bajas la guardia que tienes puesta sobre lo que comes.'
+          ]
+        },
+        {
+          subtitle: 'Con desconocidos pasa lo contrario',
+          paragraphs: [
+            'Son datos de diario, no de laboratorio. La gente elige comer en grupo justo en las ocasiones que ya invitan a comer mucho: el restaurante, el cumpleaños, la comida del domingo. De Castro ajustó por la hora del día y por el hambre previa, pero un diario no puede sortear a quién te sientas a comer.',
+            'Y la compañía importa más que el número. Ruddock y su equipo juntaron en 2019 cuarenta y dos estudios: comer con amigos y familia sube la ingesta de forma fiable, comer con extraños o conocidos no la mueve, y a veces la baja. Delante de gente a la que queremos causar buena impresión comemos menos, no más. El 96% es una cifra para quienes ya te han visto en pijama.'
           ]
         }
       ],
-      blockquote: { text: '«No comemos según el hambre que tenemos. Comemos según cuántos nos acompañan.»', attribution: 'John M. de Castro' },
-      aplicacion: 'Si tu objetivo es controlar la ingesta calórica, el entorno social es una palanca más poderosa que la fuerza de voluntad individual. Saber que en grupos grandes comerás más te permite tomar decisiones preventivas: servírte menos en el plato inicial, pedir a alguien que no repita contigo, o al menos ser consciente del mecanismo cuando notes que sigues comiendo aunque ya no tengas hambre.'
+      blockquote: { text: '«La presencia de otras personas aumenta la ingesta alargando el tiempo que se pasa en la mesa, y la familia y los amigos tienen un efecto aún mayor, probablemente al producir relajación y una desinhibición del control sobre lo que se come.»', attribution: 'de Castro (1994)' },
+      aplicacion: 'Si te preocupa cuánto comes, la palanca no es la fuerza de voluntad, es la mesa. En una comida larga con amigos, sírvete tu ración de una vez y no vuelvas a por más hasta que hayan pasado veinte minutos, que es lo que tarda la saciedad en llegar al cerebro. No lo vas a notar mientras ocurre. Cuando lleves media hora comiendo y ya no tengas hambre, el mecanismo sigue trabajando.'
     },
     {
       id: 'ali-02',
       title: 'Cómo tus emociones controlan lo que comes aunque creas que no',
-      summary: 'Las emociones no solo influyen en la cantidad de comida: determinan el tipo de alimento, el ritmo de ingesta y la experiencia de cada bocado, a través de cinco rutas psicológicas distintas.',
+      summary: 'El estrés no solo cambia cuánto comes, también qué eliges, a qué ritmo y cuánto disfrutas cada bocado. Macht lo ordenó en cinco vías distintas.',
       sourceUrl: 'https://doi.org/10.1016/j.appet.2007.07.002',
       sourceLabel: 'Macht (2008), Appetite',
       badge: 'Alimentación emocional',
       author: { name: 'Michael Macht', university: 'University of Würzburg', specialty: 'Psicología de la Alimentación y las Emociones' },
       readingTime: '4 min',
       date: '26 de mayo de 2026',
-      intro: 'La relación entre emociones y comida es una de las más discutidas en psicología clínica, pero también una de las más malentendidas. Durante décadas se habló de "comer emocional" como si fuera un fenómeno unitario: las personas tristes o estresadas comen más. Michael Macht revisó sistemáticamente la literatura disponible y propuso, en 2008, un modelo de cinco vías que demostró que la realidad es considerablemente más compleja: emociones distintas producen efectos opuestos sobre la ingesta, y el mismo estado emocional puede aumentar o reducir la apetencia dependiendo de la intensidad, el tipo de alimento y la historia personal del individuo.',
+      intro: 'El tópico dice que la gente triste o estresada come más. Michael Macht revisó lo que se sabía y publicó en 2008 una respuesta menos cómoda: depende. Depende de qué emoción, de cuánta intensidad y de quién la sienta. El miedo agudo quita el hambre. El aburrimiento la enciende. Y la misma tristeza que hace comer de más a quien está a dieta hace comer de menos a quien no.',
       sections: [
         {
-          subtitle: 'Las cinco vías: por qué el miedo reduce el apetito y el aburrimiento lo dispara',
+          subtitle: 'Cinco vías, no una',
           paragraphs: [
-            'Macht integró los hallazgos de más de 200 estudios en un modelo de cinco rutas. La primera vía es la supresión emocional de la ingesta: emociones de alta activación negativa (miedo intenso, asco, ansiedad aguda) activan el eje hipotalámico-hipofisario-adrenal y producen respuesta de estrés fisiológico que bloquea las señales de hambre. El cerebro interpreta la amenaza como incompatible con la ingesta: "esto no es momento de comer". La segunda vía es la inversa: emociones de baja activación, especialmente el aburrimiento y la tristeza moderada, no activan el sistema de alarma pero sí aumentan la búsqueda de estimulación, y la comida (especialmente la palatablemente rica en grasa y azúcar) actúa como estímulo accesible y predecible.',
-            'Las otras tres vías son igualmente relevantes. La tercera es la regulación activa: el individuo usa deliberadamente la comida como herramienta para gestionar estados emocionales desagradables. La cuarta es el efecto de la emoción sobre la experiencia misma de comer: bajo estados emocionales negativos, el individuo come más rápido, presta menos atención al sabor y reporta menor placer por bocado. La quinta vía es la que modula todas las anteriores: los rasgos individuales de "alimentación emocional", medidos con cuestionarios como el DEBQ de Van Strien, determinan en qué medida el sistema de regulación emocional de una persona está conectado con la conducta alimentaria. Alguien con alta puntuación en alimentación emocional responderá a las mismas emociones con patrones de ingesta muy distintos a alguien con baja puntuación.'
+            'Macht no montó un experimento. Cogió la literatura dispersa sobre emociones y comida y la ordenó en cinco tipos de efecto, cada uno con sus condiciones y su mecanismo.',
+            'El primero es sobre qué eliges: bajo estrés, la preferencia se desplaza hacia lo denso, dulce y graso, aunque la cantidad no cambie. El segundo aparece cuando la emoción es fuerte, miedo, asco o ansiedad aguda, y entonces el cuerpo entra en alerta y la ingesta se corta, porque comer y salir corriendo no encajan. El tercero es la rotura del control: en quien vigila lo que come, una emoción negativa basta para saltarse la norma y comer justo lo que la norma frenaba. El cuarto es comer a propósito para encontrarse mejor. El quinto es más sutil: las emociones moderadas ajustan el comer en su misma dirección, la alegría de una celebración estira la sobremesa, un disgusto la acorta o la alarga según la persona.'
           ]
         },
         {
-          subtitle: 'El ciclo de regulación: por qué funciona a corto plazo y falla a largo',
+          subtitle: 'Por qué comer para calmarse funciona, y ahí está el problema',
           paragraphs: [
-            'El aspecto más importante del modelo de Macht para la práctica cotidiana es la tercera vía: la comida como herramienta de regulación emocional. El mecanismo funciona: comer alimentos palatables libera dopamina en el estriado ventral, activa el sistema de recompensa y produce una reducción real y medible de la activación emocional negativa. El problema no es que no funcione: es que funciona demasiado bien a corto plazo. Esa eficacia inmediata es exactamente lo que convierte el comportamiento en un hábito.',
-            'A largo plazo, el ciclo presenta dos problemas. El primero es que comer no resuelve la emoción subyacente: la atenúa temporalmente, pero la causa permanece. El segundo es el aprendizaje condicionado: el cerebro asocia progresivamente el estado emocional negativo con el alivio que proviene de la comida, de modo que basta con anticipar la emoción para que aparezca el deseo de comer. Las empresas de alimentación ultra-procesada comprenden este mecanismo mejor que la mayoría de consumidores: sus productos están formulados para maximizar la respuesta hedónica inmediata y el alivio emocional a corto plazo, optimizando exactamente la parte del ciclo que genera dependencia.'
+            'La cuarta vía es la que más pesa en el día a día, y funciona de verdad. Un alimento sabroso libera dopamina en el estriado ventral, activa el circuito de recompensa y reduce de forma medible la tensión emocional negativa. El problema no es que no sirva. Es que sirve rápido y sirve siempre.',
+            'A la larga tiene dos costes. La causa de la emoción sigue ahí, solo se ha limado el filo. Y el cerebro aprende el emparejamiento, malestar y luego alivio por comida, hasta que basta con anticipar el malestar para que aparezca el antojo. Los productos ultraprocesados están formulados para encajar en ese hueco: máximo golpe de placer ahora, poca señal de haber comido después.'
+          ]
+        },
+        {
+          subtitle: 'Lo que los cuestionarios no miden',
+          paragraphs: [
+            'El modelo de Macht es un mapa, no un resultado. Buena parte de la evidencia que ordena viene de inducciones de humor en laboratorio, una película triste, un fracaso amañado, que son suaves al lado del duelo real o del estrés crónico.',
+            'Y el rasgo de comedor emocional, medido con escalas como el DEBQ, predice mejor cómo responde alguien a más cuestionarios que lo que come cuando se le observa. Las revisiones de Evers y otros encuentran que el vínculo entre el comer emocional autoinformado y la ingesta medida es débil. Saber que puntúas alto dice menos de lo que parece.'
           ]
         }
       ],
-      blockquote: { text: '«El comer emocional no es una debilidad de carácter. Es el resultado de un sistema de regulación que funciona bien a corto plazo y que nadie te enseñó a gestionar de otro modo.»', attribution: 'Michael Macht' },
-      aplicacion: 'Antes de comer cuando no tienes hambre física, nombra la emoción que estás sintiendo. Investigación de Brené Brown y otros ha mostrado que poner nombre a una emoción ("estoy ansioso", "estoy aburrido", "me siento solo") reduce su intensidad y activa la corteza prefrontal, lo que abre un espacio entre el impulso y la acción. No siempre es suficiente para romper el ciclo, pero es el primer paso necesario.'
+      blockquote: { text: '«Es difícil predecir cómo afectan las emociones al comer, porque la variación está tanto entre las personas como entre las distintas emociones.»', attribution: 'Michael Macht (2008)' },
+      aplicacion: 'Antes de comer sin hambre física, ponle nombre a lo que sientes: aburrimiento, ansiedad, soledad. Etiquetar una emoción baja su intensidad y mete a la corteza prefrontal en la ecuación, lo que abre un hueco entre el impulso y la mano. No rompe el ciclo por sí solo. Es lo que hace falta para poder romperlo.'
     },
     {
       id: 'ali-03',
       title: 'La paradoja de las dietas: por qué prohibirte un alimento dispara el deseo de comerlo',
-      summary: 'Cuando los dieters violan su restricción, comen más que los no-dieters. La restricción cognitiva no gestiona el hambre: la amplifica y la vuelve incontrolable cuando falla.',
+      summary: 'Cuando alguien a dieta se salta la norma, no frena. Come más que quien nunca la tuvo, y basta con creer que te la has saltado.',
       sourceUrl: 'https://doi.org/10.1111/j.1467-6494.1975.tb00727.x',
       sourceLabel: 'Herman & Mack (1975), Journal of Personality',
       badge: 'Restricción cognitiva',
       author: { name: 'C. Peter Herman', university: 'University of Toronto', specialty: 'Psicología de la Alimentación y Autorregulación' },
       readingTime: '4 min',
       date: '19 de mayo de 2026',
-      intro: 'En 1975, C. Peter Herman y Deborah Mack realizaron en la Universidad de Toronto un experimento que contradijo una de las intuiciones más arraigadas sobre las dietas. Invitaron a mujeres de peso normal al laboratorio para una supuesta "prueba de sabor" de helado. A algunas les daban antes uno o dos batidos de chocolate; a otras, nada. Después, dejaban a todas comer helado libremente. El resultado fue el opuesto de lo esperado: las mujeres que habían tomado el batido (es decir, que ya habían comido más) comían más helado, no menos. Pero solo si eran dieters. Las no-dieters se comportaban de forma normal: menos hambre, menos helado.',
+      intro: 'En 1975, C. Peter Herman y Deborah Mack invitaron a la Universidad de Toronto a un grupo de mujeres de peso normal para una supuesta prueba de sabor de helado. A unas les daban antes uno o dos batidos de chocolate; a otras, nada. Después dejaban a todas comer helado libremente. Lo esperable era que quien había tomado el batido comiera menos helado. Pasó lo contrario. Las que habían tomado batido comían más, no menos. Pero solo si estaban a dieta.',
       sections: [
         {
-          subtitle: 'El experimento del batido que desbloqueó el hambre',
+          subtitle: 'El batido que soltaba el freno',
           paragraphs: [
-            'Herman y Mack clasificaron a sus participantes en "comedoras restringidas" y "comedoras no restringidas" usando el Restraint Scale, un cuestionario que mide el grado en que una persona regula cognitivamente su ingesta. Las no-restringidas se comportaron como predice la fisiología: después de consumir las calorías del batido, tenían menos hambre y comían menos helado. La señal de saciedad funcionó correctamente. Las restringidas mostraron el patrón inverso y llamativo: con un batido previo comían de media un 16 % más de helado que sin batido, y con dos batidos, un 26 % más.',
-            'Lo más revelador de los experimentos posteriores del mismo grupo fue la manipulación cognitiva. Herman y Polivy demostraron que el efecto no dependía del contenido calórico real del batido: bastaba con hacer creer a las participantes que habían tomado un batido alto en calorías (aunque no lo fuera) para producir el mismo patrón de desinhibición. El mecanismo era puramente cognitivo. El batido rompía la regla mental ("hoy ya me lo he saltado"), y esa rotura era suficiente para desactivar toda restricción posterior. Herman y Polivy llamaron a este fenómeno "el efecto qué-más-da": una vez que la norma se ha violado, la lógica de la dieta colapsa y la persona come todo lo que la restricción había estado bloqueando.'
+            'Herman y Mack separaron a las participantes en restringidas y no restringidas con la Restraint Scale, un cuestionario sobre cuánto controlas de forma deliberada lo que comes. Las no restringidas se comportaron como manda la fisiología: con un batido dentro, menos hambre y menos helado. Las restringidas hicieron lo inverso. Tras uno o dos batidos comían alrededor de un 66% más de helado que sin batido. Las no restringidas comían un 47% menos.',
+            'El seguimiento afinó el mecanismo. Polivy demostró en 1976 que las calorías reales no importaban: bastaba con decirle a una comedora restringida que el batido era calórico, lo fuera o no, para que la desinhibición apareciera igual. La regla que se rompía era mental, hoy ya me lo he saltado, y romperla apagaba el resto de la restricción. Herman y Polivy lo llamaron el efecto qué más da.'
           ]
         },
         {
-          subtitle: 'El mecanismo: restricción cognitiva frente a regulación fisiológica',
+          subtitle: 'Un límite fisiológico y un límite inventado',
           paragraphs: [
-            'El modelo de límites que Herman desarrolló distingue dos sistemas de regulación. El sistema fisiológico funciona mediante señales de hambre y saciedad: el hipotálamo integra señales hormonales (grelina, leptina, GLP-1) para indicar cuándo empezar y cuándo parar de comer. Ese sistema es robusto y difícil de engañar durante períodos prolongados. El sistema cognitivo que activan las dietas es diferente: impone un límite arbitrario ("no comer más de X calorías") que no tiene correlato fisiológico. Ese límite cognitivo puede violarse con un solo pensamiento: "ya da igual".',
-            'El problema añadido es el que Daniel Wegner documentó en lo que llamó el "proceso irónico": intentar suprimir el pensamiento de un alimento prohibido aumenta su frecuencia y viveza. Pídete no pensar en chocolate y el chocolate ocupará más espacio en tu mente que antes de la instrucción. La restricción convierte el alimento prohibido en el centro de gravedad cognitivo de la experiencia alimentaria. La consecuencia práctica de toda esta investigación es contraintuitiva pero sólida: las dietas de prohibición tienden a producir los mismos comportamientos de ingesta que intentan prevenir. Los enfoques basados en permiso condicional y saciedad gestionada tienen, en general, mejores resultados a largo plazo.'
+            'El modelo de límites de Herman describe dos reguladores. El fisiológico va por hambre y saciedad, con el hipotálamo leyendo grelina, leptina y GLP-1. Es robusto y cuesta engañarlo mucho tiempo. El límite cognitivo que instala una dieta es un techo arbitrario sin correlato en el cuerpo, y un solo pensamiento lo tira abajo.',
+            'A eso se suma el rebote. Erskine reunió en 2008 a 134 personas y les pidió pasar cinco minutos suprimiendo o expresando en voz alta pensamientos sobre chocolate, y luego una prueba de sabor. Las que habían suprimido comieron bastante más chocolate. Prohibirte pensar en un alimento lo vuelve más ruidoso. La restricción lo pone en el centro.'
+          ]
+        },
+        {
+          subtitle: 'Qué mide de verdad la escala',
+          paragraphs: [
+            'La Restraint Scale arrastra un problema conocido: no separa bien a quien restringe de quien tiene un historial de subidas y bajadas de peso y de atracones. Stice y otros defienden que parte de lo que predice la desinhibición es que esas participantes ya se daban atracones, no que la dieta se los provocara.',
+            'Y que todas las dietas salgan por la culata no es lo que dice el estudio. La distinción útil es entre restricción rígida y flexible. La rígida, de todo o nada, va de la mano de la desinhibición y de un IMC más alto. El control flexible, donde una galleta no arruina el día, se asocia a mejores resultados a largo plazo. La paradoja muerde a la regla, no al objetivo.'
           ]
         }
       ],
-      blockquote: { text: '«Prohibirte un alimento no suprime el deseo de comerlo. Lo convierte en el único pensamiento que no puedes dejar de tener.»', attribution: 'C. Peter Herman' },
-      aplicacion: 'Si tienes alimentos "prohibidos", considera si la prohibición absoluta es la estrategia más efectiva o si en realidad amplifica el deseo. La investigación sugiere que el permiso condicional y consciente ("puedo comer esto si de verdad lo quiero") reduce la carga cognitiva del alimento y, paradójicamente, tiende a disminuir la ingesta. La restricción extrema rara vez produce los resultados que promete.'
+      blockquote: { text: '«Una vez que la dieta se ha roto por un día, la persona a dieta come como si las restricciones ya no sirvieran de nada.»', attribution: 'Herman y Polivy (1984)' },
+      aplicacion: 'Si tienes alimentos prohibidos del todo, mira si esa regla te funciona o solo los tiene dando vueltas en tu cabeza. El permiso condicional, puedo comer esto si de verdad lo quiero y prestándole atención, baja el peso mental del alimento y suele reducir la cantidad. La prohibición absoluta rara vez aguanta, y el día que cae, cae entera.'
     },
     {
       id: 'ali-04',
       title: 'El tamaño del plato decide cuánto comes, no el hambre',
-      summary: 'Cuando las raciones se duplican, la ingesta calórica aumenta un 30 % sin que los participantes lo noten. El cerebro usa el plato como señal de saciedad; el estómago llega demasiado tarde.',
+      summary: 'Cuando la ración pasa de 500 a 1000 gramos, la gente come un 30% más y no se siente más llena. Da igual si tiene peso normal o sobrepeso.',
       sourceUrl: 'https://doi.org/10.1093/ajcn/76.6.1207',
       sourceLabel: 'Rolls, Morris & Roe (2002), American Journal of Clinical Nutrition',
       badge: 'Señales de porción',
       author: { name: 'Barbara J. Rolls', university: 'Penn State University', specialty: 'Ciencias de la Nutrición y Psicología del Apetito' },
-      readingTime: '3 min',
+      readingTime: '4 min',
       date: '12 de mayo de 2026',
-      intro: 'En un experimento de Penn State, cincuenta y un adultos (la mitad con peso normal, la mitad con sobrepeso) recibieron pasta en cuatro tamaños de ración distintos a lo largo de varias semanas. Antes de cada comida se registraba su nivel de hambre. Después de comer, se registraba cuánto habían ingerido y cómo de llenos se sentían. La hipótesis de Barbara Rolls era simple: si el cerebro regula la ingesta por señales de hambre y saciedad, el tamaño de la ración no debería afectar sistemáticamente cuánto se come. Los datos le dieron la razón en sentido inverso: el tamaño de la ración era el predictor dominante, y el hambre previa apenas explicaba varianza.',
+      intro: 'En Penn State, cincuenta y un adultos con peso normal y con sobrepeso fueron a comer una vez por semana durante un mes. El plato era siempre macarrones con queso, y podían comer lo que quisieran. Lo único que cambiaba de una semana a otra era el tamaño de la ración que les servían. Barbara Rolls esperaba que el hambre mandara sobre la cantidad y que el tamaño de la ración se diluyera. Salió al revés.',
       sections: [
         {
-          subtitle: 'El experimento: cuatro raciones, un solo resultado',
+          subtitle: 'Cuatro raciones del mismo plato',
           paragraphs: [
-            'Rolls y sus colegas sirvieron macarrones con queso en cuatro tamaños: 500 g, 625 g, 750 g y 1.000 g, en sesiones diferentes separadas por varios días. Los participantes podían comer cuanto quisieran. Las instrucciones eran neutras: "esto es una prueba de sabor, come lo que quieras". El nivel de hambre antes de comer se midió con escalas visuales analógicas estandarizadas y fue estadísticamente similar en todas las condiciones.',
-            'Los resultados siguieron una función lineal precisa: a mayor ración servida, mayor ingesta, sin excepción. La ración más pequeña produjo una ingesta media de 529 kilocalorías. La más grande, de 702 kilocalorías (un 30 % más). La diferencia se mantuvo tanto en participantes con peso normal como con sobrepeso, lo que descartó que el efecto se limitara a personas con dificultades de regulación del apetito. Tras cada comida, los niveles de saciedad reportados eran sorprendentemente similares entre condiciones: quienes habían comido más no se sentían proporcionalmente más llenos. Habían ingerido más calorías sin que eso se tradujera en una señal de saciedad equivalente.'
+            'Los macarrones se servían en cuatro tamaños, 500, 625, 750 y 1.000 gramos, uno por sesión, con varios días de separación. Instrucciones neutras, come lo que quieras. El hambre antes de comer, medida con escalas estándar, era parecida en las cuatro semanas.',
+            'La relación fue una línea recta: cuanto mayor la ración servida, más se comía, sin excepción. Del plato de 500 gramos al de 1.000, la ingesta subió alrededor de un 30%, unas 162 calorías más. Se mantuvo en participantes con peso normal y con sobrepeso, y tanto si la comida llegaba ya emplatada como si cada uno se servía de una fuente. La saciedad que reportaban después apenas se movía. Habían comido más calorías sin una señal equivalente de haberlo hecho.'
           ]
         },
         {
-          subtitle: 'El mecanismo: la señal visual como ancla de saciedad',
+          subtitle: 'La vista decide antes de que el estómago informe',
           paragraphs: [
-            'Las señales fisiológicas de saciedad (la liberación de GLP-1, PYY y la distensión gástrica que llega al nervio vago) tardan entre 15 y 20 minutos en alcanzar el hipotálamo con suficiente intensidad para modular la conducta de ingesta. La mayoría de las comidas dura entre 10 y 20 minutos. En la práctica, esto significa que las decisiones sobre cuándo parar de comer no se toman cuando el cerebro ya tiene información fisiológica completa; se toman usando señales visuales y cognitivas (el tamaño del plato, cuánto queda, qué comen los demás) como proxy del cuánto.',
-            'Rolls y su equipo desarrollaron el concepto de "densidad energética volumétrica" para describir cómo la cantidad visual de comida (su volumen) puede disociarse de su carga calórica. Alimentos con alto contenido en agua o fibra ocupan más espacio visual por caloría. Esta disociación es la base de su "Volumetrics" approach: diseñar comidas donde el volumen visual genere la señal de suficiencia antes de que las calorías superen el umbral deseable. Lo inverso también opera: la industria alimentaria formula productos de alto contenido calórico y bajo volumen (snacks densos, bebidas azucaradas) que no activan las señales visuales de haber comido suficiente.'
+            'Las señales fisiológicas de saciedad, la liberación de GLP-1 y PYY, la distensión del estómago que llega por el nervio vago, tardan entre quince y veinte minutos en alcanzar el hipotálamo con fuerza para cambiar la conducta. La mayoría de las comidas dura entre diez y veinte. Así que la decisión de parar se toma con pistas visuales y cognitivas, el tamaño del plato, cuánto queda, qué hacen los demás, en lugar de con los datos del cuerpo.',
+            'Rolls construyó su trabajo posterior, Volumetrics, sobre separar el volumen visual de las calorías. El agua y la fibra ocupan espacio en el plato por caloría, así que un plato más voluminoso puede disparar la señal de suficiente antes de que las calorías suban. La industria lo hace al contrario: productos densos y de poco volumen, bebidas azucaradas, que nunca encienden la señal visual de haber comido.'
+          ]
+        },
+        {
+          subtitle: 'Uno de los efectos más replicados del campo',
+          paragraphs: [
+            'Este no falló al replicarse, al contrario. Zlatevska y su equipo juntaron en 2014 decenas de estudios, y una revisión Cochrane de 2015 llegó al mismo sitio: reduce la ración o el plato y la ingesta baja, de forma fiable.',
+            'Los límites honestos están en otra parte. Casi todo son comidas sueltas de laboratorio, no meses de báscula. La gente compensa algo en la comida siguiente, aunque no del todo. Y el efecto se aplana en los tamaños extremos en vez de crecer sin fin. Lo que nadie ha demostrado es que un plato pequeño siga funcionando cuando deja de ser una novedad.'
           ]
         }
       ],
-      blockquote: { text: '«El cerebro usa el plato como señal de cuánto necesita comer. El estómago llega demasiado tarde para corregirle.»', attribution: 'Barbara J. Rolls' },
-      aplicacion: 'Sirve los alimentos de alta densidad calórica en platos más pequeños, y los de baja densidad en platos grandes. No es autoengaño: es alinear las señales visuales que tu cerebro usa para decidir cuándo parar con la información calórica real de lo que estás comiendo. El experimento de Rolls sugiere que este ajuste es suficiente para reducir la ingesta entre un 20 y un 30 % sin que el nivel de saciedad percibida cambie.'
+      blockquote: { text: '«Servir raciones más grandes aumentó la energía ingerida en un 30%, y los participantes no dijeron sentirse más llenos.»', attribution: 'Rolls, Morris y Roe (2002)' },
+      aplicacion: 'Sirve en plato pequeño lo de alta densidad calórica y en plato grande lo de baja. No es autoengaño, es poner de acuerdo la señal visual que tu cerebro usa para parar con las calorías que hay de verdad delante. En el experimento de Rolls, ese ajuste bastaba para mover la ingesta entre un 20 y un 30% sin que nadie se sintiera menos lleno. Y deja la fuente de servir fuera de la mesa. Lo que no ves no se convierte en ración.'
     },
     {
       id: 'ali-05',
@@ -6436,7 +6831,7 @@ _syncHeroBalance();
     if (trapHandler) { releaseFocus(modal, trapHandler, triggerEl); trapHandler = null; }
   }
 
-  document.querySelectorAll('.author-trigger').forEach(btn =>
+  document.querySelectorAll('.author-trigger:not(.author-link)').forEach(btn =>
     btn.addEventListener('click', openModal)
   );
 
