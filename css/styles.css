@@ -1746,34 +1746,47 @@ body.menu-open .mobile-menu-overlay { opacity: 1; pointer-events: auto; }
   font-size: 1rem;
 }
 
-.tab-bar--single .tab-btn.active,
-.tab-bar--single .tab-btn:hover:not(.active) {
-  background: transparent;
-  text-shadow: none;
-  box-shadow: none;
-}
+/* Vista por defecto (Por Intereses activa): la etiqueta no navega a ningun
+   sitio, se oculta. Solo reaparece, ya como boton, cuando estas en Fuera de
+   Bata o El Articulo de la Semana y sirve para volver. */
+.tab-bar--single .tab-btn.active { display: none; }
 
-.tab-bar--single .tab-btn:not(.active) {
+.tab-bar--single .tab-btn:not(.active):not(.tab-btn--hidden) {
   cursor: pointer;
-  color: var(--blue);
-  background: color-mix(in srgb, var(--blue) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--blue) 25%, transparent);
-  padding: 0.4rem 0.85rem 0.4rem 0.6rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--blue), var(--blue-hover));
+  border: none;
+  padding: 0.72rem 1.5rem;
   border-radius: 999px;
-  font-size: 0.85rem;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  gap: 0.5rem;
+  text-shadow: none;
+  box-shadow: 0 8px 22px -6px color-mix(in srgb, var(--blue) 65%, transparent),
+              inset 0 1px 0 rgba(255,255,255,0.25);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 
-.tab-bar--single .tab-btn:not(.active)::before {
+.tab-bar--single .tab-btn:not(.active):not(.tab-btn--hidden) svg { display: none; }
+
+.tab-bar--single .tab-btn:not(.active):not(.tab-btn--hidden)::before {
   content: "←";
-  font-size: 0.9em;
+  font-size: 1.05em;
+  font-weight: 700;
+  transition: transform 0.2s ease;
 }
 
-.tab-bar--single .tab-btn:hover:not(.active) {
-  background: color-mix(in srgb, var(--blue) 18%, transparent);
-  border-color: color-mix(in srgb, var(--blue) 45%, transparent);
-  color: var(--blue-hover);
-  transform: translateX(-2px);
+.tab-bar--single .tab-btn:hover:not(.active):not(.tab-btn--hidden) {
+  background: linear-gradient(135deg, var(--blue-hover), var(--blue-hover));
+  box-shadow: 0 12px 30px -6px color-mix(in srgb, var(--blue) 78%, transparent),
+              inset 0 1px 0 rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.tab-bar--single .tab-btn:hover:not(.active):not(.tab-btn--hidden)::before {
+  transform: translateX(-3px);
 }
 
 /* ── TAB PANELS ── */
@@ -4282,6 +4295,14 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   }
   .tab-btn svg { width: 12px; height: 12px; }
 
+  /* Boton premium "volver a Por Intereses": centrado y con cuerpo tambien en movil */
+  .tab-bar--single .tab-btn:not(.active):not(.tab-btn--hidden) {
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 0.9rem !important;
+    padding: 0.7rem 1.2rem !important;
+  }
+
   /* Artículo semanal, tipografía editorial compacta */
   .weekly-teaser-card   { padding: 1.4rem 1.1rem 1.4rem; }
   .wt-title             { font-size: 1.3rem !important; }
@@ -5039,8 +5060,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .dark-base .tab-btn.active { background: transparent; box-shadow: none; }
 .dark-base .tab-btn:not(.active) { color: #94A3B8; }
 .dark-base .tab-btn:not(.active):hover { color: #E2E8F0; background: color-mix(in srgb, var(--blue) 7%, transparent); }
-.dark-base .tab-bar--single .tab-btn:not(.active) { color: #5B9CFF; }
-.dark-base .tab-bar--single .tab-btn:hover:not(.active) { color: #8FBCFF; }
+.dark-base .tab-bar--single .tab-btn:not(.active):not(.tab-btn--hidden) { color: #fff; }
+.dark-base .tab-bar--single .tab-btn:hover:not(.active):not(.tab-btn--hidden) { color: #fff; }
 
 .dark-base .author-modal-card,
 .dark-base .info-modal-card,
