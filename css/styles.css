@@ -9717,7 +9717,9 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   }
 
   /* ── Viewport lock: body no scrolleable → address bar no se mueve → fixed nav no salta ── */
-  html, body { overflow: hidden; height: 100%; }
+  /* Solo en la SPA (tiene #app como contenedor de scroll). Las páginas estáticas
+     (artículos, autores, guías) scrollean el body y no deben quedar bloqueadas. */
+  html:has(#app), body:has(#app) { overflow: hidden; height: 100%; }
   #app {
     height: 100%;
     overflow-y: auto;
