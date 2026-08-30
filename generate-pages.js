@@ -965,7 +965,7 @@ ${AUTHOR_FAQS.map(f => `        <details class="static-faq-item">\n          <su
             <span class="cat-article-badge">Psicolingüística</span>
             <h2>${w.title}</h2>
           </a>
-          <a href="${w.doi}" class="cat-article-cta" target="_blank" rel="noopener noreferrer">Ir al artículo →</a>
+          <a href="${w.doi}" class="cat-article-cta" target="_blank" rel="noopener noreferrer">Ir al artículo <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
         </li>`).join('\n');
 
   const roleLine = AUTHOR_ROLE_CHIPS.slice(0, 2).join(' <span class="author-role-sep">·</span> ');
