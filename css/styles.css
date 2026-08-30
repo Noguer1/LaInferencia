@@ -4311,13 +4311,13 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .week-label           { margin-bottom: 0.5rem; flex-wrap: wrap; gap: 8px; }
   .week-tag             { font-size: 0.6rem; padding: 0.13rem 0.8rem; }
   .reading-time         { font-size: 0.62rem; }
-  .article-intro        { font-size: 13px !important; line-height: 1.55 !important; color: var(--text-body) !important; margin-bottom: 0.8rem; }
-  .article-content p    { font-size: 13px !important; line-height: 1.55 !important; color: var(--text-body) !important; margin-bottom: 0.5rem; }
-  .article-subtitle     { font-size: 13px !important; font-weight: 700; margin: 0.85rem 0 0.35rem; }
-  .aplicacion-block p   { font-size: 12px !important; line-height: 1.5; }
+  .article-intro        { font-size: 15px !important; line-height: 1.6 !important; color: var(--text-body) !important; margin-bottom: 0.8rem; }
+  .article-content p    { font-size: 15px !important; line-height: 1.6 !important; color: var(--text-body) !important; margin-bottom: 0.5rem; }
+  .article-subtitle     { font-size: 15px !important; font-weight: 700; margin: 0.85rem 0 0.35rem; }
+  .aplicacion-block p   { font-size: 13.5px !important; line-height: 1.55; }
   .article-content      { margin-top: 0.6rem; }
   .article-blockquote   { margin: 0.75rem 0; padding: 0.6rem 0.8rem; }
-  .article-blockquote p { font-size: 12px !important; line-height: 1.45; }
+  .article-blockquote p { font-size: 13.5px !important; line-height: 1.5; }
   .article-blockquote cite { font-size: 11px; }
 
   /* ── Tarjetas de libros: flip 3D estándar en móvil ── */
