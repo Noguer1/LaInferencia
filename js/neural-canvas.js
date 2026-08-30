@@ -14,6 +14,10 @@
                  l: [16, 185, 129], r: [37, 99, 235], depth: true }
   };
 
+  /* En movil se reduce el numero de nodos: el trazado de lineas es O(N^2) */
+  const MOBILE = window.innerWidth <= 768;
+  function nCount(cfg) { return MOBILE ? Math.round(cfg.N * 0.5) : cfg.N; }
+
   function getCfg() {
     return CFGS[document.documentElement.getAttribute('data-theme')] || CFGS.default;
   }
@@ -61,11 +65,12 @@
     const wasDepth = activeCfg && activeCfg.depth;
     activeCfg = cfg;
     if (wasDepth !== !!cfg.depth) pts.length = 0;
-    while (pts.length < cfg.N) pts.push(mkPt(cfg));
-    if (pts.length > cfg.N) pts.length = cfg.N;
+    const target = nCount(cfg);
+    while (pts.length < target) pts.push(mkPt(cfg));
+    if (pts.length > target) pts.length = target;
   }
 
-  function init() { resize(); activeCfg = getCfg(); pts = Array.from({ length: activeCfg.N }, () => mkPt(activeCfg)); }
+  function init() { resize(); activeCfg = getCfg(); pts = Array.from({ length: nCount(activeCfg) }, () => mkPt(activeCfg)); }
 
   const TARGET_FPS = window.innerWidth > 768 ? 30 : 60;
   const FRAME_MS   = 1000 / TARGET_FPS;
