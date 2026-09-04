@@ -4576,7 +4576,28 @@ function _buildMysteryUnlockHTML(origen, libroOverride) {
 const WELCOME_GIFT_FLAG = 'li_welcome_gift_shown';
 const WELCOME_GIFT_CLAIMED_FLAG = 'li_welcome_gift_claimed';
 const WELCOME_GIFT_ANSWERED_FLAG = 'li_welcome_gift_answered';
+const WELCOME_GIFT_Q1_FLAG = 'li_welcome_gift_q1';
+const WELCOME_GIFT_Q2_FLAG = 'li_welcome_gift_q2';
 const WELCOME_GIFT_ARTICULOS = 4;
+
+const WG_FINAL_COPY = {
+  aa: {
+    heading: 'Tu curiosidad no tiene por qué esperar a que tengas tiempo libre',
+    sub: 'Con Audible la llevas puesta: en el trayecto, haciendo la compra, mientras friegas. Sigues aprendiendo cosas nuevas sin robarle un minuto al resto del día.'
+  },
+  ab: {
+    heading: 'Ya lees lo que quieres. Esto es para leer también lo que no te da tiempo a leer',
+    sub: 'Audible no compite con tus libros, cubre las horas en las que no puedes tener uno en la mano: conduciendo, entrenando, cocinando.'
+  },
+  ba: {
+    heading: 'Empieza por algo que ya conoces, en un formato nuevo',
+    sub: 'No hace falta cambiar de gustos para leer más. Con Audible escuchas lo tuyo de siempre en los ratos en los que antes no leías nada.'
+  },
+  bb: {
+    heading: 'Aprende incluso cuando no tienes tiempo para leer',
+    sub: 'Escucha audiolibros mientras paseas, vas al trabajo o preparas el café.'
+  }
+};
 
 const WELCOME_GIFT_Q1 = {
   a: { label: 'Me gusta aprender cosas nuevas' },
@@ -4604,8 +4625,8 @@ function _buildWelcomeGiftModal() {
           <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.912 5.813a2.5 2.5 0 0 0 1.626 1.626L21 12l-5.462 1.561a2.5 2.5 0 0 0-1.626 1.626L12 21l-1.912-5.813a2.5 2.5 0 0 0-1.626-1.626L3 12l5.462-1.561a2.5 2.5 0 0 0 1.626-1.626L12 3z"/></svg>
         </span>
         <p class="wg-intro-title">¡Enhorabuena!</p>
-        <p class="wg-intro-text">Has desbloqueado tu recompensa por leer 4 artículos en La Inferencia.</p>
-        <p class="wg-intro-sub">Antes de dártela, 2 preguntas rápidas.</p>
+        <p class="wg-intro-text">Ya vas por tu cuarto artículo con nosotros. Queríamos tener un detalle contigo.</p>
+        <p class="wg-intro-sub">Dos preguntas cortas y es tuyo.</p>
         <button class="flip-back-btn wg-cta" type="button" id="wg-continue">Continuar</button>
       </div>
       <div class="wg-step" data-step="1" hidden>
@@ -4623,7 +4644,7 @@ function _buildWelcomeGiftModal() {
         </div>
       </div>
       <div class="wg-step wg-step-final" data-step="3" hidden>
-        <p class="wg-final-eyebrow">Regalo por leer en La Inferencia</p>
+        <p class="wg-final-eyebrow">Nuestra forma de decir gracias</p>
         <span class="wg-icon-badge wg-icon-badge-lg">
           <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3v5zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3v5z"/></svg>
         </span>
@@ -4634,6 +4655,7 @@ function _buildWelcomeGiftModal() {
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Probar Audible gratis
         </a>
+        <p class="wg-final-fineprint">Oferta real de Audible/Amazon. Cancelas cuando quieras, sin permanencia.</p>
       </div>
     </div>`;
   document.body.appendChild(overlay);
@@ -4688,6 +4710,14 @@ function _wgAdvanceStep(step, next, opts) {
   }, opts.btn ? 200 : 0);
 }
 
+function _wgApplyFinalCopy(step3) {
+  const q1 = localStorage.getItem(WELCOME_GIFT_Q1_FLAG) || 'b';
+  const q2 = localStorage.getItem(WELCOME_GIFT_Q2_FLAG) || 'b';
+  const copy = WG_FINAL_COPY[q1 + q2] || WG_FINAL_COPY.bb;
+  step3.querySelector('.wg-final-heading').textContent = copy.heading;
+  step3.querySelector('.wg-final-sub').textContent = copy.sub;
+}
+
 function showWelcomeGiftModal() {
   if (!_wgModal) _wgModal = _buildWelcomeGiftModal();
   const modal = _wgModal;
@@ -4698,6 +4728,7 @@ function showWelcomeGiftModal() {
   const yaRespondio = !!localStorage.getItem(WELCOME_GIFT_ANSWERED_FLAG);
   step0.hidden = yaRespondio; step1.hidden = true; step2.hidden = true;
   step3.hidden = !yaRespondio;
+  if (yaRespondio) _wgApplyFinalCopy(step3);
   [step0, step1, step2, step3].forEach(s => {
     s.classList.remove('wg-step-leave', 'wg-step-enter', 'wg-transitioning');
     s.querySelectorAll('.wg-opt').forEach(b => b.classList.remove('wg-opt-selected', 'wg-opt-dim'));
@@ -4711,26 +4742,30 @@ function showWelcomeGiftModal() {
     _wgAdvanceStep(step0, step1, { focusSelector: '.wg-opt' });
   };
   step1.querySelectorAll('.wg-opt').forEach(btn => {
-    btn.onclick = () => _wgAdvanceStep(step1, step2, { btn, focusSelector: '.wg-opt' });
+    btn.onclick = () => {
+      lsSet(WELCOME_GIFT_Q1_FLAG, btn.dataset.answer);
+      _wgAdvanceStep(step1, step2, { btn, focusSelector: '.wg-opt' });
+    };
   });
   step2.querySelectorAll('.wg-opt').forEach(btn => {
     btn.onclick = () => {
+      lsSet(WELCOME_GIFT_Q2_FLAG, btn.dataset.answer);
       lsSet(WELCOME_GIFT_ANSWERED_FLAG, '1');
+      _wgApplyFinalCopy(step3);
       _wgAdvanceStep(step2, step3, { btn, focusSelector: '.wg-cta' });
     };
   });
+
+  const closeBtn = modal.querySelector('.concepto-modal-close');
+  closeBtn.hidden = !yaRespondio;
 
   modal.removeAttribute('hidden');
   const focusHandler = trapFocus(modal);
   function close() {
     modal.setAttribute('hidden', '');
     releaseFocus(modal, focusHandler, triggerEl);
-    document.removeEventListener('keydown', onEsc);
   }
-  function onEsc(e) { if (e.key === 'Escape') close(); }
-  document.addEventListener('keydown', onEsc);
-  modal.querySelector('.concepto-modal-close').onclick = close;
-  modal.onclick = e => { if (e.target === modal) close(); };
+  closeBtn.onclick = close;
   step3.querySelector('.wg-cta').onclick = () => {
     lsSet(WELCOME_GIFT_CLAIMED_FLAG, '1');
     if (window._LI_updateProgress) window._LI_updateProgress();
@@ -6447,7 +6482,7 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', artUrl);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', artDesc);
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', artUrl);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://lainferencia.com/');
     if (window._LI_markWeeklyRead) window._LI_markWeeklyRead(week);
     teaserWrap.setAttribute('hidden', '');
     fullWrap.removeAttribute('hidden');
@@ -8276,6 +8311,24 @@ window.LI_CAT_ICONS = {
   marketing:      `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>`,
   viajes:         `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-1 .1-1.3.5l-.4.5c-.4.5-.2 1.2.3 1.5L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.5 1 .7 1.5.3l.5-.4c.4-.3.6-.8.5-1.3z"/></svg>`,
   redesSociales:  `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>`
+};
+
+window.LI_CAT_COLORS = {
+  economia:      '#2563EB',
+  moda:          '#7C3AED',
+  derecho:       '#92400E',
+  deporte:       '#10B981',
+  arte:          '#F59E0B',
+  tecnologia:    '#00C2E0',
+  relaciones:    '#F43F5E',
+  saludMental:   '#14B8A6',
+  educacion:     '#6366F1',
+  trabajo:       '#EA580C',
+  politica:      '#B91C1C',
+  alimentacion:  '#84CC16',
+  marketing:     '#D946EF',
+  viajes:        '#0EA5E9',
+  redesSociales: '#8B5CF6'
 };
 
 /* ── ONBOARDING TOUR, primera visita ───────────────────────── */
@@ -10563,17 +10616,26 @@ const GLOSARIO = [
   }
   updateCatProgress();
 
-  function renderCard(art, cat) {
+  function estimateReadMin(art) {
+    const text = [art.intro, ...(art.sections || []).flatMap(s => s.paragraphs || [])].join(' ');
+    const words = text.trim().split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(words / 200));
+  }
+
+  function renderCard(art, cat, i) {
     const isRead = getRead().includes(art.id);
+    const color  = (window.LI_CAT_COLORS || {})[cat] || 'var(--blue)';
+    const icon   = (window.LI_CAT_ICONS  || {})[cat] || '';
     return `
-      <div class="lib-card${isRead ? ' is-read' : ''}" data-id="${art.id}" data-cat="${cat}" role="button" tabindex="0" style="position:relative">
+      <div class="lib-card${isRead ? ' is-read' : ''}" data-id="${art.id}" data-cat="${cat}" role="button" tabindex="0" style="--cat-color:${color};--i:${i || 0}">
         ${isRead ? `<span class="read-badge" title="Ya leído" aria-label="Ya leído">✓</span>` : ''}
         ${_favBtnHTML('lib-' + art.id, 'fav-btn--lib-card')}
-        <span class="doc-badge">${art.badge}</span>
+        <span class="doc-badge"><span class="doc-badge-icon">${icon}</span>${art.badge}</span>
         <h3>${art.title}</h3>
         <p class="lib-card-summary">${art.summary}</p>
         <div class="lib-card-meta">
           <span>${art.author.name}</span>
+          <span class="sep">·</span><span class="lib-card-readtime">${estimateReadMin(art)} min</span>
           ${ARTICLE_VIEWS[art.id] ? `<span class="sep">·</span><span class="lib-card-views"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>${ARTICLE_VIEWS[art.id]}</span>` : ''}
         </div>
       </div>`;
@@ -10677,7 +10739,7 @@ const GLOSARIO = [
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', _artUrl);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', art.title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', _artDesc);
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', _artUrl);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://lainferencia.com/');
     document.querySelectorAll('script[data-ld="article"]').forEach(s => s.remove());
     const _ldScript = document.createElement('script');
     _ldScript.type = 'application/ld+json';
@@ -10725,7 +10787,7 @@ const GLOSARIO = [
     try { history.replaceState({ v: 'home' }, '', '/'); } catch (_) {}
     const arts = LIBRARY_ARTICLES[cat] || [];
     container.innerHTML = arts.length
-      ? `<div class="lib-cards-grid">${arts.map(a => renderCard(a, cat)).join('')}</div>`
+      ? `<div class="lib-cards-grid">${arts.map((a, i) => renderCard(a, cat, i)).join('')}</div>`
       : `<p class="lib-cat-empty">Todavía no hay artículos en ${CAT_LABELS[cat] || 'esta categoría'}. ¡Vuelve pronto!</p>`;
     container.querySelectorAll('.lib-card').forEach(card => {
       const activate = () => {

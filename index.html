@@ -38,21 +38,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
   <meta name="theme-color" content="#030C1A" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="79211994-3fb4-4d6a-84d4-8860aeadcd92"></script>
-  <!--
-    ANALYTICS, Google Analytics 4
-    1. Crea una propiedad en analytics.google.com
-    2. Sustituye G-XXXXXXXXXX por tu Measurement ID
-    3. Descomenta los dos bloques de script de abajo
-  -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script> -->
   <script>(function(){var t=localStorage.getItem('theme')||'dark';if(t!=='light'){document.documentElement.setAttribute('data-theme',t);if(['dark','naranja','tormenta','cosmos','carmesi'].indexOf(t)>-1)document.documentElement.classList.add('dark-base');}})();</script>
-  <!-- Datos estructurados para Google (sustituye TU-DOMINIO.com cuando lo tengas) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -273,7 +259,7 @@
 
         <h1>La Inferencia</h1>
 
-        <p>La psicología más allá del aula y la consulta. Convertimos investigación en conocimiento útil, claro y accesible.</p>
+        <p>La psicología aplicada a tus intereses.<br>Nosotros leemos los estudios, tú te quedas con lo que sirve.</p>
 
         <!-- Acceso rápido, solo visible en móvil -->
         <div class="hero-quick-access">
@@ -444,14 +430,14 @@
               <span>Tecnología</span>
             </button>
 
-            <button class="cat-btn" data-cat="relaciones">
+            <button class="cat-btn cat-btn--destacada" data-cat="relaciones">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
               </svg>
               <span>Relaciones</span>
             </button>
 
-            <button class="cat-btn" data-cat="saludMental">
+            <button class="cat-btn cat-btn--destacada" data-cat="saludMental">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
                 <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
@@ -473,7 +459,7 @@
               <span>Trabajo</span>
             </button>
 
-            <button class="cat-btn" data-cat="politica">
+            <button class="cat-btn cat-btn--destacada" data-cat="politica">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/>
               </svg>
@@ -488,7 +474,7 @@
               <span>Alimentación</span>
             </button>
 
-            <button class="cat-btn" data-cat="marketing">
+            <button class="cat-btn cat-btn--destacada" data-cat="marketing">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="m3 11 18-5v12L3 14v-3z"/>
                 <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
@@ -503,7 +489,7 @@
               <span>Viajes</span>
             </button>
 
-            <button class="cat-btn" data-cat="redesSociales">
+            <button class="cat-btn cat-btn--destacada" data-cat="redesSociales">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#clock-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
               </svg>
@@ -593,11 +579,49 @@
       <aside class="sidebar-widget sidebar-right">
         <button class="sidebar-close-btn" aria-label="Cerrar panel">✕</button>
 
+        <!-- Widget Glosario: acceso directo desde Explorar (solo en móvil) -->
+        <div class="mob-glosario-widget" id="mob-glosario-widget">
+          <div class="mob-glosario-widget-inner">
+            <div class="mob-glosario-widget-text">
+              <span class="mob-glosario-widget-label">Glosario</span>
+              <span class="mob-glosario-widget-desc">40 términos psicológicos con definición y ejemplo</span>
+            </div>
+            <button class="mob-glosario-widget-btn" id="mob-glosario-widget-btn" aria-label="Abrir glosario de psicología">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Consultar
+            </button>
+          </div>
+        </div>
+
         <!-- Progress tracker -->
         <div class="progress-tracker" id="progress-tracker" aria-label="Tu progreso">
           <div class="pt-header">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             Tu progreso
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Artículos leídos</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-articulos-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-articulos-count">0 / -</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Semanales leídos</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-semanales-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-semanales-count">0 / -</span>
+            </div>
+          </div>
+
+          <div class="pt-stat">
+            <span class="pt-stat-label">Rutas completadas</span>
+            <div class="pt-stat-right">
+              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-rutas-bar" style="width:0%"></div></div>
+              <span class="pt-count" id="pt-rutas-count">0 / 4</span>
+            </div>
           </div>
 
           <div class="pt-nivel-block" id="pt-nivel-block">
@@ -638,30 +662,6 @@
           </button>
 
           <div class="pt-stat">
-            <span class="pt-stat-label">Artículos leídos</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-articulos-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-articulos-count">0 / -</span>
-            </div>
-          </div>
-
-          <div class="pt-stat">
-            <span class="pt-stat-label">Semanales leídos</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-semanales-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-semanales-count">0 / -</span>
-            </div>
-          </div>
-
-          <div class="pt-stat">
-            <span class="pt-stat-label">Rutas completadas</span>
-            <div class="pt-stat-right">
-              <div class="pt-bar-wrap"><div class="pt-bar" id="pt-rutas-bar" style="width:0%"></div></div>
-              <span class="pt-count" id="pt-rutas-count">0 / 4</span>
-            </div>
-          </div>
-
-          <div class="pt-stat">
             <span class="pt-stat-label">Quizzes completados</span>
             <div class="pt-stat-right">
               <div class="pt-bar-wrap"><div class="pt-bar" id="pt-quizzes-bar" style="width:0%"></div></div>
@@ -681,20 +681,6 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
             <span class="pt-streak-label">Racha</span>
             <span class="pt-streak-value" id="pt-streak-value">0 días</span>
-          </div>
-        </div>
-
-        <!-- Widget Glosario: acceso directo desde Explorar (solo en móvil) -->
-        <div class="mob-glosario-widget" id="mob-glosario-widget">
-          <div class="mob-glosario-widget-inner">
-            <div class="mob-glosario-widget-text">
-              <span class="mob-glosario-widget-label">Glosario</span>
-              <span class="mob-glosario-widget-desc">40 términos psicológicos con definición y ejemplo</span>
-            </div>
-            <button class="mob-glosario-widget-btn" id="mob-glosario-widget-btn" aria-label="Abrir glosario de psicología">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              Consultar
-            </button>
           </div>
         </div>
 

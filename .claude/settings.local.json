@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "PowerShell(Get-ChildItem \"c:\\\\Users\\\\nogue\\\\CarpetaClaude\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName)",
-      "PowerShell(\\(Get-Content \"c:\\\\Users\\\\nogue\\\\CarpetaClaude\\\\css\\\\styles.css\" | Measure-Object -Line\\).Lines)"
+      "PowerShell(\\(Get-Content \"c:\\\\Users\\\\nogue\\\\CarpetaClaude\\\\css\\\\styles.css\" | Measure-Object -Line\\).Lines)",
+      "Bash(node generate-pages.js)",
+      "Bash(git restore *)"
     ]
   }
 }
