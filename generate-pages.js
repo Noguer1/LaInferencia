@@ -67,6 +67,19 @@ vm.runInNewContext(
 const AUTHORS       = sandbox2.AUTHORS || {};
 const ARTICLE_STATS = sandbox2.ARTICLE_STATS || {};
 
+// Extraer WEEKLY_ARTICLES ("El Artículo de la Semana") para sus páginas estáticas
+const weeklyStart = mainCode.indexOf('const WEEKLY_ARTICLES');
+const sandbox4    = {};
+vm.runInNewContext(
+  AUDIBLE_LINK_DECL + mainCode.slice(weeklyStart, authStart).replace(/\bconst\s+/g, ''),
+  sandbox4
+);
+const WEEKLY_ARTICLES = sandbox4.WEEKLY_ARTICLES || [];
+if (!WEEKLY_ARTICLES.length) {
+  console.error('ERROR: No se pudo extraer WEEKLY_ARTICLES');
+  process.exit(1);
+}
+
 // Extraer BOTIQUIN_DATA (libros por sector) para las páginas de guía de compra
 const botiquinStart = mainCode.indexOf('const BOTIQUIN_DATA = {');
 const botiquinEnd   = mainCode.indexOf('\n  };', botiquinStart) + 5;
@@ -137,6 +150,24 @@ const CAT_DESCRIPTIONS = {
   marketing:    'Escasez, señuelos y precio cero: las técnicas de persuasión que deciden lo que compras, explicadas con estudios de psicología del consumidor.',
   viajes:       'Asombro, anticipación y la paradoja del descanso: la psicología detrás de por qué viajamos y qué nos deja realmente un viaje, con evidencia científica.',
   redesSociales: 'Uso pasivo, comparación social y FOMO: cómo las redes sociales afectan al bienestar según la investigación en psicología, más allá del tiempo de pantalla.',
+};
+
+// ── Categoría asignada a cada pieza de WEEKLY_ARTICLES para su página
+// estática permanente (no existe categoría de "psicología general", se
+// archivan bajo la existente más afín). Editorial, no técnico: ajustar
+// aquí si una pieza encaja mejor en otra categoría.
+const WEEKLY_CAT = {
+  32: 'educacion',   // Psicología del talento (práctica deliberada)
+  31: 'economia',    // Economía de la felicidad (Kahneman)
+  26: 'deporte',     // Psicología del deporte (penaltis)
+  19: 'politica',    // Psicología Social (Milgram, obediencia)
+  18: 'educacion',   // Aprendizaje social (muñeco Bobo)
+  17: 'marketing',   // Psicología de la influencia (Cialdini)
+  16: 'politica',    // Psicología moral (Haidt)
+  15: 'educacion',   // Psicología del desarrollo (Dweck, "todavía")
+  22: 'educacion',   // Psicolingüística (idioma y tiempo)
+  21: 'derecho',     // Memoria y cognición (recuerdos de infancia)
+  20: 'economia',    // Sesgos cognitivos (Kahneman, pensar rápido/despacio)
 };
 
 // ── Fecha en español -> ISO 8601 (para datePublished en JSON-LD) ─
@@ -685,10 +716,10 @@ ${sectionsHTML}
 ${blockquoteHTML}
 ${aplicacionHTML}
 ${buildRecomendacionHTML(art.id)}
-          <a href="${art.sourceUrl}" class="source-verify-btn" target="_blank" rel="noopener noreferrer">
+${art.sourceUrl ? `          <a href="${art.sourceUrl}" class="source-verify-btn" target="_blank" rel="noopener noreferrer">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             Verificar fuente · ${art.sourceLabel}
-          </a>
+          </a>` : ''}
 ${rutaSiguienteHTML}
 ${faqHTML}
         </div>
@@ -1525,6 +1556,44 @@ for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
 
 console.log(`\n✅ ${count} páginas de artículo + ${CAT_KEYS.length} páginas de categoría generadas\n`);
 
+// ── Artículo de la Semana: páginas estáticas permanentes (A2.2) ──
+// No se insertan en LIBRARY_ARTICLES a propósito: no deben aparecer en
+// el grid de la página de categoría ni contar en TOTAL_ARTS/búsqueda,
+// son piezas aparte que solo necesitan una URL permanente e indexable.
+const weeklyPages = [];
+for (const w of WEEKLY_ARTICLES) {
+  const cat = WEEKLY_CAT[w.week];
+  if (!cat || !LIBRARY_ARTICLES[cat]) {
+    console.error(`ERROR: WEEKLY_ARTICLES semana ${w.week} no tiene categoría válida asignada en WEEKLY_CAT.`);
+    process.exit(1);
+  }
+  const id      = `weekly-${w.week}`;
+  const artSlug = toSlug(w.title);
+  const catSlug = CAT_SLUGS[cat] || cat;
+  const clash   = LIBRARY_ARTICLES[cat].some(a => toSlug(a.title) === artSlug);
+  if (clash) {
+    console.error(`ERROR: el slug "${artSlug}" de la semana ${w.week} choca con un artículo ya existente en /articulos/${catSlug}/.`);
+    process.exit(1);
+  }
+  const art = { ...w, id };
+  if (w.libroRelacionado) {
+    RECOMENDACIONES[id] = {
+      libro: {
+        titulo: w.libroRelacionado.libro,
+        autor: w.libroRelacionado.autor,
+        sinopsis: w.libroRelacionado.sinopsis,
+        amazon: w.libroRelacionado.amazon,
+      }
+    };
+  }
+  const artDir = path.join(ARTS_DIR, catSlug, artSlug);
+  fs.mkdirSync(artDir, { recursive: true });
+  fs.writeFileSync(path.join(artDir, 'index.html'), buildPage(art, cat), 'utf-8');
+  weeklyPages.push({ art, cat, catSlug, artSlug });
+  console.log(`  ✓ /articulos/${catSlug}/${artSlug}/ (semana ${w.week})`);
+}
+console.log(`\n✅ ${weeklyPages.length} páginas de "Artículo de la Semana" generadas\n`);
+
 // ── Rutas de Aprendizaje ──────────────────────────────────────────
 const RUTAS_DIR = path.join(ROOT, 'rutas');
 fs.mkdirSync(RUTAS_DIR, { recursive: true });
@@ -1601,9 +1670,14 @@ for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
   }
 }
 
+for (const { art, catSlug, artSlug } of weeklyPages) {
+  const lastmod = toISODate(art.date) || today;
+  sitemap += `  <url><loc>${SITE}/articulos/${catSlug}/${artSlug}/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>${lastmod}</lastmod></url>\n`;
+}
+
 sitemap += `</urlset>\n`;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap, 'utf-8');
-console.log(`✅ sitemap.xml actualizado con ${count} artículos + ${CAT_KEYS.length} categorías + autor`);
+console.log(`✅ sitemap.xml actualizado con ${count} artículos + ${weeklyPages.length} semanales + ${CAT_KEYS.length} categorías + autor`);
 
 // ── sitemap-images.xml ──────────────────────────────────────────
 let imgSitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -1633,9 +1707,21 @@ for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
   }
 }
 
+for (const { art, catSlug, artSlug } of weeklyPages) {
+  const titleEsc = art.title.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  imgSitemap += `  <url>
+    <loc>${SITE}/articulos/${catSlug}/${artSlug}/</loc>
+    <image:image>
+      <image:loc>${SITE}/img/OG.png</image:loc>
+      <image:title>${titleEsc}</image:title>
+    </image:image>
+  </url>
+`;
+}
+
 imgSitemap += `</urlset>\n`;
 fs.writeFileSync(path.join(ROOT, 'sitemap-images.xml'), imgSitemap, 'utf-8');
-console.log(`✅ sitemap-images.xml generado con ${count + 1} entradas`);
+console.log(`✅ sitemap-images.xml generado con ${count + weeklyPages.length + 1} entradas`);
 
 // ── Índice de búsqueda (ya calculado arriba, para poder hashear su versión) ──
 fs.writeFileSync(
