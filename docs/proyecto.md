@@ -174,6 +174,17 @@ Antes de este cambio, los enlaces de afiliado de Amazon (`tag=lainferencia-21`) 
 
 Fuera de alcance por ahora: el contenido "Fuera de Bata" (`bata-*`) no genera páginas estáticas propias, solo vive en la SPA — se puede rellenar con el mismo patrón de `libroRelacionado` que ya usan `EFECTOS_DATA`/`HITOS` si se quiere más adelante.
 
+### Páginas estáticas de "El Artículo de la Semana" (2026-09-05, Operación Fénix A2.2)
+
+`WEEKLY_ARTICLES` (`js/main.js`) antes solo se renderizaba client-side en el SPA (panel "semana"), sin URL real indexable: el `<link rel="canonical">` de `doExpand()` apuntaba siempre a la home, y el router de deep-linking borraba `?v=semana&n=X` de la barra de direcciones al cargar. `generate-pages.js` ahora extrae `WEEKLY_ARTICLES` igual que `LIBRARY_ARTICLES`/`BOTIQUIN_DATA` y genera cada pieza como página estática permanente en `/articulos/<categoría>/<slug>/`, reutilizando `buildPage()`:
+
+- `id` de cada pieza para la página estática es `weekly-<week>` (mismo formato que ya usan `_favBtnHTML`/`_buildQuizBtnHTML` en el SPA, así "Guardar en tu colección" comparte la misma clave de localStorage en ambas vistas).
+- Categoría por pieza: mapa editorial `WEEKLY_CAT` (semana → categoría existente), porque no hay categoría de "psicología general" y `relatedArticles`/`sidebarArticles` exigen una clave real de `LIBRARY_ARTICLES`. Cualquier semana nueva que se añada a `WEEKLY_ARTICLES` necesita su entrada en `WEEKLY_CAT` o el build falla explícito.
+- El `libroRelacionado` propio de cada pieza (shape distinto al de `RECOMENDACIONES`) se adapta e inyecta en `RECOMENDACIONES['weekly-'+week]` antes de generar, así `buildRecomendacionHTML(id)` no necesita cambios.
+- `WEEKLY_ARTICLES` no tiene `sourceUrl`/`sourceLabel` (no hay URL de fuente capturada para estas piezas) — el botón "Verificar fuente" en `buildPage()` ahora es condicional a que exista `art.sourceUrl`, para no fabricar un enlace roto. No cambia nada en los artículos normales (todos lo tienen).
+- Deliberadamente **no se insertan en `LIBRARY_ARTICLES`**: no aparecen en el grid de la página de categoría ni en `TOTAL_ARTS`/índice de búsqueda, son piezas aparte.
+- Pendiente (fuera de esta pasada, ver `Operación Fénix/tareas.md` A2.3/A2.4): que el destacado de la home enlace a esta URL estática, y que el canonical de `doExpand()` apunte aquí en vez de a la home. Requiere tocar el router/render del SPA, no solo el generador estático.
+
 ### Migración a Audible (2026-08-21)
 
 Se sustituyó por completo el modelo de afiliados de Amazon (comisión por venta de libro) por el programa de afiliados de la prueba gratuita de Audible (comisión fija ~10€ por alta, sin coste para el usuario). Cambios clave:
