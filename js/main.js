@@ -5212,7 +5212,7 @@ const AUTHORS = {
     specialty: 'Psicología basada en evidencia'
   },
   'Miguel Noguer Escudero': {
-    photo: 'img/caramiguel.png',
+    photo: 'img/NoguerNew.jpg',
     university: 'La Inferencia',
     specialty: 'Fundador y Director de Fuera de Bata'
   },

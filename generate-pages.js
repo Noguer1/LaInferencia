@@ -317,7 +317,7 @@ function staticHero(opts = {}) {
         <img src="/img/logo2.png" alt="La Inferencia" class="static-hero-logo" />
       </div>
       <p class="static-hero-title">La Inferencia</p>
-      <p class="static-hero-tagline">La psicología más allá del aula y la consulta.<br>Investigación real, en español, gratis.</p>
+      <p class="static-hero-tagline">Divulgación de psicología explicada de forma clara y sencilla,<br>a partir de estudios científicos reales.</p>
     </div>
   </section>`;
 }
@@ -920,7 +920,7 @@ function buildAuthorPage() {
     '@id': canonUrl,
     'name': AUTHOR_NAME,
     'url': canonUrl,
-    'image': `${SITE}/img/caramiguel.png`,
+    'image': `${SITE}/img/NoguerNew.jpg`,
     'jobTitle': 'Psicólogo, Fundador y CEO de La Inferencia',
     'worksFor': { '@type': 'Organization', 'name': 'La Inferencia', 'url': SITE },
     'alumniOf': [
@@ -994,7 +994,7 @@ ${staticHero({ compact: true })}
       </nav>
 
       <header class="author-ficha">
-        <img src="/img/caramiguel.png" alt="${AUTHOR_NAME}" class="author-ficha-photo" width="168" height="168" />
+        <img src="/img/NoguerNew.jpg" alt="${AUTHOR_NAME}" class="author-ficha-photo" width="168" height="168" />
         <div class="author-ficha-body">
           <h1>${AUTHOR_NAME}</h1>
           <p class="author-ficha-role">${roleLine}</p>
