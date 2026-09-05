@@ -22,6 +22,7 @@ function hashOf(relPath) {
 }
 const CSS_V  = hashOf('css/styles.css');
 const MAIN_V = hashOf('js/main.js');
+const ARTSEM_V = hashOf('js/articulos-semana.js');
 
 // ── Extraer datos de artículos desde main.js ───────────────────
 const mainCode  = fs.readFileSync(path.join(__dirname, 'js/main.js'), 'utf-8');
@@ -67,16 +68,16 @@ vm.runInNewContext(
 const AUTHORS       = sandbox2.AUTHORS || {};
 const ARTICLE_STATS = sandbox2.ARTICLE_STATS || {};
 
-// Extraer WEEKLY_ARTICLES ("El Artículo de la Semana") para sus páginas estáticas
-const weeklyStart = mainCode.indexOf('const WEEKLY_ARTICLES');
-const sandbox4    = {};
-vm.runInNewContext(
-  AUDIBLE_LINK_DECL + mainCode.slice(weeklyStart, authStart).replace(/\bconst\s+/g, ''),
-  sandbox4
-);
+// Extraer WEEKLY_ARTICLES ("El Artículo de la Semana") de su propio archivo
+// (js/articulos-semana.js, A2.1) para sus páginas estáticas. Mismo mecanismo
+// vm.runInNewContext que el resto, porque el archivo usa AUDIBLE_LINK como
+// global sin declararlo (igual que hace en el navegador).
+const articulosSemanaCode = fs.readFileSync(path.join(__dirname, 'js/articulos-semana.js'), 'utf-8');
+const sandbox4 = {};
+vm.runInNewContext(AUDIBLE_LINK_DECL + articulosSemanaCode.replace(/\bconst\s+/g, ''), sandbox4);
 const WEEKLY_ARTICLES = sandbox4.WEEKLY_ARTICLES || [];
 if (!WEEKLY_ARTICLES.length) {
-  console.error('ERROR: No se pudo extraer WEEKLY_ARTICLES');
+  console.error('ERROR: No se pudo extraer WEEKLY_ARTICLES de js/articulos-semana.js');
   process.exit(1);
 }
 
@@ -168,6 +169,22 @@ const WEEKLY_CAT = {
   22: 'educacion',   // Psicolingüística (idioma y tiempo)
   21: 'derecho',     // Memoria y cognición (recuerdos de infancia)
   20: 'economia',    // Sesgos cognitivos (Kahneman, pensar rápido/despacio)
+  // Lote Operación Fénix, septiembre 2026
+  33: 'educacion',   // Dunning-Kruger
+  34: 'politica',    // Conformidad de Asch
+  35: 'relaciones',  // Efecto espectador
+  36: 'politica',    // Buen samaritano con prisa
+  37: 'saludMental', // Experimento Rosenhan
+  38: 'saludMental', // Indefensión aprendida
+  39: 'educacion',   // Efecto Pigmalión
+  40: 'trabajo',     // Agotamiento del ego
+  41: 'economia',    // Efecto dotación
+  42: 'redesSociales', // Mundo pequeño (Milgram)
+  43: 'relaciones',  // Efecto foco
+  44: 'relaciones',  // Efecto camaleón
+  45: 'educacion',   // Amenaza del estereotipo
+  46: 'economia',    // Réplica del malvavisco
+  47: 'redesSociales', // Falso consenso
 };
 
 // ── Fecha en español -> ISO 8601 (para datePublished en JSON-LD) ─
@@ -1744,6 +1761,7 @@ indexHtml = indexHtml
   .replace(/js\/search-index\.js\?v=[a-z0-9]+/, `js/search-index.js?v=${SEARCH_INDEX_V}`)
   .replace(/js\/buscador\.js\?v=[a-z0-9]+/, `js/buscador.js?v=${BUSCADOR_V}`)
   .replace(/js\/recomendaciones\.js\?v=[a-z0-9]+/, `js/recomendaciones.js?v=${RECOMENDACIONES_V}`)
+  .replace(/js\/articulos-semana\.js\?v=[a-z0-9]+/, `js/articulos-semana.js?v=${ARTSEM_V}`)
   .replace(/js\/neural-canvas\.js\?v=[a-z0-9]+/, `js/neural-canvas.js?v=${NEURAL_V}`);
 fs.writeFileSync(indexPath, indexHtml, 'utf-8');
 console.log('✅ index.html sincronizado con las versiones de cache-busting actuales');
