@@ -6245,6 +6245,7 @@ function initWeeklySection() {
     const sidebarCard = document.getElementById('sidebar-weekly-card');
     if (sidebarCard) {
       sidebarCard.innerHTML = renderSidebarWeeklyTeaser(available[0]);
+      if (window._LI_syncSidebarLeftHeight) requestAnimationFrame(window._LI_syncSidebarLeftHeight);
       const readBtn = document.getElementById('sidebar-week-read-btn');
       if (readBtn) {
         readBtn.addEventListener('click', () => {
@@ -6325,10 +6326,35 @@ function _syncSidebarLeftHeight() {
     const targetRight = bottom - right.getBoundingClientRect().top;
     right.style.height = targetRight > 0 ? targetRight + 'px' : '';
   }
+  requestAnimationFrame(_fitWeeklyTitle);
 }
 window._LI_syncSidebarLeftHeight = _syncSidebarLeftHeight;
+
+/* Ajusta el cuerpo de letra del título del Artículo de la Semana en el
+   sidebar para que quepa siempre entero, sin recorte ni "...", dentro
+   del alto que le toca a su tarjeta. Se recalcula en cada sync/resize,
+   así el sistema que publica los semanales no necesita medir titulares. */
+function _fitWeeklyTitle() {
+  const layout = document.querySelector('.dashboard-layout');
+  const inner  = document.querySelector('.sidebar-weekly-inner');
+  const titleEl = inner && inner.querySelector('.sw-title');
+  if (!inner || !titleEl) return;
+  const balanced = layout && layout.classList.contains('hero-balanced') && window.innerWidth >= 1101;
+  if (!balanced) { titleEl.style.removeProperty('--sw-title-fs'); return; }
+  const MAX = 24, MIN = 14;
+  let fs = MAX;
+  titleEl.style.setProperty('--sw-title-fs', fs + 'px');
+  while (fs > MIN && inner.scrollHeight > inner.clientHeight + 1) {
+    fs -= 0.5;
+    titleEl.style.setProperty('--sw-title-fs', fs + 'px');
+  }
+}
+window._LI_fitWeeklyTitle = _fitWeeklyTitle;
 window.addEventListener('resize', () => requestAnimationFrame(_syncSidebarLeftHeight), { passive: true });
 window.addEventListener('load', () => requestAnimationFrame(_syncSidebarLeftHeight));
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => requestAnimationFrame(_syncSidebarLeftHeight));
+}
 _syncHeroBalance();
 
 
