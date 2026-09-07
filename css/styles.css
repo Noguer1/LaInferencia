@@ -7670,7 +7670,7 @@ button.fav-item-cta:hover {
 .dark-base .pt-reward-block { border-bottom-color: color-mix(in srgb, var(--blue) 18%, transparent); }
 .dark-base .pt-reward-count { color: #E2E8F0; }
 
-/* ── Recompensa lista para reclamar (sustituye la barra al llegar a 4) ── */
+/* ── Recompensa lista para reclamar (sustituye la barra al llegar a 6) ── */
 .pt-reward-claim {
   display: flex;
   align-items: center;

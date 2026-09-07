@@ -4572,13 +4572,13 @@ function _buildMysteryUnlockHTML(origen, libroOverride) {
   </div>`;
 }
 
-/* ── Regalo de bienvenida: al leer 4 artículos ───────────────── */
+/* ── Regalo de bienvenida: al leer 6 artículos ───────────────── */
 const WELCOME_GIFT_FLAG = 'li_welcome_gift_shown';
 const WELCOME_GIFT_CLAIMED_FLAG = 'li_welcome_gift_claimed';
 const WELCOME_GIFT_ANSWERED_FLAG = 'li_welcome_gift_answered';
 const WELCOME_GIFT_Q1_FLAG = 'li_welcome_gift_q1';
 const WELCOME_GIFT_Q2_FLAG = 'li_welcome_gift_q2';
-const WELCOME_GIFT_ARTICULOS = 4;
+const WELCOME_GIFT_ARTICULOS = 6;
 
 const WG_FINAL_COPY = {
   aa: {
@@ -4625,7 +4625,7 @@ function _buildWelcomeGiftModal() {
           <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.912 5.813a2.5 2.5 0 0 0 1.626 1.626L21 12l-5.462 1.561a2.5 2.5 0 0 0-1.626 1.626L12 21l-1.912-5.813a2.5 2.5 0 0 0-1.626-1.626L3 12l5.462-1.561a2.5 2.5 0 0 0 1.626-1.626L12 3z"/></svg>
         </span>
         <p class="wg-intro-title">¡Enhorabuena!</p>
-        <p class="wg-intro-text">Ya vas por tu cuarto artículo con nosotros. Queríamos tener un detalle contigo.</p>
+        <p class="wg-intro-text">Ya vas por tu sexto artículo con nosotros. Queríamos tener un detalle contigo.</p>
         <p class="wg-intro-sub">Dos preguntas cortas y es tuyo.</p>
         <button class="flip-back-btn wg-cta" type="button" id="wg-continue">Continuar</button>
       </div>
@@ -7958,7 +7958,7 @@ window.LI_CAT_COLORS = {
       hideIcon: true,
       title: 'Tienes un regalo esperando',
       rewardHook: 'Sabemos que te gusta aprender, aunque el tiempo no siempre da para leer todo lo que querrías.',
-      rewardHighlight: 'Lee tus primeros 4 artículos y desbloquea un regalo',
+      rewardHighlight: 'Lee tus primeros 6 artículos y desbloquea un regalo',
       rewardBadge: '🎁 Normalmente hay que pagarlo. Te lo hemos conseguido gratis.',
     },
   ];
