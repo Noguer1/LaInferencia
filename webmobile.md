@@ -393,6 +393,16 @@ Todo con `transform` y `opacity`, nunca `width`, `left`, `filter` o `font-weight
 
 ## 10. Plan de implementación por fases
 
+> **Estado a fecha de hoy** (actualizado durante la ejecución):
+>
+> - **Fase 0** ✅ hecha. Acabó siendo la vista rápida in-app de Fuera de Bata (`mp-fuerabata`) con enlace al catálogo completo, no una navegación pelada. Ver 10.ter.
+> - **Fase 1** ✅ hecha. Barra de 4 destinos sin botón central, indicador deslizante, fondo sólido, safe-area, iconos SVG, auto-ocultar al scroll, `@view-transition`. `sharedBottomNav(active)` en `generate-pages.js` la inyecta en artículos, categorías, semanales, rutas, guías, biblioteca y ficha de autor, además de `index.html` y `/fuera-de-bata/`. **Pendiente menor:** las 10 páginas de artículo de `/fuera-de-bata/` (mantenidas a mano, no generadas) siguen sin barra.
+> - **Fase 2** ❌ no hecha. Sigue el sistema `mp-*`. Solo se añadió manejo de `#timeline` / `#yo` y anclaje de scroll al entrar por hash.
+> - **Fase 3** ❌ no hecha. El inicio sigue siendo el dashboard de escritorio con `mp-casa`.
+> - **Fase 4** ⚠️ a medias. `@view-transition { navigation: auto }` entre documentos: hecho. Bottom sheets para tema / glosario / menú secundario: pendiente.
+> - **Fase 5** ❌ no hecha. Sin `manifest.webmanifest`, sin service worker, sin prompt de instalación.
+> - **Fase 6** ⚠️ parcial. Probado en emulación (claro/oscuro) y en Android Chrome real. Falta iPhone y repaso de los 6 temas.
+
 **Fase 0. Parche urgente (1 cambio):**
 Que la pestaña "Fuera de Bata" en móvil navegue a `/fuera-de-bata/` en vez de abrir la vista in-app obsoleta. Ya está medio identificado en `js/main.js`.
 
@@ -447,14 +457,29 @@ Resumen: el plan es sólido y se puede ejecutar por partes sin comprometer lo qu
 
 ---
 
+## 10.ter. Desvío del plan: Fuera de Bata como vista rápida in-app
+
+El plan original tenía a "Fuera de Bata" como una navegación real a `/fuera-de-bata/` desde la barra. En ejecución, el usuario probó en Android Chrome y esa entrada se sentía lenta comparada con las pestañas SPA (Inicio, Explorar, Yo), que son instantáneas por ser un cambio de clase en el mismo documento.
+
+Se intentó cerrar la brecha sin cambiar arquitectura (View Transitions entre documentos, luego Speculation Rules `prerender`), pero el listón era "exactamente igual de fluido que Inicio -> Explorar", y eso solo se consigue si NO hay navegación real.
+
+**Decisión:** la pestaña "Fuera de Bata" vuelve a ser una página in-app (`mp-fuerabata`) que muestra una **vista rápida**: título con la probeta (mismo SVG que la pestaña), entradilla, stats con count-up, artículo destacado, y dos botones ("Ver el catálogo completo" -> `/fuera-de-bata/`, "Cómo publicar aquí"). El cambio de pestaña es 0 ms, igual que el resto.
+
+- **Una sola URL canónica:** `/fuera-de-bata/` y `/fuera-de-bata/<slug>/`. La vista rápida no tiene URL propia; es solo la pestaña. Compartir un enlace funciona en cualquier dispositivo, SEO intacto.
+- **Coste:** doble mantenimiento leve. El texto y el destacado de la vista rápida están en `index.html`; el catálogo completo, los filtros y el buscador de autor solo en `fuera-de-bata/index.html`. Añadir una pieza nueva: solo la página completa.
+- **Contenido extra de esa pantalla** (no en el plan original): halo de texto sobre los nodos, entrada escalonada de los bloques, contadores animados, probeta con burbuja. Detalle en el historial de commits.
+
+---
+
 ## 11. Checklist de "web móvil bien hecha" para este proyecto
 
-- [ ] Barra inferior visible e idéntica en TODAS las páginas.
-- [ ] 4 destinos (`Inicio | Explorar | Fuera de Bata | Yo`), sin botón central, plana o en píldora flotante.
-- [ ] Indicador activo que se desliza con `transform: translateX()`; icono outline -> filled; etiqueta solo cambia de color.
-- [ ] Etiqueta "Fuera de Bata" no se trunca (dos líneas).
-- [ ] Barra con fondo sólido, sin `backdrop-filter`; contraste 3:1 sobre imágenes de artículo.
-- [ ] Cada destino con URL real y estado propio.
+- [x] Barra inferior visible en las páginas generadas (artículos, categorías, rutas, guías, biblioteca, autor) + `index.html` + `/fuera-de-bata/`. Falta: 10 artículos de `/fuera-de-bata/`.
+- [x] 4 destinos (`Inicio | Explorar | Fuera de Bata | Yo`), sin botón central, barra plana.
+- [x] Indicador activo que se desliza con `transform: translateX()`; iconos SVG de trazo; etiqueta cambia de color.
+- [x] Barra con fondo sólido, sin `backdrop-filter`.
+- [ ] Etiqueta "Fuera de Bata" verificada sin truncar en móvil de 360 px (cabe en 1 línea en las pruebas).
+- [ ] Contraste 3:1 comprobado en los 6 temas.
+- [ ] Cada destino con URL real y estado propio (sigue con `mp-*`).
 - [ ] Hamburguesa (bottom sheet) solo para secundario.
 - [ ] `viewport-fit=cover` + `env(safe-area-inset-*)` en barra y cabecera.
 - [ ] Objetivos táctiles de 48 px con 8 px de separación en la barra.
