@@ -9633,6 +9633,16 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 .mobile-bottom-nav    { display: none; }
 .mobile-section-header { display: none; }
 
+/* ── Transición entre documentos del mismo origen (home <-> /fuera-de-bata/) ──
+   Quita el parpadeo blanco al navegar. Plataforma pura, sin framework.
+   Donde no haya soporte (Firefox) degrada a navegación normal. */
+@view-transition { navigation: auto; }
+/* La barra inferior se mantiene fija entre páginas en vez de desvanecerse */
+.mobile-bottom-nav { view-transition-name: mobile-bottom-nav; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+
 @media (max-width: 768px) {
 
   /* ── Overlay activo ── */
@@ -9745,6 +9755,8 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     stroke-width: 2;
     transition: color 0.2s ease;
   }
+  /* El matraz redondo llena menos su viewBox: se agranda para igualar masa visual */
+  .mbn-icon--flask { width: 25px; height: 25px; }
 
   /* Label: debajo del icono, altura fija para alinear los iconos */
   .mbn-label {

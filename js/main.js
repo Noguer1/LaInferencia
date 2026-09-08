@@ -12542,12 +12542,13 @@ const EFECTOS_EXTRA = {
     if (instant) {
       indicator.style.transition = 'none';
       indicator.style.transform  = 'translateX(' + x + 'px)';
+      indicator.classList.remove('mbn-indicator--hidden');
       indicator.offsetHeight;                 /* forzar reflow */
       indicator.style.transition = '';
     } else {
       indicator.style.transform = 'translateX(' + x + 'px)';
+      indicator.classList.remove('mbn-indicator--hidden');
     }
-    indicator.classList.remove('mbn-indicator--hidden');
   }
 
   /* ── Cambiar de página con transición de fade + deslizamiento lateral ── */
@@ -12607,8 +12608,10 @@ const EFECTOS_EXTRA = {
     const hash = window.location.hash;
     if (hash === '#botiquin') {
       switchPage('botiquin', true);
-    } else if (hash === '#timeline') {
+    } else if (hash === '#timeline' || hash === '#explorar') {
       switchPage('descubrir', true);
+    } else if (hash === '#yo' || hash === '#perfil') {
+      switchPage('yo', true);
     } else {
       switchPage('casa', true);
     }
