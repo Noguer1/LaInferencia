@@ -4609,7 +4609,48 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 /* ── Vista rápida de Fuera de Bata dentro de la SPA (pestaña inferior) ── */
-.fdb-home { display: flex; flex-direction: column; gap: 1.1rem; }
+.fdb-home {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  position: relative;
+  z-index: 0;
+}
+/* Velo difuminado detrás del texto: los nodos del canvas no restan
+   legibilidad y los bordes se disuelven (sin recuadro marcado).
+   Dos capas: gradiente translúcido (siempre funciona) + desenfoque
+   enmascarado encima. */
+.fdb-home::before,
+.fdb-home::after {
+  content: "";
+  position: absolute;
+  inset: -1rem -1.15rem;
+  z-index: -1;
+  border-radius: 26px;
+  pointer-events: none;
+}
+.fdb-home::before {
+  background: radial-gradient(125% 115% at 50% 38%,
+    rgba(247, 249, 255, 0.64) 0%,
+    rgba(247, 249, 255, 0.44) 45%,
+    rgba(247, 249, 255, 0) 100%);
+}
+.fdb-home::after {
+  backdrop-filter: blur(7px) saturate(1.05);
+  -webkit-backdrop-filter: blur(7px) saturate(1.05);
+  -webkit-mask: radial-gradient(120% 112% at 50% 40%, #000 42%, transparent 92%);
+          mask: radial-gradient(120% 112% at 50% 40%, #000 42%, transparent 92%);
+}
+.dark-base .fdb-home::before {
+  background: radial-gradient(125% 115% at 50% 38%,
+    rgba(7, 16, 30, 0.6) 0%,
+    rgba(7, 16, 30, 0.4) 45%,
+    rgba(7, 16, 30, 0) 100%);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .fdb-home::before { background: var(--card-bg); }
+  .fdb-home::after  { display: none; }
+}
 .fdb-home-eyebrow {
   display: inline-flex; align-items: center; gap: 0.4rem;
   font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em;
