@@ -9648,9 +9648,10 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     background: #fff;
     padding-bottom: env(safe-area-inset-bottom, 0px);
     align-items: stretch;
-    /* Sin box-shadow recto: la sombra la da el drop-shadow en .mbn-curve */
-    height: 68px;
-    overflow: visible;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 -4px 18px rgba(15, 23, 42, 0.07);
+    height: 66px;
+    overflow: hidden;
     /* GPU compositing: capa propia permanente, evita salto durante animaciones de contenido */
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -9660,35 +9661,31 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   }
   @supports (padding-bottom: env(safe-area-inset-bottom)) {
     .mobile-bottom-nav {
-      height: calc(68px + env(safe-area-inset-bottom));
+      height: calc(66px + env(safe-area-inset-bottom));
       padding-bottom: env(safe-area-inset-bottom);
     }
   }
 
-  /* Indicador magnético, círculo único que se desliza entre pestañas */
+  /* Indicador deslizante: píldora que viaja tras la pestaña activa.
+     Se mueve con transform: translateX() (compuesto en GPU, sin layout). */
   .mbn-indicator {
     position: absolute;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+    width: 46px;
+    height: 32px;
+    border-radius: 16px;
     background: var(--pill-bg);
-    box-shadow: 0 4px 14px color-mix(in srgb, var(--blue) 35%, transparent), inset 0 1px 0 rgba(255,255,255,0.22);
-    /* top fijo: alineado con el centro vertical del icon-wrap (8px padding + 21px radio) */
-    top: 29px;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--blue) 32%, transparent), inset 0 1px 0 rgba(255,255,255,0.22);
+    /* top fijo: alineado con el centro vertical del icon-wrap */
+    top: 8px;
     left: 0;
-    transform: translate(-50%, -50%);
-    transition: left 0.3s ease-out, top 0.3s ease-out, transform 0.3s ease-out, opacity 0.2s ease;
+    transform: translateX(0);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
     pointer-events: none;
     z-index: 1;
     opacity: 1;
   }
   .mbn-indicator.mbn-indicator--hidden {
     opacity: 0;
-  }
-  /* Estado "casa": indicador viaja hacia el botón central (más alto + escalado) */
-  .mbn-indicator.mbn-indicator--casa {
-    top: 15px;
-    transform: translate(-50%, -50%) scale(1.38);
   }
 
   /* Tab: estructura de columna con icon-wrap + label */
@@ -9698,11 +9695,11 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
+    gap: 2px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px 4px 6px;
+    padding: 6px 2px 5px;
     color: #475569;
     transition: color 0.18s;
     min-width: 0;
@@ -9710,14 +9707,12 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     outline: none;
     position: relative;
     z-index: 2;
-    overflow: visible;
   }
 
-  /* Contenedor de icono: círculo fijo idéntico para las 5 pestañas */
+  /* Contenedor de icono: idéntico para las 4 pestañas */
   .mbn-icon-wrap {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9726,72 +9721,8 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     z-index: 2;
   }
 
-  /* ── Botón central (Casa): círculo flotante sobre la barra ── */
-  .mbn-tab--home {
-    flex: 1;
-    justify-content: flex-end;
-    padding-bottom: 7px;
-    position: relative;
-    z-index: 3;
-  }
-
-  /* Campana, rellena el fondo blanco, ancho dinámico via JS */
-  .mbn-curve {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    transform: none;
-    width: 100%;
-    height: 40px;
-    fill: #fff;
-    pointer-events: none;
-    z-index: 0;
-    overflow: visible;
-    display: block;
-    /* Sombra curva sigue la silueta de la campana, no el borde recto de la barra */
-    filter: drop-shadow(0 -5px 10px rgba(0,0,0,0.09));
-  }
-
-  /* Borde plasma, ancho dinámico via JS, barrido de extremo a extremo */
-  .mbn-curve-plasma {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    transform: none;
-    width: 100%;
-    height: 40px;
-    fill: none;
-    pointer-events: none;
-    z-index: 1;
-    overflow: visible;
-    display: block;
-  }
-
-  .mbn-home-wrap {
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 4px 22px rgba(0,0,0,0.12);
-    transition: background 0.25s, box-shadow 0.25s;
-    flex-shrink: 0;
-    z-index: 4;
-  }
-
-  .mbn-tab--home .mbn-icon {
-    width: 28px; height: 28px;
-    opacity: 1;
-  }
-
   .mbn-icon {
-    width: 24px; height: 24px;
+    width: 23px; height: 23px;
     object-fit: contain;
     opacity: 1;
     transition: filter 0.18s;
@@ -9801,48 +9732,35 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     filter: brightness(0) invert(0.38) opacity(0.72);
   }
 
-  /* lab.png: ajuste óptico para equiparar con perfil.png y botiquin.png */
-  [data-mbn="fuerabata"] .mbn-icon { width: 32px; height: 32px; }
-  [data-mbn="botiquin"] .mbn-icon  { width: 28px; height: 28px; }
-  [data-mbn="yo"] .mbn-icon        { width: 28px; height: 28px; }
+  /* lab.png: ajuste óptico para equiparar con el resto */
+  [data-mbn="fuerabata"] .mbn-icon { width: 29px; height: 29px; }
 
-  /* Label: fuera del icon-wrap, visible sin recorte, debajo del icono */
+  /* Label: debajo del icono, altura fija de 2 líneas para alinear los iconos
+     aunque "Fuera de Bata" ocupe dos renglones */
   .mbn-label {
-    font-size: 0.57rem;
-    font-weight: 600;
+    font-size: 0.55rem;
+    font-weight: 700;
     font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
     letter-spacing: 0.01em;
-    line-height: 1;
-    white-space: nowrap;
+    line-height: 1.05;
+    white-space: normal;
+    text-align: center;
     color: #475569;
-    transition: color 0.18s, font-weight 0.18s;
+    transition: color 0.18s;
     max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    height: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Estado activo (tabs normales): icono blanco puro, label azul */
+  /* Estado activo: icono blanco sobre la píldora, label en color de marca */
   .mbn-tab.mbn-tab--active .mbn-icon {
     filter: brightness(0) invert(1);
     opacity: 1;
   }
   .mbn-tab.mbn-tab--active .mbn-label {
     color: var(--blue);
-    font-weight: 800;
-  }
-
-  /* Estado activo Casa: círculo sólido con color del tema activo */
-  .mbn-tab--home.mbn-tab--active .mbn-home-wrap {
-    background: var(--pill-bg);
-    box-shadow: 0 6px 24px color-mix(in srgb, var(--blue) 48%, transparent), inset 0 1px 0 rgba(255,255,255,0.22);
-  }
-  .mbn-tab--home.mbn-tab--active .mbn-icon {
-    filter: brightness(0) invert(1);
-    opacity: 1;
-  }
-  .mbn-tab--home.mbn-tab--active .mbn-label {
-    color: var(--blue);
-    font-weight: 800;
   }
 
   /* ── Viewport lock: body no scrolleable → address bar no se mueve → fixed nav no salta ── */
@@ -9946,17 +9864,10 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   body.mp-casa .propuestas-section,
   body.mp-casa .footer-main          { display: block; }
   body.mp-casa #panel-repositorio    { display: none !important; }
+  /* Fuera de Bata es una página aparte (/fuera-de-bata/): el panel in-app
+     #panel-repositorio ya no se muestra nunca en móvil */
 
-  /* ── PÁGINA: FUERA DE BATA ── */
-  body.mp-fuerabata .dashboard-center { display: block; }
-  body.mp-fuerabata .search-section   { display: none !important; }
-  body.mp-fuerabata #panel-biblioteca,
-  body.mp-fuerabata #panel-semana     { display: none !important; }
-  body.mp-fuerabata #panel-repositorio { display: block !important; }
-  body.mp-fuerabata .propuestas-section,
-  body.mp-fuerabata .footer-main      { display: block; }
-
-  /* ── PÁGINA: DESCUBRIR ── */
+  /* ── PÁGINA: EXPLORAR (data-mbn="descubrir") ── */
   body.mp-descubrir .sidebar-left,
   body.mp-descubrir .sidebar-right,
   body.mp-descubrir .timeline-section,
@@ -10086,28 +9997,16 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 /* ── Dark base: bottom nav ── */
 .dark-base .mobile-bottom-nav {
   background: var(--nav-bg, #030C1A);
+  border-top-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.5);
 }
 .dark-base .mbn-label  { color: #94a3b8; }
 /* Iconos inactivos en dark: neutralizar PNG → blanco tenue */
 .dark-base .mbn-icon { filter: brightness(0) invert(1) opacity(0.45); }
-.dark-base .mbn-curve  {
-  fill: var(--nav-bg, #030C1A);
-  filter: drop-shadow(0 -5px 14px rgba(0,0,0,0.55));
-}
-.dark-base .mbn-curve-plasma { opacity: 1; filter: brightness(1.35); }
-.dark-base .mbn-home-wrap {
-  background: var(--nav-bg, #030C1A);
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--blue) 22%, transparent);
-}
-.dark-base .mbn-tab--home.mbn-tab--active .mbn-home-wrap {
-  box-shadow: 0 6px 22px color-mix(in srgb, var(--blue) 42%, transparent);
-}
 /* Labels activos dark: usar --blue del tema (ya es el acento correcto para cada dark) */
 .dark-base .mbn-tab.mbn-tab--active .mbn-label { color: var(--blue); }
-.dark-base .mbn-tab--home.mbn-tab--active .mbn-label { color: var(--blue); }
 /* Dark Oscuro: --blue es #2563EB (oscuro), usar azul claro legible */
-[data-theme="dark"] .mbn-tab.mbn-tab--active .mbn-label,
-[data-theme="dark"] .mbn-tab--home.mbn-tab--active .mbn-label { color: #60A5FA; }
+[data-theme="dark"] .mbn-tab.mbn-tab--active .mbn-label { color: #60A5FA; }
 
 /* ── Colores de superficie por tema oscuro ── */
 [data-theme="dark"]     { --nav-bg: #030C1A; --header-bg: rgba(3, 12, 26, 0.97); }
