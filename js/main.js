@@ -12506,6 +12506,9 @@ const EFECTOS_EXTRA = {
   const PILL_W     = 44;
   const PILL_H     = 30;
   const msh        = document.getElementById('msh-section-name');
+  /* Ventana en la que el auto-ocultar de la barra ignora el scroll
+     (cambio de página + posible scroll nativo al fragmento #timeline) */
+  let navBusyUntil = 0;
 
   const PAGE_NAMES = {
     casa:      'Inicio',
@@ -12551,11 +12554,18 @@ const EFECTOS_EXTRA = {
     }
   }
 
+  function pinToTop() {
+    const s = document.getElementById('app') || document.documentElement;
+    if (s) s.scrollTop = 0;
+    if (window.pageYOffset) window.scrollTo(0, 0);
+  }
+
   /* ── Cambiar de página con transición de fade + deslizamiento lateral ── */
   function switchPage(page, instant) {
     if (!isMobile()) return;
     if (!PAGE_CLS.includes('mp-' + page)) return;
 
+    navBusyUntil = (window.performance ? performance.now() : Date.now()) + 450;
     const slideWrap = document.getElementById('mob-slide-wrap');
 
     /* Determinar dirección del deslizamiento */
@@ -12606,16 +12616,28 @@ const EFECTOS_EXTRA = {
     document.body.classList.add('mobile-nav-active');
     positionIndicatorY();
     const hash = window.location.hash;
-    if (hash === '#botiquin') {
-      switchPage('botiquin', true);
-    } else if (hash === '#timeline' || hash === '#explorar') {
-      switchPage('descubrir', true);
-    } else if (hash === '#yo' || hash === '#perfil') {
-      switchPage('yo', true);
-    } else {
-      switchPage('casa', true);
+    let target = 'casa';
+    if (hash === '#botiquin') target = 'botiquin';
+    else if (hash === '#timeline' || hash === '#explorar') target = 'descubrir';
+    else if (hash === '#yo' || hash === '#perfil') target = 'yo';
+    switchPage(target, true);
+
+    /* Si veníamos con hash (p. ej. desde /fuera-de-bata/ → /#timeline), el
+       navegador intenta un scroll nativo al elemento #timeline/#botiquin,
+       que desplaza #app y dispara el auto-ocultar. Limpiamos la URL y
+       anclamos arriba varias veces para ganarle a ese scroll tardío. */
+    if (hash && target !== 'casa') {
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
     }
-    requestAnimationFrame(() => { positionIndicatorY(); moveIndicator(currentPage(), true); });
+    navBusyUntil = (window.performance ? performance.now() : Date.now()) + 800;
+    pinToTop();
+    requestAnimationFrame(() => {
+      pinToTop();
+      positionIndicatorY();
+      moveIndicator(currentPage(), true);
+    });
+    setTimeout(pinToTop, 60);
+    setTimeout(pinToTop, 200);
   }
 
   function currentPage() {
@@ -12660,6 +12682,11 @@ const EFECTOS_EXTRA = {
     let lastY = scroller.scrollTop || 0, ticking = false;
     const onNavScroll = () => {
       const y = scroller.scrollTop || 0;
+      /* Durante un cambio de página (y el posible scroll nativo al fragmento)
+         no ocultamos la barra: solo seguimos la posición */
+      if ((window.performance ? performance.now() : Date.now()) < navBusyUntil) {
+        lastY = y; ticking = false; return;
+      }
       if (y <= 4) nav.classList.remove('mbn-hidden');
       else if (y > lastY + 8 && y > 96) nav.classList.add('mbn-hidden');
       else if (y < lastY - 6) nav.classList.remove('mbn-hidden');
