@@ -356,7 +356,8 @@ function staticHero(opts = {}) {
         <a href="/" class="static-navbar-cta">Ir a La Inferencia <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
       </div>
     </div>
-  </header>`;
+  </header>
+  <div class="reading-progress-bar" id="reading-progress-bar" aria-hidden="true"><div class="reading-progress-fill" id="reading-progress-fill"></div></div>`;
   if (opts.compact) return navbar;
   return `${navbar}
   <section class="static-hero" aria-label="La Inferencia">
@@ -372,7 +373,8 @@ function staticHero(opts = {}) {
 
 function staticFooterScripts() {
   return `<script src="/js/search-index.js?v=${SEARCH_INDEX_V}"></script>
-<script defer src="/js/buscador.js?v=${BUSCADOR_V}"></script>`;
+<script defer src="/js/buscador.js?v=${BUSCADOR_V}"></script>
+<script defer src="/js/reading-progress.js?v=${READING_PROGRESS_V}"></script>`;
 }
 
 function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {
@@ -1380,6 +1382,7 @@ const BUSCADOR_V  = hashOf('js/buscador.js');
 const RUTAS_JS_V  = hashOf('js/rutas.js');
 const RECOMENDACIONES_V = hashOf('js/recomendaciones.js');
 const NEURAL_V    = hashOf('js/neural-canvas.js');
+const READING_PROGRESS_V = hashOf('js/reading-progress.js');
 
 // ── Template landing de Rutas de Aprendizaje ────────────────────
 const RUTAS_URL = `${SITE}/rutas/`;

@@ -6478,6 +6478,13 @@ _syncHeroBalance();
   const btn = document.getElementById('sidebar-fdb-btn');
   if (!btn) return;
   btn.addEventListener('click', () => {
+    /* Escritorio: entrar directamente en la sección Fuera de Bata.
+       Móvil (pendiente de rediseño): abrir la vista in-app, que ya lleva
+       su propio botón "Entrar en Fuera de Bata". */
+    if (!document.body.classList.contains('mobile-nav-active')) {
+      window.location.href = '/fuera-de-bata/';
+      return;
+    }
     document.querySelector('[data-tab="repositorio"]')?.click();
     document.querySelector('.dashboard-center')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });

@@ -5570,6 +5570,9 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .reading-progress-bar { top: 52px; }
 }
 
+/* Páginas estáticas: la navbar mide 60px, no 64/52 como la de la SPA */
+body:not(:has(#app)) .reading-progress-bar { top: 60px; }
+
 .reading-progress-fill {
   height: 100%;
   width: 100%;
