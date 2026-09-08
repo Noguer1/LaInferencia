@@ -4621,42 +4621,13 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .fdb-home h2 .grad { color: var(--blue); }
 .fdb-home-lead {
   font-size: 0.92rem; line-height: 1.7; color: var(--text-body); margin: 0;
-  position: relative;
-  z-index: 0;
+  /* Halo pegado a las letras para que los nodos del canvas no le resten
+     legibilidad. Al ir ligado al texto y no a una caja, no hay ningún
+     borde perceptible. */
+  text-shadow: 0 0 7px #F7F9FF, 0 0 7px #F7F9FF, 0 0 15px #F7F9FF;
 }
-/* Velo difuminado SOLO tras la entradilla: los nodos del canvas no le
-   restan legibilidad y los bordes se disuelven (sin recuadro).
-   Dos capas: gradiente translúcido + desenfoque enmascarado. */
-.fdb-home-lead::before,
-.fdb-home-lead::after {
-  content: "";
-  position: absolute;
-  inset: -0.55rem -0.9rem;
-  z-index: -1;
-  border-radius: 20px;
-  pointer-events: none;
-}
-.fdb-home-lead::before {
-  background: radial-gradient(120% 110% at 50% 45%,
-    rgba(247, 249, 255, 0.26) 0%,
-    rgba(247, 249, 255, 0.13) 46%,
-    rgba(247, 249, 255, 0) 82%);
-}
-.fdb-home-lead::after {
-  backdrop-filter: blur(3.5px);
-  -webkit-backdrop-filter: blur(3.5px);
-  -webkit-mask: radial-gradient(116% 108% at 50% 45%, #000 38%, transparent 86%);
-          mask: radial-gradient(116% 108% at 50% 45%, #000 38%, transparent 86%);
-}
-.dark-base .fdb-home-lead::before {
-  background: radial-gradient(120% 110% at 50% 45%,
-    rgba(6, 14, 27, 0.36) 0%,
-    rgba(6, 14, 27, 0.17) 46%,
-    rgba(6, 14, 27, 0) 82%);
-}
-@media (prefers-reduced-transparency: reduce) {
-  .fdb-home-lead::before { background: var(--card-bg); }
-  .fdb-home-lead::after  { display: none; }
+.dark-base .fdb-home-lead {
+  text-shadow: 0 0 7px #07101E, 0 0 7px #07101E, 0 0 15px #07101E;
 }
 .fdb-home-stats { display: flex; gap: 1.6rem; margin: 0.2rem 0; }
 .fdb-home-stats div { display: flex; flex-direction: column; }
@@ -10005,6 +9976,8 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   body.mp-fuerabata .sidebar-right     { display: none !important; }
   body.mp-fuerabata .propuestas-section,
   body.mp-fuerabata .footer-main       { display: block; }
+  /* Sin section header: dar aire arriba para que el título no roce el header */
+  body.mp-fuerabata #panel-repositorio .main-content { padding-top: 1.6rem; }
 
   /* ── PÁGINA: EXPLORAR (data-mbn="descubrir") ── */
   body.mp-descubrir .sidebar-left,
