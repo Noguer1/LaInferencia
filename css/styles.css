@@ -4651,12 +4651,6 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .fdb-home::before { background: var(--card-bg); }
   .fdb-home::after  { display: none; }
 }
-.fdb-home-eyebrow {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--blue);
-}
-.fdb-home-eyebrow svg { width: 13px; height: 13px; }
 .fdb-home h2 {
   font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em;
   color: var(--navy); margin: 0; line-height: 1.1;
