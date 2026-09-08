@@ -5498,10 +5498,10 @@ function renderBataFull(art) {
       <div class="article-content">
         <p class="article-intro">${art.intro}</p>
         ${sectionsHTML}
-        <blockquote class="article-blockquote">
+        ${art.blockquote ? `<blockquote class="article-blockquote">
           <p>${art.blockquote.text}</p>
           <cite>${art.blockquote.attribution}</cite>
-        </blockquote>
+        </blockquote>` : ''}
         ${art.aplicacion ? `<div class="aplicacion-block">
           <div class="aplicacion-header">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
@@ -5955,10 +5955,10 @@ function renderFeaturedWeekly(article) {
         <p class="article-intro">${intro}</p>
         ${_buildStatsHTML('weekly-' + week)}
         ${sectionsHTML}
-        <blockquote class="article-blockquote">
+        ${blockquote ? `<blockquote class="article-blockquote">
           <p>${blockquote.text}</p>
           <cite>${blockquote.attribution}</cite>
-        </blockquote>
+        </blockquote>` : ''}
         ${aplicacion ? `<div class="aplicacion-block">
           <div class="aplicacion-header">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
@@ -10282,10 +10282,10 @@ const GLOSARIO = [
           <p class="article-intro">${art.intro}</p>
           ${_buildStatsHTML(art.id)}
           ${sectionsHTML}
-          <blockquote class="article-blockquote">
+          ${art.blockquote ? `<blockquote class="article-blockquote">
             <p>${art.blockquote.text}</p>
             <cite>${art.blockquote.attribution}</cite>
-          </blockquote>
+          </blockquote>` : ''}
           ${art.aplicacion ? `<div class="aplicacion-block">
             <div class="aplicacion-header">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
