@@ -397,8 +397,8 @@ Todo con `transform` y `opacity`, nunca `width`, `left`, `filter` o `font-weight
 >
 > - **Fase 0** ✅ hecha. Acabó siendo la vista rápida in-app de Fuera de Bata (`mp-fuerabata`) con enlace al catálogo completo, no una navegación pelada. Ver 10.ter.
 > - **Fase 1** ✅ hecha, completa. Barra de 4 destinos sin botón central, indicador deslizante, fondo sólido, safe-area, iconos SVG, auto-ocultar al scroll, `@view-transition`. `sharedBottomNav(active)` en `generate-pages.js` la inyecta en artículos, categorías, semanales, rutas, guías, biblioteca y ficha de autor, además de `index.html`. Los 10 artículos de `/fuera-de-bata/` (mantenidos a mano) llevan el mismo snippet añadido a mano, con "Fuera de Bata" como pestaña activa.
-> - **Fase 2** ❌ no hecha. Sigue el sistema `mp-*`. Solo se añadió manejo de `#timeline` / `#yo` y anclaje de scroll al entrar por hash.
-> - **Fase 3** ❌ no hecha. El inicio sigue siendo el dashboard de escritorio con `mp-casa`.
+> - **Fase 2** ✅ hecha (versión "sin salir de la página rápida"). Se mantiene el sistema `mp-*` (que es lo que hace instantáneo el cambio de sección) y encima se añade enrutado por hash: cada sección tiene su dirección (`/#explorar`, `/#fuerabata`, `/#botiquin`, `/#yo`, `/` para Inicio), el botón atrás/adelante recorre las secciones, recargar o abrir un enlace cae en la sección correcta, y el scroll se recuerda por sección. Re-pulsar la pestaña activa sube al principio. Cero recargas: todo dentro del mismo documento. Convive con el enrutador `?v=` existente (efectos, glosario, artículo de biblioteca).
+> - **Fase 3** ⬇️ degradada a tarea pequeña. La portada móvil ya está adaptada (hero + temas, sin columnas de escritorio). Solo falta añadir Artículo de la Semana + bloque de Fuera de Bata más abajo. No es una fase.
 > - **Fase 4** ⚠️ a medias. `@view-transition { navigation: auto }` entre documentos: hecho. Bottom sheets para tema / glosario / menú secundario: pendiente.
 > - **Fase 5** ❌ no hecha. Sin `manifest.webmanifest`, sin service worker, sin prompt de instalación.
 > - **Fase 6** ⚠️ parcial. Probado en emulación (claro/oscuro) y en Android Chrome real. Falta iPhone y repaso de los 6 temas.
@@ -415,13 +415,16 @@ Que la pestaña "Fuera de Bata" en móvil navegue a `/fuera-de-bata/` en vez de 
 - CSS del armazón aislado, con `padding-bottom: max(8px, env(safe-area-inset-bottom))`.
 - En páginas de artículo, la barra puede auto-ocultarse al hacer scroll hacia abajo y reaparecer al subir (patrón de apps de lectura), respetando `prefers-reduced-motion`.
 
-**Fase 2. Páginas reales en vez de `mp-*`:**
-- Inicio, Explorar, Botiquín, Yo pasan a rutas/hash con estado propio.
-- `history.scrollRestoration = 'manual'` + scroll por URL en `sessionStorage`.
-- Deep links a todas las secciones.
+**Fase 2. URLs y botón atrás, SIN salir de la página rápida (redefinida):**
+- La idea original ("cada sección un documento aparte") se descartó: reintroduciría la misma pausa que tenía Fuera de Bata entre TODAS las secciones. Lo instantáneo del cambio de sección viene de que todo vive en el mismo documento; eso se protege.
+- Se mantiene el sistema `mp-*` y encima se añade enrutado por hash: cada sección tiene su dirección (`/#explorar`, `/#fuerabata`, `/#botiquin`, `/#yo`, `/`), `history.pushState` en cada cambio para que el botón atrás/adelante recorra las secciones, `popstate` para atender atrás/adelante, y scroll recordado por sección en memoria de sesión.
+- Re-pulsar la pestaña activa sube al principio (patrón iOS).
+- Convive con el enrutador `?v=` existente (efectos, glosario, artículo de biblioteca) sin pisarse: cada handler filtra por su propia clave de estado.
+- `history.scrollRestoration = 'manual'` ya estaba puesto globalmente.
 
-**Fase 3. Portada móvil:**
-- Bloque `mobile-home` con el orden de 9.4.
+**Fase 3. Portada móvil: ~~una fase~~ una tarea pequeña:**
+- Revisado con la web delante: la portada móvil ya muestra hero + temas y **las columnas laterales de escritorio ya están ocultas**. La premisa ("es la de escritorio troceada") estaba desfasada.
+- Lo único que queda: añadir el Artículo de la Semana y un bloque de Fuera de Bata más abajo en la portada. Es media hora, no una fase. "Continuar leyendo" descartado por el usuario.
 
 **Fase 4. Sensación de app:**
 - `@view-transition` entre documentos + `view-transition-name` en tarjetas y artículos.

@@ -12506,9 +12506,12 @@ const EFECTOS_EXTRA = {
   const PILL_W     = 44;
   const PILL_H     = 30;
   const msh        = document.getElementById('msh-section-name');
+  const scroller   = document.getElementById('app') || document.documentElement;
   /* Ventana en la que el auto-ocultar de la barra ignora el scroll
-     (cambio de página + posible scroll nativo al fragmento #timeline) */
+     (cambio de página + posible scroll nativo al fragmento) */
   let navBusyUntil = 0;
+  /* Scroll recordado por sección (solo en esta sesión) */
+  const scrollPos  = {};
 
   const PAGE_NAMES = {
     casa:      'Inicio',
@@ -12517,6 +12520,27 @@ const EFECTOS_EXTRA = {
     botiquin:  'Botiquín',
     yo:        'Mi perfil'
   };
+
+  /* Enrutado por hash: cada sección tiene su dirección, el botón atrás
+     funciona, y recargar / compartir enlace cae en la sección correcta.
+     Todo dentro del mismo documento: no se recarga nada. */
+  const HASH_FOR = {
+    casa: '', descubrir: '#explorar', fuerabata: '#fuerabata',
+    botiquin: '#botiquin', yo: '#yo'
+  };
+  function pageFromHash(h) {
+    switch ((h || '').toLowerCase()) {
+      case '#botiquin':               return 'botiquin';
+      case '#explorar': case '#timeline': return 'descubrir';
+      case '#yo': case '#perfil':     return 'yo';
+      case '#fuerabata':              return 'fuerabata';
+      case '#inicio': case '#casa':   return 'casa';
+      default:                        return null;
+    }
+  }
+  function now() { return window.performance ? performance.now() : Date.now(); }
+  function getScroll() { return scroller.scrollTop || 0; }
+  function setScroll(y) { scroller.scrollTop = y || 0; }
 
   if (!nav || !tabs.length) return;
 
@@ -12556,22 +12580,36 @@ const EFECTOS_EXTRA = {
   }
 
   function pinToTop() {
-    const s = document.getElementById('app') || document.documentElement;
-    if (s) s.scrollTop = 0;
+    setScroll(0);
     if (window.pageYOffset) window.scrollTo(0, 0);
   }
 
+  /* Actualiza la URL para que el botón atrás recorra las secciones */
+  function syncUrl(page, replace) {
+    const url = HASH_FOR[page] || (location.pathname + location.search);
+    try {
+      if (replace) history.replaceState({ mp: page }, '', url);
+      else         history.pushState({ mp: page }, '', url);
+    } catch (e) {}
+  }
+
   /* ── Cambiar de página con transición de fade + deslizamiento lateral ── */
-  function switchPage(page, instant) {
+  function switchPage(page, instant, fromHistory) {
     if (!isMobile()) return;
     if (!PAGE_CLS.includes('mp-' + page)) return;
+    const prev = currentPage();
 
-    navBusyUntil = (window.performance ? performance.now() : Date.now()) + 450;
+    /* Guardar dónde estabas en la sección que dejas y actualizar la URL */
+    if (prev !== page) {
+      scrollPos[prev] = getScroll();
+      if (!fromHistory) syncUrl(page, false);
+    }
+
+    navBusyUntil = now() + 450;
     const slideWrap = document.getElementById('mob-slide-wrap');
 
     /* Determinar dirección del deslizamiento */
-    const prevPage = PAGE_CLS.find(c => document.body.classList.contains(c))?.replace('mp-', '');
-    const prevIdx  = TAB_ORDER.indexOf(prevPage);
+    const prevIdx  = TAB_ORDER.indexOf(prev);
     const nextIdx  = TAB_ORDER.indexOf(page);
     const slideDir = (nextIdx > prevIdx) ? 'right' : 'left';
 
@@ -12580,17 +12618,14 @@ const EFECTOS_EXTRA = {
       document.body.classList.add('mp-' + page);
       tabs.forEach(t => t.classList.toggle('mbn-tab--active', t.dataset.mbn === page));
       if (msh) msh.textContent = PAGE_NAMES[page] || page;
+      setScroll(scrollPos[page] || 0);
       if (instant) moveIndicator(page, true);
     };
 
     if (instant) {
-      (document.getElementById('app') || document.documentElement).scrollTop = 0;
       doSwitch();
       return;
     }
-
-    /* En móvil el scroll ocurre en #app (body overflow:hidden) → sin cambio de viewport */
-    (document.getElementById('app') || document.documentElement).scrollTop = 0;
 
     /* Indicador se mueve YA (nav vive sobre el overlay → animación siempre visible) */
     moveIndicator(page, false);
@@ -12616,21 +12651,16 @@ const EFECTOS_EXTRA = {
   function init() {
     document.body.classList.add('mobile-nav-active');
     positionIndicatorY();
-    const hash = window.location.hash;
-    let target = 'casa';
-    if (hash === '#botiquin') target = 'botiquin';
-    else if (hash === '#timeline' || hash === '#explorar') target = 'descubrir';
-    else if (hash === '#yo' || hash === '#perfil') target = 'yo';
-    switchPage(target, true);
+    const target = pageFromHash(window.location.hash) || 'casa';
+    switchPage(target, true, true);           /* instantáneo, sin tocar el historial */
+    /* Fijar el estado y la URL canónicos del arranque (replaceState: no
+       crea entrada nueva, así el primer "atrás" sale de la web). */
+    syncUrl(target, true);
 
-    /* Si veníamos con hash (p. ej. desde /fuera-de-bata/ → /#timeline), el
-       navegador intenta un scroll nativo al elemento #timeline/#botiquin,
-       que desplaza #app y dispara el auto-ocultar. Limpiamos la URL y
-       anclamos arriba varias veces para ganarle a ese scroll tardío. */
-    if (hash && target !== 'casa') {
-      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
-    }
-    navBusyUntil = (window.performance ? performance.now() : Date.now()) + 800;
+    /* Con hash, el navegador intenta un scroll nativo al elemento
+       (#botiquin choca con <section id="botiquin">). Anclamos arriba
+       varias veces para ganarle a ese scroll tardío. */
+    navBusyUntil = now() + 800;
     pinToTop();
     requestAnimationFrame(() => {
       pinToTop();
@@ -12639,6 +12669,7 @@ const EFECTOS_EXTRA = {
     });
     setTimeout(pinToTop, 60);
     setTimeout(pinToTop, 200);
+    setTimeout(pinToTop, 420);
   }
 
   function currentPage() {
@@ -12652,12 +12683,28 @@ const EFECTOS_EXTRA = {
     moveIndicator(currentPage(), true);
   }, { passive: true });
 
+  /* ── Botón atrás / adelante del navegador ── */
+  window.addEventListener('popstate', e => {
+    if (!isMobile()) return;
+    const st = e.state;
+    if (st && st.v) return;                   /* estado de otro enrutador (?v=...) */
+    const page = (st && st.mp) || pageFromHash(location.hash) || 'casa';
+    if (page === currentPage()) return;
+    switchPage(page, true, true);             /* instantáneo, no re-empuja historial */
+  });
+
   /* ── Click en tabs ── */
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       if (!isMobile()) return;
-      if (document.body.classList.contains('mp-' + tab.dataset.mbn)) return; /* ya estamos aquí */
-      switchPage(tab.dataset.mbn);
+      const p = tab.dataset.mbn;
+      if (document.body.classList.contains('mp-' + p)) {
+        /* Ya estamos aquí: re-pulsar sube al principio (patrón iOS) */
+        try { scroller.scrollTo({ top: 0, behavior: 'smooth' }); }
+        catch (_) { setScroll(0); }
+        return;
+      }
+      switchPage(p);
     });
   });
 
@@ -12677,7 +12724,6 @@ const EFECTOS_EXTRA = {
 
   /* ── Ocultar la barra al bajar, reaparece al subir (patrón apps de lectura) ── */
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const scroller = document.getElementById('app') || document.documentElement;
     let lastY = scroller.scrollTop || 0, ticking = false;
     const onNavScroll = () => {
       const y = scroller.scrollTop || 0;
