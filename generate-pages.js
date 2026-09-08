@@ -91,22 +91,6 @@ vm.runInNewContext(
 );
 const BOTIQUIN_DATA = sandbox3.BOTIQUIN_DATA || {};
 
-// Extraer BATA_ARTICLES (piezas de Fuera de Bata de colaboradores) para sus
-// páginas estáticas propias (Operación Fénix E4). Antes solo se renderizaban
-// dentro de la SPA vía renderBataFull().
-const bataStart = mainCode.indexOf('const BATA_ARTICLES = [');
-const bataEnd   = mainCode.indexOf('\n];', bataStart) + 3;
-const sandbox5  = {};
-vm.runInNewContext(
-  AUDIBLE_LINK_DECL + mainCode.slice(bataStart, bataEnd).replace(/\bconst\s+/g, ''),
-  sandbox5
-);
-const BATA_ARTICLES = sandbox5.BATA_ARTICLES || [];
-if (!BATA_ARTICLES.length) {
-  console.error('ERROR: No se pudo extraer BATA_ARTICLES de js/main.js');
-  process.exit(1);
-}
-
 const SEO_OVERRIDES    = require('./js/seo-overrides.js');
 const RECOMENDACIONES  = require('./js/recomendaciones.js');
 
@@ -365,17 +349,10 @@ function staticHero(opts = {}) {
   <header class="static-navbar">
     <div class="static-navbar-inner">
       <a href="/" class="static-navbar-brand">
-        <img src="/img/logo2.png" alt="La Inferencia" class="static-navbar-logo logo" />
+        <img src="/img/logo2.png" alt="La Inferencia" class="static-navbar-logo" />
         <span>La Inferencia</span>
       </a>
       <div class="static-navbar-links">
-        <a href="/fuera-de-bata/" class="static-navbar-link">Fuera de Bata</a>
-        <a href="/rutas/" class="static-navbar-link">Rutas</a>
-        <a href="/biblioteca/" class="static-navbar-link">Biblioteca</a>
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar tema" aria-expanded="false" title="Cambiar tema">
-          <span id="theme-icon" class="theme-icon" aria-hidden="true"></span>
-          <svg class="theme-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
         <a href="/" class="static-navbar-cta">Ir a La Inferencia <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
       </div>
     </div>
@@ -395,8 +372,7 @@ function staticHero(opts = {}) {
 
 function staticFooterScripts() {
   return `<script src="/js/search-index.js?v=${SEARCH_INDEX_V}"></script>
-<script defer src="/js/buscador.js?v=${BUSCADOR_V}"></script>
-<script defer src="/js/theme-static.js?v=${THEME_STATIC_V}"></script>`;
+<script defer src="/js/buscador.js?v=${BUSCADOR_V}"></script>`;
 }
 
 function htmlHead({ title, description, canonUrl, ldJsonBlocks }) {
@@ -456,10 +432,13 @@ function buildAuthorCard(author) {
          <span class="role-badge">Director de Fuera de Bata</span>
        </div>`
     : `<span>${univ}</span><span>${spec}</span>`;
+  const redactorHTML = isFounder
+    ? ''
+    : `\n    <p class="article-redactor">Redactado por <a href="/autores/miguel-noguer/" class="article-redactor-link">${AUTHOR_NAME}</a>, sobre la investigación de ${author.name}.</p>`;
   return `<div class="author-card">
       <div class="author-avatar${photo ? ' author-avatar-photo' : ''}">${avatarHTML}</div>
       <div><strong>${author.name}</strong>${metaHTML}</div>
-    </div>`;
+    </div>${redactorHTML}`;
 }
 
 function buildTocHTML(sections) {
@@ -808,144 +787,6 @@ ${sidebarHTML}
 </script>
 <script defer src="/js/save-button.js?v=${SAVE_BTN_V}"></script>
 ${rutaStep ? `<script defer src="/js/rutas.js?v=${RUTAS_JS_V}"></script>` : ''}
-${staticFooterScripts()}
-</body>
-</html>`;
-}
-
-// ── Template pieza de Fuera de Bata (colaboradores) ────────────
-const BATA_URL_BASE = `${SITE}/fuera-de-bata/`;
-const BATA_SLUGS = {};
-for (const a of BATA_ARTICLES) BATA_SLUGS[a.id] = toSlug(a.title);
-
-function buildBataArticlePage(art) {
-  const slug     = BATA_SLUGS[art.id];
-  const canonUrl = `${BATA_URL_BASE}${slug}/`;
-  const rawDesc  = (art.summary || art.intro || '').replace(/<[^>]+>/g, '');
-  const desc     = (rawDesc.substring(0, 155).replace(/\s+\S*$/, '') + '…').replace(/"/g, '&quot;');
-  const seoTitle = `${art.title} | Fuera de Bata | La Inferencia`.replace(/"/g, '&quot;');
-
-  const sectionsHTML = (art.sections || []).map((s, i) => {
-    const paragraphs = (s.paragraphs || []).map(p => `      <p>${p}</p>`).join('\n');
-    return `    <h2 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h2>\n${paragraphs}`;
-  }).join('\n\n');
-
-  const blockquoteHTML = art.blockquote
-    ? `    <blockquote class="article-blockquote">\n      <p>${art.blockquote.text}</p>\n      <cite>${art.blockquote.attribution}</cite>\n    </blockquote>`
-    : '';
-
-  const aplicacionHTML = art.aplicacion
-    ? `    <div class="aplicacion-block">\n      <div class="aplicacion-header"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><strong>¿Cómo te afecta esto hoy?</strong></div>\n      <p>${art.aplicacion}</p>\n    </div>`
-    : '';
-
-  const others = BATA_ARTICLES.filter(a => a.id !== art.id).slice(0, 3);
-  const sidebarHTML = `    <aside class="static-sidebar">
-      <div class="static-sidebar-inner">
-        <p class="static-sidebar-heading">Más piezas de Fuera de Bata</p>
-${others.map(r => `        <a href="${BATA_URL_BASE}${BATA_SLUGS[r.id]}/" class="static-sidebar-article">
-          <span class="static-sidebar-badge">${r.badge}</span>
-          <span class="static-sidebar-title">${r.title}</span>
-        </a>`).join('\n')}
-        <div class="static-sidebar-article">
-          <span class="static-sidebar-badge">Autoría</span>
-          <span class="static-sidebar-title">${art.author.name} · ${art.author.university}</span>
-        </div>
-        <a href="/fuera-de-bata/" class="static-sidebar-cta">Ver todas las piezas →</a>
-      </div>
-    </aside>`;
-
-  const articleLdJson = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    'headline': art.title,
-    'description': art.summary || rawDesc.substring(0, 155),
-    'author': {
-      '@type': 'Person',
-      'name': art.author.name,
-      'affiliation': { '@type': 'Organization', 'name': art.author.university }
-    },
-    'publisher': {
-      '@type': 'Organization',
-      'name': 'La Inferencia',
-      'url': SITE,
-      'logo': { '@type': 'ImageObject', 'url': `${SITE}/img/logo2.png` }
-    },
-    'image': `${SITE}/img/OG.png`,
-    'url': canonUrl,
-    'inLanguage': 'es',
-    'isPartOf': { '@type': 'CollectionPage', 'name': 'Fuera de Bata', 'url': `${SITE}/fuera-de-bata/` },
-    'mainEntityOfPage': { '@type': 'WebPage', '@id': canonUrl },
-    'breadcrumb': {
-      '@type': 'BreadcrumbList',
-      'itemListElement': [
-        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio',        'item': `${SITE}/` },
-        { '@type': 'ListItem', 'position': 2, 'name': 'Fuera de Bata',  'item': `${SITE}/fuera-de-bata/` },
-        { '@type': 'ListItem', 'position': 3, 'name': art.title,        'item': canonUrl }
-      ]
-    }
-  }, null, 2);
-
-  const head = htmlHead({ title: seoTitle, description: desc, canonUrl, ldJsonBlocks: [articleLdJson] });
-
-  return `${head}
-<body class="fdb-page">
-
-  <a class="skip-link" href="#article-main">Saltar al contenido</a>
-  <div id="bg-layer" aria-hidden="true"></div>
-  <canvas id="neural-canvas" aria-hidden="true"></canvas>
-${staticHero()}
-
-  <main id="article-main" class="static-art-main">
-    <div class="static-layout">
-      <div class="static-art-wrap">
-
-      <nav class="static-breadcrumb" aria-label="Ruta de navegación">
-        <a href="/">Inicio</a>
-        <span aria-hidden="true"> › </span>
-        <a href="/fuera-de-bata/">Fuera de Bata</a>
-        <span aria-hidden="true"> › </span>
-        <span aria-current="page">${art.title}</span>
-      </nav>
-
-      <div class="weekly-featured-card">
-        <div class="week-label">
-          <span class="week-tag">✦ Fuera de Bata · ${art.badge}</span>
-          <button type="button" class="save-btn" data-article-id="${art.id}" aria-pressed="false" aria-label="Guardar en tu colección" title="Guardar en tu colección" data-umami-event="collection-save" data-umami-event-origen="fuera-de-bata" data-umami-event-articulo="${art.id}">
-            <span class="save-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
-            <span class="save-btn-text">Guardar</span>
-          </button>
-        </div>
-        <h1 class="weekly-title">${art.title}</h1>
-        ${art.summary ? `<p class="weekly-dek">${art.summary}</p>` : ''}
-        ${buildAuthorCard(art.author)}
-        ${buildTocHTML(art.sections)}
-        <div class="article-content">
-          <p class="article-intro">${art.intro}</p>
-${sectionsHTML}
-${blockquoteHTML}
-${aplicacionHTML}
-${art.sourceUrl ? `          <a href="${art.sourceUrl}" class="source-verify-btn" target="_blank" rel="noopener noreferrer">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            Ver el trabajo original · ${art.sourceLabel}
-          </a>` : ''}
-        </div>
-      </div>
-
-      <div class="static-art-cta">
-        <p>Fuera de Bata es la sección de divulgación con firma de La Inferencia.</p>
-        <a href="/fuera-de-bata/" class="static-art-cta-btn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          Ver todas las piezas
-        </a>
-      </div>
-
-      </div>
-${sidebarHTML}
-    </div>
-  </main>
-
-<script defer src="/js/save-button.js?v=${SAVE_BTN_V}"></script>
-<script defer src="/js/neural-canvas.js?v=${NEURAL_V}"></script>
 ${staticFooterScripts()}
 </body>
 </html>`;
@@ -1411,37 +1252,14 @@ ${staticFooterScripts()}
 const BIBLIOTECA_URL = `${SITE}/biblioteca/`;
 
 function buildBibliotecaPage() {
-  // Un libro puede estar recomendado en varios artículos. En la biblioteca
-  // sale una sola vez: se agrupa por título, con la sinopsis del primer
-  // artículo que lo cita y la lista de todos los artículos que lo citan.
-  const seen = new Map();
-  const order = [];
-  for (const cat of CAT_KEYS) {
-    for (const art of (LIBRARY_ARTICLES[cat] || [])) {
-      const rec = RECOMENDACIONES[art.id];
-      if (!rec || !rec.libro) continue;
-      const key = rec.libro.titulo;
-      if (!seen.has(key)) {
-        seen.set(key, { rec, arts: [art], cat });
-        order.push(key);
-      } else {
-        seen.get(key).arts.push(art);
-      }
-    }
-  }
+  const grupos = CAT_KEYS.map(cat => {
+    const libros = (LIBRARY_ARTICLES[cat] || [])
+      .map(art => ({ art, rec: RECOMENDACIONES[art.id] }))
+      .filter(x => x.rec && x.rec.libro);
+    return { cat, label: CAT_LABELS[cat] || cat, libros };
+  }).filter(g => g.libros.length);
 
-  const librosPorCat = new Map();
-  for (const key of order) {
-    const entry = seen.get(key);
-    if (!librosPorCat.has(entry.cat)) librosPorCat.set(entry.cat, []);
-    librosPorCat.get(entry.cat).push(entry);
-  }
-
-  const grupos = CAT_KEYS
-    .filter(cat => librosPorCat.has(cat))
-    .map(cat => ({ cat, label: CAT_LABELS[cat] || cat, libros: librosPorCat.get(cat) }));
-
-  const totalLibros = order.length;
+  const totalLibros = grupos.reduce((n, g) => n + g.libros.length, 0);
 
   const ldJson = JSON.stringify({
     '@context': 'https://schema.org',
@@ -1468,12 +1286,12 @@ function buildBibliotecaPage() {
   const gruposHTML = grupos.map(g => `      <section class="biblioteca-grupo">
         <h2>${g.label}</h2>
         <div class="biblioteca-grid">
-${g.libros.map(({ arts, rec }) => `          <div class="biblioteca-item">
+${g.libros.map(({ art, rec }) => `          <div class="biblioteca-item">
             <strong>${rec.libro.titulo}</strong>
             <span class="recomendacion-autor">${rec.libro.autor}</span>
             <p>${rec.libro.sinopsis}</p>
             <div class="biblioteca-item-links">
-${arts.map(art => `              <a href="${articleUrl(art)}" class="biblioteca-item-articulo">Ver artículo: ${art.title}</a>`).join('\n')}
+              <a href="${articleUrl(art)}" class="biblioteca-item-articulo">Ver artículo: ${art.title}</a>
               <a href="${rec.libro.amazon}" class="recomendacion-btn" target="_blank" rel="noopener noreferrer sponsored" data-umami-event="audible-click" data-umami-event-libro="${rec.libro.titulo}" data-umami-event-origen="biblioteca">Consíguelo gratis en Audible →</a>
             </div>
           </div>`).join('\n')}
@@ -1562,7 +1380,6 @@ const BUSCADOR_V  = hashOf('js/buscador.js');
 const RUTAS_JS_V  = hashOf('js/rutas.js');
 const RECOMENDACIONES_V = hashOf('js/recomendaciones.js');
 const NEURAL_V    = hashOf('js/neural-canvas.js');
-const THEME_STATIC_V = hashOf('js/theme-static.js');
 
 // ── Template landing de Rutas de Aprendizaje ────────────────────
 const RUTAS_URL = `${SITE}/rutas/`;
@@ -1832,17 +1649,6 @@ fs.mkdirSync(AUTHOR_DIR, { recursive: true });
 fs.writeFileSync(path.join(AUTHOR_DIR, 'index.html'), buildAuthorPage(), 'utf-8');
 console.log('✅ Página de autor generada en /autores/miguel-noguer/\n');
 
-// ── Fuera de Bata: piezas de colaboradores (Operación Fénix E4) ──
-const BATA_DIR = path.join(ROOT, 'fuera-de-bata');
-for (const art of BATA_ARTICLES) {
-  const slug = BATA_SLUGS[art.id];
-  const dir  = path.join(BATA_DIR, slug);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), buildBataArticlePage(art), 'utf-8');
-  console.log(`  ✓ /fuera-de-bata/${slug}/`);
-}
-console.log(`\n✅ ${BATA_ARTICLES.length} piezas de Fuera de Bata generadas\n`);
-
 // ── Regenerar sitemap.xml con URLs limpias ─────────────────────
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1873,15 +1679,6 @@ for (const guia of GUIA_SECTORES) {
 }
 
 sitemap += `  <url><loc>${BIBLIOTECA_URL}</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
-
-sitemap += `  <url><loc>${SITE}/fuera-de-bata/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
-sitemap += `  <url><loc>${SITE}/fuera-de-bata/colaborar/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${today}</lastmod></url>\n`;
-for (const work of AUTHOR_OWN_WORKS) {
-  sitemap += `  <url><loc>${work.url}</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${today}</lastmod></url>\n`;
-}
-for (const art of BATA_ARTICLES) {
-  sitemap += `  <url><loc>${SITE}/fuera-de-bata/${BATA_SLUGS[art.id]}/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${today}</lastmod></url>\n`;
-}
 
 for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
   for (const art of arts) {
