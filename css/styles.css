@@ -9755,7 +9755,7 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     stroke-width: 2;
     transition: color 0.2s ease;
   }
-  /* El matraz redondo llena menos su viewBox: se agranda para igualar masa visual */
+  /* El matraz (forma estrecha) llena menos su viewBox: se agranda para igualar masa visual */
   .mbn-icon--flask { width: 25px; height: 25px; }
 
   /* Label: debajo del icono, altura fija para alinear los iconos */
