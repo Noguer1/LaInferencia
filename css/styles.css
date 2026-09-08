@@ -9645,12 +9645,17 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     position: fixed;
     bottom: 0; left: 0; right: 0;
     z-index: 450;
-    background: #fff;
+    /* Superficie con una leve luz superior: da relieve sin blur */
+    background:
+      linear-gradient(180deg, #ffffff 0%, #f6f8fd 100%);
     padding-bottom: env(safe-area-inset-bottom, 0px);
     align-items: stretch;
-    border-top: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: 0 -4px 18px rgba(15, 23, 42, 0.07);
-    height: 66px;
+    border-top: 1px solid rgba(15, 23, 42, 0.07);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 -6px 22px rgba(15, 23, 42, 0.08),
+      0 -1px 3px rgba(15, 23, 42, 0.04);
+    height: 64px;
     overflow: hidden;
     /* GPU compositing: capa propia permanente, evita salto durante animaciones de contenido */
     -webkit-transform: translate3d(0, 0, 0);
@@ -9658,28 +9663,36 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     will-change: transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    transition: transform 0.34s cubic-bezier(0.4, 0, 0.2, 1);
   }
   @supports (padding-bottom: env(safe-area-inset-bottom)) {
     .mobile-bottom-nav {
-      height: calc(66px + env(safe-area-inset-bottom));
+      height: calc(64px + env(safe-area-inset-bottom));
       padding-bottom: env(safe-area-inset-bottom);
     }
+  }
+  /* Oculta al bajar, reaparece al subir (patrón de apps de lectura) */
+  .mobile-bottom-nav.mbn-hidden {
+    transform: translate3d(0, calc(100% + 26px), 0);
   }
 
   /* Indicador deslizante: píldora que viaja tras la pestaña activa.
      Se mueve con transform: translateX() (compuesto en GPU, sin layout). */
   .mbn-indicator {
     position: absolute;
-    width: 46px;
-    height: 32px;
-    border-radius: 16px;
+    width: 44px;
+    height: 30px;
+    border-radius: 15px;
     background: var(--pill-bg);
-    box-shadow: 0 4px 14px color-mix(in srgb, var(--blue) 32%, transparent), inset 0 1px 0 rgba(255,255,255,0.22);
-    /* top fijo: alineado con el centro vertical del icon-wrap */
+    box-shadow:
+      0 6px 16px -3px color-mix(in srgb, var(--blue) 48%, transparent),
+      0 2px 5px -1px color-mix(in srgb, var(--blue) 30%, transparent),
+      inset 0 1px 0 rgba(255, 255, 255, 0.32);
     top: 8px;
     left: 0;
     transform: translateX(0);
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+    /* leve rebote al aterrizar → sensación premium */
+    transition: transform 0.38s cubic-bezier(0.34, 1.4, 0.64, 1), opacity 0.22s ease;
     pointer-events: none;
     z-index: 1;
     opacity: 1;
@@ -9695,72 +9708,79 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 3px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 6px 2px 5px;
-    color: #475569;
+    padding: 7px 2px 5px;
+    color: #64748b;
     transition: color 0.18s;
     min-width: 0;
     -webkit-tap-highlight-color: transparent;
     outline: none;
     position: relative;
     z-index: 2;
+    text-decoration: none;
   }
 
   /* Contenedor de icono: idéntico para las 4 pestañas */
   .mbn-icon-wrap {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     position: relative;
     z-index: 2;
+    transition: transform 0.24s cubic-bezier(0.34, 1.4, 0.64, 1);
   }
 
+  /* Iconos: SVG de trazo, un único juego coherente. Color vía currentColor. */
   .mbn-icon {
-    width: 23px; height: 23px;
-    object-fit: contain;
-    opacity: 1;
-    transition: filter 0.18s;
+    width: 22px; height: 22px;
     display: block;
     flex-shrink: 0;
-    /* Neutralizar color del PNG → gris oscuro independiente del tema */
-    filter: brightness(0) invert(0.38) opacity(0.72);
+    color: #7c889b;
+    stroke-width: 2;
+    transition: color 0.2s ease;
   }
 
-  /* lab.png: ajuste óptico para equiparar con el resto */
-  [data-mbn="fuerabata"] .mbn-icon { width: 29px; height: 29px; }
-
-  /* Label: debajo del icono, altura fija de 2 líneas para alinear los iconos
-     aunque "Fuera de Bata" ocupe dos renglones */
+  /* Label: debajo del icono, altura fija para alinear los iconos */
   .mbn-label {
-    font-size: 0.55rem;
-    font-weight: 700;
+    font-size: 0.5625rem;
+    font-weight: 600;
     font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.015em;
     line-height: 1.05;
     white-space: normal;
     text-align: center;
-    color: #475569;
+    color: #7c889b;
     transition: color 0.18s;
     max-width: 100%;
-    height: 1.15rem;
+    height: 0.72rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  /* Estado activo: icono blanco sobre la píldora, label en color de marca */
+  /* Estado activo: icono blanco sobre la píldora (elevado 1px), label de marca.
+     El peso de la fuente NO cambia (evita salto de ancho del texto). */
   .mbn-tab.mbn-tab--active .mbn-icon {
-    filter: brightness(0) invert(1);
-    opacity: 1;
+    color: #fff;
+  }
+  .mbn-tab.mbn-tab--active .mbn-icon-wrap {
+    transform: translateY(-1px);
   }
   .mbn-tab.mbn-tab--active .mbn-label {
     color: var(--blue);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-bottom-nav,
+    .mbn-indicator,
+    .mbn-icon-wrap { transition: none; }
+    .mobile-bottom-nav.mbn-hidden { transform: translate3d(0, 0, 0); }
   }
 
   /* ── Viewport lock: body no scrolleable → address bar no se mueve → fixed nav no salta ── */
@@ -10001,14 +10021,18 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
 /* ── Dark base: bottom nav ── */
 .dark-base .mobile-bottom-nav {
-  background: var(--nav-bg, #030C1A);
-  border-top-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.5);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--nav-bg, #030C1A) 88%, #6b7fa6) 0%, var(--nav-bg, #030C1A) 62%);
+  border-top-color: rgba(255, 255, 255, 0.09);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 -8px 26px rgba(0, 0, 0, 0.5),
+    0 -1px 3px rgba(0, 0, 0, 0.3);
 }
-.dark-base .mbn-label  { color: #94a3b8; }
-/* Iconos inactivos en dark: neutralizar PNG → blanco tenue */
-.dark-base .mbn-icon { filter: brightness(0) invert(1) opacity(0.45); }
-/* Labels activos dark: usar --blue del tema (ya es el acento correcto para cada dark) */
+.dark-base .mbn-label { color: #8b97a8; }
+.dark-base .mbn-icon  { color: #8b97a8; }
+/* Estado activo: icono blanco (regla base), label con el acento del tema */
+.dark-base .mbn-tab.mbn-tab--active .mbn-icon  { color: #fff; }
 .dark-base .mbn-tab.mbn-tab--active .mbn-label { color: var(--blue); }
 /* Dark Oscuro: --blue es #2563EB (oscuro), usar azul claro legible */
 [data-theme="dark"] .mbn-tab.mbn-tab--active .mbn-label { color: #60A5FA; }

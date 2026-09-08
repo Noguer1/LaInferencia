@@ -12503,8 +12503,8 @@ const EFECTOS_EXTRA = {
   const PAGE_CLS   = ['mp-casa', 'mp-descubrir', 'mp-botiquin', 'mp-yo'];
   const TAB_ORDER  = ['casa', 'descubrir', 'botiquin', 'yo'];
   const FDB_URL    = '/fuera-de-bata/';
-  const PILL_W     = 46;
-  const PILL_H     = 32;
+  const PILL_W     = 44;
+  const PILL_H     = 30;
   const msh        = document.getElementById('msh-section-name');
 
   const PAGE_NAMES = {
@@ -12650,6 +12650,23 @@ const EFECTOS_EXTRA = {
 
   /* ── Arranque ── */
   if (isMobile()) init();
+
+  /* ── Ocultar la barra al bajar, reaparece al subir (patrón apps de lectura) ── */
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const scroller = document.getElementById('app') || document.documentElement;
+    let lastY = scroller.scrollTop || 0, ticking = false;
+    const onNavScroll = () => {
+      const y = scroller.scrollTop || 0;
+      if (y <= 4) nav.classList.remove('mbn-hidden');
+      else if (y > lastY + 8 && y > 96) nav.classList.add('mbn-hidden');
+      else if (y < lastY - 6) nav.classList.remove('mbn-hidden');
+      lastY = y;
+      ticking = false;
+    };
+    scroller.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(onNavScroll); ticking = true; }
+    }, { passive: true });
+  }
 
   /* ── Resize: cruzar el breakpoint ── */
   let wasMobile = isMobile();

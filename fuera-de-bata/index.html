@@ -1004,19 +1004,19 @@
   <nav class="mobile-bottom-nav" id="mobile-bottom-nav" role="navigation" aria-label="Navegación principal">
     <div class="mbn-indicator mbn-indicator--hidden" id="mbn-indicator" aria-hidden="true"></div>
     <a class="mbn-tab" href="/" aria-label="Inicio">
-      <span class="mbn-icon-wrap"><img src="/img/casa.png" class="mbn-icon" alt="" aria-hidden="true" /></span>
+      <span class="mbn-icon-wrap"><svg class="mbn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
       <span class="mbn-label">Inicio</span>
     </a>
     <a class="mbn-tab" href="/#timeline" aria-label="Explorar">
-      <span class="mbn-icon-wrap"><img src="/img/descubrir.png" class="mbn-icon" alt="" aria-hidden="true" /></span>
+      <span class="mbn-icon-wrap"><svg class="mbn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
       <span class="mbn-label">Explorar</span>
     </a>
     <a class="mbn-tab mbn-tab--active" href="/fuera-de-bata/" aria-current="page" aria-label="Fuera de Bata">
-      <span class="mbn-icon-wrap"><img src="/img/lab.png" class="mbn-icon" alt="" aria-hidden="true" /></span>
+      <span class="mbn-icon-wrap"><svg class="mbn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span>
       <span class="mbn-label">Fuera de Bata</span>
     </a>
     <a class="mbn-tab" href="/#yo" aria-label="Yo">
-      <span class="mbn-icon-wrap"><img src="/img/perfil.png" class="mbn-icon" alt="" aria-hidden="true" /></span>
+      <span class="mbn-icon-wrap"><svg class="mbn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span>
       <span class="mbn-label">Yo</span>
     </a>
   </nav>
@@ -1026,7 +1026,7 @@
     if (!nav) return;
     var indicator = document.getElementById('mbn-indicator');
     var active = nav.querySelector('.mbn-tab--active');
-    var PILL_W = 46, PILL_H = 32;
+    var PILL_W = 44, PILL_H = 30;
     function place() {
       if (!indicator || !active) return;
       var navRect = nav.getBoundingClientRect();
@@ -1045,6 +1045,22 @@
     place();
     requestAnimationFrame(place);
     window.addEventListener('resize', place, { passive: true });
+
+    /* Ocultar al bajar, reaparecer al subir */
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var lastY = window.pageYOffset || 0, ticking = false;
+      function onScroll() {
+        var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (y <= 4) nav.classList.remove('mbn-hidden');
+        else if (y > lastY + 8 && y > 96) nav.classList.add('mbn-hidden');
+        else if (y < lastY - 6) nav.classList.remove('mbn-hidden');
+        lastY = y;
+        ticking = false;
+      }
+      window.addEventListener('scroll', function () {
+        if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+    }
   }());
   </script>
 </body>
