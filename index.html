@@ -37,6 +37,15 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
   <meta name="theme-color" content="#030C1A" />
+  <!-- Fuera de Bata es página aparte: la prerenderizamos al primer gesto sobre
+       su pestaña (hover/pointerdown) para que la entrada sea instantánea.
+       Navegadores sin soporte ignoran este bloque. -->
+  <script type="speculationrules">
+  {
+    "prerender": [{ "where": { "href_matches": "/fuera-de-bata/" }, "eagerness": "moderate" }],
+    "prefetch":  [{ "source": "list", "urls": ["/fuera-de-bata/"] }]
+  }
+  </script>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="79211994-3fb4-4d6a-84d4-8860aeadcd92"></script>
   <script>(function(){var t=localStorage.getItem('theme')||'dark';if(t!=='light'){document.documentElement.setAttribute('data-theme',t);if(['dark','naranja','tormenta','cosmos','carmesi'].indexOf(t)>-1)document.documentElement.classList.add('dark-base');}})();</script>
   <script type="application/ld+json">
@@ -1164,12 +1173,12 @@
         </span>
         <span class="mbn-label">Explorar</span>
       </button>
-      <button class="mbn-tab" data-mbn="fuerabata" aria-label="Fuera de Bata">
+      <a class="mbn-tab" data-mbn="fuerabata" href="/fuera-de-bata/" aria-label="Fuera de Bata">
         <span class="mbn-icon-wrap">
           <svg class="mbn-icon mbn-icon--flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
         </span>
         <span class="mbn-label">Fuera de Bata</span>
-      </button>
+      </a>
       <button class="mbn-tab" data-mbn="yo" aria-label="Yo">
         <span class="mbn-icon-wrap">
           <svg class="mbn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
@@ -1578,6 +1587,6 @@
   <script src="js/recomendaciones.js?v=df0f65df80"></script>
   <script src="js/articulos-semana.js?v=9f717eb3a0"></script>
   <script src="js/neural-canvas.js?v=519a651109"></script>
-  <script src="js/main.js?v=f935c658af"></script>
+  <script src="js/main.js?v=ea89aae723"></script>
 </body>
 </html>
