@@ -6296,6 +6296,26 @@ function initWeeklySection() {
         });
       }
     }
+
+    /* Tarjeta del artículo de la semana en la portada móvil */
+    const mobWeekly = document.getElementById('mob-weekly-home');
+    if (mobWeekly) {
+      const w = available[0];
+      mobWeekly.innerHTML = `
+        <a class="mwh-card" href="/?v=semana&n=${w.week}">
+          <span class="mwh-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            El Artículo de la Semana
+          </span>
+          ${w.badge ? `<span class="mwh-badge">${w.badge}</span>` : ''}
+          <span class="mwh-title">${w.title}</span>
+          <span class="mwh-cta">Leer ahora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>`;
+      mobWeekly.querySelector('.mwh-card').addEventListener('click', e => {
+        e.preventDefault();
+        if (window._LI_renderWeekly) window._LI_renderWeekly(w.week);
+      });
+    }
   }
 
   const footerStrip = document.getElementById('footer-libro-strip');

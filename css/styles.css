@@ -4720,6 +4720,46 @@ body.mp-fuerabata .fdb-home > *:nth-child(5) { animation-delay: 0.26s; }
 .dark-base .fdb-home-featured h3 { color: #E8EEF9; }
 .dark-base .fdb-home-featured { background: color-mix(in srgb, var(--blue) 10%, transparent); }
 
+/* ── Tarjeta del Artículo de la Semana en la portada móvil ── */
+.mob-weekly-home { display: none; }
+@media (max-width: 768px) {
+  body.mp-casa .mob-weekly-home { display: block; margin: 0.4rem 1.1rem 1.6rem; }
+}
+.mwh-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.05rem 1.15rem 1.1rem;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  background:
+    linear-gradient(150deg, color-mix(in srgb, var(--blue-accent) 10%, transparent), color-mix(in srgb, var(--blue) 7%, transparent));
+  border: 1px solid color-mix(in srgb, var(--blue) 20%, transparent);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.mwh-card:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--blue) 40%, transparent); }
+.mwh-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--blue);
+}
+.mwh-eyebrow svg { width: 13px; height: 13px; }
+.mwh-badge {
+  align-self: flex-start;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 12%, transparent);
+  padding: 0.15rem 0.5rem; border-radius: 6px;
+}
+.mwh-title { font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.32; }
+.mwh-cta {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.82rem; font-weight: 700; color: var(--blue); margin-top: 0.1rem;
+}
+.mwh-cta svg { width: 14px; height: 14px; }
+.dark-base .mwh-title { color: #E8EEF9; }
+
 /* ── BIBLIOTECA POR INTERESES ── */
 .cat-selector {
   display: grid;
