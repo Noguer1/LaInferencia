@@ -6445,9 +6445,13 @@ _syncHeroBalance();
       _syncHeroBalance();
       /* En móvil el sistema de páginas (mp-*) controla la visibilidad real */
       if (window._LI_mobileNav && document.body.classList.contains('mobile-nav-active')) {
-        const targetPage = tab === 'repositorio' ? 'fuerabata' : 'casa';
-        if (!document.body.classList.contains('mp-' + targetPage)) {
-          window._LI_mobileNav.switchPage(targetPage);
+        if (tab === 'repositorio') {
+          /* Fuera de Bata es ahora una página aparte */
+          window.location.href = '/fuera-de-bata/';
+          return;
+        }
+        if (!document.body.classList.contains('mp-casa')) {
+          window._LI_mobileNav.switchPage('casa');
         }
       }
       /* Desactivar modo enfoque al cambiar de pestaña */
@@ -6478,15 +6482,8 @@ _syncHeroBalance();
   const btn = document.getElementById('sidebar-fdb-btn');
   if (!btn) return;
   btn.addEventListener('click', () => {
-    /* Escritorio: entrar directamente en la sección Fuera de Bata.
-       Móvil (pendiente de rediseño): abrir la vista in-app, que ya lleva
-       su propio botón "Entrar en Fuera de Bata". */
-    if (!document.body.classList.contains('mobile-nav-active')) {
-      window.location.href = '/fuera-de-bata/';
-      return;
-    }
-    document.querySelector('[data-tab="repositorio"]')?.click();
-    document.querySelector('.dashboard-center')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    /* Fuera de Bata es una página aparte, en escritorio y en móvil */
+    window.location.href = '/fuera-de-bata/';
   });
 }());
 
@@ -12495,20 +12492,24 @@ const EFECTOS_EXTRA = {
 }());
 
 
-/* ── MOBILE BOTTOM NAV, sistema de páginas ─────────────────────── */
+/* ── MOBILE BOTTOM NAV, 4 destinos, sistema de páginas ─────────── */
 (function () {
   const BREAKPOINT = 768;
   const nav        = document.getElementById('mobile-bottom-nav');
   const overlay    = document.getElementById('mbn-overlay');
+  const indicator  = document.getElementById('mbn-indicator');
   const tabs       = nav ? Array.from(nav.querySelectorAll('.mbn-tab')) : [];
-  const PAGE_CLS   = ['mp-casa', 'mp-fuerabata', 'mp-descubrir', 'mp-botiquin', 'mp-yo'];
-  const TAB_ORDER  = ['descubrir', 'fuerabata', 'casa', 'botiquin', 'yo'];
+  /* Páginas in-app reales (Fuera de Bata es ahora una página aparte, /fuera-de-bata/) */
+  const PAGE_CLS   = ['mp-casa', 'mp-descubrir', 'mp-botiquin', 'mp-yo'];
+  const TAB_ORDER  = ['casa', 'descubrir', 'botiquin', 'yo'];
+  const FDB_URL    = '/fuera-de-bata/';
+  const PILL_W     = 46;
+  const PILL_H     = 32;
   const msh        = document.getElementById('msh-section-name');
 
   const PAGE_NAMES = {
     casa:      'Inicio',
-    fuerabata: 'Fuera de Bata',
-    descubrir: 'Descubrir',
+    descubrir: 'Explorar',
     botiquin:  'Botiquín',
     yo:        'Mi perfil'
   };
@@ -12517,128 +12518,42 @@ const EFECTOS_EXTRA = {
 
   function isMobile() { return window.innerWidth <= BREAKPOINT; }
 
-  /* ── Paths dinámicos: actualiza viewBox y d= de ambos SVGs al ancho real de la barra ── */
-  function updateNavCurvePaths() {
-    if (!nav || !isMobile()) return;
-    const W  = nav.offsetWidth;
-    if (!W) return;
-    const H  = 40;
-    const cx = W / 2;
-    /* Arco circular verdadero: mbn-home-wrap top:-14px h:58px → centro SVG y=55, radio=29
-       Offset 8px → radio arco=37; puntos tangentes donde y=H intersecta el arco */
-    const R_arc = 37;
-    const cy_btn = 55;
-    const half_w = Math.sqrt(R_arc * R_arc - (cy_btn - H) * (cy_btn - H));
-
-    const lx = cx - half_w;
-    const rx = cx + half_w;
-
-    /* Bezier suave (G1 en entrada/salida, curvatura G2-matched al arco en el pico):
-       Dos cúbicas simétricas unidas en el pico, sin quiebro perceptible al inicio/fin */
-    const peak_y = cy_btn - R_arc;          // misma altura que el arco original (≈18)
-    const span   = half_w * 1.55;           // semi-anchura extendida para entrada gradual
-    const lx_b   = cx - span;
-    const rx_b   = cx + span;
-    const arm_h  = span * 0.57;             // longitud del brazo horizontal (arranque suave)
-    const arm_v  = 31.4;                    // brazo vertical (iguala curvatura 1/R_arc en pico)
-
-    const fillD   = `M0,${H} L${lx_b},${H} C${lx_b+arm_h},${H} ${cx-arm_v},${peak_y} ${cx},${peak_y} C${cx+arm_v},${peak_y} ${rx_b-arm_h},${H} ${rx_b},${H} L${W},${H} Z`;
-    const strokeD = `M0,${H} L${lx_b},${H} C${lx_b+arm_h},${H} ${cx-arm_v},${peak_y} ${cx},${peak_y} C${cx+arm_v},${peak_y} ${rx_b-arm_h},${H} ${rx_b},${H} L${W},${H}`;
-
-    const fillSvg = document.getElementById('mbn-curve-fill');
-    if (fillSvg) {
-      fillSvg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-      const p = fillSvg.querySelector('path');
-      if (p) p.setAttribute('d', fillD);
-    }
-
-    const plasmaSvg = document.getElementById('mbn-curve-plasma');
-    if (plasmaSvg) {
-      plasmaSvg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-      const p = plasmaSvg.querySelector('path');
-      if (p) p.setAttribute('d', strokeD);
-      const grad = document.getElementById('plasma-grad');
-      if (grad) {
-        grad.setAttribute('x2', String(W));
-        /* Actualizar el barrido para cubrir el nuevo ancho */
-        const a1 = grad.querySelector('animate[attributeName="x1"]');
-        const a2 = grad.querySelector('animate[attributeName="x2"]');
-        if (a1) a1.setAttribute('values', `-${W};${W};-${W}`);
-        if (a2) a2.setAttribute('values', `0;${W*2};0`);
-      }
-    }
+  /* ── Alinear verticalmente la píldora con el centro del icono ── */
+  function positionIndicatorY() {
+    if (!indicator || !tabs[0]) return;
+    const iw = tabs[0].querySelector('.mbn-icon-wrap');
+    if (!iw) return;
+    const navRect = nav.getBoundingClientRect();
+    const iwRect  = iw.getBoundingClientRect();
+    if (!iwRect.height) return;
+    const centerY = iwRect.top - navRect.top + iwRect.height / 2;
+    indicator.style.top = (centerY - PILL_H / 2) + 'px';
   }
 
-  /* ── Mover el indicador magnético al tab activo ── */
+  /* ── Mover la píldora al tab activo con transform: translateX() ── */
   function moveIndicator(page, instant) {
-    const indicator = document.getElementById('mbn-indicator');
     if (!indicator) return;
-
-    const wasHidden = indicator.classList.contains('mbn-indicator--hidden');
-
-    /* Aritmética pura, no depende de getBoundingClientRect ni del estado del layout */
-    function getCenterX(tabName) {
-      const idx = tabs.findIndex(t => t.dataset.mbn === tabName);
-      if (idx === -1) return null;
-      return (idx + 0.5) * (nav.offsetWidth / tabs.length);
-    }
-
-    if (page === 'casa') {
-      if (!instant && !wasHidden) {
-        /* Animación 3D: viajar hacia el botón casa (X + Y + scale) luego ocultar */
-        const casaX = getCenterX('casa');
-        if (casaX !== null) indicator.style.left = casaX + 'px';
-        indicator.classList.add('mbn-indicator--casa');
-        setTimeout(() => {
-          indicator.classList.add('mbn-indicator--hidden');
-          /* Restablecer posición silenciosamente mientras está oculto */
-          setTimeout(() => {
-            indicator.style.transition = 'none';
-            indicator.classList.remove('mbn-indicator--casa');
-            indicator.offsetHeight;
-            indicator.style.transition = '';
-          }, 220);
-        }, 280);
-      } else {
-        indicator.classList.add('mbn-indicator--hidden');
-        indicator.classList.remove('mbn-indicator--casa');
-      }
-      return;
-    }
-
     const activeTab = tabs.find(t => t.dataset.mbn === page);
-    if (!activeTab) return;
-    const tabRect = activeTab.getBoundingClientRect();
-    const centerX = tabRect.left - nav.getBoundingClientRect().left + tabRect.width / 2;
+    if (!activeTab) { indicator.classList.add('mbn-indicator--hidden'); return; }
+
+    const centerX = activeTab.offsetLeft + activeTab.offsetWidth / 2;
+    const x = Math.round(centerX - PILL_W / 2);
 
     if (instant) {
       indicator.style.transition = 'none';
-      indicator.classList.remove('mbn-indicator--casa');
-      indicator.style.left = centerX + 'px';
-      indicator.offsetHeight;
+      indicator.style.transform  = 'translateX(' + x + 'px)';
+      indicator.offsetHeight;                 /* forzar reflow */
       indicator.style.transition = '';
-    } else if (wasHidden) {
-      /* Venimos de casa, el indicador "emerge" desde la posición del botón casa */
-      indicator.style.transition = 'none';
-      const casaX = getCenterX('casa');
-      if (casaX !== null) indicator.style.left = casaX + 'px';
-      indicator.classList.add('mbn-indicator--casa');
-      indicator.classList.remove('mbn-indicator--hidden');
-      indicator.offsetHeight; /* forzar reflow: aplica todo lo anterior sin transición */
-      indicator.style.transition = '';
-      /* Ahora animar simultáneamente: X, Y y scale hacia el tab destino */
-      indicator.classList.remove('mbn-indicator--casa');
-      indicator.style.left = centerX + 'px';
     } else {
-      indicator.style.left = centerX + 'px';
+      indicator.style.transform = 'translateX(' + x + 'px)';
     }
-
     indicator.classList.remove('mbn-indicator--hidden');
   }
 
   /* ── Cambiar de página con transición de fade + deslizamiento lateral ── */
   function switchPage(page, instant) {
     if (!isMobile()) return;
+    if (!PAGE_CLS.includes('mp-' + page)) return;
 
     const slideWrap = document.getElementById('mob-slide-wrap');
 
@@ -12685,11 +12600,10 @@ const EFECTOS_EXTRA = {
     }, 145);
   }
 
-  /* ── Inicializar en Casa ── */
+  /* ── Inicializar ── */
   function init() {
     document.body.classList.add('mobile-nav-active');
-    /* Paths dinámicos al primer render */
-    updateNavCurvePaths();
+    positionIndicatorY();
     const hash = window.location.hash;
     if (hash === '#botiquin') {
       switchPage('botiquin', true);
@@ -12698,17 +12612,27 @@ const EFECTOS_EXTRA = {
     } else {
       switchPage('casa', true);
     }
+    requestAnimationFrame(() => { positionIndicatorY(); moveIndicator(currentPage(), true); });
   }
 
-  /* Recalcular paths si el viewport cambia (orientación, etc.) */
-  window.addEventListener('resize', () => { updateNavCurvePaths(); }, { passive: true });
+  function currentPage() {
+    return (PAGE_CLS.find(c => document.body.classList.contains(c)) || 'mp-casa').replace('mp-', '');
+  }
+
+  /* Recolocar la píldora si cambia el viewport (orientación, etc.) */
+  window.addEventListener('resize', () => {
+    if (!isMobile()) return;
+    positionIndicatorY();
+    moveIndicator(currentPage(), true);
+  }, { passive: true });
 
   /* ── Click en tabs ── */
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       if (!isMobile()) return;
-      const current = PAGE_CLS.find(c => document.body.classList.contains(c));
-      if (current === 'mp-' + tab.dataset.mbn) return; /* ya estamos aquí */
+      /* Fuera de Bata es una página aparte */
+      if (tab.dataset.mbn === 'fuerabata') { window.location.href = FDB_URL; return; }
+      if (document.body.classList.contains('mp-' + tab.dataset.mbn)) return; /* ya estamos aquí */
       switchPage(tab.dataset.mbn);
     });
   });

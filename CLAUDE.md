@@ -54,6 +54,7 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.com
 | Animaciones CSS solo `transform`/`opacity` | `filter` animado fuerza rasterización CPU cada frame — eliminado de `logo-breathe`, `brain-pulse` |
 | `#bg-layer` div separado para los gradientes | `position:fixed` propio para los radial-gradient — no interfiere con el scroll del body |
 | Barra de progreso usa `transform: scaleX()` | Más eficiente que `width` — no dispara layout recalculation |
+| Bottom nav móvil: 4 destinos, sin botón central (sept 2026) | Al pasar Fuera de Bata a página aparte (`/fuera-de-bata/`), la montaña central para "Inicio" perdía sentido. Ahora `Inicio \| Explorar \| Fuera de Bata \| Yo`, barra plana con fondo sólido e indicador que se desliza con `translateX()`. La pestaña "Fuera de Bata" navega a `/fuera-de-bata/`; el tab "Explorar" conserva `data-mbn="descubrir"` y todo el cableado `mp-*`. Botiquín sigue vivo (burbuja hero + `#botiquin`) pero sin pestaña propia. Plan completo en `webmobile.md` |
 
 ---
 

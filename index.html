@@ -1147,53 +1147,28 @@
   <div id="mbn-overlay" aria-hidden="true"></div>
 
   <!-- ── MOBILE BOTTOM NAV ── -->
+  <!-- 4 destinos, barra plana sin botón central. data-mbn="descubrir" conserva
+       el cableado del sistema mp-* aunque la etiqueta visible sea "Explorar". -->
   <nav class="mobile-bottom-nav" id="mobile-bottom-nav" role="navigation" aria-label="Navegación principal">
-      <!-- Arco circular verdadero: centro botón SVG y=55 r=29, offset 8px → R_arc=37, tangentes en cx±33.83 -->
-      <!-- Bezier suave: dos cúbicas simétricas (G1 en entrada/salida, G2 en pico) -->
-      <svg class="mbn-curve" id="mbn-curve-fill" aria-hidden="true" focusable="false" viewBox="0 0 375 40" preserveAspectRatio="none">
-        <path id="mbn-fill-path" d="M0,40 L135.1,40 C165.0,40 156.1,18 187.5,18 C218.9,18 210.0,40 239.9,40 L375,40 Z"/>
-      </svg>
-      <!-- Borde plasma barrido de extremo a extremo -->
-      <svg class="mbn-curve-plasma" id="mbn-curve-plasma" aria-hidden="true" focusable="false" viewBox="0 0 375 40" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="plasma-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="375" y2="0">
-            <stop offset="0%"   stop-color="#1D4ED8" stop-opacity="0.5"/>
-            <stop offset="30%"  stop-color="#38BDF8" stop-opacity="0.85"/>
-            <stop offset="50%"  stop-color="#00E5FF" stop-opacity="1"/>
-            <stop offset="70%"  stop-color="#38BDF8" stop-opacity="0.85"/>
-            <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0.5"/>
-            <!-- Barrido: punto brillante cruza la barra de izquierda a derecha -->
-            <animate attributeName="x1" values="-375;375;-375" dur="3.5s" repeatCount="indefinite"/>
-            <animate attributeName="x2" values="0;750;0"       dur="3.5s" repeatCount="indefinite"/>
-          </linearGradient>
-        </defs>
-        <path id="mbn-plasma-path" d="M0,40 L135.1,40 C165.0,40 156.1,18 187.5,18 C218.9,18 210.0,40 239.9,40 L375,40" fill="none" stroke="url(#plasma-grad)" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-      <!-- Indicador magnético deslizante, único elemento que viaja entre pestañas -->
+      <!-- Indicador deslizante, único elemento que viaja entre pestañas -->
       <div class="mbn-indicator mbn-indicator--hidden" id="mbn-indicator" aria-hidden="true"></div>
-      <button class="mbn-tab" data-mbn="descubrir" aria-label="Descubrir">
+      <button class="mbn-tab" data-mbn="casa" aria-label="Inicio">
+        <span class="mbn-icon-wrap">
+          <img src="img/casa.png" class="mbn-icon" alt="" aria-hidden="true" />
+        </span>
+        <span class="mbn-label">Inicio</span>
+      </button>
+      <button class="mbn-tab" data-mbn="descubrir" aria-label="Explorar">
         <span class="mbn-icon-wrap">
           <img src="img/descubrir.png" class="mbn-icon" alt="" aria-hidden="true" />
         </span>
-        <span class="mbn-label">Descubrir</span>
+        <span class="mbn-label">Explorar</span>
       </button>
       <button class="mbn-tab" data-mbn="fuerabata" aria-label="Fuera de Bata">
         <span class="mbn-icon-wrap">
           <img src="img/lab.png" class="mbn-icon" alt="" aria-hidden="true" />
         </span>
         <span class="mbn-label">Fuera de Bata</span>
-      </button>
-      <button class="mbn-tab mbn-tab--home" data-mbn="casa" aria-label="Inicio">
-        <span class="mbn-home-wrap">
-          <img src="img/casa.png" class="mbn-icon" alt="" aria-hidden="true" />
-        </span>
-        <span class="mbn-label">Inicio</span>
-      </button>
-      <button class="mbn-tab" data-mbn="botiquin" aria-label="Botiquín">
-        <span class="mbn-icon-wrap">
-          <img src="img/botiquin.png" class="mbn-icon" alt="" aria-hidden="true" />
-        </span>
-        <span class="mbn-label">Botiquín</span>
       </button>
       <button class="mbn-tab" data-mbn="yo" aria-label="Yo">
         <span class="mbn-icon-wrap">
