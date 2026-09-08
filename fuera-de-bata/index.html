@@ -999,5 +999,53 @@
   modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
 }());
 </script>
+
+  <!-- ── MOBILE BOTTOM NAV (versión estática: 4 enlaces reales) ── -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav" role="navigation" aria-label="Navegación principal">
+    <div class="mbn-indicator mbn-indicator--hidden" id="mbn-indicator" aria-hidden="true"></div>
+    <a class="mbn-tab" href="/" aria-label="Inicio">
+      <span class="mbn-icon-wrap"><img src="/img/casa.png" class="mbn-icon" alt="" aria-hidden="true" /></span>
+      <span class="mbn-label">Inicio</span>
+    </a>
+    <a class="mbn-tab" href="/#timeline" aria-label="Explorar">
+      <span class="mbn-icon-wrap"><img src="/img/descubrir.png" class="mbn-icon" alt="" aria-hidden="true" /></span>
+      <span class="mbn-label">Explorar</span>
+    </a>
+    <a class="mbn-tab mbn-tab--active" href="/fuera-de-bata/" aria-current="page" aria-label="Fuera de Bata">
+      <span class="mbn-icon-wrap"><img src="/img/lab.png" class="mbn-icon" alt="" aria-hidden="true" /></span>
+      <span class="mbn-label">Fuera de Bata</span>
+    </a>
+    <a class="mbn-tab" href="/#yo" aria-label="Yo">
+      <span class="mbn-icon-wrap"><img src="/img/perfil.png" class="mbn-icon" alt="" aria-hidden="true" /></span>
+      <span class="mbn-label">Yo</span>
+    </a>
+  </nav>
+  <script>
+  (function () {
+    var nav = document.getElementById('mobile-bottom-nav');
+    if (!nav) return;
+    var indicator = document.getElementById('mbn-indicator');
+    var active = nav.querySelector('.mbn-tab--active');
+    var PILL_W = 46, PILL_H = 32;
+    function place() {
+      if (!indicator || !active) return;
+      var navRect = nav.getBoundingClientRect();
+      var iw = active.querySelector('.mbn-icon-wrap');
+      if (iw) {
+        var iwRect = iw.getBoundingClientRect();
+        if (iwRect.height) indicator.style.top = (iwRect.top - navRect.top + iwRect.height / 2 - PILL_H / 2) + 'px';
+      }
+      var x = Math.round(active.offsetLeft + active.offsetWidth / 2 - PILL_W / 2);
+      indicator.style.transition = 'none';
+      indicator.style.transform = 'translateX(' + x + 'px)';
+      indicator.offsetHeight;
+      indicator.style.transition = '';
+      indicator.classList.remove('mbn-indicator--hidden');
+    }
+    place();
+    requestAnimationFrame(place);
+    window.addEventListener('resize', place, { passive: true });
+  }());
+  </script>
 </body>
 </html>

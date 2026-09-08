@@ -9777,6 +9777,11 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
 
   /* ── Padding para que el contenido no quede bajo la barra ── */
   #app { padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important; }
+  /* Páginas estáticas con la barra inferior (Fuera de Bata, etc.): el body
+     scrollea, así que el hueco se reserva en el body */
+  body:not(:has(#app)):has(.mobile-bottom-nav) {
+    padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px));
+  }
   /* ── Botón volver arriba: pequeño, bottom-24 sobre la barra inferior ── */
   #btn-volver-arriba {
     width: 34px; height: 34px;
