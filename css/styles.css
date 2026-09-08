@@ -4630,22 +4630,22 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   pointer-events: none;
 }
 .fdb-home::before {
-  background: radial-gradient(125% 115% at 50% 38%,
-    rgba(247, 249, 255, 0.64) 0%,
-    rgba(247, 249, 255, 0.44) 45%,
-    rgba(247, 249, 255, 0) 100%);
+  background: radial-gradient(115% 104% at 50% 34%,
+    rgba(247, 249, 255, 0.24) 0%,
+    rgba(247, 249, 255, 0.12) 42%,
+    rgba(247, 249, 255, 0) 80%);
 }
 .fdb-home::after {
-  backdrop-filter: blur(7px) saturate(1.05);
-  -webkit-backdrop-filter: blur(7px) saturate(1.05);
-  -webkit-mask: radial-gradient(120% 112% at 50% 40%, #000 42%, transparent 92%);
-          mask: radial-gradient(120% 112% at 50% 40%, #000 42%, transparent 92%);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  -webkit-mask: radial-gradient(112% 104% at 50% 36%, #000 34%, transparent 84%);
+          mask: radial-gradient(112% 104% at 50% 36%, #000 34%, transparent 84%);
 }
 .dark-base .fdb-home::before {
-  background: radial-gradient(125% 115% at 50% 38%,
-    rgba(7, 16, 30, 0.6) 0%,
-    rgba(7, 16, 30, 0.4) 45%,
-    rgba(7, 16, 30, 0) 100%);
+  background: radial-gradient(115% 104% at 50% 34%,
+    rgba(6, 14, 27, 0.34) 0%,
+    rgba(6, 14, 27, 0.16) 42%,
+    rgba(6, 14, 27, 0) 80%);
 }
 @media (prefers-reduced-transparency: reduce) {
   .fdb-home::before { background: var(--card-bg); }
