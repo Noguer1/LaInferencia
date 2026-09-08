@@ -1,0 +1,21 @@
+{
+  "name": "La Inferencia",
+  "short_name": "La Inferencia",
+  "description": "Divulgación de psicología basada en evidencia, contada de forma clara y en español.",
+  "start_url": "/?src=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#030C1A",
+  "theme_color": "#030C1A",
+  "lang": "es",
+  "categories": ["education", "books", "lifestyle"],
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Fuera de Bata", "url": "/fuera-de-bata/" },
+    { "name": "Explorar", "url": "/#explorar" }
+  ]
+}
