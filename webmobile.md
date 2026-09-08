@@ -396,7 +396,7 @@ Todo con `transform` y `opacity`, nunca `width`, `left`, `filter` o `font-weight
 > **Estado a fecha de hoy** (actualizado durante la ejecución):
 >
 > - **Fase 0** ✅ hecha. Acabó siendo la vista rápida in-app de Fuera de Bata (`mp-fuerabata`) con enlace al catálogo completo, no una navegación pelada. Ver 10.ter.
-> - **Fase 1** ✅ hecha. Barra de 4 destinos sin botón central, indicador deslizante, fondo sólido, safe-area, iconos SVG, auto-ocultar al scroll, `@view-transition`. `sharedBottomNav(active)` en `generate-pages.js` la inyecta en artículos, categorías, semanales, rutas, guías, biblioteca y ficha de autor, además de `index.html` y `/fuera-de-bata/`. **Pendiente menor:** las 10 páginas de artículo de `/fuera-de-bata/` (mantenidas a mano, no generadas) siguen sin barra.
+> - **Fase 1** ✅ hecha, completa. Barra de 4 destinos sin botón central, indicador deslizante, fondo sólido, safe-area, iconos SVG, auto-ocultar al scroll, `@view-transition`. `sharedBottomNav(active)` en `generate-pages.js` la inyecta en artículos, categorías, semanales, rutas, guías, biblioteca y ficha de autor, además de `index.html`. Los 10 artículos de `/fuera-de-bata/` (mantenidos a mano) llevan el mismo snippet añadido a mano, con "Fuera de Bata" como pestaña activa.
 > - **Fase 2** ❌ no hecha. Sigue el sistema `mp-*`. Solo se añadió manejo de `#timeline` / `#yo` y anclaje de scroll al entrar por hash.
 > - **Fase 3** ❌ no hecha. El inicio sigue siendo el dashboard de escritorio con `mp-casa`.
 > - **Fase 4** ⚠️ a medias. `@view-transition { navigation: auto }` entre documentos: hecho. Bottom sheets para tema / glosario / menú secundario: pendiente.
@@ -473,7 +473,7 @@ Se intentó cerrar la brecha sin cambiar arquitectura (View Transitions entre do
 
 ## 11. Checklist de "web móvil bien hecha" para este proyecto
 
-- [x] Barra inferior visible en las páginas generadas (artículos, categorías, rutas, guías, biblioteca, autor) + `index.html` + `/fuera-de-bata/`. Falta: 10 artículos de `/fuera-de-bata/`.
+- [x] Barra inferior visible en TODAS las páginas: generadas (artículos, categorías, semanales, rutas, guías, biblioteca, autor), `index.html`, `/fuera-de-bata/` y los 10 artículos de `/fuera-de-bata/` (estos últimos a mano, no generados).
 - [x] 4 destinos (`Inicio | Explorar | Fuera de Bata | Yo`), sin botón central, barra plana.
 - [x] Indicador activo que se desliza con `transform: translateX()`; iconos SVG de trazo; etiqueta cambia de color.
 - [x] Barra con fondo sólido, sin `backdrop-filter`.
