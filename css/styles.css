@@ -10873,7 +10873,18 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   gap: 2.5rem;
   align-items: start;
 }
-body.fdb-page .static-layout { max-width: 1440px; grid-template-columns: 1fr 340px; }
+/* Piezas de Fuera de Bata: solo el artículo, centrado y legible, sin lateral */
+body.fdb-page .static-layout {
+  max-width: 820px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+body.fdb-page .static-sidebar { display: none; }
+body.fdb-page .static-art-main { overflow-x: clip; }
+body.fdb-page .static-art-wrap,
+body.fdb-page :is(.weekly-featured-card, .article-content) { min-width: 0; max-width: 100%; }
+body.fdb-page .static-art-wrap { overflow-wrap: anywhere; word-break: break-word; }
+body.fdb-page .static-art-wrap :is(.guia-tabla-wrap, pre) { max-width: 100%; }
 .static-sidebar {
   position: sticky;
   top: 72px;

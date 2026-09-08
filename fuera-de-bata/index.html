@@ -24,8 +24,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="preload" as="style" href="/css/styles.css?v=6af68ea7a2" />
-  <link rel="stylesheet" href="/css/styles.css?v=6af68ea7a2" />
+  <link rel="preload" as="style" href="/css/styles.css?v=04510e0289" />
+  <link rel="stylesheet" href="/css/styles.css?v=04510e0289" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48x48.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png" />
@@ -161,7 +161,9 @@
     .fdb-index a {
       position: relative; display: flex; flex-direction: column; gap: 0.4rem;
       padding: 1.3rem 1.4rem; border-radius: 14px;
-      background: linear-gradient(180deg, color-mix(in srgb, var(--blue) 6%, var(--card-bg)) 0%, var(--card-bg) 62%);
+      background:
+        radial-gradient(115% 80% at 100% 0%, color-mix(in srgb, var(--blue-accent) 8%, transparent), transparent 55%),
+        linear-gradient(180deg, color-mix(in srgb, var(--blue) 10%, var(--card-bg)) 0%, var(--card-bg) 70%);
       border: 1px solid var(--card-border);
       text-decoration: none; overflow: hidden;
       transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
@@ -173,15 +175,17 @@
     }
     .fdb-index a::after {
       content: counter(fdbidx, decimal-leading-zero);
-      position: absolute; top: 1.15rem; right: 1.2rem;
-      font-size: 0.7rem; font-weight: 700; color: var(--text-muted); opacity: 0.4;
-      font-variant-numeric: tabular-nums; letter-spacing: 0.04em;
+      position: absolute; top: 1rem; right: 1.15rem;
+      font-size: 0.98rem; font-weight: 800; color: var(--text-muted); opacity: 0.42;
+      font-variant-numeric: tabular-nums; letter-spacing: 0.02em;
     }
     /* (13) hover coordinado */
     .fdb-index a:hover {
       transform: translateY(-2px); box-shadow: var(--card-shadow);
       border-color: color-mix(in srgb, var(--blue) 26%, var(--card-border));
-      background: linear-gradient(180deg, color-mix(in srgb, var(--blue) 11%, var(--card-bg)) 0%, var(--card-bg) 70%);
+      background:
+        radial-gradient(115% 80% at 100% 0%, color-mix(in srgb, var(--blue-accent) 13%, transparent), transparent 58%),
+        linear-gradient(180deg, color-mix(in srgb, var(--blue) 16%, var(--card-bg)) 0%, var(--card-bg) 76%);
     }
     .fdb-index a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
     .fdb-index a:hover::before, .fdb-index a:focus-visible::before { transform: scaleY(1); }
@@ -190,7 +194,7 @@
       text-transform: uppercase; color: #fff; background: var(--blue);
       padding: 0.26rem 0.62rem; border-radius: 999px; margin-bottom: 0.15rem;
     }
-    .fdb-index-tags { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; padding-right: 2rem; }
+    .fdb-index-tags { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; padding-right: 2.4rem; }
     .fdb-index-area { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); }
     .fdb-index-type {
       font-size: 0.56rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
@@ -238,7 +242,9 @@
     .fdb-index-wide a {
       display: grid; grid-template-columns: 1.7fr 1fr; gap: 1.7rem; align-items: center;
       padding: 1.7rem 1.9rem;
-      background: linear-gradient(160deg, color-mix(in srgb, var(--blue) 9%, var(--card-bg)) 0%, var(--card-bg) 66%);
+      background:
+        radial-gradient(80% 130% at 100% 0%, color-mix(in srgb, var(--blue-accent) 9%, transparent), transparent 55%),
+        linear-gradient(160deg, color-mix(in srgb, var(--blue) 13%, var(--card-bg)) 0%, var(--card-bg) 72%);
     }
     .fdb-wide-main { display: flex; flex-direction: column; gap: 0.4rem; }
     .fdb-index-wide .fdb-index-title { font-size: 1.3rem; }
@@ -292,13 +298,21 @@
       content: ""; position: absolute; left: 0; top: 0.5rem; bottom: 0.4rem; width: 3px;
       border-radius: 2px; background: linear-gradient(var(--blue), var(--blue-accent));
     }
-    /* (1) scrim + glow: levanta el texto sobre el canvas sin encajonar */
+    /* (1) scrim + glow: nube difusa que levanta el texto sobre el canvas.
+       closest-side => la opacidad llega a 0 justo en los bordes del recuadro,
+       así no se ve ninguna línea de corte. */
     .fdb-hero-intro::before {
       content: ""; position: absolute; z-index: -1; pointer-events: none;
-      inset: -2.3rem -4rem -2.3rem -2rem;
+      inset: -2.4rem 0 -1.8rem 0;
       background:
-        radial-gradient(58% 55% at 30% 40%, color-mix(in srgb, var(--blue) 13%, transparent), transparent 70%),
-        radial-gradient(78% 72% at 26% 46%, color-mix(in srgb, var(--card-bg) 44%, transparent), transparent 74%);
+        radial-gradient(ellipse closest-side at 46% 46%,
+          color-mix(in srgb, var(--blue) 10%, transparent) 0%,
+          transparent 100%),
+        radial-gradient(ellipse closest-side at 48% 48%,
+          color-mix(in srgb, var(--card-bg) 56%, transparent) 0%,
+          color-mix(in srgb, var(--card-bg) 44%, transparent) 34%,
+          color-mix(in srgb, var(--card-bg) 20%, transparent) 62%,
+          transparent 100%);
     }
     /* (9) bata fantasma sangrando por el borde izquierdo */
     .fdb-hero-coat {
@@ -373,8 +387,8 @@
       margin: 0; display: flex; flex-direction: column; justify-content: center;
       padding: 1.75rem 1.9rem 1.6rem; border-radius: 18px; overflow: hidden; position: relative;
       background:
-        radial-gradient(130% 90% at 100% 0%, color-mix(in srgb, var(--blue-accent) 9%, transparent), transparent 60%),
-        linear-gradient(160deg, color-mix(in srgb, var(--blue) 8%, transparent), color-mix(in srgb, var(--blue) 3%, transparent));
+        radial-gradient(130% 90% at 100% 0%, color-mix(in srgb, var(--blue-accent) 11%, transparent), transparent 60%),
+        linear-gradient(160deg, color-mix(in srgb, var(--blue) 12%, var(--card-bg)), color-mix(in srgb, var(--blue) 4%, var(--card-bg)));
       border: 1px solid color-mix(in srgb, var(--blue) 20%, var(--card-border));
     }
     .fdb-hero .fdb-featured::before {
@@ -418,8 +432,6 @@
       .fdb-hero-intro { justify-content: flex-start; }
       .fdb-hero-coat { display: none; }
       .fdb-hero-lead { max-width: none; }
-      /* el glow deja de sangrar fuera del viewport cuando el hero es 1 columna */
-      .fdb-hero-intro::before { inset: -1.4rem 0; }
       .fdb-hero .fdb-featured { padding: 1.6rem 1.5rem; }
       .fdb-hero .fdb-featured h3 { font-size: 1.25rem; }
       .fdb-callout { grid-template-columns: 1fr; gap: 1.4rem; padding: 1.8rem 1.5rem; }
@@ -636,7 +648,7 @@
         </div>
         <a class="fdb-featured" href="/fuera-de-bata/como-extraer-informacion-de-una-persona-a-traves-de-como-habla/">
           <span class="fdb-featured-tags">
-            <span class="fdb-featured-badge">Destacada</span>
+            <span class="fdb-featured-badge">Destacado</span>
             <span class="fdb-featured-area">Análisis del lenguaje</span>
           </span>
           <h3>Cómo extraer información de una persona a través de cómo habla</h3>
