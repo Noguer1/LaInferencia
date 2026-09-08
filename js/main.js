@@ -8189,7 +8189,6 @@ window.LI_CAT_COLORS = {
     const iconEl = document.getElementById('tour-modal-icon');
     iconEl.innerHTML = step.icon || '';
     iconEl.hidden    = !!step.hideIcon;
-    modal.querySelector('.onboarding-card')?.classList.remove('ob-interests');
     document.getElementById('tour-modal-title').textContent = step.title;
 
     const textEl   = document.getElementById('tour-modal-text');
@@ -8238,7 +8237,6 @@ window.LI_CAT_COLORS = {
     modal.hidden   = false;
     shell.hidden   = false;
 
-    modal.querySelector('.onboarding-card')?.classList.add('ob-interests');
     document.getElementById('tour-modal-icon').innerHTML    = step.icon;
     document.getElementById('tour-modal-title').textContent = step.title;
     document.getElementById('tour-modal-text').textContent  = step.text;
