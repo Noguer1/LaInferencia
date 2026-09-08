@@ -4654,7 +4654,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   margin-top: -1px;
   animation: fdb-flask-float 3.6s ease-in-out infinite;
 }
-.dark-base .fdb-home-flask { color: #60A5FA; }
+.dark-base .fdb-home-flask { color: var(--blue); }   /* acento del tema (rojo, ámbar, morado…) */
+[data-theme="dark"] .fdb-home-flask { color: #60A5FA; } /* dark liso: azul claro legible */
 .fdb-flask-liquid { animation: fdb-flask-liquid 3.6s ease-in-out infinite; }
 .fdb-flask-bubble {
   opacity: 0;
@@ -4762,15 +4763,20 @@ body.mp-fuerabata .fdb-home > *:nth-child(5) { animation-delay: 0.26s; }
   color: inherit;
   background: #EEF2FD;                       /* relleno, opaco */
   border: 1px solid rgba(37, 99, 235, 0.14);
-  border-left: 3px solid var(--blue-accent); /* franja cian de diferenciación */
+  border-left: 3px solid var(--blue-accent); /* franja de diferenciación (acento del tema) */
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .mwh-card:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(11, 19, 43, 0.1); }
 .dark-base .mwh-card {
   background: #0E1B30;                       /* relleno, un pelo más claro que el fondo */
   border-color: rgba(148, 163, 184, 0.14);
-  border-left-color: #00E5FF;               /* cian fijo, no el acento atenuado del tema oscuro */
 }
+/* La franja: cian explícito en el tema oscuro liso; en los temas de color,
+   su propio acento para que no desentone */
+[data-theme="dark"] .mwh-card { border-left-color: #00E5FF; }
+[data-theme="cosmos"] .mwh-card,
+[data-theme="tormenta"] .mwh-card,
+[data-theme="verde"] .mwh-card { border-left-color: var(--blue); }
 .mwh-eyebrow {
   display: inline-flex; align-items: center; gap: 0.4rem;
   font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em;
