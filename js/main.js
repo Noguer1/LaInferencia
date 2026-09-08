@@ -12715,6 +12715,41 @@ const EFECTOS_EXTRA = {
 }());
 
 
+/* ── Count-up de las stats de Fuera de Bata (vista rápida in-app) ── */
+(function () {
+  const getNums = () => Array.from(document.querySelectorAll('#panel-repositorio .fdb-home-stats b'));
+  if (!getNums().length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function countUp(el) {
+    const target = parseInt(el.dataset.target || el.textContent, 10) || 0;
+    el.dataset.target = target;
+    if (reduce) { el.textContent = target; return; }
+    const dur = 750, start = performance.now();
+    el.textContent = '0';
+    (function tick(now) {
+      const t = Math.min(1, (now - start) / dur);
+      el.textContent = Math.round((1 - Math.pow(1 - t, 3)) * target);
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    })(start);
+  }
+
+  function run() { getNums().forEach(countUp); }
+
+  if (document.body.classList.contains('mp-fuerabata')) run();
+
+  let counted = false;
+  new MutationObserver(() => {
+    if (document.body.classList.contains('mp-fuerabata')) {
+      if (!counted) { counted = true; run(); }
+    } else {
+      counted = false;
+    }
+  }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+}());
+
+
 /* ── TOC, smooth scroll + active section ───────────────────────── */
 (function () {
   let tocObserver = null;

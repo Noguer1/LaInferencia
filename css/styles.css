@@ -4619,6 +4619,57 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   color: var(--navy); margin: 0; line-height: 1.1;
 }
 .fdb-home h2 .grad { color: var(--blue); }
+/* Título con la probeta a la izquierda (mismo SVG que la pestaña) */
+.fdb-home-title { display: flex; align-items: center; gap: 0.5rem; }
+.fdb-home-flask {
+  width: 32px; height: 32px; flex-shrink: 0;
+  color: var(--blue);
+  margin-top: -1px;
+  animation: fdb-flask-float 3.6s ease-in-out infinite;
+}
+.dark-base .fdb-home-flask { color: #60A5FA; }
+.fdb-flask-liquid { animation: fdb-flask-liquid 3.6s ease-in-out infinite; }
+.fdb-flask-bubble {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fdb-flask-bubble 2.8s ease-in infinite 0.6s;
+}
+@keyframes fdb-flask-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-2px); }
+}
+@keyframes fdb-flask-liquid {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(0.4px); }
+}
+@keyframes fdb-flask-bubble {
+  0%   { transform: translateY(2.5px) scale(0.6); opacity: 0; }
+  20%  { opacity: 0.85; }
+  70%  { opacity: 0.45; }
+  100% { transform: translateY(-5px) scale(1); opacity: 0; }
+}
+
+/* Entrada escalonada de los elementos al abrir la vista */
+body.mp-fuerabata .fdb-home > * {
+  animation: fdb-enter 0.44s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+body.mp-fuerabata .fdb-home > *:nth-child(1) { animation-delay: 0.02s; }
+body.mp-fuerabata .fdb-home > *:nth-child(2) { animation-delay: 0.08s; }
+body.mp-fuerabata .fdb-home > *:nth-child(3) { animation-delay: 0.14s; }
+body.mp-fuerabata .fdb-home > *:nth-child(4) { animation-delay: 0.20s; }
+body.mp-fuerabata .fdb-home > *:nth-child(5) { animation-delay: 0.26s; }
+@keyframes fdb-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fdb-home-flask,
+  .fdb-flask-liquid,
+  .fdb-flask-bubble,
+  body.mp-fuerabata .fdb-home > * { animation: none; }
+}
 .fdb-home-lead {
   font-size: 0.92rem; line-height: 1.7; color: var(--text-body); margin: 0;
   /* Halo pegado a las letras para que los nodos del canvas no le resten
