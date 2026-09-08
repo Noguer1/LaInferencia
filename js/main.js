@@ -5996,15 +5996,15 @@ function renderPreviousCard(article) {
     </div>`;
 }
 
+let _weeklyModalClose = null;
+
 function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
   const container = document.getElementById('weekly-container');
   if (!container || !featured) return;
   const previous = available.filter(a => a.week !== featured.week);
 
-  /* Teaser + full article (hidden until expand) */
-  let html = `
-    <div id="wk-teaser-wrap">${renderWeeklyTeaser(featured)}</div>
-    <div id="wk-full-wrap" hidden>${renderFeaturedWeekly(featured)}</div>`;
+  /* Teaser en el panel; el artículo completo se abre en #weekly-modal */
+  let html = `<div id="wk-teaser-wrap">${renderWeeklyTeaser(featured)}</div>`;
 
   /* Botón "Ver anteriores" (visible en todas las pantallas) + drawer */
   if (previous.length > 0) {
@@ -6047,10 +6047,12 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
   document.getElementById('weekly-prev-drawer')?.remove();
   container.innerHTML = html;
 
-  const teaserWrap = container.querySelector('#wk-teaser-wrap');
-  const fullWrap   = container.querySelector('#wk-full-wrap');
+  const weeklyModal     = document.getElementById('weekly-modal');
+  const weeklyModalBody  = document.getElementById('weekly-modal-container');
+  /* Sacarlo de #mob-slide-wrap: su `contain` en móvil rompe el position:fixed */
+  if (weeklyModal && weeklyModal.parentElement !== document.body) document.body.appendChild(weeklyModal);
 
-  function doExpand() {
+  function _setWeeklyMeta() {
     const { week, title, intro } = featured;
     const artUrl  = `https://lainferencia.com/?v=semana&n=${week}`;
     const artDesc = intro.substring(0, 155) + '…';
@@ -6062,20 +6064,8 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', artDesc);
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://lainferencia.com/');
-    if (window._LI_markWeeklyRead) window._LI_markWeeklyRead(week);
-    teaserWrap.setAttribute('hidden', '');
-    fullWrap.removeAttribute('hidden');
-    if (!_skipUrlUpdate) history.replaceState({ v: 'semana', n: week }, '', `?v=semana&n=${week}`);
-    if (featured.week === 26) _initW26Interactive();
-    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-
-  container.querySelector('#weekly-read-btn')?.addEventListener('click', doExpand);
-
-  container.querySelector('#weekly-collapse-btn')?.addEventListener('click', () => {
-    fullWrap.setAttribute('hidden', '');
-    teaserWrap.removeAttribute('hidden');
-    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  function _restoreHomeMeta() {
     const _homeDesc = 'Divulgación de psicología explicada de forma clara y sencilla, a partir de estudios científicos reales.';
     document.title = 'La Inferencia, Divulgación de Psicología';
     document.querySelector('meta[name="description"]')?.setAttribute('content', _homeDesc);
@@ -6083,8 +6073,55 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', _homeDesc);
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', 'https://lainferencia.com/');
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://lainferencia.com/');
+  }
+
+  let _weeklyTrap = null, _weeklyTrigger = null;
+
+  function doExpand() {
+    if (!weeklyModal || !weeklyModalBody) return;
+    _weeklyTrigger = document.activeElement;
+    weeklyModalBody.innerHTML = renderFeaturedWeekly(featured);
+    _setWeeklyMeta();
+    if (window._LI_markWeeklyRead) window._LI_markWeeklyRead(featured.week);
+    if (!_skipUrlUpdate) history.replaceState({ v: 'semana', n: featured.week }, '', `?v=semana&n=${featured.week}`);
+    if (featured.week === 26) _initW26Interactive();
+    weeklyModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    _weeklyTrap = trapFocus(weeklyModal);
+    const card = weeklyModal.querySelector('.concepto-modal-card');
+    if (card) card.scrollTop = 0;
+    weeklyModalBody.querySelector('#weekly-collapse-btn')?.addEventListener('click', closeWeeklyModal);
+    weeklyModalBody.querySelectorAll('.related-card').forEach(rc => {
+      const go = () => {
+        const a = (LIBRARY_ARTICLES[rc.dataset.relCat] || []).find(x => x.id === rc.dataset.relId);
+        if (!a) return;
+        closeWeeklyModal();
+        setTimeout(() => { if (window._LI_openLibArticle) window._LI_openLibArticle(a.id, rc.dataset.relCat); }, 160);
+      };
+      rc.addEventListener('click', go);
+      rc.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
+  }
+
+  function closeWeeklyModal() {
+    if (!weeklyModal || weeklyModal.hidden) return;
+    weeklyModal.hidden = true;
+    document.body.style.overflow = '';
+    weeklyModalBody.innerHTML = '';
+    _restoreHomeMeta();
     try { history.replaceState({ v: 'home' }, '', '/'); } catch (_) {}
-  });
+    if (_weeklyTrap) { releaseFocus(weeklyModal, _weeklyTrap, _weeklyTrigger); _weeklyTrap = null; }
+    else if (_weeklyTrigger) _weeklyTrigger.focus();
+  }
+  _weeklyModalClose = closeWeeklyModal;
+
+  container.querySelector('#weekly-read-btn')?.addEventListener('click', doExpand);
+
+  if (weeklyModal) {
+    const _x = weeklyModal.querySelector('#weekly-modal-close');
+    if (_x) _x.onclick = closeWeeklyModal;
+    weeklyModal.onclick = e => { if (e.target === weeklyModal) closeWeeklyModal(); };
+  }
 
   if (autoExpand) doExpand();
 
@@ -6129,8 +6166,7 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
       if (art) {
         closeDrawer();
         setTimeout(() => {
-          renderWeeklyView(available, art);
-          container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          renderWeeklyView(available, art, false, true);
         }, 160);
       }
     };
@@ -6236,6 +6272,12 @@ function _buildW26QuizBonus() {
 }
 
 function initWeeklySection() {
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape' || !_weeklyModalClose) return;
+    const m = document.getElementById('weekly-modal');
+    if (m && !m.hidden) _weeklyModalClose();
+  });
+
   const currentWeek = getWeekOfYear(new Date());
   const available = [...WEEKLY_ARTICLES]
     .filter(a => a.week <= currentWeek)
@@ -8147,6 +8189,7 @@ window.LI_CAT_COLORS = {
     const iconEl = document.getElementById('tour-modal-icon');
     iconEl.innerHTML = step.icon || '';
     iconEl.hidden    = !!step.hideIcon;
+    modal.querySelector('.onboarding-card')?.classList.remove('ob-interests');
     document.getElementById('tour-modal-title').textContent = step.title;
 
     const textEl   = document.getElementById('tour-modal-text');
@@ -8195,6 +8238,7 @@ window.LI_CAT_COLORS = {
     modal.hidden   = false;
     shell.hidden   = false;
 
+    modal.querySelector('.onboarding-card')?.classList.add('ob-interests');
     document.getElementById('tour-modal-icon').innerHTML    = step.icon;
     document.getElementById('tour-modal-title').textContent = step.title;
     document.getElementById('tour-modal-text').textContent  = step.text;
@@ -11985,6 +12029,7 @@ const EFECTOS_EXTRA = {
   const dynTargets = [
     document.getElementById('efecto-modal-content'),
     document.getElementById('weekly-container'),
+    document.getElementById('weekly-modal-container'),
     document.getElementById('biblioteca-container')
   ].filter(Boolean);
 
