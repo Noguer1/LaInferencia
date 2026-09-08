@@ -4723,22 +4723,27 @@ body.mp-fuerabata .fdb-home > *:nth-child(5) { animation-delay: 0.26s; }
 /* ── Tarjeta del Artículo de la Semana en la portada móvil ── */
 .mob-weekly-home { display: none; }
 @media (max-width: 768px) {
-  body.mp-casa .mob-weekly-home { display: block; margin: 0.4rem 1.1rem 1.6rem; }
+  body.mp-casa .mob-weekly-home { display: block; margin: 1.4rem 0 0.4rem; }
 }
 .mwh-card {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.05rem 1.15rem 1.1rem;
-  border-radius: 16px;
+  border-radius: 14px;
   text-decoration: none;
   color: inherit;
-  background:
-    linear-gradient(150deg, color-mix(in srgb, var(--blue-accent) 10%, transparent), color-mix(in srgb, var(--blue) 7%, transparent));
-  border: 1px solid color-mix(in srgb, var(--blue) 20%, transparent);
-  transition: transform 0.2s, border-color 0.2s;
+  background: #EEF2FD;                       /* relleno, opaco */
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  border-left: 3px solid var(--blue-accent); /* franja cian de diferenciación */
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.mwh-card:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--blue) 40%, transparent); }
+.mwh-card:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(11, 19, 43, 0.1); }
+.dark-base .mwh-card {
+  background: #0E1B30;                       /* relleno, un pelo más claro que el fondo */
+  border-color: rgba(148, 163, 184, 0.14);
+  border-left-color: #00E5FF;               /* cian fijo, no el acento atenuado del tema oscuro */
+}
 .mwh-eyebrow {
   display: inline-flex; align-items: center; gap: 0.4rem;
   font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em;
@@ -10045,6 +10050,8 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
     display: block !important;
     padding: 0 1.2rem 2rem !important;
   }
+  /* Casa: sin grid, si no la fila oculta de sidebars deja un hueco muerto */
+  body.mp-casa .dashboard-layout { display: block !important; }
 
   /* ── PÁGINA: CASA ── */
   body.mp-casa .hero,
