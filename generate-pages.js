@@ -371,8 +371,72 @@ function staticHero(opts = {}) {
   </section>`;
 }
 
-function staticFooterScripts() {
-  return `<script src="/js/search-index.js?v=${SEARCH_INDEX_V}"></script>
+// Barra de navegación inferior compartida (armazón). Enlaces reales:
+// Inicio /, Explorar /#timeline, Fuera de Bata /fuera-de-bata/, Yo /#yo.
+// `active` marca la pestaña actual ('explorar' | 'fuerabata' | 'inicio' | 'yo' | null).
+function sharedBottomNav(active) {
+  const tab = (key, href, label, iconClass, svg) => {
+    const on = active === key;
+    return `    <a class="mbn-tab${on ? ' mbn-tab--active' : ''}" href="${href}"${on ? ' aria-current="page"' : ''} aria-label="${label}">
+      <span class="mbn-icon-wrap"><svg class="mbn-icon${iconClass}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${svg}</svg></span>
+      <span class="mbn-label">${label}</span>
+    </a>`;
+  };
+  return `
+  <!-- ── MOBILE BOTTOM NAV (armazón compartido, enlaces reales) ── -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav" role="navigation" aria-label="Navegación principal">
+    <div class="mbn-indicator mbn-indicator--hidden" id="mbn-indicator" aria-hidden="true"></div>
+${tab('inicio', '/', 'Inicio', '', '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>')}
+${tab('explorar', '/#timeline', 'Explorar', '', '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>')}
+${tab('fuerabata', '/fuera-de-bata/', 'Fuera de Bata', ' mbn-icon--flask', '<path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/>')}
+${tab('yo', '/#yo', 'Yo', '', '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>')}
+  </nav>
+  <script>
+  (function () {
+    var nav = document.getElementById('mobile-bottom-nav');
+    if (!nav) return;
+    var indicator = document.getElementById('mbn-indicator');
+    var active = nav.querySelector('.mbn-tab--active');
+    var PILL_W = 44, PILL_H = 30;
+    function place() {
+      if (!indicator || !active) return;
+      var navRect = nav.getBoundingClientRect();
+      var iw = active.querySelector('.mbn-icon-wrap');
+      if (iw) {
+        var iwRect = iw.getBoundingClientRect();
+        if (iwRect.height) indicator.style.top = (iwRect.top - navRect.top + iwRect.height / 2 - PILL_H / 2) + 'px';
+      }
+      var x = Math.round(active.offsetLeft + active.offsetWidth / 2 - PILL_W / 2);
+      indicator.style.transition = 'none';
+      indicator.style.transform = 'translateX(' + x + 'px)';
+      indicator.classList.remove('mbn-indicator--hidden');
+      indicator.offsetHeight;
+      indicator.style.transition = '';
+    }
+    place();
+    requestAnimationFrame(place);
+    window.addEventListener('resize', place, { passive: true });
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var lastY = window.pageYOffset || 0, ticking = false;
+      function onScroll() {
+        var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (y <= 4) nav.classList.remove('mbn-hidden');
+        else if (y > lastY + 8 && y > 96) nav.classList.add('mbn-hidden');
+        else if (y < lastY - 6) nav.classList.remove('mbn-hidden');
+        lastY = y;
+        ticking = false;
+      }
+      window.addEventListener('scroll', function () {
+        if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+    }
+  }());
+  </script>`;
+}
+
+function staticFooterScripts(active = 'explorar') {
+  return `${sharedBottomNav(active)}
+<script src="/js/search-index.js?v=${SEARCH_INDEX_V}"></script>
 <script defer src="/js/buscador.js?v=${BUSCADOR_V}"></script>
 <script defer src="/js/reading-progress.js?v=${READING_PROGRESS_V}"></script>`;
 }
@@ -1074,7 +1138,7 @@ ${faqHTML}
     </div>
   </main>
 
-${staticFooterScripts()}
+${staticFooterScripts(null)}
 <script defer src="/js/neural-canvas.js?v=${NEURAL_V}"></script>
 </body>
 </html>`;
