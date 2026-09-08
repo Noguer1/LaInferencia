@@ -4608,6 +4608,60 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .fuera-bata-desc  { font-size: 0.84rem; }
 }
 
+/* ── Vista rápida de Fuera de Bata dentro de la SPA (pestaña inferior) ── */
+.fdb-home { display: flex; flex-direction: column; gap: 1.1rem; }
+.fdb-home-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--blue);
+}
+.fdb-home-eyebrow svg { width: 13px; height: 13px; }
+.fdb-home h2 {
+  font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em;
+  color: var(--navy); margin: 0; line-height: 1.1;
+}
+.fdb-home h2 .grad { color: var(--blue); }
+.fdb-home-lead { font-size: 0.92rem; line-height: 1.7; color: var(--text-body); margin: 0; }
+.fdb-home-stats { display: flex; gap: 1.6rem; margin: 0.2rem 0; }
+.fdb-home-stats div { display: flex; flex-direction: column; }
+.fdb-home-stats b { font-size: 1.35rem; font-weight: 800; color: var(--navy); line-height: 1; }
+.fdb-home-stats span { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem; }
+.fdb-home-featured {
+  display: block; text-decoration: none; color: inherit;
+  padding: 1rem 1.1rem; border-radius: 14px;
+  background: color-mix(in srgb, var(--blue) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--blue) 14%, transparent);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.fdb-home-featured:hover { border-color: color-mix(in srgb, var(--blue) 32%, transparent); transform: translateY(-1px); }
+.fdb-home-featured-badge {
+  display: inline-block; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 12%, transparent);
+  padding: 0.15rem 0.5rem; border-radius: 6px; margin-bottom: 0.5rem;
+}
+.fdb-home-featured h3 { font-size: 0.98rem; font-weight: 700; color: var(--navy); margin: 0 0 0.35rem; line-height: 1.35; }
+.fdb-home-featured p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin: 0 0 0.55rem; }
+.fdb-home-featured-more { font-size: 0.8rem; font-weight: 700; color: var(--blue); }
+.fdb-home-actions { display: flex; flex-direction: column; gap: 0.6rem; }
+.fdb-home-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.8rem 1.2rem; border-radius: 12px; font-size: 0.88rem; font-weight: 700;
+  background: var(--blue); color: #fff; text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.fdb-home-cta:hover { background: var(--blue-hover); transform: translateY(-1px); }
+.fdb-home-cta svg { width: 15px; height: 15px; }
+.fdb-home-cta--ghost {
+  background: transparent; color: var(--blue);
+  border: 1px solid color-mix(in srgb, var(--blue) 30%, transparent);
+}
+.fdb-home-cta--ghost:hover { background: color-mix(in srgb, var(--blue) 8%, transparent); }
+.dark-base .fdb-home h2,
+.dark-base .fdb-home-stats b,
+.dark-base .fdb-home-featured h3 { color: #E8EEF9; }
+.dark-base .fdb-home-featured { background: color-mix(in srgb, var(--blue) 10%, transparent); }
+
 /* ── BIBLIOTECA POR INTERESES ── */
 .cat-selector {
   display: grid;
@@ -9901,8 +9955,20 @@ h3.tl-detail-titulo { font-size: 1.05rem; font-weight: 700; color: var(--navy); 
   body.mp-casa .propuestas-section,
   body.mp-casa .footer-main          { display: block; }
   body.mp-casa #panel-repositorio    { display: none !important; }
-  /* Fuera de Bata es una página aparte (/fuera-de-bata/): el panel in-app
-     #panel-repositorio ya no se muestra nunca en móvil */
+
+  /* ── PÁGINA: FUERA DE BATA (vista rápida in-app; la completa es /fuera-de-bata/) ── */
+  /* El panel ya trae su propio título "Fuera de Bata", no repetir el section header */
+  body.mp-fuerabata .mobile-section-header { display: none !important; }
+  body.mp-fuerabata .dashboard-center  { display: block; }
+  body.mp-fuerabata .search-section    { display: none !important; }
+  body.mp-fuerabata #panel-biblioteca,
+  body.mp-fuerabata #panel-semana      { display: none !important; }
+  body.mp-fuerabata #panel-repositorio { display: block !important; }
+  body.mp-fuerabata .dashboard-layout  { display: block; }
+  body.mp-fuerabata .sidebar-left,
+  body.mp-fuerabata .sidebar-right     { display: none !important; }
+  body.mp-fuerabata .propuestas-section,
+  body.mp-fuerabata .footer-main       { display: block; }
 
   /* ── PÁGINA: EXPLORAR (data-mbn="descubrir") ── */
   body.mp-descubrir .sidebar-left,

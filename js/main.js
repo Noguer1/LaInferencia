@@ -12499,9 +12499,10 @@ const EFECTOS_EXTRA = {
   const overlay    = document.getElementById('mbn-overlay');
   const indicator  = document.getElementById('mbn-indicator');
   const tabs       = nav ? Array.from(nav.querySelectorAll('.mbn-tab')) : [];
-  /* Páginas in-app reales (Fuera de Bata es ahora una página aparte, /fuera-de-bata/) */
-  const PAGE_CLS   = ['mp-casa', 'mp-descubrir', 'mp-botiquin', 'mp-yo'];
-  const TAB_ORDER  = ['casa', 'descubrir', 'botiquin', 'yo'];
+  /* Páginas in-app. Fuera de Bata muestra una vista rápida (panel-repositorio);
+     el catálogo completo sigue viviendo en /fuera-de-bata/ para SEO y escritorio. */
+  const PAGE_CLS   = ['mp-casa', 'mp-descubrir', 'mp-fuerabata', 'mp-botiquin', 'mp-yo'];
+  const TAB_ORDER  = ['casa', 'descubrir', 'fuerabata', 'botiquin', 'yo'];
   const PILL_W     = 44;
   const PILL_H     = 30;
   const msh        = document.getElementById('msh-section-name');
@@ -12512,6 +12513,7 @@ const EFECTOS_EXTRA = {
   const PAGE_NAMES = {
     casa:      'Inicio',
     descubrir: 'Explorar',
+    fuerabata: 'Fuera de Bata',
     botiquin:  'Botiquín',
     yo:        'Mi perfil'
   };
@@ -12654,9 +12656,6 @@ const EFECTOS_EXTRA = {
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       if (!isMobile()) return;
-      /* Fuera de Bata es un <a href="/fuera-de-bata/">: navega solo
-         (prerender + View Transitions se encargan de la fluidez) */
-      if (tab.dataset.mbn === 'fuerabata') return;
       if (document.body.classList.contains('mp-' + tab.dataset.mbn)) return; /* ya estamos aquí */
       switchPage(tab.dataset.mbn);
     });
