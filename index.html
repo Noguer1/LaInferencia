@@ -37,12 +37,13 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
   <meta name="theme-color" content="#030C1A" />
-  <!-- Fuera de Bata es página aparte: la prerenderizamos al primer gesto sobre
-       su pestaña (hover/pointerdown) para que la entrada sea instantánea.
-       Navegadores sin soporte ignoran este bloque. -->
+  <!-- Fuera de Bata es página aparte: la prerenderizamos ENTERA en segundo
+       plano al cargar la home (eagerness inmediato de source:list), para que
+       al pulsar la pestaña la activación sea instantánea. Navegadores sin
+       soporte de prerender usan el prefetch; el resto ignora el bloque. -->
   <script type="speculationrules">
   {
-    "prerender": [{ "where": { "href_matches": "/fuera-de-bata/" }, "eagerness": "moderate" }],
+    "prerender": [{ "source": "list", "urls": ["/fuera-de-bata/"] }],
     "prefetch":  [{ "source": "list", "urls": ["/fuera-de-bata/"] }]
   }
   </script>
