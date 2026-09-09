@@ -1911,8 +1911,8 @@ const LIBRARY_ARTICLES = {
           subtitle: 'Los cuatro jinetes',
           paragraphs: [
             'Del trabajo de Gottman salió una etiqueta que se ha quedado en el lenguaje de la terapia de pareja: los cuatro jinetes. Son cuatro maneras de comunicarse en una discusión que, cuando se vuelven costumbre, anuncian problemas. La crítica, que ataca el carácter de la otra persona en vez de un comportamiento concreto. La actitud defensiva, que devuelve cada reproche con un contraataque. El bloqueo, que consiste en apagarse y dejar de responder. Y el desprecio.',
-            '» El desprecio es el más corrosivo de los cuatro: quien se supone que te quiere te considera inferior.',
-            'El desprecio es el más corrosivo de los cuatro. Es el sarcasmo, los ojos en blanco, el chiste que humilla, el tono de superioridad moral. Comunica algo que la otra persona registra casi como una amenaza: quien se supone que te quiere te considera inferior. Una pareja puede pasar por discusiones muy fuertes y salir entera si no hay desprecio. Una pareja tranquila por fuera pero con desprecio de fondo lo tiene peor.'
+            'El desprecio es el más corrosivo de los cuatro. Es el sarcasmo, los ojos en blanco, el chiste que humilla, el tono de superioridad moral. Comunica algo que la otra persona registra casi como una amenaza: quien se supone que te quiere te considera inferior. Una pareja puede pasar por discusiones muy fuertes y salir entera si no hay desprecio. Una pareja tranquila por fuera pero con desprecio de fondo lo tiene peor.',
+            '» Una pareja aguanta discusiones muy fuertes si no hay desprecio. Una pareja tranquila con desprecio de fondo, no.'
           ]
         },
         {

@@ -3571,20 +3571,16 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .weekly-featured-card {
   position: relative;
   background:
-    radial-gradient(ellipse 72% 30% at 8% 0%, color-mix(in srgb, var(--blue-accent) 10%, transparent) 0%, transparent 60%),
-    radial-gradient(ellipse 64% 32% at 94% 100%, color-mix(in srgb, var(--blue) 9%, transparent) 0%, transparent 58%),
-    radial-gradient(ellipse 34% 22% at 100% 34%, color-mix(in srgb, var(--blue-accent) 6%, transparent) 0%, transparent 62%),
-    radial-gradient(ellipse 38% 20% at 0% 68%, color-mix(in srgb, var(--blue) 6%, transparent) 0%, transparent 64%),
+    radial-gradient(ellipse 78% 30% at 6% 0%, color-mix(in srgb, var(--blue-accent) 13%, transparent) 0%, transparent 62%),
+    radial-gradient(ellipse 70% 30% at 96% 100%, color-mix(in srgb, var(--blue) 11%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 24% at 112% 30%, color-mix(in srgb, var(--blue-accent) 11%, transparent) 0%, transparent 66%),
+    radial-gradient(ellipse 54% 22% at -12% 64%, color-mix(in srgb, var(--blue) 10%, transparent) 0%, transparent 66%),
     var(--card-bg);
   border-radius: 20px; padding: 2rem;
   border: 1px solid color-mix(in srgb, var(--blue) 20%, var(--card-border));
   box-shadow: 0 28px 80px rgba(11, 19, 43, 0.28), 0 0 0 1px color-mix(in srgb, var(--blue) 10%, transparent), inset 0 1px 0 rgba(255,255,255,0.90);
   margin-bottom: 2rem;
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-}
-.weekly-featured-card::before {
-  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; border-radius: 20px 20px 0 0;
-  background: linear-gradient(90deg, var(--blue), var(--blue-accent)); opacity: 0.85;
 }
 
 .week-label {
@@ -3687,14 +3683,14 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 
 .article-subtitle {
   position: relative;
-  font-size: 1.18rem; font-weight: 800; color: var(--navy);
-  margin: 2.6rem 0 0.75rem; letter-spacing: -0.3px; line-height: 1.3;
-  padding-left: 0.9rem;
+  font-size: 1.26rem; font-weight: 800; color: var(--navy);
+  margin: 3rem 0 0.95rem; letter-spacing: -0.4px; line-height: 1.26;
+  padding-bottom: 0.5rem;
 }
-.article-subtitle::before {
-  content: ""; position: absolute; left: 0; top: 0.2em; bottom: 0.2em;
-  width: 3px; border-radius: 2px;
-  background: linear-gradient(180deg, var(--blue-accent), var(--blue));
+.article-subtitle::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 32px; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--blue-accent), var(--blue));
 }
 .article-content .article-subtitle:first-of-type { margin-top: 1rem; }
 
@@ -3705,9 +3701,10 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 
 /* Cita destacada intercalada (párrafo que empieza por "» ") */
 .article-pull {
-  font-size: 1.3rem; font-weight: 700; color: var(--navy);
-  line-height: 1.42; letter-spacing: -0.3px; text-wrap: balance;
-  margin: 2.4rem 0; padding-left: 1.1rem;
+  font-size: 1.22rem; font-weight: 500; font-style: italic;
+  color: color-mix(in srgb, var(--navy) 80%, var(--text-body));
+  line-height: 1.5; letter-spacing: -0.15px; text-wrap: balance;
+  margin: 2.2rem 0; padding: 0.15rem 0 0.15rem 1.15rem;
   border-left: 3px solid var(--blue-accent);
 }
 
@@ -4446,8 +4443,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .reading-time         { font-size: 0.62rem; }
   .article-intro        { font-size: 15px !important; line-height: 1.6 !important; color: var(--text-body) !important; margin-bottom: 0.8rem; }
   .article-content p    { font-size: 15px !important; line-height: 1.6 !important; color: var(--text-body) !important; margin-bottom: 0.5rem; }
-  .article-subtitle     { font-size: 16.5px !important; font-weight: 800; margin: 1.8rem 0 0.45rem; padding-left: 0.75rem; }
-  .article-pull         { font-size: 17px; margin: 1.6rem 0; padding-left: 0.85rem; }
+  .article-subtitle     { font-size: 17px !important; font-weight: 800; margin: 2.1rem 0 0.7rem; padding-bottom: 0.4rem; }
+  .article-pull         { font-size: 16px; font-style: italic; margin: 1.7rem 0; padding-left: 0.9rem; }
   .aplicacion-block p   { font-size: 13.5px !important; line-height: 1.55; }
   .article-content      { margin-top: 0.6rem; }
   .article-blockquote   { margin: 0.75rem 0; padding: 0.6rem 0.8rem; }
@@ -5341,10 +5338,10 @@ body.mp-fuerabata .fdb-home > *:nth-child(5) { animation-delay: 0.26s; }
 
 .dark-base .weekly-featured-card {
   background:
-    radial-gradient(ellipse 72% 30% at 8% 0%, color-mix(in srgb, var(--blue-accent) 10%, transparent) 0%, transparent 60%),
-    radial-gradient(ellipse 64% 32% at 94% 100%, color-mix(in srgb, var(--blue) 9%, transparent) 0%, transparent 58%),
-    radial-gradient(ellipse 34% 22% at 100% 34%, color-mix(in srgb, var(--blue-accent) 7%, transparent) 0%, transparent 62%),
-    radial-gradient(ellipse 38% 20% at 0% 68%, color-mix(in srgb, var(--blue) 7%, transparent) 0%, transparent 64%),
+    radial-gradient(ellipse 82% 34% at 4% 0%, color-mix(in srgb, var(--blue-accent) 20%, transparent) 0%, transparent 64%),
+    radial-gradient(ellipse 74% 32% at 98% 100%, color-mix(in srgb, var(--blue) 18%, transparent) 0%, transparent 62%),
+    radial-gradient(ellipse 52% 28% at 114% 28%, color-mix(in srgb, var(--blue-accent) 18%, transparent) 0%, transparent 66%),
+    radial-gradient(ellipse 56% 24% at -14% 62%, color-mix(in srgb, var(--blue) 16%, transparent) 0%, transparent 66%),
     var(--card-bg);
   border-color: color-mix(in srgb, var(--blue) 20%, var(--card-border));
 }
