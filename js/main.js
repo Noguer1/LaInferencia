@@ -1903,13 +1903,15 @@ const LIBRARY_ARTICLES = {
           subtitle: 'Problemas que se arreglan y problemas que solo se gestionan',
           paragraphs: [
             'En sus libros posteriores, sobre todo «¿Qué predice el divorcio?» (1994) y «Siete reglas de oro para vivir en pareja» (1999), Gottman separó los conflictos en dos familias. Los solucionables son de circunstancia: a quién le toca fregar, cómo se reparten las vacaciones, la logística de los niños. Se negocian y se cierran. Los perpetuos vienen de más abajo, de diferencias de carácter y de valores. Uno necesita orden y el otro improvisar. Uno quiere hablar del dinero cada semana y el otro no soporta el tema. Uno pide más cercanía de la que el otro puede dar.',
-            'La cifra que se hizo famosa es esta: en torno al 69% de los conflictos de una pareja pertenecen a ese segundo grupo y no van a desaparecer. Y aquí está el hallazgo que de verdad importa. Las parejas felices no tienen menos problemas perpetuos que las infelices, tienen más o menos los mismos. Lo que cambia es que hablan de ellos con humor, con cariño y sin dramatismo, en lugar de quedarse atascadas en el mismo punto muerto una y otra vez.'
+            'La cifra que se hizo famosa es esta: en torno al 69% de los conflictos de una pareja pertenecen a ese segundo grupo y no van a desaparecer. Y aquí está el hallazgo que de verdad importa. Las parejas felices no tienen menos problemas perpetuos que las infelices, tienen más o menos los mismos. Lo que cambia es que hablan de ellos con humor, con cariño y sin dramatismo, en lugar de quedarse atascadas en el mismo punto muerto una y otra vez.',
+            '» Las parejas felices no tienen menos problemas de fondo. Tienen los mismos. Lo que cambia es cómo hablan de ellos.'
           ]
         },
         {
           subtitle: 'Los cuatro jinetes',
           paragraphs: [
             'Del trabajo de Gottman salió una etiqueta que se ha quedado en el lenguaje de la terapia de pareja: los cuatro jinetes. Son cuatro maneras de comunicarse en una discusión que, cuando se vuelven costumbre, anuncian problemas. La crítica, que ataca el carácter de la otra persona en vez de un comportamiento concreto. La actitud defensiva, que devuelve cada reproche con un contraataque. El bloqueo, que consiste en apagarse y dejar de responder. Y el desprecio.',
+            '» El desprecio es el más corrosivo de los cuatro: quien se supone que te quiere te considera inferior.',
             'El desprecio es el más corrosivo de los cuatro. Es el sarcasmo, los ojos en blanco, el chiste que humilla, el tono de superioridad moral. Comunica algo que la otra persona registra casi como una amenaza: quien se supone que te quiere te considera inferior. Una pareja puede pasar por discusiones muy fuertes y salir entera si no hay desprecio. Una pareja tranquila por fuera pero con desprecio de fondo lo tiene peor.'
           ]
         },
@@ -5517,9 +5519,18 @@ const ARTICLE_STATS = {
 };
 
 /* ── FUNCIONES HELPER DE ARTÍCULO ──────────────────────────────── */
+/* Un párrafo que empieza por "» " se renderiza como cita destacada intercalada. */
+function renderParagraphs(paragraphs) {
+  return paragraphs.map(p =>
+    /^»\s/.test(p)
+      ? `<p class="article-pull">${p.replace(/^»\s/, '')}</p>`
+      : `<p>${p}</p>`
+  ).join('');
+}
+
 function renderBataFull(art) {
   const sectionsHTML = art.sections.map((s, i) =>
-    `<h3 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h3>${s.paragraphs.map(p => `<p>${p}</p>`).join('')}`
+    `<h3 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h3>${renderParagraphs(s.paragraphs)}`
   ).join('');
   return `
     <div class="weekly-featured-card">
@@ -5963,7 +5974,7 @@ function renderFeaturedWeekly(article) {
   const sectionsHTML = sections.map((s, i) =>
     s.html
       ? `<div id="art-sec-${i}">${s.html}</div>`
-      : `<h3 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h3>${s.paragraphs.map(p => `<p>${p}</p>`).join('')}`
+      : `<h3 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h3>${renderParagraphs(s.paragraphs)}`
   ).join('');
   const speechAvailable = !!window.speechSynthesis;
   const enfocado = document.body.classList.contains('modo-enfoque-activo');
@@ -10360,7 +10371,7 @@ const GLOSARIO = [
       </figure>` : '';
 
     const sectionsHTML = art.sections.map((s, i) => {
-      const ps = s.paragraphs.map(p => `<p>${p}</p>`).join('');
+      const ps = renderParagraphs(s.paragraphs);
       const injectChart = (i === 0 && art.chart) ? chartHTML : '';
       return `<h3 class="article-subtitle" id="art-sec-${i}">${s.subtitle}</h3>${ps}${injectChart}`;
     }).join('');

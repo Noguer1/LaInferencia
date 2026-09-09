@@ -3571,8 +3571,10 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 .weekly-featured-card {
   position: relative;
   background:
-    radial-gradient(ellipse 72% 46% at 8% 0%, color-mix(in srgb, var(--blue-accent) 10%, transparent) 0%, transparent 60%),
-    radial-gradient(ellipse 64% 52% at 94% 100%, color-mix(in srgb, var(--blue) 9%, transparent) 0%, transparent 58%),
+    radial-gradient(ellipse 72% 30% at 8% 0%, color-mix(in srgb, var(--blue-accent) 10%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 64% 32% at 94% 100%, color-mix(in srgb, var(--blue) 9%, transparent) 0%, transparent 58%),
+    radial-gradient(ellipse 34% 22% at 100% 34%, color-mix(in srgb, var(--blue-accent) 6%, transparent) 0%, transparent 62%),
+    radial-gradient(ellipse 38% 20% at 0% 68%, color-mix(in srgb, var(--blue) 6%, transparent) 0%, transparent 64%),
     var(--card-bg);
   border-radius: 20px; padding: 2rem;
   border: 1px solid color-mix(in srgb, var(--blue) 20%, var(--card-border));
@@ -3684,13 +3686,29 @@ body.modo-enfoque-activo .btn-modo-enfoque {
 }
 
 .article-subtitle {
-  font-size: 1rem; font-weight: 700; color: var(--navy);
-  margin: 1.5rem 0 0.6rem; letter-spacing: -0.2px;
+  position: relative;
+  font-size: 1.18rem; font-weight: 800; color: var(--navy);
+  margin: 2.6rem 0 0.75rem; letter-spacing: -0.3px; line-height: 1.3;
+  padding-left: 0.9rem;
 }
+.article-subtitle::before {
+  content: ""; position: absolute; left: 0; top: 0.2em; bottom: 0.2em;
+  width: 3px; border-radius: 2px;
+  background: linear-gradient(180deg, var(--blue-accent), var(--blue));
+}
+.article-content .article-subtitle:first-of-type { margin-top: 1rem; }
 
 .article-content p {
   font-size: 0.9rem; color: var(--text-body);
   line-height: 1.8; margin-bottom: 0.8rem;
+}
+
+/* Cita destacada intercalada (párrafo que empieza por "» ") */
+.article-pull {
+  font-size: 1.3rem; font-weight: 700; color: var(--navy);
+  line-height: 1.42; letter-spacing: -0.3px; text-wrap: balance;
+  margin: 2.4rem 0; padding-left: 1.1rem;
+  border-left: 3px solid var(--blue-accent);
 }
 
 .article-blockquote {
@@ -4428,7 +4446,8 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   .reading-time         { font-size: 0.62rem; }
   .article-intro        { font-size: 15px !important; line-height: 1.6 !important; color: var(--text-body) !important; margin-bottom: 0.8rem; }
   .article-content p    { font-size: 15px !important; line-height: 1.6 !important; color: var(--text-body) !important; margin-bottom: 0.5rem; }
-  .article-subtitle     { font-size: 15px !important; font-weight: 700; margin: 0.85rem 0 0.35rem; }
+  .article-subtitle     { font-size: 16.5px !important; font-weight: 800; margin: 1.8rem 0 0.45rem; padding-left: 0.75rem; }
+  .article-pull         { font-size: 17px; margin: 1.6rem 0; padding-left: 0.85rem; }
   .aplicacion-block p   { font-size: 13.5px !important; line-height: 1.55; }
   .article-content      { margin-top: 0.6rem; }
   .article-blockquote   { margin: 0.75rem 0; padding: 0.6rem 0.8rem; }
@@ -5322,8 +5341,10 @@ body.mp-fuerabata .fdb-home > *:nth-child(5) { animation-delay: 0.26s; }
 
 .dark-base .weekly-featured-card {
   background:
-    radial-gradient(ellipse 72% 46% at 8% 0%, color-mix(in srgb, var(--blue-accent) 10%, transparent) 0%, transparent 60%),
-    radial-gradient(ellipse 64% 52% at 94% 100%, color-mix(in srgb, var(--blue) 9%, transparent) 0%, transparent 58%),
+    radial-gradient(ellipse 72% 30% at 8% 0%, color-mix(in srgb, var(--blue-accent) 10%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 64% 32% at 94% 100%, color-mix(in srgb, var(--blue) 9%, transparent) 0%, transparent 58%),
+    radial-gradient(ellipse 34% 22% at 100% 34%, color-mix(in srgb, var(--blue-accent) 7%, transparent) 0%, transparent 62%),
+    radial-gradient(ellipse 38% 20% at 0% 68%, color-mix(in srgb, var(--blue) 7%, transparent) 0%, transparent 64%),
     var(--card-bg);
   border-color: color-mix(in srgb, var(--blue) 20%, var(--card-border));
 }
