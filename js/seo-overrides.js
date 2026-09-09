@@ -90,7 +90,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'mod-03': {
-    seoTitle: 'Psicología del color en la ropa: cómo afecta a cómo te perciben | La Inferencia',
+    seoTitle: 'El color que llevas puesto cambia cómo te juzgan los demás | La Inferencia',
     seoDescription: '¿El color de tu ropa cambia cómo te perciben? El rojo aumenta el atractivo. Experimento de Rochester con participantes de 5 países distintos.',
     faqs: [
       { q: '¿Qué colores hacen que parezcas más atractivo o creíble?', a: 'El rojo aumenta el atractivo percibido. El azul y negro se asocian a competencia y autoridad. El amarillo y naranja a accesibilidad y calidez.' },
@@ -150,7 +150,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'der-04': {
-    seoTitle: 'Confesiones falsas: por qué inocentes confiesan crímenes que no cometieron | La Inferencia',
+    seoTitle: 'Por qué hay inocentes que confiesan un crimen que no hicieron | La Inferencia',
     seoDescription: '¿Por qué personas inocentes confiesan? Las técnicas de interrogatorio y la psicología detrás de las confesiones falsas, con Saul Kassin.',
     faqs: [
       { q: '¿Por qué personas inocentes confiesan crímenes que no cometieron?', a: 'Bajo interrogatorio intensivo, el cerebro prioriza escapar del estrés inmediato sobre las consecuencias futuras. La confesión parece la salida más rápida al malestar.' },
@@ -200,7 +200,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'art-01': {
-    seoTitle: 'Por qué la música produce escalofríos: neurociencia de la euforia estética | La Inferencia',
+    seoTitle: 'Por qué una canción te pone la piel de gallina | La Inferencia',
     seoDescription: '¿Por qué una canción puede darte escalofríos o hacerte llorar? La respuesta neurológica al arte y la dopamina musical, con Salimpoor (McGill).',
     faqs: [
       { q: '¿Por qué algunas canciones producen escalofríos o euforia física?', a: 'La música activa el sistema dopaminérgico. El pico de dopamina se produce en la anticipación antes del clímax musical. Es la misma vía que el placer físico.' },
@@ -240,7 +240,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tec-01': {
-    seoTitle: 'Scroll infinito y dopamina: cómo las redes secuestran tu atención | La Inferencia',
+    seoTitle: 'Scroll infinito: por qué no puedes soltar el móvil aunque quieras | La Inferencia',
     seoDescription: '¿Por qué no puedes dejar de hacer scroll? El diseño persuasivo y el sistema de dopamina: por qué Instagram y TikTok son tan adictivos.',
     faqs: [
       { q: '¿Por qué el scroll infinito es tan difícil de parar?', a: 'Utiliza el refuerzo variable intermitente: recompensas impredecibles que producen más dopamina que las predecibles. Es el mismo mecanismo que las máquinas tragamonedas.' },
@@ -260,7 +260,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tec-03': {
-    seoTitle: 'Desinhibición online: por qué somos más agresivos en internet | La Inferencia',
+    seoTitle: 'Por qué dices en internet cosas que jamás dirías a la cara | La Inferencia',
     seoDescription: '¿Por qué la gente dice en internet lo que nunca diría en persona? El efecto de desinhibición online de John Suler: las 6 condiciones que nos cambian.',
     faqs: [
       { q: '¿Por qué la gente es más agresiva e impulsiva en internet que en persona?', a: 'El anonimato, la invisibilidad, la comunicación asincrónica y la distancia social reducen los frenos inhibitorios normales (efecto de desinhibición online, Suler).' },
@@ -270,7 +270,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'tec-04': {
-    seoTitle: 'Burbuja de filtros: cómo el algoritmo distorsiona tu visión del mundo | La Inferencia',
+    seoTitle: 'Burbuja de filtros: por qué tu feed te da la razón siempre | La Inferencia',
     seoDescription: '¿Qué es la burbuja de filtros y cómo te afecta? El algoritmo que te muestra solo lo que confirma tu visión del mundo, con Eli Pariser.',
     faqs: [
       { q: '¿Qué es la burbuja de filtros o filter bubble?', a: 'Los algoritmos nos muestran selectivamente contenido que confirma nuestras creencias, creando una visión sesgada y personalizada del mundo.' },
@@ -350,7 +350,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'sm-03': {
-    seoTitle: 'Ejercicio como antidepresivo: caminar 30 minutos rivaliza con la medicación | La Inferencia',
+    seoTitle: 'Caminar 30 minutos al día compitió de tú a tú con el antidepresivo | La Inferencia',
     seoDescription: '¿El ejercicio trata la depresión? El estudio SMILE de Duke: 30 minutos aeróbicos 3 veces/semana iguala la eficacia de la sertralina.',
     faqs: [
       { q: '¿Es el ejercicio físico tan eficaz como los antidepresivos para la depresión?', a: 'Para depresión moderada, el estudio SMILE de Blumenthal (1999) mostró que 30 min de ejercicio aeróbico 3 veces/semana tuvo eficacia comparable a la sertralina a los 4 meses.' },
@@ -420,7 +420,7 @@ const SEO_OVERRIDES = {
     ]
   },
   'edu-05': {
-    seoTitle: 'Aprendizaje intercalado: mezclar temas mejora más que estudiar uno a la vez | La Inferencia',
+    seoTitle: 'Estudiar un tema hasta dominarlo es peor que ir saltando entre varios | La Inferencia',
     seoDescription: '¿Es mejor estudiar un tema hasta dominarlo o mezclar varios? El interleaving: mezclar temas en sesiones de estudio mejora la retención.',
     faqs: [
       { q: '¿Qué es el aprendizaje intercalado o interleaving?', a: 'Estrategia donde se alternan diferentes temas en la misma sesión, en lugar de estudiar un tema hasta dominarlo antes de pasar al siguiente.' },
