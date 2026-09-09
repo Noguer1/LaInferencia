@@ -1753,6 +1753,19 @@ for (const guia of GUIA_SECTORES) {
 
 sitemap += `  <url><loc>${BIBLIOTECA_URL}</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
 
+// Fuera de Bata: páginas estáticas (no generadas aquí). Se escanea el directorio
+// para no dejarlas fuera del sitemap cuando se añaden artículos nuevos.
+const FDB_DIR = path.join(ROOT, 'fuera-de-bata');
+let fdbCount = 0;
+if (fs.existsSync(FDB_DIR)) {
+  sitemap += `  <url><loc>${SITE}/fuera-de-bata/</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>${today}</lastmod></url>\n`;
+  for (const name of fs.readdirSync(FDB_DIR).sort()) {
+    if (!fs.existsSync(path.join(FDB_DIR, name, 'index.html'))) continue;
+    sitemap += `  <url><loc>${SITE}/fuera-de-bata/${name}/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
+    fdbCount++;
+  }
+}
+
 for (const [cat, arts] of Object.entries(LIBRARY_ARTICLES)) {
   for (const art of arts) {
     const { catSlug, artSlug } = slugMap[art.id];
@@ -1767,7 +1780,14 @@ for (const { art, catSlug, artSlug } of weeklyPages) {
 
 sitemap += `</urlset>\n`;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap, 'utf-8');
-console.log(`✅ sitemap.xml actualizado con ${count} artículos + ${weeklyPages.length} semanales + ${CAT_KEYS.length} categorías + autor`);
+console.log(`✅ sitemap.xml actualizado con ${count} artículos + ${weeklyPages.length} semanales + ${CAT_KEYS.length} categorías + ${fdbCount} Fuera de Bata + autor`);
+
+// NOTA (para Miguel): no hay ping automático a IndexNow ni a Google al desplegar.
+// El deploy es git push, Vercel corre este script y ya. Los buscadores descubren
+// el sitemap solo. Si algún día interesa avisar al publicar, el sitio para el
+// fetch a https://api.indexnow.org/indexnow (Bing) sería justo aquí, tras escribir
+// el sitemap. Google retiró su endpoint de ping de sitemaps en 2023: para Google
+// se usa la Search Console API o simplemente se espera al rastreo.
 
 // ── sitemap-images.xml ──────────────────────────────────────────
 let imgSitemap = `<?xml version="1.0" encoding="UTF-8"?>
