@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=c6bbc7a642" />
+  <link rel="stylesheet" href="css/styles.css?v=e666f39694" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48x48.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png" />
@@ -135,7 +135,7 @@
           <a href="/rutas/" class="nav-link">Rutas</a>
           <a href="/biblioteca/" class="nav-link">Biblioteca</a>
           <a href="#" class="nav-link" data-panel="quienes">El proyecto</a>
-          <a href="#" class="nav-link" data-panel="participar">Publica con nosotros</a>
+          <a href="#" class="nav-link js-fdb-open">Publica con nosotros</a>
           <a href="#" class="nav-link" data-panel="contacto">Contacto</a>
           <button class="nav-link nav-link-btn" id="nav-glosario-btn">Glosario</button>
         </nav>
@@ -547,7 +547,7 @@
                     Ver el catálogo completo
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   </a>
-                  <a href="#" class="fdb-home-cta fdb-home-cta--ghost" data-panel="participar">Cómo publicar aquí</a>
+                  <a href="#" class="fdb-home-cta fdb-home-cta--ghost js-fdb-open">Cómo publicar aquí</a>
                 </div>
               </div>
             </main>
@@ -1047,7 +1047,7 @@
           <span class="footer-col-heading">Proyecto</span>
           <nav class="footer-col-links" aria-label="Sobre el proyecto">
             <a href="#" class="nav-link" data-panel="quienes">El proyecto</a>
-            <a href="#" class="nav-link" data-panel="participar">Publica con nosotros</a>
+            <a href="#" class="nav-link js-fdb-open">Publica con nosotros</a>
             <a href="#" class="nav-link" data-panel="contacto">Contacto</a>
             <a href="#">Política de Privacidad</a>
             <a href="#">Aviso Legal</a>
@@ -1308,45 +1308,6 @@
         </div>
       </div>
 
-      <!-- ── Colabora ── -->
-      <div id="info-sec-participar" class="info-section">
-        <div class="info-eyebrow">Escribir en Fuera de Bata</div>
-        <h2>Un tema que dominas, tu TFG, o eso que llevas años trabajando</h2>
-        <p class="info-lead">Contado con tus palabras y tu nombre delante. Lo trabajamos contigo hasta que se lea de un tirón.</p>
-
-        <div class="info-team-label">Cómo funciona</div>
-        <div class="info-collab-steps">
-          <div class="info-collab-step">
-            <span class="info-step-num">01</span>
-            <div><span>Nos escribes el tema en 3 o 4 líneas.</span></div>
-          </div>
-          <div class="info-collab-step">
-            <span class="info-step-num">02</span>
-            <div><span>Si encaja, te asignamos edición y trabajamos el texto contigo.</span></div>
-          </div>
-          <div class="info-collab-step">
-            <span class="info-step-num">03</span>
-            <div><span>Se publica con tu firma y tu página de autor, y lo promocionamos desde La Inferencia y LinkedIn.</span></div>
-          </div>
-        </div>
-
-        <div class="info-team-label">Qué te llevas</div>
-        <div class="info-values">
-          <div class="info-value"><span class="info-value-icon">◆</span><span>Tu firma y tu página de autor, permanente.</span></div>
-          <div class="info-value"><span class="info-value-icon">◆</span><span>Difusión desde La Inferencia.</span></div>
-          <div class="info-value"><span class="info-value-icon">◆</span><span>Acreditación real de divulgador en La Inferencia para tu perfil de LinkedIn.</span></div>
-          <div class="info-value"><span class="info-value-icon">◆</span><span>Un editor trabajando tu texto contigo, sin tocar tu voz.</span></div>
-          <div class="info-value"><span class="info-value-icon">◆</span><span>Los ingresos de afiliación que metas en tu artículo son íntegramente tuyos.</span></div>
-        </div>
-
-        <p class="info-lead">Se entra por selección editorial. No publicamos todo lo que llega, y por eso llevarlo publicado dice algo.</p>
-        <p class="info-lead"><strong>Si tienes el tema, el resto lo montamos nosotros.</strong></p>
-
-        <div class="info-team-label">Cuéntanoslo a</div>
-        <p class="info-lead"><strong>contacto@lainferencia.com</strong></p>
-        <p class="info-contact-note">Te respondemos en menos de una semana.</p>
-      </div>
-
       <!-- ── Contacto ── -->
       <div id="info-sec-contacto" class="info-section">
         <div class="info-eyebrow">Contacto directo</div>
@@ -1358,6 +1319,41 @@
         </a>
         <p class="info-contact-note">También puedes usar el formulario de <strong>Propón un Tema</strong> en la página principal para sugerirnos contenido.</p>
       </div>
+    </div>
+  </div>
+
+  <!-- ── MODAL "ESCRIBIR EN FUERA DE BATA" (mismo diseño que /fuera-de-bata/) ── -->
+  <div class="fdb-modal" id="fdb-modal" role="dialog" aria-modal="true" aria-labelledby="fdb-modal-title" hidden>
+    <div class="fdb-modal-card" role="document">
+      <button type="button" class="fdb-modal-close" id="fdb-modal-close" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <p class="fdb-modal-eyebrow">Escribir en Fuera de Bata</p>
+      <h2 id="fdb-modal-title">Un tema que dominas, tu TFG, o eso que llevas años trabajando</h2>
+      <p class="fdb-modal-lead">Contado con tus palabras y tu nombre delante. Lo trabajamos contigo hasta que se lea de un tirón.</p>
+
+      <h3>Cómo funciona</h3>
+      <ol class="fdb-modal-steps">
+        <li>Nos escribes el tema en 3 o 4 líneas.</li>
+        <li>Si encaja, te asignamos edición y trabajamos el texto contigo.</li>
+        <li>Se publica con tu firma y tu página de autor, y lo promocionamos desde La Inferencia y LinkedIn.</li>
+      </ol>
+
+      <h3>Qué te llevas</h3>
+      <ul class="fdb-modal-list">
+        <li>Tu firma y tu página de autor, permanente</li>
+        <li>Difusión desde La Inferencia</li>
+        <li>Acreditación real de divulgador en La Inferencia para tu perfil de LinkedIn</li>
+        <li>Un editor trabajando tu texto contigo, sin tocar tu voz</li>
+        <li>Los ingresos de afiliación que metas en tu artículo son íntegramente tuyos</li>
+      </ul>
+
+      <p class="fdb-modal-note">Se entra por selección editorial. No publicamos todo lo que llega, y por eso llevarlo publicado dice algo.</p>
+
+      <p class="fdb-modal-kicker">Si tienes el tema, el resto lo montamos nosotros.</p>
+      <p class="fdb-modal-mail-label">Cuéntanoslo a</p>
+      <p class="fdb-modal-mail">contacto@lainferencia.com</p>
+      <p class="fdb-modal-after">Te respondemos en menos de una semana.</p>
     </div>
   </div>
 
@@ -1468,45 +1464,13 @@
         </div>
       </div>
 
-      <!-- Colabora con nosotros -->
+      <!-- Publica con nosotros → abre el modal "Escribir en Fuera de Bata" -->
       <div class="mobile-nav-item">
-        <button class="mobile-nav-toggle" data-mob-panel="participar" aria-expanded="false" aria-controls="mob-panel-participar">
+        <button class="mobile-nav-link mobile-nav-link--action js-fdb-open">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
           <span>Publica con nosotros</span>
           <svg class="mobile-nav-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
-        <div class="mobile-nav-panel" id="mob-panel-participar" hidden>
-          <div class="mob-panel-inner">
-            <p class="mob-panel-eyebrow">Escribir en Fuera de Bata</p>
-            <p class="mob-panel-lead">Un tema que dominas, tu TFG, o eso que llevas años trabajando. Contado con tus palabras y tu nombre delante. Lo trabajamos contigo hasta que se lea de un tirón.</p>
-            <div class="info-team-label">Cómo funciona</div>
-            <div class="info-collab-steps">
-              <div class="info-collab-step">
-                <span class="info-step-num">01</span>
-                <div><span>Nos escribes el tema en 3 o 4 líneas.</span></div>
-              </div>
-              <div class="info-collab-step">
-                <span class="info-step-num">02</span>
-                <div><span>Si encaja, te asignamos edición y trabajamos el texto contigo.</span></div>
-              </div>
-              <div class="info-collab-step">
-                <span class="info-step-num">03</span>
-                <div><span>Se publica con tu firma y tu página de autor, y lo promocionamos desde La Inferencia y LinkedIn.</span></div>
-              </div>
-            </div>
-            <div class="info-team-label">Qué te llevas</div>
-            <div class="info-values">
-              <div class="info-value"><span class="info-value-icon">◆</span><span>Tu firma y tu página de autor, permanente.</span></div>
-              <div class="info-value"><span class="info-value-icon">◆</span><span>Difusión desde La Inferencia.</span></div>
-              <div class="info-value"><span class="info-value-icon">◆</span><span>Acreditación real de divulgador en La Inferencia para tu perfil de LinkedIn.</span></div>
-              <div class="info-value"><span class="info-value-icon">◆</span><span>Un editor trabajando tu texto contigo, sin tocar tu voz.</span></div>
-              <div class="info-value"><span class="info-value-icon">◆</span><span>Los ingresos de afiliación que metas en tu artículo son íntegramente tuyos.</span></div>
-            </div>
-            <p class="mob-panel-lead">Se entra por selección editorial. No publicamos todo lo que llega, y por eso llevarlo publicado dice algo.</p>
-            <div class="info-team-label">Cuéntanoslo a</div>
-            <p class="mob-panel-lead"><strong>contacto@lainferencia.com</strong></p>
-            <p class="info-contact-note">Te respondemos en menos de una semana.</p>
-          </div>
-        </div>
       </div>
 
       <!-- Contacto -->
@@ -1629,6 +1593,6 @@
   <script src="js/recomendaciones.js?v=f9e52b16e4"></script>
   <script src="js/articulos-semana.js?v=4f0ae44322"></script>
   <script src="js/neural-canvas.js?v=519a651109"></script>
-  <script src="js/main.js?v=924d1dcb44"></script>
+  <script src="js/main.js?v=7b6a120539"></script>
 </body>
 </html>

@@ -11532,12 +11532,19 @@ body.fdb-page .static-art-wrap :is(.guia-tabla-wrap, pre) { max-width: 100%; }
 }
 .author-bio p:last-child { margin-bottom: 0; }
 
+.cat-article-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.4rem;
+  padding: 0 1.4rem 1.1rem;
+}
 .cat-article-item a.cat-article-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.28rem;
-  margin: 0 0 0 1.4rem;
-  padding: 0 0 1.1rem;
+  margin: 0;
+  padding: 0;
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--blue);
@@ -11546,6 +11553,7 @@ body.fdb-page .static-art-wrap :is(.guia-tabla-wrap, pre) { max-width: 100%; }
   text-decoration: none;
   box-shadow: none;
 }
+.cat-article-item a.cat-article-cta-alt { color: var(--text-muted); }
 .cat-article-item a.cat-article-cta svg { transition: transform 0.18s; }
 .cat-article-item a.cat-article-cta:hover {
   text-decoration: underline;
@@ -11567,7 +11575,8 @@ body.fdb-page .static-art-wrap :is(.guia-tabla-wrap, pre) { max-width: 100%; }
 @media (max-width: 680px) {
   .static-related   { padding: 1.1rem 1.1rem; }
   .cat-article-item a { padding: 0.9rem 1.1rem; }
-  .cat-article-item a.cat-article-cta { margin-left: 1.1rem; padding: 0 0 0.9rem; }
+  .cat-article-links { padding: 0 1.1rem 0.9rem; }
+  .cat-article-item a.cat-article-cta { margin: 0; padding: 0; }
 }
 
 /* ── Buscador ───────────────────────────────────────────────── */
@@ -11940,4 +11949,110 @@ body.fdb-page .static-art-wrap :is(.guia-tabla-wrap, pre) { max-width: 100%; }
   .ruta-landing-grid { grid-template-columns: 1fr; }
   .ruta-landing-card-num { font-size: 2.8rem; }
   .ruta-banner-top { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+}
+
+/* ── Modal "Escribir en Fuera de Bata" (mismo diseño que /fuera-de-bata/) ── */
+.fdb-modal {
+  position: fixed; inset: 0; z-index: 9800;
+  display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  background: rgba(2, 6, 18, 0.8);
+  backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  animation: fdb-modal-fade .32s ease;
+}
+.fdb-modal[hidden] { display: none; }
+@keyframes fdb-modal-fade { from { opacity: 0; } to { opacity: 1; } }
+.fdb-modal-card {
+  position: relative; width: 100%; max-width: 600px;
+  max-height: 92vh; max-height: 92dvh; overflow-y: auto; overflow-x: hidden;
+  padding: 1.5rem 2.2rem 1.45rem; border-radius: 22px;
+  background:
+    radial-gradient(ellipse 72% 46% at 8% 0%, color-mix(in srgb, var(--blue-accent) 10%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 64% 52% at 94% 100%, color-mix(in srgb, var(--blue) 9%, transparent) 0%, transparent 58%),
+    var(--card-bg);
+  border: 1px solid color-mix(in srgb, var(--blue) 20%, var(--card-border));
+  box-shadow: 0 28px 80px rgba(11, 19, 43, 0.28), 0 0 0 1px color-mix(in srgb, var(--blue) 10%, transparent);
+  animation: fdb-modal-rise .46s cubic-bezier(.22,.61,.36,1) both;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--blue) 32%, transparent) transparent;
+}
+.fdb-modal-card::-webkit-scrollbar { width: 8px; }
+.fdb-modal-card::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--blue) 30%, transparent); border-radius: 8px;
+  border: 2px solid transparent; background-clip: content-box;
+}
+@keyframes fdb-modal-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.fdb-modal-card::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; border-radius: 22px 22px 0 0;
+  background: linear-gradient(90deg, var(--blue), var(--blue-accent)); opacity: 0.85;
+}
+.fdb-modal-close {
+  position: absolute; top: 0.85rem; right: 0.85rem; width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 1px solid var(--card-border);
+  background: color-mix(in srgb, var(--blue) 5%, var(--card-bg)); color: var(--text-body);
+  cursor: pointer; transition: color .15s, border-color .15s, background .15s;
+}
+.fdb-modal-close:hover { color: var(--blue); border-color: var(--blue); }
+.fdb-modal-close svg { width: 14px; height: 14px; }
+.fdb-modal-eyebrow {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--blue); margin: 0 0 0.5rem; padding-right: 2.4rem;
+}
+.fdb-modal h2 {
+  font-size: 1.26rem; font-weight: 800; color: var(--navy);
+  line-height: 1.22; letter-spacing: -0.5px; margin: 0 0 0.5rem; text-wrap: balance;
+  padding-right: 2.4rem;
+}
+.fdb-modal-lead { font-size: 0.92rem; color: var(--text-body); line-height: 1.45; margin: 0; }
+.fdb-modal h3 {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--blue); margin: 0.9rem 0 0.45rem;
+}
+.fdb-modal-steps { margin: 0; padding-left: 1.3rem; display: grid; gap: 0.35rem; }
+.fdb-modal-steps li { font-size: 0.9rem; color: var(--navy); line-height: 1.4; padding-left: 0.2rem; }
+.fdb-modal-steps li::marker { color: var(--blue); font-weight: 700; }
+.fdb-modal-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.36rem; }
+.fdb-modal-list li {
+  position: relative; padding-left: 1.8rem;
+  font-size: 0.9rem; font-weight: 600; color: var(--navy); line-height: 1.38;
+}
+.fdb-modal-list li::before {
+  content: ""; position: absolute; left: 0; top: 0.02rem;
+  width: 17px; height: 17px; border-radius: 50%;
+  background: color-mix(in srgb, var(--blue) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--blue) 40%, transparent);
+}
+.fdb-modal-list li::after {
+  content: ""; position: absolute; left: 5px; top: 5px;
+  width: 6px; height: 3px; border-left: 1.8px solid var(--blue); border-bottom: 1.8px solid var(--blue);
+  transform: rotate(-45deg);
+}
+.fdb-modal-note {
+  margin: 0.9rem 0 0; padding: 0.7rem 0.95rem;
+  border-left: 3px solid var(--blue); border-radius: 0 12px 12px 0;
+  background: color-mix(in srgb, var(--blue) 5%, transparent);
+  font-size: 0.88rem; color: var(--navy); line-height: 1.45;
+}
+.fdb-modal-kicker { margin: 0.9rem 0 0.6rem; font-size: 0.98rem; font-weight: 700; color: var(--navy); line-height: 1.35; }
+.fdb-modal-mail-label { margin: 0 0 0.2rem; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+.fdb-modal-mail { margin: 0; font-size: 1.1rem; font-weight: 800; color: var(--blue); letter-spacing: -0.2px; user-select: all; overflow-wrap: anywhere; }
+.fdb-modal-after { margin: 0.55rem 0 0; font-size: 0.82rem; color: var(--text-muted); }
+body.fdb-modal-open { overflow: hidden; }
+@keyframes fdb-sheet-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .fdb-modal, .fdb-modal-card { animation: none; }
+  .fdb-modal-close { transition: none; }
+}
+@media (max-width: 560px) {
+  .fdb-modal { padding: 0; align-items: flex-end; }
+  .fdb-modal-card {
+    max-width: none; max-height: 94vh; max-height: 94dvh;
+    padding: 1.5rem 1.35rem calc(1.5rem + env(safe-area-inset-bottom));
+    border-radius: 20px 20px 0 0;
+    animation: fdb-sheet-up .4s cubic-bezier(.22,.61,.36,1) both;
+  }
+  .fdb-modal-card::before { border-radius: 20px 20px 0 0; }
+  .fdb-modal-close { top: 0.7rem; right: 0.7rem; }
+  .fdb-modal h2 { font-size: 1.16rem; }
+  .fdb-modal-mail { font-size: 1rem; }
 }

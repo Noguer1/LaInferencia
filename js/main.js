@@ -4412,7 +4412,7 @@ const LIBRARY_ARTICLES = {
   }
 
   /* Desktop nav → abre modal */
-  document.querySelectorAll('[data-panel]').forEach(link => {
+  document.querySelectorAll('.nav-link[data-panel]').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       openInfo(link.dataset.panel);
@@ -4478,6 +4478,44 @@ const LIBRARY_ARTICLES = {
       if (mobileMenu && !mobileMenu.hidden) closeMobileMenu();
     }
   });
+
+  /* Modal "Escribir en Fuera de Bata" (mismo diseño que /fuera-de-bata/) */
+  const fdbModal = document.getElementById('fdb-modal');
+  if (fdbModal) {
+    const fdbClose = document.getElementById('fdb-modal-close');
+    const FDB_FOCUSABLE = 'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])';
+    let fdbOpener = null;
+
+    function fdbOnKey(e) {
+      if (e.key === 'Escape') { fdbCloseModal(); return; }
+      if (e.key !== 'Tab') return;
+      const f = Array.prototype.slice.call(fdbModal.querySelectorAll(FDB_FOCUSABLE)).filter(el => el.offsetParent !== null);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    function fdbOpenModal(e) {
+      if (e) e.preventDefault();
+      fdbOpener = e && e.currentTarget ? e.currentTarget : null;
+      if (mobileMenu && !mobileMenu.hidden) closeMobileMenu();
+      fdbModal.hidden = false;
+      document.body.classList.add('fdb-modal-open');
+      document.addEventListener('keydown', fdbOnKey);
+      const first = fdbModal.querySelector(FDB_FOCUSABLE);
+      if (first) first.focus();
+    }
+    function fdbCloseModal() {
+      fdbModal.hidden = true;
+      document.body.classList.remove('fdb-modal-open');
+      document.removeEventListener('keydown', fdbOnKey);
+      if (fdbOpener && typeof fdbOpener.focus === 'function') fdbOpener.focus();
+    }
+
+    document.querySelectorAll('.js-fdb-open').forEach(btn => btn.addEventListener('click', fdbOpenModal));
+    if (fdbClose) fdbClose.addEventListener('click', fdbCloseModal);
+    fdbModal.addEventListener('click', e => { if (e.target === fdbModal) fdbCloseModal(); });
+  }
 }());
 
 
