@@ -4713,13 +4713,22 @@ body.mp-fuerabata .fdb-home > *:nth-child(5) { animation-delay: 0.26s; }
 .fdb-home-stats b { font-size: 1.35rem; font-weight: 800; color: var(--navy); line-height: 1; }
 .fdb-home-stats span { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem; }
 .fdb-home-featured {
+  position: relative;
   display: block; text-decoration: none; color: inherit;
   padding: 1rem 1.1rem; border-radius: 14px;
-  background: color-mix(in srgb, var(--blue) 4%, transparent);
-  border: 1px solid color-mix(in srgb, var(--blue) 14%, transparent);
-  transition: border-color 0.2s, transform 0.2s;
+  background:
+    radial-gradient(ellipse 72% 46% at 8% 0%, color-mix(in srgb, var(--blue-accent) 10%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 64% 52% at 94% 100%, color-mix(in srgb, var(--blue) 9%, transparent) 0%, transparent 58%),
+    var(--card-bg);
+  border: 1px solid color-mix(in srgb, var(--blue) 20%, var(--card-border));
+  box-shadow: 0 28px 80px rgba(11, 19, 43, 0.28), 0 0 0 1px color-mix(in srgb, var(--blue) 10%, transparent);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.fdb-home-featured:hover { border-color: color-mix(in srgb, var(--blue) 32%, transparent); transform: translateY(-1px); }
+.fdb-home-featured::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, var(--blue), var(--blue-accent)); opacity: 0.85;
+}
+.fdb-home-featured:hover { border-color: color-mix(in srgb, var(--blue) 38%, var(--card-border)); transform: translateY(-1px); }
 .fdb-home-featured-badge {
   display: inline-block; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.06em;
   text-transform: uppercase; color: var(--blue);
@@ -4746,7 +4755,12 @@ body.mp-fuerabata .fdb-home > *:nth-child(5) { animation-delay: 0.26s; }
 .dark-base .fdb-home h2,
 .dark-base .fdb-home-stats b,
 .dark-base .fdb-home-featured h3 { color: #E8EEF9; }
-.dark-base .fdb-home-featured { background: color-mix(in srgb, var(--blue) 10%, transparent); }
+.dark-base .fdb-home-featured {
+  background:
+    radial-gradient(ellipse 72% 46% at 8% 0%, color-mix(in srgb, var(--blue-accent) 10%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 64% 52% at 94% 100%, color-mix(in srgb, var(--blue) 9%, transparent) 0%, transparent 58%),
+    var(--card-bg);
+}
 
 /* ── Tarjeta del Artículo de la Semana en la portada móvil ── */
 .mob-weekly-home { display: none; }
