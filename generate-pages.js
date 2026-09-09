@@ -1086,7 +1086,10 @@ ${AUTHOR_FAQS.map(f => `        <details class="static-faq-item">\n          <su
             <span class="cat-article-badge">Psicolingüística</span>
             <h2>${w.title}</h2>
           </a>
-          <a href="${w.doi}" class="cat-article-cta" target="_blank" rel="noopener noreferrer">Ir al artículo <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
+          <div class="cat-article-links">
+            <a href="${w.url}" class="cat-article-cta">Leer en La Inferencia <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
+            <a href="${w.doi}" class="cat-article-cta cat-article-cta-alt" target="_blank" rel="noopener noreferrer" title="Versión académica archivada con DOI en Zenodo">Versión académica (PDF) <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
+          </div>
         </li>`).join('\n');
 
   const roleLine = AUTHOR_ROLE_CHIPS.slice(0, 2).join(' <span class="author-role-sep">·</span> ');
