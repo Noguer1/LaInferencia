@@ -76,7 +76,7 @@ const RECOMENDACIONES = {
   'mod-03': {
     libro: {
       titulo: 'Rosa borracho', autor: 'Adam Alter',
-      sinopsis: 'Alter recopila decenas de estudios (incluido el efecto del rojo) sobre cómo estímulos que ni siquiera notamos —un color, un nombre, un envoltorio— cambian nuestras decisiones y percepciones.',
+      sinopsis: 'Alter recopila decenas de estudios (incluido el efecto del rojo) sobre cómo estímulos que ni siquiera notamos (un color, un nombre, un envoltorio) cambian nuestras decisiones y percepciones.',
       amazon: AUDIBLE_LINK,
     }
   },
@@ -337,7 +337,7 @@ const RECOMENDACIONES = {
   'tra-01': {
     libro: {
       titulo: 'The Progress Principle', autor: 'Teresa Amabile y Steven Kramer',
-      sinopsis: 'Amabile y Kramer, autoras de la investigación citada en el artículo, documentan con miles de diarios de trabajo por qué el progreso percibido —no el salario ni los elogios— es el motivador más potente y más ignorado.',
+      sinopsis: 'Amabile y Kramer, autoras de la investigación citada en el artículo, documentan con miles de diarios de trabajo por qué el progreso percibido, no el salario ni los elogios, es el motivador más potente y más ignorado.',
       amazon: AUDIBLE_LINK,
     }
   },
@@ -358,7 +358,7 @@ const RECOMENDACIONES = {
   'tra-04': {
     libro: {
       titulo: 'Cuando el cuerpo dice no', autor: 'Gabor Maté',
-      sinopsis: 'Maté conecta el estrés crónico sostenido —la base biológica del burnout que documenta Maslach— con cómo el cuerpo termina somatizando lo que la mente lleva tiempo ignorando.',
+      sinopsis: 'Maté conecta el estrés crónico sostenido (la base biológica del burnout que documenta Maslach) con cómo el cuerpo termina somatizando lo que la mente lleva tiempo ignorando.',
       amazon: AUDIBLE_LINK,
     }
   },
