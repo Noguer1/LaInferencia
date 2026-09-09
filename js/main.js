@@ -4412,7 +4412,7 @@ const LIBRARY_ARTICLES = {
   }
 
   /* Desktop nav → abre modal */
-  document.querySelectorAll('.nav-link[data-panel]').forEach(link => {
+  document.querySelectorAll('[data-panel]').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       openInfo(link.dataset.panel);
