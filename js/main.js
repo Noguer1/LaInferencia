@@ -555,7 +555,7 @@ const LIBRARY_ARTICLES = {
         {
           subtitle: 'Por qué la industria lo cuenta y tú no',
           paragraphs: [
-            'La lógica de la unidad Diderot describe bien cómo se diseñan muchas líneas de venta. Quien pone una encimera de piedra en la cocina siente antes o después que los electrodomésticos viejos desentonan, y detrás la iluminación, y detrás el suelo. Quien se compra un coche por encima de su gama anterior tarda un tiempo en mirar su ropa, su reloj o su portal con otros ojos. El objeto ancla no cierra el gasto, lo abre.',
+            'La lógica de la unidad Diderot describe bien cómo se diseñan muchas líneas de venta. Quien pone una encimera de piedra en la cocina siente antes o después que los electrodomésticos viejos desentonan, y detrás la iluminación, y detrás el suelo. Quien se compra un coche por encima de su gama anterior tarda un tiempo en mirar su ropa, su reloj o su portal con otros ojos. El objeto ancla no cierra el gasto, lo abre. Con las prohibiciones pasa algo simétrico: <a href="https://lainferencia.com/articulos/alimentacion/la-paradoja-de-las-dietas-por-que-prohibirte-un-alimento-dispara/">vetarte un alimento del todo dispara las ganas de comerlo</a>.',
             'El efecto pega más fuerte en las compras que McCracken llamaría aspiracionales, las que se hacen para señalar a quién quiere parecerse uno, que en las puramente funcionales. Un cargador de móvil no arrastra nada. Un bolso que representa una versión mejor de tu vida sí, porque su presencia deja al resto de tu armario un escalón por debajo. A esto se le suele sumar la adaptación hedónica: el placer del objeto nuevo se apaga rápido, pero la sensación de que lo de alrededor se ha quedado corto tarda mucho más en irse.'
           ]
         },
@@ -1146,7 +1146,7 @@ const LIBRARY_ARTICLES = {
           subtitle: 'Por dónde actúa',
           paragraphs: [
             'Tres vías plausibles, y probablemente actúan a la vez. La frase dirige la atención a lo que importa y tapa el ruido de fuera y el de dentro. Nombrar un gesto por lo bajo lo prepara, hace de pistoletazo del patrón motor correcto. Y sube la autoeficacia, esa creencia de "esto lo puedo hacer" que Bandura ligó al rendimiento por su cuenta.',
-            'Se estudia aparte una variante: hablarse en segunda o tercera persona, "tú puedes", "venga, [tu nombre]", en lugar de "yo puedo". El grupo de Ethan Kross ha mostrado que ese cambio mínimo de pronombre baja la carga emocional de la autocrítica y deja la cabeza más fría antes del momento difícil. Es más fácil dar un buen consejo a un amigo que a uno mismo, y el "tú" te acerca un poco a esa distancia.'
+            'Se estudia aparte una variante: hablarse en segunda o tercera persona, "tú puedes", "venga, [tu nombre]", en lugar de "yo puedo". El grupo de Ethan Kross ha mostrado que ese cambio mínimo de pronombre baja la carga emocional de la autocrítica y deja la cabeza más fría antes del momento difícil. Es más fácil dar un buen consejo a un amigo que a uno mismo, y el "tú" te acerca un poco a esa distancia. Va en la misma línea que <a href="https://lainferencia.com/articulos/salud-mental/la-autocompasion-no-es-autoindulgencia-la-investigacion-que/">tratarte sin saña cuando fallas</a>, que en el laboratorio sube las ganas de corregir el error, no las baja.'
           ]
         },
         {
@@ -1157,7 +1157,7 @@ const LIBRARY_ARTICLES = {
         }
       ],
       blockquote: { text: '«El efecto del self-talk sobre el rendimiento deportivo fue positivo y de magnitud moderada, y mayor en tareas de precisión y en tareas no aprendidas previamente.»', attribution: 'Hatzigeorgiadis et al. (2011)' },
-      aplicacion: 'Para tu próximo momento de exigencia, prepara antes una frase y que sea concreta. No "tú puedes", sino algo que se pueda ejecutar: "hombros abajo", "habla despacio", "primero la pausa". Escríbela y pruébala en los entrenamientos o los ensayos, no la estrenes en el momento. Si te machaca la autocrítica, dátela en segunda persona, como se la darías a otro. Y trátala como un margen que sumas, no como el plan entero, porque el efecto es real pero pequeño.'
+      aplicacion: 'Para tu próximo momento de exigencia, prepara antes una frase y que sea concreta. No "tú puedes", sino algo que se pueda ejecutar: "hombros abajo", "habla despacio", "primero la pausa". Escríbela y pruébala en los entrenamientos o los ensayos, no la estrenes en el momento. Si te machaca la autocrítica, dátela en segunda persona, como se la darías a otro. Y trátala como un margen que sumas, no como el plan entero, porque el efecto es real pero pequeño. Encaja dentro de <a href="https://lainferencia.com/articulos/deporte/el-ritual-antes-de-tirar-el-penalti-que-aumenta-la-precision-un/">una rutina previa fija para los momentos de presión</a>.'
     },
     {
       id: 'dep-04',
@@ -1788,7 +1788,7 @@ const LIBRARY_ARTICLES = {
         {
           subtitle: 'El mecanismo: la promesa de otra conversación compite con la que tienes delante',
           paragraphs: [
-            'Przybylski y Weinstein explican el efecto por lo que el móvil representa incluso apagado o silenciado sobre la mesa: una red completa de personas y conversaciones alternativas, siempre disponible en potencia. Esa disponibilidad latente basta para captar una fracción de la atención que, de otro modo, iría entera a la persona que tienes delante, sin que haga falta consultarlo ni una sola vez para que el efecto aparezca.',
+            'Przybylski y Weinstein explican el efecto por lo que el móvil representa incluso apagado o silenciado sobre la mesa: una red completa de personas y conversaciones alternativas, siempre disponible en potencia. Esa disponibilidad latente basta para captar una fracción de la atención que, de otro modo, iría entera a la persona que tienes delante, sin que haga falta consultarlo ni una sola vez para que el efecto aparezca. Esa misma sensación de estarte perdiendo lo que hacen los demás es lo que mide <a href="https://lainferencia.com/articulos/redes-sociales/fomo-el-miedo-a-perderte-algo-medido-en-2079-personas/">la escala del FOMO</a>.',
             'El resultado más incómodo del estudio es justamente ese: el daño no depende de mirar el teléfono. Depende de que esté ahí, visible, como una posibilidad constante de fuga hacia otra parte. La atención no se reparte solo cuando se actúa sobre el móvil, se reparte ya por el simple hecho de que el móvil esté presente en el campo visual de ambas personas.'
           ]
         },
@@ -2973,7 +2973,7 @@ const LIBRARY_ARTICLES = {
           paragraphs: [
             'El modelo que Haidt publicó en 2001 le da la vuelta a lo que se daba por hecho desde Platón hasta Kohlberg: que el juicio moral es lo que sale de razonar. Primero valoras los hechos, luego aplicas principios, y al final tienes un veredicto. Haidt sostiene que el orden real es el contrario. Una reacción intuitiva y emocional, rápida y automática, produce el veredicto. El razonamiento aparece luego, y su trabajo es sobre todo social: justificar ante los demás lo que ya has decidido.',
             'La metáfora dio título al artículo. El perro emocional y su cola racional. El perro va delante y marca la dirección. La cola se agita detrás aparentando que conduce. Nadie conduce con la cola.',
-            'Para una discusión política esto tiene una lectura incómoda. Si las dos partes llegan con la intuición ya formada y los argumentos montados para defenderla, intercambiar argumentos casi nunca mueve a nadie. Lo que mueve es otra cosa: una experiencia que cambie cómo se siente el asunto por dentro, una relación personal que obligue a mirar distinto, un encuadre nuevo que descoloque la reacción de partida. El dato, solo, rebota.'
+            'Para una discusión política esto tiene una lectura incómoda. Si las dos partes llegan con la intuición ya formada y los argumentos montados para defenderla, intercambiar argumentos casi nunca mueve a nadie. Lo que mueve es otra cosa: una experiencia que cambie cómo se siente el asunto por dentro, una relación personal que obligue a mirar distinto, un encuadre nuevo que descoloque la reacción de partida. El dato, solo, rebota. Los argumentos chocan además con otro techo, <a href="https://lainferencia.com/articulos/politica/tu-personalidad-predice-tu-voto-mejor-que-tus-argumentos/">el del carácter</a>: buena parte de la postura política tiene raíz en rasgos de personalidad.'
           ]
         },
         {
@@ -3089,7 +3089,7 @@ const LIBRARY_ARTICLES = {
           subtitle: 'La ideología como algo que encaja con el carácter',
           paragraphs: [
             'Jost lleva dos décadas defendiendo una idea que llama cognición social motivada: adoptamos posiciones políticas que resuelven necesidades psicológicas. La apertura a la experiencia, que es comodidad con lo ambiguo, lo nuevo y lo complejo, empuja a mirar con mejores ojos el cambio social, la diversidad y las políticas que amplían lo posible. La escrupulosidad y la preferencia por el orden empujan hacia instituciones estables, normas claras y lo conocido. En ese marco, la ideología no es solo una lista de posturas sobre asuntos concretos, es algo coherente con cómo está montada la persona.',
-            'Esto no dice que una orientación sea mejor que otra ni que el voto esté escrito en los genes. Apertura y escrupulosidad son rasgos útiles en contextos distintos. Lo que sí sugiere es que convencer a alguien solo con argumentos tiene un techo: el argumento se mueve en la superficie de creencias que tienen raíz en el carácter. La persuasión que funciona no ataca la postura, mueve el valor que hay debajo.'
+            'Esto no dice que una orientación sea mejor que otra ni que el voto esté escrito en los genes. Apertura y escrupulosidad son rasgos útiles en contextos distintos. Lo que sí sugiere es que convencer a alguien solo con argumentos tiene un techo: el argumento se mueve en la superficie de creencias que tienen raíz en el carácter. La persuasión que funciona no ataca la postura, mueve el valor que hay debajo. En la misma línea, <a href="https://lainferencia.com/articulos/politica/por-que-tus-emociones-votan-antes-que-tu/">la intuición emocional suele fijar el juicio antes que el razonamiento</a>, que llega después a justificarlo.'
           ]
         },
         {
@@ -3324,7 +3324,7 @@ const LIBRARY_ARTICLES = {
           subtitle: 'Un límite fisiológico y un límite inventado',
           paragraphs: [
             'El modelo de límites de Herman describe dos reguladores. El fisiológico va por hambre y saciedad, con el hipotálamo leyendo grelina, leptina y GLP-1. Es robusto y cuesta engañarlo mucho tiempo. El límite cognitivo que instala una dieta es un techo arbitrario sin correlato en el cuerpo, y un solo pensamiento lo tira abajo.',
-            'A eso se suma el rebote. Erskine reunió en 2008 a 134 personas y les pidió pasar cinco minutos suprimiendo o expresando en voz alta pensamientos sobre chocolate, y luego una prueba de sabor. Las que habían suprimido comieron bastante más chocolate. Prohibirte pensar en un alimento lo vuelve más ruidoso. La restricción lo pone en el centro.'
+            'A eso se suma el rebote. Erskine reunió en 2008 a 134 personas y les pidió pasar cinco minutos suprimiendo o expresando en voz alta pensamientos sobre chocolate, y luego una prueba de sabor. Las que habían suprimido comieron bastante más chocolate. Prohibirte pensar en un alimento lo vuelve más ruidoso. La restricción lo pone en el centro. El deseo también se dispara en la dirección contraria: <a href="https://lainferencia.com/articulos/moda/el-efecto-diderot-por-que-comprar-una-cosa-te-hace-querer/">una sola compra puede encadenar el impulso de cambiarlo todo</a>.'
           ]
         },
         {
@@ -3651,7 +3651,7 @@ const LIBRARY_ARTICLES = {
           subtitle: 'La deuda no pregunta si te cae bien',
           paragraphs: [
             'El sociólogo Alvin Gouldner había descrito la norma de reciprocidad como una de las reglas sociales más extendidas que se conocen: si recibes algo, debes devolver algo de valor parecido, y el tirón aparece aunque no hubieras pedido nada. Regan lo llevó al laboratorio y vio que ese tirón funcionaba casi igual con el cómplice simpático y con el borde. La simpatía apenas movió la cifra de boletos. El favor, mucho.',
-            'El detalle de la tercera condición cierra el argumento. Cuando el refresco lo traía el investigador y no el compañero, la compra de boletos no subía. La deuda no se reparte entre los presentes, apunta a quien te dio algo. Por eso la muestra gratis del supermercado, la copa de bienvenida, el informe sin coste antes de la propuesta o el bolígrafo de la ONG en el sobre funcionan: no buscan gustar, buscan que quien recibe quede en desventaja y quiera saldarla.'
+            'El detalle de la tercera condición cierra el argumento. Cuando el refresco lo traía el investigador y no el compañero, la compra de boletos no subía. La deuda no se reparte entre los presentes, apunta a quien te dio algo. Por eso la muestra gratis del supermercado, la copa de bienvenida, el informe sin coste antes de la propuesta o el bolígrafo de la ONG en el sobre funcionan: no buscan gustar, buscan que quien recibe quede en desventaja y quiera saldarla. La palabra "gratis" tira además de <a href="https://lainferencia.com/articulos/marketing/el-efecto-cero-por-que-gratis-pesa-mas-en-tu-decision-que/">un resorte emocional propio</a>, al margen de la deuda.'
           ]
         },
         {
@@ -3895,7 +3895,7 @@ const LIBRARY_ARTICLES = {
           subtitle: 'Por qué el objeto impacienta',
           paragraphs: [
             'Esperar un objeto invita a comparar. ¿Saldrá pronto una versión mejor? ¿Lo estoy pagando de más? ¿Habré elegido mal? Esa duda va carcomiendo la espera. Esperar una experiencia es más difícil de comparar con alternativas concretas y viene cargada de un componente social e imaginativo, con quién iré y qué voy a ver, que ya es agradable de por sí, sin que la experiencia haya empezado.',
-            'La consecuencia práctica es que una porción del valor emocional de un viaje se cobra en las semanas entre reservarlo y embarcar, un tramo que casi nadie apunta en la cuenta cuando calcula si el viaje mereció la pena.'
+            'La consecuencia práctica es que una porción del valor emocional de un viaje se cobra en las semanas entre reservarlo y embarcar, un tramo que casi nadie apunta en la cuenta cuando calcula si el viaje mereció la pena. Y eso al margen de que, ya vivido, <a href="https://lainferencia.com/articulos/viajes/por-que-un-viaje-te-hace-mas-feliz-que-comprarte-algo-por-el/">el gasto en experiencias deje más poso que el gasto en objetos</a>.'
           ]
         },
         {
@@ -3925,7 +3925,7 @@ const LIBRARY_ARTICLES = {
           subtitle: 'Encuestas, recuerdos y una compra imaginada',
           paragraphs: [
             'En dos encuestas con muestras de perfil distinto, una de ellas amplia y variada en edad e ingresos, la mayoría de la gente señaló, al repasar sus propias compras, que las experienciales (viajes, salidas, entradas) les habían hecho más felices que las materiales de coste parecido. En un experimento de laboratorio, quienes dedicaban unos minutos a pensar en una compra experiencial reciente quedaban de mejor humor que quienes pensaban en una material.',
-            'Otro experimento añadió un matiz temporal: la ventaja de la experiencia en felicidad anticipada crecía cuando la persona se proyectaba a un futuro lejano, y se encogía al pensar la compra en corto. Señal de que parte del beneficio está en cómo la compra se transforma en la memoria y en la imaginación, no en el momento de estrenarla.'
+            'Otro experimento añadió un matiz temporal: la ventaja de la experiencia en felicidad anticipada crecía cuando la persona se proyectaba a un futuro lejano, y se encogía al pensar la compra en corto. Señal de que parte del beneficio está en cómo la compra se transforma en la memoria y en la imaginación, no en el momento de estrenarla. Ese tramo previo también cuenta: <a href="https://lainferencia.com/articulos/viajes/por-que-esperar-un-viaje-te-hace-mas-feliz-que-muchos-viajes-en/">esperar un viaje ya reservado tiene su propia felicidad</a>, medida aparte.'
           ]
         },
         {
@@ -4090,7 +4090,7 @@ const LIBRARY_ARTICLES = {
           subtitle: 'Comparar sin recibir nada a cambio',
           paragraphs: [
             'Interactuar tiene una contrapartida. Si escribes a alguien o comentas su foto, puede haber respuesta, la sensación de que te leen, un vínculo que sigue vivo. El uso pasivo expone a las mismas vidas ajenas y no devuelve ninguna de esas cosas. Te quedas con la comparación y sin el contacto que la compensaría.',
-            'Eso cambia la pregunta que solemos hacernos. Cuenta menos cuánto rato pasas en una red que qué haces durante ese rato. La misma sesión, con la misma duración exacta, te deja distinto según entres a hablar con una persona concreta o a deslizar el pulgar sin destino.'
+            'Eso cambia la pregunta que solemos hacernos. Cuenta menos cuánto rato pasas en una red que qué haces durante ese rato. La misma sesión, con la misma duración exacta, te deja distinto según entres a hablar con una persona concreta o a deslizar el pulgar sin destino. En la misma línea, para el sueño de los adolescentes <a href="https://lainferencia.com/articulos/redes-sociales/usar-el-movil-en-la-cama-predijo-peor-sueno-que-el-tiempo-total/">pesó más a qué hora se usaban las redes que el total de minutos del día</a>.'
           ]
         },
         {
@@ -4183,7 +4183,7 @@ const LIBRARY_ARTICLES = {
           subtitle: 'Lo que el estudio no puede decir',
           paragraphs: [
             'Todo esto son fotografías de un momento. Los datos salieron de encuestas de una sola pasada, así que no distinguen si la carencia genera FOMO o si el FOMO va desgastando la vida de quien lo sufre. Los propios autores lo reconocen y piden estudios experimentales. Las correlaciones, además, son moderadas: el FOMO explica una parte pequeña de las diferencias de ánimo entre unas personas y otras.',
-            'Lo que el trabajo dejó bien atado es el perfil de riesgo. Más joven, más hombre, con menos necesidades psicológicas cubiertas, más FOMO. Y una consecuencia práctica que sí resiste: quien más lo sufre tiende a llevarse el móvil a sitios donde no debería, desde la cama hasta el asiento del conductor.'
+            'Lo que el trabajo dejó bien atado es el perfil de riesgo. Más joven, más hombre, con menos necesidades psicológicas cubiertas, más FOMO. Y una consecuencia práctica que sí resiste: quien más lo sufre tiende a llevarse el móvil a sitios donde no debería, desde la cama hasta el asiento del conductor. El teléfono pesa incluso sin usarse: se ha estudiado si <a href="https://lainferencia.com/articulos/tecnologia/un-movil-encima-de-la-mesa-basta-para-que-una-conversacion/">su sola presencia sobre la mesa enfría una conversación cara a cara</a>.'
           ]
         }
       ],
