@@ -4788,7 +4788,7 @@ const AUTHORS = {
   'La Inferencia': {
     photo: 'img/logo2.png',
     university: 'La Inferencia',
-    specialty: 'Psicología basada en evidencia'
+    specialty: 'Divulgación de psicología'
   },
   'Miguel Noguer Escudero': {
     photo: 'img/NoguerNew.jpg',
@@ -6066,7 +6066,7 @@ function renderWeeklyView(available, featured, _skipUrlUpdate, autoExpand) {
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://lainferencia.com/');
   }
   function _restoreHomeMeta() {
-    const _homeDesc = 'Divulgación de psicología explicada de forma clara y sencilla, a partir de estudios científicos reales.';
+    const _homeDesc = 'Aprende psicología de lo que te pasa cada día, sin leerte los estudios.';
     document.title = 'La Inferencia, Divulgación de Psicología';
     document.querySelector('meta[name="description"]')?.setAttribute('content', _homeDesc);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'La Inferencia, Divulgación de Psicología');
@@ -10448,7 +10448,7 @@ const GLOSARIO = [
     currentCat = cat;
     setModalTitle(cat);
     document.title = 'La Inferencia, Divulgación de Psicología';
-    const _homeDesc = 'Divulgación de psicología explicada de forma clara y sencilla, a partir de estudios científicos reales.';
+    const _homeDesc = 'Aprende psicología de lo que te pasa cada día, sin leerte los estudios.';
     document.querySelectorAll('script[data-ld="article"]').forEach(s => s.remove());
     document.querySelector('meta[name="description"]')?.setAttribute('content', _homeDesc);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'La Inferencia, Divulgación de Psicología');

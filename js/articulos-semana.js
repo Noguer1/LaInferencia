@@ -8,7 +8,7 @@ const WEEKLY_ARTICLES = [
   /* ── Semanas nuevas ───────────────────────────────────────── */
   {
     week: 32,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Psicología del talento',
     title: 'Practicar algo casi no te hará mejorar, según la ciencia',
@@ -49,7 +49,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 31,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Economía de la felicidad',
     title: 'Cuanto más dinero ganas, más feliz eres. Sin límite. Eso dice la ciencia',
@@ -428,7 +428,7 @@ const WEEKLY_ARTICLES = [
   /* ── Lote Operación Fénix, septiembre 2026 (15 piezas, semana 33 a 47) ── */
   {
     week: 33,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Sesgos de autopercepción',
     title: 'El estudio que demostró que cuanto menos sabes de algo, más seguro estás de dominarlo',
@@ -468,7 +468,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 34,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Conformidad social',
     title: 'El experimento de la línea evidente: por qué dijiste lo que decía el grupo, no lo que veías',
@@ -507,7 +507,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 35,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Psicología de la ayuda',
     title: 'Cuantos más testigos hay de una emergencia, menos probable es que alguien ayude',
@@ -546,7 +546,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 36,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Situación vs. carácter',
     title: 'El estudio que demostró que la prisa te vuelve menos moral, incluso yendo a dar una charla sobre ayudar al prójimo',
@@ -585,7 +585,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 37,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Diagnóstico y estigma',
     title: 'El experimento que coló a gente sana en psiquiátricos, y el personal nunca lo detectó',
@@ -624,7 +624,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 38,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Indefensión aprendida',
     title: 'El experimento de los perros que dejaron de intentar escapar, y lo que explica sobre la depresión humana',
@@ -663,7 +663,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 39,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Expectativas y rendimiento',
     title: 'A unos alumnos elegidos al azar les dijeron que iban a despuntar ese curso, y despuntaron de verdad',
@@ -702,7 +702,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 40,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Autocontrol y motivación',
     title: 'La fuerza de voluntad que se agotaba como un músculo, y el estudio de 2.141 personas que no logró confirmarlo',
@@ -741,7 +741,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 41,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Economía del comportamiento',
     title: 'Regalaron una taza a la mitad de la clase, y de repente esa taza valía el doble',
@@ -780,7 +780,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 42,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Redes de contactos',
     title: 'El experimento de las cartas que demostró que estás a solo seis personas de cualquier desconocido',
@@ -819,7 +819,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 43,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Autopercepción social',
     title: 'Le pusieron una camiseta bochornosa y creyó que la mitad de la sala se había fijado. Se fijó la mitad de esa mitad',
@@ -858,7 +858,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 44,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Rapport y conexión social',
     title: 'Imitas sin darte cuenta los gestos de la persona que tienes delante, y por eso te cae mejor',
@@ -897,7 +897,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 45,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Estereotipos y rendimiento',
     title: 'Recordarle a alguien un estereotipo negativo sobre su grupo, justo antes de un examen, basta para hundir su nota',
@@ -936,7 +936,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 46,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Autocontrol infantil',
     title: 'El famoso test del malvavisco no predecía autocontrol. Predecía en qué casa habías crecido',
@@ -975,7 +975,7 @@ const WEEKLY_ARTICLES = [
   },
   {
     week: 47,
-    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Psicología basada en evidencia' },
+    author: { name: 'La Inferencia', university: 'La Inferencia', specialty: 'Divulgación de psicología' },
     escritoPor: 'Miguel Noguer Escudero',
     badge: 'Percepción social',
     title: 'Crees que la mayoría opina como tú. El estudio de 1977 que demostró que casi nunca es así',

@@ -136,20 +136,20 @@ const CAT_LABELS = {
 };
 
 const CAT_DESCRIPTIONS = {
-  economia:     'Cómo el cerebro distorsiona el valor del dinero, el riesgo y el precio. Sesgos cognitivos en economía conductual explicados a partir de estudios peer-reviewed.',
-  moda:         'Cómo la ropa que llevas cambia tu rendimiento, tu credibilidad y cómo te perciben los demás. Psicología del vestir basada en evidencia científica.',
+  economia:     'Cómo el cerebro distorsiona el valor del dinero, el riesgo y el precio. Sesgos cognitivos de la economía conductual con ejemplos que reconoces.',
+  moda:         'Cómo la ropa que llevas cambia tu rendimiento, tu credibilidad y cómo te perciben los demás.',
   derecho:      'Memoria de testigos, sesgos judiciales y confesiones falsas. La psicología detrás de las decisiones del sistema judicial, explicada con investigación forense.',
-  deporte:      'Rituales, diálogo interno y visualización mental: la psicología que decide el rendimiento deportivo de élite, explicada con estudios científicos.',
-  arte:         'Por qué el arte nos conmueve, qué pasa en el cerebro ante una obra ambigua y por qué un original vale más que una copia idéntica. Neuroestética con evidencia.',
+  deporte:      'Rituales, diálogo interno y visualización mental: la psicología que decide el rendimiento deportivo de élite.',
+  arte:         'Por qué el arte nos conmueve, qué pasa en el cerebro ante una obra ambigua y por qué un original vale más que una copia idéntica.',
   tecnologia:   'Scroll infinito, notificaciones y burbujas de filtros: cómo el diseño digital explota la psicología de la atención y la dopamina.',
   relaciones:   'Apego, conflicto y atracción: la ciencia detrás de cómo amamos, discutimos y nos conectamos con los demás, explicada con investigación en psicología de pareja.',
-  saludMental:  'Flujo, autocompasión y ejercicio como antidepresivo: estrategias de bienestar psicológico respaldadas por investigación científica.',
+  saludMental:  'Flujo, autocompasión y ejercicio como antidepresivo: qué funciona para el bienestar psicológico y por qué.',
   educacion:    'Por qué las notas matan la motivación, qué son los errores deseables y cómo aprender mejor según la ciencia cognitiva del aprendizaje.',
-  trabajo:      'Motivación, burnout y job crafting: la psicología organizacional que explica por qué unos trabajos enganchan y otros queman, con evidencia científica.',
-  politica:     'Por qué votamos con las emociones antes que con la razón, y cómo la personalidad predice la ideología mejor que los argumentos. Psicología política basada en evidencia.',
+  trabajo:      'Motivación, burnout y job crafting: la psicología organizacional que explica por qué unos trabajos enganchan y otros queman.',
+  politica:     'Por qué votamos con las emociones antes que con la razón, y cómo la personalidad predice la ideología mejor que los argumentos.',
   alimentacion: 'Por qué comemos más en compañía, cómo las emociones controlan el apetito y por qué prohibirte un alimento dispara el deseo de comerlo.',
   marketing:    'Escasez, señuelos y precio cero: las técnicas de persuasión que deciden lo que compras, explicadas con estudios de psicología del consumidor.',
-  viajes:       'Asombro, anticipación y la paradoja del descanso: la psicología detrás de por qué viajamos y qué nos deja realmente un viaje, con evidencia científica.',
+  viajes:       'Asombro, anticipación y la paradoja del descanso: por qué viajamos y qué nos deja de verdad un viaje.',
   redesSociales: 'Uso pasivo, comparación social y FOMO: cómo las redes sociales afectan al bienestar según la investigación en psicología, más allá del tiempo de pantalla.',
 };
 
@@ -366,7 +366,7 @@ function staticHero(opts = {}) {
         <img src="/img/logo2.png" alt="La Inferencia" class="static-hero-logo" />
       </div>
       <p class="static-hero-title">La Inferencia</p>
-      <p class="static-hero-tagline">Divulgación de psicología explicada de forma clara y sencilla,<br>a partir de estudios científicos reales.</p>
+      <p class="static-hero-tagline">Aprende psicología de lo que te pasa cada día, sin leerte los estudios.</p>
     </div>
   </section>`;
 }
@@ -870,8 +870,8 @@ function buildCategoryPage(cat) {
   const catLabel = CAT_LABELS[cat] || cat;
   const canonUrl = `${SITE}/articulos/${catSlug}/`;
   const arts     = LIBRARY_ARTICLES[cat];
-  const desc     = CAT_DESCRIPTIONS[cat] || `Artículos de psicología sobre ${catLabel.toLowerCase()} basados en evidencia científica.`;
-  const title    = `Psicología de ${catLabel === 'Salud Mental' ? 'la' : (/^[AEIOU]/i.test(catLabel) ? 'la' : 'el/la')} ${catLabel} | Artículos basados en evidencia | La Inferencia`;
+  const desc     = CAT_DESCRIPTIONS[cat] || `Artículos de psicología sobre ${catLabel.toLowerCase()} explicados claros y aplicados a tu día a día.`;
+  const title    = `Psicología de ${catLabel} | La Inferencia`;
 
   const ldJson = JSON.stringify({
     '@context': 'https://schema.org',
@@ -889,7 +889,7 @@ function buildCategoryPage(cat) {
   }, null, 2);
 
   const head = htmlHead({
-    title: `Psicología de ${catLabel} | Artículos basados en evidencia | La Inferencia`,
+    title: `Psicología de ${catLabel} | La Inferencia`,
     description: desc,
     canonUrl,
     ldJsonBlocks: [ldJson]
@@ -955,7 +955,7 @@ ${staticHero()}
       </nav>
 
       <header class="static-cat-header">
-        <h1>Psicología de la ${catLabel}: Artículos basados en evidencia</h1>
+        <h1>Psicología de la ${catLabel}</h1>
         <p>${desc}</p>
       </header>
 ${guiaHTML}
@@ -1014,7 +1014,7 @@ const AUTHOR_BIO_PARAGRAPHS = [
 const AUTHOR_FAQS = [
   {
     q: '¿Quién es Miguel Noguer Escudero?',
-    a: 'Psicólogo por la Universidad de Sevilla y fundador y CEO de La Inferencia, un proyecto de divulgación que traduce investigación revisada por pares a un lenguaje claro en español. Es autor de artículos de análisis en psicolingüística sobre cómo el lenguaje condiciona juicios y decisiones.'
+    a: 'Psicólogo por la Universidad de Sevilla y fundador y CEO de La Inferencia, un proyecto de divulgación que traduce investigación académica a un lenguaje claro en español. Es autor de artículos de análisis en psicolingüística sobre cómo el lenguaje condiciona juicios y decisiones.'
   },
   {
     q: '¿Qué formación tiene Miguel Noguer Escudero?',
@@ -1026,7 +1026,7 @@ const AUTHOR_FAQS = [
   },
   {
     q: '¿Qué es La Inferencia?',
-    a: 'Una plataforma de divulgación de psicología basada en evidencia. Convierte artículos académicos revisados por pares en contenido accesible y en español para el público general, citando siempre la fuente original.'
+    a: 'Una plataforma de divulgación de psicología. Convierte artículos académicos en contenido claro y en español para el público general, citando siempre la fuente original.'
   }
 ];
 
@@ -1066,7 +1066,7 @@ function buildAuthorPage() {
 
   const head = htmlHead({
     title: `${AUTHOR_NAME}, Psicólogo y CEO de La Inferencia`,
-    description: `Psicólogo, fundador y CEO de La Inferencia. Artículos de análisis en psicolingüística y divulgación de psicología basada en evidencia.`,
+    description: `Psicólogo, fundador y CEO de La Inferencia. Artículos de análisis en psicolingüística.`,
     canonUrl,
     ldJsonBlocks: [ldJson, faqJsonLd]
   });
@@ -1777,7 +1777,7 @@ let imgSitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>${SITE}/</loc>
     <image:image>
       <image:loc>${SITE}/img/OG.png</image:loc>
-      <image:title>La Inferencia, Psicología basada en evidencia</image:title>
+      <image:title>La Inferencia, psicología aplicada a tu día a día</image:title>
     </image:image>
   </url>
 `;
