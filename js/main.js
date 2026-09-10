@@ -10741,7 +10741,6 @@ const EFECTOS_EXTRA = {
   const LS_LAST      = 'li_last_visit';
   const LS_LIB_READ  = 'li_lib_read';
   const LS_WEEKLY_R  = 'li_weekly_read';
-  const LS_RUTAS     = 'li_rutas_progreso';
   const LS_XP        = 'li_xp_v1';
   const TOTAL_MITOS   = 20;
   const TOTAL_PRUEBAS = 8;
@@ -10762,13 +10761,6 @@ const EFECTOS_EXTRA = {
     }
     return NIVELES_PT[0];
   }
-  const RUTAS_DEF = [
-    { id: 'pareja',  articulos: ['rel-04','rel-01','rel-03','rel-05'] },
-    { id: 'movil',   articulos: ['tec-01','tec-02','tec-03','tec-04'] },
-    { id: 'dinero',  articulos: ['eco-01','eco-03','eco-02','eco-05'] },
-    { id: 'trabajo', articulos: ['tra-03','tra-01','tra-05','tra-04'] }
-  ];
-
   function getMitosCount()   { return parseInt(localStorage.getItem(LS_MITOS)   || '0', 10); }
   function getPruebasCount() { return parseInt(localStorage.getItem(LS_PRUEBAS) || '0', 10); }
   function getReadLib()      { try { return JSON.parse(localStorage.getItem(LS_LIB_READ) || '[]'); } catch { return []; } }
@@ -10776,15 +10768,6 @@ const EFECTOS_EXTRA = {
   function getQuizzesDone()  { try { return Object.keys(JSON.parse(localStorage.getItem('li_quizzes') || '{}')).length; } catch { return 0; } }
   function getDesafiosDone() { try { return Object.keys(JSON.parse(localStorage.getItem('li_challenges') || '{}')).length; } catch { return 0; } }
   function pct(a, b) { return b ? Math.round(a / b * 100) : 0; }
-
-  function getRutasCompletadas() {
-    let progreso;
-    try { progreso = JSON.parse(localStorage.getItem(LS_RUTAS) || '{}'); } catch { progreso = {}; }
-    return RUTAS_DEF.filter(r => {
-      const visitados = progreso[r.id] || [];
-      return r.articulos.every(a => visitados.includes(a));
-    }).length;
-  }
 
   /* ── Racha de visitas ── */
   function calcStreak() {
@@ -10814,7 +10797,6 @@ const EFECTOS_EXTRA = {
 
     const artRead      = getReadLib().length;
     const weekRead     = getReadWeekly().length;
-    const rutasDone    = getRutasCompletadas();
     const mitosAnsw    = Math.min(getMitosCount(),   TOTAL_MITOS);
     const pruebasDone  = Math.min(getPruebasCount(), TOTAL_PRUEBAS);
     const quizzesDone  = getQuizzesDone();
@@ -10823,7 +10805,6 @@ const EFECTOS_EXTRA = {
     const sets = [
       ['pt-articulos-bar',  'pt-articulos-count',  artRead,      totalLib,        totalLib],
       ['pt-semanales-bar',  'pt-semanales-count',  weekRead,     totalWeekly,     totalWeekly],
-      ['pt-rutas-bar',      'pt-rutas-count',      rutasDone,    RUTAS_DEF.length, RUTAS_DEF.length],
       ['pt-mitos-bar',      'pt-mitos-count',      mitosAnsw,    TOTAL_MITOS,     TOTAL_MITOS],
       ['pt-quizzes-bar',    'pt-quizzes-count',    quizzesDone,  totalQuizzes,    totalQuizzes],
       ['pt-desafios-bar',   'pt-desafios-count',   desafiosDone, totalDesafios,   totalDesafios],
@@ -10855,7 +10836,7 @@ const EFECTOS_EXTRA = {
       strk.classList.toggle('streak-hot', cur >= 3);
     }
 
-    const total = artRead + weekRead + rutasDone + mitosAnsw + quizzesDone + desafiosDone + pruebasDone;
+    const total = artRead + weekRead + mitosAnsw + quizzesDone + desafiosDone + pruebasDone;
     checkMysteryMilestone(total);
     checkWelcomeGiftMilestone(artRead);
     updateNivelBlock();
@@ -12912,16 +12893,9 @@ const EFECTOS_EXTRA = {
   const LS_LIB     = 'li_lib_read';
   const LS_WEEKLY  = 'li_weekly_read';
   const LS_FAVS    = 'li_favorites';
-  const LS_RUTAS   = 'li_rutas_progreso';
 
   const TOTAL_MITOS   = 20;
   const TOTAL_PRUEBAS = 8;
-  const RUTAS_DEF = [
-    { id: 'pareja',  articulos: ['rel-04','rel-01','rel-03','rel-05'] },
-    { id: 'movil',   articulos: ['tec-01','tec-02','tec-03','tec-04'] },
-    { id: 'dinero',  articulos: ['eco-01','eco-03','eco-02','eco-05'] },
-    { id: 'trabajo', articulos: ['tra-03','tra-01','tra-05','tra-04'] }
-  ];
 
   const NIVELES = [
     { nivel: 0, nombre: 'Estado Latente',       xpMin: 0,    xpMax: 74,       badge: 'img/Nivel00.png' },
@@ -12976,11 +12950,6 @@ const EFECTOS_EXTRA = {
     /* Stats */
     const artRead     = safeLs(LS_LIB, '[]').length;
     const weekRead    = safeLs(LS_WEEKLY, '[]').length;
-    const rutasProgreso = safeLs(LS_RUTAS, '{}');
-    const rutasDone   = RUTAS_DEF.filter(r => {
-      const visitados = rutasProgreso[r.id] || [];
-      return r.articulos.every(a => visitados.includes(a));
-    }).length;
     const mitosAnsw   = Math.min(parseInt(localStorage.getItem(LS_MITOS) || '0', 10), TOTAL_MITOS);
     const streak      = parseInt(localStorage.getItem(LS_STREAK) || '0', 10);
     const pruebasDone = Math.min(parseInt(localStorage.getItem(LS_PRUEBAS) || '0', 10), TOTAL_PRUEBAS);
@@ -12994,7 +12963,6 @@ const EFECTOS_EXTRA = {
 
     setStat('mob-yo-s-art', 'mob-yo-b-art', artRead,     null,           v => v);
     setStat('mob-yo-s-sem', 'mob-yo-b-sem', weekRead,    null,           v => v);
-    setStat('mob-yo-s-rut', 'mob-yo-b-rut', rutasDone,   RUTAS_DEF.length, (v,t) => v + ' / ' + t);
     setStat('mob-yo-s-mit', 'mob-yo-b-mit', mitosAnsw,   TOTAL_MITOS,    (v,t) => v + ' / ' + t);
     setStat('mob-yo-s-rac', 'mob-yo-b-rac', streak,      7,              v => v);
     setStat('mob-yo-s-pru', 'mob-yo-b-pru', pruebasDone, TOTAL_PRUEBAS,  (v,t) => v + ' / ' + t);

@@ -42,9 +42,9 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.com
 | localStorage para progreso y tema | Sin autenticación — datos del usuario en su propio dispositivo |
 | `lsSet`/`lsGet` con try/catch | Modo incógnito lanza excepciones en algunos browsers |
 | Orden grid móvil `"center" "right" "left"` | Tu Progreso más útil que Concepto de la Semana en primer scroll |
-| Widget "Lista de Efectos" eliminado (agosto 2026) | Simplificar el sidebar; el hueco se usa para nivel/XP/recompensa y Rutas en "Tu Progreso" |
+| Widget "Lista de Efectos" eliminado (agosto 2026) | Simplificar el sidebar; el hueco se usa para nivel/XP/recompensa en "Tu Progreso" |
 | XP por nivel reducido a la mitad (agosto 2026) | Subir de nivel más rápido, más gratificante |
-| "Rutas completadas" en Tu Progreso lee `li_rutas_progreso` | Reutiliza el sistema ya existente en `js/rutas.js`/`rutas/*` sin duplicar tracking |
+| Rutas de Aprendizaje retiradas (sept 2026) | No aportaban valor real (eran playlists de artículos que ya existen); fuera del nav, footer, "Tu Progreso", sitemap, búsqueda y del banner dentro de artículos. Las páginas de `rutas/` se dejan en disco sin enlazar por si hay enlaces entrantes |
 | Radar de Mitos y Test cognitivo eliminados (agosto 2026) | Menos ruido en la home, más foco en la monetización vía Audible |
 | Hero buttons ocultos en móvil | Espacio limitado; los botones hero no son esenciales en móvil |
 | Favoritos desactivados en HTML | Funcionalidad no lista — JS preparado pero HTML no tiene el nodo |
@@ -77,7 +77,7 @@ Sin frameworks — HTML/CSS/JS puro. URL: https://lainferencia.com
 ```
 LaInferencia/
 ├── index.html              # Página única (SPA sin router)
-├── generate-pages.js       # Genera artículos, rutas, guías y sitemaps a partir de datos curados
+├── generate-pages.js       # Genera artículos, guías y sitemaps a partir de datos curados
 ├── css/
 │   └── styles.css          # Todo el CSS — variables, componentes, temas, responsive
 ├── js/
@@ -85,16 +85,14 @@ LaInferencia/
 │   ├── buscador.js         # Buscador de contenido
 │   ├── search-index.js     # Índice de búsqueda generado
 │   ├── recomendaciones.js  # Motor de recomendaciones de artículos
-│   ├── rutas.js            # Tracking de progreso en Rutas de Aprendizaje
+│   ├── rutas.js            # Legacy: solo lo usan las páginas congeladas de rutas/ (feature retirada sept 2026)
 │   ├── save-button.js      # Botón de guardar/favoritos por artículo
-│   ├── simulador.js        # Lógica del Simulador de Sesgos
 │   └── seo-overrides.js    # Metadata SEO por artículo, consumido por generate-pages.js (no se sirve al navegador)
 ├── articulos/              # Artículos generados, organizados por categoría (alimentacion, economia, salud-mental, ...)
 ├── autores/                # Páginas de autor (miguel-noguer)
 ├── biblioteca/             # Índice de biblioteca de contenido
 ├── guias/                  # Guías temáticas (mejores libros de ...)
-├── rutas/                  # Rutas de Aprendizaje curadas a mano
-├── simulador-de-sesgos/    # Simulador interactivo de sesgos cognitivos
+├── rutas/                  # Páginas congeladas de la feature retirada (sept 2026), sin enlazar
 ├── socios/                 # Datos de socios/colaboradores
 ├── linkedin/               # Scripts de automatización de LinkedIn (publicar.js, oauth.js, config.js)
 ├── img/                    # Logos, avatares de autores (cara*.png), iconos, favicons
@@ -125,7 +123,7 @@ LaInferencia/
 1. **Tabs principales** — "Por Intereses", "Fuera de Bata", "El Artículo de la Semana" en ese orden
 2. **Persistencia de tema** — el tema elegido sobrevive recarga (localStorage)
 3. **Sincronía de niveles** — el array `NIVELES` está triplicado en `main.js` (navbar, sidebar "Tu Progreso", sección "Yo" móvil); cualquier cambio de umbrales de XP debe aplicarse en las tres copias
-4. **Progress tracker** — artículos leídos, semanales, rutas completadas, quizzes y desafíos incrementan y persisten; el bloque de nivel/XP y la recompensa de nivel 1 se recalculan en cada `updateUI()`
+4. **Progress tracker** — artículos leídos, semanales, quizzes y desafíos incrementan y persisten; el bloque de nivel/XP y la recompensa de nivel 1 se recalculan en cada `updateUI()`
 5. **Compartir contenido** — `shareContenido()` con fallback a clipboard nunca lanza errores visibles
 6. **localStorage wrappers** — `lsSet`/`lsGet` fallan silenciosamente (incógnito, cuota llena)
 7. **Focus trap en modales** — `trapFocus()` / `releaseFocus()` necesarios para accesibilidad WCAG

@@ -259,36 +259,12 @@ const RUTA_ICONOS = {
   trabajo: '<rect x="2.5" y="7" width="19" height="13.5" rx="2"/><path d="M15.5 7V5a2 2 0 0 0-2-2h-3a2 2 0 0 0-2 2v2"/><line x1="2.5" y1="13" x2="21.5" y2="13"/>'
 };
 
-const RUTAS = [
-  {
-    id: 'pareja',
-    slug: 'por-que-discuto-siempre-igual-con-mi-pareja',
-    titulo: 'Por qué discuto siempre igual con mi pareja',
-    descripcion: 'Cuatro estudios que explican por qué repites el mismo patrón de conflicto, por qué muchos problemas de pareja no tienen "solución", y por qué la conexión importa tanto como parece.',
-    articuloIds: ['rel-04', 'rel-01', 'rel-03', 'rel-05']
-  },
-  {
-    id: 'movil',
-    slug: 'por-que-no-puedes-soltar-el-movil',
-    titulo: 'Por qué no puedes soltar el móvil',
-    descripcion: 'Cuatro estudios sobre el diseño que engancha, lo que cuesta cada notificación, por qué te comportas distinto online, y cómo el algoritmo decide lo que ves.',
-    articuloIds: ['tec-01', 'tec-02', 'tec-03', 'tec-04']
-  },
-  {
-    id: 'dinero',
-    slug: 'por-que-gastas-mas-de-lo-que-crees',
-    titulo: 'Por qué gastas más de lo que crees',
-    descripcion: 'Cuatro estudios sobre los trucos de precio que no ves, por qué pagar sin tarjeta duele menos, por qué las pérdidas pesan más que las ganancias, y por qué demasiadas opciones te hacen decidir peor.',
-    articuloIds: ['eco-01', 'eco-03', 'eco-02', 'eco-05']
-  },
-  {
-    id: 'trabajo',
-    slug: 'por-que-te-quemas-en-el-trabajo',
-    titulo: 'Por qué te quemas en el trabajo',
-    descripcion: 'Cuatro estudios sobre lo que de verdad motiva, por qué las reuniones destruyen el pensamiento, por qué los bonus no funcionan, y dónde está la línea entre cansado y quemado.',
-    articuloIds: ['tra-03', 'tra-01', 'tra-05', 'tra-04']
-  }
-];
+// Rutas de Aprendizaje retiradas de la web (sept 2026). Se deja el array
+// vacío para no romper los bucles que lo recorren; las páginas ya generadas
+// en /rutas/ se conservan en disco por si hay enlaces entrantes, pero no se
+// enlazan desde ningún sitio ni se regeneran. Las funciones buildRutasLandingPage
+// y buildRutaPage quedan sin uso a propósito.
+const RUTAS = [];
 
 // id de artículo -> { ruta, index (0-based), total }, cada artículo
 // pertenece como mucho a una ruta en este diseño (sets sin solapar).
@@ -1687,18 +1663,9 @@ for (const w of WEEKLY_ARTICLES) {
 }
 console.log(`\n✅ ${weeklyPages.length} páginas de "Artículo de la Semana" generadas\n`);
 
-// ── Rutas de Aprendizaje ──────────────────────────────────────────
-const RUTAS_DIR = path.join(ROOT, 'rutas');
-fs.mkdirSync(RUTAS_DIR, { recursive: true });
-fs.writeFileSync(path.join(RUTAS_DIR, 'index.html'), buildRutasLandingPage(), 'utf-8');
-console.log('  ✓ /rutas/ (landing)');
-for (const ruta of RUTAS) {
-  const rutaDir = path.join(RUTAS_DIR, ruta.slug);
-  fs.mkdirSync(rutaDir, { recursive: true });
-  fs.writeFileSync(path.join(rutaDir, 'index.html'), buildRutaPage(ruta), 'utf-8');
-  console.log(`  ✓ /rutas/${ruta.slug}/`);
-}
-console.log(`\n✅ Rutas de Aprendizaje generadas (1 landing + ${RUTAS.length} rutas)\n`);
+// ── Rutas de Aprendizaje: retiradas de la web (sept 2026) ─────────
+// No se generan ni se enlazan. Las páginas antiguas de /rutas/ se dejan
+// en disco tal cual por si hay enlaces entrantes.
 
 // ── Guías de compra ──────────────────────────────────────────────
 const GUIAS_DIR = path.join(ROOT, 'guias');
@@ -1742,12 +1709,6 @@ for (const cat of CAT_KEYS) {
 }
 
 sitemap += `  <url><loc>${AUTHOR_URL}</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>${today}</lastmod></url>\n`;
-
-
-sitemap += `  <url><loc>${RUTAS_URL}</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>${today}</lastmod></url>\n`;
-for (const ruta of RUTAS) {
-  sitemap += `  <url><loc>${ruta.url}</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
-}
 
 sitemap += `  <url><loc>${GUIAS_URL}</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>${today}</lastmod></url>\n`;
 for (const guia of GUIA_SECTORES) {
