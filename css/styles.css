@@ -3708,9 +3708,12 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   border-left: 3px solid var(--blue-accent);
 }
 
-/* Sombra en el texto del artículo: despega las letras del fondo con neblinas (solo temas oscuros) */
+/* Halo pegado al contorno de la letra: la despega del fondo con neblinas (solo temas oscuros) */
 .dark-base .weekly-featured-card :is(.article-intro, .article-subtitle, .article-pull, .article-content p, .article-blockquote p, .weekly-title) {
-  text-shadow: 0 1px 4px rgba(2, 6, 16, 0.75), 0 0 2px rgba(2, 6, 16, 0.55);
+  text-shadow:
+    0 0 1px rgba(2, 6, 16, 0.9),
+    0 0 3px rgba(2, 6, 16, 0.7),
+    0 0 6px rgba(2, 6, 16, 0.45);
 }
 
 .article-blockquote {
