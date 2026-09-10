@@ -3708,6 +3708,11 @@ body.modo-enfoque-activo .btn-modo-enfoque {
   border-left: 3px solid var(--blue-accent);
 }
 
+/* Sombra sutil en el texto del artículo: despega las letras del fondo con neblinas (solo temas oscuros) */
+.dark-base .weekly-featured-card :is(.article-intro, .article-subtitle, .article-pull, .article-content p, .article-blockquote p, .weekly-title) {
+  text-shadow: 0 1px 3px rgba(3, 8, 20, 0.45);
+}
+
 .article-blockquote {
   border-left: 3px solid var(--blue);
   padding: 1rem 1.5rem; margin: 1.5rem 0;
